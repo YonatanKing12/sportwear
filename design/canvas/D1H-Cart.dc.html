@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="he">
+<head>
+<meta charset="utf-8">
+<title>ליל משחק משולב — סל קניות</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Karantina:wght@400;700&amp;family=Changa:wght@600;800&amp;family=Heebo:wght@400;500;600;700;800&amp;family=Noto+Sans+Arabic:wght@400;600;700;800&amp;display=swap">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#0D0E11;text-decoration:none}a:hover{color:#000000}
+.ic *{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</helmet>
+<div dir="rtl" lang="he" style="width: 390px; height: 844px; box-sizing: border-box; display: flex; flex-direction: column; background: #FFFFFF; color: #0D0E11; font-family: 'Heebo', 'Noto Sans Arabic', sans-serif; font-synthesis: none; overflow: hidden">
+
+<header style="height: 64px; flex-shrink: 0; display: flex; align-items: center; justify-content: space-between; padding: 0 20px 0 8px; background: #0D0E11; color: #F4F5F7">
+<h1 style="margin: 0; font-family: 'Anton', 'Karantina', 'Changa', sans-serif; font-weight: 700; font-size: 36px; line-height: 1">הסל שלי</h1>
+<a href="D1H-Home.dc.html" aria-label="סגירת הסל" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #F4F5F7"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></a>
+</header>
+
+<div style="flex-shrink: 0; padding: 16px 20px; background: #F1F2F4; display: flex; flex-direction: column; gap: 10px">
+<sc-if value="{{notAdded}}" hint-placeholder-val="{{true}}">
+<span style="font-size: 14.5px; font-weight: 600">עוד <strong style="font-weight: 800">₪80</strong> ותקבלו משלוח חינם</span>
+</sc-if>
+<sc-if value="{{added}}" hint-placeholder-val="{{false}}">
+<span style="display: flex; align-items: center; gap: 8px; font-size: 14.5px; font-weight: 800"><span style="width: 22px; height: 22px; border-radius: 50%; background: {{accent}}; display: flex; align-items: center; justify-content: center"><svg class="ic" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>יש לכם משלוח חינם</span>
+</sc-if>
+<div style="height: 10px; border-radius: 5px; background: #0D0E11; overflow: hidden; padding: 2px; box-sizing: border-box"><div style="height: 6px; border-radius: 3px; background: {{accent}}; {{barStyle}}"></div></div>
+</div>
+
+<div style="flex-shrink: 0; padding: 0 20px; display: flex; flex-direction: column">
+<div style="display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid #E3E5E8">
+<div style="width: 88px; height: 88px; flex-shrink: 0; border-radius: 4px; background: #F1F2F4; display: flex; align-items: center; justify-content: center"><svg width="76" height="76" viewBox="0 0 200 200" aria-hidden="true"><path d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z" style="fill: #FFD100"></path><path d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z" style="fill: #0038A8"></path><path d="M82 22C86 46 114 46 118 22M136 22C140 56 150 72 160 78M64 22C60 56 50 72 40 78" style="fill: none; stroke: #0038A8; stroke-width: 6; stroke-linecap: round"></path><text x="100" y="138" style="font-family: 'Anton', sans-serif; font-size: 58px; fill: #0038A8; text-anchor: middle; direction: ltr">10</text></svg></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.35">גופיית כדורסל מכבי תל אביב 26/27</span>
+<span style="font-size: 12.5px; color: #5B616E">מבוגרים · מידה M</span>
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2px">
+<div style="display: flex; align-items: center; border: 1px solid #D5D8DE; border-radius: 4px">
+<button type="button" aria-label="הפחתת כמות" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 0; border: 0; background: transparent; color: #0D0E11; cursor: pointer"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"></path></svg></button>
+<span style="width: 24px; text-align: center; font-size: 15px; font-weight: 700">1</span>
+<button type="button" aria-label="הוספת כמות" style="width: 44px; height: 40px; display: flex; align-items: center; justify-content: center; padding: 0; border: 0; background: transparent; color: #0D0E11; cursor: pointer"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></button>
+</div>
+<span style="font-size: 16px; font-weight: 800">₪120</span>
+</div>
+</div>
+</div>
+<sc-if value="{{added}}" hint-placeholder-val="{{false}}">
+<div style="display: flex; gap: 12px; padding: 16px 0; border-bottom: 1px solid #E3E5E8">
+<div style="width: 88px; height: 88px; flex-shrink: 0; border-radius: 4px; background: #F1F2F4; display: flex; align-items: center; justify-content: center"><svg width="72" height="72" viewBox="0 0 200 200" aria-hidden="true"><path d="M40 30L160 30L160 44L172 168L108 176L100 112L92 176L28 168L40 44Z" style="fill: #FFD100"></path><rect x="40" y="30" width="120" height="16" style="fill: #0038A8"></rect><path d="M40 46L50 46L40 169L28 168Z M160 46L150 46L160 169L172 168Z" style="fill: #0038A8"></path></svg></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 14px; font-weight: 600; line-height: 1.35">מכנס כדורסל מכבי תל אביב 26/27</span>
+<span style="font-size: 12.5px; color: #5B616E">מבוגרים · מידה M</span>
+<div style="display: flex; align-items: center; justify-content: space-between; margin-top: 2px">
+<button type="button" onClick="{{removeBundle}}" style="height: 40px; padding: 0; border: 0; background: transparent; color: #5B616E; font-family: inherit; font-size: 13px; font-weight: 600; text-decoration: underline; cursor: pointer">הסרה</button>
+<span style="font-size: 16px; font-weight: 800">₪80</span>
+</div>
+</div>
+</div>
+</sc-if>
+</div>
+
+<sc-if value="{{notAdded}}" hint-placeholder-val="{{true}}">
+<div style="flex-shrink: 0; margin: 16px 20px 0; padding: 14px; border-radius: 4px; background: {{accent}}; display: flex; align-items: center; gap: 12px">
+<div style="width: 64px; height: 64px; flex-shrink: 0; border-radius: 4px; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg width="54" height="54" viewBox="0 0 200 200" aria-hidden="true"><path d="M40 30L160 30L160 44L172 168L108 176L100 112L92 176L28 168L40 44Z" style="fill: #FFD100"></path><rect x="40" y="30" width="120" height="16" style="fill: #0038A8"></rect><path d="M40 46L50 46L40 169L28 168Z M160 46L150 46L160 169L172 168Z" style="fill: #0038A8"></path></svg></div>
+<div style="flex-grow: 1; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 12.5px; font-weight: 800">השלימו את הסט</span>
+<span style="font-size: 14px; font-weight: 600; line-height: 1.35">מכנס מכבי תל אביב 26/27</span>
+<span style="font-size: 13px; font-weight: 600">₪80 · והמשלוח חינם</span>
+</div>
+<button type="button" onClick="{{addBundle}}" style="height: 44px; padding: 0 16px; flex-shrink: 0; border: 0; border-radius: 4px; background: #0D0E11; color: {{accent}}; font-family: inherit; font-size: 14px; font-weight: 800; cursor: pointer">הוספה</button>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+
+<div style="flex-shrink: 0; padding: 16px 20px 22px; border-top: 1px solid #E3E5E8; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; justify-content: space-between; font-size: 14.5px; color: #3E434D"><span>סכום ביניים</span><sc-if value="{{notAdded}}" hint-placeholder-val="{{true}}"><span>₪120</span></sc-if><sc-if value="{{added}}" hint-placeholder-val="{{false}}"><span>₪200</span></sc-if></div>
+<div style="display: flex; justify-content: space-between; align-items: center; font-size: 14.5px; color: #3E434D"><span>משלוח</span><sc-if value="{{notAdded}}" hint-placeholder-val="{{true}}"><span>₪35</span></sc-if><sc-if value="{{added}}" hint-placeholder-val="{{false}}"><span style="height: 24px; padding: 0 9px; display: flex; align-items: center; border-radius: 3px; background: {{accent}}; color: #0D0E11; font-weight: 800">חינם</span></sc-if></div>
+<div style="display: flex; justify-content: space-between; font-size: 17px; font-weight: 800"><span>סה״כ לתשלום</span><sc-if value="{{notAdded}}" hint-placeholder-val="{{true}}"><span>₪155</span></sc-if><sc-if value="{{added}}" hint-placeholder-val="{{false}}"><span>₪200</span></sc-if></div>
+<a href="#" style="margin-top: 8px; height: 56px; display: flex; align-items: center; justify-content: center; gap: 10px; border-radius: 4px; background: #0D0E11; color: {{accent}}; font-size: 17px; font-weight: 800"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg>לתשלום מאובטח</a>
+<span style="text-align: center; font-size: 12.5px; color: #5B616E">כרטיס אשראי · Apple Pay · Google Pay</span>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#C6FF3D","options":["#C6FF3D","#FFD23D","#3DD6FF","#3DFFB0"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { added: false };
+  }
+  renderVals() {
+    const added = this.state.added;
+    return {
+      accent: this.props.accent ?? '#C6FF3D',
+      added: added,
+      notAdded: !added,
+      barStyle: added ? 'width: 100%;' : 'width: 60%;',
+      addBundle: () => this.setState({ added: true }),
+      removeBundle: () => this.setState({ added: false })
+    };
+  }
+}
+</script>
+</body>
+</html>
