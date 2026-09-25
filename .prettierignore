@@ -7,3 +7,4 @@ package-lock.json
 *.md
 # Written by the Shopify theme editor via the GitHub integration; leave Shopify's formatting alone.
 config/settings_data.json
+design/fonts/google-fonts.css

@@ -9,6 +9,10 @@ These rules come from decisions the store owner has approved. Where a vendored s
 generic, this file wins. Where this file is silent, follow `shopify-liquid-themes`,
 `liquid-theme-standards` and `liquid-theme-a11y`.
 
+**Before writing theme code, read `references/architecture.md`**: file ownership, the foundation
+APIs (tokens, classes, snippets, `@theme/core`), cross-component contracts, section conventions and
+the i18n parts workflow (`i18n/<area>.<lang>.json` → `npm run i18n` → `locales/*`).
+
 ## Non-negotiables
 
 1. **From scratch.** Do not copy code from Horizon, Dawn or any other theme. Reading Shopify docs
@@ -145,8 +149,9 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
 
 Run all of this before every commit that touches theme files, and before every owner checkpoint:
 
-1. **Liquid validator** (bundled, offline, telemetry off):
-   `node .claude/skills/shopify/scripts/validate.mjs --api liquid --theme-path . --files sections/a.liquid,snippets/b.liquid`
+1. **Liquid validator** (Shopify's official one, bundled, telemetry off):
+   `npm run theme:validate` (all files) or `npm run theme:validate -- sections/a.liquid snippets/b.liquid`
+   Translations: `npm run i18n` after editing `i18n/*`, and `npm run i18n:check`.
 2. **Theme check:** `npm run theme:check` must report no errors.
 3. **Formatting:** `npm run format:check`.
 4. **After the dev theme updates:**

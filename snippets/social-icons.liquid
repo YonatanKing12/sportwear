@@ -1,0 +1,82 @@
+{%- doc -%}
+  Links to the store's social profiles (Theme settings > Social media) and WhatsApp
+  (Theme settings > Business details). Renders nothing when none are set.
+
+  @param {string} [class] - Extra classes on the list
+{%- enddoc -%}
+{%- liquid
+  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  assign has_any = false
+  if settings.social_instagram != blank or settings.social_tiktok != blank or settings.social_facebook != blank or settings.social_youtube != blank or whatsapp_digits != blank
+    assign has_any = true
+  endif
+-%}
+{%- if has_any -%}
+  <ul class="social-icons{% if class != blank %} {{ class }}{% endif %}" role="list">
+    {%- if settings.social_instagram != blank -%}
+      <li>
+        <a href="{{ settings.social_instagram }}" class="social-icons__link" target="_blank" rel="noopener">
+          {%- render 'icon', name: 'instagram', size: 20 -%}
+          <span class="visually-hidden">{{ 'social.instagram' | t }} ({{ 'accessibility.new_window' | t }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if settings.social_tiktok != blank -%}
+      <li>
+        <a href="{{ settings.social_tiktok }}" class="social-icons__link" target="_blank" rel="noopener">
+          {%- render 'icon', name: 'tiktok', size: 20 -%}
+          <span class="visually-hidden">{{ 'social.tiktok' | t }} ({{ 'accessibility.new_window' | t }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if settings.social_facebook != blank -%}
+      <li>
+        <a href="{{ settings.social_facebook }}" class="social-icons__link" target="_blank" rel="noopener">
+          {%- render 'icon', name: 'facebook', size: 20 -%}
+          <span class="visually-hidden">{{ 'social.facebook' | t }} ({{ 'accessibility.new_window' | t }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if settings.social_youtube != blank -%}
+      <li>
+        <a href="{{ settings.social_youtube }}" class="social-icons__link" target="_blank" rel="noopener">
+          {%- render 'icon', name: 'youtube', size: 20 -%}
+          <span class="visually-hidden">{{ 'social.youtube' | t }} ({{ 'accessibility.new_window' | t }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+    {%- if whatsapp_digits != blank -%}
+      <li>
+        <a href="https://wa.me/{{ whatsapp_digits }}" class="social-icons__link" target="_blank" rel="noopener">
+          {%- render 'icon', name: 'whatsapp', size: 20 -%}
+          <span class="visually-hidden">{{ 'social.whatsapp' | t }} ({{ 'accessibility.new_window' | t }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+  </ul>
+{%- endif -%}
+
+{% stylesheet %}
+  .social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .social-icons__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    border-radius: 50%;
+    color: inherit;
+
+    &:hover {
+      background: color-mix(in srgb, currentColor 10%, transparent);
+    }
+  }
+{% endstylesheet %}

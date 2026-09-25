@@ -1,0 +1,46 @@
+{%- doc -%}
+  Outputs CSS custom properties that come from theme settings: one class per color scheme
+  (.color-scheme-day, .color-scheme-night, ...) plus global tokens on :root.
+  Static tokens (spacing, type scale, z-index, ...) live in assets/base.css.
+{%- enddoc -%}
+{% style %}
+  :root {
+    --color-accent: {{ settings.accent }};
+    --color-on-accent: #0D0E11;
+    --page-width: {{ settings.page_width }}px;
+    --radius-card: {{ settings.radius_card }}px;
+    --radius-button: {{ settings.radius_button }}px;
+    --body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+    --heading-scale: {{ settings.heading_scale | divided_by: 100.0 }};
+    --logo-width: {{ settings.logo_width }}px;
+    {%- case settings.card_image_ratio -%}
+      {%- when 'square' -%}
+        --card-ratio: 1 / 1;
+      {%- when 'tall' -%}
+        --card-ratio: 3 / 4;
+      {%- else -%}
+        --card-ratio: 4 / 5;
+    {%- endcase %}
+    --card-image-fit: {{ settings.card_image_fit }};
+    --latin-heading-transform: {% if settings.uppercase_latin_headings %}uppercase{% else %}none{% endif %};
+  }
+
+  {% for scheme in settings.color_schemes -%}
+    .color-{{ scheme.id }} {
+      --color-background: {{ scheme.settings.background }};
+      --color-surface: {{ scheme.settings.surface }};
+      --color-border: {{ scheme.settings.border }};
+      --color-text: {{ scheme.settings.text }};
+      --color-muted: {{ scheme.settings.muted }};
+      --color-highlight: {{ scheme.settings.highlight }};
+      --color-on-highlight: {{ scheme.settings.on_highlight }};
+      --color-button: {{ scheme.settings.button }};
+      --color-button-label: {{ scheme.settings.button_label }};
+      --color-secondary-button-label: {{ scheme.settings.secondary_button_label }};
+      --color-sale: {{ scheme.settings.sale }};
+      color-scheme: {% if scheme.settings.background.lightness < 50 %}dark{% else %}light{% endif %};
+      background: {% if scheme.settings.background_gradient != blank %}{{ scheme.settings.background_gradient }}{% else %}var(--color-background){% endif %};
+      color: var(--color-text);
+    }
+  {% endfor %}
+{% endstyle %}

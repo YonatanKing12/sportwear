@@ -1,0 +1,13 @@
+{%- comment -%}
+  Render-only section: returns the header cart count for the Section Rendering API.
+  Requested by CartAPI in assets/core.js after every cart change. Not addable in the editor.
+{%- endcomment -%}
+<span data-cart-bubble>{% render 'cart-bubble' %}</span>
+
+{% schema %}
+{
+  "name": "t:sections.cart_bubble.name",
+  "tag": "div",
+  "settings": []
+}
+{% endschema %}

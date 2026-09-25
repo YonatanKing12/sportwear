@@ -1,0 +1,89 @@
+{
+  "current": {
+    "color_schemes": {
+      "scheme-day": {
+        "settings": {
+          "background": "#FFFFFF",
+          "surface": "#F1F2F4",
+          "border": "#E3E5E8",
+          "text": "#0D0E11",
+          "muted": "#5B616E",
+          "highlight": "#C6FF3D",
+          "on_highlight": "#0D0E11",
+          "button": "#0D0E11",
+          "button_label": "#C6FF3D",
+          "secondary_button_label": "#0D0E11",
+          "sale": "#C22D0D"
+        }
+      },
+      "scheme-night": {
+        "settings": {
+          "background": "#0D0E11",
+          "surface": "#16181D",
+          "border": "#2A2E37",
+          "text": "#F4F5F7",
+          "muted": "#A7ADB8",
+          "highlight": "#C6FF3D",
+          "on_highlight": "#0D0E11",
+          "button": "#C6FF3D",
+          "button_label": "#0D0E11",
+          "secondary_button_label": "#F4F5F7",
+          "sale": "#FF5A36"
+        }
+      },
+      "scheme-accent": {
+        "settings": {
+          "background": "#C6FF3D",
+          "surface": "#FFFFFF",
+          "border": "#0D0E11",
+          "text": "#0D0E11",
+          "muted": "#2E3300",
+          "highlight": "#0D0E11",
+          "on_highlight": "#C6FF3D",
+          "button": "#0D0E11",
+          "button_label": "#C6FF3D",
+          "secondary_button_label": "#0D0E11",
+          "sale": "#8B1A00"
+        }
+      },
+      "scheme-soft": {
+        "settings": {
+          "background": "#F1F2F4",
+          "surface": "#FFFFFF",
+          "border": "#DADDE2",
+          "text": "#0D0E11",
+          "muted": "#5B616E",
+          "highlight": "#C6FF3D",
+          "on_highlight": "#0D0E11",
+          "button": "#0D0E11",
+          "button_label": "#C6FF3D",
+          "secondary_button_label": "#0D0E11",
+          "sale": "#C22D0D"
+        }
+      }
+    },
+    "body_color_scheme": "scheme-day",
+    "drawer_color_scheme": "scheme-day",
+    "accent": "#C6FF3D",
+    "browser_theme_color": "#0D0E11",
+    "wordmark_start": "SPORT",
+    "wordmark_end": "WEAR",
+    "logo_width": 136,
+    "body_scale": 100,
+    "heading_scale": 100,
+    "uppercase_latin_headings": true,
+    "page_width": "1440",
+    "radius_card": 4,
+    "radius_button": 4,
+    "card_subtitle": "team",
+    "card_image_ratio": "portrait",
+    "card_image_fit": "contain",
+    "card_secondary_image": true,
+    "card_show_sale_badge": true,
+    "card_new_tag": "new",
+    "cart_type": "drawer",
+    "cart_show_upsell": true,
+    "cart_show_note": false,
+    "predictive_search": true
+  }
+}

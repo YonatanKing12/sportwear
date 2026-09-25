@@ -1,0 +1,65 @@
+{%- doc -%}
+  The store logo: the uploaded logo image (Theme settings > Brand) or, until one is uploaded,
+  the text wordmark with its highlighted end ("SPORT" + "WEAR" in the accent color).
+  Always LTR and isolated, so it reads the same in Hebrew and Arabic.
+
+  @param {boolean} [link] - Wrap in a link to the home page (default true)
+  @param {string} [class] - Extra classes
+  @param {string} [loading] - Image loading, 'eager' in the header (default) or 'lazy'
+{%- enddoc -%}
+{%- liquid
+  assign logo_link = true
+  if link == false
+    assign logo_link = false
+  endif
+  assign logo_loading = loading | default: 'eager'
+-%}
+{%- capture logo_inner -%}
+  {%- if settings.logo != blank -%}
+    {%- assign logo_height = settings.logo_width | divided_by: settings.logo.aspect_ratio | round -%}
+    {{
+      settings.logo
+      | image_url: width: 480
+      | image_tag:
+        class: 'logo__image',
+        widths: '160, 240, 320, 480',
+        sizes: settings.logo_width | append: 'px',
+        width: settings.logo_width,
+        height: logo_height,
+        loading: logo_loading,
+        alt: shop.name
+    }}
+  {%- else -%}
+    <span class="wordmark" aria-hidden="true">
+      {{- settings.wordmark_start -}}
+      <span class="wordmark__end">{{ settings.wordmark_end }}</span>
+    </span>
+    <span class="visually-hidden">{{ shop.name }}</span>
+  {%- endif -%}
+{%- endcapture -%}
+{%- if logo_link -%}
+  <a href="{{ routes.root_url }}" class="logo{% if class != blank %} {{ class }}{% endif %}">
+    {{- logo_inner -}}
+    {%- if request.page_type == 'index' -%}
+      <span class="visually-hidden">, {{ 'general.home' | t }}</span>
+    {%- endif -%}
+  </a>
+{%- else -%}
+  <span class="logo{% if class != blank %} {{ class }}{% endif %}">{{ logo_inner }}</span>
+{%- endif -%}
+
+{% stylesheet %}
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo__image {
+    inline-size: var(--logo-width);
+    block-size: auto;
+    max-inline-size: 100%;
+  }
+{% endstylesheet %}

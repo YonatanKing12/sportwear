@@ -1,0 +1,35 @@
+{%- doc -%}
+  Cart item count for the header cart link. Re-rendered through the "cart-bubble" section after
+  every cart change (see assets/core.js), so the count and its localized label stay in sync.
+  Render it inside an element with data-cart-bubble.
+
+  @example
+  <span data-cart-bubble>{% render 'cart-bubble' %}</span>
+{%- enddoc -%}
+<span class="visually-hidden">{{ 'general.cart.count' | t: count: cart.item_count }}</span>
+{%- if cart.item_count > 0 -%}
+  <span class="cart-bubble" aria-hidden="true">
+    {%- if cart.item_count < 100 -%}{{ cart.item_count }}{%- else -%}99+{%- endif -%}
+  </span>
+{%- endif -%}
+
+{% stylesheet %}
+  .cart-bubble {
+    position: absolute;
+    inset-block-start: 5px;
+    inset-inline-end: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 18px;
+    block-size: 18px;
+    padding-inline: 4px;
+    border-radius: 9px;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+  }
+{% endstylesheet %}

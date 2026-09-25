@@ -1,0 +1,194 @@
+{%- doc -%}
+  Product card used in every product grid (collections, search, home, recommendations, cart upsell).
+  The image tile is always light (supplier photos are shot on white). The whole card is clickable
+  through one link on the title, so screen readers hear a single, meaningful link.
+
+  @param {product} product - The product; blank renders a placeholder card (theme editor only)
+  @param {string} [sizes] - sizes attribute for the image (default fits a 2/3/4-column grid)
+  @param {string} [loading] - 'lazy' (default) or 'eager' for cards in the first row of the page
+  @param {string} [heading_tag] - 'h3' (default) or 'h2'
+  @param {string} [class] - Extra classes on the card
+
+  @example
+  {% render 'product-card', product: product, loading: 'eager' %}
+{%- enddoc -%}
+{%- liquid
+  assign card_sizes = sizes | default: '(min-width: 990px) calc((min(100vw, 1440px) - 64px) / 4), (min-width: 750px) calc((100vw - 64px) / 3), calc((100vw - 52px) / 2)'
+  assign card_heading = heading_tag | default: 'h3'
+  assign card_loading = loading | default: 'lazy'
+
+  assign subtitle = ''
+  if product != blank
+    case settings.card_subtitle
+      when 'team'
+        assign team = product.metafields.sportwear.team.value
+        if team != blank
+          assign subtitle = team.name.value
+        endif
+      when 'vendor'
+        assign subtitle = product.vendor
+    endcase
+
+    assign on_sale = false
+    if product.compare_at_price_min > product.price_min
+      assign on_sale = true
+    endif
+
+    assign is_new = false
+    if settings.card_new_tag != blank and product.tags contains settings.card_new_tag
+      assign is_new = true
+    endif
+
+    assign secondary_image = null
+    if settings.card_secondary_image and product.media.size > 1
+      assign secondary_image = product.media[1].preview_image
+    endif
+  endif
+-%}
+<article class="product-card{% if class != blank %} {{ class }}{% endif %}">
+  <div class="product-card__media media-tile">
+    {%- if product != blank -%}
+      {%- render 'image',
+        image: product.featured_media.preview_image,
+        sizes: card_sizes,
+        widths: '240, 360, 480, 720, 960',
+        loading: card_loading,
+        alt: '',
+        class: 'product-card__image'
+      -%}
+      {%- if secondary_image != blank -%}
+        {%- render 'image',
+          image: secondary_image,
+          sizes: card_sizes,
+          widths: '240, 360, 480, 720, 960',
+          loading: 'lazy',
+          alt: '',
+          class: 'product-card__image product-card__image--secondary'
+        -%}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'product-apparel-1' | placeholder_svg_tag: 'placeholder-svg product-card__image' }}
+    {%- endif -%}
+
+    {%- if product != blank -%}
+      <div class="product-card__badges">
+        {%- if product.available == false -%}
+          <span class="badge badge--sold-out">{{ 'general.badges.sold_out' | t }}</span>
+        {%- elsif on_sale and settings.card_show_sale_badge -%}
+          <span class="badge badge--sale">{{ 'general.badges.sale' | t }}</span>
+        {%- elsif is_new -%}
+          <span class="badge badge--new">{{ 'general.badges.new' | t }}</span>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="product-card__info">
+    {%- if subtitle != blank -%}
+      <p class="product-card__subtitle">{{ subtitle }}</p>
+    {%- endif -%}
+    <{{ card_heading }} class="product-card__title">
+      {%- if product != blank -%}
+        <a class="product-card__link" href="{{ product.url }}">{{ product.title }}</a>
+      {%- else -%}
+        {{ 'general.placeholders.product_title' | t }}
+      {%- endif -%}
+    </{{ card_heading }}>
+    {%- if product != blank -%}
+      {%- render 'price', product: product, class: 'product-card__price' -%}
+    {%- endif -%}
+  </div>
+</article>
+
+{% stylesheet %}
+  .product-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-inline-size: 0;
+  }
+
+  .product-card__media {
+    isolation: isolate;
+  }
+
+  .product-card__image {
+    transition:
+      opacity var(--duration) var(--ease),
+      transform var(--duration) var(--ease);
+  }
+
+  .product-card__image--secondary {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+
+  @media (hover: hover) {
+    .product-card:hover .product-card__image--secondary {
+      opacity: 1;
+    }
+
+    .product-card:hover .product-card__image:only-of-type {
+      transform: scale(1.03);
+    }
+  }
+
+  .product-card__badges {
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-start: 10px;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .product-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .product-card__subtitle {
+    color: var(--color-muted);
+    font-size: 12.5px;
+    font-weight: 600;
+  }
+
+  .product-card__title {
+    font-size: var(--text-md);
+    font-weight: 600;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .product-card__link {
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 2px solid var(--color-text);
+        outline-offset: 3px;
+        border-radius: var(--radius-card);
+      }
+    }
+  }
+
+  .product-card__price {
+    margin-block-start: 2px;
+    font-size: var(--text-lg);
+  }
+{% endstylesheet %}

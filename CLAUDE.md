@@ -109,12 +109,13 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 ## Commands
 
 ```bash
+npm run theme:validate   # Shopify's official Liquid validator (all files, or pass file paths)
 npm run theme:check      # Shopify theme-check (lint)
+npm run i18n             # build locales/* from the translation parts in i18n/ (i18n:check verifies)
 npm run format           # prettier (liquid, css, js, json)
 npm run format:check
 npm run qa:shots         # screenshots he/en/ar x mobile/desktop (needs SW_PREVIEW_THEME_ID, SW_STOREFRONT_PASSWORD)
 npm run qa:a11y          # axe accessibility scan (same env)
-node .claude/skills/shopify/scripts/validate.mjs --api liquid --theme-path . --files <a,b>   # Liquid validator
 node scripts/catalog/fetch-page.mjs "<url>"   # render a product page and dump its data (used by product-scout)
 ```
 
@@ -127,7 +128,8 @@ node scripts/catalog/fetch-page.mjs "<url>"   # render a product page and dump i
 catalog/            product pipeline: schema, taxonomy, pricing, metafield plan, incoming/ready/published
 design/             approved design tokens + notes
 scripts/            QA (screenshots, a11y) and catalog helpers
-(theme folders)     layout/ templates/ sections/ blocks/ snippets/ assets/ config/ locales/  ← created when theme work starts
+i18n/               translation parts per area, built into locales/ by npm run i18n
+(theme folders)     layout/ templates/ sections/ blocks/ snippets/ assets/ config/ locales/
 ```
 
 ## Open items (waiting on the owner)

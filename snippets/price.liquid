@@ -1,0 +1,50 @@
+{%- doc -%}
+  Price with sale state, compare-at price and "from" for products whose variants differ in price.
+  Prices use money_without_trailing_zeros (₪120 rather than ₪120.00). Screen readers hear
+  "sale price / regular price" labels.
+
+  @param {product} [product] - Product (uses the selected or first available variant, plus price range)
+  @param {variant} [variant] - A specific variant; takes precedence over product
+  @param {string} [class] - Extra classes, e.g. 'price--large'
+
+  @example
+  {% render 'price', product: product %}
+{%- enddoc -%}
+{%- liquid
+  if variant != blank
+    assign target = variant
+    assign varies = false
+  else
+    assign target = product.selected_or_first_available_variant
+    assign varies = product.price_varies
+  endif
+
+  assign current = target.price
+  assign compare = target.compare_at_price
+  if varies
+    assign current = product.price_min
+    assign compare = product.compare_at_price_min
+  endif
+
+  assign on_sale = false
+  if compare > current
+    assign on_sale = true
+  endif
+-%}
+<div class="price{% if on_sale %} price--sale{% endif %}{% if class != blank %} {{ class }}{% endif %}">
+  {%- if on_sale -%}
+    <span class="visually-hidden">{{ 'general.price.sale_price' | t }}</span>
+  {%- endif -%}
+  <span class="price__current">
+    {%- if varies -%}
+      {%- assign current_money = current | money_without_trailing_zeros -%}
+      {{- 'general.price.from_price' | t: price: current_money -}}
+    {%- else -%}
+      {{- current | money_without_trailing_zeros -}}
+    {%- endif -%}
+  </span>
+  {%- if on_sale -%}
+    <span class="visually-hidden">{{ 'general.price.regular_price' | t }}</span>
+    <s class="price__compare">{{ compare | money_without_trailing_zeros }}</s>
+  {%- endif -%}
+</div>

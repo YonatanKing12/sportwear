@@ -1,0 +1,140 @@
+{%- doc -%}
+  Language switcher. A plain form post, so it works without JavaScript: each language is a submit
+  button carrying its language code, and Shopify redirects to the same page in that language.
+  Renders nothing when the store has only one published language.
+
+  @param {string} id - Unique id for this instance, e.g. 'HeaderLocalization'
+  @param {string} [style] - 'inline' (default: names in a row, used in the footer) or 'compact' (current language code button that reveals the list, used in the header)
+
+  @example
+  {% render 'localization-switcher', id: 'FooterLocalization' %}
+{%- enddoc -%}
+{%- if localization.available_languages.size > 1 -%}
+  {%- assign switcher_style = style | default: 'inline' -%}
+  {%- form 'localization', id: id, class: 'localization' -%}
+    <input type="hidden" name="return_to" value="{{ request.path }}">
+    {%- if switcher_style == 'compact' -%}
+      <details class="localization__compact">
+        <summary class="localization__summary">
+          {%- render 'icon', name: 'globe', size: 20 -%}
+          <span class="visually-hidden">{{ 'localization.language_label' | t }}:</span>
+          <span lang="{{ localization.language.iso_code }}">{{ localization.language.iso_code | upcase }}</span>
+        </summary>
+        <ul class="localization__menu" role="list">
+          {%- for language in localization.available_languages -%}
+            <li>
+              <button
+                class="localization__option"
+                type="submit"
+                name="language_code"
+                value="{{ language.iso_code }}"
+                lang="{{ language.iso_code }}"
+                {% if language.iso_code == localization.language.iso_code %}
+                  aria-current="true"
+                {% endif %}
+              >
+                {{ language.endonym_name | capitalize }}
+              </button>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </details>
+    {%- else -%}
+      <div class="localization__inline" role="group" aria-label="{{ 'localization.language_label' | t }}">
+        {%- render 'icon', name: 'globe', size: 18 -%}
+        {%- for language in localization.available_languages -%}
+          {%- unless forloop.first -%}
+            <span class="localization__separator" aria-hidden="true">·</span>
+          {%- endunless -%}
+          <button
+            class="localization__option"
+            type="submit"
+            name="language_code"
+            value="{{ language.iso_code }}"
+            lang="{{ language.iso_code }}"
+            {% if language.iso_code == localization.language.iso_code %}
+              aria-current="true"
+            {% endif %}
+          >
+            {{ language.endonym_name | capitalize }}
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  {%- endform -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .localization__inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2px var(--space-2);
+    font-size: var(--text-md);
+  }
+
+  .localization__separator {
+    color: var(--color-muted);
+  }
+
+  .localization__option {
+    min-block-size: var(--touch-target);
+    padding: 0 var(--space-1);
+    border: 0;
+    background: none;
+    color: var(--color-muted);
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color-text);
+    }
+
+    &[aria-current='true'] {
+      color: var(--color-text);
+      font-weight: 800;
+    }
+  }
+
+  .localization__compact {
+    position: relative;
+  }
+
+  .localization__summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-block-size: var(--touch-target);
+    padding-inline: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 800;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .localization__menu {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline-end: 0;
+    z-index: var(--z-overlay);
+    display: grid;
+    min-inline-size: 150px;
+    margin: 0;
+    padding: var(--space-2);
+    list-style: none;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-background);
+    box-shadow: 0 12px 32px rgb(0 0 0 / 0.18);
+
+    & .localization__option {
+      inline-size: 100%;
+      padding-inline: var(--space-3);
+      text-align: start;
+    }
+  }
+{% endstylesheet %}
