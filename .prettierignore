@@ -1,0 +1,9 @@
+# Only our own code is formatted; vendored skills keep their upstream formatting.
+node_modules/
+.claude/
+qa-output/
+catalog/images/
+package-lock.json
+*.md
+# Written by the Shopify theme editor via the GitHub integration; leave Shopify's formatting alone.
+config/settings_data.json

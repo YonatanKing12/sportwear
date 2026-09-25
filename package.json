@@ -1,0 +1,27 @@
+{
+  "name": "sportwear",
+  "private": true,
+  "type": "module",
+  "description": "SportWear Shopify store: from-scratch theme (repo root), catalog pipeline and QA tooling.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "theme:check": "node --no-deprecation scripts/theme-check.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "catalog:validate": "node scripts/catalog/validate.mjs",
+    "qa:shots": "node scripts/qa/screenshots.mjs",
+    "qa:a11y": "node scripts/qa/a11y.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@shopify/prettier-plugin-liquid": "1.11.1",
+    "@shopify/theme-check-common": "3.29.1",
+    "@shopify/theme-check-node": "3.29.1",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "playwright": "1.56.1",
+    "prettier": "3.9.9"
+  }
+}

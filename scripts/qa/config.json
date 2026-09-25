@@ -1,0 +1,20 @@
+{
+  "_note": "Pages checked by qa:shots and qa:a11y. Add the product page once products exist, e.g. { \"name\": \"product\", \"path\": \"/products/<handle>\" }. Locale prefixes assume Hebrew is the store's primary language (root = Hebrew). Filter a run with SW_QA_PAGES, SW_QA_LOCALES, SW_QA_VIEWPORTS (comma-separated names).",
+  "store_url": "https://sfgzdp-1m.myshopify.com",
+  "locales": [
+    { "code": "he", "path_prefix": "" },
+    { "code": "en", "path_prefix": "/en" },
+    { "code": "ar", "path_prefix": "/ar" }
+  ],
+  "viewports": [
+    { "name": "mobile", "width": 390, "height": 844, "deviceScaleFactor": 2, "isMobile": true, "hasTouch": true },
+    { "name": "desktop", "width": 1440, "height": 900, "deviceScaleFactor": 1, "isMobile": false, "hasTouch": false }
+  ],
+  "pages": [
+    { "name": "home", "path": "/" },
+    { "name": "collection", "path": "/collections/all" },
+    { "name": "search", "path": "/search?q=jersey" },
+    { "name": "cart", "path": "/cart" },
+    { "name": "not-found", "path": "/pages/qa-page-that-does-not-exist" }
+  ]
+}

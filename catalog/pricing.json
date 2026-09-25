@@ -1,0 +1,23 @@
+{
+  "_note": "Selling prices in ILS. Only the owner sets them. A null price means 'ask the owner' — agents must never fill it themselves.",
+  "currency": "ILS",
+  "display_prices_include_vat": true,
+  "rules": [
+    { "product_type": "Football Jersey", "audience": "adult", "price": 120, "source": "owner, 2026-09-25" },
+    { "product_type": "Football Jersey", "audience": "kids", "price": null, "source": "TBD" },
+    { "product_type": "Basketball Jersey", "audience": "adult", "price": null, "source": "TBD" },
+    { "product_type": "Basketball Jersey", "audience": "kids", "price": null, "source": "TBD" },
+    { "product_type": "Basketball Shorts", "audience": "adult", "price": null, "source": "TBD" },
+    { "product_type": "Basketball Shorts", "audience": "kids", "price": null, "source": "TBD" }
+  ],
+  "overrides": {
+    "_note": "Per-handle prices or sale prices decided by the owner, e.g. { \"barcelona-home-jersey-2026-27\": { \"price\": 99, \"compare_at_price\": 120 } }"
+  },
+  "shipping": {
+    "flat_rate": 35,
+    "free_shipping_threshold": null,
+    "recommended_free_shipping_threshold": 200,
+    "delivery_promise": "home delivery within 3 business days",
+    "_note": "Threshold not decided yet. The theme's free-shipping bar reads a theme setting that must match the rate configured in Shopify admin."
+  }
+}

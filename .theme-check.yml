@@ -1,0 +1,10 @@
+# Shopify Theme Check configuration for the SportWear theme (repo root = theme root).
+# Run with: npm run theme:check
+extends: theme-check:recommended
+ignore:
+  - node_modules/**
+  - .claude/**
+  - catalog/**
+  - design/**
+  - scripts/**
+  - qa-output/**

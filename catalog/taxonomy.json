@@ -1,0 +1,139 @@
+{
+  "_note": "Names used in titles, tags, filters and translations. Only the main session edits this file (scouts propose new teams inline). Arabic and Hebrew names must be reviewed by the owner before first use in a published product.",
+  "sports": {
+    "football": { "he": "כדורגל", "en": "Football", "ar": "كرة القدم" },
+    "basketball": { "he": "כדורסל", "en": "Basketball", "ar": "كرة السلة" }
+  },
+  "product_types": {
+    "Football Jersey": {
+      "code": "FJ",
+      "sport": "football",
+      "he": "חולצת כדורגל",
+      "en": "Football Jersey",
+      "ar": "قميص كرة قدم",
+      "title_templates": {
+        "he": "{kit.he_football} {team.he} {season}",
+        "en": "{team.en} {kit.en} Jersey {season}",
+        "ar": "قميص {team.ar} {kit.ar} {season}"
+      }
+    },
+    "Basketball Jersey": {
+      "code": "BJ",
+      "sport": "basketball",
+      "he": "גופיית כדורסל",
+      "en": "Basketball Jersey",
+      "ar": "قميص كرة سلة",
+      "title_templates": {
+        "he": "גופיית כדורסל {team.he} {season}{kit_suffix.he}",
+        "en": "{team.en} Basketball Jersey {season}{kit_suffix.en}",
+        "ar": "قميص كرة سلة {team.ar} {season}{kit_suffix.ar}"
+      }
+    },
+    "Basketball Shorts": {
+      "code": "BS",
+      "sport": "basketball",
+      "he": "מכנס כדורסל",
+      "en": "Basketball Shorts",
+      "ar": "شورت كرة سلة",
+      "title_templates": {
+        "he": "מכנס כדורסל {team.he} {season}{kit_suffix.he}",
+        "en": "{team.en} Basketball Shorts {season}{kit_suffix.en}",
+        "ar": "شورت كرة سلة {team.ar} {season}{kit_suffix.ar}"
+      }
+    }
+  },
+  "title_rules": {
+    "kit_suffix": "Empty for kit=home. Otherwise ' – ' + kit name (he/en/ar). Used by basketball types only.",
+    "kids_suffix": { "he": " – ילדים", "en": " – Kids", "ar": " – أطفال" },
+    "season_format": "Short form in titles (26/27), long form in handles and tags (2026-27)."
+  },
+  "kits": {
+    "home": { "code": "H", "he": "בית", "he_football": "חולצת בית", "en": "Home", "ar": "الأساسي" },
+    "away": { "code": "A", "he": "חוץ", "he_football": "חולצת חוץ", "en": "Away", "ar": "الاحتياطي" },
+    "third": { "code": "T", "he": "שלישית", "he_football": "חולצה שלישית", "en": "Third", "ar": "الثالث" },
+    "fourth": { "code": "F", "he": "רביעית", "he_football": "חולצה רביעית", "en": "Fourth", "ar": "الرابع" },
+    "special": {
+      "code": "S",
+      "he": "מהדורה מיוחדת",
+      "he_football": "חולצת מהדורה מיוחדת",
+      "en": "Special Edition",
+      "ar": "إصدار خاص"
+    },
+    "training": { "code": "TR", "he": "אימון", "he_football": "חולצת אימון", "en": "Training", "ar": "تدريب" }
+  },
+  "audiences": {
+    "adult": { "code": "A", "he": "מבוגרים", "en": "Adults", "ar": "الكبار" },
+    "kids": { "code": "K", "he": "ילדים", "en": "Kids", "ar": "الأطفال" }
+  },
+  "size_systems": {
+    "adult": { "values": ["S", "M", "L", "XL"], "optional": ["XXL"] },
+    "kids": {
+      "values": ["5-6", "7-8", "9-10", "11-12", "13-14"],
+      "height_cm": { "5-6": 116, "7-8": 128, "9-10": 140, "11-12": 152, "13-14": 164 },
+      "note": "Brand labels (Nike YXS-YXL, adidas 116-164, ...) are kept in source_size_label and mapped to these buckets; inexact mappings are flagged for the owner."
+    },
+    "option_name": { "he": "מידה", "en": "Size", "ar": "المقاس" }
+  },
+  "leagues": {
+    "premier-league": {
+      "sport": "football",
+      "he": "פרמייר ליג",
+      "en": "Premier League",
+      "ar": "الدوري الإنجليزي الممتاز"
+    },
+    "la-liga": { "sport": "football", "he": "לה ליגה", "en": "LaLiga", "ar": "الدوري الإسباني" },
+    "serie-a": { "sport": "football", "he": "סרייה A", "en": "Serie A", "ar": "الدوري الإيطالي" },
+    "bundesliga": { "sport": "football", "he": "בונדסליגה", "en": "Bundesliga", "ar": "الدوري الألماني" },
+    "ligue-1": { "sport": "football", "he": "ליג 1", "en": "Ligue 1", "ar": "الدوري الفرنسي" },
+    "israeli-premier-league": {
+      "sport": "football",
+      "he": "ליגת העל",
+      "en": "Israeli Premier League",
+      "ar": "الدوري الإسرائيلي الممتاز"
+    },
+    "national-teams": { "sport": "football", "he": "נבחרות", "en": "National Teams", "ar": "المنتخبات" },
+    "nba": { "sport": "basketball", "he": "NBA", "en": "NBA", "ar": "NBA" },
+    "euroleague": { "sport": "basketball", "he": "יורוליג", "en": "EuroLeague", "ar": "اليوروليغ" },
+    "israeli-basketball-league": {
+      "sport": "basketball",
+      "he": "ליגת העל בכדורסל",
+      "en": "Israeli Basketball Premier League",
+      "ar": "دوري كرة السلة الإسرائيلي الممتاز"
+    }
+  },
+  "teams": {
+    "football:real-madrid": {
+      "slug": "real-madrid",
+      "code": "RMA",
+      "he": "ריאל מדריד",
+      "en": "Real Madrid",
+      "ar": "ريال مدريد",
+      "leagues": ["la-liga"]
+    },
+    "football:barcelona": {
+      "slug": "barcelona",
+      "code": "BAR",
+      "he": "ברצלונה",
+      "en": "FC Barcelona",
+      "ar": "برشلونة",
+      "leagues": ["la-liga"]
+    },
+    "basketball:maccabi-tel-aviv": {
+      "slug": "maccabi-tel-aviv",
+      "code": "MTA",
+      "he": "מכבי תל אביב",
+      "en": "Maccabi Tel Aviv",
+      "ar": "مكابي تل أبيب",
+      "leagues": ["euroleague", "israeli-basketball-league"]
+    },
+    "basketball:los-angeles-lakers": {
+      "slug": "los-angeles-lakers",
+      "code": "LAL",
+      "he": "לוס אנג'לס לייקרס",
+      "he_short": "לייקרס",
+      "en": "Los Angeles Lakers",
+      "ar": "لوس أنجلوس ليكرز",
+      "leagues": ["nba"]
+    }
+  }
+}

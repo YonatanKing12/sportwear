@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+.claude/skills/shopify/node_modules/
+
+# QA output (screenshots, reports)
+qa-output/
+
+# local-only product images used for inspection
+catalog/images/
+
+# secrets and local env
+.env
+.env.*
+*.pem
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*

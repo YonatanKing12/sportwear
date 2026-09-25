@@ -1,0 +1,101 @@
+{
+  "_status": "PLANNED — nothing here exists in Shopify yet. Create only after the owner approves, via the Shopify MCP GraphQL workflow (metaobjectDefinitionCreate / metafieldDefinitionCreate).",
+  "metaobjects": [
+    {
+      "type": "sw_league",
+      "name": "League",
+      "translatable": true,
+      "storefront_access": "PUBLIC_READ",
+      "fields": [
+        { "key": "name", "type": "single_line_text_field", "required": true },
+        { "key": "slug", "type": "single_line_text_field", "required": true },
+        { "key": "sport", "type": "single_line_text_field", "choices": ["football", "basketball"] }
+      ]
+    },
+    {
+      "type": "sw_team",
+      "name": "Team",
+      "translatable": true,
+      "storefront_access": "PUBLIC_READ",
+      "fields": [
+        { "key": "name", "type": "single_line_text_field", "required": true },
+        { "key": "short_name", "type": "single_line_text_field" },
+        { "key": "slug", "type": "single_line_text_field", "required": true },
+        { "key": "sport", "type": "single_line_text_field", "choices": ["football", "basketball"] },
+        { "key": "leagues", "type": "list.metaobject_reference", "metaobject": "sw_league" },
+        { "key": "primary_color", "type": "color" }
+      ]
+    },
+    {
+      "type": "sw_size_chart",
+      "name": "Size chart",
+      "translatable": true,
+      "storefront_access": "PUBLIC_READ",
+      "fields": [
+        { "key": "name", "type": "single_line_text_field", "required": true },
+        { "key": "audience", "type": "single_line_text_field", "choices": ["adult", "kids"] },
+        { "key": "table", "type": "json", "note": "rows: size, height_cm, chest_cm, length_cm" },
+        { "key": "fit_note", "type": "multi_line_text_field" }
+      ]
+    }
+  ],
+  "product_metafields": [
+    {
+      "namespace": "sportwear",
+      "key": "team",
+      "type": "metaobject_reference",
+      "metaobject": "sw_team",
+      "storefront_access": "PUBLIC_READ"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "leagues",
+      "type": "list.metaobject_reference",
+      "metaobject": "sw_league",
+      "storefront_access": "PUBLIC_READ"
+    },
+    { "namespace": "sportwear", "key": "season", "type": "single_line_text_field", "storefront_access": "PUBLIC_READ" },
+    {
+      "namespace": "sportwear",
+      "key": "kit",
+      "type": "single_line_text_field",
+      "choices": ["home", "away", "third", "fourth", "special", "training"],
+      "storefront_access": "PUBLIC_READ"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "audience",
+      "type": "single_line_text_field",
+      "choices": ["adult", "kids"],
+      "storefront_access": "PUBLIC_READ"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "size_chart",
+      "type": "metaobject_reference",
+      "metaobject": "sw_size_chart",
+      "storefront_access": "PUBLIC_READ"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "counterpart",
+      "type": "product_reference",
+      "storefront_access": "PUBLIC_READ",
+      "note": "adult <-> kids version"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "complements",
+      "type": "list.product_reference",
+      "storefront_access": "PUBLIC_READ",
+      "note": "set pieces, e.g. tank <-> shorts"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "source_url",
+      "type": "url",
+      "storefront_access": "NONE",
+      "note": "internal only"
+    }
+  ]
+}
