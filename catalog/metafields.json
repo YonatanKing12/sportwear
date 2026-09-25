@@ -1,5 +1,5 @@
 {
-  "_status": "PLANNED — nothing here exists in Shopify yet. Create only after the owner approves, via the Shopify MCP GraphQL workflow (metaobjectDefinitionCreate / metafieldDefinitionCreate).",
+  "_status": "CREATED in Shopify on 2026-09-25. IDs are in catalog/store-setup.json. Change definitions only via the Shopify MCP GraphQL workflow.",
   "metaobjects": [
     {
       "type": "sw_league",

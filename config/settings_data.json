@@ -84,6 +84,7 @@
     "cart_type": "drawer",
     "cart_show_upsell": true,
     "cart_show_note": false,
-    "predictive_search": true
+    "predictive_search": true,
+    "free_shipping_threshold": 250
   }
 }

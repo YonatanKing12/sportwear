@@ -1,0 +1,90 @@
+{
+  "_note": "What exists in the Shopify store (created via the Admin GraphQL API on 2026-09-25). Keep in sync when anything is added or removed.",
+  "shop": "sfgzdp-1m.myshopify.com",
+  "online_store_publication": "gid://shopify/Publication/309753676080",
+  "location": {
+    "Shop location (IL)": "gid://shopify/Location/114120163632"
+  },
+  "locales": {
+    "en": "primary (to be switched to he by the owner in Settings → Languages)",
+    "he": "published",
+    "ar": "published"
+  },
+  "metaobject_definitions": {
+    "sw_league": "gid://shopify/MetaobjectDefinition/22150512944",
+    "sw_size_chart": "gid://shopify/MetaobjectDefinition/22150545712",
+    "sw_team": "gid://shopify/MetaobjectDefinition/22150578480"
+  },
+  "product_metafield_definitions": {
+    "sportwear.team": "gid://shopify/MetafieldDefinition/277608497456",
+    "sportwear.leagues": "gid://shopify/MetafieldDefinition/277608530224",
+    "sportwear.season": "gid://shopify/MetafieldDefinition/277608562992",
+    "sportwear.kit": "gid://shopify/MetafieldDefinition/277608595760",
+    "sportwear.audience": "gid://shopify/MetafieldDefinition/277608628528",
+    "sportwear.size_chart": "gid://shopify/MetafieldDefinition/277608661296",
+    "sportwear.counterpart": "gid://shopify/MetafieldDefinition/277608694064",
+    "sportwear.complements": "gid://shopify/MetafieldDefinition/277608726832",
+    "sportwear.source_url": "gid://shopify/MetafieldDefinition/277608759600"
+  },
+  "metaobjects": {
+    "sw_league": {
+      "premier-league": "gid://shopify/Metaobject/282502267184",
+      "la-liga": "gid://shopify/Metaobject/282502299952",
+      "serie-a": "gid://shopify/Metaobject/282502332720",
+      "bundesliga": "gid://shopify/Metaobject/282502365488",
+      "ligue-1": "gid://shopify/Metaobject/282502398256",
+      "israeli-premier-league": "gid://shopify/Metaobject/282502431024",
+      "national-teams": "gid://shopify/Metaobject/282502463792",
+      "nba": "gid://shopify/Metaobject/282502496560",
+      "euroleague": "gid://shopify/Metaobject/282502529328",
+      "israeli-basketball-league": "gid://shopify/Metaobject/282502562096"
+    },
+    "sw_team (demo only, delete before launch)": {
+      "demo-fc": "gid://shopify/Metaobject/282502594864",
+      "demo-united": "gid://shopify/Metaobject/282502627632",
+      "demo-stars": "gid://shopify/Metaobject/282502660400"
+    }
+  },
+  "collections (smart, published to Online Store)": {
+    "football": "gid://shopify/Collection/512840302896",
+    "basketball": "gid://shopify/Collection/512840335664",
+    "basketball-jerseys": "gid://shopify/Collection/512840368432",
+    "basketball-shorts": "gid://shopify/Collection/512840401200",
+    "basketball-sets": "gid://shopify/Collection/512840433968",
+    "kids": "gid://shopify/Collection/512840466736",
+    "sale": "gid://shopify/Collection/512840499504",
+    "new": "gid://shopify/Collection/512840532272",
+    "best-sellers": "gid://shopify/Collection/512840565040",
+    "premier-league": "gid://shopify/Collection/512840597808",
+    "la-liga": "gid://shopify/Collection/512840630576",
+    "serie-a": "gid://shopify/Collection/512840663344",
+    "bundesliga": "gid://shopify/Collection/512840696112",
+    "ligue-1": "gid://shopify/Collection/512840728880",
+    "israeli-premier-league": "gid://shopify/Collection/512840761648",
+    "national-teams": "gid://shopify/Collection/512840794416",
+    "nba": "gid://shopify/Collection/512840827184",
+    "euroleague": "gid://shopify/Collection/512840859952",
+    "israeli-basketball-league": "gid://shopify/Collection/512840892720"
+  },
+  "pages": {
+    "contact": "gid://shopify/Page/162268021040",
+    "team-orders": "gid://shopify/Page/162272051504",
+    "faq": "gid://shopify/Page/162272084272",
+    "size-guide": "gid://shopify/Page/162272117040",
+    "shipping-returns (DRAFT, placeholders for the lawyer)": "gid://shopify/Page/162272149808",
+    "accessibility (DRAFT, placeholders)": "gid://shopify/Page/162272182576"
+  },
+  "menus": {
+    "main-menu": "gid://shopify/Menu/316216410416",
+    "footer": "gid://shopify/Menu/316216443184",
+    "footer-shop": "gid://shopify/Menu/316236693808"
+  },
+  "shipping (found configured, not changed)": {
+    "Israel": "₪35 'רגיל'; free at ₪250 and above",
+    "International (27 countries)": "₪58 — owner to decide whether to keep"
+  },
+  "demo_products": {
+    "_note": "Theme-preview fixtures, tag 'demo'. Created ACTIVE but not published to any channel. Owner decides: keep and add the rest, switch to draft, or delete.",
+    "demo-fc-home-jersey-2026-27": "gid://shopify/Product/15307595448624"
+  }
+}

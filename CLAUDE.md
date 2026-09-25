@@ -14,7 +14,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 - **Audience:** sports fans. Kids 6–12 (bought by parents), 12–18, 18–26 and 26+ (owner's
   estimate), plus amateur teams ordering in bulk.
 - **Stock and delivery:** stock is held in Israel. Home delivery within 3 business days.
-- **Shipping:** ₪35. The free-shipping threshold is not decided (₪200 recommended).
+- **Shipping:** ₪35. The free-shipping threshold is not decided (₪200 recommended). Admin currently has
+  free shipping from ₪250, and the theme setting `free_shipping_threshold` mirrors it (250).
 - **Price example:** a football shirt at ₪120. Lots of promotions are planned.
 - **Returns:** up to 45 days. The owner said "unopened"; we recommended "unworn, unwashed, tags on"
   instead, pending a lawyer's review of the wording.
@@ -32,9 +33,11 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | password-protected |
-| Catalog | 0 products, 0 orders |
+| Catalog | 0 real products, 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision |
 | Live theme | Horizon, a placeholder that will be replaced by our theme |
-| Locales | only `en` (primary). Hebrew must become primary before products are created; `en` and `ar` added |
+| Locales | `en` is still primary; `he` and `ar` are published. The owner must make Hebrew primary (Settings → Languages; the API can't) |
+| Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
+| Shipping | Israel ₪35, free from ₪250. An international zone (27 countries, ₪58) is active, probably a default |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |
 
 ## Locked decisions
@@ -137,7 +140,8 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Logo
 - Which card gateway (and whether it supports Bit)
 - Selling prices for every product type (kids, tanks, shorts)
-- The free-shipping threshold
+- The free-shipping threshold (admin says ₪250 today) and whether to keep international shipping
+- Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
 - The final returns wording
 - Buying the domain
 - The storefront password, for QA screenshots

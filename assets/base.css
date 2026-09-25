@@ -612,6 +612,11 @@ a {
     block-size: 100%;
     object-fit: var(--media-fit, var(--card-image-fit, contain));
   }
+
+  /* Supplier photos are shot on white: multiply melts the white backdrop into the tile colour. */
+  & > img {
+    mix-blend-mode: multiply;
+  }
 }
 
 .placeholder-svg {
