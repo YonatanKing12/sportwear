@@ -1,0 +1,57 @@
+{%- doc -%}
+  Site-level JSON-LD: Organization and WebSite (with the search action). Rendered on the home page
+  only. Product and breadcrumb data are output by the product and collection sections.
+{%- enddoc -%}
+{%- if request.page_type == 'index' -%}
+  {%- liquid
+    assign site_url = request.origin | append: routes.root_url
+    assign search_target = request.origin | append: routes.search_url | append: '?q={search_term_string}'
+    assign same_as = ''
+    assign platforms = 'instagram,tiktok,facebook,youtube' | split: ','
+    for platform in platforms
+      assign setting_key = 'social_' | append: platform
+      assign social_url = settings[setting_key]
+      if social_url != blank
+        assign same_as = same_as | append: social_url | append: '|'
+      endif
+    endfor
+    assign same_as = same_as | split: '|' | compact
+  -%}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": {{ shop.name | json }},
+      "url": {{ site_url | json }}
+      {%- if settings.logo != blank -%}
+        ,"logo": {{ settings.logo | image_url: width: 600 | prepend: 'https:' | json }}
+      {%- endif -%}
+      {%- if same_as.size > 0 -%}
+        ,"sameAs": {{ same_as | json }}
+      {%- endif -%}
+      {%- if settings.support_phone != blank or settings.support_email != blank -%}
+        ,"contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "areaServed": "IL",
+          "availableLanguage": ["he", "en", "ar"]
+          {%- if settings.support_phone != blank -%},"telephone": {{ settings.support_phone | json }}{%- endif -%}
+          {%- if settings.support_email != blank -%},"email": {{ settings.support_email | json }}{%- endif -%}
+        }
+      {%- endif %}
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": {{ shop.name | json }},
+      "url": {{ site_url | json }},
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {{ search_target | json }},
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+{%- endif -%}
