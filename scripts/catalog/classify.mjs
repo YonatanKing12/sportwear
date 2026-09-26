@@ -328,10 +328,11 @@ const plan = {
   },
   warnings,
   unclassified: unclassified.map((r) => ({ handle: r.handle, title: r.title, missing: r.problems })),
-  changes: changed.map(({ id, handle, title, classification, add, remove, notes }) => ({
+  changes: changed.map(({ id, handle, title, productType, classification, add, remove, notes }) => ({
     id,
     handle,
     title,
+    productType,
     classification,
     add,
     remove,
