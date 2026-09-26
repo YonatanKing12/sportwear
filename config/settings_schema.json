@@ -307,7 +307,7 @@
       {
         "type": "select",
         "id": "card_image_ratio",
-        "default": "portrait",
+        "default": "square",
         "label": "t:settings_schema.product_cards.settings.card_image_ratio.label",
         "options": [
           {

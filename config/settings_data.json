@@ -76,7 +76,7 @@
     "radius_card": 4,
     "radius_button": 4,
     "card_subtitle": "team",
-    "card_image_ratio": "portrait",
+    "card_image_ratio": "square",
     "card_image_fit": "contain",
     "card_secondary_image": true,
     "card_show_sale_badge": true,

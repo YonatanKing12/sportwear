@@ -112,7 +112,8 @@ button {
   --radius-badge: 3px;
   --radius-chip: 999px;
 
-  --color-tile: #f1f2f4;
+  /* The studio background of every product photo, so a photo fills its tile without a visible edge. */
+  --color-tile: #f4f4f4;
   --color-badge-sale: #ff5a36;
   --color-on-badge-sale: #0d0e11;
   --color-badge-dark: #0d0e11;
@@ -653,11 +654,6 @@ a {
     inline-size: 100%;
     block-size: 100%;
     object-fit: var(--media-fit, var(--card-image-fit, contain));
-  }
-
-  /* Supplier photos are shot on white: multiply melts the white backdrop into the tile colour. */
-  & > img {
-    mix-blend-mode: multiply;
   }
 }
 
