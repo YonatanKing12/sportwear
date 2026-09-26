@@ -288,10 +288,11 @@ const compiled = (preview, html, kind) => {
 {
   const world = smoke.world(smoke.pageSpec('index', 'en'));
   const def = { type: 'metaobject', id: 'chart', metaobject_type: 'sw_size_chart' };
-  const byHandle = world.resolveSetting(def, 'jerseyxie-football-adult', 'selftest');
+  // Shopify stores a metaobject setting as the entry's handle (templates/page.size-guide.json).
+  const byHandle = world.resolveSetting(def, 'jerseyxie-football-adult-fan', 'selftest');
   const byType = world.resolveSetting(def, 'sw_size_chart/jerseyxie-football-kids-set', 'selftest');
   const byGid = world.resolveSetting(def, byHandle?.system.id, 'selftest');
-  check('metaobject setting by handle', byHandle?.name.value === 'Size chart – adult football jersey');
+  check('metaobject setting by handle', byHandle?.name.value === 'Adult football jersey sizes');
   check('metaobject setting by type/handle', byType?.table.value.rows.length === 7);
   check('metaobject setting by GID', byGid === byHandle);
   check('metaobject setting of another type is nil', world.resolveSetting(def, 'sw_team/demo-fc', 'selftest') === null);

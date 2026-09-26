@@ -69,7 +69,8 @@ axe violations (WCAG 2.0/2.1/2.2 A+AA).
 - **section / block objects**: id, settings (schema defaults + JSON; resource settings resolved:
   collection, product, page, blog, article, link_list, collection_list, product_list, url
   `shopify://…`, image_picker, color, color_scheme, video_url, metaobject and metaobject_list (by
-  handle, `type/handle`, `shopify://metaobjects/type/handle` or GID, against the mock metaobjects);
+  handle, the form Shopify stores, or `type/handle`, `shopify://metaobjects/type/handle` or GID,
+  against the mock metaobjects, which carry the store's size-chart handles);
   dynamic sources `{{ closest.product }}`),
   blocks, block_order, index, index0, location, `shopify_attributes`.
 - **Theme blocks**: `{% content_for 'blocks' %}` (nested, `closest.*` passing), static blocks
@@ -95,7 +96,8 @@ axe violations (WCAG 2.0/2.1/2.2 A+AA).
   "قميص", `sportwear.*` metafields with `.value`, team/league/size-chart metaobjects, counterpart and
   complements), plus 2 preview-only products carrying the supplier jerseyxie's size charts (their
   rows are read from `catalog/size-charts/jerseyxie.json`, in the store's `{ "rows": [...] }` shape;
-  the demo charts are bare arrays), the store's collections plus team and player collections (NBA, EuroLeague, players,
+  the demo charts are bare arrays) and, like the store's supplier products, a size option named "מידה"
+  in every language (not translated), the store's collections plus team and player collections (NBA, EuroLeague, players,
   Premier League and LaLiga clubs; they borrow the demo products of their sport, Toronto is empty)
   with filters and sort options, the six store pages, a blog, the three menus (the main menu has three
   levels: basketball > NBA > 13 teams, basketball > players > 10 players, football > leagues > clubs),
