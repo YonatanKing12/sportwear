@@ -1,0 +1,249 @@
+{
+  "sections": {
+    "hero": {
+      "name": "Hero",
+      "headers": {
+        "content": "Text",
+        "buttons": "Buttons",
+        "visual": "Images"
+      },
+      "settings": {
+        "layout": {
+          "label": "Layout",
+          "options": {
+            "graphic": "Product shots on a circle",
+            "image": "Full-width photo"
+          }
+        },
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "heading": {
+          "info": "First line. Leave both heading lines empty to use the default text, which is already translated into every store language."
+        },
+        "heading_highlight": {
+          "label": "Highlighted line",
+          "info": "Second line, in the accent color."
+        },
+        "button_link": {
+          "info": "Leave empty to link to the collection whose URL ends in /collections/football, or to all products until it exists."
+        },
+        "show_secondary_button": {
+          "label": "Show second button"
+        },
+        "secondary_button_link": {
+          "info": "Leave empty to link to the collection whose URL ends in /collections/basketball, or to all products until it exists."
+        },
+        "season": {
+          "label": "Outlined text behind the images",
+          "info": "For example the season, 26/27. Leave empty to hide it."
+        },
+        "image_1": {
+          "label": "Product image 1",
+          "info": "A product photo with a transparent background (PNG), about 1000 × 1000 px. Without images, the circle and the outlined text are shown on their own."
+        },
+        "image_2": {
+          "label": "Product image 2"
+        },
+        "image": {
+          "info": "A landscape photo, at least 2000 px wide."
+        },
+        "image_mobile": {
+          "info": "Optional portrait photo for phones."
+        },
+        "overlay_opacity": {
+          "label": "Overlay strength",
+          "info": "Shades the photo behind the text so it stays readable."
+        },
+        "height": {
+          "label": "Height"
+        }
+      }
+    },
+    "trust_strip": {
+      "name": "Trust strip",
+      "settings": {
+        "info": {
+          "content": "Up to 4 benefits. A benefit with empty text uses the default text for its position (100% original, delivery, returns, secure payment), already translated into every store language."
+        }
+      },
+      "blocks": {
+        "item": {
+          "name": "Benefit",
+          "settings": {
+            "icon": {
+              "label": "Icon",
+              "options": {
+                "auto": "Automatic (matches the default text)",
+                "shield_check": "Shield",
+                "truck": "Delivery truck",
+                "return": "Return arrow",
+                "lock": "Lock",
+                "chat": "Chat",
+                "tag": "Price tag",
+                "users": "People"
+              }
+            },
+            "text": {
+              "info": "Leave empty to use the default text for this position."
+            }
+          }
+        }
+      }
+    },
+    "collection_links": {
+      "name": "Collection links",
+      "presets": {
+        "name": "Shop by league"
+      },
+      "settings": {
+        "subheading": {
+          "info": "Optional."
+        }
+      },
+      "blocks": {
+        "link": {
+          "name": "Link",
+          "settings": {
+            "collection": {
+              "info": "The link shows the collection's name, translated with the collection."
+            },
+            "label": {
+              "label": "Label",
+              "info": "Leave empty to use the collection's name."
+            },
+            "link": {
+              "info": "Optional. Use it to link somewhere other than the collection."
+            },
+            "featured": {
+              "label": "Highlight",
+              "info": "Shows this link in inverted colors."
+            }
+          }
+        }
+      }
+    },
+    "featured_collection": {
+      "name": "Featured collection",
+      "presets": {
+        "name": "Best sellers"
+      },
+      "settings": {
+        "heading": {
+          "info": "Leave empty to use the collection's name, which is translated with the collection."
+        },
+        "mobile_scroller": {
+          "label": "Swipe on mobile",
+          "info": "Shows the products in one row that customers swipe through, instead of a grid."
+        }
+      }
+    },
+    "promo_banner": {
+      "name": "Promo banner",
+      "headers": {
+        "content": "Text",
+        "images": "Images"
+      },
+      "settings": {
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "button_link": {
+          "info": "Leave empty to link to all products."
+        },
+        "image_1": {
+          "label": "Image 1",
+          "info": "A product photo with a transparent background (PNG), such as the jersey."
+        },
+        "image_2": {
+          "label": "Image 2",
+          "info": "For example the matching shorts. Without images, the banner shows text only."
+        }
+      }
+    },
+    "image_with_text": {
+      "name": "Image with text",
+      "headers": {
+        "image": "Image",
+        "content": "Text"
+      },
+      "settings": {
+        "bordered": {
+          "label": "Card with border"
+        },
+        "image_position": {
+          "label": "Order on desktop",
+          "options": {
+            "first": "Image first",
+            "last": "Text first"
+          }
+        },
+        "image": {
+          "info": "A product photo or a lifestyle photo. Without an image, a jersey illustration is shown."
+        },
+        "image_fit": {
+          "label": "Image fit",
+          "options": {
+            "contain": "Fit (the whole product on a light background)",
+            "cover": "Fill (crops the photo to fill the area)"
+          }
+        },
+        "show_badge": {
+          "label": "Show label on the image"
+        },
+        "badge": {
+          "label": "Label on the image"
+        },
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "button_link": {
+          "info": "Leave empty to link to all products."
+        }
+      }
+    },
+    "cta_band": {
+      "name": "Call to action",
+      "presets": {
+        "name": "Team orders"
+      },
+      "settings": {
+        "icon": {
+          "label": "Icon",
+          "options": {
+            "chat": "Chat",
+            "users": "People",
+            "shirt": "Jersey",
+            "whatsapp": "WhatsApp",
+            "none": "None"
+          }
+        },
+        "button_link": {
+          "info": "Leave empty to open a WhatsApp chat with the number in Theme settings > Business details. If both are empty, the button is hidden."
+        }
+      }
+    },
+    "rich_text": {
+      "name": "Rich text",
+      "headers": {
+        "content": "Text"
+      },
+      "settings": {
+        "width": {
+          "label": "Text width",
+          "options": {
+            "narrow": "Narrow",
+            "medium": "Medium",
+            "full": "Full"
+          }
+        },
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "button_link": {
+          "info": "The button is shown only when it has a link."
+        }
+      }
+    }
+  }
+}

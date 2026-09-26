@@ -1,0 +1,285 @@
+{%- liquid
+  assign scheme = section.settings.color_scheme
+  assign on_dark = false
+  if scheme.settings.background.lightness < 50
+    assign on_dark = true
+  endif
+
+  assign heading_tag = section.settings.heading_tag
+  case section.settings.heading_size
+    when 'small'
+      assign heading_class = 'display-s'
+    when 'large'
+      assign heading_class = 'display-l'
+    else
+      assign heading_class = 'display-m'
+  endcase
+
+  assign eyebrow = section.settings.eyebrow | escape
+  if eyebrow == blank
+    assign eyebrow = 'home.rich_text.eyebrow' | t: shop: shop.name
+  endif
+
+  assign heading = section.settings.heading | escape
+  if heading == blank
+    assign heading = 'home.rich_text.heading' | t
+  endif
+
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'home.rich_text.text' | t | prepend: '<p>' | append: '</p>'
+  endif
+
+  comment
+    The button is optional: it only appears once a link is set.
+  endcomment
+  assign button_link = section.settings.button_link
+  assign button_label = section.settings.button_label | escape
+  if button_label == blank
+    assign button_label = 'home.rich_text.button_label' | t
+  endif
+-%}
+
+<div
+  class="section rich-text rich-text--{{ section.settings.alignment }} rich-text--{{ section.settings.width }} color-{{ scheme.id }}{% if on_dark %} rich-text--on-dark{% endif %}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="rich-text__inner">
+      {%- if section.settings.show_eyebrow -%}
+        <p class="rich-text__eyebrow eyebrow">{{ eyebrow }}</p>
+      {%- endif -%}
+      <{{ heading_tag }} class="rich-text__heading {{ heading_class }}">{{ heading }}</{{ heading_tag }}>
+      <div class="rich-text__text rte">{{ text }}</div>
+      {%- if button_link != blank -%}
+        <a class="button button--primary rich-text__button" href="{{ button_link }}">{{ button_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .rich-text {
+    --rich-text-accent: currentColor;
+  }
+
+  .rich-text--on-dark {
+    --rich-text-accent: var(--color-highlight);
+  }
+
+  .rich-text__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+    max-inline-size: 40rem;
+    text-align: start;
+  }
+
+  .rich-text--medium .rich-text__inner {
+    max-inline-size: 55rem;
+  }
+
+  .rich-text--full .rich-text__inner {
+    max-inline-size: none;
+  }
+
+  .rich-text--center .rich-text__inner {
+    align-items: center;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .rich-text--end .rich-text__inner {
+    align-items: flex-end;
+    margin-inline-start: auto;
+    text-align: end;
+  }
+
+  .rich-text__eyebrow {
+    color: var(--rich-text-accent);
+  }
+
+  .rich-text__heading {
+    max-inline-size: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .rich-text__text {
+    color: var(--color-muted);
+    font-size: var(--text-base);
+  }
+
+  .rich-text__button {
+    margin-block-start: var(--space-2);
+  }
+
+  @media screen and (min-width: 990px) {
+    .rich-text__text {
+      font-size: var(--text-lg);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.rich_text.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "center",
+      "options": [
+        {
+          "value": "start",
+          "label": "t:options.alignment.start"
+        },
+        {
+          "value": "center",
+          "label": "t:options.alignment.center"
+        },
+        {
+          "value": "end",
+          "label": "t:options.alignment.end"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:sections.rich_text.settings.width.label",
+      "default": "narrow",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "t:sections.rich_text.settings.width.options.narrow"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.rich_text.settings.width.options.medium"
+        },
+        {
+          "value": "full",
+          "label": "t:sections.rich_text.settings.width.options.full"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.rich_text.headers.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "t:sections.rich_text.settings.show_eyebrow.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_eyebrow }}"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:settings.heading_size",
+      "default": "medium",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:options.size.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:options.size.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.size.large"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:options.heading_tag.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.heading_tag.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.heading_tag.h3"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.button_link",
+      "info": "t:sections.rich_text.settings.button_link.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.rich_text.name"
+    }
+  ]
+}
+{% endschema %}

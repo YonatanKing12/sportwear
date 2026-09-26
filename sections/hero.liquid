@@ -1,0 +1,790 @@
+{%- liquid
+  assign scheme = section.settings.color_scheme
+  assign on_dark = false
+  if scheme.settings.background.lightness < 50
+    assign on_dark = true
+  endif
+
+  assign layout = section.settings.layout
+  assign heading_tag = section.settings.heading_tag
+
+  assign eyebrow = section.settings.eyebrow | escape
+  if eyebrow == blank
+    assign eyebrow = 'home.hero.eyebrow' | t
+  endif
+
+  comment
+    The two heading lines fall back together, so a custom heading never gets the default highlight line.
+  endcomment
+  assign heading = section.settings.heading | escape
+  assign heading_highlight = section.settings.heading_highlight | escape
+  if heading == blank and heading_highlight == blank
+    assign heading = 'home.hero.heading' | t
+    assign heading_highlight = 'home.hero.heading_highlight' | t
+  endif
+
+  assign subheading = section.settings.subheading | escape
+  if subheading == blank
+    assign subheading = 'home.hero.subheading' | t
+  endif
+
+  comment
+    Empty links go to the "football" / "basketball" collections once they exist, and to all products until then.
+  endcomment
+  assign button_label = section.settings.button_label | escape
+  if button_label == blank
+    assign button_label = 'home.hero.button_label' | t
+  endif
+  assign button_link = section.settings.button_link
+  if button_link == blank
+    assign button_link = collections.football.url
+  endif
+  if button_link == blank
+    assign button_link = routes.all_products_collection_url
+  endif
+
+  assign secondary_label = section.settings.secondary_button_label | escape
+  if secondary_label == blank
+    assign secondary_label = 'home.hero.secondary_button_label' | t
+  endif
+  assign secondary_link = section.settings.secondary_button_link
+  if secondary_link == blank
+    assign secondary_link = collections.basketball.url
+  endif
+  if secondary_link == blank
+    assign secondary_link = routes.all_products_collection_url
+  endif
+
+  comment
+    LCP: the first section of the page loads its first image eagerly, with high priority and a preload.
+    section.index is nil in the editor and the Section Rendering API, which falls through to eager.
+  endcomment
+  assign above_fold = false
+  unless section.index > 1
+    assign above_fold = true
+  endunless
+  assign media_loading = 'lazy'
+  assign media_priority = 'auto'
+  if above_fold
+    assign media_loading = 'eager'
+    assign media_priority = 'high'
+  endif
+
+  if layout == 'image'
+    comment
+      With only a mobile image, it serves every screen size.
+    endcomment
+    assign media_image = section.settings.image
+    assign media_image_mobile = section.settings.image_mobile
+    if media_image == blank
+      assign media_image = section.settings.image_mobile
+      assign media_image_mobile = section.settings.image
+    endif
+    comment
+      A preload cannot follow the <picture> media query, so it is only sent when one image serves every screen.
+    endcomment
+    assign preload_media = false
+    if above_fold and media_image_mobile == blank
+      assign preload_media = true
+    endif
+  else
+    comment
+      A lone second image moves to the first slot (the one that gets the LCP treatment).
+    endcomment
+    assign season = section.settings.season | escape
+    assign figure_1 = section.settings.image_1
+    assign figure_2 = section.settings.image_2
+    if figure_1 == blank
+      assign figure_1 = section.settings.image_2
+      assign figure_2 = section.settings.image_1
+    endif
+    assign figure_count = 0
+    if figure_1 != blank
+      assign figure_count = 1
+    endif
+    if figure_2 != blank
+      assign figure_count = 2
+    endif
+    assign figure_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - 48px) * 0.245), (min-width: 750px) 272px, 49vw'
+  endif
+-%}
+
+<div
+  class="section hero hero--{{ layout }} color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% endif %}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;{% if layout == 'image' %} --hero-overlay: {{ section.settings.overlay_opacity }}%;{% endif %}"
+>
+  {%- if layout == 'image' -%}
+    <div class="hero__media">
+      {%- if media_image != blank -%}
+        <picture class="hero__picture">
+          {%- if media_image_mobile != blank -%}
+            {%- liquid
+              assign mobile_max_width = media_image_mobile.width | at_most: 2200
+              assign mobile_widths = '375,550,750,1100,1500,1800' | split: ','
+              capture mobile_srcset
+                for candidate in mobile_widths
+                  assign candidate_width = candidate | plus: 0
+                  if candidate_width < mobile_max_width
+                    echo media_image_mobile | image_url: width: candidate_width
+                    echo ' '
+                    echo candidate_width
+                    echo 'w, '
+                  endif
+                endfor
+                echo media_image_mobile | image_url: width: mobile_max_width
+                echo ' '
+                echo mobile_max_width
+                echo 'w'
+              endcapture
+            -%}
+            <source
+              media="(max-width: 749px)"
+              srcset="{{ mobile_srcset }}"
+              sizes="100vw"
+              width="{{ media_image_mobile.width }}"
+              height="{{ media_image_mobile.height }}"
+            >
+          {%- endif -%}
+          {%- render 'image',
+            image: media_image,
+            sizes: '100vw',
+            widths: '750, 1100, 1500, 1920, 2400',
+            loading: media_loading,
+            fetchpriority: media_priority,
+            preload: preload_media,
+            class: 'hero__media-image'
+          -%}
+        </picture>
+      {%- elsif request.design_mode -%}
+        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg hero__media-image' }}
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
+  <div class="page-width hero__inner">
+    <div class="hero__content">
+      {%- if section.settings.show_eyebrow -%}
+        <p class="hero__eyebrow">
+          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+          {{- eyebrow -}}
+        </p>
+      {%- endif -%}
+
+      <{{ heading_tag }} class="hero__heading display-xl">
+        {%- if heading != blank -%}
+          <span class="hero__line">{{ heading }}</span>
+        {%- endif -%}
+        {%- if heading_highlight != blank -%}
+          <span class="hero__line"
+            ><span class="hero__highlight">{{ heading_highlight }}</span></span
+          >
+        {%- endif -%}
+      </{{ heading_tag }}>
+
+      <p class="hero__text">{{ subheading }}</p>
+
+      <div class="hero__buttons">
+        <a class="button button--primary hero__button" href="{{ button_link }}">{{ button_label }}</a>
+        {%- if section.settings.show_secondary_button -%}
+          <a class="button button--secondary hero__button" href="{{ secondary_link }}">{{ secondary_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+
+    {%- if layout != 'image' -%}
+      <div class="hero__visual{% if figure_count == 1 %} hero__visual--single{% endif %}">
+        {%- if season != blank -%}
+          <span class="hero__season" aria-hidden="true">{{ season }}</span>
+        {%- endif -%}
+        <span class="hero__circle" aria-hidden="true"></span>
+        {%- if figure_1 != blank -%}
+          <div class="hero__figure hero__figure--first">
+            {%- render 'image',
+              image: figure_1,
+              sizes: figure_sizes,
+              widths: '240, 360, 480, 640, 800, 960',
+              loading: media_loading,
+              fetchpriority: media_priority,
+              preload: above_fold,
+              class: 'hero__figure-image'
+            -%}
+          </div>
+        {%- endif -%}
+        {%- if figure_2 != blank -%}
+          <div class="hero__figure hero__figure--second">
+            {%- render 'image',
+              image: figure_2,
+              sizes: figure_sizes,
+              widths: '240, 360, 480, 640, 800, 960',
+              loading: media_loading,
+              class: 'hero__figure-image'
+            -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  /* Accent is text only on dark schemes; on light ones the highlight line becomes an accent marker. */
+  .hero {
+    --hero-accent: var(--color-text);
+    --hero-outline: color-mix(in srgb, var(--color-text) 16%, transparent);
+  }
+
+  .hero--on-dark {
+    --hero-accent: var(--color-highlight);
+  }
+
+  .hero__inner {
+    display: grid;
+    gap: var(--space-6);
+  }
+
+  .hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-inline-size: 0;
+  }
+
+  .hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-block-size: 30px;
+    padding-inline: var(--space-3);
+    border: 1px solid currentColor;
+    border-radius: var(--radius-chip);
+    color: var(--hero-accent);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  .hero__eyebrow-dot {
+    inline-size: 7px;
+    block-size: 7px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .hero__heading {
+    max-inline-size: 100%;
+    margin-block-start: var(--space-4);
+    overflow-wrap: break-word;
+    isolation: isolate;
+  }
+
+  .hero__line {
+    display: block;
+  }
+
+  /* The marker covers the highlight's own line box (an inline background would cover the font's whole
+     content area). It sits behind all heading text (the heading is isolated), so descenders from the
+     line above stay visible over it. */
+  .hero__highlight {
+    position: relative;
+    display: inline-block;
+    padding: 0.04em 0.12em 0;
+    color: var(--color-on-highlight);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: var(--color-highlight);
+    }
+  }
+
+  .hero--on-dark .hero__highlight {
+    display: inline;
+    padding: 0;
+    color: var(--hero-accent);
+
+    &::before {
+      content: none;
+    }
+  }
+
+  .hero__text {
+    max-inline-size: 34em;
+    margin-block-start: var(--space-4);
+    color: var(--color-muted);
+    font-size: var(--text-base);
+  }
+
+  /* Mobile: two equal buttons side by side (they wrap only if a label cannot fit). */
+  .hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    inline-size: 100%;
+    margin-block-start: var(--space-6);
+  }
+
+  .hero__button {
+    flex: 1 1 0;
+    padding-inline: var(--space-3);
+  }
+
+  /* Graphic layout: outlined season, accent circle and up to two tilted product shots. */
+  .hero__visual {
+    --hero-tilt: 1;
+    position: relative;
+    container-type: inline-size;
+    aspect-ratio: 390 / 290;
+    margin-inline: calc(var(--gutter) * -1);
+    overflow: hidden;
+  }
+
+  [dir='rtl'] .hero__visual {
+    --hero-tilt: -1;
+  }
+
+  .hero__season {
+    position: absolute;
+    inset-block-start: 2cqi;
+    inset-inline: 0;
+    font-family: var(--font-display);
+    font-size: 38.5cqi;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.013em;
+    text-align: center;
+    white-space: nowrap;
+    color: transparent;
+    -webkit-text-stroke: max(1px, 0.38cqi) var(--hero-outline);
+    direction: ltr;
+    unicode-bidi: isolate;
+    user-select: none;
+  }
+
+  .hero__circle {
+    position: absolute;
+    inset-block-start: 11.3cqi;
+    inset-inline-start: 20.5cqi;
+    inline-size: 59cqi;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-highlight);
+  }
+
+  .hero__figure {
+    position: absolute;
+    inline-size: 48.7cqi;
+    aspect-ratio: 1;
+  }
+
+  .hero__figure--first {
+    inset-block-start: 14.9cqi;
+    inset-inline-start: 8.7cqi;
+    rotate: calc(-9deg * var(--hero-tilt));
+  }
+
+  .hero__figure--second {
+    z-index: 1;
+    inset-block-start: 17.9cqi;
+    inset-inline-end: 8.7cqi;
+    rotate: calc(8deg * var(--hero-tilt));
+  }
+
+  .hero__visual--single .hero__figure--first {
+    inset-block-start: 13cqi;
+    inset-inline-start: 25.65cqi;
+    rotate: calc(-6deg * var(--hero-tilt));
+  }
+
+  .hero__figure-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 2cqi 2.5cqi rgb(0 0 0 / 0.28));
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .hero__circle {
+      animation: hero-circle-in 700ms var(--ease) both;
+    }
+
+    .hero__figure {
+      animation: hero-figure-in 800ms var(--ease) 120ms both;
+    }
+
+    .hero__figure--second {
+      animation-delay: 220ms;
+    }
+  }
+
+  @keyframes hero-circle-in {
+    from {
+      scale: 0.86;
+    }
+  }
+
+  @keyframes hero-figure-in {
+    from {
+      translate: 0 7cqi;
+      rotate: 0deg;
+    }
+  }
+
+  /* Image layout: full-bleed photo under a gradient in the scheme's background color. */
+  .hero--image {
+    --hero-min-height: 600px;
+    --hero-gradient-direction: to right;
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-block-size: var(--hero-min-height);
+    isolation: isolate;
+    overflow: hidden;
+  }
+
+  [dir='rtl'] .hero--image {
+    --hero-gradient-direction: to left;
+  }
+
+  .hero--height-small {
+    --hero-min-height: 480px;
+  }
+
+  .hero--height-large {
+    --hero-min-height: min(760px, 92svh);
+  }
+
+  /* Phones: the text covers most of the photo, so the whole photo is shaded, more strongly at the bottom. */
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        color-mix(in srgb, var(--color-background) var(--hero-overlay, 70%), transparent) 45%,
+        color-mix(in srgb, var(--color-background) calc(var(--hero-overlay, 70%) * 0.55), transparent) 100%
+      );
+    }
+  }
+
+  .hero__picture {
+    display: block;
+    block-size: 100%;
+  }
+
+  .hero__media-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .hero--image .hero__inner {
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .hero--image .hero__text {
+    color: var(--color-text);
+  }
+
+  @media screen and (min-width: 750px) {
+    .hero__buttons {
+      inline-size: auto;
+    }
+
+    .hero__button {
+      flex: 0 0 auto;
+      min-inline-size: 200px;
+      padding-inline: var(--space-8);
+    }
+
+    .hero__visual {
+      inline-size: min(100%, 560px);
+      margin-inline: auto;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    /* Bottom room so a long heading never pushes the buttons against the next section. */
+    .hero--graphic .hero__inner {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      column-gap: var(--space-12);
+      padding-block-end: var(--space-10);
+    }
+
+    .hero__heading {
+      margin-block-start: var(--space-5);
+    }
+
+    .hero__text {
+      margin-block-start: var(--space-5);
+      font-size: var(--text-lg);
+    }
+
+    .hero__buttons {
+      margin-block-start: var(--space-8);
+    }
+
+    .hero__visual {
+      inline-size: 100%;
+      margin-inline: 0;
+      overflow: visible;
+    }
+
+    .hero--image {
+      --hero-min-height: 640px;
+      align-items: center;
+    }
+
+    .hero--height-small {
+      --hero-min-height: 480px;
+    }
+
+    .hero--height-large {
+      --hero-min-height: min(780px, 92svh);
+    }
+
+    .hero__media::after {
+      background: linear-gradient(
+        var(--hero-gradient-direction),
+        color-mix(in srgb, var(--color-background) var(--hero-overlay, 70%), transparent) 30%,
+        transparent 80%
+      );
+    }
+
+    .hero--image .hero__inner {
+      padding-block: var(--space-16);
+    }
+
+    .hero--image .hero__content {
+      max-inline-size: 640px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.hero.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.hero.settings.layout.label",
+      "default": "graphic",
+      "options": [
+        {
+          "value": "graphic",
+          "label": "t:sections.hero.settings.layout.options.graphic"
+        },
+        {
+          "value": "image",
+          "label": "t:sections.hero.settings.layout.options.image"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.headers.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "t:sections.hero.settings.show_eyebrow.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_eyebrow }}"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:sections.hero.settings.heading.info"
+    },
+    {
+      "type": "text",
+      "id": "heading_highlight",
+      "label": "t:sections.hero.settings.heading_highlight.label",
+      "info": "t:sections.hero.settings.heading_highlight.info"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "default": "h1",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:options.heading_tag.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.heading_tag.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.heading_tag.h3"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "t:settings.subheading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.headers.buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.button_link",
+      "info": "t:sections.hero.settings.button_link.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_button",
+      "label": "t:sections.hero.settings.show_secondary_button.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_label",
+      "label": "t:settings.secondary_button_label",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_secondary_button }}"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "t:settings.secondary_button_link",
+      "info": "t:sections.hero.settings.secondary_button_link.info",
+      "visible_if": "{{ section.settings.show_secondary_button }}"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.headers.visual"
+    },
+    {
+      "type": "text",
+      "id": "season",
+      "label": "t:sections.hero.settings.season.label",
+      "info": "t:sections.hero.settings.season.info",
+      "default": "26/27",
+      "visible_if": "{{ section.settings.layout == 'graphic' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "t:sections.hero.settings.image_1.label",
+      "info": "t:sections.hero.settings.image_1.info",
+      "visible_if": "{{ section.settings.layout == 'graphic' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:sections.hero.settings.image_2.label",
+      "visible_if": "{{ section.settings.layout == 'graphic' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:settings.image",
+      "info": "t:sections.hero.settings.image.info",
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:settings.image_mobile",
+      "info": "t:sections.hero.settings.image_mobile.info",
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.hero.settings.overlay_opacity.label",
+      "info": "t:sections.hero.settings.overlay_opacity.info",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "unit": "%",
+      "default": 70,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "select",
+      "id": "height",
+      "label": "t:sections.hero.settings.height.label",
+      "default": "medium",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:options.size.small"
+        },
+        {
+          "value": "medium",
+          "label": "t:options.size.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.size.large"
+        }
+      ],
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero.name"
+    }
+  ]
+}
+{% endschema %}

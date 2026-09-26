@@ -1,0 +1,140 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "layout": "graphic",
+        "season": "26/27",
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "trust_strip": {
+      "type": "trust-strip",
+      "blocks": {
+        "original": {
+          "type": "item",
+          "settings": {
+            "icon": "shield-check"
+          }
+        },
+        "delivery": {
+          "type": "item",
+          "settings": {
+            "icon": "truck"
+          }
+        },
+        "returns": {
+          "type": "item",
+          "settings": {
+            "icon": "return"
+          }
+        }
+      },
+      "block_order": ["original", "delivery", "returns"],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    },
+    "collection_links": {
+      "type": "collection-links",
+      "blocks": {
+        "premier_league": {
+          "type": "link",
+          "settings": {
+            "collection": "premier-league",
+            "featured": true
+          }
+        },
+        "la_liga": {
+          "type": "link",
+          "settings": {
+            "collection": "la-liga"
+          }
+        },
+        "israeli_premier_league": {
+          "type": "link",
+          "settings": {
+            "collection": "israeli-premier-league"
+          }
+        },
+        "nba": {
+          "type": "link",
+          "settings": {
+            "collection": "nba"
+          }
+        },
+        "euroleague": {
+          "type": "link",
+          "settings": {
+            "collection": "euroleague"
+          }
+        },
+        "serie_a": {
+          "type": "link",
+          "settings": {
+            "collection": "serie-a"
+          }
+        }
+      },
+      "block_order": ["premier_league", "la_liga", "israeli_premier_league", "nba", "euroleague", "serie_a"],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "padding_top": 36,
+        "padding_bottom": 8
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "collection": "best-sellers",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "promo_banner": {
+      "type": "promo-banner",
+      "settings": {
+        "color_scheme": "scheme-accent",
+        "button_link": "shopify://collections/basketball-sets",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "image_with_text": {
+      "type": "image-with-text",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "bordered": true,
+        "button_link": "shopify://collections/kids",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
+    "cta_band": {
+      "type": "cta-band",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "icon": "chat",
+        "padding_top": 24,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust_strip",
+    "collection_links",
+    "featured_collection",
+    "promo_banner",
+    "image_with_text",
+    "cta_band"
+  ]
+}

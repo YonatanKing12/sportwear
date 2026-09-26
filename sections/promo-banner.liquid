@@ -1,0 +1,325 @@
+{%- liquid
+  assign scheme_class = 'color-' | append: section.settings.color_scheme.id
+  assign full_width = section.settings.full_width
+
+  assign eyebrow = section.settings.eyebrow | escape
+  if eyebrow == blank
+    assign eyebrow = 'home.promo_banner.eyebrow' | t
+  endif
+
+  assign heading = section.settings.heading | escape
+  if heading == blank
+    assign heading = 'home.promo_banner.heading' | t
+  endif
+
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'home.promo_banner.text' | t
+  endif
+
+  assign button_label = section.settings.button_label | escape
+  if button_label == blank
+    assign button_label = 'home.promo_banner.button_label' | t
+  endif
+  assign button_link = section.settings.button_link | default: routes.all_products_collection_url
+
+  assign figure_1 = section.settings.image_1
+  assign figure_2 = section.settings.image_2
+  if figure_1 == blank
+    assign figure_1 = section.settings.image_2
+    assign figure_2 = section.settings.image_1
+  endif
+  assign figure_count = 0
+  if figure_1 != blank
+    assign figure_count = 1
+  endif
+  if figure_2 != blank
+    assign figure_count = 2
+  endif
+
+  comment
+    A product shot is 56% of the media column: about 32% of the panel's inner width on phones
+    (100vw - 88px), and 27% of the two-column panel from 750px, capped by the 520px media box.
+  endcomment
+  assign figure_sizes = '(min-width: 750px) calc(min(292px, (100vw - 208px) * 0.27)), calc((100vw - 88px) * 0.32)'
+
+  assign figure_loading = 'lazy'
+  if section.index == 1
+    assign figure_loading = 'eager'
+  endif
+-%}
+
+<div
+  class="section promo-banner{% if full_width %} promo-banner--full {{ scheme_class }}{% endif %}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %}{% if figure_count > 0 %} promo-banner__panel--media{% else %} promo-banner__panel--text{% endif %}">
+      {%- if section.settings.show_eyebrow -%}
+        <p class="promo-banner__eyebrow eyebrow">{{ eyebrow }}</p>
+      {%- endif -%}
+
+      <h2 class="promo-banner__heading display-xl">{{ heading }}</h2>
+
+      {%- if figure_count > 0 -%}
+        <div class="promo-banner__media{% if figure_count == 1 %} promo-banner__media--single{% endif %}">
+          <div class="promo-banner__figure">
+            {%- render 'image',
+              image: figure_1,
+              sizes: figure_sizes,
+              widths: '160, 240, 320, 480, 640, 800',
+              loading: figure_loading,
+              class: 'promo-banner__image'
+            -%}
+          </div>
+          {%- if figure_2 != blank -%}
+            <div class="promo-banner__figure promo-banner__figure--second">
+              {%- render 'image',
+                image: figure_2,
+                sizes: figure_sizes,
+                widths: '160, 240, 320, 480, 640, 800',
+                loading: figure_loading,
+                class: 'promo-banner__image'
+              -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <p class="promo-banner__text">{{ text }}</p>
+
+      <a class="button button--primary promo-banner__button" href="{{ button_link }}">{{ button_label }}</a>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  /* Mobile follows the board: label, then the heading beside the product shots, then text and a full-width button. */
+  .promo-banner__panel {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 'eyebrow' 'heading' 'text' 'button';
+    align-items: center;
+    column-gap: var(--space-2);
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-card);
+  }
+
+  .promo-banner__panel--media {
+    grid-template-columns: minmax(min-content, 1fr) minmax(0, 1.3fr);
+    grid-template-areas: 'eyebrow eyebrow' 'heading media' 'text text' 'button button';
+  }
+
+  .promo-banner--full .promo-banner__panel {
+    padding-inline: 0;
+    border-radius: 0;
+  }
+
+  .promo-banner__eyebrow {
+    grid-area: eyebrow;
+  }
+
+  .promo-banner__heading {
+    grid-area: heading;
+    margin-block-start: var(--space-3);
+    overflow-wrap: break-word;
+  }
+
+  .promo-banner__media {
+    grid-area: media;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block-start: var(--space-3);
+  }
+
+  .promo-banner__figure {
+    flex: 0 0 56%;
+    aspect-ratio: 1;
+  }
+
+  .promo-banner__figure--second {
+    flex-basis: 50%;
+    margin-block-start: 12%;
+    margin-inline-start: -6%;
+  }
+
+  .promo-banner__media--single .promo-banner__figure {
+    flex-basis: 80%;
+  }
+
+  .promo-banner__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+  }
+
+  .promo-banner__text {
+    grid-area: text;
+    max-inline-size: 36em;
+    margin-block-start: var(--space-4);
+    font-size: var(--text-md);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  .promo-banner__button {
+    grid-area: button;
+    margin-block-start: var(--space-4);
+  }
+
+  @media screen and (min-width: 750px) {
+    .promo-banner__panel {
+      padding: var(--space-10) var(--space-12);
+    }
+
+    /* Content on the start side, product shots on the end side, vertically centered. */
+    .promo-banner__panel--media {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      grid-template-rows: 1fr auto auto auto auto 1fr;
+      grid-template-areas: '. media' 'eyebrow media' 'heading media' 'text media' 'button media' '. media';
+      column-gap: var(--space-12);
+    }
+
+    .promo-banner__media {
+      justify-self: center;
+      inline-size: min(100%, 520px);
+      margin-block-start: 0;
+    }
+
+    .promo-banner__text {
+      font-size: var(--text-lg);
+    }
+
+    .promo-banner__button {
+      justify-self: start;
+      min-inline-size: 240px;
+      margin-block-start: var(--space-6);
+    }
+  }
+
+  /* Without images, desktop splits the panel: label and big heading on the start side, text and
+     button on the end side, aligned to the heading's baseline area. */
+  @media screen and (min-width: 990px) {
+    .promo-banner__panel--text {
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      grid-template-rows: auto 1fr auto auto;
+      grid-template-areas: 'eyebrow .' 'heading .' 'heading text' 'heading button';
+      align-items: end;
+      column-gap: var(--space-12);
+    }
+
+    .promo-banner__panel--text .promo-banner__text {
+      margin-block-start: 0;
+    }
+
+    .promo-banner__panel--text .promo-banner__button {
+      margin-block-start: var(--space-5);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.promo_banner.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-accent"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "t:settings.full_width",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.promo_banner.headers.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "t:sections.promo_banner.settings.show_eyebrow.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_eyebrow }}"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.button_link",
+      "info": "t:sections.promo_banner.settings.button_link.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.promo_banner.headers.images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "t:sections.promo_banner.settings.image_1.label",
+      "info": "t:sections.promo_banner.settings.image_1.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "t:sections.promo_banner.settings.image_2.label",
+      "info": "t:sections.promo_banner.settings.image_2.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.promo_banner.name"
+    }
+  ]
+}
+{% endschema %}
