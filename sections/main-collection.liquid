@@ -3,6 +3,8 @@
   storefront filtering (sidebar on desktop, drawer on small screens), sorting, the product grid and
   pagination. Works without JavaScript; assets/facets.js (<sw-facets>) updates results in place
   through the Section Rendering API.
+  Chips: the "Related collections menu" setting, or, when it is blank, chips built from the
+  main-menu around this collection ("All" first, then its sub-categories or its sister categories).
 {%- endcomment -%}
 {%- paginate collection.products by section.settings.products_per_page -%}
   {%- liquid
@@ -82,6 +84,80 @@
 
     assign results_label = 'collections.product_count' | t: count: collection.products_count
     assign subnav = section.settings.subnav_menu
+
+    # Automatic chips when "Related collections menu" is blank: the main-menu link whose collection is
+    # this one (any level; one with sub-links wins). Its sub-links follow an "All" chip for this page;
+    # a link without sub-links shows its parent's "All" chip and its sister links instead. Links are
+    # matched by their collection's handle, which is the same under every language prefix.
+    assign chip_link = null
+    assign chip_parent = null
+    assign chip_links = null
+    assign chip_all_current = false
+    assign chip_count = 0
+    if subnav == blank
+      assign chip_found = false
+      assign chip_found_with_children = false
+      for level_one in linklists['main-menu'].links
+        if level_one.type == 'collection_link' and level_one.object.handle == collection.handle
+          if chip_found == false or level_one.links.size > 0 and chip_found_with_children == false
+            assign chip_link = level_one
+            assign chip_parent = null
+            assign chip_found = true
+            if level_one.links.size > 0
+              assign chip_found_with_children = true
+            endif
+          endif
+        endif
+        for level_two in level_one.links
+          if level_two.type == 'collection_link' and level_two.object.handle == collection.handle
+            if chip_found == false or level_two.links.size > 0 and chip_found_with_children == false
+              assign chip_link = level_two
+              assign chip_parent = level_one
+              assign chip_found = true
+              if level_two.links.size > 0
+                assign chip_found_with_children = true
+              endif
+            endif
+          endif
+          if chip_found == false
+            for level_three in level_two.links
+              if level_three.type == 'collection_link' and level_three.object.handle == collection.handle
+                assign chip_link = level_three
+                assign chip_parent = level_two
+                assign chip_found = true
+                break
+              endif
+            endfor
+          endif
+        endfor
+      endfor
+
+      if chip_link
+        if chip_link.links.size > 0
+          assign chip_links = chip_link.links
+          assign chip_all_url = collection.url
+          assign chip_all_title = collection.title
+          assign chip_all_current = true
+        elsif chip_parent
+          assign chip_links = chip_parent.links
+          assign chip_all_url = chip_parent.url
+          assign chip_all_title = chip_parent.title
+        endif
+      endif
+
+      # Chips to show: links to empty collections are left out (never this collection's own link).
+      for chip in chip_links
+        assign chip_empty = false
+        if chip.type == 'collection_link'
+          if chip.object.handle != collection.handle and chip.object.all_products_count == 0
+            assign chip_empty = true
+          endif
+        endif
+        unless chip_empty
+          assign chip_count = chip_count | plus: 1
+        endunless
+      endfor
+    endif
   -%}
   <div
     class="section main-collection color-{{ section.settings.color_scheme.id }}"
@@ -153,6 +229,51 @@
                       {{- link.title | escape -}}
                     </a>
                   </li>
+                {%- endfor -%}
+              </ul>
+            </sw-chip-scroller>
+          </nav>
+        {%- elsif chip_count > 0 -%}
+          <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
+            <sw-chip-scroller>
+              <ul class="collection-subnav__list scroller" role="list">
+                <li>
+                  <a
+                    class="chip{% if chip_all_current %} chip--active{% endif %}"
+                    href="{{ chip_all_url }}"
+                    {% if chip_all_current %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    {{- 'collections.subnav_all' | t -}}
+                    <span class="visually-hidden">: {{ chip_all_title | escape }}</span>
+                  </a>
+                </li>
+                {%- for chip in chip_links -%}
+                  {%- liquid
+                    assign chip_current = false
+                    assign chip_empty = false
+                    if chip.type == 'collection_link'
+                      if chip.object.handle == collection.handle
+                        assign chip_current = true
+                      elsif chip.object.all_products_count == 0
+                        assign chip_empty = true
+                      endif
+                    endif
+                  -%}
+                  {%- unless chip_empty -%}
+                    <li>
+                      <a
+                        class="chip{% if chip_current %} chip--active{% endif %}"
+                        href="{{ chip.url }}"
+                        {% if chip_current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{- chip.title | escape -}}
+                      </a>
+                    </li>
+                  {%- endunless -%}
                 {%- endfor -%}
               </ul>
             </sw-chip-scroller>

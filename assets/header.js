@@ -39,9 +39,10 @@ const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
  * - a click on an item that hover has just opened pins the panel open instead of closing it;
  * - one panel at a time (the details share name="HeaderMenu"), Escape closes and returns focus to
  *   the item, a click outside (on the dimmed page) closes, focus leaving the item closes;
- * - panels close when the header hides, when a drawer or the search opens, and below 1200px.
+ * - panels close when the header hides, when a drawer opens or the search field takes focus, and
+ *   below 1200px.
  * Other dropdowns in the bar (the language switcher) share the outside click, focus and Escape
- * handling.
+ * handling; the search suggestions (<sw-predictive-search>) close with them.
  * ------------------------------------------------------------------------------------------- */
 class SwHeader extends HTMLElement {
   /** @type {AbortController | null} */
@@ -121,12 +122,7 @@ class SwHeader extends HTMLElement {
     document.addEventListener('click', this.#onDocumentClick, { signal });
     this.querySelector('#MenuDrawer')?.addEventListener('click', this.#onMenuDrawerClick, { signal });
 
-    const unsubscribe = subscribe(EVENTS.drawerOpen, ({ id }) => {
-      this.#closeDropdowns();
-      if (id === 'SearchModal') {
-        /** @type {HTMLInputElement | null} */ (this.querySelector('#SearchModalInput'))?.select();
-      }
-    });
+    const unsubscribe = subscribe(EVENTS.drawerOpen, () => this.#closeDropdowns());
     signal.addEventListener('abort', unsubscribe);
 
     // Theme editor: bring the header back into view when its section is selected, and show the
@@ -251,10 +247,12 @@ class SwHeader extends HTMLElement {
     return this.#menus.filter((details) => details.open);
   }
 
+  /** Closes every dropdown in the bar, and the search suggestions (assets/predictive-search.js). */
   #closeDropdowns() {
     this.#cancelOpen();
     this.#cancelClose();
     for (const details of this.#openDropdowns()) details.open = false;
+    /** @type {HTMLElement & { close?: () => void } | null} */ (this.querySelector('sw-predictive-search'))?.close?.();
   }
 
   #closeMenus() {
@@ -427,17 +425,20 @@ class SwHeader extends HTMLElement {
 /* ---------------------------------------------------------------------------------------------
  * <sw-drill-menu> (the menu drawer's body, snippets/menu-drawer)
  *
- * Turns the first-level disclosures (details[data-drill]) into drill-down panels: opening one
- * slides its panel over the list (CSS in snippets/menu-drawer) and moves focus to the panel's back
- * button; the back button or Escape closes the panel and returns focus to its row (a second Escape
- * closes the drawer). The drawer starts on the first level every time it opens. Without JavaScript
- * the same markup works as accordions.
+ * Turns the disclosures (details[data-drill], at any depth) into drill-down panels: opening one
+ * slides its panel over the level under it (CSS in snippets/menu-drawer) and moves focus to the
+ * panel's back button. The open panels form a stack (level 2, then level 3): the back button or
+ * Escape closes the top panel and returns focus to the row that opened it, one level at a time;
+ * Escape on the first level closes the drawer. Opening a panel closes any other branch. A panel
+ * under an open panel is marked [data-covered] and the first level [data-drilled] on this element,
+ * so the covered levels leave the tab order once the new panel is in place. The drawer starts on
+ * the first level every time it opens. Without JavaScript the same markup works as accordions.
  * ------------------------------------------------------------------------------------------- */
 class SwDrillMenu extends HTMLElement {
   /** @type {AbortController | null} */
   #abort = null;
-  /** @type {HTMLDetailsElement | null} the open panel */
-  #current = null;
+  /** @type {HTMLDetailsElement[]} the open panels, outermost first */
+  #stack = [];
 
   connectedCallback() {
     this.#abort = new AbortController();
@@ -448,7 +449,7 @@ class SwDrillMenu extends HTMLElement {
     dialog?.addEventListener('keydown', this.#onKeydown, { signal });
     dialog?.addEventListener('close', () => this.#reset(), { signal });
 
-    const open = this.querySelector('details[data-drill][open]');
+    const open = [...this.querySelectorAll('details[data-drill][open]')].pop();
     if (open instanceof HTMLDetailsElement) this.#enter(open, false);
   }
 
@@ -460,38 +461,74 @@ class SwDrillMenu extends HTMLElement {
   #onToggle = (event) => {
     const details = event.target;
     if (!(details instanceof HTMLDetailsElement) || !details.hasAttribute('data-drill')) return;
-    if (details.open) this.#enter(details, true);
-    else if (details === this.#current) this.#leave();
+    if (details.open) {
+      if (this.#stack.at(-1) !== details) this.#enter(details, true);
+    } else if (this.#stack.includes(details)) {
+      this.#close(details);
+    }
   };
 
   /**
+   * Opens a panel on top of its ancestors' panels and closes every other branch.
    * @param {HTMLDetailsElement} details
    * @param {boolean} moveFocus
    */
   #enter(details, moveFocus) {
+    const chain = this.#chainTo(details);
     for (const other of this.querySelectorAll('details[data-drill][open]')) {
-      if (other !== details && other instanceof HTMLDetailsElement) other.open = false;
+      if (other instanceof HTMLDetailsElement && !chain.includes(other)) other.open = false;
     }
-    this.#current = details;
-    this.setAttribute('data-drilled', '');
-    const panel = details.querySelector('.menu-drawer__panel');
-    if (panel) panel.scrollTop = 0;
+    for (const ancestor of chain) ancestor.open = true;
+    this.#stack = chain;
+    this.#sync();
+    const body = details.querySelector(':scope > .menu-drawer__panel .menu-drawer__panel-body');
+    if (body) body.scrollTop = 0;
     if (moveFocus) {
-      /** @type {HTMLElement | null} */ (details.querySelector('[data-drill-back]'))?.focus({ preventScroll: true });
+      /** @type {HTMLElement | null} */ (
+        details.querySelector(':scope > .menu-drawer__panel [data-drill-back]')
+      )?.focus({ preventScroll: true });
     }
   }
 
-  #leave() {
-    this.#current = null;
-    this.removeAttribute('data-drilled');
+  /**
+   * Closes a panel and every panel above it.
+   * @param {HTMLDetailsElement} details
+   */
+  #close(details) {
+    const index = this.#stack.indexOf(details);
+    if (index === -1) return;
+    for (const inner of this.#stack.slice(index).reverse()) inner.open = false;
+    this.#stack = this.#stack.slice(0, index);
+    this.#sync();
   }
 
-  /** Closes the open panel and puts focus back on its row. */
+  /**
+   * @param {HTMLDetailsElement} details
+   * @returns {HTMLDetailsElement[]} the drill-down disclosures from the first level down to details
+   */
+  #chainTo(details) {
+    const chain = [];
+    for (let node = details; node && node !== this; node = node.parentElement) {
+      if (node instanceof HTMLDetailsElement && node.hasAttribute('data-drill')) chain.unshift(node);
+    }
+    return chain;
+  }
+
+  /** Marks the covered levels (CSS hides them from the tab order once the panel above is in place). */
+  #sync() {
+    const top = this.#stack.at(-1);
+    this.toggleAttribute('data-drilled', Boolean(top));
+    for (const details of this.querySelectorAll('details[data-drill]')) {
+      const panel = details.querySelector(':scope > .menu-drawer__panel');
+      panel?.toggleAttribute('data-covered', this.#stack.includes(details) && details !== top);
+    }
+  }
+
+  /** Closes the top panel and puts focus back on the row that opened it. */
   #back() {
-    const details = this.#current;
+    const details = this.#stack.at(-1);
     if (!details) return;
-    details.open = false;
-    this.#leave();
+    this.#close(details);
     /** @type {HTMLElement | null} */ (details.querySelector(':scope > summary'))?.focus();
   }
 
@@ -502,8 +539,8 @@ class SwDrillMenu extends HTMLElement {
 
   /** @param {KeyboardEvent} event */
   #onKeydown = (event) => {
-    if (event.key !== 'Escape' || !this.#current) return;
-    // Escape steps back to the first level before it closes the drawer.
+    if (event.key !== 'Escape' || !this.#stack.length) return;
+    // Escape steps back one level at a time before it closes the drawer.
     event.preventDefault();
     this.#back();
   };
@@ -512,7 +549,8 @@ class SwDrillMenu extends HTMLElement {
     for (const details of this.querySelectorAll('details[data-drill][open]')) {
       if (details instanceof HTMLDetailsElement) details.open = false;
     }
-    this.#leave();
+    this.#stack = [];
+    this.#sync();
   }
 }
 

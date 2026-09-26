@@ -308,6 +308,7 @@ export class World {
       `audience:${def.audience}`,
       'demo',
       ...def.extraTags,
+      ...(def.keywords ?? []),
     ];
     const description = descriptionFor(def, locale);
 
@@ -1365,7 +1366,11 @@ export class World {
         .includes(needle);
     const products = q
       ? PRODUCTS.filter(
-          (def) => Object.values(def.title).some(matches) || def.extraTags.some(matches) || matches(def.handle),
+          (def) =>
+            Object.values(def.title).some(matches) ||
+            def.extraTags.some(matches) ||
+            (def.keywords ?? []).some(matches) ||
+            matches(def.handle),
         ).map((def) => this.products.get(def.handle))
       : [];
     const query = this.spec.query ?? {};
@@ -1415,7 +1420,19 @@ export class World {
     });
   }
 
-  buildPredictiveSearch(terms, limit = 4) {
+  /**
+   * Predictive Search API emulation (/search/suggest). Every word of the query has to appear in one
+   * of the searched fields, as part of a word or whole (a looser match than Shopify's prefix=last).
+   * @param {string | null} terms
+   * @param {object} [options] - the request's resources[...] parameters
+   * @param {number} [options.limit] - resources[limit], 1-10 (default 10)
+   * @param {string} [options.limitScope] - resources[limit_scope]: 'all' (default) or 'each'
+   * @param {string[]} [options.types] - resources[type] (default query, product, collection, page)
+   * @param {string[]} [options.fields] - resources[options][fields] (default title, product_type,
+   *   variants.title, vendor); 'tag' searches the product tags
+   * @param {string} [options.unavailable] - resources[options][unavailable_products]: last, show, hide
+   */
+  buildPredictiveSearch(terms, options = {}) {
     if (terms === null || terms === undefined) {
       return new BaseDrop('predictive_search', {
         performed: false,
@@ -1430,30 +1447,73 @@ export class World {
         }),
       });
     }
-    const q = String(terms).trim().toLowerCase();
-    const matches = (text) =>
-      String(text ?? '')
-        .toLowerCase()
-        .includes(q);
-    const products = PRODUCTS.filter((def) => Object.values(def.title).some(matches))
-      .map((def) => this.products.get(def.handle))
-      .slice(0, limit);
-    const collections = [...this.collectionsByHandle.values()]
-      .filter((c) => c.handle !== 'all' && matches(c.title))
-      .slice(0, limit);
-    const pages = [...this.pagesByHandle.values()].filter((p) => matches(p.title)).slice(0, limit);
-    const queries = products.slice(0, 2).map(
-      (p) =>
-        new BaseDrop('predictive_search_query', {
-          text: p.title,
-          styled_text: escapeHtml(p.title),
-          url: `${this.root}/search?q=${encodeURIComponent(p.title)}`,
-        }),
-    );
+    const limit = Math.min(Math.max(Number(options.limit) || 10, 1), 10);
+    const types = options.types?.length ? options.types : ['query', 'product', 'collection', 'page'];
+    const fields = options.fields?.length ? options.fields : ['title', 'product_type', 'variants.title', 'vendor'];
+    const words = String(terms).trim().toLowerCase().split(/\s+/).filter(Boolean);
+    const matchesAll = (texts) => {
+      const haystack = texts.map((text) => String(text ?? '').toLowerCase());
+      return words.length > 0 && words.every((word) => haystack.some((text) => text.includes(word)));
+    };
+    const productTexts = (product) => [
+      ...(fields.includes('title') ? [product.title] : []),
+      ...(fields.includes('product_type') ? [product.type, t(PRODUCT_TYPES[product.type], this.locale)] : []),
+      ...(fields.includes('variants.title') ? product.variants.map((v) => v.title) : []),
+      ...(fields.includes('vendor') ? [product.vendor] : []),
+      ...(fields.includes('tag') ? product.tags : []),
+    ];
+    let products = types.includes('product')
+      ? [...this.products.values()].filter((p) => matchesAll(productTexts(p)))
+      : [];
+    if (options.unavailable === 'hide') products = products.filter((p) => p.available);
+    else if (options.unavailable !== 'show')
+      products = [...products.filter((p) => p.available), ...products.filter((p) => !p.available)];
+    let collections = types.includes('collection')
+      ? [...this.collectionsByHandle.values()].filter((c) => c.handle !== 'all' && matchesAll([c.title]))
+      : [];
+    let pages = types.includes('page') ? [...this.pagesByHandle.values()].filter((p) => matchesAll([p.title])) : [];
+    // Suggestions: the matching words of the products found, like Shopify's query suggestions.
+    const highlight = (text) => {
+      let html = escapeHtml(text);
+      for (const word of words) {
+        const escaped = escapeHtml(word).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        html = html.replace(new RegExp(`(${escaped})`, 'i'), '<mark>$1</mark>');
+      }
+      return html;
+    };
+    let queries = types.includes('query')
+      ? [...new Set(products.map((p) => p.title.replace(/\s*[–-].*$/, '').replace(/\s*\d+\/\d+$/, '')))]
+          .slice(0, 3)
+          .map(
+            (text) =>
+              new BaseDrop('predictive_search_query', {
+                text,
+                styled_text: highlight(text),
+                url: `${this.root}/search?q=${encodeURIComponent(text)}&_pos=1&_psq=${encodeURIComponent(String(terms))}`,
+              }),
+          )
+      : [];
+    if (options.limitScope === 'each') {
+      products = products.slice(0, limit);
+      collections = collections.slice(0, limit);
+      pages = pages.slice(0, limit);
+      queries = queries.slice(0, limit);
+    } else {
+      let left = limit;
+      const take = (list) => {
+        const taken = list.slice(0, Math.max(left, 0));
+        left -= taken.length;
+        return taken;
+      };
+      queries = take(queries);
+      products = take(products);
+      collections = take(collections);
+      pages = take(pages);
+    }
     return new BaseDrop('predictive_search', {
       performed: true,
       terms: String(terms),
-      types: ['product', 'collection', 'page', 'query'],
+      types,
       resources: new BaseDrop('predictive_search_resources', {
         products,
         collections,

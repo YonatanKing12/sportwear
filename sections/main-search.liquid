@@ -3,6 +3,8 @@
   a product-card grid with storefront filtering and sorting (Shopify filters product results only),
   pages and articles as a simple list, pagination, and empty states with suggestion chips.
   Works without JavaScript; assets/facets.js (<sw-facets>) updates results in place.
+  Storefront search returns products, pages and articles only (no collections): the header's
+  suggestions panel is where matching categories show.
 {%- endcomment -%}
 {%- paginate search.results by section.settings.products_per_page -%}
   {%- liquid
@@ -122,32 +124,37 @@
             {%- endif -%}
           </h1>
 
-          <form
-            class="search-form"
-            action="{{ routes.search_url }}"
-            method="get"
-            role="search"
-            aria-label="{{ 'search.form_label' | t }}"
-          >
-            <label class="visually-hidden" for="SearchInput-{{ section.id }}">{{ 'search.form_label' | t }}</label>
-            <div class="search-form__field">
-              {%- render 'icon', name: 'search', size: 20, class: 'search-form__icon' -%}
-              <input
-                class="search-form__input"
-                type="search"
-                id="SearchInput-{{ section.id }}"
-                name="q"
-                value="{{ terms | escape }}"
-                placeholder="{{ 'search.placeholder' | t }}"
-                autocomplete="off"
-                autocapitalize="off"
-                spellcheck="false"
-                enterkeyhint="search"
-              >
-            </div>
-            <input type="hidden" name="options[prefix]" value="last">
-            <button class="button button--primary search-form__submit" type="submit">{{ 'search.submit' | t }}</button>
-          </form>
+          {%- comment -%} <sw-search-form> (assets/predictive-search.js) sends the query normalized like the header's. {%- endcomment -%}
+          <sw-search-form class="search-form-wrapper">
+            <form
+              class="search-form"
+              action="{{ routes.search_url }}"
+              method="get"
+              role="search"
+              aria-label="{{ 'search.form_label' | t }}"
+            >
+              <label class="visually-hidden" for="SearchInput-{{ section.id }}">{{ 'search.form_label' | t }}</label>
+              <div class="search-form__field">
+                {%- render 'icon', name: 'search', size: 20, class: 'search-form__icon' -%}
+                <input
+                  class="search-form__input"
+                  type="search"
+                  id="SearchInput-{{ section.id }}"
+                  name="q"
+                  value="{{ terms | escape }}"
+                  placeholder="{{ 'search.placeholder' | t }}"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                  enterkeyhint="search"
+                >
+              </div>
+              <input type="hidden" name="options[prefix]" value="last">
+              <button class="button button--primary search-form__submit" type="submit">
+                {{- 'search.submit' | t -}}
+              </button>
+            </form>
+          </sw-search-form>
 
           {%- if search.performed -%}
             <p class="search-header__count" tabindex="-1" data-facets-region="count" data-facets-focus>
@@ -309,8 +316,13 @@
 {%- endpaginate -%}
 
 <script type="module" src="{{ 'facets.js' | asset_url }}"></script>
+<script type="module" src="{{ 'predictive-search.js' | asset_url }}"></script>
 
 {% stylesheet %}
+  .search-form-wrapper {
+    display: block;
+  }
+
   .search-header {
     display: grid;
     gap: var(--space-4);

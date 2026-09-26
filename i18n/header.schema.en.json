@@ -39,7 +39,7 @@
           "content": "The logo is set in Theme settings > Brand, and the language switcher shows every language published in Settings > Languages."
         },
         "menu": {
-          "info": "A link with sub-links opens a mega menu on desktop, with an image for each sub-category and products from the category. On mobile it opens a panel of image tiles. Up to 3 levels."
+          "info": "A link with sub-links opens a mega menu on desktop, with an image for each sub-category (up to 8 third-level links under it, then \"View all\") and products from the category. On mobile each level opens its own panel with the full list. Up to 3 levels."
         },
         "sticky": {
           "label": "Sticky header",

@@ -7,6 +7,7 @@
 // Usage: node scripts/preview/selftest.mjs   (npm run preview:selftest)
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { COLLECTIONS } from './lib/catalog.mjs';
 import { Preview } from './lib/preview.mjs';
 import { startServer } from './lib/server.mjs';
 
@@ -268,7 +269,11 @@ const compiled = (preview, html, kind) => {
   const sorted = render('collection:football?sort_by=title-descending', 'en');
   check('sort_by selected', /<option\s+value="title-descending"\s+selected\s*>/.test(sorted.html));
   const list = render('list-collections', 'he');
-  check('paginate global collections (19 without "all")', list.html.includes('data-paginate="1/4"'));
+  const listPages = Math.ceil((COLLECTIONS.length - 1) / 6);
+  check(
+    `paginate global collections (${COLLECTIONS.length - 1} without "all", 6 per page)`,
+    list.html.includes(`data-paginate="1/${listPages}"`),
+  );
   const main = list.html.slice(list.html.indexOf('<main'), list.html.indexOf('</main>'));
   check('collections page 1 has 6 items', count(main, '<li>') === 6);
   const list2 = render('list-collections?page=2', 'he');

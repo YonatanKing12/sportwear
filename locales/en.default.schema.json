@@ -55,7 +55,7 @@
         },
         "subnav_menu": {
           "label": "Related collections menu",
-          "info": "Shown as chips under the heading. Use it to link related collections, such as leagues or teams."
+          "info": "Shown as chips under the heading. Leave it empty to build the chips from the main menu: the collection's own sub-categories, or else its sister categories, with an \"All\" chip first. Links to empty collections are left out."
         },
         "enable_filtering": {
           "label": "Enable filtering",
@@ -560,7 +560,7 @@
           "content": "The logo is set in Theme settings > Brand, and the language switcher shows every language published in Settings > Languages."
         },
         "menu": {
-          "info": "A link with sub-links opens a mega menu on desktop, with an image for each sub-category and products from the category. On mobile it opens a panel of image tiles. Up to 3 levels."
+          "info": "A link with sub-links opens a mega menu on desktop, with an image for each sub-category (up to 8 third-level links under it, then \"View all\") and products from the category. On mobile each level opens its own panel with the full list. Up to 3 levels."
         },
         "sticky": {
           "label": "Sticky header",

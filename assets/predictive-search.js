@@ -1,87 +1,226 @@
 /**
- * <sw-predictive-search>: search suggestions in the header search sheet (snippets/header-search.liquid).
- * Loaded as an ES module only when "Show suggestions while typing" is on.
+ * Store search. ES module loaded by the header (every page), the search page and the 404 page.
  *
- * The input is an ARIA combobox that controls #PredictiveSearchListbox. Typing (2+ characters)
- * fetches sections/predictive-search.liquid through the Predictive Search API and the Section
- * Rendering API (debounced, in-flight requests aborted) and swaps it into [data-predictive-search-results].
- * Keys: ArrowDown / ArrowUp move the active option, Enter opens it, Escape clears the input first
- * and closes the sheet on the next press. The form still submits to the search page as usual.
+ *   normalizeSearchQuery()   the query clean-up every search uses (see below)
+ *   <sw-search-form>         wraps a plain search form; normalizes the query when it submits
+ *   <sw-predictive-search>   the header's search field (snippets/header-search.liquid)
+ *
+ * <sw-predictive-search> normalizes its query on submit too. With data-predictive (Theme settings >
+ * Search > "Show suggestions while typing") its input is an ARIA combobox that controls
+ * #PredictiveSearchListbox: typing (2+ characters) fetches sections/predictive-search.liquid through
+ * the Predictive Search API and the Section Rendering API (locale-aware URL, debounced, in-flight
+ * requests aborted) into the panel under the field. Keys: ArrowDown / ArrowUp move the active option
+ * (ArrowDown, like a click in the field, reopens a closed panel), Enter opens it, Escape closes the
+ * panel and, with the panel closed, clears the field. A click outside, focus leaving the field and
+ * the panel, and any drawer or mega panel opening close it too. The panel itself takes Tab focus so
+ * a long list can be scrolled from the keyboard. The form always submits to the search page.
  */
-import { EVENTS, announce, config, debounce, fetchSection, parseHTML, subscribe } from '@theme/core';
+import { EVENTS, announce, config, fetchSection, parseHTML, subscribe } from '@theme/core';
 
 const SECTION_ID = 'predictive-search';
 const MIN_QUERY_LENGTH = 2;
-const RESULT_LIMIT = 4; // per resource type (limit_scope=each)
-const DEBOUNCE_MS = 250;
+/** Results per type (limit_scope=each): up to 6 products, and as many collections and suggestions. */
+const RESULT_LIMIT = 6;
+/** Product fields to search: the defaults plus tags, which carry team, player and synonym keywords in
+ * Hebrew, English and Arabic (tags are not translated, so they match in every language). */
+const SEARCH_FIELDS = 'title,product_type,variants.title,vendor,tag';
+const DEBOUNCE_MS = 220;
+
+const HEBREW_LETTER = '[\\u05D0-\\u05EA]';
+/** A straight or curly double quote, or two apostrophes, between Hebrew letters: gershayim (״). */
+const GERSHAYIM = new RegExp(`(${HEBREW_LETTER})(?:"|\\u201C|\\u201D|''|\\u2019\\u2019)(?=${HEBREW_LETTER})`, 'g');
+/** An apostrophe, a curly single quote or a backtick after a Hebrew letter: geresh (׳). */
+const GERESH = new RegExp(`(${HEBREW_LETTER})['\\u2018\\u2019\`]`, 'g');
+
+/**
+ * Cleans up a search query: trims it, collapses runs of spaces, and writes the Hebrew geresh and
+ * gershayim the way product titles do ("לוס אנג׳לס", "ארה״ב"), because phone keyboards type ' and ".
+ * Latin and Arabic text is left alone.
+ * @param {string} value
+ * @returns {string}
+ */
+export function normalizeSearchQuery(value) {
+  return String(value ?? '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(GERSHAYIM, '$1״')
+    .replace(GERESH, '$1׳');
+}
+
+/** @param {FormDataEvent} event */
+function normalizeFormData(event) {
+  const value = event.formData.get('q');
+  if (typeof value === 'string') event.formData.set('q', normalizeSearchQuery(value));
+}
+
+/**
+ * <sw-search-form>: a plain search form (search page, 404 page) that sends the normalized query.
+ * Without JavaScript the form submits as typed.
+ */
+class SwSearchForm extends HTMLElement {
+  /** @type {AbortController | null} */
+  #abort = null;
+
+  connectedCallback() {
+    this.#abort = new AbortController();
+    this.querySelector('form')?.addEventListener('formdata', normalizeFormData, { signal: this.#abort.signal });
+  }
+
+  disconnectedCallback() {
+    this.#abort?.abort();
+  }
+}
+
+/** The mega menu and the search panel share the space under the header: one at a time. */
+const desktopQuery = window.matchMedia('(min-width: 1200px)');
 
 class SwPredictiveSearch extends HTMLElement {
   /** @type {AbortController | null} listeners */
   #abort = null;
   /** @type {AbortController | null} the request in flight */
   #request = null;
+  /** @type {HTMLFormElement | null} */
+  #form = null;
   /** @type {HTMLInputElement | null} */
   #input = null;
   /** @type {HTMLElement | null} */
-  #results = null;
+  #panel = null;
   /** @type {HTMLElement | null} */
   #liveRegion = null;
-  /** Search terms of the results on screen. */
+  /** @type {HTMLButtonElement | null} */
+  #clear = null;
+  /** Normalized terms of the results in the panel ('' when it is empty). */
   #term = '';
   #activeIndex = -1;
-  #scheduleSearch = debounce((/** @type {string} */ term) => this.#search(term), DEBOUNCE_MS);
+  /** The debounce timer of the next search (cleared with the request, so a closed panel stays closed). */
+  #timer = 0;
 
   connectedCallback() {
-    this.#input = this.querySelector('input[role="combobox"]');
-    this.#results = this.querySelector('[data-predictive-search-results]');
+    this.#form = this.querySelector('form');
+    this.#input = this.querySelector('input[name="q"]');
+    this.#panel = this.querySelector('[data-predictive-search-results]');
     this.#liveRegion = this.querySelector('[data-predictive-search-live]');
-    if (!this.#input || !this.#results) return;
+    this.#clear = this.querySelector('[data-search-clear]');
+    if (!this.#form || !this.#input) return;
 
     this.#abort = new AbortController();
     const { signal } = this.#abort;
+    this.#form.addEventListener('formdata', normalizeFormData, { signal });
     this.#input.addEventListener('input', this.#onInput, { signal });
-    this.#input.addEventListener('keydown', this.#onKeydown, { signal });
-    this.closest('dialog')?.addEventListener('close', this.#onDialogClose, { signal });
+    this.#clear?.addEventListener('click', this.#onClear, { signal });
+    // Back/forward cache: the page comes back with the panel closed and the clear button in sync.
+    window.addEventListener(
+      'pageshow',
+      (event) => {
+        if (event.persisted) this.#close();
+        this.#syncClear();
+      },
+      { signal },
+    );
+    this.#syncClear();
 
-    // Reopening the sheet with a query already in the box (e.g. on the search page) shows its suggestions.
-    const unsubscribe = subscribe(EVENTS.drawerOpen, ({ id }) => {
-      if (id !== 'SearchModal' || !this.#results?.hidden) return;
-      const term = this.#query();
-      if (term.length >= MIN_QUERY_LENGTH) this.#search(term);
-    });
+    if (!this.#predictive) return;
+    this.#input.addEventListener('keydown', this.#onKeydown, { signal });
+    this.#input.addEventListener('click', this.#reopen, { signal });
+    this.#panel?.addEventListener('keydown', this.#onPanelKeydown, { signal });
+    this.addEventListener('focusout', this.#onFocusOut, { signal });
+    document.addEventListener('click', this.#onDocumentClick, { signal });
+    window.addEventListener('resize', () => this.#isOpen && this.#measure(), { passive: true, signal });
+    // A mega panel opening (hover or click) takes the space under the header.
+    document.addEventListener(
+      'toggle',
+      (event) => {
+        if (event.target instanceof HTMLDetailsElement && event.target.open && event.target.matches('[data-mega]')) {
+          this.#close();
+        }
+      },
+      { capture: true, signal },
+    );
+    const unsubscribe = subscribe(EVENTS.drawerOpen, () => this.#close());
     signal.addEventListener('abort', unsubscribe);
+    desktopQuery.addEventListener('change', () => this.#isOpen && this.#measure(), { signal });
   }
 
   disconnectedCallback() {
     this.#abort?.abort();
     this.#cancelRequest();
+    this.removeAttribute('data-open');
   }
 
-  /** @returns {string} */
+  /** Closes the suggestions panel (the header calls it when it hides or closes its dropdowns). */
+  close() {
+    if (this.#isOpen) this.#close();
+  }
+
+  get #predictive() {
+    return this.hasAttribute('data-predictive') && Boolean(this.#panel);
+  }
+
+  get #isOpen() {
+    return Boolean(this.#panel && !this.#panel.hidden);
+  }
+
+  /** @returns {string} the normalized query in the field */
   #query() {
-    return this.#input?.value.trim() ?? '';
+    return normalizeSearchQuery(this.#input?.value ?? '');
   }
 
   /** @returns {HTMLElement[]} */
   #options() {
-    return this.#results ? [...this.#results.querySelectorAll('[role="option"]')] : [];
+    return this.#panel ? [...this.#panel.querySelectorAll('[role="option"]')] : [];
+  }
+
+  #syncClear() {
+    if (this.#clear && this.#input) this.#clear.hidden = this.#input.value === '';
   }
 
   #onInput = () => {
+    this.#syncClear();
+    if (!this.#predictive) return;
     const term = this.#query();
     if (term.length < MIN_QUERY_LENGTH) {
       this.#cancelRequest();
       this.#collapse();
       return;
     }
-    if (term === this.#term && !this.#results?.hidden) {
-      // Back to the terms already on screen (e.g. a trailing space was typed).
+    if (term === this.#term) {
+      // Back to the terms already rendered (e.g. a trailing space was typed).
       this.#cancelRequest();
       this.#setLoading(false);
+      this.#open();
       return;
     }
     this.#setLoading(true);
-    this.#scheduleSearch(term);
+    clearTimeout(this.#timer);
+    this.#timer = window.setTimeout(() => this.#search(term), DEBOUNCE_MS);
+  };
+
+  /** A click (or ArrowDown) in the field brings back the panel for the text in it. */
+  #reopen = () => {
+    const term = this.#query();
+    if (term.length < MIN_QUERY_LENGTH || this.#isOpen) return;
+    if (term === this.#term) this.#open();
+    else this.#search(term);
+  };
+
+  /**
+   * The panel takes focus for keyboard scrolling; Escape there closes it and returns to the field.
+   * @param {KeyboardEvent} event
+   */
+  #onPanelKeydown = (event) => {
+    if (event.key !== 'Escape' || event.target !== this.#panel) return;
+    event.preventDefault();
+    this.#close();
+    this.#input?.focus();
+  };
+
+  #onClear = () => {
+    if (!this.#input) return;
+    this.#input.value = '';
+    this.#syncClear();
+    this.#cancelRequest();
+    this.#collapse();
+    this.#input.focus();
   };
 
   /** @param {string} term */
@@ -92,11 +231,14 @@ class SwPredictiveSearch extends HTMLElement {
     this.#request = request;
     this.#setLoading(true);
 
+    // Locale-aware endpoint (/en/search/suggest, /ar/search/suggest), so each language searches its own content.
     const url = new URL(config().routes.predictive_search_url, window.location.origin);
     url.searchParams.set('q', term);
     url.searchParams.set('resources[type]', 'product,collection,query');
     url.searchParams.set('resources[limit]', String(RESULT_LIMIT));
     url.searchParams.set('resources[limit_scope]', 'each');
+    url.searchParams.set('resources[options][fields]', SEARCH_FIELDS);
+    url.searchParams.set('resources[options][prefix]', 'last');
     url.searchParams.set('resources[options][unavailable_products]', 'last');
 
     try {
@@ -109,7 +251,7 @@ class SwPredictiveSearch extends HTMLElement {
     } finally {
       if (this.#request === request) {
         this.#request = null;
-        if (term === this.#query()) this.#setLoading(false);
+        this.#setLoading(false);
       }
     }
   }
@@ -120,25 +262,55 @@ class SwPredictiveSearch extends HTMLElement {
    */
   #render(html, term) {
     const content = parseHTML(html).querySelector('[data-predictive-search]');
-    if (!content || !this.#results || !this.#input) {
+    if (!content || !this.#panel) {
       this.#collapse();
       return;
     }
-    this.#results.replaceChildren(content);
-    this.#results.hidden = false;
+    this.#panel.replaceChildren(content);
+    this.#panel.scrollTop = 0;
     this.#term = term;
-    this.#activeIndex = -1;
-    this.#input.removeAttribute('aria-activedescendant');
-    this.#input.setAttribute('aria-expanded', String(this.#options().length > 0));
+    this.#resetActive();
+    // Results that arrive after the visitor left the field wait until they come back.
+    if (!this.contains(document.activeElement)) return;
+    this.#open();
 
     const message = content.querySelector('[data-predictive-search-announcement]')?.textContent?.trim();
     if (message) this.#announce(message);
   }
 
-  /**
-   * The page-level live region is inert while this modal dialog is open, so use the one inside it.
-   * @param {string} message
-   */
+  #open() {
+    if (!this.#panel || !this.#input || !this.#panel.hasChildNodes()) return;
+    this.#measure();
+    this.#panel.hidden = false;
+    this.setAttribute('data-open', '');
+    this.#input.setAttribute('aria-expanded', String(this.#options().length > 0));
+  }
+
+  /** Hides the panel and keeps its results, so focusing the field again shows them at once. */
+  #close() {
+    this.#cancelRequest();
+    this.#setLoading(false);
+    this.#resetActive();
+    this.removeAttribute('data-open');
+    this.#input?.setAttribute('aria-expanded', 'false');
+    if (this.#panel) this.#panel.hidden = true;
+  }
+
+  /** Hides and empties the panel. */
+  #collapse() {
+    this.#close();
+    this.#term = '';
+    this.#panel?.replaceChildren();
+  }
+
+  /** The panel may fill the viewport below the header (small screens) or below the field. */
+  #measure() {
+    const header = this.closest('.header') ?? this;
+    const edge = desktopQuery.matches ? this.getBoundingClientRect().bottom : header.getBoundingClientRect().bottom;
+    this.style.setProperty('--header-search-top', `${Math.max(Math.round(edge), 0)}px`);
+  }
+
+  /** @param {string} message */
   #announce(message) {
     const region = this.#liveRegion;
     if (!region) {
@@ -158,8 +330,14 @@ class SwPredictiveSearch extends HTMLElement {
     switch (event.key) {
       case 'ArrowDown':
       case 'ArrowUp': {
+        if (!this.#isOpen) {
+          if (this.#query().length < MIN_QUERY_LENGTH) return;
+          event.preventDefault();
+          this.#reopen();
+          return;
+        }
         const options = this.#options();
-        if (this.#results?.hidden || !options.length) return;
+        if (!options.length) return;
         event.preventDefault();
         const step = event.key === 'ArrowDown' ? 1 : -1;
         const from = this.#activeIndex === -1 && step < 0 ? options.length : this.#activeIndex;
@@ -168,21 +346,38 @@ class SwPredictiveSearch extends HTMLElement {
       }
       case 'Enter': {
         const option = this.#options()[this.#activeIndex];
-        if (!option || this.#results?.hidden) return;
+        if (!option || !this.#isOpen) return;
         event.preventDefault();
         option.click();
         break;
       }
       case 'Escape': {
-        // First Escape clears the search; with an empty box the dialog closes as usual.
-        if (!this.#input?.value) return;
-        event.preventDefault();
-        this.#input.value = '';
-        this.#cancelRequest();
-        this.#collapse();
+        // First Escape closes the panel; with the panel closed it clears the field.
+        if (this.#isOpen) {
+          event.preventDefault();
+          this.#close();
+        } else if (this.#input?.value) {
+          event.preventDefault();
+          this.#onClear();
+        }
         break;
       }
+      default:
+        break;
     }
+  };
+
+  /** @param {FocusEvent} event */
+  #onFocusOut = (event) => {
+    const next = event.relatedTarget;
+    // No related target: focus left the window, or a click landed on something that takes no focus
+    // (the click handler decides).
+    if (next instanceof Node && !this.contains(next)) this.#close();
+  };
+
+  /** @param {MouseEvent} event */
+  #onDocumentClick = (event) => {
+    if (this.#isOpen && event.target instanceof Node && !this.contains(event.target)) this.#close();
   };
 
   /**
@@ -205,37 +400,19 @@ class SwPredictiveSearch extends HTMLElement {
     for (const option of this.#options()) option.setAttribute('aria-selected', 'false');
   }
 
-  #onDialogClose = () => {
-    this.#cancelRequest();
-    if (this.#term !== this.#query()) {
-      this.#collapse();
-      return;
-    }
-    this.#setLoading(false);
-    this.#resetActive();
-  };
-
+  /** Cancels the pending search and the request in flight. */
   #cancelRequest() {
+    clearTimeout(this.#timer);
     this.#request?.abort();
     this.#request = null;
-  }
-
-  /** Hides and empties the results. */
-  #collapse() {
-    this.#term = '';
-    this.#setLoading(false);
-    this.#resetActive();
-    this.#input?.setAttribute('aria-expanded', 'false');
-    if (!this.#results) return;
-    this.#results.hidden = true;
-    this.#results.replaceChildren();
   }
 
   /** @param {boolean} loading */
   #setLoading(loading) {
     this.toggleAttribute('data-loading', loading);
-    this.#results?.setAttribute('aria-busy', String(loading));
+    this.#panel?.setAttribute('aria-busy', String(loading));
   }
 }
 
+if (!customElements.get('sw-search-form')) customElements.define('sw-search-form', SwSearchForm);
 if (!customElements.get('sw-predictive-search')) customElements.define('sw-predictive-search', SwPredictiveSearch);

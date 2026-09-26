@@ -24,28 +24,32 @@
       <p class="not-found__text">{{ intro }}</p>
 
       {%- if section.settings.show_search -%}
-        <form
-          class="not-found__search"
-          action="{{ routes.search_url }}"
-          method="get"
-          role="search"
-          aria-label="{{ 'not_found.search_label' | t }}"
-        >
-          <label class="visually-hidden" for="{{ search_id }}">{{ 'not_found.search_label' | t }}</label>
-          <input
-            class="field__input not-found__search-input"
-            type="search"
-            id="{{ search_id }}"
-            name="q"
-            placeholder="{{ 'not_found.search_placeholder' | t }}"
-            autocomplete="off"
+        {%- comment -%} <sw-search-form> (assets/predictive-search.js) sends the query normalized like the header's. {%- endcomment -%}
+        <sw-search-form class="not-found__search-wrapper">
+          <form
+            class="not-found__search"
+            action="{{ routes.search_url }}"
+            method="get"
+            role="search"
+            aria-label="{{ 'not_found.search_label' | t }}"
           >
-          <input type="hidden" name="options[prefix]" value="last">
-          <button class="button button--primary not-found__search-button" type="submit">
-            {%- render 'icon', name: 'search', size: 20 -%}
-            <span>{{ 'not_found.search_submit' | t }}</span>
-          </button>
-        </form>
+            <label class="visually-hidden" for="{{ search_id }}">{{ 'not_found.search_label' | t }}</label>
+            <input
+              class="field__input not-found__search-input"
+              type="search"
+              id="{{ search_id }}"
+              name="q"
+              placeholder="{{ 'not_found.search_placeholder' | t }}"
+              autocomplete="off"
+            >
+            <input type="hidden" name="options[prefix]" value="last">
+            <button class="button button--primary not-found__search-button" type="submit">
+              {%- render 'icon', name: 'search', size: 20 -%}
+              <span>{{ 'not_found.search_submit' | t }}</span>
+            </button>
+          </form>
+        </sw-search-form>
+        <script type="module" src="{{ 'predictive-search.js' | asset_url }}"></script>
       {%- endif -%}
 
       <div class="not-found__actions">
@@ -87,6 +91,11 @@
     max-inline-size: 48ch;
     color: var(--color-muted);
     font-size: var(--text-lg);
+  }
+
+  .not-found__search-wrapper {
+    display: block;
+    inline-size: 100%;
   }
 
   .not-found__search {

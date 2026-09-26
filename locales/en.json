@@ -72,6 +72,7 @@
     },
     "products_heading": "Products",
     "subnav_label": "Browse collections",
+    "subnav_all": "All",
     "read_more": "Read more",
     "read_less": "Show less",
     "empty_heading": "No products here yet",
@@ -474,6 +475,8 @@
       "close": "Close menu",
       "nav_label": "Main navigation",
       "back": "back to the main menu",
+      "back_to": "Back to ⁨{{ title }}⁩",
+      "shop_all_title": "Shop all ⁨{{ title }}⁩",
       "team_orders": "Team orders on WhatsApp",
       "whatsapp_message": "Hi, I would like to hear about a team order"
     },
@@ -484,6 +487,7 @@
       "newest": "Newest first",
       "price_ascending": "Price: low to high",
       "promo_button": "Shop now",
+      "view_all": "View all",
       "product_count": {
         "one": "{{ count }} product",
         "other": "{{ count }} products"
@@ -494,24 +498,22 @@
       "log_in": "Log in"
     },
     "search": {
-      "open": "Search",
-      "title": "Search the store",
-      "label": "What are you looking for?",
-      "placeholder": "Search for a jersey, team or league",
+      "label": "Search the store",
       "field": "Search jerseys, teams and players",
-      "submit": "Search",
-      "close": "Close search"
+      "clear": "Clear search",
+      "results": "Search results"
     }
   },
   "predictive_search": {
     "label": "Search suggestions",
-    "suggestions": "Suggestions",
-    "collections": "Collections",
+    "suggestions": "Suggested searches",
+    "collections": "Categories",
     "products": "Products",
+    "browse": "Main categories",
     "view_all": "View all results for \"⁨{{ terms }}⁩\"",
     "search_all": "Search the whole store for \"⁨{{ terms }}⁩\"",
     "no_results": "No results for \"⁨{{ terms }}⁩\"",
-    "no_results_hint": "Try a team, a league or a type of product.",
+    "no_results_hint": "Check the spelling, try a team or player name, or pick a category.",
     "results_count": {
       "one": "{{ count }} result",
       "other": "{{ count }} results"

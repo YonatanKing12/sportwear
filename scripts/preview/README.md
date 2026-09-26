@@ -88,10 +88,14 @@ axe violations (WCAG 2.0/2.1/2.2 A+AA).
   `structured_data`, `payment_type_svg_tag`, `default` (keeps objects), `divided_by` (integer
   division), and more: see `lib/filters.mjs`.
 - **Catalog** (`lib/catalog.mjs`): the 8 demo products created in the store (prices in agorot,
-  sizes, sold-out XL, compare-at, tags, `sportwear.*` metafields with `.value`, team/league/size-chart
-  metaobjects, counterpart and complements), 20 collections with filters and sort options, the six
-  store pages, a blog, the three menus, a two-line cart. Hebrew is primary (no URL prefix); English
-  and Arabic have translated titles, as the catalog translator will publish them.
+  sizes, sold-out XL, compare-at, tags incl. he/en/ar search keywords such as "גופייה", "jersey",
+  "قميص", `sportwear.*` metafields with `.value`, team/league/size-chart metaobjects, counterpart and
+  complements), the store's collections plus team and player collections (NBA, EuroLeague, players,
+  Premier League and LaLiga clubs; they borrow the demo products of their sport, Toronto is empty)
+  with filters and sort options, the six store pages, a blog, the three menus (the main menu has three
+  levels: basketball > NBA > 13 teams, basketball > players > 10 players, football > leagues > clubs),
+  a two-line cart. Hebrew is primary (no URL prefix); English and Arabic have translated titles, as
+  the catalog translator will publish them.
 - **Server** (`lib/server.mjs`): static files, plus the endpoints theme JavaScript calls: Section
   Rendering API (`?section_id=`, `?sections=` on any page URL, static pages included), Cart AJAX API
   (`/cart.js`, `/cart/add|change|update|clear(.js)`, with `sections`), `/products/<handle>.js`,
@@ -115,6 +119,10 @@ axe violations (WCAG 2.0/2.1/2.2 A+AA).
   turns it off).
 - Storefront filters: availability, price, size and product type only; option filter param names use
   the (translated) option name. Search is a substring match on titles and tags.
+- `/search/suggest` (predictive search) honours `resources[type]`, `resources[limit]`,
+  `resources[limit_scope]`, `resources[options][fields]` (incl. `tag`) and
+  `resources[options][unavailable_products]`; every word must appear in a searched field. Query
+  suggestions are made from the matching product titles. No typo tolerance or synonyms.
 - Shopify's own strings (sort names, filter labels, page titles such as "Your Shopping Cart") are
   approximations in he/en/ar. Named `date` formats missing from the locale files use English patterns.
 - `json` output escapes `/`, `<`, `>`, `&` (as Shopify does); drops without a Shopify JSON shape

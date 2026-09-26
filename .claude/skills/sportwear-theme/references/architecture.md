@@ -127,10 +127,14 @@ import {
   Its `sw-drawer` id is **`CartDrawer`**. The header cart link opens it with `data-drawer-open="CartDrawer"` (drawer
   mode) and is a normal link to `routes.cart_url` otherwise; it must work without JS (link to the cart page).
 - **Header cart link** contains `<span data-cart-bubble>{% render 'cart-bubble' %}</span>`.
-- **Menu drawer** id `MenuDrawer`, **search** id `SearchModal`, **filters drawer** id `FacetsDrawer`,
-  **size chart** id `SizeChart`. Keep ids unique per page.
+- **Menu drawer** id `MenuDrawer`, **filters drawer** id `FacetsDrawer`, **size chart** id `SizeChart`.
+  Keep ids unique per page. There is no search dialog: the header's search field (`#HeaderSearchInput`,
+  `snippets/header-search`) is the only header search; to send a visitor to it, focus that input or link
+  to `routes.search_url`.
 - **Predictive search** section id `predictive-search`; rendered through
-  `routes.predictive_search_url?q=…&section_id=predictive-search`.
+  `routes.predictive_search_url?q=…&section_id=predictive-search` (fields include `tag`).
+- **Search forms** elsewhere (search page, 404) sit in `<sw-search-form>` (`assets/predictive-search.js`),
+  which sends the query normalized like the header's (Hebrew geresh/gershayim, spaces).
 - **"Complete the set"**: product metafield `sportwear.complements` (list of products). Product page and cart
   upsell both read it.
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.

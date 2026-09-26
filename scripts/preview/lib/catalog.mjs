@@ -150,6 +150,15 @@ export const IMAGE_ALT_SUFFIX = {
  */
 export const EMPTY_STORE = process.env.SW_PREVIEW_EMPTY_STORE === '1';
 
+/**
+ * Search keywords the catalog pipeline adds as product tags. Tags are not translated, so one list
+ * serves searches in he, en and ar: synonyms such as "גופייה", "jersey" and "قميص".
+ */
+const FOOTBALL_KEYWORDS = ['חולצה', 'חולצת כדורגל', 'jersey', 'shirt', 'قميص', 'قميص كرة قدم'];
+const KIDS_KEYWORDS = ['ילדים', 'kids', 'أطفال'];
+const BASKETBALL_JERSEY_KEYWORDS = ['גופייה', 'גופיית כדורסל', 'jersey', 'tank', 'قميص', 'قميص كرة سلة', 'NBA'];
+const BASKETBALL_SHORTS_KEYWORDS = ['מכנס', 'מכנסיים', 'shorts', 'شورت', 'NBA'];
+
 /** The 8 demo products (prices in agorot, like Shopify's cents). */
 const DEMO_PRODUCTS = [
   {
@@ -164,6 +173,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-fc-home',
     extraTags: ['new'],
+    keywords: FOOTBALL_KEYWORDS,
     counterpart: 'demo-fc-home-jersey-2026-27-kids',
     createdAt: '2026-09-24T10:00:00+03:00',
   },
@@ -179,6 +189,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-fc-away',
     extraTags: ['sale'],
+    keywords: FOOTBALL_KEYWORDS,
     compareAt: 15000,
     soldOut: ['XL'],
     createdAt: '2026-09-18T10:00:00+03:00',
@@ -199,6 +210,7 @@ const DEMO_PRODUCTS = [
     audience: 'kids',
     image: 'demo-fc-home',
     extraTags: [],
+    keywords: [...FOOTBALL_KEYWORDS, ...KIDS_KEYWORDS],
     counterpart: 'demo-fc-home-jersey-2026-27',
     createdAt: '2026-09-17T10:00:00+03:00',
   },
@@ -218,6 +230,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-united-home',
     extraTags: [],
+    keywords: FOOTBALL_KEYWORDS,
     createdAt: '2026-09-15T10:00:00+03:00',
   },
   {
@@ -236,6 +249,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-united-third',
     extraTags: ['new'],
+    keywords: FOOTBALL_KEYWORDS,
     createdAt: '2026-09-23T10:00:00+03:00',
   },
   {
@@ -254,6 +268,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-stars-home',
     extraTags: ['set'],
+    keywords: BASKETBALL_JERSEY_KEYWORDS,
     complements: ['demo-stars-basketball-shorts-2026-27'],
     createdAt: '2026-09-21T10:00:00+03:00',
   },
@@ -273,6 +288,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-stars-shorts',
     extraTags: ['set'],
+    keywords: BASKETBALL_SHORTS_KEYWORDS,
     complements: ['demo-stars-basketball-jersey-2026-27'],
     createdAt: '2026-09-21T11:00:00+03:00',
   },
@@ -292,6 +308,7 @@ const DEMO_PRODUCTS = [
     audience: 'adult',
     image: 'demo-stars-away',
     extraTags: [],
+    keywords: BASKETBALL_JERSEY_KEYWORDS,
     createdAt: '2026-09-19T10:00:00+03:00',
   },
 ];
@@ -302,6 +319,58 @@ export const VENDOR = 'SportWear (דמו)';
 export function descriptionFor(product, locale) {
   return DESCRIPTION[product.audience === 'kids' ? 'kids' : 'adult'][locale] ?? DESCRIPTION.adult.he;
 }
+
+/**
+ * Team and player collections under the deeper main menu (sport → league → teams, basketball →
+ * players → player). The demo catalog has only three (fictional) teams, so these collections borrow
+ * the demo products of their sport to be non-empty; Toronto is empty on purpose (hidden from menus).
+ * Hebrew titles use the geresh (׳, U+05F3) as the store's titles do.
+ */
+const basketball = (p) => p.sport === 'basketball';
+const club = (he, en, ar, match = basketball) => ({ title: { he, en, ar }, match });
+export const NBA_TEAMS = {
+  'boston-celtics': club('בוסטון סלטיקס', 'Boston Celtics', 'بوسطن سلتيكس'),
+  'los-angeles-lakers': club('לוס אנג׳לס לייקרס', 'Los Angeles Lakers', 'لوس أنجلوس ليكرز'),
+  'golden-state-warriors': club('גולדן סטייט ווריורס', 'Golden State Warriors', 'غولدن ستايت ووريرز'),
+  'chicago-bulls': club('שיקגו בולס', 'Chicago Bulls', 'شيكاغو بولز'),
+  'miami-heat': club('מיאמי היט', 'Miami Heat', 'ميامي هيت'),
+  'new-york-knicks': club('ניו יורק ניקס', 'New York Knicks', 'نيويورك نيكس'),
+  'toronto-raptors': club('טורונטו ראפטורס', 'Toronto Raptors', 'تورونتو رابتورز', () => false),
+  'dallas-mavericks': club('דאלאס מאבריקס', 'Dallas Mavericks', 'دالاس مافريكس'),
+  'denver-nuggets': club('דנבר נאגטס', 'Denver Nuggets', 'دنفر ناغتس'),
+  'milwaukee-bucks': club('מילווקי באקס', 'Milwaukee Bucks', 'ميلووكي باكس'),
+  'oklahoma-city-thunder': club('אוקלהומה סיטי ת׳אנדר', 'Oklahoma City Thunder', 'أوكلاهوما سيتي ثاندر'),
+  'phoenix-suns': club('פיניקס סאנס', 'Phoenix Suns', 'فينيكس صنز'),
+  'brooklyn-nets': club('ברוקלין נטס', 'Brooklyn Nets', 'بروكلين نتس'),
+};
+export const EUROLEAGUE_TEAMS = {
+  'maccabi-tel-aviv': club('מכבי תל אביב', 'Maccabi Tel Aviv', 'مكابي تل أبيب'),
+  'hapoel-tel-aviv': club('הפועל תל אביב', 'Hapoel Tel Aviv', 'هبوعيل تل أبيب'),
+  panathinaikos: club('פנאתינייקוס', 'Panathinaikos', 'باناثينايكوس'),
+};
+export const PLAYERS = {
+  'lebron-james': club('לברון ג׳יימס', 'LeBron James', 'ليبرون جيمس'),
+  'stephen-curry': club('סטף קרי', 'Stephen Curry', 'ستيفن كاري'),
+  'luka-doncic': club('לוקה דונצ׳יץ׳', 'Luka Dončić', 'لوكا دونتشيتش'),
+  'nikola-jokic': club('ניקולה יוקיץ׳', 'Nikola Jokić', 'نيكولا يوكيتش'),
+  'giannis-antetokounmpo': club('יאניס אדטוקומבו', 'Giannis Antetokounmpo', 'يانيس أنتيتوكونمبو'),
+  'jayson-tatum': club('ג׳ייסון טייטום', 'Jayson Tatum', 'جايسون تاتوم'),
+  'shai-gilgeous-alexander': club('שיי גילג׳ס-אלכסנדר', 'Shai Gilgeous-Alexander', 'شاي غيلجيوس ألكسندر'),
+  'deni-avdija': club('דני אבדיה', 'Deni Avdija', 'ديني أفدييا'),
+  'kevin-durant': club('קווין דוראנט', 'Kevin Durant', 'كيفن ديورانت'),
+  'anthony-edwards': club('אנתוני אדוארדס', 'Anthony Edwards', 'أنتوني إدواردز'),
+};
+const premierLeague = (p) => p.league === 'premier-league';
+const laLiga = (p) => p.league === 'la-liga';
+export const FOOTBALL_CLUBS = {
+  arsenal: club('ארסנל', 'Arsenal', 'آرسنال', premierLeague),
+  liverpool: club('ליברפול', 'Liverpool', 'ليفربول', premierLeague),
+  'manchester-city': club('מנצ׳סטר סיטי', 'Manchester City', 'مانشستر سيتي', premierLeague),
+  'manchester-united': club('מנצ׳סטר יונייטד', 'Manchester United', 'مانشستر يونايتد', premierLeague),
+  'real-madrid': club('ריאל מדריד', 'Real Madrid', 'ريال مدريد', laLiga),
+  barcelona: club('ברצלונה', 'Barcelona', 'برشلونة', laLiga),
+};
+const CLUB_COLLECTIONS = { ...NBA_TEAMS, ...EUROLEAGUE_TEAMS, ...PLAYERS, ...FOOTBALL_CLUBS };
 
 /** Collections of the store (smart collections in admin). `match` picks products from PRODUCTS. */
 export const COLLECTIONS = [
@@ -375,6 +444,16 @@ export const COLLECTIONS = [
     handle,
     title: { he: league.he, en: league.en, ar: league.ar },
     match: (p) => p.league === handle,
+  })),
+  {
+    handle: 'players',
+    title: { he: 'שחקנים', en: 'Players', ar: 'اللاعبون' },
+    match: (p) => p.type === 'Basketball Jersey',
+  },
+  ...Object.entries(CLUB_COLLECTIONS).map(([handle, club]) => ({
+    handle,
+    title: club.title,
+    match: club.match,
   })),
 ];
 
@@ -471,14 +550,24 @@ export const BLOG = {
 /** Menus as created in admin (catalog/store-setup.json), with the translations we expect. */
 const collectionLink = (handle, title, links = []) => ({ type: 'collection_link', target: handle, title, links });
 const pageLink = (handle, title) => ({ type: 'page_link', target: handle, title, links: [] });
+/** Third-level links: one collection link per team or player. */
+const clubLinks = (clubs) => Object.entries(clubs).map(([handle, { title }]) => collectionLink(handle, title));
 
 export const MENUS = {
   'main-menu': {
     title: { he: 'תפריט ראשי', en: 'Main menu', ar: 'القائمة الرئيسية' },
     links: [
       collectionLink('football', { he: 'חולצות כדורגל', en: 'Football jerseys', ar: 'قمصان كرة القدم' }, [
-        collectionLink('premier-league', { he: 'פרמייר ליג', en: 'Premier League', ar: 'الدوري الإنجليزي الممتاز' }),
-        collectionLink('la-liga', { he: 'לה ליגה', en: 'LaLiga', ar: 'الدوري الإسباني' }),
+        collectionLink(
+          'premier-league',
+          { he: 'פרמייר ליג', en: 'Premier League', ar: 'الدوري الإنجليزي الممتاز' },
+          clubLinks(Object.fromEntries(Object.entries(FOOTBALL_CLUBS).filter(([, c]) => c.match === premierLeague))),
+        ),
+        collectionLink(
+          'la-liga',
+          { he: 'לה ליגה', en: 'LaLiga', ar: 'الدوري الإسباني' },
+          clubLinks(Object.fromEntries(Object.entries(FOOTBALL_CLUBS).filter(([, c]) => c.match === laLiga))),
+        ),
         collectionLink('serie-a', { he: 'סרייה A', en: 'Serie A', ar: 'الدوري الإيطالي' }),
         collectionLink('bundesliga', { he: 'בונדסליגה', en: 'Bundesliga', ar: 'الدوري الألماني' }),
         collectionLink('ligue-1', { he: 'ליג 1', en: 'Ligue 1', ar: 'الدوري الفرنسي' }),
@@ -490,8 +579,9 @@ export const MENUS = {
         collectionLink('national-teams', { he: 'נבחרות', en: 'National teams', ar: 'المنتخبات' }),
       ]),
       collectionLink('basketball', { he: 'כדורסל', en: 'Basketball', ar: 'كرة السلة' }, [
-        collectionLink('nba', { he: 'NBA', en: 'NBA', ar: 'NBA' }),
-        collectionLink('euroleague', { he: 'יורוליג', en: 'EuroLeague', ar: 'اليوروليغ' }),
+        collectionLink('nba', { he: 'NBA', en: 'NBA', ar: 'NBA' }, clubLinks(NBA_TEAMS)),
+        collectionLink('euroleague', { he: 'יורוליג', en: 'EuroLeague', ar: 'اليوروليغ' }, clubLinks(EUROLEAGUE_TEAMS)),
+        collectionLink('players', { he: 'שחקנים', en: 'Players', ar: 'اللاعبون' }, clubLinks(PLAYERS)),
         collectionLink('israeli-basketball-league', {
           he: 'ליגת העל בכדורסל',
           en: 'Israeli Basketball League',

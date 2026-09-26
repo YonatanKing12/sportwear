@@ -22,7 +22,7 @@
         },
         "subnav_menu": {
           "label": "Related collections menu",
-          "info": "Shown as chips under the heading. Use it to link related collections, such as leagues or teams."
+          "info": "Shown as chips under the heading. Leave it empty to build the chips from the main menu: the collection's own sub-categories, or else its sister categories, with an \"All\" chip first. Links to empty collections are left out."
         },
         "enable_filtering": {
           "label": "Enable filtering",

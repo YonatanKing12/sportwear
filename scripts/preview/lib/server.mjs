@@ -279,16 +279,29 @@ export function startServer({ root, preview: source, live = false, port = 0, hos
     if (suggest) {
       const locale = localeOf(pathname);
       const terms = url.searchParams.get('q') ?? '';
+      const list = (name) =>
+        url.searchParams
+          .get(name)
+          ?.split(',')
+          .map((s) => s.trim())
+          .filter(Boolean);
+      const options = {
+        limit: url.searchParams.get('resources[limit]'),
+        limitScope: url.searchParams.get('resources[limit_scope]') ?? undefined,
+        types: list('resources[type]'),
+        fields: list('resources[options][fields]'),
+        unavailable: url.searchParams.get('resources[options][unavailable_products]') ?? undefined,
+      };
       const spec = preview.pageSpec('search-empty', locale);
       const sectionId = url.searchParams.get('section_id');
       if (sectionId) {
         const out = preview.renderSections(spec, [sectionId], {
           cartLines: cart,
-          extra: (world) => ({ predictive_search: world.buildPredictiveSearch(terms) }),
+          extra: (world) => ({ predictive_search: world.buildPredictiveSearch(terms, options) }),
         });
         return sendSection(res, out, sectionId);
       }
-      const ps = cartWorld(locale).buildPredictiveSearch(terms);
+      const ps = cartWorld(locale).buildPredictiveSearch(terms, options);
       return sendJson(res, 200, {
         resources: {
           results: {

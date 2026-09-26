@@ -1,200 +1,145 @@
 {%- doc -%}
-  Search sheet (<sw-drawer id="SearchModal">): a dialog that slides down from the top with the store
-  search form. The header's search link opens it, and goes to the search page when JavaScript is
-  off. With "Show suggestions while typing" on (Theme settings > Search), the input is a combobox
-  and assets/predictive-search.js (<sw-predictive-search>) lists products, collections and query
-  suggestions rendered by sections/predictive-search.liquid.
+  The header's search field: a real search form that submits to the search page, so it works
+  without JavaScript. Below 1200px it is a full-width bar under the logo row; from 1200px it sits
+  before the account, language and cart icons (sections/header.liquid places it).
+  assets/predictive-search.js (<sw-predictive-search>) normalizes the query before it is sent (see
+  normalizeSearchQuery there) and, with "Show suggestions while typing" on (Theme settings > Search),
+  turns the input into a combobox: typing shows products, categories and query suggestions from
+  sections/predictive-search.liquid in a panel right under the field (a full-width sheet below the
+  header on small screens). Escape, a click outside and focus leaving the field close the panel.
 
   @example
   {% render 'header-search' %}
 {%- enddoc -%}
 {%- assign predictive = settings.predictive_search -%}
-<sw-drawer id="SearchModal">
-  <dialog
-    id="SearchModalDialog"
-    class="search-modal color-{{ settings.drawer_color_scheme.id }}"
-    aria-labelledby="SearchModalTitle"
-  >
-    <h2 id="SearchModalTitle" class="visually-hidden">{{ 'header.search.title' | t }}</h2>
-    <sw-predictive-search class="search-modal__content">
-      <div class="search-modal__bar">
-        <search class="search-modal__search">
-          <form action="{{ routes.search_url }}" method="get" class="search-modal__form">
-            <label class="visually-hidden" for="SearchModalInput">{{ 'header.search.label' | t }}</label>
-            <input
-              id="SearchModalInput"
-              class="search-modal__input"
-              type="search"
-              name="q"
-              value="{{ search.terms | escape }}"
-              placeholder="{{ 'header.search.placeholder' | t }}"
-              autocapitalize="off"
-              spellcheck="false"
-              enterkeyhint="search"
-              autofocus
-              {% if predictive %}
-                autocomplete="off"
-                role="combobox"
-                aria-expanded="false"
-                aria-controls="PredictiveSearchListbox"
-                aria-autocomplete="list"
-              {% endif %}
-            >
-            <input type="hidden" name="options[prefix]" value="last">
-            {%- if predictive -%}
-              <span class="search-modal__spinner spinner" aria-hidden="true"></span>
-            {%- endif -%}
-            <button type="submit" class="header__icon">
-              {%- render 'icon', name: 'search', size: 22 -%}
-              <span class="visually-hidden">{{ 'header.search.submit' | t }}</span>
-            </button>
-          </form>
-        </search>
-        <button type="button" class="header__icon" data-drawer-close>
-          {%- render 'icon', name: 'close', size: 24 -%}
-          <span class="visually-hidden">{{ 'header.search.close' | t }}</span>
-        </button>
-      </div>
-
+<sw-predictive-search
+  class="header-search"
+  {% if predictive %}
+    data-predictive
+  {% endif %}
+>
+  <search class="header-search__search">
+    <form action="{{ routes.search_url }}" method="get" class="header-search__form">
+      <label class="visually-hidden" for="HeaderSearchInput">{{ 'header.search.label' | t }}</label>
+      {%- render 'icon', name: 'search', size: 20, class: 'header-search__icon' -%}
       {%- if predictive -%}
-        <div class="search-modal__results" data-predictive-search-results hidden></div>
-        {%- comment -%}
-          The page's own live region (announce() in @theme/core) sits outside this modal dialog, where
-          it is inert while the dialog is open, so result counts are announced from in here.
-        {%- endcomment -%}
-        <div
-          class="visually-hidden"
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-          data-predictive-search-live
-        ></div>
+        <span class="header-search__spinner spinner" aria-hidden="true"></span>
       {%- endif -%}
-    </sw-predictive-search>
-  </dialog>
-</sw-drawer>
+      <input
+        id="HeaderSearchInput"
+        class="header-search__input"
+        type="search"
+        name="q"
+        value="{{ search.terms | escape }}"
+        placeholder="{{ 'header.search.field' | t }}"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        enterkeyhint="search"
+        {% if predictive %}
+          autocomplete="off"
+          role="combobox"
+          aria-expanded="false"
+          aria-controls="PredictiveSearchListbox"
+          aria-autocomplete="list"
+        {% endif %}
+      >
+      <input type="hidden" name="options[prefix]" value="last">
+      <button type="button" class="header-search__clear" data-search-clear hidden>
+        {%- render 'icon', name: 'close', size: 18 -%}
+        <span class="visually-hidden">{{ 'header.search.clear' | t }}</span>
+      </button>
+    </form>
+  </search>
 
-{%- if predictive -%}
-  <script type="module" src="{{ 'predictive-search.js' | asset_url }}"></script>
-{%- endif -%}
+  {%- if predictive -%}
+    {%- comment -%}
+      The options take no Tab stop (the arrow keys move through them), so the panel itself is
+      focusable: keyboard users can Tab into a long list of results and scroll it.
+    {%- endcomment -%}
+    <div
+      class="header-search__panel color-{{ settings.drawer_color_scheme.id }}"
+      role="region"
+      aria-label="{{ 'header.search.results' | t }}"
+      tabindex="0"
+      data-predictive-search-results
+      hidden
+    ></div>
+    <div
+      class="visually-hidden"
+      role="status"
+      aria-live="polite"
+      aria-atomic="true"
+      data-predictive-search-live
+    ></div>
+  {%- endif -%}
+</sw-predictive-search>
 
 {% stylesheet %}
-  .search-modal {
-    position: fixed;
-    inset-block: 0 auto;
-    inset-inline: 0;
+  /* Below 1200px the field is a full-width row of the header grid (sections/header.liquid) and the
+     results sheet covers the screen under the header; from 1200px both sit in the end column and the
+     panel hangs under the field. */
+  .header-search {
+    display: block;
+    grid-area: search;
+    min-inline-size: 0;
+    margin-inline: var(--space-2);
+    padding-block-end: var(--space-2);
+
+    @media screen and (min-width: 1200px) {
+      position: relative;
+      flex: 1 1 400px;
+      min-inline-size: 220px;
+      max-inline-size: 440px;
+      margin-inline: 0 var(--space-2);
+      padding-block-end: 0;
+    }
+  }
+
+  .header-search__search,
+  .header-search__form {
+    display: block;
+  }
+
+  .header-search__form {
+    position: relative;
+  }
+
+  .header-search__input {
+    display: block;
     inline-size: 100%;
-    max-inline-size: none;
-    block-size: auto;
-    max-block-size: 100dvh;
+    block-size: var(--touch-target);
     margin: 0;
-    padding: 0;
-    border: 0;
-    background: var(--color-background);
+    padding-block: 0;
+    padding-inline: 46px var(--touch-target);
+    border: 1.5px solid color-mix(in srgb, var(--color-text) 42%, transparent);
+    border-radius: var(--radius-chip);
+    background: color-mix(in srgb, var(--color-text) 9%, transparent);
     color: var(--color-text);
-    box-shadow: 0 18px 48px rgb(0 0 0 / 0.3);
-    transform: translateY(-100%);
-    transition:
-      transform var(--duration) var(--ease),
-      overlay var(--duration) allow-discrete,
-      display var(--duration) allow-discrete;
-
-    &:not([open]) {
-      display: none;
-    }
-
-    &[open] {
-      display: flex;
-      flex-direction: column;
-      transform: translateY(0);
-
-      @starting-style {
-        transform: translateY(-100%);
-      }
-    }
-
-    &::backdrop {
-      background: var(--color-overlay);
-      opacity: 0;
-      transition:
-        opacity var(--duration) var(--ease),
-        overlay var(--duration) allow-discrete,
-        display var(--duration) allow-discrete;
-    }
-
-    &[open]::backdrop {
-      opacity: 1;
-
-      @starting-style {
-        opacity: 0;
-      }
-    }
-  }
-
-  .search-modal__content {
-    display: flex;
-    flex-direction: column;
-    min-block-size: 0;
-    max-block-size: 100dvh;
-  }
-
-  .search-modal__bar {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    inline-size: 100%;
-    max-inline-size: calc(var(--page-width, 1440px) + var(--gutter) * 2);
-    margin-inline: auto;
-    padding: var(--space-3) var(--space-3) var(--space-4);
-
-    @media screen and (min-width: 990px) {
-      padding: var(--space-5) var(--gutter) var(--space-6);
-    }
-  }
-
-  .search-modal__search {
-    flex: 1;
-    min-inline-size: 0;
-  }
-
-  .search-modal__form {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    min-block-size: var(--control-height);
-    border-block-end: 2px solid var(--color-text);
-
-    &:focus-within {
-      box-shadow: 0 2px 0 0 var(--color-text);
-    }
-  }
-
-  .search-modal__input {
-    flex: 1;
-    min-inline-size: 0;
-    block-size: 48px;
-    padding: 0 var(--space-1);
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    color: inherit;
-    font-size: calc(18px * var(--body-scale, 1));
-    font-weight: 600;
+    /* 16px at least, or iOS zooms the page when the field gets focus. */
+    font-size: max(16px, var(--text-base));
+    font-weight: 500;
+    line-height: 1.2;
     -webkit-appearance: none;
     appearance: none;
-
-    @media screen and (min-width: 750px) {
-      font-size: calc(22px * var(--body-scale, 1));
-    }
+    transition:
+      border-color var(--duration-fast) var(--ease),
+      background-color var(--duration-fast) var(--ease);
 
     &::placeholder {
       color: var(--color-muted);
-      font-weight: 500;
       opacity: 1;
     }
 
+    &:hover {
+      border-color: color-mix(in srgb, var(--color-text) 62%, transparent);
+    }
+
     &:focus-visible {
-      outline: none; /* the form's thicker underline (:focus-within) is the focus indicator */
+      border-color: var(--color-text);
+      outline: 2px solid var(--color-text);
+      outline-offset: 2px;
+      background: color-mix(in srgb, var(--color-text) 13%, transparent);
     }
 
     &::-webkit-search-decoration,
@@ -204,19 +149,102 @@
     }
   }
 
-  .search-modal__spinner {
-    display: none;
+  .header-search__icon,
+  .header-search__spinner {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 16px;
+    translate: 0 -50%;
+    pointer-events: none;
   }
 
-  .search-modal__content[data-loading] .search-modal__spinner {
+  .header-search__icon {
+    color: var(--color-text);
+  }
+
+  .header-search__spinner {
+    display: none;
+    inline-size: 18px;
+    block-size: 18px;
+  }
+
+  .header-search[data-loading] .header-search__spinner {
     display: block;
   }
 
-  .search-modal__results {
-    flex: 1;
-    min-block-size: 0;
+  .header-search[data-loading] .header-search__icon {
+    visibility: hidden;
+  }
+
+  .header-search__clear {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-chip);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+
+    &:hover {
+      background: color-mix(in srgb, currentColor 12%, transparent);
+    }
+
+    &:focus-visible {
+      outline-offset: -3px;
+    }
+  }
+
+  /* Results: a sheet from the bottom of the header to the bottom of the screen on small screens
+     (--header-search-top is measured by the script when it opens)… */
+  .header-search__panel {
+    position: fixed;
+    inset-block: var(--header-search-top, 113px) 0;
+    inset-inline: 0;
+    z-index: 2;
     overflow-y: auto;
     overscroll-behavior: contain;
-    border-block-start: 1px solid var(--color-border);
+
+    &:focus-visible {
+      outline-offset: -3px;
+    }
+
+    /* …and a panel under the field on wide screens, at least as wide as the field. */
+    @media screen and (min-width: 1200px) {
+      position: absolute;
+      inset-block: calc(100% + 10px) auto;
+      inset-inline: auto 0;
+      inline-size: min(760px, calc(100vw - 2 * var(--gutter)));
+      min-inline-size: 100%;
+      max-block-size: calc(100dvh - var(--header-search-top, 120px) - 24px);
+      border: 1px solid var(--color-border);
+      border-radius: calc(var(--radius-card) * 2);
+      box-shadow: 0 24px 56px -12px rgb(8 9 11 / 0.45);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .header-search__panel {
+      transition:
+        opacity 160ms var(--ease),
+        translate 160ms var(--ease);
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 -6px;
+      }
+    }
+  }
+
+  /* The sheet covers the page on small screens, so the page under it stays put. */
+  @media screen and (max-width: 1199.98px) {
+    html:has(.header-search[data-open]) {
+      overflow: hidden;
+    }
   }
 {% endstylesheet %}

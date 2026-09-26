@@ -3,7 +3,8 @@
   snippets/header-menu. It overlays the page under the header bar, on a light shopping surface:
   - start: the link's title, the collection's product count, a "Shop all" button and two sorted
     shortcuts into the collection (newest first, lowest price first);
-  - middle: an image tile per sub-link (snippets/header-tile), third-level links listed under it;
+  - middle: an image tile per sub-link (snippets/header-tile), with its first 8 third-level links
+    under it and a "View all" link to the sub-link's own page when it has more;
   - end: the header's "Mega menu promo" block for this collection, or the collection's first
     3 products in its own sort order.
   Every image is lazy, so nothing inside a closed panel is fetched.
@@ -109,16 +110,26 @@
               assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
             -%}
             {%- unless hidden contains child_key -%}
+              {%- liquid
+                # Third-level links (teams, players): the first 8 that are shown, then "View all".
+                assign grandchild_prefix = ',' | append: link_index | append: '-' | append: child_index | append: '-'
+                assign grandchild_total = 0
+                for grandchild in child.links
+                  assign grandchild_key = grandchild_prefix | append: forloop.index | append: ','
+                  unless hidden contains grandchild_key
+                    assign grandchild_total = grandchild_total | plus: 1
+                  endunless
+                endfor
+                assign grandchild_shown = 0
+              -%}
               <li class="header-mega__tile">
                 {%- render 'header-tile', link: child, sizes: '(min-width: 1200px) 208px, 168px' -%}
-                {%- if child.links.size > 0 -%}
+                {%- if grandchild_total > 0 -%}
                   <ul class="header-mega__sublinks" role="list">
                     {%- for grandchild in child.links -%}
-                      {%- liquid
-                        assign grandchild_key = ',' | append: link_index | append: '-' | append: child_index
-                        assign grandchild_key = grandchild_key | append: '-' | append: forloop.index | append: ','
-                      -%}
-                      {%- unless hidden contains grandchild_key -%}
+                      {%- assign grandchild_key = grandchild_prefix | append: forloop.index | append: ',' -%}
+                      {%- unless hidden contains grandchild_key or grandchild_shown >= 8 -%}
+                        {%- assign grandchild_shown = grandchild_shown | plus: 1 -%}
                         <li>
                           <a
                             class="header-mega__sublink"
@@ -132,6 +143,17 @@
                         </li>
                       {%- endunless -%}
                     {%- endfor -%}
+                    {%- if grandchild_total > 8 and child.url != blank and child.url != '#' -%}
+                      <li>
+                        <a class="header-mega__sublink header-mega__view-all" href="{{ child.url }}">
+                          <span>
+                            {{- 'header.mega.view_all' | t -}}
+                            <span class="visually-hidden">: {{ child.title | escape }}</span>
+                          </span>
+                          {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+                        </a>
+                      </li>
+                    {%- endif -%}
                   </ul>
                 {%- endif -%}
               </li>
@@ -394,6 +416,18 @@
     &[aria-current='page'] {
       color: var(--color-text);
       text-decoration-line: underline;
+    }
+  }
+
+  .header-mega__view-all {
+    gap: var(--space-1);
+    color: var(--color-text);
+    font-weight: 700;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
     }
   }
 
