@@ -1,10 +1,11 @@
 {%- doc -%}
   Size information for a product, shown inline (size chart accordion) and in the SizeChart dialog.
-  1. When the product has a size chart (metafield sportwear.size_chart, metaobject sw_size_chart),
-     its JSON table rows [{ size, height_cm, chest_cm, length_cm }] as an accessible table, plus its
-     fit note. Columns with no value in any row are left out.
-  2. Otherwise, for kids products (sportwear.audience = kids), the approximate height for each of our
-     kids sizes (5-6 ... 13-14 = 116 ... 164 cm), limited to the sizes this product has.
+  1. When the product has a size chart (metafield sportwear.size_chart, metaobject sw_size_chart), its rows as
+     an accessible table (snippets/size-chart-table.liquid: size, age, height, weight, chest width or chest,
+     length, shorts length; columns with no value in any row are left out), plus its fit note.
+  2. Otherwise, for kids products (sportwear.audience = kids, or a kids chart without rows), the approximate
+     height for each of our kids sizes (5-6 ... 13-14 = 116 ... 164 cm), limited to the sizes this product
+     has. A kids product with none of those sizes (e.g. the supplier's 16-28) gets the guidance below.
   3. Otherwise, short guidance on how to measure. No measurement is ever made up.
 
   @param {product} product - The product
@@ -17,114 +18,36 @@
 {%- liquid
   assign chart = product.metafields.sportwear.size_chart.value
   assign audience = product.metafields.sportwear.audience.value
+  if chart.audience.value == 'kids'
+    assign audience = 'kids'
+  endif
   assign guide_tag = heading_tag | default: 'h3'
   assign caption_id = id | append: '-caption'
 
-  # Row keys are read through a variable: "size" must be looked up as a key, never as the
-  # built-in .size (count) property.
-  assign size_key = 'size'
+  assign fallback_caption = 'products.size_chart.caption' | t: title: product.title
+  capture chart_table
+    render 'size-chart-table', chart: chart, id: id, class_prefix: 'size-chart', caption: fallback_caption
+  endcapture
 
-  assign has_rows = false
-  if chart != blank
-    assign table_value = chart.table.value
-    if table_value.rows != blank
-      assign rows = table_value.rows
-      assign has_rows = true
-    elsif table_value != blank
-      assign rows = table_value
-      assign has_rows = true
-    endif
-  endif
-
-  assign has_height = false
-  assign has_chest = false
-  assign has_length = false
-  if has_rows
-    for row in rows
-      if row.height_cm != blank
-        assign has_height = true
-      endif
-      if row.chest_cm != blank
-        assign has_chest = true
-      endif
-      if row.length_cm != blank
-        assign has_length = true
-      endif
-    endfor
-  endif
--%}
-{%- if has_rows -%}
-  {%- liquid
-    assign caption = chart.name.value | escape
-    if caption == blank
-      assign caption = 'products.size_chart.caption' | t: title: product.title
-    endif
-    assign fit_note = chart.fit_note.value
-  -%}
-  <div class="size-chart">
-    <div class="size-chart__scroll table-scroll" role="region" aria-labelledby="{{ caption_id }}" tabindex="0">
-      <table class="size-chart__table">
-        <caption id="{{ caption_id }}" class="size-chart__caption">
-          {{ caption }}
-        </caption>
-        <thead>
-          <tr>
-            <th scope="col">{{ 'products.size_chart.size' | t }}</th>
-            {%- if has_height -%}
-              <th scope="col">{{ 'products.size_chart.height' | t }}</th>
-            {%- endif -%}
-            {%- if has_chest -%}
-              <th scope="col">{{ 'products.size_chart.chest' | t }}</th>
-            {%- endif -%}
-            {%- if has_length -%}
-              <th scope="col">{{ 'products.size_chart.length' | t }}</th>
-            {%- endif -%}
-          </tr>
-        </thead>
-        <tbody>
-          {%- for row in rows -%}
-            <tr>
-              <th scope="row">
-                <bdi dir="ltr">{{ row[size_key] | escape }}</bdi>
-              </th>
-              {%- if has_height -%}
-                <td>
-                  <bdi dir="ltr">{{ row.height_cm | escape }}</bdi>
-                </td>
-              {%- endif -%}
-              {%- if has_chest -%}
-                <td>
-                  <bdi dir="ltr">{{ row.chest_cm | escape }}</bdi>
-                </td>
-              {%- endif -%}
-              {%- if has_length -%}
-                <td>
-                  <bdi dir="ltr">{{ row.length_cm | escape }}</bdi>
-                </td>
-              {%- endif -%}
-            </tr>
-          {%- endfor -%}
-        </tbody>
-      </table>
-    </div>
-    {%- if fit_note != blank -%}
-      <p class="size-chart__note">{{ fit_note | escape | newline_to_br }}</p>
-    {%- endif -%}
-  </div>
-{%- elsif audience == 'kids' -%}
-  {%- liquid
-    # Our kids size system (see catalog/taxonomy.json): age-based sizes and the matching height.
-    assign kid_sizes = '5-6,7-8,9-10,11-12,13-14' | split: ','
-    assign kid_heights = '116,128,140,152,164' | split: ','
+  # Our kids size system (see catalog/taxonomy.json): age-based sizes and the matching height.
+  assign kid_sizes = '5-6,7-8,9-10,11-12,13-14' | split: ','
+  assign kid_heights = '116,128,140,152,164' | split: ','
+  assign matched = 0
+  if chart_table == blank and audience == 'kids'
     assign product_option = product.options_with_values | first
     assign product_sizes = product_option.values | map: 'name'
-    assign matched = 0
     for kid_size in kid_sizes
       if product_sizes contains kid_size
         assign matched = matched | plus: 1
       endif
     endfor
-  -%}
+  endif
+-%}
+{%- if chart_table != blank -%}
+  <div class="size-chart">
+    {{- chart_table -}}
+  </div>
+{%- elsif matched > 0 -%}
   <div class="size-chart">
     <div class="size-chart__scroll table-scroll" role="region" aria-labelledby="{{ caption_id }}" tabindex="0">
       <table class="size-chart__table">
@@ -139,11 +62,9 @@
         </thead>
         <tbody>
           {%- for kid_size in kid_sizes -%}
-            {%- if matched > 0 -%}
-              {%- unless product_sizes contains kid_size -%}
-                {%- continue -%}
-              {%- endunless -%}
-            {%- endif -%}
+            {%- unless product_sizes contains kid_size -%}
+              {%- continue -%}
+            {%- endunless -%}
             <tr>
               <th scope="row">
                 <bdi dir="ltr">{{ kid_size }}</bdi>
@@ -174,7 +95,9 @@
     gap: var(--space-3);
   }
 
+  /* A size container, so the caption can keep to the visible width while a wide table scrolls. */
   .size-chart__scroll {
+    container-type: inline-size;
     max-inline-size: 100%;
 
     &:focus-visible {
@@ -182,31 +105,65 @@
     }
   }
 
+  /* Separate borders: each cell keeps its own line when the size column sticks (below). Phones get
+     tighter cells and wrapping column titles, so a six-column kids chart fits 390px in every language. */
   .size-chart__table {
     inline-size: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     font-size: var(--text-md);
     font-variant-numeric: tabular-nums;
 
     & :is(th, td) {
-      padding: 10px 12px;
+      padding: 10px 6px;
       border-block-end: 1px solid var(--color-border);
       text-align: start;
       white-space: nowrap;
+
+      @media screen and (min-width: 750px) {
+        padding-inline: 12px;
+      }
     }
 
     & thead th {
       background: var(--color-surface);
-      font-size: var(--text-sm);
+      font-size: var(--text-xs);
       font-weight: 800;
+      line-height: var(--leading-tight);
+      vertical-align: bottom;
+      white-space: normal;
+
+      @media screen and (min-width: 750px) {
+        font-size: var(--text-sm);
+      }
     }
 
     & tbody th {
       font-weight: 800;
     }
+
+    /* The size column stays in view while a wide chart scrolls sideways. */
+    & tr > :first-child {
+      position: sticky;
+      inset-inline-start: 0;
+      z-index: 1;
+      background: var(--color-background);
+    }
+
+    & thead tr > :first-child {
+      background: var(--color-surface);
+    }
+  }
+
+  /* Narrower still (the size guide dialog on a phone): the tightest cells. */
+  @container (max-width: 330px) {
+    .size-chart__table :is(th, td) {
+      padding-inline: 4px;
+    }
   }
 
   .size-chart__caption {
+    max-inline-size: 100cqi;
     padding-block-end: var(--space-2);
     font-weight: 700;
     text-align: start;

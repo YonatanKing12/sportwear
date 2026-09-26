@@ -154,10 +154,6 @@
     "kids_caption": "Kids' sizes by height (approximate)",
     "kids_note": "The size is the child's age in years, and heights are approximate. If your child is between two sizes, choose the larger one.",
     "table": {
-      "size": "Size",
-      "height": "Height (cm)",
-      "chest": "Chest (cm)",
-      "length": "Shirt length (cm)",
       "age": "Size (age)",
       "approx_height": "Approximate height (cm)"
     },

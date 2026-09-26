@@ -186,12 +186,16 @@ Schema must include (use the shared labels):
 - Product metafields (namespace `sportwear`): `team` (metaobject `sw_team`: `name`, `short_name`, `slug`,
   `sport`, `leagues`, `primary_color`), `leagues` (list of `sw_league`: `name`, `slug`, `sport`), `season`
   (e.g. 26/27), `kit` (home|away|third|fourth|special|training), `audience` (adult|kids), `size_chart`
-  (metaobject `sw_size_chart`: `name`, `audience`, `table` JSON rows `[{size, height_cm, chest_cm, length_cm}]`,
-  `fit_note`), `counterpart` (product), `complements` (list of products).
+  (metaobject `sw_size_chart`: `name`, `audience`, `table` JSON `{"rows": [...]}` or a bare array of rows
+  `{size, age, height_cm, weight_kg, chest_width_cm (flat, armpit to armpit), chest_cm (circumference),
+  length_cm, shorts_length_cm}`, all optional but `size`, values numbers or ranges like "160-170"; rendered
+  by `snippets/size-chart-table.liquid`, ages also under the sizes in the picker), `fit_note`),
+  `counterpart` (product), `complements` (list of products).
   Access typed values with `.value`, e.g. `product.metafields.sportwear.team.value.name.value`.
   They may be empty; always guard with `!= blank`.
 - Product option: a single size option (`מידה` / Size / المقاس). Adult sizes S, M, L, XL (XXL maybe); kids
-  5-6, 7-8, 9-10, 11-12, 13-14.
+  5-6, 7-8, 9-10, 11-12, 13-14; kids football sets from the supplier jerseyxie: 16, 18, 20, 22, 24, 26, 28
+  (owner, 2026-09-26; their chart gives the age of each).
 - Tags: `sport:*`, `league:*`, `team:*`, `kit:*`, `season:*`, `audience:*`, `sale`, `new`.
 - Theme settings you may read: `settings.cart_type`, `settings.free_shipping_threshold` (₪, may be blank),
   `settings.cart_show_upsell`, `settings.cart_show_note`, `settings.whatsapp_number`, `settings.business_*`,

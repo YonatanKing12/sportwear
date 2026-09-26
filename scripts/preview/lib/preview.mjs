@@ -19,6 +19,9 @@ export const PAGE_PRESETS = {
   'product-sale': { template: 'product', product: 'demo-fc-away-jersey-2026-27' },
   'product-kids': { template: 'product', product: 'demo-fc-home-jersey-2026-27-kids' },
   'product-set': { template: 'product', product: 'demo-stars-basketball-jersey-2026-27' },
+  // The supplier's size charts: adult jersey (S-XL, L sold out) and kids kit (16-28 with ages, 26 sold out).
+  'product-chart': { template: 'product', product: 'demo-united-away-jersey-2026-27' },
+  'product-kids-set': { template: 'product', product: 'demo-united-away-kit-2026-27-kids' },
   collection: { template: 'collection', collection: 'football' },
   'collection-empty': { template: 'collection', collection: 'serie-a' },
   'list-collections': { template: 'list-collections' },

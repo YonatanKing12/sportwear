@@ -1,6 +1,10 @@
 {%- doc -%}
   Size (variant) picker: one fieldset per option (SportWear products have a single Size option), with
-  radio inputs styled as size buttons. Adult sizes sit in 4 columns, kids sizes (5-6 ... 13-14) in 5.
+  radio inputs styled as size buttons. Adult sizes sit in 4 columns, kids sizes (5-6 ... 13-14) in 5, and
+  more than five kids sizes (the supplier's kids sets, 16 ... 28) in 4.
+  When the product's size chart (sportwear.size_chart) gives an age for a size, the main picker and the
+  size sheet show it under the size ("22" over "age 7-8"), and the size's label (its accessible name)
+  includes it. A product is a kids product when its sportwear.audience or its chart's audience is kids.
   Sold-out sizes of single-option products stay visible but are disabled, struck through and announced
   as sold out. The same markup serves three places (context):
   - 'main': the picker in the product info column. The first option gets the "Size guide" button that
@@ -32,11 +36,37 @@
   assign first_option = product.options_with_values | first
   assign first_value = first_option.values | first
   assign audience = product.metafields.sportwear.audience.value
+  assign chart = product.metafields.sportwear.size_chart.value
   assign is_kids = false
-  if audience == 'kids'
+  if audience == 'kids' or chart.audience.value == 'kids'
     assign is_kids = true
   elsif audience == blank and first_value.name contains '-'
     assign is_kids = true
+  endif
+
+  # Ages from the size chart ({ size, age, … } rows of kids charts), shown under the sizes in the main
+  # picker and the size sheet, only when the chart has an age for one of this product's sizes. Row keys
+  # are read through a variable: "size" must be looked up as a key, never as the built-in .size (count).
+  assign size_key = 'size'
+  assign show_ages = false
+  if context != 'bar' and chart != blank
+    assign chart_rows = chart.table.value.rows
+    if chart_rows == blank
+      assign chart_rows = chart.table.value
+    endif
+    for value in first_option.values
+      assign value_key = value.name | strip | downcase
+      for row in chart_rows
+        assign row_key = row[size_key] | append: '' | strip | downcase
+        if row_key == value_key and row.age != blank
+          assign show_ages = true
+          break
+        endif
+      endfor
+      if show_ages
+        break
+      endif
+    endfor
   endif
 
   assign single_option = false
@@ -60,7 +90,7 @@
   assign message_id = id_prefix | append: '-size-message'
 -%}
 <div
-  class="variant-picker variant-picker--{{ context }}{% if is_kids %} variant-picker--kids{% endif %}"
+  class="variant-picker variant-picker--{{ context }}{% if is_kids %} variant-picker--kids{% endif %}{% if show_ages %} variant-picker--ages{% endif %}"
   {% if single_option %}
     data-size-picker="{{ context }}"
   {% endif %}
@@ -101,6 +131,19 @@
         <div class="variant-picker__values{% if forloop.first %} variant-picker__values--primary{% else %} variant-picker__values--auto{% endif %}">
           {%- for value in option.values -%}
             {%- capture input_id -%}{{ id_prefix }}-option{{ option_index }}-{{ forloop.index }}{%- endcapture -%}
+            {%- liquid
+              assign value_age = ''
+              if show_ages and option_index == 1
+                assign value_key = value.name | strip | downcase
+                for row in chart_rows
+                  assign row_key = row[size_key] | append: '' | strip | downcase
+                  if row_key == value_key
+                    assign value_age = row.age | append: '' | strip
+                    break
+                  endif
+                endfor
+              endif
+            -%}
             <input
               type="radio"
               class="variant-picker__input visually-hidden"
@@ -138,6 +181,14 @@
               for="{{ input_id }}"
             >
               <bdi dir="ltr">{{ value.name | escape }}</bdi>
+              {%- if value_age != blank -%}
+                {%- capture age_html -%}<bdi dir="ltr">{{ value_age | escape }}</bdi>{%- endcapture -%}
+                <span class="variant-picker__age">
+                  {%- comment -%} A pause between the size and its age for screen readers. {%- endcomment -%}
+                  <span class="visually-hidden">, </span>
+                  {{- 'products.variant_picker.age_html' | t: age: age_html -}}
+                </span>
+              {%- endif -%}
               {%- unless value.available -%}
                 <span class="visually-hidden">, {{ 'products.variant_picker.sold_out' | t }}</span>
               {%- endunless -%}
@@ -148,13 +199,27 @@
     {%- endfor -%}
   </div>
   {%- if is_kids and context != 'bar' -%}
-    <p class="variant-picker__note">
-      {%- if block.settings.show_size_guide -%}
-        {{ 'products.variant_picker.kids_note' | t }}
-      {%- else -%}
-        {{ 'products.variant_picker.kids_note_short' | t }}
-      {%- endif -%}
-    </p>
+    {%- liquid
+      # "Sizes are ages in years" is only true of our age sizes (5-6 ... 13-14); sizes shown with their
+      # age get a note of their own, and other kids sizes none.
+      assign kids_note = ''
+      if show_ages
+        if block.settings.show_size_guide
+          assign kids_note = 'products.variant_picker.kids_note_ages' | t
+        else
+          assign kids_note = 'products.variant_picker.kids_note_ages_short' | t
+        endif
+      elsif first_value.name contains '-'
+        if block.settings.show_size_guide
+          assign kids_note = 'products.variant_picker.kids_note' | t
+        else
+          assign kids_note = 'products.variant_picker.kids_note_short' | t
+        endif
+      endif
+    -%}
+    {%- if kids_note != blank -%}
+      <p class="variant-picker__note">{{ kids_note }}</p>
+    {%- endif -%}
   {%- endif -%}
 </div>
 
@@ -237,6 +302,13 @@
     gap: 6px;
   }
 
+  /* More than five kids sizes (the kids sets' 16 ... 28), or sizes with their age under them: four per
+     row, so each button keeps room for both lines on a phone. */
+  .variant-picker--kids .variant-picker__values--primary:has(> .variant-picker__value:nth-of-type(6)),
+  .variant-picker--ages .variant-picker__values--primary {
+    --variant-columns: 4;
+  }
+
   .variant-picker__value {
     display: flex;
     align-items: center;
@@ -264,6 +336,23 @@
 
   .variant-picker--kids .variant-picker__values--primary .variant-picker__value {
     font-size: var(--text-md);
+  }
+
+  /* The size over its age ("22" / "age 7-8"). */
+  .variant-picker--ages .variant-picker__values--primary .variant-picker__value {
+    flex-direction: column;
+    gap: 2px;
+    padding-block: var(--space-1);
+    font-size: var(--text-base);
+  }
+
+  /* A softer shade of the button's own text color, so it reads on every state (chosen, sold out). */
+  .variant-picker__age {
+    color: color-mix(in srgb, currentColor 72%, transparent);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   .variant-picker__value--unavailable {

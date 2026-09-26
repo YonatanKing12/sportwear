@@ -1,0 +1,185 @@
+{%- doc -%}
+  The table of a size chart (metaobject sw_size_chart), shared by the product page (snippets/size-chart.liquid)
+  and the size guide page (sections/size-guide.liquid). Each caller styles it through its own class prefix
+  and wraps it in its own container. Renders nothing when the chart has no row with a size, so callers can
+  capture the output and fall back to something else when it is blank.
+
+  The chart's "table" JSON is { "rows": [ … ] } or a bare array of rows. Row keys, all optional but size;
+  values are numbers or text ranges such as "160-170", printed as stored:
+  size, age (kids), height_cm, weight_kg, chest_width_cm (garment lying flat, armpit to armpit),
+  chest_cm (circumference), length_cm (garment length), shorts_length_cm (kids sets). Other keys are ignored.
+  Columns come in this order, each only when a row has a value for it: size, age, height, weight, chest width
+  (or else chest), length, shorts length. Next to a shorts column the length column reads "jersey length".
+  The chest width column comes with a one-line hint on how it is measured. The chart's fit note follows.
+
+  @param {object} chart - The size chart metaobject (fields name, table, fit_note)
+  @param {string} id - Unique id prefix for this table
+  @param {string} class_prefix - BEM block of the caller's styles ('size-chart' or 'size-guide')
+  @param {string} [caption] - Caption when the chart has no name, HTML-escaped
+
+  @example
+  {% render 'size-chart-table', chart: chart, id: 'SizeChartDialog', class_prefix: 'size-chart', caption: caption %}
+{%- enddoc -%}
+{%- liquid
+  assign table_value = chart.table.value
+  assign rows = table_value.rows
+  if rows == blank
+    assign rows = table_value
+  endif
+
+  # Row keys are read through a variable: "size" must be looked up as a key, never as the built-in
+  # .size (count) property.
+  assign size_key = 'size'
+
+  assign has_size = false
+  assign has_age = false
+  assign has_height = false
+  assign has_weight = false
+  assign has_chest_width = false
+  assign has_chest = false
+  assign has_length = false
+  assign has_shorts_length = false
+  if chart != blank and rows != blank
+    for row in rows
+      if row[size_key] == blank
+        continue
+      endif
+      assign has_size = true
+      if row.age != blank
+        assign has_age = true
+      endif
+      if row.height_cm != blank
+        assign has_height = true
+      endif
+      if row.weight_kg != blank
+        assign has_weight = true
+      endif
+      if row.chest_width_cm != blank
+        assign has_chest_width = true
+      endif
+      if row.chest_cm != blank
+        assign has_chest = true
+      endif
+      if row.length_cm != blank
+        assign has_length = true
+      endif
+      if row.shorts_length_cm != blank
+        assign has_shorts_length = true
+      endif
+    endfor
+  endif
+
+  # One chest column: the flat width when the chart has it, else the circumference.
+  if has_chest_width
+    assign has_chest = false
+  endif
+
+  assign length_label = 'products.size_chart.length' | t
+  if has_shorts_length
+    assign length_label = 'products.size_chart.jersey_length' | t
+  endif
+
+  assign table_caption = chart.name.value | escape
+  if table_caption == blank
+    assign table_caption = caption
+  endif
+  assign caption_id = id | append: '-caption'
+  assign hint_id = id | append: '-hint'
+  assign fit_note = chart.fit_note.value
+-%}
+{%- if has_size -%}
+  <div
+    class="{{ class_prefix }}__scroll table-scroll"
+    role="region"
+    aria-labelledby="{{ caption_id }}"
+    tabindex="0"
+  >
+    <table
+      class="{{ class_prefix }}__table"
+      {% if has_chest_width %}
+        aria-describedby="{{ hint_id }}"
+      {% endif %}
+    >
+      <caption id="{{ caption_id }}" class="{{ class_prefix }}__caption">
+        {{- table_caption -}}
+      </caption>
+      <thead>
+        <tr>
+          <th scope="col">{{ 'products.size_chart.size' | t }}</th>
+          {%- if has_age -%}
+            <th scope="col">{{ 'products.size_chart.age' | t }}</th>
+          {%- endif -%}
+          {%- if has_height -%}
+            <th scope="col">{{ 'products.size_chart.height' | t }}</th>
+          {%- endif -%}
+          {%- if has_weight -%}
+            <th scope="col">{{ 'products.size_chart.weight' | t }}</th>
+          {%- endif -%}
+          {%- if has_chest_width -%}
+            <th scope="col">{{ 'products.size_chart.chest_width' | t }}</th>
+          {%- elsif has_chest -%}
+            <th scope="col">{{ 'products.size_chart.chest' | t }}</th>
+          {%- endif -%}
+          {%- if has_length -%}
+            <th scope="col">{{ length_label }}</th>
+          {%- endif -%}
+          {%- if has_shorts_length -%}
+            <th scope="col">{{ 'products.size_chart.shorts_length' | t }}</th>
+          {%- endif -%}
+        </tr>
+      </thead>
+      <tbody>
+        {%- for row in rows -%}
+          {%- if row[size_key] == blank -%}
+            {%- continue -%}
+          {%- endif -%}
+          <tr>
+            <th scope="row">
+              <bdi dir="ltr">{{ row[size_key] | escape }}</bdi>
+            </th>
+            {%- if has_age -%}
+              <td>
+                <bdi dir="ltr">{{ row.age | escape }}</bdi>
+              </td>
+            {%- endif -%}
+            {%- if has_height -%}
+              <td>
+                <bdi dir="ltr">{{ row.height_cm | escape }}</bdi>
+              </td>
+            {%- endif -%}
+            {%- if has_weight -%}
+              <td>
+                <bdi dir="ltr">{{ row.weight_kg | escape }}</bdi>
+              </td>
+            {%- endif -%}
+            {%- if has_chest_width -%}
+              <td>
+                <bdi dir="ltr">{{ row.chest_width_cm | escape }}</bdi>
+              </td>
+            {%- elsif has_chest -%}
+              <td>
+                <bdi dir="ltr">{{ row.chest_cm | escape }}</bdi>
+              </td>
+            {%- endif -%}
+            {%- if has_length -%}
+              <td>
+                <bdi dir="ltr">{{ row.length_cm | escape }}</bdi>
+              </td>
+            {%- endif -%}
+            {%- if has_shorts_length -%}
+              <td>
+                <bdi dir="ltr">{{ row.shorts_length_cm | escape }}</bdi>
+              </td>
+            {%- endif -%}
+          </tr>
+        {%- endfor -%}
+      </tbody>
+    </table>
+  </div>
+  {%- if has_chest_width -%}
+    <p id="{{ hint_id }}" class="{{ class_prefix }}__note">{{ 'products.size_chart.chest_width_hint' | t }}</p>
+  {%- endif -%}
+  {%- if fit_note != blank -%}
+    <p class="{{ class_prefix }}__note">{{ fit_note | escape | newline_to_br }}</p>
+  {%- endif -%}
+{%- endif -%}
