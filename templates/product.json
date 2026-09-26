@@ -93,7 +93,6 @@
         "sticky_info": true,
         "media_ratio": "square",
         "enable_zoom": true,
-        "show_original_badge": true,
         "padding_top": 8,
         "padding_bottom": 48
       }

@@ -314,9 +314,9 @@ export const COLLECTIONS = [
     handle: 'football',
     title: { he: 'חולצות כדורגל', en: 'Football Jerseys', ar: 'قمصان كرة القدم' },
     description: {
-      he: '<p>חולצות כדורגל מקוריות לעונת 26/27, למבוגרים ולילדים.</p>',
-      en: '<p>Original football jerseys for the 26/27 season, for adults and kids.</p>',
-      ar: '<p>قمصان كرة قدم أصلية لموسم 26/27 للكبار والأطفال.</p>',
+      he: '<p>חולצות כדורגל של העונה, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>',
+      en: "<p>This season's football jerseys, for adults and kids. Home delivery within 3 business days.</p>",
+      ar: '<p>قمصان كرة القدم لهذا الموسم، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>',
     },
     match: (p) => p.sport === 'football',
   },
@@ -324,9 +324,9 @@ export const COLLECTIONS = [
     handle: 'basketball',
     title: { he: 'כדורסל', en: 'Basketball', ar: 'كرة السلة' },
     description: {
-      he: '<p>גופיות ומכנסי כדורסל מקוריים.</p>',
-      en: '<p>Original basketball jerseys and shorts.</p>',
-      ar: '<p>قمصان وشورتات كرة سلة أصلية.</p>',
+      he: '<p>גופיות ומכנסי כדורסל, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>',
+      en: '<p>Basketball jerseys and shorts, for adults and kids. Home delivery within 3 business days.</p>',
+      ar: '<p>قمصان وشورتات كرة السلة، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>',
     },
     match: (p) => p.sport === 'basketball',
   },
@@ -410,9 +410,9 @@ export const PAGES = [
     handle: 'faq',
     title: { he: 'שאלות נפוצות', en: 'FAQ', ar: 'الأسئلة الشائعة' },
     content: {
-      he: '<h2>האם המוצרים מקוריים?</h2><p>כן, כל המוצרים מקוריים.</p><h2>כמה זמן לוקח משלוח?</h2><p>עד 3 ימי עסקים.</p>',
-      en: '<h2>Are the products original?</h2><p>Yes, every product is original.</p><h2>How long does delivery take?</h2><p>Up to 3 business days.</p>',
-      ar: '<h2>هل المنتجات أصلية؟</h2><p>نعم، جميع المنتجات أصلية.</p><h2>كم يستغرق التوصيل؟</h2><p>حتى 3 أيام عمل.</p>',
+      he: '<h2>איך בוחרים מידה?</h2><p>בעמוד של כל מוצר יש טבלת מידות.</p><h2>כמה זמן לוקח משלוח?</h2><p>עד 3 ימי עסקים.</p>',
+      en: '<h2>How do I choose a size?</h2><p>Every product page has a size chart.</p><h2>How long does delivery take?</h2><p>Up to 3 business days.</p>',
+      ar: '<h2>كيف أختار المقاس؟</h2><p>في صفحة كل منتج جدول مقاسات.</p><h2>كم يستغرق التوصيل؟</h2><p>حتى 3 أيام عمل.</p>',
     },
   },
   {

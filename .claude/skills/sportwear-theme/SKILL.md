@@ -120,8 +120,9 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
 - **Free-shipping progress bar:** the threshold comes from the theme setting
   `free_shipping_threshold` (ILS). Keep it in sync with the shipping rate in admin (the threshold is
   not decided yet; ₪200 is the recommendation, and shipping is ₪35).
-- **Trust strip:** 100% original · delivery in up to 3 business days · returns up to 45 days ·
-  secure payment (credit card, Apple Pay, Google Pay).
+- **Trust strip:** delivery in up to 3 business days · returns up to 45 days · stock held in
+  Israel · secure payment (credit card, Apple Pay, Google Pay). Never an originality claim ("100%
+  original", "authentic"): the owner ruled it out.
 - **Team orders page:** CTA to WhatsApp. The number is a theme setting.
 - No fake urgency, scarcity or ratings. Stock hints must read real inventory. Show ratings only
   when real reviews exist.

@@ -15,8 +15,7 @@ content pages).
 
 ## Why
 
-- A dark brand shell stands out from the generic white jersey stores and supports the "100% original"
-  message. It also matches the dark UIs of Instagram and TikTok, where most visitors come from.
+- A dark brand shell stands out from the generic white jersey stores. It also matches the dark UIs of Instagram and TikTok, where most visitors come from.
 - Light shopping surfaces keep supplier photos (shot on white) looking right, stop dark kits from
   disappearing, and make prices, sizes and long text easy to read.
 - The theme ships dark and light color schemes, so each section can be flipped in the editor without

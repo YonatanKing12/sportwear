@@ -35,9 +35,9 @@
       "product_title": "שם המוצר"
     },
     "trust": {
-      "original": "100% מקורי",
       "shipping": "משלוח עד הבית תוך 3 ימי עסקים",
       "returns": "החזרה עד 45 יום",
+      "stock": "המלאי בארץ",
       "secure_payment": "תשלום מאובטח: כרטיס אשראי, Apple Pay ו‑Google Pay"
     },
     "js": {

@@ -72,8 +72,7 @@
           ratio: section.settings.media_ratio,
           lcp: is_lcp,
           zoom: section.settings.enable_zoom,
-          show_badge: section.settings.show_original_badge,
-          badge_text: section.settings.original_badge_text
+          badge_text: section.settings.media_badge_text
         -%}
       </div>
 
@@ -276,10 +275,6 @@
 
             {%- when 'trust' -%}
               {%- liquid
-                assign trust_original = block.settings.text_original | escape
-                if trust_original == blank
-                  assign trust_original = 'general.trust.original' | t
-                endif
                 assign trust_shipping = block.settings.text_shipping | escape
                 if trust_shipping == blank
                   assign trust_shipping = 'general.trust.shipping' | t
@@ -287,6 +282,10 @@
                 assign trust_returns = block.settings.text_returns | escape
                 if trust_returns == blank
                   assign trust_returns = 'general.trust.returns' | t
+                endif
+                assign trust_stock = block.settings.text_stock | escape
+                if trust_stock == blank
+                  assign trust_stock = 'general.trust.stock' | t
                 endif
                 assign trust_payment = block.settings.text_payment | escape
                 if trust_payment == blank
@@ -296,16 +295,16 @@
               <div class="product-info__block product-info__block--trust" {{ block.shopify_attributes }}>
                 <ul class="product-trust" role="list">
                   <li class="product-trust__item">
-                    <span class="product-trust__icon">{%- render 'icon', name: 'shield-check', size: 20 -%}</span>
-                    <span>{{ trust_original }}</span>
-                  </li>
-                  <li class="product-trust__item">
                     <span class="product-trust__icon">{%- render 'icon', name: 'truck', size: 20 -%}</span>
                     <span>{{ trust_shipping }}</span>
                   </li>
                   <li class="product-trust__item">
                     <span class="product-trust__icon">{%- render 'icon', name: 'return', size: 20 -%}</span>
                     <span>{{ trust_returns }}</span>
+                  </li>
+                  <li class="product-trust__item">
+                    <span class="product-trust__icon">{%- render 'icon', name: 'map-pin', size: 20 -%}</span>
+                    <span>{{ trust_stock }}</span>
                   </li>
                   <li class="product-trust__item">
                     <span class="product-trust__icon">{%- render 'icon', name: 'lock', size: 20 -%}</span>
@@ -1038,17 +1037,10 @@
       "default": true
     },
     {
-      "type": "checkbox",
-      "id": "show_original_badge",
-      "label": "t:sections.main_product.settings.show_original_badge",
-      "default": true
-    },
-    {
       "type": "text",
-      "id": "original_badge_text",
-      "label": "t:sections.main_product.settings.original_badge_text",
-      "info": "t:settings.default_text_info",
-      "visible_if": "{{ section.settings.show_original_badge }}"
+      "id": "media_badge_text",
+      "label": "t:sections.main_product.settings.media_badge_text",
+      "info": "t:sections.main_product.settings.media_badge_text_info"
     },
     {
       "type": "range",
@@ -1203,11 +1195,6 @@
         },
         {
           "type": "text",
-          "id": "text_original",
-          "label": "t:sections.main_product.settings.trust_original"
-        },
-        {
-          "type": "text",
           "id": "text_shipping",
           "label": "t:sections.main_product.settings.trust_shipping"
         },
@@ -1215,6 +1202,11 @@
           "type": "text",
           "id": "text_returns",
           "label": "t:sections.main_product.settings.trust_returns"
+        },
+        {
+          "type": "text",
+          "id": "text_stock",
+          "label": "t:sections.main_product.settings.trust_stock"
         },
         {
           "type": "text",

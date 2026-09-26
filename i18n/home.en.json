@@ -2,7 +2,7 @@
   "home": {
     "hero": {
       "eyebrow": "Season 2026/27 is here",
-      "heading": "Original jerseys.",
+      "heading": "Your team's jersey.",
       "heading_highlight": "Fan prices.",
       "subheading": "Football and basketball, for adults and kids. In stock in Israel and delivered to your door within 3 business days.",
       "button_label": "Football jerseys",
@@ -43,7 +43,7 @@
     "rich_text": {
       "eyebrow": "Why {{ shop }}",
       "heading": "By fans, for fans",
-      "text": "Original jerseys from the teams you love, from the current season, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
+      "text": "Jerseys from the teams you love, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
       "button_label": "Shop all"
     }
   }

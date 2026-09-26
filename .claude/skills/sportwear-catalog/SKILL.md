@@ -80,8 +80,8 @@ Each product is one team × one kit × one season × one audience.
 - **Description (Hebrew):**
   - One or two benefit-led sentences, then bullets: fabric and technology, fit, care.
   - No invented specs.
-  - Say "מוצר מקורי" only when the source confirms the item is genuine (the business sources through
-    parallel import of originals).
+  - No originality claims: never write "מקורי", "original", "authentic" or "genuine", even when
+    the source says so (owner decision, 2026-09-26).
 - **SEO:** title up to 60 characters, meta description up to 155 characters, in Hebrew.
 - **Collections** (created later, never ad hoc): by sport, league, team, audience, kit, plus "sale"
   and "new".

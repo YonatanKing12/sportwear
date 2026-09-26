@@ -30,8 +30,8 @@ Size values (S, M, L, XL, 5-6 …), SKUs, seasons (26/27) and handles stay uncha
     it. Not a word-for-word rendering.
   - Use natural word order, e.g. `قميص ريال مدريد الأساسي 26/27`.
   - Use Western digits and the ₪ symbol.
-- Never add claims that are missing from the Hebrew. Never drop the "original" statement if the
-  Hebrew has it.
+- Never add claims that are missing from the Hebrew. Never write "original", "authentic" or
+  `أصلي`: the store makes no originality claims. If the Hebrew has one, stop and report it.
 
 ## Mode A: before publishing
 

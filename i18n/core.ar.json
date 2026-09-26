@@ -37,9 +37,9 @@
       "product_title": "اسم المنتج"
     },
     "trust": {
-      "original": "أصلي 100%",
       "shipping": "توصيل إلى البيت خلال 3 أيام عمل",
       "returns": "إرجاع حتى 45 يومًا",
+      "stock": "المخزون محلي",
       "secure_payment": "دفع آمن: بطاقة ائتمان وApple Pay وGoogle Pay"
     },
     "js": {

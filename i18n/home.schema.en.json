@@ -64,7 +64,7 @@
       "name": "Trust strip",
       "settings": {
         "info": {
-          "content": "Up to 4 benefits. A benefit with empty text uses the default text for its position (100% original, delivery, returns, secure payment), already translated into every store language."
+          "content": "Up to 4 benefits. A benefit with empty text uses the default text for its position (delivery, returns, stock in Israel, secure payment), already translated into every store language."
         }
       },
       "blocks": {
@@ -79,6 +79,7 @@
                 "truck": "Delivery truck",
                 "return": "Return arrow",
                 "lock": "Lock",
+                "map_pin": "Location pin",
                 "chat": "Chat",
                 "tag": "Price tag",
                 "users": "People"

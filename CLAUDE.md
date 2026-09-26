@@ -6,8 +6,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 
 ## The business
 
-- An Israeli online store selling **original football jerseys, basketball jerseys and basketball
-  shorts** at affordable prices, sourced from a **parallel importer** (genuine goods).
+- An Israeli online store selling **football jerseys, basketball jerseys and basketball shorts** at
+  affordable prices.
   - Current season (26/27), a mix of leagues and teams.
   - Adults and kids.
   - No name, number or patch printing for now.
@@ -67,6 +67,9 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 - **Products are created as DRAFT.** Never activate, publish to channels, delete, or change the
   price or stock of existing products without an explicit instruction from the owner in the
   conversation.
+- **No originality claims anywhere.** No "original", "100% original", "authentic" or "genuine"
+  (`מקורי`, `أصلي`) in the theme, product content, pages, SEO or translations. Owner decision,
+  2026-09-26: the claim is a legal risk.
 - **Never invent prices, stock, specs or claims.** Prices come only from `catalog/pricing.json` or
   the owner.
 - **Only use product images and text the business has rights to** (the supplier's own). Rewrite

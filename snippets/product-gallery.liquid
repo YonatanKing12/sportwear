@@ -14,11 +14,10 @@
   @param {string} [ratio] - Tile shape: 'square' (default) or 'portrait'
   @param {boolean} [lcp] - The gallery holds the page's LCP image (first section on the page)
   @param {boolean} [zoom] - Enable the zoom dialog for images (default true)
-  @param {boolean} [show_badge] - Show the "100% original" badge
-  @param {string} [badge_text] - Badge text; empty uses the translated default
+  @param {string} [badge_text] - Text of a badge over the media; empty shows no badge
 
   @example
-  {% render 'product-gallery', product: product, variant: product.selected_or_first_available_variant, section_id: section.id, lcp: true, show_badge: true %}
+  {% render 'product-gallery', product: product, variant: product.selected_or_first_available_variant, section_id: section.id, lcp: true %}
 {%- enddoc -%}
 {%- liquid
   assign featured = variant.featured_media
@@ -45,10 +44,7 @@
     assign media_ratio = '1 / 1'
   endif
 
-  assign badge_label = badge_text | escape
-  if badge_label == blank
-    assign badge_label = 'general.trust.original' | t
-  endif
+  assign badge_label = badge_text | strip | escape
 
   assign status_template = 'products.gallery.image_status' | t: index: '[index]', count: '[count]'
 
@@ -121,9 +117,8 @@
       {%- endif -%}
     </ul>
 
-    {%- if show_badge -%}
+    {%- if badge_label != blank -%}
       <p class="product-gallery__badge">
-        {%- render 'icon', name: 'shield-check', size: 16 -%}
         <span>{{ badge_label }}</span>
       </p>
     {%- endif -%}

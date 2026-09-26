@@ -14,12 +14,6 @@
     "trust_strip": {
       "type": "trust-strip",
       "blocks": {
-        "original": {
-          "type": "item",
-          "settings": {
-            "icon": "shield-check"
-          }
-        },
         "delivery": {
           "type": "item",
           "settings": {
@@ -31,9 +25,15 @@
           "settings": {
             "icon": "return"
           }
+        },
+        "stock": {
+          "type": "item",
+          "settings": {
+            "icon": "map-pin"
+          }
         }
       },
-      "block_order": ["original", "delivery", "returns"],
+      "block_order": ["delivery", "returns", "stock"],
       "settings": {
         "color_scheme": "scheme-day",
         "padding_top": 20,

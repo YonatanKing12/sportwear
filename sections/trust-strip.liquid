@@ -27,18 +27,18 @@
         >
           {%- for block in section.blocks -%}
             {%- liquid
-              # "Automatic" icon and empty text follow the position: original, delivery, returns, secure payment.
+              # "Automatic" icon and empty text follow the position: delivery, returns, stock in Israel, secure payment.
               assign icon_name = block.settings.icon
               if icon_name == 'auto'
                 case forloop.index
                   when 2
-                    assign icon_name = 'truck'
-                  when 3
                     assign icon_name = 'return'
+                  when 3
+                    assign icon_name = 'map-pin'
                   when 4
                     assign icon_name = 'lock'
                   else
-                    assign icon_name = 'shield-check'
+                    assign icon_name = 'truck'
                 endcase
               endif
 
@@ -46,13 +46,13 @@
               if item_text == blank
                 case forloop.index
                   when 2
-                    assign item_text = 'general.trust.shipping' | t
-                  when 3
                     assign item_text = 'general.trust.returns' | t
+                  when 3
+                    assign item_text = 'general.trust.stock' | t
                   when 4
                     assign item_text = 'general.trust.secure_payment' | t
                   else
-                    assign item_text = 'general.trust.original' | t
+                    assign item_text = 'general.trust.shipping' | t
                 endcase
               endif
             -%}
@@ -196,6 +196,10 @@
             {
               "value": "lock",
               "label": "t:sections.trust_strip.blocks.item.settings.icon.options.lock"
+            },
+            {
+              "value": "map-pin",
+              "label": "t:sections.trust_strip.blocks.item.settings.icon.options.map_pin"
             },
             {
               "value": "chat",
