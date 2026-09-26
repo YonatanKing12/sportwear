@@ -33,6 +33,8 @@ The theme is built for it. Product cards are square (`card_image_ratio: square`)
    photo stays in Content → Files, so the change can be undone.
 
 File names: `sw-studio-<handle without "sw-">.png`, and `-back.png` for a back view.
+New products from the jerseyxie import (catalog/sources/jerseyxie/README.md) are created with their studio
+photos, named after the handle: `<handle>.png` and `<handle>__back.png`.
 
 ### Rules
 
