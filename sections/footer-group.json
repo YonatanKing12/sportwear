@@ -1,6 +1,38 @@
 {
   "type": "footer",
   "name": "t:sections.groups.footer",
-  "sections": {},
-  "order": []
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "brand": {
+          "type": "brand",
+          "settings": {
+            "show_text": true
+          }
+        },
+        "menu": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer",
+            "show_heading": true
+          }
+        },
+        "contact": {
+          "type": "contact",
+          "settings": {}
+        }
+      },
+      "block_order": ["brand", "menu", "contact"],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "show_language_selector": true,
+        "show_social": true,
+        "show_payment_icons": true,
+        "padding_top": 48,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": ["footer"]
 }

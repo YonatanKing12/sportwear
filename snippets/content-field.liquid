@@ -1,0 +1,160 @@
+{%- doc -%}
+  One labelled form control (input or textarea) for the content forms (contact, team orders,
+  article comments). Required fields get a visual marker; the hint and the error message are
+  linked to the control with aria-describedby, and aria-invalid is set when there is an error.
+  Server-side errors (form.errors) are passed in `error`. Client-side errors are written into the
+  same "{id}-error" element by <sw-validated-form> (assets/content-form.js).
+
+  @param {string} id - Unique id for the control, e.g. 'ContactForm-template--123-email'
+  @param {string} name - Field name, e.g. 'contact[email]'
+  @param {string} label - Visible label (translated text; the t filter already escapes it)
+  @param {string} [type] - 'text' (default), 'email', 'tel', 'date' or 'textarea'
+  @param {boolean} [required] - Whether the field is required (default false)
+  @param {string} [value] - Current value (escaped here)
+  @param {string} [autocomplete] - Autocomplete token, e.g. 'email', 'name', 'tel'
+  @param {string} [inputmode] - Virtual keyboard hint, e.g. 'numeric'
+  @param {string} [dir] - Text direction of the control; use 'ltr' for email addresses and phone numbers
+  @param {string} [placeholder] - Example value, translated; never a replacement for the label
+  @param {string} [hint] - Help text shown under the label (translated)
+  @param {string} [error] - Error message to show now (from form.errors); blank when the field is valid
+  @param {string} [min] - Minimum value, for date fields (YYYY-MM-DD)
+  @param {number} [rows] - Rows for a textarea (default 5)
+  @param {string} [class] - Extra classes on the wrapper
+
+  @example
+  {% render 'content-field', id: 'ContactForm-email', name: 'contact[email]', type: 'email', label: 'Email', required: true, autocomplete: 'email', dir: 'ltr' %}
+{%- enddoc -%}
+{%- liquid
+  assign field_type = type | default: 'text'
+  assign field_rows = rows | default: 5
+  assign describedby = ''
+  if hint != blank
+    assign describedby = id | append: '-hint'
+  endif
+  if error != blank
+    assign describedby = describedby | append: ' ' | append: id | append: '-error' | strip
+  endif
+-%}
+<div class="field content-field{% if class != blank %} {{ class }}{% endif %}">
+  <label class="field__label content-field__label" for="{{ id }}">
+    {{- label -}}
+    {%- if required -%}
+      <span class="content-field__required" aria-hidden="true">*</span>
+    {%- endif -%}
+  </label>
+  {%- if hint != blank -%}
+    <p class="content-field__hint" id="{{ id }}-hint">{{ hint }}</p>
+  {%- endif -%}
+  {%- if field_type == 'textarea' -%}
+    <textarea
+      class="field__textarea"
+      id="{{ id }}"
+      name="{{ name }}"
+      rows="{{ field_rows }}"
+      {% if required %}
+        required
+      {% endif %}
+      {% if autocomplete != blank %}
+        autocomplete="{{ autocomplete }}"
+      {% endif %}
+      {% if placeholder != blank %}
+        placeholder="{{ placeholder }}"
+      {% endif %}
+      {% if describedby != blank %}
+        aria-describedby="{{ describedby }}"
+      {% endif %}
+      {% if error != blank %}
+        aria-invalid="true"
+      {% endif %}
+    >{{ value | escape }}</textarea>
+  {%- else -%}
+    <input
+      class="field__input"
+      type="{{ field_type }}"
+      id="{{ id }}"
+      name="{{ name }}"
+      value="{{ value | escape }}"
+      {% if required %}
+        required
+      {% endif %}
+      {% if autocomplete != blank %}
+        autocomplete="{{ autocomplete }}"
+      {% endif %}
+      {% if inputmode != blank %}
+        inputmode="{{ inputmode }}"
+      {% endif %}
+      {% if dir != blank %}
+        dir="{{ dir }}"
+      {% endif %}
+      {% if min != blank %}
+        min="{{ min }}"
+      {% endif %}
+      {% if placeholder != blank %}
+        placeholder="{{ placeholder }}"
+      {% endif %}
+      {% if describedby != blank %}
+        aria-describedby="{{ describedby }}"
+      {% endif %}
+      {% if error != blank %}
+        aria-invalid="true"
+      {% endif %}
+    >
+  {%- endif -%}
+  <p
+    class="field__message field__message--error content-field__error"
+    id="{{ id }}-error"
+    {% if error == blank %}
+      hidden
+    {% endif %}
+  >
+    {%- render 'icon', name: 'alert', size: 16 -%}
+    <span data-error-text>{{ error }}</span>
+  </p>
+</div>
+
+{% stylesheet %}
+  .content-field__label {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-1);
+  }
+
+  .content-field__required {
+    /* Mixed with the scheme's text color so the red keeps 4.5:1 on light and dark schemes. */
+    color: color-mix(in srgb, var(--color-error) 65%, var(--color-text));
+    font-weight: 800;
+  }
+
+  .content-field__hint {
+    margin-block-start: calc(var(--space-1) * -1);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .content-field__error {
+    align-items: flex-start;
+    color: color-mix(in srgb, var(--color-error) 65%, var(--color-text));
+    font-weight: 600;
+
+    & .icon {
+      margin-block-start: 2px;
+    }
+  }
+
+  /* Field borders at 3:1 against the background (WCAG 1.4.11), on light and dark schemes. */
+  .content-field :is(.field__input, .field__textarea) {
+    border-color: color-mix(in srgb, var(--color-text) 45%, var(--color-background));
+  }
+
+  .content-field [aria-invalid='true'] {
+    border-color: color-mix(in srgb, var(--color-error) 65%, var(--color-text));
+  }
+
+  .content-field :is(.field__input, .field__textarea):focus-visible {
+    border-color: var(--color-text);
+  }
+
+  [dir='rtl'] .content-field .field__input[dir='ltr'] {
+    text-align: end;
+  }
+{% endstylesheet %}

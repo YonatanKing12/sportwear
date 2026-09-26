@@ -1,0 +1,27 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "content_width": "normal",
+        "heading_size": "large",
+        "show_title": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "size_guide": {
+      "type": "size-guide",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "show_heading": false,
+        "default_tab": "adults",
+        "show_help": true,
+        "padding_top": 16,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["main", "size_guide"]
+}

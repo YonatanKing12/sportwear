@@ -1,0 +1,63 @@
+{%- doc -%}
+  Accessible size chart table (caption, column and row headers) built from the JSON rows of a
+  "Size chart" metaobject entry (sw_size_chart, field "table"): [{ size, height_cm, chest_cm,
+  length_cm }]. Only the columns that have data are shown, and values are printed exactly as
+  stored. Styled by sections/size-guide.liquid, which renders it.
+
+  @param {object[]} rows - The chart rows, e.g. chart.table.value
+  @param {string} caption - Table caption, e.g. the chart name
+  @param {string} table_id - Unique id prefix for this table
+
+  @example
+  {% render 'content-size-table', rows: chart.table.value, caption: chart.name.value, table_id: 'size-guide-adults-table' %}
+{%- enddoc -%}
+{%- liquid
+  assign heights = rows | map: 'height_cm' | compact
+  assign chests = rows | map: 'chest_cm' | compact
+  assign lengths = rows | map: 'length_cm' | compact
+-%}
+<div class="table-scroll size-guide__table-wrap" role="region" tabindex="0" aria-labelledby="{{ table_id }}-caption">
+  <table class="size-guide__table">
+    <caption id="{{ table_id }}-caption">
+      {{ caption | escape }}
+    </caption>
+    <thead>
+      <tr>
+        <th scope="col">{{ 'size_guide.table.size' | t }}</th>
+        {%- if heights.size > 0 -%}
+          <th scope="col">{{ 'size_guide.table.height' | t }}</th>
+        {%- endif -%}
+        {%- if chests.size > 0 -%}
+          <th scope="col">{{ 'size_guide.table.chest' | t }}</th>
+        {%- endif -%}
+        {%- if lengths.size > 0 -%}
+          <th scope="col">{{ 'size_guide.table.length' | t }}</th>
+        {%- endif -%}
+      </tr>
+    </thead>
+    <tbody>
+      {%- for row in rows -%}
+        <tr>
+          <th scope="row">
+            <bdi>{{ row.size | escape }}</bdi>
+          </th>
+          {%- if heights.size > 0 -%}
+            <td>
+              <bdi>{{ row.height_cm | escape }}</bdi>
+            </td>
+          {%- endif -%}
+          {%- if chests.size > 0 -%}
+            <td>
+              <bdi>{{ row.chest_cm | escape }}</bdi>
+            </td>
+          {%- endif -%}
+          {%- if lengths.size > 0 -%}
+            <td>
+              <bdi>{{ row.length_cm | escape }}</bdi>
+            </td>
+          {%- endif -%}
+        </tr>
+      {%- endfor -%}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,178 @@
+{%- comment -%}
+  404 page: the template's <h1>, a short explanation, a store search form and links back to the
+  home page and to all products. The big outlined "404" is decorative.
+{%- endcomment -%}
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'not_found.heading' | t
+  endif
+  assign intro = section.settings.text
+  if intro == blank
+    assign intro = 'not_found.text' | t
+  endif
+  assign search_id = 'NotFoundSearch-' | append: section.id
+-%}
+<div
+  class="section not-found color-{{ section.settings.color_scheme.id }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="not-found__inner">
+      <p class="not-found__code" aria-hidden="true">{{ 'not_found.code' | t }}</p>
+      <h1 class="display-l not-found__heading">{{ heading }}</h1>
+      <p class="not-found__text">{{ intro }}</p>
+
+      {%- if section.settings.show_search -%}
+        <form
+          class="not-found__search"
+          action="{{ routes.search_url }}"
+          method="get"
+          role="search"
+          aria-label="{{ 'not_found.search_label' | t }}"
+        >
+          <label class="visually-hidden" for="{{ search_id }}">{{ 'not_found.search_label' | t }}</label>
+          <input
+            class="field__input not-found__search-input"
+            type="search"
+            id="{{ search_id }}"
+            name="q"
+            placeholder="{{ 'not_found.search_placeholder' | t }}"
+            autocomplete="off"
+          >
+          <input type="hidden" name="options[prefix]" value="last">
+          <button class="button button--primary not-found__search-button" type="submit">
+            {%- render 'icon', name: 'search', size: 20 -%}
+            <span>{{ 'not_found.search_submit' | t }}</span>
+          </button>
+        </form>
+      {%- endif -%}
+
+      <div class="not-found__actions">
+        <a class="button button--secondary" href="{{ routes.root_url }}">
+          {%- render 'icon', name: 'arrow-back', size: 20 -%}
+          <span>{{ 'not_found.home' | t }}</span>
+        </a>
+        <a class="button button--primary" href="{{ routes.all_products_collection_url }}">
+          <span>{{ 'not_found.all_products' | t }}</span>
+          {%- render 'icon', name: 'arrow-forward', size: 20 -%}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .not-found__inner {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-5);
+    max-inline-size: 640px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .not-found__code {
+    color: transparent;
+    font-family: var(--font-display);
+    font-size: clamp(96px, 22vw, 220px);
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    -webkit-text-stroke: 2px color-mix(in srgb, var(--color-text) 22%, transparent);
+    direction: ltr;
+    user-select: none;
+  }
+
+  .not-found__text {
+    max-inline-size: 48ch;
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+  }
+
+  .not-found__search {
+    display: flex;
+    gap: var(--space-2);
+    inline-size: 100%;
+    margin-block-start: var(--space-2);
+  }
+
+  .not-found__search-input {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    min-block-size: var(--control-height);
+    border-color: color-mix(in srgb, var(--color-text) 45%, var(--color-background));
+  }
+
+  .not-found__search-button {
+    flex-shrink: 0;
+    padding-inline: var(--space-4);
+
+    @media screen and (min-width: 750px) {
+      padding-inline: var(--space-6);
+    }
+  }
+
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-block-start: var(--space-2);
+
+    & .button {
+      flex: 1 1 220px;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.main_404.name",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_search",
+      "label": "t:sections.main_404.settings.show_search.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 80
+    }
+  ]
+}
+{% endschema %}
