@@ -5,11 +5,16 @@
   <sw-product-form> (assets/product-info.js) adds through CartAPI and opens the cart drawer.
   Parts marked data-product-dynamic are re-rendered when the variant changes.
 
+  When the customer still has to choose a size (size_required), the button reads "Choose a size" once
+  <sw-product-info> is running, and pressing it points to the size picker instead of adding; without
+  JavaScript it keeps "Add to cart" for the preselected size. Express checkout waits for the size too.
+
   @param {product} product - The product
   @param {variant} [variant] - The selected variant (blank when the chosen combination does not exist)
   @param {object} block - The buy_buttons block (settings: show_quantity, show_dynamic_checkout)
   @param {string} form_id - Id for the product form
   @param {boolean} [id_disabled] - Start the hidden id input disabled because the size radios post the id
+  @param {boolean} [size_required] - No size is chosen yet (see sections/main-product.liquid)
 
   @example
   {% render 'product-buy-buttons', product: product, variant: product.selected_or_first_available_variant, block: block, form_id: form_id %}
@@ -18,6 +23,10 @@
   assign available = false
   if variant != blank and variant.available
     assign available = true
+  endif
+  assign checkout_hidden = true
+  if available and size_required != true
+    assign checkout_hidden = false
   endif
   assign error_id = form_id | append: '-error'
   assign quantity_id = form_id | append: '-quantity'
@@ -63,6 +72,7 @@
         <button
           type="submit"
           name="add"
+          id="{{ form_id }}-submit"
           class="button button--primary button--large button--full product-submit"
           aria-describedby="{{ error_id }}"
           {% unless available %}
@@ -70,10 +80,15 @@
           {% endunless %}
         >
           {%- if available -%}
-            {%- render 'icon', name: 'bag', size: 20 -%}
-            <span>{{ 'products.buy.add_to_cart' | t }}</span>
-            <span aria-hidden="true">·</span>
-            <bdi>{{ variant.price | money_without_trailing_zeros }}</bdi>
+            {%- if size_required -%}
+              <span class="product-submit__choose">{{ 'products.buy.select_size' | t }}</span>
+            {%- endif -%}
+            <span class="product-submit__add">
+              {%- render 'icon', name: 'bag', size: 20 -%}
+              <span>{{ 'products.buy.add_to_cart' | t }}</span>
+              <span aria-hidden="true">·</span>
+              <bdi>{{ variant.price | money_without_trailing_zeros }}</bdi>
+            </span>
           {%- elsif variant == blank -%}
             <span>{{ 'products.buy.unavailable' | t }}</span>
           {%- else -%}
@@ -94,9 +109,9 @@
         class="product-buy__checkout"
         data-product-dynamic="checkout"
         data-dynamic-attrs
-        {% unless available %}
+        {% if checkout_hidden %}
           hidden
-        {% endunless %}
+        {% endif %}
       >
         {{ form | payment_button }}
       </div>
@@ -175,6 +190,33 @@
     }
   }
 
+  /* The add label lays out its parts like the button itself does. */
+  .product-submit__add {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* "Choose a size" replaces the add label only once <sw-product-info> runs (:defined): without
+     JavaScript the preselected size is added as before. */
+  .product-submit__choose,
+  .product-info[data-size-required]:defined .product-submit__add {
+    display: none;
+  }
+
+  .product-info[data-size-required]:defined .product-submit__choose {
+    display: inline;
+  }
+
+  /* Sold out, or waiting for a size (the size sheet): a calm grey button rather than a faded black one.
+     The sticky bar and the size sheet use it too. */
+  .product-submit:disabled {
+    border-color: transparent;
+    background-color: var(--color-surface);
+    color: var(--color-muted);
+    opacity: 1;
+  }
+
   .product-submit__spinner {
     position: absolute;
     inset: 0;
@@ -192,6 +234,12 @@
     & .product-submit__spinner {
       display: block;
     }
+  }
+
+  /* Cart errors come from Shopify and may be in another script than the page: each keeps its own direction. */
+  .product-buy__error {
+    display: block;
+    unicode-bidi: plaintext;
   }
 
   .product-buy__error:not(:empty) {

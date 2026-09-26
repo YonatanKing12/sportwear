@@ -715,6 +715,9 @@
       "decrease": "إنقاص الكمية",
       "increase": "زيادة الكمية",
       "choose_size": "يُرجى اختيار المقاس للمتابعة.",
+      "select_size": "اختر المقاس",
+      "added": "تمت الإضافة إلى السلة: {{ title }}",
+      "added_with_size": "تمت الإضافة إلى السلة: {{ title }}، المقاس {{ size }}",
       "secure_checkout": "دفع آمن"
     },
     "shipping_note": {
@@ -772,7 +775,8 @@
       "whatsapp_message_html": "مرحبًا، لدي سؤال عن {{ title }}"
     },
     "sticky": {
-      "label": "شراء سريع"
+      "label": "شراء سريع",
+      "selected_size": "المقاس المختار:"
     }
   }
 }

@@ -667,6 +667,9 @@
       "decrease": "Decrease quantity",
       "increase": "Increase quantity",
       "choose_size": "Choose a size to continue.",
+      "select_size": "Choose a size",
+      "added": "Added to cart: {{ title }}",
+      "added_with_size": "Added to cart: {{ title }}, size {{ size }}",
       "secure_checkout": "Secure checkout"
     },
     "shipping_note": {
@@ -724,7 +727,8 @@
       "whatsapp_message_html": "Hi, I have a question about {{ title }}"
     },
     "sticky": {
-      "label": "Quick buy"
+      "label": "Quick buy",
+      "selected_size": "Selected size:"
     }
   }
 }
