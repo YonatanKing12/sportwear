@@ -1,18 +1,21 @@
 {
-  "_note": "Translations of the store's non-product content: collections, menus (with every menu item) and pages. The source text is Hebrew. 'digest' is the SHA-256 of the Hebrew text, which translationsRegister requires. If the Hebrew changes in the admin, its digest changes: update he/en/ar/digest here and register again. See README.md.",
+  "_note": "Translations of the store's non-product content: collections, menus (with every menu item), pages and the league metaobjects. The source text is Hebrew. 'digest' is the SHA-256 of the Hebrew text, which translationsRegister requires. If the Hebrew changes in the admin, its digest changes: update he/en/ar/digest here and register again. See README.md.",
   "shop": "sfgzdp-1m.myshopify.com",
-  "source_locale": "he (Shopify still files it under the primary locale 'en' until the owner makes Hebrew the primary language)",
+  "source_locale": "he (the primary locale since 2026-09-26)",
   "locales": {
     "ar": {
       "status": "registered",
-      "registered_at": "2026-09-26T00:04:31Z / 2026-09-26T00:06:39Z (first / last batch)",
-      "resources": 59,
-      "fields": 67,
-      "verified": "Read back from Shopify after registering: all 67 values match this file and none is outdated."
+      "registered_at": "2026-09-26T00:04:31Z / 2026-09-26T00:06:39Z (first / last batch); league names 2026-09-26 morning",
+      "resources": 69,
+      "fields": 77,
+      "verified": "Read back from Shopify after registering: all values match this file and none is outdated. The 59 original resources survived the switch of the primary language to Hebrew."
     },
     "en": {
-      "status": "prepared, not registered",
-      "reason": "en is still the primary locale and Shopify rejects translations into the primary locale. Register after the owner makes Hebrew the primary language (README.md)."
+      "status": "registered",
+      "registered_at": "2026-09-26 morning, after the owner made Hebrew the primary language",
+      "resources": 69,
+      "fields": 77,
+      "verified": "translationsRegister returned no userErrors, and every field reads back with outdated: false."
     }
   },
   "not_translated": {
@@ -798,6 +801,121 @@
       }
     }
   ],
+  "metaobjects": {
+    "_note": "Only the 'name' field is translated. 'slug' and 'sport' are identifiers the theme relies on, so they stay the same in every language. The demo teams (sw_team) are not translated: they are demo-only and get deleted before launch.",
+    "sw_league": {
+      "premier-league": {
+        "resource_id": "gid://shopify/Metaobject/282502267184",
+        "fields": {
+          "name": {
+            "he": "פרמייר ליג",
+            "en": "Premier League",
+            "ar": "الدوري الإنجليزي الممتاز",
+            "digest": "d04b339693b2dc42c9544d0724269f9032b492597814ba512e65ffe561b9fab0"
+          }
+        }
+      },
+      "la-liga": {
+        "resource_id": "gid://shopify/Metaobject/282502299952",
+        "fields": {
+          "name": {
+            "he": "לה ליגה",
+            "en": "LaLiga",
+            "ar": "الدوري الإسباني",
+            "digest": "16bf50225b66885dd005926c1ca51c40479b6a7bac2b4ee8e1460fb354c1936b"
+          }
+        }
+      },
+      "serie-a": {
+        "resource_id": "gid://shopify/Metaobject/282502332720",
+        "fields": {
+          "name": {
+            "he": "סרייה A",
+            "en": "Serie A",
+            "ar": "الدوري الإيطالي",
+            "digest": "09c87f55344ab4a74b4b5b341eb2aa05de0d1f06a0d3890f6ca942103d585c83"
+          }
+        }
+      },
+      "bundesliga": {
+        "resource_id": "gid://shopify/Metaobject/282502365488",
+        "fields": {
+          "name": {
+            "he": "בונדסליגה",
+            "en": "Bundesliga",
+            "ar": "الدوري الألماني",
+            "digest": "d5f8ec488585a48cb8fc7988504479c8f6ecc1641af2900fe45c931b909899f8"
+          }
+        }
+      },
+      "ligue-1": {
+        "resource_id": "gid://shopify/Metaobject/282502398256",
+        "fields": {
+          "name": {
+            "he": "ליג 1",
+            "en": "Ligue 1",
+            "ar": "الدوري الفرنسي",
+            "digest": "6797c0c96cdae0a96564ad5cc820caf6615d4ad6f8d8b1c6acf0d365c6aa9fe9"
+          }
+        }
+      },
+      "israeli-premier-league": {
+        "resource_id": "gid://shopify/Metaobject/282502431024",
+        "fields": {
+          "name": {
+            "he": "ליגת העל",
+            "en": "Israeli Premier League",
+            "ar": "الدوري الإسرائيلي الممتاز",
+            "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
+          }
+        }
+      },
+      "national-teams": {
+        "resource_id": "gid://shopify/Metaobject/282502463792",
+        "fields": {
+          "name": {
+            "he": "נבחרות",
+            "en": "National Teams",
+            "ar": "المنتخبات",
+            "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
+          }
+        }
+      },
+      "nba": {
+        "resource_id": "gid://shopify/Metaobject/282502496560",
+        "fields": {
+          "name": {
+            "he": "NBA",
+            "en": "NBA",
+            "ar": "NBA",
+            "digest": "b05ef99b5059cc1bc18dcbe179fe68562390f89fa4e33fdf05470892ccd0820f"
+          }
+        }
+      },
+      "euroleague": {
+        "resource_id": "gid://shopify/Metaobject/282502529328",
+        "fields": {
+          "name": {
+            "he": "יורוליג",
+            "en": "EuroLeague",
+            "ar": "اليوروليغ",
+            "digest": "6c5c8d89fa8e3145267bfa1c77d0318ab811f29a22f9a6cba398b032a98e9700"
+          }
+        }
+      },
+      "israeli-basketball-league": {
+        "resource_id": "gid://shopify/Metaobject/282502562096",
+        "fields": {
+          "name": {
+            "he": "ליגת העל בכדורסל",
+            "en": "Israeli Basketball Premier League",
+            "ar": "دوري كرة السلة الإسرائيلي الممتاز",
+            "digest": "0b771d10aa3a54a350e269f2b1ed3c1a38c94d0688d48331ef368d269ed35d4c"
+          }
+        }
+      }
+    }
+  },
   "skipped": [
     {
       "type": "page",

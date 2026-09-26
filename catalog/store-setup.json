@@ -6,9 +6,10 @@
     "Shop location (IL)": "gid://shopify/Location/114120163632"
   },
   "locales": {
-    "en": "primary (to be switched to he by the owner in Settings → Languages)",
-    "he": "published",
-    "ar": "published"
+    "he": "primary (switched by the owner on 2026-09-26)",
+    "en": "published",
+    "ar": "published",
+    "market_web_presence": "gid://shopify/MarketWebPresence/72445264176 (main domain): he at /, en at /en, ar at /ar"
   },
   "themes": {
     "live (MAIN, do not touch)": "gid://shopify/OnlineStoreTheme/188515483952 (Horizon placeholder)",

@@ -36,7 +36,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Catalog | 0 real products, 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision |
 | Live theme | Horizon, a placeholder that will be replaced by our theme |
 | Dev theme | "SportWear (dev)", unpublished, `gid://shopify/OnlineStoreTheme/188519711024` (`SW_PREVIEW_THEME_ID=188519711024`). Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
-| Locales | `en` is still primary; `he` and `ar` are published. The owner must make Hebrew primary (Settings → Languages; the API can't) |
+| Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
+| Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
 | Shipping | Israel ₪35, free from ₪250. An international zone (27 countries, ₪58) is active, probably a default |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |

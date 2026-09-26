@@ -49,6 +49,13 @@ Size values (S, M, L, XL, 5-6 …), SKUs, seasons (26/27) and handles stay uncha
    - Call `translationsRegister` for locales `en` and `ar`, with keys `title`, `body_html`,
      `meta_title` and `meta_description`.
    - The option name is a separate translatable resource (the product option). Translate it too.
+   - **Team and league names.** The theme shows `name` from the `sw_team` and `sw_league`
+     metaobjects the product references (product cards, product page, breadcrumbs). For each one,
+     check `translations(locale: "en")` and `translations(locale: "ar")`. Register the missing ones
+     from `catalog/taxonomy.json` (`teams.*.en` / `.ar`, `leagues.*.en` / `.ar`) for the key `name`.
+     If a team has a `short_name`, translate it the same way. Never translate `slug` or `sport`: the
+     theme uses them as identifiers.
+     The 10 leagues are already done (`catalog/translations/store-content.json`).
 3. **Record the result:** set `shopify.translations_registered: { "en": <timestamp>, "ar": <timestamp> }`
    in the file.
 4. **Never** change the Hebrew content, prices, status or anything else in Shopify.
