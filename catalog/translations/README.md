@@ -2,8 +2,8 @@
 
 `store-content.json` holds the translations of the store's non-product content:
 
-- the 19 collections
-- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 2 hidden child lists that Shopify keeps behind the main-menu dropdowns
+- the 120 collections (101 added on 2026-09-26 by the categories work: clubs, NBA teams, players, styles, hoodies)
+- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 11 hidden child lists that Shopify keeps behind the main-menu items that have children
 - 4 pages
 - the 10 league metaobjects (`sw_league`), `name` field only
 
@@ -19,14 +19,19 @@ Each translated field has four keys:
 
 | Locale | Status |
 | --- | --- |
-| `ar` | Registered in Shopify on 2026-09-26: 69 resources, 77 fields |
-| `en` | Registered in Shopify on 2026-09-26, after Hebrew became the primary language: 69 resources, 77 fields |
+| `ar` | Registered in Shopify on 2026-09-26: 282 resources, 391 fields |
+| `en` | Registered in Shopify on 2026-09-26, after Hebrew became the primary language: 282 resources, 391 fields |
+
+The categories work (2026-09-26 afternoon) added 214 resources and 315 fields: the new collections, 104 menu items and
+9 hidden child lists. They were read back with a bulk export of `translatableResources`: every value matches and none
+is outdated.
 
 What is not translated:
 
 - URL handles, which stay the same in every language.
 - The `shipping-returns` and `accessibility` pages. They are legal drafts waiting for the lawyer (see `skipped`).
 - SEO fields. No resource has them set yet.
+- Shopify's own customer-account menu ("Customer account main menu", with Orders and Profile).
 - The `slug` and `sport` fields of the league metaobjects. They are identifiers the theme relies on.
 - The demo teams (`sw_team`). They are demo-only and get deleted before launch.
 

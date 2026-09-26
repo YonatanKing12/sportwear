@@ -44,18 +44,36 @@ Each product is one team × one kit × one season × one audience.
 - **Handle:** `{team-slug}-{kit-slug}-{season-slug}[-kids]` in lowercase ASCII, for example
   `real-madrid-home-jersey-2026-27` or `maccabi-tel-aviv-basketball-jersey-2026-27-kids`. It never
   changes after publishing.
-- **productType:** `Football Jersey` | `Basketball Jersey` | `Basketball Shorts`. New types need
-  owner approval.
+- **productType:** `Football Jersey` | `Basketball Jersey` | `Basketball Shorts` | `Hoodie` (the
+  imported NFL hoodies). New types need owner approval.
 - **vendor:** the manufacturer brand as shown on the product (Nike, adidas, Puma…).
 - **status:** always `DRAFT` on creation.
-- **tags** (drive collections and filters):
-  - `sport:football|basketball`
-  - `league:<slug>`
-  - `team:<slug>`
+- **tags** (drive collections and filters; names and rules in `catalog/classification.json`):
+  - `sport:football|basketball|american-football`
+  - `league:<slug>`, one per product: the 10 leagues of the store plus `primeira-liga`,
+    `saudi-pro-league`, `mls`, `liga-mx`, `brasileirao`, `wnba`, `ncaa`, `nfl`. National teams use
+    `league:national-teams` in both sports.
+  - `team:<slug>`, one per product. The slug is also the team collection's handle, which the
+    theme's breadcrumbs link to.
+  - `style:retro|city-edition|special`, any combination (retro: "רטרו" in the title or a season
+    before 2016; special: collabs, prints, special/commemorative editions)
+  - `player:<slug>` plus the player's Hebrew name as a plain tag, only for a player named in the
+    title or a high-confidence team + number pair (`player_numbers`)
   - `kit:home|away|third|fourth|special|training`
-  - `season:2026-27`
-  - `audience:adult|kids`
+  - `season:2026-27`, football only
+  - `audience:adult|kids|women`
   - `sale` only while discounted
+  - **Search keywords:** plain tags with the team, league, player, product type, audience and
+    style words in English (lowercase) and Arabic, plus Hebrew synonyms (גופייה, קפוצון…). They
+    exist only so the storefront search finds the product in all three languages (imported
+    products have no EN/AR translations). The lists live in `classification.json`. Shopify treats
+    tags with the same handle as one tag ("all star" = "all-star"), so each list keeps one
+    spelling per handle.
+  - `node scripts/catalog/classify.mjs <products.jsonl> --out plan.json` computes the tags for a
+    products export and prints what to add and remove; it never writes to Shopify. A re-run on an
+    up-to-date store reports 0 changes. Apply a plan with `tagsAdd`/`tagsRemove` in aliased
+    batches and log every change in `catalog/published/` (see
+    `classification-2026-09-26.json`).
 - **metafields** (namespace `sportwear`; definitions are planned in `catalog/metafields.json`):
   - `team`: a metaobject reference (`sw_team`)
   - `leagues`: a list of metaobject references (`sw_league`); a team can play in several
@@ -87,8 +105,17 @@ Each product is one team × one kit × one season × one audience.
   - No originality claims: never write "מקורי", "original", "authentic" or "genuine", even when
     the source says so (owner decision, 2026-09-26).
 - **SEO:** title up to 60 characters, meta description up to 155 characters, in Hebrew.
-- **Collections** (created later, never ad hoc): by sport, league, team, audience, kit, plus "sale"
-  and "new".
+- **Collections** are smart collections on the tags above, never ad hoc (IDs and rules in
+  `catalog/store-setup.json`, EN/AR in `catalog/translations/store-content.json`):
+  - by sport and product type (`football`, `basketball`, `basketball-jerseys`, `basketball-shorts`,
+    `nfl-hoodies` with `-men`/`-women`/`-kids`), audience (`kids`, `kids-basketball`), `sale`, `new`
+  - football: leagues, `national-teams` (football only), `season-2026-27`, `other-leagues`, and a
+    collection per club with 2+ products (handle = team slug)
+  - basketball: `nba` and one per NBA team (handle = team slug), `all-star`, `usa-basketball`,
+    `college-and-wnba`, `retro`, `city-edition`, `special-editions`, one per player with 3+
+    products (handle = player slug) and `players`
+  - A new team or player collection needs a Hebrew title, a short description, EN/AR
+    translations, publishing to the Online Store and a menu entry.
 
 ## Size systems
 
