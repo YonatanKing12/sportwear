@@ -128,10 +128,25 @@
         "padding_top": 24,
         "padding_bottom": 48
       }
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "collection": "best-sellers",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
     }
   },
   "order": [
     "hero",
+    "best_sellers",
     "trust_strip",
     "collection_links",
     "featured_collection",

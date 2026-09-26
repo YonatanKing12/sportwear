@@ -5,6 +5,15 @@
   assign columns_tablet = columns_desktop | at_most: 4
   assign columns_mobile = section.settings.columns_mobile | plus: 0
   assign use_scroller = section.settings.mobile_scroller
+  # Carousel: one row at every width (a peek of the next card on phones), with previous/next buttons.
+  assign is_carousel = false
+  assign wrapper_tag = 'div'
+  if section.settings.layout == 'carousel'
+    assign is_carousel = true
+    assign use_scroller = true
+    assign wrapper_tag = 'sw-carousel'
+  endif
+  assign list_id = 'FeaturedCollection-' | append: section.id
 
   assign has_products = false
   if featured != blank and featured.products_count > 0
@@ -54,9 +63,9 @@
     echo mobile_size
   endcapture
 
-  # Only the first section of a page may load images eagerly: its first row of cards.
+  # Only the first two sections of a page (the hero is short) may load images eagerly: their first row of cards.
   assign eager_cards = 0
-  unless section.index > 1
+  unless section.index > 2
     assign eager_cards = columns_desktop
   endunless
 -%}
@@ -66,21 +75,53 @@
     class="section featured-collection color-{{ section.settings.color_scheme.id }}"
     style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
   >
-    <div class="page-width">
+    <{{ wrapper_tag }} class="page-width featured-collection__inner">
       <div class="section-header">
         <h2 class="featured-collection__heading display-m">{{ heading }}</h2>
-        {%- if section.settings.show_view_all -%}
-          <a class="link-arrow featured-collection__view-all" href="{{ view_all_url }}">
-            {{- 'home.featured_collection.view_all' | t -}}
-            <span class="visually-hidden"> ({{ heading }})</span>
-            {%- render 'icon', name: 'chevron-forward', size: 16 -%}
-          </a>
+        {%- if section.settings.show_view_all or is_carousel -%}
+          <div class="featured-collection__header-end">
+            {%- if section.settings.show_view_all -%}
+              <a class="link-arrow featured-collection__view-all" href="{{ view_all_url }}">
+                {{- 'home.featured_collection.view_all' | t -}}
+                <span class="visually-hidden"> ({{ heading }})</span>
+                {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+              </a>
+            {%- endif -%}
+            {%- if is_carousel -%}
+              <div class="featured-collection__arrows js-only">
+                <button
+                  type="button"
+                  class="featured-collection__arrow"
+                  aria-controls="{{ list_id }}"
+                  aria-disabled="true"
+                  data-carousel-prev
+                >
+                  {%- render 'icon', name: 'chevron-back', size: 20 -%}
+                  <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+                </button>
+                <button
+                  type="button"
+                  class="featured-collection__arrow"
+                  aria-controls="{{ list_id }}"
+                  aria-disabled="false"
+                  data-carousel-next
+                >
+                  {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+                  <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+                </button>
+              </div>
+            {%- endif -%}
+          </div>
         {%- endif -%}
       </div>
 
       <ul
-        class="grid featured-collection__grid{% if use_scroller %} featured-collection__grid--scroll{% endif %}"
+        id="{{ list_id }}"
+        class="grid featured-collection__grid{% if is_carousel %} featured-collection__grid--carousel{% elsif use_scroller %} featured-collection__grid--scroll{% endif %}"
         role="list"
+        {% if is_carousel %}
+          data-carousel-track
+        {% endif %}
         style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
       >
         {%- if has_products -%}
@@ -103,8 +144,11 @@
           {%- endfor -%}
         {%- endif -%}
       </ul>
-    </div>
+    </{{ wrapper_tag }}>
   </div>
+  {%- if is_carousel -%}
+    <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
+  {%- endif -%}
 {%- endif -%}
 
 {% stylesheet %}
@@ -113,8 +157,97 @@
     overflow-wrap: break-word;
   }
 
+  /* The wrapper is <sw-carousel> in the carousel layout: custom elements are inline by default. */
+  .featured-collection__inner {
+    display: block;
+  }
+
+  .featured-collection__header-end {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
   .featured-collection__view-all {
     flex-shrink: 0;
+  }
+
+  /* Carousel: one scrolling row. Phones show a peek of the next card and bleed to the screen edges;
+     from 750px the row shows exactly the tablet or desktop column count, with previous/next buttons. */
+  .featured-collection__grid.featured-collection__grid--carousel {
+    --carousel-cols: calc(var(--grid-cols) + 0.25);
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
+    margin-inline: calc(var(--gutter) * -1);
+    padding: var(--space-1) var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--gutter);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      --carousel-cols: var(--grid-cols-tablet);
+      margin-inline: 0;
+      padding-inline: 0;
+      scroll-padding-inline: 0;
+    }
+
+    @media screen and (min-width: 990px) {
+      --carousel-cols: var(--grid-cols-desktop);
+    }
+  }
+
+  .featured-collection__grid--carousel > .featured-collection__item {
+    min-inline-size: 0;
+    scroll-snap-align: start;
+  }
+
+  .featured-collection__arrows {
+    display: none;
+    gap: var(--space-2);
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+
+  /* Nothing to scroll (fewer products than columns): no buttons. */
+  sw-carousel:not([data-scrollable]) .featured-collection__arrows {
+    display: none;
+  }
+
+  .featured-collection__arrow {
+    display: inline-grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-background);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover:not([aria-disabled='true']) {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-background);
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.35;
+      cursor: default;
+    }
   }
 
   /* Optional mobile layout: one swipeable row that runs to the screen edges, with a peek of the next card.
@@ -174,10 +307,21 @@
       "label": "t:settings.collection"
     },
     {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.featured_collection.settings.layout.label",
+      "info": "t:sections.featured_collection.settings.layout.info",
+      "options": [
+        { "value": "grid", "label": "t:sections.featured_collection.settings.layout.options.grid" },
+        { "value": "carousel", "label": "t:sections.featured_collection.settings.layout.options.carousel" }
+      ],
+      "default": "grid"
+    },
+    {
       "type": "range",
       "id": "products_to_show",
       "min": 2,
-      "max": 12,
+      "max": 24,
       "step": 1,
       "label": "t:settings.products_to_show",
       "default": 4
@@ -206,7 +350,8 @@
       "id": "mobile_scroller",
       "label": "t:sections.featured_collection.settings.mobile_scroller.label",
       "info": "t:sections.featured_collection.settings.mobile_scroller.info",
-      "default": false
+      "default": false,
+      "visible_if": "{{ section.settings.layout == 'grid' }}"
     },
     {
       "type": "checkbox",

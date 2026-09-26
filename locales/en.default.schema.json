@@ -710,6 +710,14 @@
         "mobile_scroller": {
           "label": "Swipe on mobile",
           "info": "Shows the products in one row that customers swipe through, instead of a grid."
+        },
+        "layout": {
+          "label": "Layout",
+          "info": "A scrolling row shows the products in one row that scrolls sideways, with arrows on desktop.",
+          "options": {
+            "grid": "Grid",
+            "carousel": "Scrolling row"
+          }
         }
       }
     },
