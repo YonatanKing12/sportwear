@@ -12,11 +12,13 @@
     "market_web_presence": "gid://shopify/MarketWebPresence/72445264176 (main domain): he at /, en at /en, ar at /ar"
   },
   "themes": {
-    "live (MAIN, do not touch)": "gid://shopify/OnlineStoreTheme/188515483952 (Horizon placeholder)",
-    "SportWear (dev), unpublished": "gid://shopify/OnlineStoreTheme/188519711024",
-    "_note": "Preview: Online Store → Themes → SportWear (dev) → Preview. Two stray test files (sections/zz-test-null.liquid, sections/zz-test-plain.liquid) are in the dev theme; the connector can't delete files, so remove them in the code editor or ignore them (they have no presets and never render).",
-    "deployed_commit": "71be9d5",
-    "_deploy_note": "Files changed since deployed_commit need uploading: git diff --name-only <deployed_commit> HEAD -- layout templates sections blocks snippets assets config locales"
+    "live (MAIN, do not touch)": "gid://shopify/OnlineStoreTheme/188519711024 (\"SportWear (dev)\", our theme, published by the owner on 2026-09-26 09:54 UTC)",
+    "live_commit": "71be9d5",
+    "SportWear (next), unpublished: the dev theme": "gid://shopify/OnlineStoreTheme/188528591152 (themeDuplicate of the live theme, 2026-09-26 10:13 UTC)",
+    "Horizon, unpublished": "gid://shopify/OnlineStoreTheme/188515483952 (the old placeholder)",
+    "_note": "Preview: Online Store → Themes → SportWear (next) → Preview, or https://sfgzdp-1m.myshopify.com/?preview_theme_id=188528591152 . Two stray test files (sections/zz-test-null.liquid, sections/zz-test-plain.liquid) are in both SportWear themes; the connector can't delete files, so remove them in the code editor or ignore them (they have no presets and never render).",
+    "deployed_commit": "8eced9f",
+    "_deploy_note": "deployed_commit is what the dev theme holds. Files changed since then need uploading: git diff --name-only <deployed_commit> HEAD -- layout templates sections blocks snippets assets config locales. When the owner publishes the dev theme, duplicate the new live theme (themeDuplicate) into a fresh unpublished dev theme and record it here."
   },
   "metaobject_definitions": {
     "sw_league": "gid://shopify/MetaobjectDefinition/22150512944",

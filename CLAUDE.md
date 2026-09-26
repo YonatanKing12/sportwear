@@ -26,16 +26,16 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   channels; this starts from zero.
 - **Launch target:** early October 2026 (≈ Oct 8, right after Sukkot).
 
-## The store (facts as of 2026-09-25)
+## The store (facts as of 2026-09-26)
 
 | Item | Value |
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | password-protected |
-| Catalog | 0 real products, 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision |
-| Live theme | Horizon, a placeholder that will be replaced by our theme |
-| Dev theme | "SportWear (dev)", unpublished, `gid://shopify/OnlineStoreTheme/188519711024` (`SW_PREVIEW_THEME_ID=188519711024`). Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Catalog | The owner is importing products (about 1,100 by 2026-09-26, tag `source:yupoo`), 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision |
+| Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
+| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |

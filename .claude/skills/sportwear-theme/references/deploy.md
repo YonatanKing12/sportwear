@@ -30,3 +30,17 @@ Always run the gates first (`npm run theme:validate`, `npm run theme:check`, `np
 
 Upload sections and snippets before the templates and locale files that reference them, and schema
 locale files before sections that use new `t:` keys.
+
+## When the owner publishes the dev theme
+
+The connector blocks writes to the live theme, and our rule forbids them anyway. Once the owner
+publishes the dev theme, make a new one before the next deploy:
+
+1. Compare a few live checksums (`templates/index.json`, the section groups, the locale files) with
+   the repo at `deployed_commit`, so you know whether the owner changed anything in the editor.
+2. `themeDuplicate(id: <live theme>, name: "SportWear (next)")` copies the live theme with every
+   editor change in it. Poll `theme(id) { processing processingFailed }` until it is ready.
+3. Record the new ID in `catalog/store-setup.json` and `CLAUDE.md` (`SW_PREVIEW_THEME_ID`), then
+   deploy the files changed since the live commit.
+4. Tell the owner that editor changes made in the live theme from now on are not in the copy:
+   edit the copy instead, or ask for a sync before publishing it.
