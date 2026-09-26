@@ -1,0 +1,88 @@
+<div class="smoke-collection color-{{ section.settings.color_scheme.id }}">
+  <h1>{{ collection.title }}</h1>
+  <div class="rte">{{ collection.description }}</div>
+  {%- paginate collection.products by section.settings.per_page -%}
+    <form class="smoke-facets" action="{{ collection.url }}">
+      {%- for filter in collection.filters -%}
+        <fieldset data-filter="{{ filter.param_name }}" data-type="{{ filter.type }}">
+          <legend>{{ filter.label }}</legend>
+          {%- case filter.type -%}
+            {%- when 'list' -%}
+              {%- for value in filter.values -%}
+                <label>
+                  <input
+                    type="checkbox"
+                    name="{{ value.param_name }}"
+                    value="{{ value.value }}"
+                    {% if value.active %}
+                      checked
+                    {% endif %}
+                    {% if value.count == 0 %}
+                      disabled
+                    {% endif %}
+                  >
+                  {{ value.label }} ({{ value.count }})
+                </label>
+              {%- endfor -%}
+            {%- when 'price_range' -%}
+              <input
+                type="number"
+                name="{{ filter.min_value.param_name }}"
+                value="{{ filter.min_value.value }}"
+                aria-label="min"
+              >
+              <input
+                type="number"
+                name="{{ filter.max_value.param_name }}"
+                value="{{ filter.max_value.value }}"
+                placeholder="{{ filter.range_max | money_without_currency }}"
+                aria-label="max"
+              >
+          {%- endcase -%}
+        </fieldset>
+      {%- endfor -%}
+      <label>
+        {{ 'smoke.sort' | t }}
+        <select name="sort_by">
+          {%- assign sort_by = collection.sort_by | default: collection.default_sort_by -%}
+          {%- for option in collection.sort_options -%}
+            <option
+              value="{{ option.value }}"
+              {% if option.value == sort_by %}
+                selected
+              {% endif %}
+            >
+              {{- option.name -}}
+            </option>
+          {%- endfor -%}
+        </select>
+      </label>
+    </form>
+    <p data-paginate="{{ paginate.current_page }}/{{ paginate.pages }}/{{ paginate.items }}">
+      {{ 'smoke.page_of' | t: current: paginate.current_page, total: paginate.pages }}
+    </p>
+    <ul class="smoke-grid" role="list">
+      {%- render 'smoke-card' for collection.products as product -%}
+    </ul>
+    <nav class="smoke-pagination" aria-label="pagination">
+      {%- for part in paginate.parts -%}
+        {%- if part.is_link -%}
+          <a href="{{ part.url }}">{{ part.title }}</a>
+        {%- else -%}
+          <span aria-current="page">{{ part.title }}</span>
+        {%- endif -%}
+      {%- endfor -%}
+      {{ paginate | default_pagination }}
+    </nav>
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Per page", "min": 2, "max": 24, "step": 1, "default": 3 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ]
+}
+{% endschema %}

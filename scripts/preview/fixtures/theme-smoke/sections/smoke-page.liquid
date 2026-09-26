@@ -1,0 +1,20 @@
+<article class="smoke-page color-{{ section.settings.color_scheme.id }}">
+  <h1>{{ page.title }}</h1>
+  <div class="rte" data-template="{{ template }}" data-suffix="{{ template.suffix }}">{{ page.content }}</div>
+  {%- if template.suffix == 'contact' -%}
+    {%- form 'contact', id: 'SmokeContact' -%}
+      {%- if form.posted_successfully? -%}
+        <p>ok</p>
+      {%- endif -%}
+      <label>Email <input type="email" name="contact[email]" value="{{ form.email }}"></label>
+      <button type="submit">Send</button>
+    {%- endform -%}
+  {%- endif -%}
+</article>
+
+{% schema %}
+{
+  "name": "Page",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }]
+}
+{% endschema %}

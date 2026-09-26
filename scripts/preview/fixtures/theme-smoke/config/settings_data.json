@@ -1,0 +1,11 @@
+{
+  "current": {
+    "color_schemes": {
+      "scheme-light": { "settings": { "background": "#FFFFFF", "text": "#0D0E11" } },
+      "scheme-dark": { "settings": { "background": "#0D0E11", "text": "#F4F5F7" } }
+    },
+    "body_color_scheme": "scheme-light",
+    "accent": "#C6FF3D",
+    "radius": 6
+  }
+}

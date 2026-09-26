@@ -1,0 +1,46 @@
+{%- assign collection = section.settings.collection -%}
+<div class="smoke-featured color-{{ section.settings.color_scheme.id }}">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'heading' -%}
+        <h2 {{ block.shopify_attributes }}>{{ block.settings.text | default: collection.title }}</h2>
+      {%- when 'note' -%}
+        <p class="smoke-note" {{ block.shopify_attributes }}>{{ block.settings.text }}</p>
+    {%- endcase -%}
+  {%- endfor -%}
+  {%- if collection != blank -%}
+    {%- assign products = collection.products | slice: 0, section.settings.limit -%}
+    <ul class="smoke-grid" role="list">
+      {%- render 'smoke-card' for products as product -%}
+    </ul>
+    <p>
+      <a href="{{ collection.url }}">{{ 'smoke.view_all' | t }} ({{ collection.products_count }})</a>
+      · {% render 'smoke-price' with collection.products.first as product %}
+    </p>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Featured collection",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection" },
+    { "type": "range", "id": "limit", "label": "Products", "min": 2, "max": 8, "step": 1, "default": 4 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "limit": 1,
+      "settings": [{ "type": "text", "id": "text", "label": "Text" }]
+    },
+    {
+      "type": "note",
+      "name": "Note",
+      "settings": [{ "type": "textarea", "id": "text", "label": "Text", "default": "Default note" }]
+    }
+  ],
+  "presets": [{ "name": "Featured collection", "blocks": [{ "type": "heading" }] }]
+}
+{% endschema %}

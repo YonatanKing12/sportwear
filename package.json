@@ -15,7 +15,12 @@
     "format:check": "prettier --check .",
     "catalog:validate": "node scripts/catalog/validate.mjs",
     "qa:shots": "node scripts/qa/screenshots.mjs",
-    "qa:a11y": "node scripts/qa/a11y.mjs"
+    "qa:a11y": "node scripts/qa/a11y.mjs",
+    "preview": "npm run preview:render && npm run preview:shots",
+    "preview:render": "node scripts/preview/render.mjs",
+    "preview:shots": "node scripts/preview/serve-and-shoot.mjs",
+    "preview:serve": "node scripts/preview/serve-and-shoot.mjs --serve",
+    "preview:selftest": "node scripts/preview/selftest.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",
@@ -24,6 +29,7 @@
     "@shopify/theme-check-node": "3.29.1",
     "ajv": "8.20.0",
     "ajv-formats": "3.0.1",
+    "liquidjs": "10.29.0",
     "playwright": "1.56.1",
     "prettier": "3.9.9"
   }

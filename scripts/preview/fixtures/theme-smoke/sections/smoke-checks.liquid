@@ -1,0 +1,46 @@
+{%- comment -%}
+  Checks for the harness itself: plural forms, escaping, math, and a set of deliberate gaps that
+  must be reported (unknown filter, unknown property, missing snippet, missing translation...).
+{%- endcomment -%}
+<div class="smoke-checks color-{{ section.settings.color_scheme.id }}">
+  <h2>Checks</h2>
+  <ul role="list" data-check="plurals">
+    {%- for n in (0..3) -%}
+      <li data-count="{{ n }}">{{ 'smoke.cart_count' | t: count: n }}</li>
+    {%- endfor -%}
+    <li data-count="11">{{ 'smoke.cart_count' | t: count: 11 }}</li>
+    <li data-count="100">{{ 'smoke.cart_count' | t: count: 100 }}</li>
+  </ul>
+  <p data-check="html">{{ 'smoke.hello_html' | t: name: '<i>Dana</i>' }}</p>
+  <p data-check="escaped">{{ 'smoke.escaped' | t }}</p>
+  <p data-check="math">{{ 7 | divided_by: 2 }}|{{ 7 | divided_by: 2.0 }}|{{ 120 | times: 100 | money }}</p>
+  <p data-check="fallback">{{ 'smoke.fallback_only' | t }}</p>
+  <p data-check="color">
+    {{- settings.accent | color_to_rgb }}|{{ settings.accent | color_modify: 'alpha', 0.5 }}|
+    {{- settings.accent | color_brightness }}|{{ settings.accent.lightness }}
+  </p>
+  <p data-check="handleize">{{ 'חולצת בית 26/27' | handleize }}</p>
+  {%- if section.settings.show_gaps -%}
+    <div data-check="gaps">
+      <p>{{ 'x' | frobnicate }}</p>
+      <p>{{ shop.not_a_real_property }}</p>
+      <p>{{ section.settings.not_in_schema }}</p>
+      <p>{{ collections['no-such-collection'].title }}</p>
+      <p>{{ 'smoke.no_such_key' | t }}</p>
+      <p>{{ app.metafields }}</p>
+      <p>{{ 10 | divided_by: 0 }}</p>
+      {% render 'does-not-exist' %}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Checks",
+  "settings": [
+    { "type": "checkbox", "id": "show_gaps", "label": "Show deliberate gaps", "default": false },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ],
+  "presets": [{ "name": "Checks" }]
+}
+{% endschema %}

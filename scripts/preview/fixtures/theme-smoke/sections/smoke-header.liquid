@@ -1,0 +1,132 @@
+{%- assign menu = section.settings.menu -%}
+<header class="smoke-header color-{{ section.settings.color_scheme.id }}">
+  <button
+    type="button"
+    class="smoke-header__menu-button"
+    data-drawer-open="MenuDrawer"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+  >
+    {{ 'smoke.menu' | t }}
+  </button>
+  <a class="smoke-header__logo" href="{{ routes.root_url }}">{{ shop.name }}</a>
+  <nav class="smoke-header__nav" aria-label="{{ 'smoke.menu' | t }}">
+    <ul role="list">
+      {%- for link in menu.links -%}
+        <li>
+          <a
+            href="{{ link.url }}"
+            {% if link.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- link.title -}}
+          </a>
+          {%- if link.links.size > 0 -%}
+            <ul role="list" class="smoke-header__sub">
+              {%- for child in link.links -%}
+                <li>
+                  <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
+  {%- form 'localization', id: 'HeaderLocalization', class: 'smoke-localization' -%}
+    <span class="visually-hidden">{{ 'smoke.language' | t }}</span>
+    {%- for language in localization.available_languages -%}
+      <button
+        type="submit"
+        name="language_code"
+        value="{{ language.iso_code }}"
+        lang="{{ language.iso_code }}"
+        {% if language.iso_code == localization.language.iso_code %}
+          aria-current="true"
+        {% endif %}
+      >
+        {{ language.endonym_name }}
+      </button>
+    {%- endfor -%}
+  {%- endform -%}
+  <a
+    class="smoke-header__cart"
+    href="{{ routes.cart_url }}"
+    data-drawer-open="CartDrawer"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+  >
+    <span data-cart-count>{{ 'smoke.cart_count' | t: count: cart.item_count }}</span>
+  </a>
+</header>
+
+<sw-drawer id="MenuDrawer">
+  <dialog class="smoke-drawer smoke-drawer--start" aria-label="{{ 'smoke.menu' | t }}">
+    <button type="button" data-drawer-close>{{ 'smoke.close' | t }}</button>
+    <ul role="list">
+      {%- for link in menu.links -%}
+        <li>
+          <a href="{{ link.url }}">{{ link.title }}</a>
+          {%- if link.links != empty -%}
+            <ul role="list">
+              {%- for child in link.links -%}
+                <li>
+                  <a href="{{ child.url }}">{{ child.title }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+    </ul>
+  </dialog>
+</sw-drawer>
+
+{% stylesheet %}
+  .smoke-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .smoke-header__nav ul {
+    display: flex;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .smoke-header__sub {
+    display: none;
+  }
+
+  .smoke-header__menu-button {
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .smoke-header__nav {
+      display: none;
+    }
+
+    .smoke-header__menu-button {
+      display: inline-block;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Header",
+  "tag": "div",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-dark" }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "smoke-cart", "settings": {} }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,53 @@
+<sw-drawer id="CartDrawer">
+  <dialog class="smoke-drawer color-{{ settings.body_color_scheme.id }}" aria-labelledby="CartDrawerTitle">
+    <div class="smoke-drawer__header">
+      <h2 id="CartDrawerTitle">{{ 'smoke.cart_title' | t }}</h2>
+      <button type="button" data-drawer-close>{{ 'smoke.close' | t }}</button>
+    </div>
+    <div class="smoke-drawer__body" data-cart-drawer-body>
+      {%- if cart.item_count == 0 -%}
+        <p>{{ 'smoke.cart_empty' | t }}</p>
+      {%- else -%}
+        <ul role="list" class="smoke-lines">
+          {%- for item in cart.items -%}
+            <li class="smoke-line">
+              {{
+                item.image
+                | image_url: width: 160
+                | image_tag: sizes: '80px', widths: '80, 160', loading: 'lazy', class: 'smoke-line__image'
+              }}
+              <div>
+                <a href="{{ item.url }}">{{ item.product.title }}</a>
+                {%- for option in item.options_with_values -%}
+                  <p>
+                    {{ option.name }}: <bdi>{{ option.value }}</bdi>
+                  </p>
+                {%- endfor -%}
+                <p>
+                  {{ item.final_line_price | money }}
+                  {%- if item.variant.compare_at_price > item.variant.price -%}
+                    <s>{{ item.variant.compare_at_price | money }}</s>
+                  {%- endif -%}
+                  × {{ item.quantity }}
+                </p>
+              </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+    <div class="smoke-drawer__footer">
+      <p>{{ 'smoke.subtotal' | t }}: {{ cart.total_price | money_with_currency }}</p>
+      {%- form 'cart', cart -%}
+        <button type="submit" name="checkout">{{ 'smoke.checkout' | t }}</button>
+      {%- endform -%}
+    </div>
+  </dialog>
+</sw-drawer>
+
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": []
+}
+{% endschema %}

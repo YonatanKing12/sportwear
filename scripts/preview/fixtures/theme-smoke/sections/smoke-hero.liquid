@@ -1,0 +1,100 @@
+{%- liquid
+  assign eager = false
+  if section.index == 1
+    assign eager = true
+  endif
+-%}
+<section
+  class="smoke-hero color-{{ section.settings.color_scheme.id }}"
+  style="--pad: {{ section.settings.padding }}px;"
+>
+  <div class="smoke-hero__media">
+    {%- if section.settings.image != blank -%}
+      {%- if eager -%}
+        {{
+          section.settings.image
+          | image_url: width: 1920
+          | image_tag:
+            widths: '480, 960, 1440, 1920',
+            sizes: '100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            preload: true,
+            alt: ''
+        }}
+      {%- else -%}
+        {{ section.settings.image | image_url: width: 1920 | image_tag: sizes: '100vw', loading: 'lazy', alt: '' }}
+      {%- endif -%}
+    {%- else -%}
+      {{ 'hero-apparel-1' | placeholder_svg_tag: 'smoke-placeholder' }}
+    {%- endif -%}
+  </div>
+  <div class="smoke-hero__content">
+    <h1>{{ section.settings.heading | default: shop.name }}</h1>
+    <div class="rte">{{ section.settings.text }}</div>
+    {%- if section.settings.link != blank -%}
+      <a class="smoke-button" href="{{ section.settings.link }}">{{ 'smoke.view_all' | t }}</a>
+    {%- endif -%}
+    {%- if section.settings.secondary_image != blank -%}
+      {{
+        section.settings.secondary_image
+        | image_url: width: 600
+        | image_tag: sizes: '300px', class: 'smoke-hero__badge'
+      }}
+    {%- endif -%}
+  </div>
+</section>
+
+{% stylesheet %}
+  .smoke-hero {
+    display: grid;
+    gap: 16px;
+    padding: var(--pad) 16px;
+  }
+
+  .smoke-hero__media img,
+  .smoke-hero__media svg {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    max-block-size: 420px;
+    object-fit: contain;
+    background: #f1f2f4;
+  }
+
+  @media (min-width: 990px) {
+    .smoke-hero {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  document.documentElement.dataset.smokeHero = 'loaded';
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Hero",
+  "class": "smoke-hero-section",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "image_picker", "id": "secondary_image", "label": "Secondary image" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Default <strong>rich text</strong></p>" },
+    { "type": "url", "id": "link", "label": "Link" },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "default": 36
+    },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-dark" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

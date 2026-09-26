@@ -1,0 +1,20 @@
+<div class="smoke-blocks color-{{ section.settings.color_scheme.id }}" data-block-count="{{ section.blocks.size }}">
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="smoke-blocks__list">
+    {% content_for 'blocks' %}
+  </div>
+  {% content_for 'block', type: 'smoke-button', id: 'cta', label: section.settings.cta_label %}
+</div>
+
+{% schema %}
+{
+  "name": "Theme blocks",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Theme blocks" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "Static block CTA" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ],
+  "blocks": [{ "type": "@theme" }, { "type": "@app" }],
+  "presets": [{ "name": "Theme blocks" }]
+}
+{% endschema %}

@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "smoke-page", "settings": {} }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,13 @@
+<div class="smoke-404 color-{{ section.settings.color_scheme.id }}">
+  <h1>{{ 'smoke.not_found' | t }}</h1>
+  <p>
+    <a href="{{ routes.all_products_collection_url }}">{{ 'smoke.view_all' | t }}</a>
+  </p>
+</div>
+
+{% schema %}
+{
+  "name": "404",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-dark" }]
+}
+{% endschema %}

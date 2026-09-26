@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "smoke-search", "settings": {} }
+  },
+  "order": ["main"]
+}

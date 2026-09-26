@@ -1,0 +1,42 @@
+{%- doc -%}
+  Product card used by the smoke sections.
+
+  @param {product} product - The product
+{%- enddoc -%}
+{%- liquid
+  assign team = product.metafields.sportwear.team.value
+  assign on_sale = false
+  if product.compare_at_price > product.price
+    assign on_sale = true
+  endif
+-%}
+{% # theme-check-disable UndefinedObject %}
+<li class="smoke-card" data-index="{{ forloop.index }}">
+  {% # theme-check-enable UndefinedObject %}
+  <a href="{{ product.url }}">
+    {{
+      product.featured_media.preview_image
+      | image_url: width: 720
+      | image_tag: widths: '240, 360, 480, 720', sizes: '(min-width: 990px) 25vw, 50vw', loading: 'lazy', alt: ''
+    }}
+    {%- if on_sale -%}
+      <span class="smoke-badge">{{ 'smoke.sale' | t }}</span>
+    {%- elsif product.available == false -%}
+      <span class="smoke-badge">{{ 'smoke.sold_out' | t }}</span>
+    {%- endif -%}
+    {%- if team != blank -%}
+      <span class="smoke-card__team" style="--team: {{ team.primary_color.value }}">{{ team.name.value }}</span>
+    {%- endif -%}
+    <span class="smoke-card__title">{{ product.title }}</span>
+  </a>
+  {% render 'smoke-price', product: product %}
+</li>
+
+{% stylesheet %}
+  .smoke-card img {
+    display: block;
+    inline-size: 100%;
+    block-size: auto;
+    background: #f1f2f4;
+  }
+{% endstylesheet %}

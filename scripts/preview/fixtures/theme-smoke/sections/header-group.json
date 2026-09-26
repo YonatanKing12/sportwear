@@ -1,0 +1,23 @@
+/*
+ * Smoke-test fixture for the preview harness (a Shopify-style auto-generated comment header).
+ */
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "announcement": {
+      "type": "smoke-announcement",
+      "settings": { "text": "", "color_scheme": "scheme-dark" }
+    },
+    "header": {
+      "type": "smoke-header",
+      "settings": { "menu": "main-menu", "color_scheme": "scheme-dark" }
+    },
+    "hidden": {
+      "type": "smoke-announcement",
+      "disabled": true,
+      "settings": { "text": "This section is disabled and must not render" }
+    }
+  },
+  "order": ["announcement", "header", "hidden"]
+}

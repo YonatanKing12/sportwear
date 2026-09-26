@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}" dir="{{ request.locale.direction }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      {{ page_title }}
+      {% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}
+    </title>
+    <link rel="canonical" href="{{ canonical_url }}">
+    {%- style -%}
+      :root { --accent: {{ settings.accent }}; --radius: {{ settings.radius }}px; }
+      {% for scheme in settings.color_schemes -%}
+        .color-{{ scheme.id }} { --bg: {{ scheme.settings.background }}; --fg: {{ scheme.settings.text }}; background: var(--bg); color: var(--fg); color-scheme: {% if scheme.settings.background.lightness < 50 %}dark{% else %}light{% endif %}; }
+      {% endfor %}
+    {%- endstyle -%}
+    {{ 'smoke.css' | asset_url | stylesheet_tag }}
+    <script type="importmap">
+      { "imports": { "@smoke/drawer": "{{ 'smoke.js' | asset_url }}" } }
+    </script>
+    <script type="module" src="{{ 'smoke.js' | asset_url }}"></script>
+    <script>
+      window.smoke = {
+        routes: { cart_add_url: {{ routes.cart_add_url | json }}, cart_url: {{ routes.cart_url | json }} },
+        strings: { added: {{ 'smoke.added' | t | json }} }
+      };
+    </script>
+    {{ content_for_header }}
+  </head>
+  <body class="color-{{ settings.body_color_scheme.id }}">
+    <a class="skip" href="#Main">{{ 'smoke.skip' | t }}</a>
+    {% sections 'header-group' %}
+    <main id="Main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+    {% sections 'footer-group' %}
+    {% section 'cart-drawer' %}
+  </body>
+</html>
