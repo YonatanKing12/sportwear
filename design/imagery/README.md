@@ -37,14 +37,20 @@ File names: `sw-studio-<handle without "sw-">.png`, and `-back.png` for a back v
 ### Rules
 
 - Render only what the supplier photographed. Never invent a back view or a detail.
-- A photo that shows several products together is not rendered; the product keeps its photo until
-  there is a single-product photo.
+- A supplier photo that shows the front and the back side by side is cut in half, and each half is
+  rendered on its own: the front, and the back as `<handle>__back`.
+- A photo of several colorways together: render only the item that matches the product title, and only
+  if it is fully visible. Otherwise the product keeps its supplier photo until there is a
+  single-product photo.
 - The demo product (tag `demo`) is not touched.
 - If a render differs from the product in any detail a customer would notice, it does not go live.
 
-History: 229 products got studio photos from an earlier process on 2026-09-26 (files named
-`sw-studio-…-main-v1.png` and similar), in the same look; the remaining 870 were made with this pipeline
-the same day.
+History (2026-09-26): an earlier process gave 229 products studio photos in the same look (files named
+`sw-studio-…-main-v1.png` and similar, some with extra close-ups). This pipeline made the rest the same
+day: 878 products (867 new, plus 11 football shirts from the earlier set, redone), 922 photos in all
+(878 fronts, 44 backs). Three products keep their supplier photo: the demo product,
+`sw-jerseys-244981217` (its two photos show two different jerseys) and `sw-shorts-117771218` (the group
+photo hides part of the product).
 
 ## Home page photography
 
