@@ -17,8 +17,9 @@
     "SportWear (next), unpublished: the dev theme": "gid://shopify/OnlineStoreTheme/188528591152 (themeDuplicate of the live theme, 2026-09-26 10:13 UTC)",
     "Horizon, unpublished": "gid://shopify/OnlineStoreTheme/188515483952 (the old placeholder)",
     "_note": "Preview: Online Store → Themes → SportWear (next) → Preview, or https://sfgzdp-1m.myshopify.com/?preview_theme_id=188528591152 . Two stray test files (sections/zz-test-null.liquid, sections/zz-test-plain.liquid) are in both SportWear themes; the connector can't delete files, so remove them in the code editor or ignore them (they have no presets and never render).",
-    "deployed_commit": "2152696",
-    "_deploy_note": "deployed_commit is what the dev theme holds. Files changed since then need uploading: git diff --name-only <deployed_commit> HEAD -- layout templates sections blocks snippets assets config locales. When the owner publishes the dev theme, duplicate the new live theme (themeDuplicate) into a fresh unpublished dev theme and record it here."
+    "deployed_commit": "c224a3e",
+    "_deploy_note": "deployed_commit is what the dev theme holds. Files changed since then need uploading: git diff --name-only <deployed_commit> HEAD -- layout templates sections blocks snippets assets config locales. When the owner publishes the dev theme, duplicate the new live theme (themeDuplicate) into a fresh unpublished dev theme and record it here.",
+    "shop_images": "AI atmosphere photos sw-*.jpg in Content → Files (see design/imagery/README.md): MediaImage 45286706053424 … 45286706348336"
   },
   "metaobject_definitions": {
     "sw_league": "gid://shopify/MetaobjectDefinition/22150512944",
