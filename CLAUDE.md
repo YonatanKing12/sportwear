@@ -152,9 +152,11 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Selling prices for new basketball jerseys and shorts (football is set: adults ₪139, kids sets ₪99)
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך")
-- The accessibility statement's contact person (name, phone, email)
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
-- The final returns wording
+- The legal pages: the accessibility contact (name, phone, email), who pays return shipping, whether to
+  charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility)
+  are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39. The site keeps its
+  placeholders until the owner approves
 - Buying the domain
 - The storefront password, for QA screenshots
 - Connecting GitHub to Shopify, a one-time step for the development theme
