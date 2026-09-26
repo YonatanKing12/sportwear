@@ -1,0 +1,637 @@
+{%- comment -%}
+  Team orders: the brand band (dark by default) with a display heading, intro text, benefit blocks,
+  a WhatsApp button with a prefilled message, and a quote request form on a light card. The form is
+  Shopify's contact form with extra fields (contact[team], contact[quantity], contact[sizes],
+  contact[deadline]) that show up in the store's contact notification email.
+  On the team orders page template it is the main section: set "Heading tag" to H1 there.
+  Keep one contact-type form per page (this section or contact-form).
+{%- endcomment -%}
+{%- liquid
+  assign form_id = 'TeamOrderForm-' | append: section.id
+  assign name_id = form_id | append: '-name'
+  assign email_id = form_id | append: '-email'
+  assign phone_id = form_id | append: '-phone'
+  assign team_id = form_id | append: '-team'
+  assign quantity_id = form_id | append: '-quantity'
+  assign deadline_id = form_id | append: '-deadline'
+  assign sizes_id = form_id | append: '-sizes'
+  assign body_id = form_id | append: '-body'
+
+  assign heading_tag = section.settings.heading_tag
+  case heading_tag
+    when 'h1'
+      assign sub_tag = 'h2'
+    when 'h3'
+      assign sub_tag = 'h4'
+    else
+      assign heading_tag = 'h2'
+      assign sub_tag = 'h3'
+  endcase
+
+  assign is_dark = false
+  if section.settings.color_scheme.settings.background.lightness < 50
+    assign is_dark = true
+  endif
+
+  assign eyebrow = section.settings.eyebrow
+  if eyebrow == blank
+    assign eyebrow = 'team_orders.eyebrow' | t
+  endif
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'team_orders.heading' | t
+  endif
+  assign whatsapp_label = section.settings.whatsapp_label
+  if whatsapp_label == blank
+    assign whatsapp_label = 'team_orders.whatsapp' | t
+  endif
+  assign form_heading = section.settings.form_heading
+  if form_heading == blank
+    assign form_heading = 'team_orders.form.heading' | t
+  endif
+
+  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  assign whatsapp_message = 'team_orders.whatsapp_message' | t: shop: shop.name | url_encode | replace: '+', '%20'
+  assign today = 'now' | date: '%Y-%m-%d'
+-%}
+<div
+  class="section team-orders color-{{ section.settings.color_scheme.id }}{% if is_dark %} team-orders--dark{% endif %}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="team-orders__layout{% if section.settings.show_form %} team-orders__layout--with-form{% endif %}">
+      <div class="team-orders__intro">
+        <p class="eyebrow team-orders__eyebrow">
+          {%- render 'icon', name: 'users', size: 20 -%}
+          <span>{{ eyebrow }}</span>
+        </p>
+        <{{ heading_tag }} class="display-l team-orders__heading">{{ heading }}</{{ heading_tag }}>
+        <div class="team-orders__text">
+          {%- if section.settings.text != blank -%}
+            {{ section.settings.text }}
+          {%- else -%}
+            <p>{{ 'team_orders.text' | t }}</p>
+          {%- endif -%}
+        </div>
+
+        {%- if whatsapp_digits != blank -%}
+          <div class="team-orders__actions">
+            <a
+              class="button button--primary button--large team-orders__whatsapp"
+              href="https://wa.me/{{ whatsapp_digits }}?text={{ whatsapp_message }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {%- render 'icon', name: 'whatsapp', size: 22 -%}
+              <span>{{ whatsapp_label }}</span>
+              <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+            </a>
+          </div>
+        {%- elsif request.design_mode -%}
+          <p class="team-orders__editor-note">{{ 'team_orders.editor.no_whatsapp' | t }}</p>
+        {%- endif -%}
+
+        {%- if section.blocks.size > 0 -%}
+          <ul class="team-orders__benefits" role="list">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign preset = block.settings.preset
+                assign benefit_title = block.settings.title
+                if benefit_title == blank and preset != 'none'
+                  assign title_key = 'team_orders.benefits.' | append: preset | append: '.title'
+                  assign benefit_title = title_key | t
+                endif
+                assign benefit_text = block.settings.text
+                if benefit_text == blank and preset != 'none'
+                  assign text_key = 'team_orders.benefits.' | append: preset | append: '.text'
+                  assign benefit_text = text_key | t
+                endif
+              -%}
+              {%- if benefit_title != blank -%}
+                <li class="team-orders__benefit" {{ block.shopify_attributes }}>
+                  <span class="team-orders__benefit-icon">
+                    {%- render 'icon', name: block.settings.icon, size: 22 -%}
+                  </span>
+                  <div class="team-orders__benefit-body">
+                    <p class="team-orders__benefit-title">{{ benefit_title }}</p>
+                    {%- if benefit_text != blank -%}
+                      <p class="team-orders__benefit-text">{{ benefit_text }}</p>
+                    {%- endif -%}
+                  </div>
+                </li>
+              {%- elsif request.design_mode -%}
+                <li class="team-orders__benefit" {{ block.shopify_attributes }}>
+                  <p class="team-orders__editor-note">{{ 'team_orders.editor.empty_benefit' | t }}</p>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.show_form -%}
+        <div class="team-orders__card color-{{ section.settings.form_color_scheme.id }}">
+          <{{ sub_tag }} class="title-l team-orders__card-heading">{{ form_heading }}</{{ sub_tag }}>
+          <sw-validated-form
+            data-error-required="{{ 'pages.form.errors.required' | t }}"
+            data-error-email="{{ 'pages.form.errors.email' | t }}"
+            data-error-invalid="{{ 'pages.form.errors.invalid' | t }}"
+          >
+            {%- form 'contact', id: form_id, class: 'team-orders__form' -%}
+              <input
+                type="hidden"
+                name="contact[request_type]"
+                value="{{ 'team_orders.form.request_type' | t }}"
+              >
+              {%- liquid
+                assign success_message = 'team_orders.form.success' | t
+                assign email_error = ''
+                if form.errors contains 'email'
+                  assign email_error = 'pages.form.errors.email' | t
+                endif
+
+                assign name_value = ''
+                assign email_value = form.email
+                if customer
+                  assign name_value = customer.name
+                  if email_value == blank
+                    assign email_value = customer.email
+                  endif
+                endif
+                assign body_value = ''
+                unless form.posted_successfully?
+                  assign body_value = form.body
+                endunless
+
+                assign name_label = 'contact.form.name' | t
+                assign email_label = 'contact.form.email' | t
+                assign phone_label = 'contact.form.phone' | t
+                assign team_label = 'team_orders.form.team' | t
+                assign quantity_label = 'team_orders.form.quantity' | t
+                assign quantity_hint = 'team_orders.form.quantity_hint' | t
+                assign deadline_label = 'team_orders.form.deadline' | t
+                assign sizes_label = 'team_orders.form.sizes' | t
+                assign sizes_hint = 'team_orders.form.sizes_hint' | t
+                assign body_label = 'team_orders.form.message' | t
+                assign email_placeholder = 'pages.form.email_placeholder' | t
+              -%}
+              {%- render 'content-form-status', form: form, form_id: form_id, success: success_message -%}
+              <p class="team-orders__note">{{ 'pages.form.required_note' | t }}</p>
+              <div class="team-orders__fields">
+                {%- render 'content-field',
+                  id: name_id,
+                  name: 'contact[name]',
+                  label: name_label,
+                  required: true,
+                  value: name_value,
+                  autocomplete: 'name'
+                -%}
+                {%- render 'content-field',
+                  id: email_id,
+                  name: 'contact[email]',
+                  type: 'email',
+                  label: email_label,
+                  required: true,
+                  value: email_value,
+                  autocomplete: 'email',
+                  dir: 'ltr',
+                  placeholder: email_placeholder,
+                  error: email_error
+                -%}
+                {%- render 'content-field',
+                  id: phone_id,
+                  name: 'contact[phone]',
+                  type: 'tel',
+                  label: phone_label,
+                  autocomplete: 'tel',
+                  dir: 'ltr'
+                -%}
+                {%- render 'content-field',
+                  id: team_id,
+                  name: 'contact[team]',
+                  label: team_label,
+                  autocomplete: 'organization'
+                -%}
+                {%- render 'content-field',
+                  id: quantity_id,
+                  name: 'contact[quantity]',
+                  label: quantity_label,
+                  required: true,
+                  inputmode: 'numeric',
+                  hint: quantity_hint
+                -%}
+                {%- render 'content-field',
+                  id: deadline_id,
+                  name: 'contact[deadline]',
+                  type: 'date',
+                  label: deadline_label,
+                  min: today
+                -%}
+                {%- render 'content-field',
+                  id: sizes_id,
+                  name: 'contact[sizes]',
+                  type: 'textarea',
+                  label: sizes_label,
+                  hint: sizes_hint,
+                  rows: 3,
+                  class: 'team-orders__field--full'
+                -%}
+                {%- render 'content-field',
+                  id: body_id,
+                  name: 'contact[body]',
+                  type: 'textarea',
+                  label: body_label,
+                  value: body_value,
+                  rows: 4,
+                  class: 'team-orders__field--full'
+                -%}
+              </div>
+              <button class="button button--primary button--large button--full team-orders__submit" type="submit">
+                {{- 'team_orders.form.submit' | t -}}
+              </button>
+            {%- endform -%}
+          </sw-validated-form>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+<script type="module" src="{{ 'content-form.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .team-orders__layout {
+    display: grid;
+    gap: var(--space-10);
+
+    @media screen and (min-width: 990px) {
+      gap: var(--space-12);
+      align-items: start;
+    }
+  }
+
+  .team-orders__layout--with-form {
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    }
+  }
+
+  .team-orders__intro {
+    display: grid;
+    align-content: start;
+    gap: var(--space-5);
+    min-inline-size: 0;
+  }
+
+  .team-orders__eyebrow {
+    color: var(--color-muted);
+  }
+
+  .team-orders--dark .team-orders__eyebrow {
+    color: var(--color-highlight);
+  }
+
+  .team-orders__heading {
+    overflow-wrap: break-word;
+  }
+
+  .team-orders__text {
+    max-inline-size: 56ch;
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+
+    & > * + * {
+      margin-block-start: var(--space-3);
+    }
+
+    & a {
+      color: var(--color-text);
+      font-weight: 700;
+    }
+  }
+
+  .team-orders__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .team-orders__whatsapp {
+    inline-size: 100%;
+
+    @media screen and (min-width: 750px) {
+      inline-size: auto;
+    }
+  }
+
+  .team-orders__benefits {
+    display: grid;
+    gap: var(--space-3);
+    margin: var(--space-3) 0 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .team-orders__layout--with-form .team-orders__benefits {
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .team-orders__benefit {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+  }
+
+  .team-orders__benefit-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    border-radius: 50%;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+  }
+
+  .team-orders__benefit-body {
+    display: grid;
+    gap: 2px;
+    min-inline-size: 0;
+  }
+
+  .team-orders__benefit-title {
+    font-weight: 800;
+    line-height: var(--leading-tight);
+  }
+
+  .team-orders__benefit-text {
+    color: var(--color-muted);
+    font-size: var(--text-md);
+  }
+
+  .team-orders__card {
+    display: grid;
+    gap: var(--space-4);
+    padding: var(--space-6) var(--space-5);
+    border-radius: calc(var(--radius-card) * 2);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--space-8);
+    }
+  }
+
+  .team-orders__note {
+    margin-block-end: var(--space-4);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .team-orders__fields {
+    display: grid;
+    align-items: end;
+    gap: var(--space-5) var(--space-4);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .team-orders__field--full {
+    grid-column: 1 / -1;
+  }
+
+  .team-orders__submit {
+    margin-block-start: var(--space-6);
+  }
+
+  .team-orders__editor-note {
+    padding: var(--space-3);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-card);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.team_orders.name",
+  "max_blocks": 6,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "t:settings.heading_tag",
+      "info": "t:sections.team_orders.settings.heading_tag.info",
+      "options": [
+        {
+          "value": "h1",
+          "label": "t:options.heading_tag.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.heading_tag.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.heading_tag.h3"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "whatsapp_label",
+      "label": "t:sections.team_orders.settings.whatsapp_label.label",
+      "info": "t:sections.team_orders.settings.whatsapp_label.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.team_orders.settings.form.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_form",
+      "label": "t:sections.team_orders.settings.show_form.label",
+      "info": "t:sections.team_orders.settings.show_form.info",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "form_heading",
+      "label": "t:sections.team_orders.settings.form_heading.label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "form_color_scheme",
+      "label": "t:sections.team_orders.settings.form_color_scheme.label",
+      "default": "scheme-day"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "t:sections.team_orders.blocks.benefit.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "preset",
+          "label": "t:sections.team_orders.blocks.benefit.settings.preset.label",
+          "info": "t:sections.team_orders.blocks.benefit.settings.preset.info",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.team_orders.blocks.benefit.settings.preset.options.none"
+            },
+            {
+              "value": "volume",
+              "label": "t:sections.team_orders.blocks.benefit.settings.preset.options.volume"
+            },
+            {
+              "value": "sizes",
+              "label": "t:sections.team_orders.blocks.benefit.settings.preset.options.sizes"
+            },
+            {
+              "value": "delivery",
+              "label": "t:sections.team_orders.blocks.benefit.settings.preset.options.delivery"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.team_orders.blocks.benefit.settings.icon.label",
+          "options": [
+            {
+              "value": "tag",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.tag"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.shirt"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.ruler"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.truck"
+            },
+            {
+              "value": "users",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.users"
+            },
+            {
+              "value": "chat",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.chat"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.team_orders.blocks.benefit.settings.icon.options.return"
+            }
+          ],
+          "default": "tag"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.team_orders.blocks.benefit.settings.title.label"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:settings.text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.team_orders.name",
+      "blocks": [
+        {
+          "type": "benefit",
+          "settings": {
+            "preset": "volume",
+            "icon": "tag"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "preset": "sizes",
+            "icon": "shirt"
+          }
+        },
+        {
+          "type": "benefit",
+          "settings": {
+            "preset": "delivery",
+            "icon": "truck"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

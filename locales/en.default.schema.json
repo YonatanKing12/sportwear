@@ -33,6 +33,334 @@
         }
       }
     },
+    "footer": {
+      "name": "Footer",
+      "settings": {
+        "show_language_selector": {
+          "label": "Show language selector",
+          "info": "Shown when the store has more than one published language."
+        },
+        "show_social": {
+          "label": "Show social media links",
+          "info": "Links come from Theme settings > Social media and Business details."
+        },
+        "show_payment_icons": {
+          "label": "Show payment icons"
+        },
+        "legal": {
+          "content": "Legal"
+        },
+        "accessibility_page": {
+          "label": "Accessibility statement page",
+          "info": "Linked at the bottom of every page. Israeli law (IS 5568) requires an accessibility statement."
+        },
+        "business_info": {
+          "content": "The business name, business ID and address at the bottom come from Theme settings > Business details."
+        }
+      },
+      "blocks": {
+        "brand": {
+          "name": "Logo and text",
+          "settings": {
+            "logo_info": {
+              "content": "The logo comes from Theme settings > Brand."
+            },
+            "show_text": {
+              "label": "Show text"
+            }
+          }
+        },
+        "menu": {
+          "name": "Menu",
+          "settings": {
+            "show_heading": {
+              "label": "Show heading",
+              "info": "When hidden, screen readers still announce it."
+            }
+          }
+        },
+        "contact": {
+          "name": "Contact details",
+          "settings": {
+            "info": {
+              "content": "Phone, email and WhatsApp come from Theme settings > Business details."
+            },
+            "text": {
+              "label": "Extra text",
+              "info": "For example, opening hours."
+            }
+          }
+        },
+        "newsletter": {
+          "name": "Email sign-up",
+          "settings": {
+            "info": {
+              "content": "Subscribers are added to Customers with the \"newsletter\" tag and consent to email marketing."
+            },
+            "consent": {
+              "label": "Consent text"
+            }
+          }
+        }
+      }
+    },
+    "main_page": {
+      "name": "Page",
+      "settings": {
+        "content_width": {
+          "label": "Content width",
+          "options": {
+            "narrow": "Narrow (760 px)",
+            "normal": "Page width"
+          }
+        },
+        "show_title": {
+          "label": "Show page title",
+          "info": "When hidden, screen readers and search engines still get it."
+        }
+      }
+    },
+    "contact_form": {
+      "name": "Contact form",
+      "settings": {
+        "card": {
+          "content": "Contact card"
+        },
+        "show_card": {
+          "label": "Show contact card",
+          "info": "WhatsApp, phone and email come from Theme settings > Business details."
+        },
+        "card_heading": {
+          "label": "Card heading"
+        },
+        "hours": {
+          "label": "Opening hours",
+          "info": "For example: Sun–Thu 9:00–18:00"
+        }
+      }
+    },
+    "team_orders": {
+      "name": "Team orders",
+      "settings": {
+        "heading_tag": {
+          "info": "Use H1 when this is the main section of the page, as on the team orders page."
+        },
+        "whatsapp_label": {
+          "label": "WhatsApp button label",
+          "info": "The WhatsApp number comes from Theme settings > Business details. Leave empty to use the default text, which is already translated into every store language."
+        },
+        "form": {
+          "content": "Quote request form"
+        },
+        "show_form": {
+          "label": "Show quote request form",
+          "info": "Requests arrive at the store's email address, like contact form messages."
+        },
+        "form_heading": {
+          "label": "Form heading"
+        },
+        "form_color_scheme": {
+          "label": "Form color scheme"
+        }
+      },
+      "blocks": {
+        "benefit": {
+          "name": "Benefit",
+          "settings": {
+            "preset": {
+              "label": "Ready-made text",
+              "info": "Already translated into every store language. A title and text of your own replace it.",
+              "options": {
+                "none": "None",
+                "volume": "Volume pricing",
+                "sizes": "Adult and kids' sizes",
+                "delivery": "Delivery within 3 business days"
+              }
+            },
+            "icon": {
+              "label": "Icon",
+              "options": {
+                "tag": "Price tag",
+                "shirt": "Shirt",
+                "ruler": "Ruler",
+                "truck": "Delivery truck",
+                "users": "Team",
+                "chat": "Chat",
+                "return": "Returns"
+              }
+            },
+            "title": {
+              "label": "Title"
+            }
+          }
+        }
+      }
+    },
+    "faq": {
+      "name": "FAQ",
+      "settings": {
+        "show_heading": {
+          "label": "Show heading",
+          "info": "Hide it when the page title already says the same."
+        },
+        "content_width": {
+          "label": "Width",
+          "options": {
+            "narrow": "Narrow (760 px)",
+            "normal": "Page width"
+          }
+        },
+        "open_first": {
+          "label": "Open the first question"
+        },
+        "enable_schema": {
+          "label": "Add FAQ structured data for search engines",
+          "info": "Use it on one page only, where the questions are the main content."
+        }
+      },
+      "blocks": {
+        "question": {
+          "name": "Question",
+          "settings": {
+            "preset": {
+              "label": "Ready-made text",
+              "info": "Already translated into every store language. A question and answer of your own replace it.",
+              "options": {
+                "none": "None",
+                "delivery": "Delivery time",
+                "returns": "Returns and exchanges",
+                "sizing": "Choosing a size",
+                "payment": "Payment methods",
+                "team_orders": "Team orders",
+                "printing": "Name and number printing"
+              }
+            },
+            "question": {
+              "label": "Question"
+            },
+            "answer": {
+              "label": "Answer"
+            }
+          }
+        }
+      }
+    },
+    "size_guide": {
+      "name": "Size guide",
+      "settings": {
+        "show_heading": {
+          "label": "Show heading",
+          "info": "Hide it when the page title already says it, as on the size guide page."
+        },
+        "default_tab": {
+          "label": "Open first",
+          "options": {
+            "adults": "Adults",
+            "kids": "Kids"
+          }
+        },
+        "charts": {
+          "content": "Size charts"
+        },
+        "adult_chart": {
+          "label": "Adult size chart",
+          "info": "A \"Size chart\" entry from Content > Metaobjects. Without one, measuring tips are shown."
+        },
+        "kids_chart": {
+          "label": "Kids' size chart",
+          "info": "Optional. Without one, the standard kids' table by height is shown."
+        },
+        "show_help": {
+          "label": "Show WhatsApp help",
+          "info": "Needs a WhatsApp number in Theme settings > Business details."
+        }
+      }
+    },
+    "business_details": {
+      "name": "Business details",
+      "settings": {
+        "info": {
+          "content": "Shows the details from Theme settings > Business details. Only the details you filled in appear."
+        },
+        "content_width": {
+          "label": "Width",
+          "options": {
+            "narrow": "Narrow (760 px)",
+            "normal": "Page width"
+          }
+        },
+        "show_channels": {
+          "label": "Show phone, email and WhatsApp",
+          "info": "Turn off where a contact card already shows them, for example on the contact page."
+        }
+      }
+    },
+    "main_404": {
+      "name": "Page not found",
+      "settings": {
+        "show_search": {
+          "label": "Show search"
+        }
+      }
+    },
+    "main_blog": {
+      "name": "Blog",
+      "settings": {
+        "articles_per_page": {
+          "label": "Articles per page"
+        },
+        "show_tags": {
+          "label": "Show topic filter"
+        },
+        "show_image": {
+          "label": "Show featured image"
+        },
+        "show_date": {
+          "label": "Show date"
+        },
+        "show_author": {
+          "label": "Show author"
+        },
+        "show_excerpt": {
+          "label": "Show excerpt"
+        }
+      }
+    },
+    "main_article": {
+      "name": "Article",
+      "settings": {
+        "show_image": {
+          "label": "Show featured image"
+        },
+        "show_date": {
+          "label": "Show date"
+        },
+        "show_author": {
+          "label": "Show author"
+        },
+        "show_tags": {
+          "label": "Show tags"
+        }
+      }
+    },
+    "main_password": {
+      "name": "Password page",
+      "settings": {
+        "heading_highlight": {
+          "label": "Highlighted end of the heading"
+        },
+        "text": {
+          "info": "Shown when the password page message in Online Store > Preferences is empty. Leave empty to use the default text, which is already translated into every store language."
+        },
+        "show_signup": {
+          "label": "Show email sign-up",
+          "info": "Sign-ups are saved as customers tagged \"prospect\" and \"password page\"."
+        },
+        "show_social": {
+          "label": "Show social media links"
+        }
+      }
+    },
     "groups": {
       "header": "Header",
       "footer": "Footer"

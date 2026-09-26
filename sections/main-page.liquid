@@ -1,0 +1,132 @@
+{%- comment -%}
+  Main section of the page templates: the page title (the template's single <h1>) and the page
+  content from Online Store > Pages, in the light reading style. Width: narrow (760 px, for long
+  text such as policies or the accessibility statement) or normal (page width, text lines still
+  capped for readability).
+{%- endcomment -%}
+{%- liquid
+  case section.settings.heading_size
+    when 'medium'
+      assign heading_class = 'display-m'
+    when 'xlarge'
+      assign heading_class = 'display-xl'
+    else
+      assign heading_class = 'display-l'
+  endcase
+-%}
+<div
+  class="section main-page color-{{ section.settings.color_scheme.id }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="main-page__inner main-page__inner--{{ section.settings.content_width }}">
+      <h1 class="main-page__title {{ heading_class }}{% unless section.settings.show_title %} visually-hidden{% endunless %}">
+        {{- page.title | escape -}}
+      </h1>
+      {%- if page.content != blank -%}
+        <div class="rte main-page__content">{{ page.content }}</div>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .main-page__inner {
+    display: grid;
+    gap: var(--space-6);
+    margin-inline: auto;
+  }
+
+  .main-page__inner--narrow {
+    max-inline-size: 760px;
+  }
+
+  .main-page__title {
+    overflow-wrap: break-word;
+  }
+
+  .main-page__content {
+    overflow-wrap: break-word;
+
+    & > :is(p, ul, ol, h2, h3, h4, blockquote) {
+      max-inline-size: 75ch;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.main_page.name",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:sections.main_page.settings.content_width.label",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "t:sections.main_page.settings.content_width.options.narrow"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.main_page.settings.content_width.options.normal"
+        }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "label": "t:settings.heading_size",
+      "options": [
+        {
+          "value": "medium",
+          "label": "t:options.size.medium"
+        },
+        {
+          "value": "large",
+          "label": "t:options.size.large"
+        },
+        {
+          "value": "xlarge",
+          "label": "t:options.size.xlarge"
+        }
+      ],
+      "default": "large"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "t:sections.main_page.settings.show_title.label",
+      "info": "t:sections.main_page.settings.show_title.info",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

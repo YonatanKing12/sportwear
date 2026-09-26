@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "content_width": "narrow",
+        "heading_size": "large",
+        "show_title": true,
+        "padding_top": 36,
+        "padding_bottom": 24
+      }
+    },
+    "business_details": {
+      "type": "business-details",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "content_width": "narrow",
+        "show_channels": true,
+        "padding_top": 24,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["main", "business_details"]
+}

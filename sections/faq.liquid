@@ -1,0 +1,404 @@
+{%- comment -%}
+  FAQ: question blocks shown as native <details> accordions (keyboard and screen reader support
+  without JavaScript). Each block can use a ready-made text that is already translated into every
+  store language (delivery, returns, sizing, payment, team orders, printing) or the owner's own
+  question and answer. Optional FAQPage structured data (JSON-LD) built from the visible content.
+{%- endcomment -%}
+{%- liquid
+  assign heading = section.settings.heading
+  if heading == blank
+    assign heading = 'faq.heading' | t
+  endif
+  assign faq_json = ''
+-%}
+<div
+  class="section faq color-{{ section.settings.color_scheme.id }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="faq__inner faq__inner--{{ section.settings.content_width }}">
+      {%- if section.settings.show_heading or section.settings.text != blank -%}
+        <div class="faq__header">
+          {%- if section.settings.show_heading -%}
+            <h2 class="display-m faq__heading">{{ heading }}</h2>
+          {%- endif -%}
+          {%- if section.settings.text != blank -%}
+            <div class="faq__text">{{ section.settings.text }}</div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="faq__list">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign preset = block.settings.preset
+            assign question = block.settings.question
+            if question == blank and preset != 'none'
+              assign question_key = 'faq.presets.' | append: preset | append: '.question'
+              assign question = question_key | t
+            endif
+
+            assign answer = block.settings.answer
+            assign policy_url = ''
+            assign policy_label = ''
+            if answer == blank and preset != 'none'
+              assign answer_key = 'faq.presets.' | append: preset | append: '.answer_html'
+              assign answer = answer_key | t
+              case preset
+                when 'delivery'
+                  if shop.shipping_policy.body != blank
+                    assign policy_url = shop.shipping_policy.url
+                    assign policy_label = 'faq.presets.delivery.link' | t
+                  endif
+                when 'returns'
+                  if shop.refund_policy.body != blank
+                    assign policy_url = shop.refund_policy.url
+                    assign policy_label = 'faq.presets.returns.link' | t
+                  endif
+              endcase
+            endif
+          -%}
+          {%- if question != blank -%}
+            <details
+              class="faq__item"
+              {% if section.settings.open_first and forloop.first %}
+                open
+              {% endif %}
+              {{ block.shopify_attributes }}
+            >
+              <summary class="faq__question">
+                <span class="faq__question-text">{{ question }}</span>
+                <span class="faq__icon" aria-hidden="true">
+                  {%- render 'icon', name: 'plus', size: 20, class: 'faq__icon-plus' -%}
+                  {%- render 'icon', name: 'minus', size: 20, class: 'faq__icon-minus' -%}
+                </span>
+              </summary>
+              <div class="faq__answer rte">
+                {{ answer }}
+                {%- if policy_url != blank -%}
+                  <p>
+                    <a href="{{ policy_url }}">{{ policy_label }}</a>
+                  </p>
+                {%- endif -%}
+              </div>
+            </details>
+            {%- if section.settings.enable_schema and answer != blank -%}
+              {%- capture faq_entry -%}
+                {"@type":"Question","name":{{ question | strip_html | strip | json }},"acceptedAnswer":{"@type":"Answer","text":{{ answer | strip | json }}}}
+              {%- endcapture -%}
+              {%- liquid
+                if faq_json != blank
+                  assign faq_json = faq_json | append: ','
+                endif
+                assign faq_json = faq_json | append: faq_entry
+              -%}
+            {%- endif -%}
+          {%- elsif request.design_mode -%}
+            <div class="faq__item faq__item--empty" {{ block.shopify_attributes }}>
+              <p class="faq__editor-note">{{ 'faq.editor.empty_question' | t }}</p>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{%- if faq_json != blank -%}
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{{ faq_json }}]}
+  </script>
+{%- endif -%}
+
+{%- if request.design_mode -%}
+  <script type="module" src="{{ 'content-editor.js' | asset_url }}"></script>
+{%- endif -%}
+
+{% stylesheet %}
+  .faq {
+    /* Lets the accordion animate to its natural height where supported. */
+    interpolate-size: allow-keywords;
+  }
+
+  .faq__inner {
+    display: grid;
+    gap: var(--space-6);
+    margin-inline: auto;
+  }
+
+  .faq__inner--narrow {
+    max-inline-size: 760px;
+  }
+
+  .faq__header {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .faq__text {
+    max-inline-size: 60ch;
+    color: var(--color-muted);
+  }
+
+  .faq__list {
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  .faq__item {
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .faq__item::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    transition:
+      block-size var(--duration) var(--ease),
+      content-visibility var(--duration) allow-discrete;
+  }
+
+  .faq__item[open]::details-content {
+    block-size: auto;
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    min-block-size: 56px;
+    padding-block: var(--space-3);
+    font-size: var(--text-base);
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &:hover .faq__question-text {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--text-lg);
+    }
+  }
+
+  .faq__icon {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    inline-size: 32px;
+    block-size: 32px;
+    border-radius: 50%;
+    background: var(--color-surface);
+  }
+
+  .faq__icon-minus {
+    display: none;
+  }
+
+  .faq__item[open] .faq__icon-plus {
+    display: none;
+  }
+
+  .faq__item[open] .faq__icon-minus {
+    display: block;
+  }
+
+  .faq__answer {
+    padding-block-end: var(--space-5);
+    padding-inline-end: calc(32px + var(--space-4));
+    color: var(--color-text);
+  }
+
+  .faq__editor-note {
+    padding: var(--space-3);
+    margin-block: var(--space-2);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-card);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.faq.name",
+  "max_blocks": 20,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "t:sections.faq.settings.show_heading.label",
+      "info": "t:sections.faq.settings.show_heading.info",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:settings.text"
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:sections.faq.settings.content_width.label",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "t:sections.faq.settings.content_width.options.narrow"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.faq.settings.content_width.options.normal"
+        }
+      ],
+      "default": "narrow"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "t:sections.faq.settings.open_first.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_schema",
+      "label": "t:sections.faq.settings.enable_schema.label",
+      "info": "t:sections.faq.settings.enable_schema.info",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "t:sections.faq.blocks.question.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "preset",
+          "label": "t:sections.faq.blocks.question.settings.preset.label",
+          "info": "t:sections.faq.blocks.question.settings.preset.info",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.none"
+            },
+            {
+              "value": "delivery",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.delivery"
+            },
+            {
+              "value": "returns",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.returns"
+            },
+            {
+              "value": "sizing",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.sizing"
+            },
+            {
+              "value": "payment",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.payment"
+            },
+            {
+              "value": "team_orders",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.team_orders"
+            },
+            {
+              "value": "printing",
+              "label": "t:sections.faq.blocks.question.settings.preset.options.printing"
+            }
+          ],
+          "default": "none"
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "t:sections.faq.blocks.question.settings.question.label"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "t:sections.faq.blocks.question.settings.answer.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.faq.name",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "preset": "delivery"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "preset": "sizing"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "preset": "payment"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "preset": "team_orders"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

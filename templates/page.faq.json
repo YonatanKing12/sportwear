@@ -1,0 +1,61 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "content_width": "narrow",
+        "heading_size": "large",
+        "show_title": true,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "delivery": {
+          "type": "question",
+          "settings": {
+            "preset": "delivery"
+          }
+        },
+        "returns": {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        },
+        "sizing": {
+          "type": "question",
+          "settings": {
+            "preset": "sizing"
+          }
+        },
+        "payment": {
+          "type": "question",
+          "settings": {
+            "preset": "payment"
+          }
+        },
+        "team_orders": {
+          "type": "question",
+          "settings": {
+            "preset": "team_orders"
+          }
+        }
+      },
+      "block_order": ["delivery", "returns", "sizing", "payment", "team_orders"],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "show_heading": false,
+        "content_width": "narrow",
+        "open_first": true,
+        "enable_schema": true,
+        "padding_top": 24,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["main", "faq"]
+}

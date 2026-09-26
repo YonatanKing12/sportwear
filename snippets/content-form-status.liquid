@@ -1,0 +1,81 @@
+{%- doc -%}
+  Status message at the top of a submitted form: the success message, or an error summary whose
+  items link to the fields that need fixing. <sw-validated-form> (assets/content-form.js) moves
+  focus here after the page reloads, so screen readers announce it.
+
+  @param {object} form - The form object of the enclosing {% form %} tag
+  @param {string} form_id - The form's id. Its fields use "{form_id}-{field}" ids (email, body, author, password)
+  @param {string} success - Message shown after a successful submission
+
+  @example
+  {% render 'content-form-status', form: form, form_id: form_id, success: success_message %}
+{%- enddoc -%}
+{%- if form.posted_successfully? -%}
+  <div class="form-status form-status--success content-form-status" role="status" tabindex="-1" data-form-status>
+    {%- render 'icon', name: 'check', size: 20, class: 'content-form-status__icon' -%}
+    <p class="content-form-status__body">{{ success }}</p>
+  </div>
+{%- elsif form.errors -%}
+  <div class="form-status form-status--error content-form-status" role="alert" tabindex="-1" data-form-status>
+    {%- render 'icon', name: 'alert', size: 20, class: 'content-form-status__icon' -%}
+    <div class="content-form-status__body">
+      <p>{{ 'pages.form.errors.heading' | t }}</p>
+      <ul class="content-form-status__list">
+        {%- for field in form.errors -%}
+          <li>
+            {%- if field == 'form' -%}
+              {{ form.errors.messages[field] }}
+            {%- else -%}
+              <a class="link" href="#{{ form_id }}-{{ field }}">
+                {{- form.errors.translated_fields[field] | capitalize }}
+                {{ form.errors.messages[field] -}}
+              </a>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .content-form-status {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    margin-block-end: var(--space-5);
+    /* Logical start stripe (the base style draws it on the physical left in every direction). */
+    box-shadow: none;
+    border-inline-start: 3px solid var(--content-status-color, var(--color-success));
+  }
+
+  /* Receives focus only from script, to be announced; it is not a control, so no focus ring. */
+  .content-form-status:focus {
+    outline: none;
+  }
+
+  .content-form-status.form-status--error {
+    --content-status-color: color-mix(in srgb, var(--color-error) 65%, var(--color-text));
+  }
+
+  .content-form-status.form-status--success {
+    --content-status-color: color-mix(in srgb, var(--color-success) 65%, var(--color-text));
+  }
+
+  .content-form-status__icon {
+    margin-block-start: 1px;
+    color: var(--content-status-color);
+  }
+
+  .content-form-status__body {
+    display: grid;
+    gap: var(--space-1);
+    min-inline-size: 0;
+  }
+
+  .content-form-status__list {
+    margin: 0;
+    padding-inline-start: 1.2em;
+    font-weight: 500;
+  }
+{% endstylesheet %}

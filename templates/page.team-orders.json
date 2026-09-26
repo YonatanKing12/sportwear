@@ -1,0 +1,79 @@
+{
+  "sections": {
+    "team_orders": {
+      "type": "team-orders",
+      "blocks": {
+        "volume": {
+          "type": "benefit",
+          "settings": {
+            "preset": "volume",
+            "icon": "tag"
+          }
+        },
+        "sizes": {
+          "type": "benefit",
+          "settings": {
+            "preset": "sizes",
+            "icon": "shirt"
+          }
+        },
+        "delivery": {
+          "type": "benefit",
+          "settings": {
+            "preset": "delivery",
+            "icon": "truck"
+          }
+        }
+      },
+      "block_order": ["volume", "sizes", "delivery"],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "heading_tag": "h1",
+        "show_form": true,
+        "form_color_scheme": "scheme-day",
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "delivery": {
+          "type": "question",
+          "settings": {
+            "preset": "delivery"
+          }
+        },
+        "sizing": {
+          "type": "question",
+          "settings": {
+            "preset": "sizing"
+          }
+        },
+        "payment": {
+          "type": "question",
+          "settings": {
+            "preset": "payment"
+          }
+        },
+        "returns": {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        }
+      },
+      "block_order": ["delivery", "sizing", "payment", "returns"],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "show_heading": true,
+        "content_width": "narrow",
+        "open_first": false,
+        "enable_schema": false,
+        "padding_top": 48,
+        "padding_bottom": 56
+      }
+    }
+  },
+  "order": ["team_orders", "faq"]
+}

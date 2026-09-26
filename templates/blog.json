@@ -1,0 +1,19 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "articles_per_page": 12,
+        "show_tags": true,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "padding_top": 36,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,115 @@
+{%- doc -%}
+  Accessible page navigation for content lists (blog articles, article comments), built from the
+  paginate object. Renders nothing when there is only one page. Previous / next arrows follow the
+  text direction.
+
+  @param {paginate} paginate - The paginate object from the enclosing {% paginate %} tag
+  @param {string} [label] - Translated accessible name of the navigation landmark (default: "Pages")
+
+  @example
+  {% render 'content-pagination', paginate: paginate %}
+{%- enddoc -%}
+{%- if paginate.pages > 1 -%}
+  {%- liquid
+    assign nav_label = label
+    if nav_label == blank
+      assign nav_label = 'blogs.pagination.label' | t
+    endif
+  -%}
+  <nav class="content-pagination" aria-label="{{ nav_label }}">
+    <ul class="content-pagination__list" role="list">
+      {%- if paginate.previous -%}
+        <li>
+          <a
+            class="content-pagination__link content-pagination__link--arrow"
+            href="{{ paginate.previous.url }}"
+            rel="prev"
+          >
+            {%- render 'icon', name: 'chevron-back', size: 20 -%}
+            <span class="visually-hidden">{{ 'blogs.pagination.previous' | t }}</span>
+          </a>
+        </li>
+      {%- endif -%}
+      {%- for part in paginate.parts -%}
+        {%- assign part_number = part.title | plus: 0 -%}
+        <li>
+          {%- if part.is_link -%}
+            <a
+              class="content-pagination__link"
+              href="{{ part.url }}"
+              aria-label="{{ 'blogs.pagination.page' | t: number: part.title }}"
+            >
+              {{- part.title -}}
+            </a>
+          {%- elsif part_number == paginate.current_page -%}
+            <span
+              class="content-pagination__link content-pagination__link--current"
+              aria-current="page"
+              aria-label="{{ 'blogs.pagination.page' | t: number: part.title }}"
+            >
+              {{- part.title -}}
+            </span>
+          {%- else -%}
+            <span class="content-pagination__gap" aria-hidden="true">&hellip;</span>
+          {%- endif -%}
+        </li>
+      {%- endfor -%}
+      {%- if paginate.next -%}
+        <li>
+          <a class="content-pagination__link content-pagination__link--arrow" href="{{ paginate.next.url }}" rel="next">
+            {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+            <span class="visually-hidden">{{ 'blogs.pagination.next' | t }}</span>
+          </a>
+        </li>
+      {%- endif -%}
+    </ul>
+  </nav>
+{%- endif -%}
+
+{% stylesheet %}
+  .content-pagination {
+    margin-block-start: var(--space-10);
+  }
+
+  .content-pagination__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .content-pagination__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: var(--touch-target);
+    min-block-size: var(--touch-target);
+    padding-inline: var(--space-2);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-button);
+    color: var(--color-text);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-decoration: none;
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+
+  .content-pagination__link--current {
+    border-color: var(--color-text);
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  .content-pagination__gap {
+    min-inline-size: var(--space-6);
+    color: var(--color-muted);
+    text-align: center;
+  }
+{% endstylesheet %}
