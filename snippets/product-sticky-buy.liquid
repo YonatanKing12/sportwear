@@ -253,6 +253,15 @@
     }
   }
 
+  /* Keyboard focus and in-page links scroll clear of the bar too (WCAG 2.4.11, focus not obscured). */
+  .js:has(.product-sticky) {
+    scroll-padding-block-end: calc(80px + env(safe-area-inset-bottom, 0px));
+
+    @media screen and (min-width: 990px) {
+      scroll-padding-block-end: calc(96px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
   .product-sticky__card {
     position: relative;
     display: grid;

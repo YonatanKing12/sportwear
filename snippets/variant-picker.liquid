@@ -282,7 +282,10 @@
     }
   }
 
-  .variant-picker__input:checked + .variant-picker__value {
+  /* With JavaScript on, the size preselected for the no-JavaScript form (its radio still posts to the
+     form itself, [form]) never shows as chosen while the size has to be chosen: assets/product-info.js
+     clears it once it runs, so the page doesn't flash a chosen size on load. */
+  .variant-picker__input:checked:not(.js [data-size-required] [form]) + .variant-picker__value {
     border-style: solid;
     border-color: var(--color-button);
     background: var(--color-button);
