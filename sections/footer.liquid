@@ -1,11 +1,10 @@
 {%- comment -%}
-  Site footer, dark brand shell by default (scheme-night).
-  Blocks: brand (logo + short text), menu (link list), contact (phone / email / WhatsApp from
-  Theme settings > Business details), newsletter (customer form). Always rendered below the blocks:
-  language switcher, social links, store policies, the accessibility statement link, the business
-  details line required by Israeli law, payment icons and the copyright.
-  Layout: one column on mobile (menu links in two columns, like the approved board), two columns
-  on tablet, four on desktop.
+  Site footer, dark brand shell by default (scheme-night). Compact, in two tiers:
+  - Main: the blocks in one row on desktop (brand, menu links in a row, contact, newsletter) and the
+    social links; stacked on mobile, with the menu links in two columns.
+  - Bottom: copyright, the business details line required by Israeli law and the store policies
+    (with the accessibility statement link) on one side; the language switcher and payment icons on
+    the other.
 {%- endcomment -%}
 {%- liquid
   capture whatsapp_digits
@@ -28,305 +27,280 @@
     endfor
   endif
 
-  assign has_brand = false
-  for block in section.blocks
-    if block.type == 'brand'
-      assign has_brand = true
-    endif
-  endfor
-  assign wide_brand = false
-  if has_brand and section.blocks.size < 4
-    assign wide_brand = true
-  endif
-
   assign has_business = false
   if settings.business_name != blank or settings.business_id != blank or settings.business_address != blank
     assign has_business = true
   endif
 -%}
 <footer
-  class="section footer color-{{ section.settings.color_scheme.id }}{% if wide_brand %} footer--wide-brand{% endif %}"
+  class="section footer color-{{ section.settings.color_scheme.id }}"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
-    {%- if section.blocks.size > 0 -%}
-      <div class="footer__blocks">
-        {%- for block in section.blocks -%}
-          {%- case block.type -%}
-            {%- when 'brand' -%}
-              {%- liquid
-                assign brand_text = block.settings.text
-                if brand_text == blank
-                  assign brand_text = 'footer.brand_text' | t
-                endif
-              -%}
-              <div class="footer__block footer__block--brand" {{ block.shopify_attributes }}>
-                {%- render 'logo', loading: 'lazy', class: 'footer__logo' -%}
-                {%- if block.settings.show_text -%}
-                  <p class="footer__text">{{ brand_text }}</p>
-                {%- endif -%}
-              </div>
-
-            {%- when 'menu' -%}
-              {%- liquid
-                assign footer_menu = block.settings.menu
-                assign menu_heading = block.settings.heading | escape
-                # Fall back to the menu's own title (translated with the menu), then to a generic label.
-                if menu_heading == blank
-                  assign menu_heading = footer_menu.title | escape
-                endif
-                if menu_heading == blank
-                  assign menu_heading = 'footer.menu_heading' | t
-                endif
-              -%}
-              {%- if footer_menu.links.size > 0 -%}
-                <nav
-                  class="footer__block footer__block--menu"
-                  aria-labelledby="FooterMenuHeading-{{ block.id }}"
-                  {{ block.shopify_attributes }}
-                >
-                  <h2
-                    class="footer__heading{% unless block.settings.show_heading %} visually-hidden{% endunless %}"
-                    id="FooterMenuHeading-{{ block.id }}"
-                  >
-                    {{ menu_heading }}
-                  </h2>
-                  <ul class="footer__links" role="list">
-                    {%- for link in footer_menu.links -%}
-                      <li>
-                        <a
-                          class="footer__link"
-                          href="{{ link.url }}"
-                          {% if link.current %}
-                            aria-current="page"
-                          {% endif %}
-                        >
-                          {{- link.title | escape -}}
-                        </a>
-                      </li>
-                    {%- endfor -%}
-                  </ul>
-                </nav>
-              {%- elsif request.design_mode -%}
-                <div class="footer__block footer__block--menu" {{ block.shopify_attributes }}>
-                  <p class="footer__editor-note">{{ 'footer.editor.no_menu' | t }}</p>
-                </div>
+    <div class="footer__main">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'brand' -%}
+            {%- liquid
+              assign brand_text = block.settings.text
+              if brand_text == blank
+                assign brand_text = 'footer.brand_text' | t
+              endif
+            -%}
+            <div class="footer__brand" {{ block.shopify_attributes }}>
+              {%- render 'logo', loading: 'lazy', class: 'footer__logo' -%}
+              {%- if block.settings.show_text -%}
+                <p class="footer__text">{{ brand_text }}</p>
               {%- endif -%}
+            </div>
 
-            {%- when 'contact' -%}
-              {%- liquid
-                assign contact_heading = block.settings.heading
-                if contact_heading == blank
-                  assign contact_heading = 'footer.contact_heading' | t
-                endif
-                assign has_channels = false
-                if settings.support_phone != blank or settings.support_email != blank or whatsapp_digits != blank
-                  assign has_channels = true
-                endif
-              -%}
-              {%- if has_channels or block.settings.text != blank or request.design_mode -%}
-                <div class="footer__block footer__block--contact" {{ block.shopify_attributes }}>
-                  <h2 class="footer__heading">{{ contact_heading }}</h2>
-                  {%- if has_channels -%}
-                    <ul class="footer__contact" role="list">
-                      {%- if whatsapp_digits != blank -%}
-                        <li>
-                          <a
-                            class="footer__contact-link"
-                            href="https://wa.me/{{ whatsapp_digits }}"
-                            target="_blank"
-                            rel="noopener"
-                          >
-                            {%- render 'icon', name: 'whatsapp', size: 20 -%}
-                            <span>{{ 'footer.whatsapp_link' | t }}</span>
-                            <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.support_phone != blank -%}
-                        <li>
-                          <a class="footer__contact-link" href="tel:{{ phone_href | escape }}">
-                            {%- render 'icon', name: 'phone', size: 20 -%}
-                            <span class="visually-hidden">{{ 'footer.phone_label' | t }}:</span>
-                            <span dir="ltr">{{ settings.support_phone | escape }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- if settings.support_email != blank -%}
-                        <li>
-                          <a class="footer__contact-link" href="mailto:{{ settings.support_email | strip | escape }}">
-                            {%- render 'icon', name: 'mail', size: 20 -%}
-                            <span class="visually-hidden">{{ 'footer.email_label' | t }}:</span>
-                            <span dir="ltr">{{ settings.support_email | strip | escape }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                    </ul>
-                  {%- elsif request.design_mode -%}
-                    <p class="footer__editor-note">{{ 'footer.editor.no_contact' | t }}</p>
-                  {%- endif -%}
-                  {%- if block.settings.text != blank -%}
-                    <div class="footer__text footer__hours">{{ block.settings.text }}</div>
-                  {%- endif -%}
-                </div>
-              {%- endif -%}
-
-            {%- when 'newsletter' -%}
-              {%- liquid
-                assign newsletter_heading = block.settings.heading
-                if newsletter_heading == blank
-                  assign newsletter_heading = 'footer.newsletter.heading' | t
-                endif
-                assign newsletter_text = block.settings.text
-                if newsletter_text == blank
-                  assign newsletter_text = 'footer.newsletter.text' | t
-                endif
-                assign newsletter_consent = block.settings.consent
-                if newsletter_consent == blank
-                  assign newsletter_consent = 'footer.newsletter.consent' | t
-                endif
-                assign newsletter_id = 'FooterNewsletter-' | append: block.id
-              -%}
-              <div class="footer__block footer__block--newsletter" {{ block.shopify_attributes }}>
-                <h2 class="footer__heading">{{ newsletter_heading }}</h2>
-                <p class="footer__text">{{ newsletter_text }}</p>
-                <sw-validated-form
-                  data-error-required="{{ 'pages.form.errors.required' | t }}"
-                  data-error-email="{{ 'pages.form.errors.email' | t }}"
-                  data-error-invalid="{{ 'pages.form.errors.invalid' | t }}"
+          {%- when 'menu' -%}
+            {%- liquid
+              assign footer_menu = block.settings.menu
+              assign menu_heading = block.settings.heading | escape
+              # Fall back to the menu's own title (translated with the menu), then to a generic label.
+              if menu_heading == blank
+                assign menu_heading = footer_menu.title | escape
+              endif
+              if menu_heading == blank
+                assign menu_heading = 'footer.menu_heading' | t
+              endif
+            -%}
+            {%- if footer_menu.links.size > 0 -%}
+              <nav
+                class="footer__nav"
+                aria-labelledby="FooterMenuHeading-{{ block.id }}"
+                {{ block.shopify_attributes }}
+              >
+                <h2
+                  class="footer__heading{% unless block.settings.show_heading %} visually-hidden{% endunless %}"
+                  id="FooterMenuHeading-{{ block.id }}"
                 >
-                  {%- form 'customer', id: newsletter_id, class: 'footer-newsletter' -%}
-                    <input type="hidden" name="contact[tags]" value="newsletter">
-                    {%- liquid
-                      assign email_error = ''
-                      if form.errors contains 'email'
-                        assign email_error = 'pages.form.errors.email' | t
-                      elsif form.errors
-                        assign email_error = form.errors.messages.form
-                        if email_error == blank
-                          assign email_error = 'general.errors.generic' | t
-                        endif
-                      endif
-                    -%}
-                    {%- if form.posted_successfully? -%}
-                      <p class="footer-newsletter__status" role="status" tabindex="-1" data-form-status>
-                        {%- render 'icon', name: 'check', size: 18 -%}
-                        <span>{{ 'footer.newsletter.success' | t }}</span>
-                      </p>
-                    {%- endif -%}
-                    <label class="footer-newsletter__label" for="{{ newsletter_id }}-email">
-                      {{- 'footer.newsletter.email_label' | t -}}
-                    </label>
-                    <div class="footer-newsletter__row">
-                      <input
-                        class="field__input footer-newsletter__input"
-                        type="email"
-                        id="{{ newsletter_id }}-email"
-                        name="contact[email]"
-                        value="{{ form.email | escape }}"
-                        autocomplete="email"
-                        dir="ltr"
-                        placeholder="{{ 'pages.form.email_placeholder' | t }}"
-                        required
-                        aria-describedby="{% if email_error != blank %}{{ newsletter_id }}-email-error {% endif %}{{ newsletter_id }}-consent"
-                        {% if email_error != blank %}
-                          aria-invalid="true"
+                  {{ menu_heading }}
+                </h2>
+                <ul class="footer__links" role="list">
+                  {%- for link in footer_menu.links -%}
+                    <li>
+                      <a
+                        class="footer__link"
+                        href="{{ link.url }}"
+                        {% if link.current %}
+                          aria-current="page"
                         {% endif %}
                       >
-                      <button class="button button--primary footer-newsletter__submit" type="submit">
-                        {{- 'footer.newsletter.submit' | t -}}
-                      </button>
-                    </div>
-                    <p
-                      class="field__message footer-newsletter__error"
-                      id="{{ newsletter_id }}-email-error"
-                      {% if email_error == blank %}
-                        hidden
+                        {{- link.title | escape -}}
+                      </a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </nav>
+            {%- elsif request.design_mode -%}
+              <div class="footer__nav" {{ block.shopify_attributes }}>
+                <p class="footer__editor-note">{{ 'footer.editor.no_menu' | t }}</p>
+              </div>
+            {%- endif -%}
+
+          {%- when 'contact' -%}
+            {%- liquid
+              assign contact_heading = block.settings.heading
+              if contact_heading == blank
+                assign contact_heading = 'footer.contact_heading' | t
+              endif
+              assign has_channels = false
+              if settings.support_phone != blank or settings.support_email != blank or whatsapp_digits != blank
+                assign has_channels = true
+              endif
+            -%}
+            {%- if has_channels or block.settings.text != blank or request.design_mode -%}
+              <div class="footer__contact-block" {{ block.shopify_attributes }}>
+                <h2 class="visually-hidden">{{ contact_heading }}</h2>
+                {%- if has_channels -%}
+                  <ul class="footer__contact" role="list">
+                    {%- if whatsapp_digits != blank -%}
+                      <li>
+                        <a
+                          class="footer__contact-link footer__contact-link--whatsapp"
+                          href="https://wa.me/{{ whatsapp_digits }}"
+                          target="_blank"
+                          rel="noopener"
+                        >
+                          {%- render 'icon', name: 'whatsapp', size: 18 -%}
+                          <span>{{ 'footer.whatsapp_link' | t }}</span>
+                          <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if settings.support_phone != blank -%}
+                      <li>
+                        <a class="footer__contact-link" href="tel:{{ phone_href | escape }}">
+                          {%- render 'icon', name: 'phone', size: 18 -%}
+                          <span class="visually-hidden">{{ 'footer.phone_label' | t }}:</span>
+                          <span dir="ltr">{{ settings.support_phone | escape }}</span>
+                        </a>
+                      </li>
+                    {%- endif -%}
+                    {%- if settings.support_email != blank -%}
+                      <li>
+                        <a class="footer__contact-link" href="mailto:{{ settings.support_email | strip | escape }}">
+                          {%- render 'icon', name: 'mail', size: 18 -%}
+                          <span class="visually-hidden">{{ 'footer.email_label' | t }}:</span>
+                          <span dir="ltr">{{ settings.support_email | strip | escape }}</span>
+                        </a>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                {%- elsif request.design_mode -%}
+                  <p class="footer__editor-note">{{ 'footer.editor.no_contact' | t }}</p>
+                {%- endif -%}
+                {%- if block.settings.text != blank -%}
+                  <div class="footer__text footer__hours">{{ block.settings.text }}</div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+
+          {%- when 'newsletter' -%}
+            {%- liquid
+              assign newsletter_heading = block.settings.heading
+              if newsletter_heading == blank
+                assign newsletter_heading = 'footer.newsletter.heading' | t
+              endif
+              assign newsletter_text = block.settings.text
+              if newsletter_text == blank
+                assign newsletter_text = 'footer.newsletter.text' | t
+              endif
+              assign newsletter_consent = block.settings.consent
+              if newsletter_consent == blank
+                assign newsletter_consent = 'footer.newsletter.consent' | t
+              endif
+              assign newsletter_id = 'FooterNewsletter-' | append: block.id
+            -%}
+            <div class="footer__newsletter" {{ block.shopify_attributes }}>
+              <h2 class="footer__heading">{{ newsletter_heading }}</h2>
+              <p class="footer__text">{{ newsletter_text }}</p>
+              <sw-validated-form
+                data-error-required="{{ 'pages.form.errors.required' | t }}"
+                data-error-email="{{ 'pages.form.errors.email' | t }}"
+                data-error-invalid="{{ 'pages.form.errors.invalid' | t }}"
+              >
+                {%- form 'customer', id: newsletter_id, class: 'footer-newsletter' -%}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  {%- liquid
+                    assign email_error = ''
+                    if form.errors contains 'email'
+                      assign email_error = 'pages.form.errors.email' | t
+                    elsif form.errors
+                      assign email_error = form.errors.messages.form
+                      if email_error == blank
+                        assign email_error = 'general.errors.generic' | t
+                      endif
+                    endif
+                  -%}
+                  {%- if form.posted_successfully? -%}
+                    <p class="footer-newsletter__status" role="status" tabindex="-1" data-form-status>
+                      {%- render 'icon', name: 'check', size: 18 -%}
+                      <span>{{ 'footer.newsletter.success' | t }}</span>
+                    </p>
+                  {%- endif -%}
+                  <label class="footer-newsletter__label" for="{{ newsletter_id }}-email">
+                    {{- 'footer.newsletter.email_label' | t -}}
+                  </label>
+                  <div class="footer-newsletter__row">
+                    <input
+                      class="field__input footer-newsletter__input"
+                      type="email"
+                      id="{{ newsletter_id }}-email"
+                      name="contact[email]"
+                      value="{{ form.email | escape }}"
+                      autocomplete="email"
+                      dir="ltr"
+                      placeholder="{{ 'pages.form.email_placeholder' | t }}"
+                      required
+                      aria-describedby="{% if email_error != blank %}{{ newsletter_id }}-email-error {% endif %}{{ newsletter_id }}-consent"
+                      {% if email_error != blank %}
+                        aria-invalid="true"
                       {% endif %}
                     >
-                      {%- render 'icon', name: 'alert', size: 16 -%}
-                      <span data-error-text>{{ email_error }}</span>
-                    </p>
-                    <p class="footer-newsletter__consent" id="{{ newsletter_id }}-consent">{{ newsletter_consent }}</p>
-                  {%- endform -%}
-                </sw-validated-form>
-                <script type="module" src="{{ 'content-form.js' | asset_url }}"></script>
-              </div>
-          {%- endcase -%}
-        {%- endfor -%}
-      </div>
-    {%- endif -%}
+                    <button class="button button--primary footer-newsletter__submit" type="submit">
+                      {{- 'footer.newsletter.submit' | t -}}
+                    </button>
+                  </div>
+                  <p
+                    class="field__message footer-newsletter__error"
+                    id="{{ newsletter_id }}-email-error"
+                    {% if email_error == blank %}
+                      hidden
+                    {% endif %}
+                  >
+                    {%- render 'icon', name: 'alert', size: 16 -%}
+                    <span data-error-text>{{ email_error }}</span>
+                  </p>
+                  <p class="footer-newsletter__consent" id="{{ newsletter_id }}-consent">{{ newsletter_consent }}</p>
+                {%- endform -%}
+              </sw-validated-form>
+              <script type="module" src="{{ 'content-form.js' | asset_url }}"></script>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+
+      {%- if section.settings.show_social -%}
+        {%- render 'social-icons', class: 'footer__social' -%}
+      {%- endif -%}
+    </div>
 
     <div class="footer__bottom">
-      {%- if section.settings.show_language_selector or section.settings.show_social -%}
-        <div class="footer__row">
-          {%- if section.settings.show_language_selector -%}
-            {%- render 'localization-switcher', id: 'FooterLocalization' -%}
-          {%- endif -%}
-          {%- if section.settings.show_social -%}
-            {%- render 'social-icons', class: 'footer__social' -%}
-          {%- endif -%}
-        </div>
-      {%- endif -%}
-
-      <div class="footer__row footer__row--legal">
-        <div class="footer__legal">
-          {%- if shop.policies.size > 0 or show_accessibility_link -%}
-            <nav class="footer__policies" aria-label="{{ 'footer.policies_label' | t }}">
-              <ul class="footer__policy-list" role="list">
-                {%- if show_accessibility_link -%}
-                  <li>
-                    <a
-                      class="footer__policy-link"
-                      href="{{ accessibility_page.url }}"
-                      {% if request.page_type == 'page' and page.id == accessibility_page.id %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{- 'footer.accessibility_statement' | t -}}
-                    </a>
-                  </li>
-                {%- endif -%}
-                {%- for policy in shop.policies -%}
-                  <li>
-                    <a class="footer__policy-link" href="{{ policy.url }}">{{ policy.title | escape }}</a>
-                  </li>
-                {%- endfor -%}
-              </ul>
-            </nav>
-          {%- endif -%}
-          {%- if request.design_mode and accessibility_page == blank -%}
-            <p class="footer__editor-note">{{ 'footer.editor.accessibility_page' | t }}</p>
-          {%- endif -%}
-
-          {%- if request.design_mode and has_business == false -%}
-            <p class="footer__editor-note">{{ 'footer.editor.business_details' | t }}</p>
-          {%- endif -%}
-          {%- if has_business -%}
-            <address class="footer__business">
-              {%- if settings.business_name != blank -%}
-                <span class="footer__business-item">{{ settings.business_name | escape }}</span>
+      <div class="footer__legal">
+        {%- assign copyright_year = 'now' | date: '%Y' -%}
+        <p class="footer__copyright">
+          &copy; {{ copyright_year }}
+          <bdi>{{ shop.name | escape }}</bdi>
+        </p>
+        {%- if has_business -%}
+          <address class="footer__business">
+            {%- if settings.business_name != blank -%}
+              <span class="footer__business-item">{{ settings.business_name | escape }}</span>
+            {%- endif -%}
+            {%- if settings.business_id != blank -%}
+              <span class="footer__business-item">
+                {{- 'footer.business_id' | t: id: settings.business_id -}}
+              </span>
+            {%- endif -%}
+            {%- if settings.business_address != blank -%}
+              <span class="footer__business-item"
+                ><bdi>{{ settings.business_address | escape }}</bdi></span
+              >
+            {%- endif -%}
+          </address>
+        {%- endif -%}
+        {%- if shop.policies.size > 0 or show_accessibility_link -%}
+          <nav class="footer__policies" aria-label="{{ 'footer.policies_label' | t }}">
+            <ul class="footer__policy-list" role="list">
+              {%- if show_accessibility_link -%}
+                <li>
+                  <a
+                    class="footer__policy-link"
+                    href="{{ accessibility_page.url }}"
+                    {% if request.page_type == 'page' and page.id == accessibility_page.id %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    {{- 'footer.accessibility_statement' | t -}}
+                  </a>
+                </li>
               {%- endif -%}
-              {%- if settings.business_id != blank -%}
-                <span class="footer__business-item">
-                  {{- 'footer.business_id' | t: id: settings.business_id -}}
-                </span>
-              {%- endif -%}
-              {%- if settings.business_address != blank -%}
-                <span class="footer__business-item"
-                  ><bdi>{{ settings.business_address | escape }}</bdi></span
-                >
-              {%- endif -%}
-            </address>
-          {%- endif -%}
+              {%- for policy in shop.policies -%}
+                <li>
+                  <a class="footer__policy-link" href="{{ policy.url }}">{{ policy.title | escape }}</a>
+                </li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+      </div>
 
-          {%- assign copyright_year = 'now' | date: '%Y' -%}
-          <p class="footer__copyright">
-            &copy; {{ copyright_year }}
-            <bdi>{{ shop.name | escape }}</bdi>
-          </p>
-        </div>
-
+      <div class="footer__meta">
+        {%- if section.settings.show_language_selector -%}
+          {%- render 'localization-switcher', id: 'FooterLocalization' -%}
+        {%- endif -%}
         {%- if section.settings.show_payment_icons -%}
           {%- if shop.enabled_payment_types.size > 0 -%}
             <div class="footer__payments">
@@ -346,6 +320,15 @@
         {%- endif -%}
       </div>
     </div>
+
+    {%- if request.design_mode -%}
+      {%- if accessibility_page == blank -%}
+        <p class="footer__editor-note">{{ 'footer.editor.accessibility_page' | t }}</p>
+      {%- endif -%}
+      {%- if has_business == false -%}
+        <p class="footer__editor-note">{{ 'footer.editor.business_details' | t }}</p>
+      {%- endif -%}
+    {%- endif -%}
   </div>
 </footer>
 
@@ -353,63 +336,6 @@
   .footer {
     --footer-link: color-mix(in srgb, var(--color-text) 82%, var(--color-background));
     --footer-input-border: color-mix(in srgb, var(--color-text) 45%, var(--color-background));
-  }
-
-  .footer__blocks {
-    display: grid;
-    gap: var(--space-8) var(--space-6);
-
-    @media screen and (min-width: 750px) {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    @media screen and (min-width: 990px) {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--space-10) var(--space-8);
-    }
-  }
-
-  .footer__block {
-    display: grid;
-    align-content: start;
-    gap: var(--space-3);
-    min-inline-size: 0;
-  }
-
-  .footer__block--brand,
-  .footer__block--newsletter {
-    gap: var(--space-4);
-
-    @media screen and (min-width: 750px) {
-      grid-column: 1 / -1;
-    }
-
-    @media screen and (min-width: 990px) {
-      grid-column: auto;
-    }
-  }
-
-  .footer--wide-brand .footer__block--brand {
-    @media screen and (min-width: 990px) {
-      grid-column: span 2;
-    }
-  }
-
-  .footer__logo {
-    justify-self: start;
-  }
-
-  .footer__heading {
-    color: var(--color-muted);
-    font-size: var(--text-sm);
-    font-weight: 800;
-    line-height: var(--leading-tight);
-  }
-
-  .footer__text {
-    max-inline-size: 42ch;
-    color: var(--color-muted);
-    font-size: var(--text-md);
   }
 
   .footer__links,
@@ -421,53 +347,99 @@
     list-style: none;
   }
 
+  /* Main tier. Mobile: stacked, the menu links in two columns. */
+  .footer__main {
+    display: grid;
+    gap: var(--space-5);
+  }
+
+  .footer__brand {
+    display: grid;
+    gap: var(--space-2);
+    justify-items: start;
+  }
+
+  .footer__text {
+    max-inline-size: 42ch;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .footer__heading {
+    margin-block-end: var(--space-2);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+  }
+
   .footer__links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--space-3);
-
-    @media screen and (min-width: 990px) {
-      grid-template-columns: minmax(0, 1fr);
-    }
+    column-gap: var(--space-4);
   }
 
-  .footer__link,
-  .footer__contact-link {
-    display: flex;
+  .footer__link {
+    display: inline-flex;
     align-items: center;
-    min-block-size: var(--touch-target);
+    min-block-size: 36px;
     color: var(--footer-link);
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
+    font-weight: 600;
     line-height: var(--leading-tight);
     text-decoration: none;
-    text-underline-offset: 3px;
+    text-underline-offset: 4px;
 
     &:hover {
       color: var(--color-text);
       text-decoration: underline;
     }
+
+    &[aria-current='page'] {
+      color: var(--color-text);
+      font-weight: 800;
+    }
   }
 
-  .footer__link[aria-current='page'] {
-    color: var(--color-text);
-    font-weight: 700;
+  .footer__contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
   }
 
+  /* Contact channels as outlined pills; WhatsApp is the lime one. */
   .footer__contact-link {
     display: inline-flex;
-    gap: var(--space-3);
+    align-items: center;
+    gap: var(--space-2);
+    min-block-size: 40px;
+    padding-inline: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-chip);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: none;
 
-    & .icon {
-      color: var(--color-muted);
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+
+  .footer__contact-link--whatsapp {
+    border-color: var(--color-highlight);
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+
+    &:hover {
+      border-color: var(--color-highlight);
+      background: color-mix(in srgb, var(--color-highlight) 88%, var(--color-text));
     }
   }
 
   .footer__hours {
-    font-size: var(--text-sm);
-
-    & > * + * {
-      margin-block-start: var(--space-1);
-    }
+    margin-block-start: var(--space-2);
+    font-size: var(--text-xs);
   }
 
   .footer-newsletter {
@@ -532,72 +504,34 @@
     line-height: 1.5;
   }
 
+  /* Bottom tier: legal line on one side, languages and payments on the other. */
   .footer__bottom {
-    display: grid;
-    gap: var(--space-6);
-    margin-block-start: var(--space-6);
-    padding-block-start: var(--space-6);
-    border-block-start: 1px solid var(--color-border);
-
-    @media screen and (min-width: 750px) {
-      margin-block-start: var(--space-10);
-    }
-  }
-
-  .footer__row {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4) var(--space-6);
-
-    /* Nothing to show (one language, no social links): drop the empty row and its gap. */
-    &:not(:has(*)) {
-      display: none;
-    }
-  }
-
-  .footer__row--legal {
-    align-items: flex-end;
+    gap: var(--space-3) var(--space-8);
+    margin-block-start: var(--space-5);
+    padding-block-start: var(--space-4);
+    border-block-start: 1px solid var(--color-border);
   }
 
   .footer__legal {
-    display: grid;
-    gap: var(--space-2);
-    min-inline-size: 0;
-    color: var(--color-muted);
-    font-size: var(--text-sm);
-  }
-
-  .footer__policy-list {
     display: flex;
     flex-wrap: wrap;
-    column-gap: var(--space-5);
+    align-items: center;
+    gap: 0 var(--space-5);
+    min-inline-size: 0;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
   }
 
-  .footer__policy-link {
-    display: inline-flex;
-    align-items: center;
-    min-block-size: var(--touch-target);
-    color: var(--footer-link);
-    text-decoration: underline;
-    text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
-    text-underline-offset: 3px;
-
-    &:hover {
-      color: var(--color-text);
-      text-decoration-color: currentColor;
-    }
-
-    &[aria-current='page'] {
-      color: var(--color-text);
-      font-weight: 700;
-    }
+  .footer__copyright {
+    white-space: nowrap;
   }
 
   .footer__business {
     font-style: normal;
-    line-height: 1.7;
   }
 
   .footer__business-item + .footer__business-item::before {
@@ -606,14 +540,50 @@
     margin-inline: var(--space-2);
   }
 
-  .footer__copyright {
-    font-size: var(--text-xs);
+  .footer__policy-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-4);
+  }
+
+  .footer__policy-link {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 32px;
+    color: var(--color-muted);
+    text-decoration: none;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
+
+    &[aria-current='page'] {
+      color: var(--color-text);
+      font-weight: 700;
+    }
+  }
+
+  .footer__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-5);
+
+    & .localization__inline {
+      font-size: var(--text-sm);
+    }
+
+    & .localization__option {
+      min-block-size: 32px;
+    }
   }
 
   .footer__payment-list {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: 6px;
   }
 
   .footer__payment-item {
@@ -621,8 +591,8 @@
   }
 
   .footer__payment-icon {
-    inline-size: 38px;
-    block-size: 24px;
+    inline-size: 34px;
+    block-size: 22px;
   }
 
   .footer__secure {
@@ -630,15 +600,69 @@
     align-items: center;
     gap: var(--space-2);
     color: var(--color-muted);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
   }
 
   .footer__editor-note {
+    margin-block-start: var(--space-3);
     padding: var(--space-3);
     border: 1px dashed var(--color-border);
     border-radius: var(--radius-card);
     color: var(--color-muted);
     font-size: var(--text-sm);
+  }
+
+  /* Tablet and desktop: the whole main tier in one row. The menu takes the free space, its links in a
+     row (two on tablets). */
+  @media screen and (min-width: 750px) {
+    .footer__main {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-6) var(--space-12);
+    }
+
+    .footer__brand {
+      flex: none;
+    }
+
+    .footer__nav {
+      display: flex;
+      flex: 1 1 320px;
+      align-items: center;
+      gap: var(--space-5);
+      min-inline-size: 0;
+    }
+
+    .footer__nav .footer__heading:not(.visually-hidden) {
+      flex: none;
+      margin: 0;
+    }
+
+    .footer__links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 var(--space-6);
+    }
+
+    .footer__nav {
+      justify-content: center;
+    }
+
+    .footer__contact-block,
+    .footer__newsletter,
+    .footer__social {
+      flex: none;
+    }
+
+    .footer__newsletter {
+      flex: 0 1 380px;
+    }
+
+    .footer__bottom {
+      margin-block-start: var(--space-6);
+    }
   }
 {% endstylesheet %}
 
@@ -699,7 +723,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:settings.padding_top",
-      "default": 48
+      "default": 32
     },
     {
       "type": "range",
@@ -709,7 +733,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:settings.padding_bottom",
-      "default": 36
+      "default": 24
     }
   ],
   "blocks": [
