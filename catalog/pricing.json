@@ -26,10 +26,9 @@
     "_note": "Per-handle prices or sale prices decided by the owner, e.g. { \"barcelona-home-jersey-2026-27\": { \"price\": 99, \"compare_at_price\": 120 } }"
   },
   "shipping": {
-    "flat_rate": 35,
-    "free_shipping_threshold": null,
-    "recommended_free_shipping_threshold": 200,
-    "delivery_promise": "home delivery within 3 business days",
-    "_note": "Threshold not decided yet. The theme's free-shipping bar reads a theme setting that must match the rate configured in Shopify admin."
+    "flat_rate": 0,
+    "free_shipping_threshold": 0,
+    "delivery_promise": "free home delivery within up to 10 business days",
+    "_note": "Owner decision, 2026-09-26: free shipping on every order, delivery within up to 10 business days (before: ₪35, free from ₪250, 3 business days). Admin, Israel zone: one method 'משלוח חינם עד הבית' at ₪0, described 'עד 10 ימי עסקים', with en/ar translations. The international zone (27 countries, ₪58) is unchanged, waiting on the owner. The theme's free-shipping setting must match what admin charges."
   }
 }

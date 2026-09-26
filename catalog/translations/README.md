@@ -26,6 +26,10 @@ The categories work (2026-09-26 afternoon) added 214 resources and 315 fields: t
 9 hidden child lists. They were read back with a bulk export of `translatableResources`: every value matches and none
 is outdated.
 
+The shipping change (2026-09-26 evening: free shipping on every order, up to 10 business days) rewrote the description
+of 104 collections ("משלוח חינם עד הבית, עד 10 ימי עסקים.") and of `kids`. Their `en` and `ar` were registered again
+with the new digests and read back: none is outdated.
+
 What is not translated:
 
 - URL handles, which stay the same in every language.

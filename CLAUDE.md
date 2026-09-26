@@ -13,9 +13,10 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   - No name, number or patch printing for now.
 - **Audience:** sports fans. Kids 6–12 (bought by parents), 12–18, 18–26 and 26+ (owner's
   estimate), plus amateur teams ordering in bulk.
-- **Stock and delivery:** stock is held in Israel. Home delivery within 3 business days.
-- **Shipping:** ₪35. The free-shipping threshold is not decided (₪200 recommended). Admin currently has
-  free shipping from ₪250, and the theme setting `free_shipping_threshold` mirrors it (250).
+- **Stock and delivery:** stock is held in Israel. Home delivery within up to 10 business days (owner
+  decision, 2026-09-26; it was 3 business days before).
+- **Shipping:** free on every order (owner decision, 2026-09-26). Admin's Israel zone has one method,
+  "משלוח חינם עד הבית" at ₪0, described "עד 10 ימי עסקים".
 - **Price example:** a football shirt at ₪120. Lots of promotions are planned.
 - **Returns:** up to 45 days. The owner said "unopened"; we recommended "unworn, unwashed, tags on"
   instead, pending a lawyer's review of the wording.
@@ -39,7 +40,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
-| Shipping | Israel ₪35, free from ₪250. An international zone (27 countries, ₪58) is active, probably a default |
+| Shipping | Israel: free on every order, up to 10 business days (since 2026-09-26). An international zone (27 countries, ₪58) is still active, waiting on the owner |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |
 
@@ -147,11 +148,13 @@ i18n/               translation parts per area, built into locales/ by npm run i
 ## Open items (waiting on the owner)
 
 - Which card gateway (and whether it supports Bit)
-- Selling prices for every product type (kids, tanks, shorts)
-- The free-shipping threshold (admin says ₪250 today) and whether to keep international shipping
+- Selling prices for new basketball jerseys and shorts (football is set: adults ₪120, kids sets ₪99).
+  The products imported before are at ₪139 (football) and ₪149 (basketball): keep them there or move
+  football to ₪120
+- Whether to keep international shipping (27 countries, ₪58)
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
 - The final returns wording
 - Buying the domain
 - The storefront password, for QA screenshots
 - Connecting GitHub to Shopify, a one-time step for the development theme
-- The first batch of product links
+- The size chart of the products imported before (the owner will send it)
