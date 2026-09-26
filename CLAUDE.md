@@ -40,6 +40,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
 | Shipping | Israel ₪35, free from ₪250. An international zone (27 countries, ₪58) is active, probably a default |
+| Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |
 
 ## Locked decisions
@@ -142,7 +143,6 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
-- Logo
 - Which card gateway (and whether it supports Bit)
 - Selling prices for every product type (kids, tanks, shorts)
 - The free-shipping threshold (admin says ₪250 today) and whether to keep international shipping
