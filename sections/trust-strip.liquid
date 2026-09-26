@@ -5,9 +5,7 @@
     assign on_dark = true
   endif
 
-  comment
-    Mobile shows compact columns: one per item, except four items, which sit in a 2 × 2 grid.
-  endcomment
+  # Mobile shows compact columns: one per item, except four items, which sit in a 2 × 2 grid.
   assign item_count = section.blocks.size
   assign mobile_columns = item_count
   if item_count == 4
@@ -29,9 +27,7 @@
         >
           {%- for block in section.blocks -%}
             {%- liquid
-              comment
-                "Automatic" icon and empty text follow the position: original, delivery, returns, secure payment.
-              endcomment
+              # "Automatic" icon and empty text follow the position: original, delivery, returns, secure payment.
               assign icon_name = block.settings.icon
               if icon_name == 'auto'
                 case forloop.index

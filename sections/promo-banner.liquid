@@ -37,10 +37,8 @@
     assign figure_count = 2
   endif
 
-  comment
-    A product shot is 56% of the media column: about 32% of the panel's inner width on phones
-    (100vw - 88px), and 27% of the two-column panel from 750px, capped by the 520px media box.
-  endcomment
+  # A product shot is 56% of the media column: about 32% of the panel's inner width on phones
+  # (100vw - 88px), and 27% of the two-column panel from 750px, capped by the 520px media box.
   assign figure_sizes = '(min-width: 750px) calc(min(292px, (100vw - 208px) * 0.27)), calc((100vw - 88px) * 0.32)'
 
   assign figure_loading = 'lazy'

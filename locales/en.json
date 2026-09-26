@@ -431,6 +431,11 @@
       "shipping": "Delivery in up to 3 business days",
       "returns": "Returns within 45 days",
       "secure_payment": "Secure payment: credit card, Apple Pay and Google Pay"
+    },
+    "js": {
+      "cart_error_html": "We couldn't update your cart. Please try again.",
+      "generic_error_html": "Something went wrong. Please try again.",
+      "added_to_cart_html": "Added to cart"
     }
   },
   "accessibility": {

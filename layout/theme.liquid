@@ -37,10 +37,11 @@
           search_url: {{ routes.search_url | json }},
           predictive_search_url: {{ routes.predictive_search_url | json }}
         },
+        // _html keys: the t filter HTML-escapes other keys, which would show as entities in JS text.
         strings: {
-          cartError: {{ 'general.errors.cart' | t | json }},
-          genericError: {{ 'general.errors.generic' | t | json }},
-          addedToCart: {{ 'general.cart.added' | t | json }}
+          cartError: {{ 'general.js.cart_error_html' | t | json }},
+          genericError: {{ 'general.js.generic_error_html' | t | json }},
+          addedToCart: {{ 'general.js.added_to_cart_html' | t | json }}
         }
       };
     </script>

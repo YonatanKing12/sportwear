@@ -11,9 +11,7 @@
     assign has_products = true
   endif
 
-  comment
-    Heading: the owner's text, else the collection's (translated) name, else "Best sellers".
-  endcomment
+  # Heading: the owner's text, else the collection's (translated) name, else "Best sellers".
   assign heading = section.settings.heading | escape
   if heading == blank and featured != blank
     assign heading = featured.title | escape
@@ -27,9 +25,7 @@
     assign view_all_url = featured.url
   endif
 
-  comment
-    Image sizes follow the grid: 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
-  endcomment
+  # Image sizes follow the grid: 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
   assign gaps_desktop = columns_desktop | minus: 1 | times: 20
   assign gaps_tablet = columns_tablet | minus: 1 | times: 20
   if columns_mobile == 1
@@ -58,9 +54,7 @@
     echo mobile_size
   endcapture
 
-  comment
-    Only the first section of a page may load images eagerly: its first row of cards.
-  endcomment
+  # Only the first section of a page may load images eagerly: its first row of cards.
   assign eager_cards = 0
   if section.index == 1
     assign eager_cards = columns_desktop

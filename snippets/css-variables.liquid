@@ -41,6 +41,10 @@
       {%- if scheme.settings.background.lightness < 50 %}
         --color-error: #ff6b5e;
         --color-success: #5fd07a;
+        --color-accent-text: var(--color-accent);
+      {%- else %}
+        {%- comment %} The accent is never text on a light background. {% endcomment %}
+        --color-accent-text: {{ scheme.settings.text }};
       {%- endif %}
       color-scheme: {% if scheme.settings.background.lightness < 50 %}dark{% else %}light{% endif %};
       background: {% if scheme.settings.background_gradient != blank %}{{ scheme.settings.background_gradient }}{% else %}var(--color-background){% endif %};

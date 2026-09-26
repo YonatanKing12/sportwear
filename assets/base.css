@@ -320,7 +320,7 @@ a {
 }
 
 .wordmark__end {
-  color: var(--color-accent);
+  color: var(--color-accent-text, var(--color-accent));
 }
 
 /* ---------- Buttons ---------- */
@@ -587,6 +587,12 @@ a {
   gap: 2px var(--space-2);
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+}
+
+/* A price keeps its own direction ("₪120", "120 ₪" or "120 NIS") inside RTL text. */
+.price__current,
+.price__compare {
+  unicode-bidi: plaintext;
 }
 
 .price--sale .price__current {

@@ -13,9 +13,7 @@
     assign eyebrow = 'home.hero.eyebrow' | t
   endif
 
-  comment
-    The two heading lines fall back together, so a custom heading never gets the default highlight line.
-  endcomment
+  # The two heading lines fall back together, so a custom heading never gets the default highlight line.
   assign heading = section.settings.heading | escape
   assign heading_highlight = section.settings.heading_highlight | escape
   if heading == blank and heading_highlight == blank
@@ -28,9 +26,7 @@
     assign subheading = 'home.hero.subheading' | t
   endif
 
-  comment
-    Empty links go to the "football" / "basketball" collections once they exist, and to all products until then.
-  endcomment
+  # Empty links go to the "football" / "basketball" collections once they exist, and to all products until then.
   assign button_label = section.settings.button_label | escape
   if button_label == blank
     assign button_label = 'home.hero.button_label' | t
@@ -55,10 +51,8 @@
     assign secondary_link = routes.all_products_collection_url
   endif
 
-  comment
-    LCP: the first section of the page loads its first image eagerly, with high priority and a preload.
-    section.index is nil in the editor and the Section Rendering API, which falls through to eager.
-  endcomment
+  # LCP: the first section of the page loads its first image eagerly, with high priority and a preload.
+  # section.index is nil in the editor and the Section Rendering API, which falls through to eager.
   assign above_fold = false
   unless section.index > 1
     assign above_fold = true
@@ -71,26 +65,20 @@
   endif
 
   if layout == 'image'
-    comment
-      With only a mobile image, it serves every screen size.
-    endcomment
+    # With only a mobile image, it serves every screen size.
     assign media_image = section.settings.image
     assign media_image_mobile = section.settings.image_mobile
     if media_image == blank
       assign media_image = section.settings.image_mobile
       assign media_image_mobile = section.settings.image
     endif
-    comment
-      A preload cannot follow the <picture> media query, so it is only sent when one image serves every screen.
-    endcomment
+    # A preload cannot follow the <picture> media query, so it is only sent when one image serves every screen.
     assign preload_media = false
     if above_fold and media_image_mobile == blank
       assign preload_media = true
     endif
   else
-    comment
-      A lone second image moves to the first slot (the one that gets the LCP treatment).
-    endcomment
+    # A lone second image moves to the first slot (the one that gets the LCP treatment).
     assign season = section.settings.season | escape
     assign figure_1 = section.settings.image_1
     assign figure_2 = section.settings.image_2

@@ -19,10 +19,8 @@
     assign text = 'home.cta_band.text' | t
   endif
 
-  comment
-    Button: the owner's link, else a WhatsApp chat (Theme settings > Business details) with a prefilled
-    message, else no button at all.
-  endcomment
+  # Button: the owner's link, else a WhatsApp chat (Theme settings > Business details) with a prefilled
+  # message, else no button at all.
   assign button_link = section.settings.button_link
   assign is_whatsapp = false
   if button_link == blank

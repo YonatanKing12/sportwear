@@ -5,10 +5,8 @@
   endif
   assign subheading = section.settings.subheading | escape
 
-  comment
-    A chip needs a destination (its own link or a collection) and a label (its own or the collection's name).
-    Incomplete chips are skipped on the storefront and shown as placeholders in the theme editor.
-  endcomment
+  # A chip needs a destination (its own link or a collection) and a label (its own or the collection's name).
+  # Incomplete chips are skipped on the storefront and shown as placeholders in the theme editor.
   assign chip_count = 0
   for block in section.blocks
     assign chip_collection = block.settings.collection

@@ -30,9 +30,7 @@
     assign text = 'home.rich_text.text' | t | prepend: '<p>' | append: '</p>'
   endif
 
-  comment
-    The button is optional: it only appears once a link is set.
-  endcomment
+  # The button is optional: it only appears once a link is set.
   assign button_link = section.settings.button_link
   assign button_label = section.settings.button_label | escape
   if button_label == blank

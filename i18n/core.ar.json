@@ -41,6 +41,11 @@
       "shipping": "توصيل إلى البيت خلال 3 أيام عمل",
       "returns": "إرجاع حتى 45 يومًا",
       "secure_payment": "دفع آمن: بطاقة ائتمان وApple Pay وGoogle Pay"
+    },
+    "js": {
+      "cart_error_html": "تعذّر تحديث السلة. يُرجى المحاولة مرة أخرى.",
+      "generic_error_html": "حدث خطأ ما. يُرجى المحاولة مرة أخرى.",
+      "added_to_cart_html": "تمت الإضافة إلى السلة"
     }
   },
   "accessibility": {
