@@ -661,6 +661,10 @@
         "height": {
           "label": "Height"
         },
+        "image_ltr": {
+          "label": "Image for left-to-right languages (English)",
+          "info": "Optional. A desktop photo with the people on the right, since the text sits on the left in English. When set, mirroring is off."
+        },
         "mirror_ltr": {
           "label": "Mirror the photo in left-to-right languages",
           "info": "Photos are composed for Hebrew: people on the left, text on the right. In English the text moves to the left, and mirroring keeps the people on the other side. Don't use it for photos with text or logos."

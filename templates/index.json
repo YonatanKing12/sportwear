@@ -9,11 +9,12 @@
         "padding_top": 16,
         "padding_bottom": 16,
         "heading_tag": "h1",
-        "image": "shopify://shop_images/sw-hero-fans.jpg",
-        "image_mobile": "shopify://shop_images/sw-hero-fans-mobile.jpg",
-        "mirror_ltr": true,
-        "overlay_opacity": 65,
-        "height": "medium"
+        "image": "shopify://shop_images/sw-v2-hero.jpg",
+        "image_mobile": "shopify://shop_images/sw-v2-hero-mobile.jpg",
+        "mirror_ltr": false,
+        "overlay_opacity": 55,
+        "height": "large",
+        "image_ltr": "shopify://shop_images/sw-v2-hero-ltr.jpg"
       }
     },
     "best_sellers": {
@@ -66,28 +67,28 @@
         "football": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-cat-football.jpg",
+            "image": "shopify://shop_images/sw-v2-cat-football.jpg",
             "collection": "football"
           }
         },
         "basketball": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-cat-basketball.jpg",
+            "image": "shopify://shop_images/sw-v2-cat-basketball.jpg",
             "collection": "basketball"
           }
         },
         "kids": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-cat-kids.jpg",
+            "image": "shopify://shop_images/sw-v2-cat-kids.jpg",
             "collection": "kids"
           }
         },
         "teams": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-cat-teams.jpg",
+            "image": "shopify://shop_images/sw-v2-cat-teams.jpg",
             "page": "team-orders"
           }
         }
@@ -254,34 +255,34 @@
     "lifestyle": {
       "type": "lifestyle-gallery",
       "blocks": {
-        "stands": {
+        "duo": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-life-stands.jpg"
+            "image": "shopify://shop_images/sw-v2-life-duo.jpg"
           }
         },
         "streetball": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-life-streetball.jpg"
+            "image": "shopify://shop_images/sw-v2-life-streetball.jpg"
+          }
+        },
+        "japan": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-v2-life-japan.jpg"
           }
         },
         "family": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-life-family.jpg"
-          }
-        },
-        "tunnel": {
-          "type": "photo",
-          "settings": {
-            "image": "shopify://shop_images/sw-life-tunnel.jpg"
+            "image": "shopify://shop_images/sw-v2-life-family.jpg"
           }
         }
       },
-      "block_order": ["stands", "streetball", "family", "tunnel"],
+      "block_order": ["duo", "streetball", "japan", "family"],
       "settings": {
-        "color_scheme": "scheme-night",
+        "color_scheme": "scheme-soft",
         "show_eyebrow": true,
         "show_button": true,
         "padding_top": 48,
@@ -291,7 +292,7 @@
     "national_teams": {
       "type": "featured-collection",
       "settings": {
-        "color_scheme": "scheme-soft",
+        "color_scheme": "scheme-day",
         "collection": "national-teams",
         "layout": "carousel",
         "products_to_show": 12,

@@ -65,8 +65,12 @@
   endif
 
   if layout == 'image'
-    # With only a mobile image, it serves every screen size.
+    # Left-to-right languages (English) can use their own desktop photo, composed with the people on the
+    # right because the text sits on the left there. With only a mobile image, it serves every screen size.
     assign media_image = section.settings.image
+    if request.locale.direction == 'ltr' and section.settings.image_ltr != blank
+      assign media_image = section.settings.image_ltr
+    endif
     assign media_image_mobile = section.settings.image_mobile
     if media_image == blank
       assign media_image = section.settings.image_mobile
@@ -104,7 +108,7 @@
 >
   <div class="page-width">
     <div
-      class="hero__banner color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% if section.settings.mirror_ltr %} hero--mirror-ltr{% endif %}{% endif %}"
+      class="hero__banner color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% if section.settings.mirror_ltr and section.settings.image_ltr == blank %} hero--mirror-ltr{% endif %}{% endif %}"
       {% if layout == 'image' %}
         style="--hero-overlay: {{ section.settings.overlay_opacity }}%;"
       {% endif %}
@@ -830,6 +834,13 @@
       "step": 5,
       "unit": "%",
       "default": 70,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_ltr",
+      "label": "t:sections.hero.settings.image_ltr.label",
+      "info": "t:sections.hero.settings.image_ltr.info",
       "visible_if": "{{ section.settings.layout == 'image' }}"
     },
     {
