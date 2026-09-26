@@ -1,0 +1,821 @@
+{
+  "_note": "Translations of the store's non-product content: collections, menus (with every menu item) and pages. The source text is Hebrew. 'digest' is the SHA-256 of the Hebrew text, which translationsRegister requires. If the Hebrew changes in the admin, its digest changes: update he/en/ar/digest here and register again. See README.md.",
+  "shop": "sfgzdp-1m.myshopify.com",
+  "source_locale": "he (Shopify still files it under the primary locale 'en' until the owner makes Hebrew the primary language)",
+  "locales": {
+    "ar": {
+      "status": "registered",
+      "registered_at": "2026-09-26T00:04:31Z / 2026-09-26T00:06:39Z (first / last batch)",
+      "resources": 59,
+      "fields": 67,
+      "verified": "Read back from Shopify after registering: all 67 values match this file and none is outdated."
+    },
+    "en": {
+      "status": "prepared, not registered",
+      "reason": "en is still the primary locale and Shopify rejects translations into the primary locale. Register after the owner makes Hebrew the primary language (README.md)."
+    }
+  },
+  "not_translated": {
+    "handle": "URL handles are the same in every language (for example /collections/football), so they are not translated.",
+    "seo": "None of these resources has meta_title or meta_description set, so there are no SEO fields to translate yet."
+  },
+  "collections": [
+    {
+      "handle": "football",
+      "resource_id": "gid://shopify/Collection/512840302896",
+      "fields": {
+        "title": {
+          "he": "חולצות כדורגל",
+          "en": "Football Jerseys",
+          "ar": "قمصان كرة القدم",
+          "digest": "74d20886a04bc801de3abe1b633ce822f3978dfb13038942ea6890ed7d562966"
+        },
+        "body_html": {
+          "he": "<p>חולצות כדורגל של העונה, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>",
+          "en": "<p>This season's football jerseys, for adults and kids. Home delivery within 3 business days.</p>",
+          "ar": "<p>قمصان كرة القدم لهذا الموسم، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>",
+          "digest": "30a78889d30804cea38f4aaae93e836602705524d9ebcdc4a9c71d1091a977b6"
+        }
+      }
+    },
+    {
+      "handle": "basketball",
+      "resource_id": "gid://shopify/Collection/512840335664",
+      "fields": {
+        "title": {
+          "he": "כדורסל",
+          "en": "Basketball",
+          "ar": "كرة السلة",
+          "digest": "411040e8b7c6f11832017daf3b9b4309d4b18ff7265694b13d97c7aca9c8fdb7"
+        },
+        "body_html": {
+          "he": "<p>גופיות ומכנסי כדורסל, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>",
+          "en": "<p>Basketball jerseys and shorts, for adults and kids. Home delivery within 3 business days.</p>",
+          "ar": "<p>قمصان وشورتات كرة السلة، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>",
+          "digest": "b498222da21b2dedd929cb65e363c68aa0992378677c72d516dc954f4b6dc854"
+        }
+      }
+    },
+    {
+      "handle": "basketball-jerseys",
+      "resource_id": "gid://shopify/Collection/512840368432",
+      "fields": {
+        "title": {
+          "he": "גופיות כדורסל",
+          "en": "Basketball Jerseys",
+          "ar": "قمصان كرة السلة",
+          "digest": "794beaf100cd4904d72d71e5a044c2e3be0cb62760f3ffb02ee95e9d40bb6dd2"
+        }
+      }
+    },
+    {
+      "handle": "basketball-shorts",
+      "resource_id": "gid://shopify/Collection/512840401200",
+      "fields": {
+        "title": {
+          "he": "מכנסי כדורסל",
+          "en": "Basketball Shorts",
+          "ar": "شورتات كرة السلة",
+          "digest": "2f443d7ebd68ac78129380dbc0644b1cbe941d487a907c30685f46286f39d2c2"
+        }
+      }
+    },
+    {
+      "handle": "basketball-sets",
+      "resource_id": "gid://shopify/Collection/512840433968",
+      "fields": {
+        "title": {
+          "he": "סטים לכדורסל",
+          "en": "Basketball Sets",
+          "ar": "أطقم كرة السلة",
+          "digest": "08c5a80a6e2fbcbde7cd0a2c054fe4b473986d7ad3727bc15a6db3580abefef6"
+        },
+        "body_html": {
+          "he": "<p>גופייה ומכנס תואם: הסט המלא.</p>",
+          "en": "<p>A jersey with matching shorts: the complete set.</p>",
+          "ar": "<p>قميص وشورت مطابق له: الطقم الكامل.</p>",
+          "digest": "2e71dd7e855165bde272b55be8fc0dc8bbd8791617c5a18bab08c321b532e95a"
+        }
+      }
+    },
+    {
+      "handle": "kids",
+      "resource_id": "gid://shopify/Collection/512840466736",
+      "fields": {
+        "title": {
+          "he": "ילדים",
+          "en": "Kids",
+          "ar": "الأطفال",
+          "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+        },
+        "body_html": {
+          "he": "<p>מידות לפי גיל, מגיל 5 עד 14.</p>",
+          "en": "<p>Sizes by age, for ages 5 to 14.</p>",
+          "ar": "<p>مقاسات حسب العمر، من 5 إلى 14 سنة.</p>",
+          "digest": "c60995ae196f406cab47b70ea9e605de2e27be6c52b0d822d4035c43109ecf62"
+        }
+      }
+    },
+    {
+      "handle": "sale",
+      "resource_id": "gid://shopify/Collection/512840499504",
+      "fields": {
+        "title": {
+          "he": "מבצעים",
+          "en": "Sale",
+          "ar": "العروض",
+          "digest": "104937b96b40c42e4070979d6ca9e023eb3a77743eb98640cc2b732212b4e953"
+        }
+      }
+    },
+    {
+      "handle": "new",
+      "resource_id": "gid://shopify/Collection/512840532272",
+      "fields": {
+        "title": {
+          "he": "חדש באתר",
+          "en": "New Arrivals",
+          "ar": "وصل حديثًا",
+          "digest": "9374f4011ca49ac661e038739bbfa31173b76e2e3dc01f47532372c81e2de896"
+        }
+      }
+    },
+    {
+      "handle": "best-sellers",
+      "resource_id": "gid://shopify/Collection/512840565040",
+      "fields": {
+        "title": {
+          "he": "הכי נמכרים",
+          "en": "Best Sellers",
+          "ar": "الأكثر مبيعًا",
+          "digest": "441b47a087ce59205a51918fcf3923109c37bf9c9ce04e632e0a9f95a6d95118"
+        }
+      }
+    },
+    {
+      "handle": "premier-league",
+      "resource_id": "gid://shopify/Collection/512840597808",
+      "fields": {
+        "title": {
+          "he": "פרמייר ליג",
+          "en": "Premier League",
+          "ar": "الدوري الإنجليزي الممتاز",
+          "digest": "d04b339693b2dc42c9544d0724269f9032b492597814ba512e65ffe561b9fab0"
+        }
+      }
+    },
+    {
+      "handle": "la-liga",
+      "resource_id": "gid://shopify/Collection/512840630576",
+      "fields": {
+        "title": {
+          "he": "לה ליגה",
+          "en": "LaLiga",
+          "ar": "الدوري الإسباني",
+          "digest": "16bf50225b66885dd005926c1ca51c40479b6a7bac2b4ee8e1460fb354c1936b"
+        }
+      }
+    },
+    {
+      "handle": "serie-a",
+      "resource_id": "gid://shopify/Collection/512840663344",
+      "fields": {
+        "title": {
+          "he": "סרייה A",
+          "en": "Serie A",
+          "ar": "الدوري الإيطالي",
+          "digest": "09c87f55344ab4a74b4b5b341eb2aa05de0d1f06a0d3890f6ca942103d585c83"
+        }
+      }
+    },
+    {
+      "handle": "bundesliga",
+      "resource_id": "gid://shopify/Collection/512840696112",
+      "fields": {
+        "title": {
+          "he": "בונדסליגה",
+          "en": "Bundesliga",
+          "ar": "الدوري الألماني",
+          "digest": "d5f8ec488585a48cb8fc7988504479c8f6ecc1641af2900fe45c931b909899f8"
+        }
+      }
+    },
+    {
+      "handle": "ligue-1",
+      "resource_id": "gid://shopify/Collection/512840728880",
+      "fields": {
+        "title": {
+          "he": "ליג 1",
+          "en": "Ligue 1",
+          "ar": "الدوري الفرنسي",
+          "digest": "6797c0c96cdae0a96564ad5cc820caf6615d4ad6f8d8b1c6acf0d365c6aa9fe9"
+        }
+      }
+    },
+    {
+      "handle": "israeli-premier-league",
+      "resource_id": "gid://shopify/Collection/512840761648",
+      "fields": {
+        "title": {
+          "he": "ליגת העל",
+          "en": "Israeli Premier League",
+          "ar": "الدوري الإسرائيلي الممتاز",
+          "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
+        }
+      }
+    },
+    {
+      "handle": "national-teams",
+      "resource_id": "gid://shopify/Collection/512840794416",
+      "fields": {
+        "title": {
+          "he": "נבחרות",
+          "en": "National Teams",
+          "ar": "المنتخبات",
+          "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
+        }
+      }
+    },
+    {
+      "handle": "nba",
+      "resource_id": "gid://shopify/Collection/512840827184",
+      "fields": {
+        "title": {
+          "he": "NBA",
+          "en": "NBA",
+          "ar": "NBA",
+          "digest": "b05ef99b5059cc1bc18dcbe179fe68562390f89fa4e33fdf05470892ccd0820f"
+        }
+      }
+    },
+    {
+      "handle": "euroleague",
+      "resource_id": "gid://shopify/Collection/512840859952",
+      "fields": {
+        "title": {
+          "he": "יורוליג",
+          "en": "EuroLeague",
+          "ar": "اليوروليغ",
+          "digest": "6c5c8d89fa8e3145267bfa1c77d0318ab811f29a22f9a6cba398b032a98e9700"
+        }
+      }
+    },
+    {
+      "handle": "israeli-basketball-league",
+      "resource_id": "gid://shopify/Collection/512840892720",
+      "fields": {
+        "title": {
+          "he": "ליגת העל בכדורסל",
+          "en": "Israeli Basketball Premier League",
+          "ar": "دوري كرة السلة الإسرائيلي الممتاز",
+          "digest": "0b771d10aa3a54a350e269f2b1ed3c1a38c94d0688d48331ef368d269ed35d4c"
+        }
+      }
+    }
+  ],
+  "menus": [
+    {
+      "handle": "main-menu",
+      "resource_id": "gid://shopify/Menu/316216410416",
+      "fields": {
+        "title": {
+          "he": "תפריט ראשי",
+          "en": "Main menu",
+          "ar": "القائمة الرئيسية",
+          "digest": "b6c4ca89b9aa9ac50c8d9a4348347ef80b8fccf913c76af83bff2c433e06603d"
+        }
+      },
+      "items": [
+        {
+          "resource_id": "gid://shopify/Link/805103599920",
+          "url": "/collections/football",
+          "fields": {
+            "title": {
+              "he": "חולצות כדורגל",
+              "en": "Football Jerseys",
+              "ar": "قمصان كرة القدم",
+              "digest": "74d20886a04bc801de3abe1b633ce822f3978dfb13038942ea6890ed7d562966"
+            }
+          },
+          "items": [
+            {
+              "resource_id": "gid://shopify/Link/805103632688",
+              "url": "/collections/premier-league",
+              "fields": {
+                "title": {
+                  "he": "פרמייר ליג",
+                  "en": "Premier League",
+                  "ar": "الدوري الإنجليزي الممتاز",
+                  "digest": "d04b339693b2dc42c9544d0724269f9032b492597814ba512e65ffe561b9fab0"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103665456",
+              "url": "/collections/la-liga",
+              "fields": {
+                "title": {
+                  "he": "לה ליגה",
+                  "en": "LaLiga",
+                  "ar": "الدوري الإسباني",
+                  "digest": "16bf50225b66885dd005926c1ca51c40479b6a7bac2b4ee8e1460fb354c1936b"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103698224",
+              "url": "/collections/serie-a",
+              "fields": {
+                "title": {
+                  "he": "סרייה A",
+                  "en": "Serie A",
+                  "ar": "الدوري الإيطالي",
+                  "digest": "09c87f55344ab4a74b4b5b341eb2aa05de0d1f06a0d3890f6ca942103d585c83"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103730992",
+              "url": "/collections/bundesliga",
+              "fields": {
+                "title": {
+                  "he": "בונדסליגה",
+                  "en": "Bundesliga",
+                  "ar": "الدوري الألماني",
+                  "digest": "d5f8ec488585a48cb8fc7988504479c8f6ecc1641af2900fe45c931b909899f8"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103763760",
+              "url": "/collections/ligue-1",
+              "fields": {
+                "title": {
+                  "he": "ליג 1",
+                  "en": "Ligue 1",
+                  "ar": "الدوري الفرنسي",
+                  "digest": "6797c0c96cdae0a96564ad5cc820caf6615d4ad6f8d8b1c6acf0d365c6aa9fe9"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103796528",
+              "url": "/collections/israeli-premier-league",
+              "fields": {
+                "title": {
+                  "he": "ליגת העל",
+                  "en": "Israeli Premier League",
+                  "ar": "الدوري الإسرائيلي الممتاز",
+                  "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103829296",
+              "url": "/collections/national-teams",
+              "fields": {
+                "title": {
+                  "he": "נבחרות",
+                  "en": "National Teams",
+                  "ar": "المنتخبات",
+                  "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "resource_id": "gid://shopify/Link/805103862064",
+          "url": "/collections/basketball",
+          "fields": {
+            "title": {
+              "he": "כדורסל",
+              "en": "Basketball",
+              "ar": "كرة السلة",
+              "digest": "411040e8b7c6f11832017daf3b9b4309d4b18ff7265694b13d97c7aca9c8fdb7"
+            }
+          },
+          "items": [
+            {
+              "resource_id": "gid://shopify/Link/805103894832",
+              "url": "/collections/nba",
+              "fields": {
+                "title": {
+                  "he": "NBA",
+                  "en": "NBA",
+                  "ar": "NBA",
+                  "digest": "b05ef99b5059cc1bc18dcbe179fe68562390f89fa4e33fdf05470892ccd0820f"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103927600",
+              "url": "/collections/euroleague",
+              "fields": {
+                "title": {
+                  "he": "יורוליג",
+                  "en": "EuroLeague",
+                  "ar": "اليوروليغ",
+                  "digest": "6c5c8d89fa8e3145267bfa1c77d0318ab811f29a22f9a6cba398b032a98e9700"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103960368",
+              "url": "/collections/israeli-basketball-league",
+              "_note": "Shortened for the menu (1-3 words). The collection title keeps the full name from taxonomy.json.",
+              "fields": {
+                "title": {
+                  "he": "ליגת העל בכדורסל",
+                  "en": "Israeli Basketball League",
+                  "ar": "دوري السلة الإسرائيلي",
+                  "digest": "0b771d10aa3a54a350e269f2b1ed3c1a38c94d0688d48331ef368d269ed35d4c"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103993136",
+              "url": "/collections/basketball-jerseys",
+              "fields": {
+                "title": {
+                  "he": "גופיות כדורסל",
+                  "en": "Basketball Jerseys",
+                  "ar": "قمصان كرة السلة",
+                  "digest": "794beaf100cd4904d72d71e5a044c2e3be0cb62760f3ffb02ee95e9d40bb6dd2"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805104025904",
+              "url": "/collections/basketball-shorts",
+              "fields": {
+                "title": {
+                  "he": "מכנסי כדורסל",
+                  "en": "Basketball Shorts",
+                  "ar": "شورتات كرة السلة",
+                  "digest": "2f443d7ebd68ac78129380dbc0644b1cbe941d487a907c30685f46286f39d2c2"
+                }
+              }
+            },
+            {
+              "resource_id": "gid://shopify/Link/805104058672",
+              "url": "/collections/basketball-sets",
+              "fields": {
+                "title": {
+                  "he": "סטים לכדורסל",
+                  "en": "Basketball Sets",
+                  "ar": "أطقم كرة السلة",
+                  "digest": "08c5a80a6e2fbcbde7cd0a2c054fe4b473986d7ad3727bc15a6db3580abefef6"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104091440",
+          "url": "/collections/kids",
+          "fields": {
+            "title": {
+              "he": "ילדים",
+              "en": "Kids",
+              "ar": "الأطفال",
+              "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104124208",
+          "url": "/collections/sale",
+          "fields": {
+            "title": {
+              "he": "מבצעים",
+              "en": "Sale",
+              "ar": "العروض",
+              "digest": "104937b96b40c42e4070979d6ca9e023eb3a77743eb98640cc2b732212b4e953"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104156976",
+          "url": "/pages/team-orders",
+          "fields": {
+            "title": {
+              "he": "הזמנות לקבוצות",
+              "en": "Team Orders",
+              "ar": "طلبات الفرق",
+              "digest": "d46967c0338cf0067b6aca8bcba29b9e39e295b04b0d13aaff0876578f822d41"
+            }
+          }
+        }
+      ],
+      "child_lists": [
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'football' dropdown. Not shown in the admin; its title mirrors the parent item.",
+          "handle": "805103599920-child-910fcbecb170129b4b32674a3277ba1a-legacy",
+          "resource_id": "gid://shopify/Menu/316236628272",
+          "fields": {
+            "title": {
+              "he": "חולצות כדורגל",
+              "en": "Football Jerseys",
+              "ar": "قمصان كرة القدم",
+              "digest": "74d20886a04bc801de3abe1b633ce822f3978dfb13038942ea6890ed7d562966"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'basketball' dropdown. Not shown in the admin; its title mirrors the parent item.",
+          "handle": "805103862064-child-212d8ac5ecad1276ac1851ba8a5edb01-legacy",
+          "resource_id": "gid://shopify/Menu/316236661040",
+          "fields": {
+            "title": {
+              "he": "כדורסל",
+              "en": "Basketball",
+              "ar": "كرة السلة",
+              "digest": "411040e8b7c6f11832017daf3b9b4309d4b18ff7265694b13d97c7aca9c8fdb7"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "handle": "footer",
+      "resource_id": "gid://shopify/Menu/316216443184",
+      "fields": {
+        "title": {
+          "he": "שירות לקוחות",
+          "en": "Customer Service",
+          "ar": "خدمة العملاء",
+          "digest": "1cdfcbda7927936372771c6f0c80e207d6934402ec3bc2e1571d6991380219d1"
+        }
+      },
+      "items": [
+        {
+          "resource_id": "gid://shopify/Link/805104189744",
+          "url": "/pages/size-guide",
+          "fields": {
+            "title": {
+              "he": "מדריך מידות",
+              "en": "Size Guide",
+              "ar": "دليل المقاسات",
+              "digest": "52787c351a136844bd65f33fe091dcfa54179c3aff32e729d1d92136c22cc7e7"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104222512",
+          "url": "/pages/shipping-returns",
+          "_note": "Only the menu label is translated. The page itself is a legal draft and is skipped.",
+          "fields": {
+            "title": {
+              "he": "משלוחים והחזרות",
+              "en": "Shipping & Returns",
+              "ar": "الشحن والإرجاع",
+              "digest": "580c69bfde88082ab42d243ffccacbafcb1c1ec4eae216989247571c22282070"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104255280",
+          "url": "/pages/faq",
+          "fields": {
+            "title": {
+              "he": "שאלות נפוצות",
+              "en": "FAQ",
+              "ar": "الأسئلة الشائعة",
+              "digest": "69d865911a0ad6e728ea7650c9a3d486501d595b5690850c78507c4a082cddf3"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104288048",
+          "url": "/pages/team-orders",
+          "fields": {
+            "title": {
+              "he": "הזמנות לקבוצות",
+              "en": "Team Orders",
+              "ar": "طلبات الفرق",
+              "digest": "d46967c0338cf0067b6aca8bcba29b9e39e295b04b0d13aaff0876578f822d41"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104320816",
+          "url": "/pages/contact",
+          "fields": {
+            "title": {
+              "he": "צור קשר",
+              "en": "Contact Us",
+              "ar": "تواصل معنا",
+              "digest": "fbc8dbd3846bddb2f0c1bde5eda66e8c94837ee5746deac44dc87f0f24777af0"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104353584",
+          "url": "/pages/accessibility",
+          "_note": "Only the menu label is translated. The page itself is a legal draft and is skipped.",
+          "fields": {
+            "title": {
+              "he": "הצהרת נגישות",
+              "en": "Accessibility Statement",
+              "ar": "بيان الإتاحة",
+              "digest": "6e51d121867526a8b4c72a5a1462e933371832028998ce19a89d066e8d777735"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104386352",
+          "url": "/search",
+          "fields": {
+            "title": {
+              "he": "חיפוש",
+              "en": "Search",
+              "ar": "بحث",
+              "digest": "cd547ee1df4d4b07bd5dbb3a956346b19770ec8260e47cfaf5ce6d65d3a6680b"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "handle": "footer-shop",
+      "resource_id": "gid://shopify/Menu/316236693808",
+      "fields": {
+        "title": {
+          "he": "חנות",
+          "en": "Shop",
+          "ar": "المتجر",
+          "digest": "f50ea2cb1a1821735fb487b6bb9132d6dce413eabce5bbb6fcd83dd680973e35"
+        }
+      },
+      "items": [
+        {
+          "resource_id": "gid://shopify/Link/805104419120",
+          "url": "/collections/football",
+          "fields": {
+            "title": {
+              "he": "חולצות כדורגל",
+              "en": "Football Jerseys",
+              "ar": "قمصان كرة القدم",
+              "digest": "74d20886a04bc801de3abe1b633ce822f3978dfb13038942ea6890ed7d562966"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104451888",
+          "url": "/collections/basketball-jerseys",
+          "fields": {
+            "title": {
+              "he": "גופיות כדורסל",
+              "en": "Basketball Jerseys",
+              "ar": "قمصان كرة السلة",
+              "digest": "794beaf100cd4904d72d71e5a044c2e3be0cb62760f3ffb02ee95e9d40bb6dd2"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104484656",
+          "url": "/collections/basketball-shorts",
+          "fields": {
+            "title": {
+              "he": "מכנסי כדורסל",
+              "en": "Basketball Shorts",
+              "ar": "شورتات كرة السلة",
+              "digest": "2f443d7ebd68ac78129380dbc0644b1cbe941d487a907c30685f46286f39d2c2"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104517424",
+          "url": "/collections/kids",
+          "fields": {
+            "title": {
+              "he": "ילדים",
+              "en": "Kids",
+              "ar": "الأطفال",
+              "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104550192",
+          "url": "/collections/new",
+          "fields": {
+            "title": {
+              "he": "חדש באתר",
+              "en": "New Arrivals",
+              "ar": "وصل حديثًا",
+              "digest": "9374f4011ca49ac661e038739bbfa31173b76e2e3dc01f47532372c81e2de896"
+            }
+          }
+        },
+        {
+          "resource_id": "gid://shopify/Link/805104582960",
+          "url": "/collections/sale",
+          "fields": {
+            "title": {
+              "he": "מבצעים",
+              "en": "Sale",
+              "ar": "العروض",
+              "digest": "104937b96b40c42e4070979d6ca9e023eb3a77743eb98640cc2b732212b4e953"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "handle": "contact",
+      "resource_id": "gid://shopify/Page/162268021040",
+      "fields": {
+        "title": {
+          "he": "צור קשר",
+          "en": "Contact Us",
+          "ar": "تواصل معنا",
+          "digest": "fbc8dbd3846bddb2f0c1bde5eda66e8c94837ee5746deac44dc87f0f24777af0"
+        },
+        "body_html": {
+          "he": "<p>יש לכם שאלה על מידה, הזמנה או משלוח? כתבו לנו כאן או בוואטסאפ, ונחזור אליכם בהקדם.</p>",
+          "en": "<p>Have a question about sizing, an order or delivery? Write to us here or on WhatsApp, and we'll get back to you as soon as we can.</p>",
+          "ar": "<p>لديكم سؤال عن المقاس أو الطلب أو التوصيل؟ اكتبوا لنا هنا أو عبر واتساب، وسنرد عليكم في أقرب وقت.</p>",
+          "digest": "46971681a7329abdfd00b54ac0de3bb4ce576bb7831aaea69904276a46ee7f3a"
+        }
+      }
+    },
+    {
+      "handle": "team-orders",
+      "resource_id": "gid://shopify/Page/162272051504",
+      "fields": {
+        "title": {
+          "he": "הזמנות לקבוצות",
+          "en": "Team Orders",
+          "ar": "طلبات الفرق",
+          "digest": "d46967c0338cf0067b6aca8bcba29b9e39e295b04b0d13aaff0876578f822d41"
+        },
+        "body_html": {
+          "he": "<p>קבוצת כדורגל או כדורסל, בית ספר, חוג או חברה? מזמינים יחד ומקבלים הצעה מותאמת לכמות. כתבו לנו מה אתם צריכים, ונחזור אליכם עם הצעה.</p>",
+          "en": "<p>A football or basketball team, a school, a club or a company? Order together and get a quote based on quantity. Tell us what you need, and we'll get back to you with a quote.</p>",
+          "ar": "<p>فريق كرة قدم أو كرة سلة، مدرسة، نادٍ أو شركة؟ اطلبوا معًا واحصلوا على عرض سعر حسب الكمية. اكتبوا لنا ما تحتاجونه، وسنرسل لكم عرض سعر.</p>",
+          "digest": "e74399deabe012a3cdd57f126f96dc27d917a90f7f1a458ab9026bf94ef0c0e7"
+        }
+      }
+    },
+    {
+      "handle": "faq",
+      "resource_id": "gid://shopify/Page/162272084272",
+      "fields": {
+        "title": {
+          "he": "שאלות נפוצות",
+          "en": "Frequently Asked Questions",
+          "ar": "الأسئلة الشائعة",
+          "digest": "69d865911a0ad6e728ea7650c9a3d486501d595b5690850c78507c4a082cddf3"
+        },
+        "body_html": {
+          "he": "<p>ריכזנו כאן תשובות לשאלות שהכי הרבה שואלים אותנו. לא מצאתם תשובה? כתבו לנו.</p>",
+          "en": "<p>Here are answers to the questions we're asked most. Can't find your answer? Write to us.</p>",
+          "ar": "<p>جمعنا هنا إجابات الأسئلة الأكثر تكرارًا. لم تجدوا إجابة؟ اكتبوا لنا.</p>",
+          "digest": "a951ad65d90658684ed1b908d232db951c21590cdc36eab829a423c8dca7144a"
+        }
+      }
+    },
+    {
+      "handle": "size-guide",
+      "resource_id": "gid://shopify/Page/162272117040",
+      "fields": {
+        "title": {
+          "he": "מדריך מידות",
+          "en": "Size Guide",
+          "ar": "دليل المقاسات",
+          "digest": "52787c351a136844bd65f33fe091dcfa54179c3aff32e729d1d92136c22cc7e7"
+        },
+        "body_html": {
+          "he": "<p>כאן תמצאו איך לבחור מידה למבוגרים ולילדים. בעמוד של כל מוצר יש גם טבלת מידות משלו, כשהיא זמינה.</p>",
+          "en": "<p>Here's how to choose a size for adults and kids. Each product page also has its own size chart, when one is available.</p>",
+          "ar": "<p>ستجدون هنا طريقة اختيار المقاس المناسب للكبار والأطفال. كما تحتوي صفحة كل منتج على جدول مقاسات خاص به، عند توفره.</p>",
+          "digest": "4b2cd638a30a430e8534ca9a7e874d3bf3b499583c512cbb2b0fba8138bd084c"
+        }
+      }
+    }
+  ],
+  "skipped": [
+    {
+      "type": "page",
+      "handle": "shipping-returns",
+      "resource_id": "gid://shopify/Page/162272149808",
+      "reason": "Legal draft waiting for the lawyer's review. Translate once the Hebrew wording is final."
+    },
+    {
+      "type": "page",
+      "handle": "accessibility",
+      "resource_id": "gid://shopify/Page/162272182576",
+      "reason": "Legal draft (accessibility statement) with placeholders, waiting for review. Translate once the Hebrew wording is final."
+    },
+    {
+      "type": "menu",
+      "handle": "customer-account-main-menu",
+      "resource_id": "gid://shopify/Menu/316216475952",
+      "reason": "Out of scope: Shopify's default customer-account menu ('Orders', 'Profile'), not one of our three menus."
+    }
+  ]
+}
