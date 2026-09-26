@@ -1,0 +1,229 @@
+{%- doc -%}
+  Buy buttons of the main product section: the product form with the variant id, an optional
+  quantity stepper, the add to cart button ("Add to cart · ₪120", or "Sold out") and the optional
+  dynamic checkout buttons. A plain form POST to the cart without JavaScript; with JavaScript,
+  <sw-product-form> (assets/product-info.js) adds through CartAPI and opens the cart drawer.
+  Parts marked data-product-dynamic are re-rendered when the variant changes.
+
+  @param {product} product - The product
+  @param {variant} [variant] - The selected variant (blank when the chosen combination does not exist)
+  @param {object} block - The buy_buttons block (settings: show_quantity, show_dynamic_checkout)
+  @param {string} form_id - Id for the product form
+  @param {boolean} [id_disabled] - Start the hidden id input disabled because the size radios post the id
+
+  @example
+  {% render 'product-buy-buttons', product: product, variant: product.selected_or_first_available_variant, block: block, form_id: form_id %}
+{%- enddoc -%}
+{%- liquid
+  assign available = false
+  if variant != blank and variant.available
+    assign available = true
+  endif
+  assign error_id = form_id | append: '-error'
+  assign quantity_id = form_id | append: '-quantity'
+-%}
+<sw-product-form class="product-buy" data-source="product-form">
+  {%- form 'product', product, id: form_id, class: 'product-buy__form' -%}
+    <input
+      type="hidden"
+      name="id"
+      value="{{ variant.id }}"
+      data-variant-id-input
+      {% if id_disabled %}
+        disabled
+      {% endif %}
+    >
+    <div class="product-buy__row">
+      {%- if block.settings.show_quantity -%}
+        <div class="product-buy__quantity">
+          <label class="product-buy__quantity-label" for="{{ quantity_id }}">{{ 'products.buy.quantity' | t }}</label>
+          <div class="product-quantity">
+            <button type="button" class="product-quantity__button js-only" data-quantity-step="-1">
+              {%- render 'icon', name: 'minus', size: 18 -%}
+              <span class="visually-hidden">{{ 'products.buy.decrease' | t }}</span>
+            </button>
+            <input
+              id="{{ quantity_id }}"
+              class="product-quantity__input"
+              type="number"
+              name="quantity"
+              value="1"
+              min="1"
+              step="1"
+              inputmode="numeric"
+            >
+            <button type="button" class="product-quantity__button js-only" data-quantity-step="1">
+              {%- render 'icon', name: 'plus', size: 18 -%}
+              <span class="visually-hidden">{{ 'products.buy.increase' | t }}</span>
+            </button>
+          </div>
+        </div>
+      {%- endif -%}
+      <div class="product-buy__submit" data-product-dynamic="buy-button">
+        <button
+          type="submit"
+          name="add"
+          class="button button--primary button--large button--full product-submit"
+          aria-describedby="{{ error_id }}"
+          {% unless available %}
+            disabled
+          {% endunless %}
+        >
+          {%- if available -%}
+            {%- render 'icon', name: 'bag', size: 20 -%}
+            <span>{{ 'products.buy.add_to_cart' | t }}</span>
+            <span aria-hidden="true">·</span>
+            <span>{{ variant.price | money_without_trailing_zeros }}</span>
+          {%- elsif variant == blank -%}
+            <span>{{ 'products.buy.unavailable' | t }}</span>
+          {%- else -%}
+            <span>{{ 'products.buy.sold_out' | t }}</span>
+          {%- endif -%}
+          <span class="spinner product-submit__spinner" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+    <p
+      id="{{ error_id }}"
+      class="product-buy__error field__message field__message--error"
+      role="alert"
+      data-form-error
+    ></p>
+    {%- if block.settings.show_dynamic_checkout -%}
+      <div
+        class="product-buy__checkout"
+        data-product-dynamic="checkout"
+        data-dynamic-attrs
+        {% unless available %}
+          hidden
+        {% endunless %}
+      >
+        {{ form | payment_button }}
+      </div>
+    {%- endif -%}
+  {%- endform -%}
+</sw-product-form>
+
+{% stylesheet %}
+  .product-buy {
+    display: block;
+  }
+
+  .product-buy__row {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-3);
+  }
+
+  .product-buy__submit {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+  }
+
+  .product-buy__quantity {
+    display: grid;
+    gap: var(--space-1);
+    flex: 0 0 auto;
+  }
+
+  .product-buy__quantity-label {
+    font-size: var(--text-sm);
+    font-weight: 700;
+  }
+
+  .product-quantity {
+    display: inline-flex;
+    align-items: stretch;
+    min-block-size: 56px;
+    border: 1.5px solid color-mix(in srgb, var(--color-text) 18%, var(--color-background));
+    border-radius: var(--radius-button);
+  }
+
+  .product-quantity__button {
+    display: grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  .product-quantity__input {
+    inline-size: 3.25rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    font-weight: 700;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      margin: 0;
+      appearance: none;
+    }
+  }
+
+  .product-submit {
+    position: relative;
+
+    & > :not(.product-submit__spinner) {
+      transition: opacity var(--duration-fast) var(--ease);
+    }
+  }
+
+  .product-submit__spinner {
+    position: absolute;
+    inset: 0;
+    display: none;
+    margin: auto;
+  }
+
+  .product-submit.is-loading {
+    cursor: progress;
+
+    & > :not(.product-submit__spinner) {
+      opacity: 0;
+    }
+
+    & .product-submit__spinner {
+      display: block;
+    }
+  }
+
+  .product-buy__error:not(:empty) {
+    margin-block-start: var(--space-3);
+  }
+
+  /* Express checkout: wallet buttons are styled through Shopify's documented custom properties;
+     the unbranded "Buy it now" fallback gets the theme's secondary button look. */
+  .product-buy__checkout {
+    --shopify-accelerated-checkout-button-block-size: var(--control-height);
+    --shopify-accelerated-checkout-button-border-radius: var(--radius-button);
+    --shopify-accelerated-checkout-skeleton-background-color: var(--color-surface);
+
+    margin-block-start: var(--space-3);
+
+    & .shopify-payment-button__button {
+      inline-size: 100%;
+      min-block-size: var(--control-height);
+      border-radius: var(--radius-button);
+      font-family: var(--font-body);
+      font-weight: 800;
+    }
+
+    & .shopify-payment-button__button--unbranded {
+      border: 1.5px solid var(--color-secondary-button-label);
+      background: transparent;
+      color: var(--color-secondary-button-label);
+      font-size: var(--text-base);
+    }
+
+    & .shopify-payment-button__button--unbranded:hover:not([disabled]) {
+      background: color-mix(in srgb, var(--color-secondary-button-label) 8%, transparent);
+    }
+  }
+{% endstylesheet %}

@@ -338,6 +338,72 @@
           "info": "הכפתור מוצג רק כשיש לו קישור."
         }
       }
+    },
+    "main_product": {
+      "name": "פרטי המוצר",
+      "settings": {
+        "show_breadcrumbs": "הצגת שביל הניווט (מיקום באתר)",
+        "sticky_info": "פרטי המוצר נשארים בתצוגה בזמן גלילה (במחשב)",
+        "media_header": "תמונות וסרטונים",
+        "media_ratio": "צורת התמונה",
+        "enable_zoom": "הגדלת תמונות בלחיצה",
+        "show_original_badge": "הצגת התגית \"100% מקורי\" על התמונות",
+        "original_badge_text": "טקסט התגית",
+        "eyebrow_info": "מציג את הקבוצה והליגה מהנתונים המותאמים של המוצר (השדות sportwear.team ו-sportwear.leagues). מוסתר כששניהם ריקים.",
+        "show_tax_note": "הצגת \"כולל מע״מ\"",
+        "audience_info": "מופיע רק כשהמוצר מקושר לגרסה שלו למבוגרים או לילדים (השדה sportwear.counterpart).",
+        "show_size_guide": "הצגת הכפתור של מדריך המידות",
+        "show_inventory": "הצגת מצב המלאי",
+        "low_stock_threshold": "הצגת \"נשארו רק מעט\" החל מ-",
+        "low_stock_threshold_info": "מוצג כשבמידה שנבחרה נשארו במלאי פריטים במספר הזה או פחות. מבוסס על המלאי האמיתי.",
+        "show_quantity": "הצגת בחירת כמות",
+        "show_dynamic_checkout": "הצגת כפתורי תשלום מהיר",
+        "show_dynamic_checkout_info": "Apple Pay, Google Pay ואפשרויות תשלום מהיר נוספות, לפי הגדרות התשלום בחנות.",
+        "shipping_text": "טקסט המשלוח",
+        "show_free_shipping": "הצגת הסכום למשלוח חינם",
+        "show_free_shipping_info": "לפי השדה \"משלוח חינם החל מ-\" בהגדרות התבנית > סל קניות. מוסתר כשהשדה ריק.",
+        "trust_original": "שורה 1: מוצר מקורי",
+        "trust_shipping": "שורה 2: משלוח",
+        "trust_returns": "שורה 3: החזרות",
+        "trust_payment": "שורה 4: תשלום מאובטח",
+        "complete_set_info": "מציג את המוצרים שמקושרים בשדה sportwear.complements של המוצר. מוסתר כשאין כאלה או כשהם אזלו מהמלאי.",
+        "show_set_note": "הצגת ההערה \"יחד: משלוח חינם\"",
+        "show_set_note_info": "מוצגת כששני הפריטים יחד מגיעים לסכום המשלוח החינם שבהגדרות התבנית > סל קניות.",
+        "open": "פתוח כברירת מחדל",
+        "collapsible_info": "השאירו את הכותרת והתוכן ריקים כדי להציג את טקסט ברירת המחדל על משלוחים והחזרות.",
+        "content": "תוכן",
+        "page_info": "מציג את התוכן של העמוד הזה במקום הטקסט שלמעלה.",
+        "size_table_info": "משתמש בטבלת המידות של המוצר (השדה sportwear.size_chart). אם אין טבלה, במוצרי ילדים מוצגות המידות לפי גובה ובמוצרי מבוגרים מוצגת הדרכה איך למדוד."
+      },
+      "options": {
+        "media_ratio_square": "ריבוע",
+        "media_ratio_portrait": "לאורך (4:5)"
+      },
+      "blocks": {
+        "eyebrow": "קבוצה וליגה",
+        "title": "שם המוצר",
+        "price": "מחיר",
+        "audience_toggle": "מעבר בין מבוגרים לילדים",
+        "variant_picker": "בחירת מידה",
+        "buy_buttons": "כפתורי קנייה",
+        "shipping_note": "הערת משלוח",
+        "trust": "רשימת אמון",
+        "complete_set": "השלימו את הסט",
+        "description": "תיאור",
+        "collapsible": "לשונית נפתחת",
+        "size_table": "טבלת מידות"
+      }
+    },
+    "product_recommendations": {
+      "name": "המלצות על מוצרים",
+      "settings": {
+        "intent": "סוג ההמלצות",
+        "intent_info": "מוצרים משלימים נבחרים באפליקציית Search & Discovery. כשאין מה להמליץ, האזור נשאר מוסתר."
+      },
+      "options": {
+        "related": "מוצרים דומים",
+        "complementary": "מוצרים משלימים"
+      }
     }
   },
   "settings_schema": {

@@ -1,0 +1,228 @@
+{%- doc -%}
+  Variant picker of the main product section: one fieldset per option (SportWear products have a
+  single Size option), with radio inputs styled as 52px pills. Adult sizes sit in 4 columns, kids sizes
+  (5-6 ... 13-14) in 5. Sold-out values stay visible and selectable, struck through, and are announced
+  as sold out. The first option gets the "Size guide" button that opens the SizeChart dialog.
+
+  With a single option, each radio carries its variant id and posts it to the product form through the
+  form attribute, so the size choice works without JavaScript; assets/product-info.js then moves the id
+  to the form's hidden input. With several options, the radios only describe the choice and the
+  section is re-rendered for the new combination (Section Rendering API).
+
+  @param {product} product - The product
+  @param {object} block - The variant_picker block (settings: show_size_guide)
+  @param {string} section_id - The section id, used for unique input ids
+  @param {string} form_id - Id of the product form the size radios post to
+  @param {boolean} [submits_id] - The radios submit the variant id themselves (single-option products)
+
+  @example
+  {% render 'variant-picker', product: product, block: block, section_id: section.id, form_id: form_id, submits_id: true %}
+{%- enddoc -%}
+{%- liquid
+  assign first_option = product.options_with_values | first
+  assign first_value = first_option.values | first
+  assign audience = product.metafields.sportwear.audience.value
+  assign is_kids = false
+  if audience == 'kids'
+    assign is_kids = true
+  elsif audience == blank and first_value.name contains '-'
+    assign is_kids = true
+  endif
+-%}
+<div class="variant-picker{% if is_kids %} variant-picker--kids{% endif %}">
+  <div
+    class="variant-picker__options"
+    {% if product.options.size > 1 %}
+      data-product-dynamic="picker"
+    {% endif %}
+  >
+    {%- for option in product.options_with_values -%}
+      {%- liquid
+        assign option_index = forloop.index
+        assign option_label = option.name | downcase
+      -%}
+      <fieldset class="variant-picker__option">
+        <legend class="variant-picker__legend">
+          {{- 'products.variant_picker.choose' | t: option: option_label -}}
+        </legend>
+        {%- if forloop.first and block.settings.show_size_guide -%}
+          <button
+            type="button"
+            class="variant-picker__guide js-only"
+            data-drawer-open="SizeChart"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            {%- render 'icon', name: 'ruler', size: 18 -%}
+            <span>{{ 'products.variant_picker.size_guide' | t }}</span>
+          </button>
+        {%- endif -%}
+        <div class="variant-picker__values{% if forloop.first %} variant-picker__values--primary{% else %} variant-picker__values--auto{% endif %}">
+          {%- for value in option.values -%}
+            {%- capture input_id -%}{{ section_id }}-option{{ option_index }}-{{ forloop.index }}{%- endcapture -%}
+            <input
+              type="radio"
+              class="variant-picker__input visually-hidden"
+              id="{{ input_id }}"
+              {% if submits_id %}
+                name="id"
+                value="{{ value.variant.id }}"
+                form="{{ form_id }}"
+              {% else %}
+                name="{{ section_id }}-option{{ option_index }}"
+                value="{{ value.name | escape }}"
+              {% endif %}
+              data-variant-option
+              data-option-value-id="{{ value.id }}"
+              {% if value.variant != blank %}
+                data-variant-id="{{ value.variant.id }}"
+              {% endif %}
+              autocomplete="off"
+              {% if value.selected %}
+                checked
+              {% endif %}
+            >
+            <label
+              class="variant-picker__value{% unless value.available %} variant-picker__value--unavailable{% endunless %}"
+              for="{{ input_id }}"
+            >
+              <bdi dir="ltr">{{ value.name | escape }}</bdi>
+              {%- unless value.available -%}
+                <span class="visually-hidden">, {{ 'products.variant_picker.sold_out' | t }}</span>
+              {%- endunless -%}
+            </label>
+          {%- endfor -%}
+        </div>
+      </fieldset>
+    {%- endfor -%}
+  </div>
+  {%- if is_kids -%}
+    <p class="variant-picker__note">
+      {%- if block.settings.show_size_guide -%}
+        {{ 'products.variant_picker.kids_note' | t }}
+      {%- else -%}
+        {{ 'products.variant_picker.kids_note_short' | t }}
+      {%- endif -%}
+    </p>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .variant-picker {
+    --variant-pill-border: color-mix(in srgb, var(--color-text) 18%, var(--color-background));
+  }
+
+  .variant-picker__option {
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+
+    & + & {
+      margin-block-start: var(--space-4);
+    }
+  }
+
+  /* Floated so the legend and the size guide button share one row; the legend still names the fieldset. */
+  .variant-picker__legend {
+    float: inline-start;
+    display: flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    padding: 0;
+    font-size: calc(15px * var(--body-scale, 1));
+    font-weight: 700;
+  }
+
+  .variant-picker__guide {
+    float: inline-end;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-block-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: var(--text-md);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+
+  .variant-picker__values {
+    clear: both;
+    display: grid;
+    grid-template-columns: repeat(var(--variant-columns, 4), minmax(0, 1fr));
+    gap: var(--space-2);
+    padding-block-start: var(--space-2);
+  }
+
+  .variant-picker__values--auto {
+    grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  }
+
+  .variant-picker--kids .variant-picker__values--primary {
+    --variant-columns: 5;
+
+    gap: 6px;
+  }
+
+  .variant-picker__value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-block-size: var(--control-height);
+    padding-inline: var(--space-1);
+    border: 1.5px solid var(--variant-pill-border);
+    border-radius: var(--radius-button);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--text-base);
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    cursor: pointer;
+    transition:
+      border-color var(--duration-fast) var(--ease),
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+
+  .variant-picker--kids .variant-picker__values--primary .variant-picker__value {
+    font-size: var(--text-md);
+  }
+
+  .variant-picker__value--unavailable {
+    background: color-mix(in srgb, var(--color-surface) 55%, var(--color-background));
+    color: var(--color-muted);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+
+  .variant-picker__input:checked + .variant-picker__value {
+    border-color: var(--color-button);
+    background: var(--color-button);
+    color: var(--color-button-label);
+  }
+
+  .variant-picker__input:focus-visible + .variant-picker__value {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  .variant-picker__note {
+    margin-block-start: var(--space-3);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+{% endstylesheet %}
