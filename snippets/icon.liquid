@@ -1,6 +1,6 @@
 {%- doc -%}
   Inline SVG icon. Decorative by default (aria-hidden); give the parent control an accessible name.
-  Directional icons (chevrons, arrows, truck, return) mirror automatically in right-to-left languages.
+  Directional icons (menu, chevrons, arrows, truck) mirror automatically in right-to-left languages.
   Stroke icons use currentColor lines; brand icons (instagram, tiktok, facebook, whatsapp, youtube, x)
   are filled and come from Simple Icons (CC0).
 
@@ -20,7 +20,7 @@
   endcase
   assign directional = false
   case name
-    when 'truck', 'return', 'chevron-forward', 'chevron-back', 'arrow-forward', 'arrow-back'
+    when 'menu', 'truck', 'chevron-forward', 'chevron-back', 'arrow-forward', 'arrow-back'
       assign directional = true
   endcase
 -%}
@@ -39,7 +39,7 @@
 >
   {%- case name -%}
     {%- when 'menu' -%}
-    <path d="M4 7h16M4 12h16M4 17h16"/>
+    <path d="M4 7h16M4 12h16M4 17h10"/>
     {%- when 'close' -%}
     <path d="M6 6l12 12M18 6L6 18"/>
     {%- when 'pause' -%}

@@ -47,7 +47,7 @@
       "choose_size": "Choose a size to continue."
     },
     "shipping_note": {
-      "delivery": "Delivered to your door within 3 business days",
+      "delivery": "Delivered within 3 business days",
       "free_from": "Free shipping from {{ amount }}"
     },
     "complete_set": {

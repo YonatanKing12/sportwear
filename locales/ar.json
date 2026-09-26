@@ -631,7 +631,7 @@
       "choose_size": "يُرجى اختيار المقاس للمتابعة."
     },
     "shipping_note": {
-      "delivery": "توصيل إلى البيت خلال 3 أيام عمل",
+      "delivery": "توصيل خلال 3 أيام عمل",
       "free_from": "شحن مجاني للطلبات من {{ amount }}"
     },
     "complete_set": {

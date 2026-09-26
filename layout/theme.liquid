@@ -13,6 +13,18 @@
     {%- render 'fonts' -%}
     {%- render 'css-variables' -%}
     {{ 'base.css' | asset_url | stylesheet_tag }}
+    {%- comment -%}
+      Components that re-render through the Section Rendering API load their CSS up front: Shopify only
+      ships {% stylesheet %} CSS for files rendered on the initial page.
+    {%- endcomment -%}
+    {{ 'cart.css' | asset_url | stylesheet_tag }}
+    {%- if settings.predictive_search %}
+      {{ 'predictive-search.css' | asset_url | stylesheet_tag }}
+    {%- endif %}
+    {%- case template.name %}
+      {%- when 'collection', 'search', 'list-collections' %}
+        {{ 'collection.css' | asset_url | stylesheet_tag }}
+    {%- endcase %}
 
     <script type="importmap">
       {

@@ -838,6 +838,16 @@ export const SHOPIFY_FILTERS = {
     return `<div class="errors"><ul>${messages.map((m) => `<li>${escapeHtml(toValue(m))}</li>`).join('')}</ul></div>`;
   },
   avatar: unsupported('avatar', () => ''),
+  // Shopify renders its own dynamic checkout buttons here (wallets, or an unbranded "Buy it now").
+  // The stand-in is the unbranded button, so its styling shows; the label only approximates Shopify's.
+  payment_button: unsupported('payment_button', function () {
+    const label = { he: 'קנו עכשיו', ar: 'اشترِ الآن' }[stateOf(this.context)?.locale] ?? 'Buy it now';
+    return (
+      '<div data-shopify="payment-button" class="shopify-payment-button">' +
+      `<button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">${label}</button>` +
+      '</div>'
+    );
+  }),
   login_button: unsupported('login_button', () => ''),
   unit_price_with_measurement: unsupported('unit_price_with_measurement'),
   divided_by: dividedBy,

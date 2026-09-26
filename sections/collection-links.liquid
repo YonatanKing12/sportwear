@@ -91,6 +91,12 @@
   .collection-links .collection-links__list {
     padding: var(--space-1) var(--gutter);
     scroll-padding-inline: var(--gutter);
+    /* Fade the end edge so the row reads as scrollable on phones. */
+    mask-image: linear-gradient(to left, transparent, #000 32px);
+  }
+
+  [dir='rtl'] .collection-links .collection-links__list {
+    mask-image: linear-gradient(to right, transparent, #000 32px);
   }
 
   @media screen and (min-width: 750px) {
@@ -103,8 +109,10 @@
       scroll-snap-type: none;
     }
 
-    .collection-links .collection-links__list {
+    .collection-links .collection-links__list,
+    [dir='rtl'] .collection-links .collection-links__list {
       padding-inline: 0;
+      mask-image: none;
     }
   }
 {% endstylesheet %}

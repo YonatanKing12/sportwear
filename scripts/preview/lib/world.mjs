@@ -1389,7 +1389,13 @@ export class World {
 
   buildRecommendations(product, intent = 'related', limit = 4) {
     if (!product) {
-      return new BaseDrop('recommendations', { performed: false, products: [], products_count: 0, intent });
+      return new BaseDrop('recommendations', {
+        performed: false,
+        'performed?': false,
+        products: [],
+        products_count: 0,
+        intent,
+      });
     }
     let products;
     if (intent === 'complementary') {
@@ -1401,6 +1407,7 @@ export class World {
     products = products.slice(0, limit);
     return new BaseDrop('recommendations', {
       performed: true,
+      'performed?': true,
       products,
       products_count: products.length,
       intent,

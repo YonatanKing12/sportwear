@@ -195,10 +195,11 @@
             </svg>
           </div>
           <div class="hero__figure hero__figure--second hero__figure--art" aria-hidden="true">
-            <svg class="hero__figure-image" viewBox="0 0 200 200" focusable="false">
-              <path class="hero__art-ink" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
+            <svg class="hero__figure-image hero__art-tank" viewBox="0 0 200 200" focusable="false">
+              <path class="hero__art-tank-body" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
               <path class="hero__art-accent" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
               <path class="hero__art-accent-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
+              <text class="hero__art-number" x="100" y="138">12</text>
             </svg>
           </div>
         {%- endif -%}
@@ -434,6 +435,27 @@
 
   .hero__art-accent-line {
     stroke: var(--color-highlight);
+  }
+
+  /* The tank sits on the dark background: purple and gold keep it visible, as on the board. */
+  .hero__art-tank-body {
+    fill: #552583;
+  }
+
+  .hero__art-tank .hero__art-accent {
+    fill: #fdb927;
+  }
+
+  .hero__art-tank .hero__art-accent-line {
+    stroke: #fdb927;
+  }
+
+  .hero__art-number {
+    fill: #fdb927;
+    font-family: 'SW Display', var(--font-display);
+    font-size: 64px;
+    text-anchor: middle;
+    direction: ltr;
   }
 
   @media (prefers-reduced-motion: no-preference) {

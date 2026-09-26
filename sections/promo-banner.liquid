@@ -52,7 +52,7 @@
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
-    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %}{% if figure_count > 0 %} promo-banner__panel--media{% else %} promo-banner__panel--text{% endif %}">
+    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %} promo-banner__panel--media">
       {%- if section.settings.show_eyebrow -%}
         <p class="promo-banner__eyebrow eyebrow">{{ eyebrow }}</p>
       {%- endif -%}
@@ -81,6 +81,23 @@
               -%}
             </div>
           {%- endif -%}
+        </div>
+      {%- else -%}
+        {%- comment -%} No product shots chosen yet: a drawn tank and shorts keep the set composition. {%- endcomment -%}
+        <div class="promo-banner__media promo-banner__media--art" aria-hidden="true">
+          <div class="promo-banner__figure">
+            <svg class="promo-banner__image" viewBox="0 0 200 200" focusable="false">
+              <path class="promo-banner__art-body" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
+              <path class="promo-banner__art-trim" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
+              <path class="promo-banner__art-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
+            </svg>
+          </div>
+          <div class="promo-banner__figure promo-banner__figure--second">
+            <svg class="promo-banner__image" viewBox="0 0 200 200" focusable="false">
+              <path class="promo-banner__art-body" d="M40 30L160 30L160 44L172 168L108 176L100 112L92 176L28 168L40 44Z"/>
+              <path class="promo-banner__art-trim" d="M40 30H160V44H40Z M40 46L50 46L40 169L28 168Z M160 46L150 46L160 169L172 168Z"/>
+            </svg>
+          </div>
         </div>
       {%- endif -%}
 
@@ -121,6 +138,10 @@
     grid-area: heading;
     margin-block-start: var(--space-3);
     overflow-wrap: break-word;
+
+    @media screen and (max-width: 749px) {
+      font-size: calc(50px * var(--heading-scale, 1) * var(--display-lang-scale));
+    }
   }
 
   .promo-banner__media {
@@ -150,6 +171,25 @@
     inline-size: 100%;
     block-size: 100%;
     object-fit: contain;
+  }
+
+  .promo-banner__art-body {
+    fill: #0d0e11;
+  }
+
+  .promo-banner__art-trim {
+    fill: #ffffff;
+  }
+
+  .promo-banner__art-line {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 4.5;
+    stroke-linecap: round;
+  }
+
+  .promo-banner__media--art svg {
+    filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.18));
   }
 
   .promo-banner__text {
@@ -193,26 +233,6 @@
       justify-self: start;
       min-inline-size: 240px;
       margin-block-start: var(--space-6);
-    }
-  }
-
-  /* Without images, desktop splits the panel: label and big heading on the start side, text and
-     button on the end side, aligned to the heading's baseline area. */
-  @media screen and (min-width: 990px) {
-    .promo-banner__panel--text {
-      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-      grid-template-rows: auto 1fr auto auto;
-      grid-template-areas: 'eyebrow .' 'heading .' 'heading text' 'heading button';
-      align-items: end;
-      column-gap: var(--space-12);
-    }
-
-    .promo-banner__panel--text .promo-banner__text {
-      margin-block-start: 0;
-    }
-
-    .promo-banner__panel--text .promo-banner__button {
-      margin-block-start: var(--space-5);
     }
   }
 {% endstylesheet %}

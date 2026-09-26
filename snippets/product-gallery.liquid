@@ -267,7 +267,9 @@
     scroll-snap-stop: always;
 
     @media screen and (min-width: 990px) {
-      &:first-child {
+      /* The first image spans the grid; a last image left alone in its row does too. */
+      &:first-child,
+      &:last-child:nth-child(even) {
         grid-column: 1 / -1;
       }
     }
@@ -339,10 +341,8 @@
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     pointer-events: none;
-
-    @media screen and (min-width: 990px) {
-      display: none;
-    }
+    /* The approved board shows only the badge and the dots on phones; the count stays for scripts. */
+    display: none;
   }
 
   .product-gallery__arrows {

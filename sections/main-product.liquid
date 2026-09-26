@@ -521,6 +521,7 @@
 
   .product-info .product-info__title {
     overflow-wrap: break-word;
+    text-wrap: pretty;
 
     @media screen and (min-width: 990px) {
       font-size: min(var(--display-l), calc(60px * var(--heading-scale, 1)));
@@ -615,14 +616,19 @@
     font-weight: 600;
   }
 
+  /* Block, not flex: a longer English or Arabic sentence wraps as text around the inline icon. */
   .product-shipping-note {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-2);
+    display: block;
     color: var(--color-muted);
     font-size: var(--text-sm);
     text-align: center;
+    text-wrap: balance;
+
+    & .icon {
+      display: inline-block;
+      vertical-align: -4px;
+      margin-inline-end: var(--space-2);
+    }
   }
 
   .product-trust {

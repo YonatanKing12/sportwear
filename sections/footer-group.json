@@ -8,14 +8,7 @@
         "brand": {
           "type": "brand",
           "settings": {
-            "show_text": true
-          }
-        },
-        "menu_shop": {
-          "type": "menu",
-          "settings": {
-            "menu": "footer-shop",
-            "show_heading": true
+            "show_text": false
           }
         },
         "menu": {
@@ -30,7 +23,7 @@
           "settings": {}
         }
       },
-      "block_order": ["brand", "menu_shop", "menu", "contact"],
+      "block_order": ["brand", "menu", "contact"],
       "settings": {
         "color_scheme": "scheme-night",
         "show_language_selector": true,

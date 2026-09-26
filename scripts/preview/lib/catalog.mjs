@@ -500,7 +500,7 @@ export const MENUS = {
     ],
   },
   footer: {
-    title: { he: 'תפריט תחתון', en: 'Footer menu', ar: 'قائمة التذييل' },
+    title: { he: 'שירות לקוחות', en: 'Customer Service', ar: 'خدمة العملاء' },
     links: [
       pageLink('size-guide', { he: 'מדריך מידות', en: 'Size guide', ar: 'دليل المقاسات' }),
       pageLink('shipping-returns', { he: 'משלוחים והחזרות', en: 'Shipping and returns', ar: 'الشحن والإرجاع' }),
