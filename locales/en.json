@@ -54,5 +54,53 @@
     "facebook": "Facebook",
     "youtube": "YouTube",
     "whatsapp": "WhatsApp"
+  },
+  "header": {
+    "announcement": {
+      "label": "Announcements",
+      "carousel": "carousel",
+      "slide": "announcement",
+      "slide_label": "{{ index }} of {{ count }}",
+      "previous": "Previous announcement",
+      "next": "Next announcement",
+      "pause": "Pause announcements",
+      "play": "Play announcements",
+      "free_shipping": "Free shipping from {{ amount }} · Delivered to your door within 3 business days",
+      "delivery": "Delivered to your door within 3 business days"
+    },
+    "menu": {
+      "open": "Menu",
+      "title": "Menu",
+      "close": "Close menu",
+      "nav_label": "Main navigation",
+      "team_orders": "Team orders on WhatsApp",
+      "whatsapp_message": "Hi, I would like to hear about a team order"
+    },
+    "account": {
+      "account": "My account",
+      "log_in": "Log in"
+    },
+    "search": {
+      "open": "Search",
+      "title": "Search the store",
+      "label": "What are you looking for?",
+      "placeholder": "Search for a jersey, team or league",
+      "submit": "Search",
+      "close": "Close search"
+    }
+  },
+  "predictive_search": {
+    "label": "Search suggestions",
+    "suggestions": "Suggestions",
+    "collections": "Collections",
+    "products": "Products",
+    "view_all": "View all results for \"⁨{{ terms }}⁩\"",
+    "search_all": "Search the whole store for \"⁨{{ terms }}⁩\"",
+    "no_results": "No results for \"⁨{{ terms }}⁩\"",
+    "no_results_hint": "Try a team, a league or a type of product.",
+    "results_count": {
+      "one": "{{ count }} result",
+      "other": "{{ count }} results"
+    }
   }
 }
