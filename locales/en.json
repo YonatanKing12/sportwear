@@ -518,7 +518,11 @@
     },
     "featured_collection": {
       "heading": "This season's jerseys",
-      "view_all": "View all"
+      "view_all": "View all",
+      "count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      }
     },
     "promo_banner": {
       "eyebrow": "Complete the set",

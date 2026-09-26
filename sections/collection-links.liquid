@@ -6,13 +6,16 @@
   assign subheading = section.settings.subheading | escape
 
   # A chip needs a destination (its own link or a collection) and a label (its own or the collection's name).
-  # Incomplete chips are skipped on the storefront and shown as placeholders in the theme editor.
+  # Incomplete chips are skipped on the storefront and shown as placeholders in the theme editor. A chip
+  # for a collection without products is skipped on the storefront too, so no chip leads to an empty page.
   assign chip_count = 0
   for block in section.blocks
     assign chip_collection = block.settings.collection
     if block.settings.link != blank or chip_collection != blank
       if block.settings.label != blank or chip_collection != blank
-        assign chip_count = chip_count | plus: 1
+        if block.settings.link != blank or chip_collection.products_count > 0
+          assign chip_count = chip_count | plus: 1
+        endif
       endif
     endif
   endfor
@@ -44,8 +47,12 @@
               if chip_label == blank and chip_collection != blank
                 assign chip_label = chip_collection.title | escape
               endif
+              assign chip_empty = false
+              if block.settings.link == blank and chip_collection != blank and chip_collection.products_count == 0
+                assign chip_empty = true
+              endif
             -%}
-            {%- if chip_url != blank and chip_label != blank -%}
+            {%- if chip_url != blank and chip_label != blank and chip_empty == false -%}
               <li {{ block.shopify_attributes }}>
                 <a class="chip{% if block.settings.featured %} chip--active{% endif %}" href="{{ chip_url }}">
                   {{- chip_label -}}

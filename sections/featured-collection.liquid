@@ -5,19 +5,26 @@
   assign columns_tablet = columns_desktop | at_most: 4
   assign columns_mobile = section.settings.columns_mobile | plus: 0
   assign use_scroller = section.settings.mobile_scroller
-  # Carousel: one row at every width (a peek of the next card on phones), with previous/next buttons.
+  # Carousel: one row that runs to the screen's edge at every width, with previous/next buttons, a
+  # progress bar and a "view all" tile at its end.
   assign is_carousel = false
-  assign wrapper_tag = 'div'
   if section.settings.layout == 'carousel'
     assign is_carousel = true
-    assign use_scroller = true
-    assign wrapper_tag = 'sw-carousel'
   endif
   assign list_id = 'FeaturedCollection-' | append: section.id
 
   assign has_products = false
   if featured != blank and featured.products_count > 0
     assign has_products = true
+  endif
+  assign has_more = false
+  if has_products and featured.products_count > product_limit
+    assign has_more = true
+  endif
+  assign show_count = false
+  if section.settings.show_count and has_products
+    assign show_count = true
+    assign count_label = 'home.featured_collection.count' | t: count: featured.products_count
   endif
 
   # Heading: the owner's text, else the collection's (translated) name, else the translated default ("This season's jerseys").
@@ -34,34 +41,50 @@
     assign view_all_url = featured.url
   endif
 
-  # Image sizes follow the grid: 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
-  assign gaps_desktop = columns_desktop | minus: 1 | times: 20
-  assign gaps_tablet = columns_tablet | minus: 1 | times: 20
-  if columns_mobile == 1
-    assign mobile_size = 'calc(100vw - 40px)'
-    if use_scroller
-      assign mobile_size = 'calc((100vw - 40px) / 1.25)'
-    endif
+  # Image sizes follow the layout: grid cells inside the page width, or carousel cards (the visible
+  # columns plus a peek) across the screen.
+  if is_carousel
+    capture card_sizes
+      echo '(min-width: 990px) calc((min(100vw, '
+      echo settings.page_width
+      echo 'px) - 64px) / '
+      echo columns_desktop
+      echo '), (min-width: 750px) calc((100vw - 64px) / '
+      echo columns_tablet
+      echo '), calc((100vw - 40px) / '
+      echo columns_mobile
+      echo '.3)'
+    endcapture
   else
-    assign mobile_size = 'calc((100vw - 52px) / 2)'
-    if use_scroller
-      assign mobile_size = 'calc((100vw - 52px) / 2.25)'
+    # 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
+    assign gaps_desktop = columns_desktop | minus: 1 | times: 20
+    assign gaps_tablet = columns_tablet | minus: 1 | times: 20
+    if columns_mobile == 1
+      assign mobile_size = 'calc(100vw - 40px)'
+      if use_scroller
+        assign mobile_size = 'calc((100vw - 40px) / 1.25)'
+      endif
+    else
+      assign mobile_size = 'calc((100vw - 52px) / 2)'
+      if use_scroller
+        assign mobile_size = 'calc((100vw - 52px) / 2.25)'
+      endif
     endif
+    capture card_sizes
+      echo '(min-width: 990px) calc((min(100vw - 64px, '
+      echo settings.page_width
+      echo 'px) - '
+      echo gaps_desktop
+      echo 'px) / '
+      echo columns_desktop
+      echo '), (min-width: 750px) calc((100vw - 64px - '
+      echo gaps_tablet
+      echo 'px) / '
+      echo columns_tablet
+      echo '), '
+      echo mobile_size
+    endcapture
   endif
-  capture card_sizes
-    echo '(min-width: 990px) calc((min(100vw - 64px, '
-    echo settings.page_width
-    echo 'px) - '
-    echo gaps_desktop
-    echo 'px) / '
-    echo columns_desktop
-    echo '), (min-width: 750px) calc((100vw - 64px - '
-    echo gaps_tablet
-    echo 'px) / '
-    echo columns_tablet
-    echo '), '
-    echo mobile_size
-  endcapture
 
   # Only the first two sections of a page (the hero is short) may load images eagerly: their first row of cards.
   assign eager_cards = 0
@@ -70,81 +93,124 @@
   endunless
 -%}
 
-{%- if has_products or request.design_mode -%}
-  <div
-    class="section featured-collection color-{{ section.settings.color_scheme.id }}"
-    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
-  >
-    <{{ wrapper_tag }} class="page-width featured-collection__inner">
-      <div class="section-header">
-        <h2 class="featured-collection__heading display-m">{{ heading }}</h2>
-        {%- if section.settings.show_view_all or is_carousel -%}
-          <div class="featured-collection__header-end">
-            {%- if section.settings.show_view_all -%}
-              <a class="link-arrow featured-collection__view-all" href="{{ view_all_url }}">
-                {{- 'home.featured_collection.view_all' | t -}}
-                <span class="visually-hidden"> ({{ heading }})</span>
-                {%- render 'icon', name: 'chevron-forward', size: 16 -%}
-              </a>
-            {%- endif -%}
-            {%- if is_carousel -%}
-              <div class="featured-collection__arrows js-only">
-                <button
-                  type="button"
-                  class="featured-collection__arrow"
-                  aria-controls="{{ list_id }}"
-                  aria-disabled="true"
-                  data-carousel-prev
-                >
-                  {%- render 'icon', name: 'chevron-back', size: 20 -%}
-                  <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
-                </button>
-                <button
-                  type="button"
-                  class="featured-collection__arrow"
-                  aria-controls="{{ list_id }}"
-                  aria-disabled="false"
-                  data-carousel-next
-                >
-                  {%- render 'icon', name: 'chevron-forward', size: 20 -%}
-                  <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
-                </button>
-              </div>
-            {%- endif -%}
+{%- capture section_header -%}
+  <div class="section-header featured-collection__header">
+    <div class="featured-collection__title">
+      <h2 class="featured-collection__heading display-m">{{ heading }}</h2>
+      {%- if show_count -%}
+        <span class="featured-collection__count">{{ count_label }}</span>
+      {%- endif -%}
+    </div>
+    {%- if section.settings.show_view_all or is_carousel -%}
+      <div class="featured-collection__header-end">
+        {%- if section.settings.show_view_all -%}
+          <a class="link-arrow featured-collection__view-all" href="{{ view_all_url }}">
+            {{- 'home.featured_collection.view_all' | t -}}
+            <span class="visually-hidden"> ({{ heading }})</span>
+            {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+          </a>
+        {%- endif -%}
+        {%- if is_carousel -%}
+          <div class="featured-collection__arrows js-only">
+            <button
+              type="button"
+              class="featured-collection__arrow"
+              aria-controls="{{ list_id }}"
+              aria-disabled="true"
+              data-carousel-prev
+            >
+              {%- render 'icon', name: 'chevron-back', size: 20 -%}
+              <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+            </button>
+            <button
+              type="button"
+              class="featured-collection__arrow"
+              aria-controls="{{ list_id }}"
+              aria-disabled="false"
+              data-carousel-next
+            >
+              {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+              <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+            </button>
           </div>
         {%- endif -%}
       </div>
+    {%- endif -%}
+  </div>
+{%- endcapture -%}
 
-      <ul
-        id="{{ list_id }}"
-        class="grid featured-collection__grid{% if is_carousel %} featured-collection__grid--carousel{% elsif use_scroller %} featured-collection__grid--scroll{% endif %}"
-        role="list"
-        {% if is_carousel %}
+{%- capture cards -%}
+  {%- if has_products -%}
+    {%- for product in featured.products limit: product_limit -%}
+      {%- liquid
+        assign card_loading = 'lazy'
+        if forloop.index <= eager_cards
+          assign card_loading = 'eager'
+        endif
+      -%}
+      <li class="featured-collection__item">
+        {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
+      </li>
+    {%- endfor -%}
+    {%- if is_carousel and has_more -%}
+      <li class="featured-collection__item featured-collection__more">
+        <a class="featured-collection__more-link" href="{{ view_all_url }}">
+          <span class="featured-collection__more-icon">
+            {%- render 'icon', name: 'arrow-forward', size: 24 -%}
+          </span>
+          <span class="featured-collection__more-label">{{ 'home.featured_collection.view_all' | t }}</span>
+          <span class="featured-collection__more-count">
+            {{- 'home.featured_collection.count' | t: count: featured.products_count -}}
+          </span>
+          <span class="visually-hidden">({{ heading }})</span>
+        </a>
+      </li>
+    {%- endif -%}
+  {%- else -%}
+    {%- for index in (1..product_limit) -%}
+      <li class="featured-collection__item">
+        {%- render 'product-card', product: null -%}
+      </li>
+    {%- endfor -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if has_products or request.design_mode -%}
+  <div
+    class="section featured-collection color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    {%- if is_carousel -%}
+      <sw-carousel class="featured-collection__carousel">
+        <div class="page-width">{{ section_header }}</div>
+        <ul
+          id="{{ list_id }}"
+          class="featured-collection__track"
+          role="list"
           data-carousel-track
-        {% endif %}
-        style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
-      >
-        {%- if has_products -%}
-          {%- for product in featured.products limit: product_limit -%}
-            {%- liquid
-              assign card_loading = 'lazy'
-              if forloop.index <= eager_cards
-                assign card_loading = 'eager'
-              endif
-            -%}
-            <li class="featured-collection__item">
-              {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
-            </li>
-          {%- endfor -%}
-        {%- else -%}
-          {%- for index in (1..product_limit) -%}
-            <li class="featured-collection__item">
-              {%- render 'product-card', product: null -%}
-            </li>
-          {%- endfor -%}
-        {%- endif -%}
-      </ul>
-    </{{ wrapper_tag }}>
+          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
+        >
+          {{- cards -}}
+        </ul>
+        <div class="page-width featured-collection__progress-wrap js-only" aria-hidden="true">
+          <div class="featured-collection__progress">
+            <span class="featured-collection__progress-thumb"></span>
+          </div>
+        </div>
+      </sw-carousel>
+    {%- else -%}
+      <div class="page-width">
+        {{ section_header }}
+        <ul
+          id="{{ list_id }}"
+          class="grid featured-collection__grid{% if use_scroller %} featured-collection__grid--scroll{% endif %}"
+          role="list"
+          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
+        >
+          {{- cards -}}
+        </ul>
+      </div>
+    {%- endif -%}
   </div>
   {%- if is_carousel -%}
     <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
@@ -152,14 +218,31 @@
 {%- endif -%}
 
 {% stylesheet %}
+  .featured-collection__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-3);
+    min-inline-size: 0;
+  }
+
   .featured-collection__heading {
     min-inline-size: 0;
     overflow-wrap: break-word;
   }
 
-  /* The wrapper is <sw-carousel> in the carousel layout: custom elements are inline by default. */
-  .featured-collection__inner {
-    display: block;
+  .featured-collection__count {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: 28px;
+    padding-inline: var(--space-3);
+    border-radius: var(--radius-chip);
+    background: var(--color-surface);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
   .featured-collection__header-end {
@@ -173,13 +256,11 @@
     flex-shrink: 0;
   }
 
-  /* Carousel: one scrolling row. Phones show a peek of the next card and bleed to the screen edges;
-     from 750px the row shows exactly the tablet or desktop column count, with previous/next buttons. */
-  .featured-collection__grid.featured-collection__grid--carousel {
-    --carousel-cols: calc(var(--grid-cols) + 0.25);
-    grid-template-columns: none;
-    grid-auto-flow: column;
-    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
+  /* Optional mobile layout for the grid: one swipeable row that runs to the screen edges, with a peek
+     of the next card. Two classes to win over the list reset (ul[role='list'] { padding: 0 }). */
+  .featured-collection__grid.featured-collection__grid--scroll {
+    display: flex;
+    gap: var(--grid-gap);
     margin-inline: calc(var(--gutter) * -1);
     padding: var(--space-1) var(--gutter);
     overflow-x: auto;
@@ -193,20 +274,117 @@
     }
 
     @media screen and (min-width: 750px) {
-      --carousel-cols: var(--grid-cols-tablet);
+      display: grid;
       margin-inline: 0;
-      padding-inline: 0;
-      scroll-padding-inline: 0;
-    }
-
-    @media screen and (min-width: 990px) {
-      --carousel-cols: var(--grid-cols-desktop);
+      padding: 0;
+      overflow: visible;
+      scroll-snap-type: none;
     }
   }
 
-  .featured-collection__grid--carousel > .featured-collection__item {
+  .featured-collection__grid--scroll .featured-collection__item {
+    flex: 0 0 calc((100vw - 2 * var(--gutter) - (var(--grid-cols) - 1) * var(--grid-gap)) / (var(--grid-cols) + 0.25));
+    scroll-snap-align: start;
+  }
+
+  /* Carousel: the header and progress bar keep the page width; the row itself spans the screen. It
+     starts where the page content starts and runs past the end edge, where the next card peeks in
+     (the visible columns plus 0.3 of a card). */
+  .featured-collection__carousel {
+    display: block;
+  }
+
+  .featured-collection__track {
+    --carousel-cols: calc(var(--grid-cols) + 0.3);
+    --carousel-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+    display: grid;
+    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
+    grid-auto-flow: column;
+    gap: var(--grid-gap);
+    margin: 0;
+    padding-block: var(--space-1);
+    padding-inline: var(--carousel-start) var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--carousel-start);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      --carousel-cols: calc(var(--grid-cols-tablet) + 0.3);
+    }
+
+    @media screen and (min-width: 990px) {
+      --carousel-cols: calc(var(--grid-cols-desktop) + 0.3);
+    }
+  }
+
+  /* Positioned, so absolutely positioned content (visually hidden labels) stays clipped by the row
+     instead of widening the page. */
+  .featured-collection__track > .featured-collection__item {
+    position: relative;
     min-inline-size: 0;
     scroll-snap-align: start;
+  }
+
+  /* The row ends with a "view all" tile in the scheme's inverse colors. */
+  .featured-collection__more {
+    display: flex;
+  }
+
+  .featured-collection__more-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    inline-size: 100%;
+    min-block-size: 240px;
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-card);
+    background: var(--color-text);
+    color: var(--color-background);
+    text-align: center;
+    text-decoration: none;
+    transition: transform var(--duration-fast) var(--ease);
+
+    &:hover .featured-collection__more-icon {
+      transform: translateX(calc(4px * var(--dir-sign, 1)));
+    }
+  }
+
+  [dir='rtl'] .featured-collection__more-link {
+    --dir-sign: -1;
+  }
+
+  .featured-collection__more-icon {
+    display: grid;
+    place-items: center;
+    inline-size: 56px;
+    block-size: 56px;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    transition: transform var(--duration-fast) var(--ease);
+  }
+
+  .featured-collection__more-label {
+    font-family: var(--font-display);
+    font-size: calc(26px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .featured-collection__more-count {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    opacity: 0.75;
+    font-variant-numeric: tabular-nums;
   }
 
   .featured-collection__arrows {
@@ -216,11 +394,6 @@
     @media screen and (min-width: 750px) {
       display: flex;
     }
-  }
-
-  /* Nothing to scroll (fewer products than columns): no buttons. */
-  sw-carousel:not([data-scrollable]) .featured-collection__arrows {
-    display: none;
   }
 
   .featured-collection__arrow {
@@ -250,35 +423,31 @@
     }
   }
 
-  /* Optional mobile layout: one swipeable row that runs to the screen edges, with a peek of the next card.
-     Two classes to win over the list reset (ul[role='list'] { padding: 0 }). */
-  .featured-collection__grid.featured-collection__grid--scroll {
-    display: flex;
-    gap: var(--grid-gap);
-    margin-inline: calc(var(--gutter) * -1);
-    padding: var(--space-1) var(--gutter);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-padding-inline: var(--gutter);
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media screen and (min-width: 750px) {
-      display: grid;
-      margin-inline: 0;
-      padding: 0;
-      overflow: visible;
-      scroll-snap-type: none;
-    }
+  /* Progress: the thumb's size is the visible share of the row, its offset the scroll position
+     (set by assets/product-carousel.js; logical margins keep it right-to-left in Hebrew and Arabic). */
+  .featured-collection__progress-wrap {
+    margin-block-start: var(--space-5);
   }
 
-  .featured-collection__grid--scroll .featured-collection__item {
-    flex: 0 0 calc((100vw - 2 * var(--gutter) - (var(--grid-cols) - 1) * var(--grid-gap)) / (var(--grid-cols) + 0.25));
-    scroll-snap-align: start;
+  .featured-collection__progress {
+    block-size: 3px;
+    border-radius: 3px;
+    background: var(--color-border);
+    overflow: hidden;
+  }
+
+  .featured-collection__progress-thumb {
+    display: block;
+    inline-size: calc(var(--carousel-visible, 0.25) * 100%);
+    block-size: 100%;
+    margin-inline-start: calc(var(--carousel-progress, 0) * (100% - var(--carousel-visible, 0.25) * 100%));
+    border-radius: inherit;
+    background: var(--color-text);
+  }
+
+  /* Nothing to scroll (fewer products than columns): no buttons, no progress bar. */
+  sw-carousel:not([data-scrollable]) :is(.featured-collection__arrows, .featured-collection__progress-wrap) {
+    display: none;
   }
 {% endstylesheet %}
 
@@ -358,6 +527,12 @@
       "id": "show_view_all",
       "label": "t:settings.show_view_all",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "t:sections.featured_collection.settings.show_count.label",
+      "default": false
     },
     {
       "type": "range",

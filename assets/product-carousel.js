@@ -3,8 +3,9 @@
  *
  * Drives the previous/next buttons of a row of product cards that scrolls sideways: each press
  * scrolls one view (the cards on screen), and a button is aria-disabled at its end of the row.
- * Swiping and trackpads scroll the row natively. Works the same in right-to-left languages, where
- * scrollLeft runs from 0 down to negative values.
+ * Keeps the progress bar in step (--carousel-visible: the share of the row on screen,
+ * --carousel-progress: 0 at the start, 1 at the end). Swiping and trackpads scroll the row natively.
+ * Works the same in right-to-left languages, where scrollLeft runs from 0 down to negative values.
  */
 import { prefersReducedMotion } from '@theme/core';
 
@@ -45,22 +46,28 @@ class SwCarousel extends HTMLElement {
     const track = this.#track;
     if (!button || !track || button.getAttribute('aria-disabled') === 'true') return;
     const forward = button.hasAttribute('data-carousel-next') ? 1 : -1;
-    const direction = getComputedStyle(track).direction === 'rtl' ? -1 : 1;
+    const style = getComputedStyle(track);
+    const direction = style.direction === 'rtl' ? -1 : 1;
+    // One view is the cards area (the row's side padding aligns it with the page); snapping then
+    // lands on the card that was peeking in.
+    const view = track.clientWidth - parseFloat(style.paddingInlineStart) - parseFloat(style.paddingInlineEnd);
     track.scrollBy({
-      left: forward * direction * track.clientWidth,
+      left: forward * direction * view,
       behavior: prefersReducedMotion() ? 'auto' : 'smooth',
     });
   };
 
-  /** Enables each button only while there is more of the row in its direction. */
+  /** Enables each button only while there is more of the row in its direction, and moves the progress bar. */
   #update() {
     const track = this.#track;
     if (!track) return;
     const max = track.scrollWidth - track.clientWidth;
-    const position = Math.abs(track.scrollLeft);
+    const position = Math.min(Math.abs(track.scrollLeft), Math.max(max, 0));
     this.toggleAttribute('data-scrollable', max > 1);
     this.#setDisabled('[data-carousel-prev]', position <= 1);
     this.#setDisabled('[data-carousel-next]', position >= max - 1);
+    this.style.setProperty('--carousel-visible', (track.clientWidth / track.scrollWidth).toFixed(4));
+    this.style.setProperty('--carousel-progress', (max > 1 ? position / max : 0).toFixed(4));
   }
 
   /**

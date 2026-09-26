@@ -91,20 +91,23 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "color_scheme": "scheme-day",
+        "color_scheme": "scheme-soft",
         "collection": "football",
-        "products_to_show": 4,
-        "columns_desktop": 4,
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 24
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     },
     "promo_banner": {
       "type": "promo-banner",
       "settings": {
         "color_scheme": "scheme-accent",
-        "button_link": "shopify://collections/basketball-sets",
+        "button_link": "shopify://collections/basketball",
         "padding_top": 24,
         "padding_bottom": 24
       }
@@ -139,8 +142,54 @@
         "columns_desktop": 5,
         "columns_mobile": "2",
         "show_view_all": true,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "show_count": false,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "nba": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "collection": "nba",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "kids": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "collection": "kids",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "national_teams": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
+        "collection": "national-teams",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     }
   },
@@ -151,7 +200,10 @@
     "collection_links",
     "featured_collection",
     "promo_banner",
+    "nba",
     "image_with_text",
+    "kids",
+    "national_teams",
     "cta_band"
   ]
 }

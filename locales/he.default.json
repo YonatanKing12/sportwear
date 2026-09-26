@@ -534,7 +534,13 @@
     },
     "featured_collection": {
       "heading": "חולצות העונה",
-      "view_all": "לכל המוצרים"
+      "view_all": "לכל המוצרים",
+      "count": {
+        "one": "מוצר אחד",
+        "two": "2 מוצרים",
+        "many": "{{ count }} מוצרים",
+        "other": "{{ count }} מוצרים"
+      }
     },
     "promo_banner": {
       "eyebrow": "השלימו את הסט",

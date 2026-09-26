@@ -550,7 +550,15 @@
     },
     "featured_collection": {
       "heading": "قمصان الموسم",
-      "view_all": "كل المنتجات"
+      "view_all": "كل المنتجات",
+      "count": {
+        "zero": "لا توجد منتجات",
+        "one": "منتج واحد",
+        "two": "منتجان",
+        "few": "{{ count }} منتجات",
+        "many": "{{ count }} منتجًا",
+        "other": "{{ count }} منتج"
+      }
     },
     "promo_banner": {
       "eyebrow": "أكملوا الطقم",

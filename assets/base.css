@@ -622,8 +622,10 @@ a {
 }
 
 /* ---------- Media ---------- */
-/* Inside the lime accent panels (set and upsell offers) the product tile is white, as on the board. */
-.color-scheme-accent {
+/* Inside the lime accent panels (set and upsell offers) and on the light gray bands, the product tile
+   is white, so it stands out from the background. */
+.color-scheme-accent,
+.color-scheme-soft {
   --color-tile: #ffffff;
 }
 

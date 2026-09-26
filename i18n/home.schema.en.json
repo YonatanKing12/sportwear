@@ -143,6 +143,9 @@
             "grid": "Grid",
             "carousel": "Scrolling row"
           }
+        },
+        "show_count": {
+          "label": "Show product count"
         }
       }
     },
