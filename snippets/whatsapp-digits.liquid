@@ -1,13 +1,24 @@
 {%- doc -%}
-  Prints the WhatsApp number from theme settings as the digits wa.me expects: no +, spaces, dashes,
-  dots or brackets, and an Israeli local number (050…) turned into international form (97250…).
+  Prints the WhatsApp number from theme settings as the digits wa.me expects: no +, spaces
+  (including non-breaking ones), direction marks, dashes, dots or brackets. An international 00
+  prefix is dropped, an Israeli local number (050…) becomes international (97250…), and a
+  "+972 (0)50…" style number loses the extra 0.
   Capture it: {% capture whatsapp_digits %}{% render 'whatsapp-digits' %}{% endcapture %}
 {%- enddoc -%}
 {%- liquid
-  assign digits = settings.whatsapp_number | strip | remove: '+' | remove: ' ' | remove: '-' | remove: '.' | remove: '(' | remove: ')'
+  assign digits = settings.whatsapp_number | strip | remove: '+' | remove: ' ' | remove: ' ' | remove: '‎' | remove: '‏' | remove: '-' | remove: '.' | remove: '(' | remove: ')'
+  assign first_two = digits | slice: 0, 2
+  if first_two == '00'
+    assign digits = digits | slice: 2, 20
+  endif
   assign first_digit = digits | slice: 0
   if first_digit == '0'
     assign local_part = digits | slice: 1, 20
+    assign digits = '972' | append: local_part
+  endif
+  assign prefix = digits | slice: 0, 4
+  if prefix == '9720'
+    assign local_part = digits | slice: 4, 20
     assign digits = '972' | append: local_part
   endif
   echo digits

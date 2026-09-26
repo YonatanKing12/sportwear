@@ -21,7 +21,8 @@
     "editor": {
       "no_menu": "Choose a menu for this block.",
       "no_contact": "To show contact details here, add a phone number, email or WhatsApp number in Theme settings > Business details.",
-      "accessibility_page": "Choose your accessibility statement page in the footer settings, so it's linked from every page as Israeli law requires. This note is only shown in the theme editor."
+      "accessibility_page": "Choose your accessibility statement page in the footer settings, so it's linked from every page as Israeli law requires. This note is only shown in the theme editor.",
+      "business_details": "Add the business name, business ID and address in Theme settings > Business details. The law requires showing them on the site. This note only shows in the theme editor."
     }
   },
   "pages": {

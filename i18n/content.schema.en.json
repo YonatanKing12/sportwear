@@ -43,6 +43,9 @@
             "show_heading": {
               "label": "Show heading",
               "info": "When hidden, screen readers still announce it."
+            },
+            "heading": {
+              "info": "Leave empty to show the menu's own title, translated with the menu."
             }
           }
         },
@@ -195,7 +198,7 @@
               "options": {
                 "none": "None",
                 "delivery": "Delivery time",
-                "returns": "Returns and exchanges",
+                "returns": "Returns",
                 "sizing": "Choosing a size",
                 "payment": "Payment methods",
                 "team_orders": "Team orders",

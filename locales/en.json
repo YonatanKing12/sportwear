@@ -153,7 +153,8 @@
     "editor": {
       "no_menu": "Choose a menu for this block.",
       "no_contact": "To show contact details here, add a phone number, email or WhatsApp number in Theme settings > Business details.",
-      "accessibility_page": "Choose your accessibility statement page in the footer settings, so it's linked from every page as Israeli law requires. This note is only shown in the theme editor."
+      "accessibility_page": "Choose your accessibility statement page in the footer settings, so it's linked from every page as Israeli law requires. This note is only shown in the theme editor.",
+      "business_details": "Add the business name, business ID and address in Theme settings > Business details. The law requires showing them on the site. This note only shows in the theme editor."
     }
   },
   "pages": {
@@ -612,7 +613,8 @@
       "heading": "Shipping & returns",
       "delivery": "We deliver to your door within 3 business days of your order.",
       "free_shipping": "Shipping is free on orders from {{ amount }}.",
-      "returns": "You can return items within 45 days. The full terms are in our returns policy.",
+      "returns": "You can return items within 45 days.",
+      "returns_policy": "The full terms are in our returns policy.",
       "details": "Full details:"
     },
     "size_chart": {
@@ -635,6 +637,12 @@
     "recommendations": {
       "heading": "You may also like",
       "heading_complementary": "Complete the look"
+    },
+    "editor": {
+      "eyebrow": "The team and league from the product's team and leagues fields show here. This product has none yet. Only shown in the editor.",
+      "audience_toggle": "An adults/kids switch shows here once the product's counterpart field points to the matching product. Only shown in the editor.",
+      "complete_set": "Matching products (like a jersey and shorts) from the product's complements field show here when in stock. Only shown in the editor.",
+      "description": "The product description shows here. This product has none yet. Only shown in the editor."
     }
   }
 }

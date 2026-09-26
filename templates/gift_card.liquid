@@ -7,8 +7,8 @@
   Right-to-left aware through the storefront language.
 {%- endcomment -%}
 {%- liquid
-  assign card_balance = gift_card.balance | money_without_trailing_zeros
-  assign card_initial = gift_card.initial_value | money_without_trailing_zeros
+  assign card_balance = gift_card.balance | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+  assign card_initial = gift_card.initial_value | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
   assign card_changed = false
   if gift_card.balance != gift_card.initial_value
     assign card_changed = true

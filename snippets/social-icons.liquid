@@ -17,7 +17,7 @@
   <ul class="social-icons{% if class != blank %} {{ class }}{% endif %}" role="list">
     {%- if settings.social_instagram != blank -%}
       <li>
-        <a href="{{ settings.social_instagram }}" class="social-icons__link" target="_blank" rel="noopener">
+        <a href="{{ settings.social_instagram | escape }}" class="social-icons__link" target="_blank" rel="noopener">
           {%- render 'icon', name: 'instagram', size: 20 -%}
           <span class="visually-hidden">{{ 'social.instagram' | t }} ({{ 'accessibility.new_window' | t }})</span>
         </a>
@@ -25,7 +25,7 @@
     {%- endif -%}
     {%- if settings.social_tiktok != blank -%}
       <li>
-        <a href="{{ settings.social_tiktok }}" class="social-icons__link" target="_blank" rel="noopener">
+        <a href="{{ settings.social_tiktok | escape }}" class="social-icons__link" target="_blank" rel="noopener">
           {%- render 'icon', name: 'tiktok', size: 20 -%}
           <span class="visually-hidden">{{ 'social.tiktok' | t }} ({{ 'accessibility.new_window' | t }})</span>
         </a>
@@ -33,7 +33,7 @@
     {%- endif -%}
     {%- if settings.social_facebook != blank -%}
       <li>
-        <a href="{{ settings.social_facebook }}" class="social-icons__link" target="_blank" rel="noopener">
+        <a href="{{ settings.social_facebook | escape }}" class="social-icons__link" target="_blank" rel="noopener">
           {%- render 'icon', name: 'facebook', size: 20 -%}
           <span class="visually-hidden">{{ 'social.facebook' | t }} ({{ 'accessibility.new_window' | t }})</span>
         </a>
@@ -41,7 +41,7 @@
     {%- endif -%}
     {%- if settings.social_youtube != blank -%}
       <li>
-        <a href="{{ settings.social_youtube }}" class="social-icons__link" target="_blank" rel="noopener">
+        <a href="{{ settings.social_youtube | escape }}" class="social-icons__link" target="_blank" rel="noopener">
           {%- render 'icon', name: 'youtube', size: 20 -%}
           <span class="visually-hidden">{{ 'social.youtube' | t }} ({{ 'accessibility.new_window' | t }})</span>
         </a>

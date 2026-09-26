@@ -226,6 +226,9 @@
             "show_heading": {
               "label": "Show heading",
               "info": "When hidden, screen readers still announce it."
+            },
+            "heading": {
+              "info": "Leave empty to show the menu's own title, translated with the menu."
             }
           }
         },
@@ -378,7 +381,7 @@
               "options": {
                 "none": "None",
                 "delivery": "Delivery time",
-                "returns": "Returns and exchanges",
+                "returns": "Returns",
                 "sizing": "Choosing a size",
                 "payment": "Payment methods",
                 "team_orders": "Team orders",
@@ -612,7 +615,7 @@
         },
         "image_1": {
           "label": "Product image 1",
-          "info": "A product photo with a transparent background (PNG), about 1000 × 1000 px. Without images, the circle and the outlined text are shown on their own."
+          "info": "A product photo with a transparent background (PNG), about 1000 × 1000 px. Until you add one, two drawn kits are shown on the circle."
         },
         "image_2": {
           "label": "Product image 2"
@@ -698,7 +701,7 @@
     "featured_collection": {
       "name": "Featured collection",
       "presets": {
-        "name": "Best sellers"
+        "name": "Featured collection"
       },
       "settings": {
         "heading": {
@@ -1057,7 +1060,7 @@
         },
         "free_shipping_threshold": {
           "label": "Free shipping from (₪)",
-          "info": "Shows the free shipping progress bar in the cart. Must match the shipping rate in Settings > Shipping. Leave empty to hide the bar."
+          "info": "Free-shipping messages use this amount: the cart bar, announcement bar, product page, empty cart and the set and upsell notes. They show to visitors in Israel only. Must match the free rate in Settings > Shipping. Leave empty to hide them all."
         },
         "cart_show_upsell": {
           "label": "Suggest set items in the cart"

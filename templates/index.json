@@ -124,6 +124,7 @@
       "settings": {
         "color_scheme": "scheme-night",
         "icon": "chat",
+        "button_link": "shopify://pages/team-orders",
         "padding_top": 24,
         "padding_bottom": 48
       }

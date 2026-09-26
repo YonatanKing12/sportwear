@@ -17,6 +17,10 @@
     else
       assign preload_fonts = 'font-karantina-hebrew.woff2,font-anton-latin.woff2'
   endcase
+  # Anton is only needed above the fold for the text wordmark; an uploaded logo replaces it.
+  if settings.logo != blank and request.locale.iso_code != 'en'
+    assign preload_fonts = preload_fonts | remove: ',font-anton-latin.woff2'
+  endif
   assign preload_fonts = preload_fonts | split: ','
 -%}
 {%- for font_file in preload_fonts -%}

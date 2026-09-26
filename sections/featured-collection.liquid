@@ -11,7 +11,7 @@
     assign has_products = true
   endif
 
-  # Heading: the owner's text, else the collection's (translated) name, else "Best sellers".
+  # Heading: the owner's text, else the collection's (translated) name, else the translated default ("This season's jerseys").
   assign heading = section.settings.heading | escape
   if heading == blank and featured != blank
     assign heading = featured.title | escape

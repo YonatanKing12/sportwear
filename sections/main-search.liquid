@@ -100,7 +100,7 @@
     assign results_label = 'search.results_count' | t: count: search.results_count
 
     assign suggestions_menu = section.settings.suggestions_menu
-    assign suggestions_heading = section.settings.suggestions_heading
+    assign suggestions_heading = section.settings.suggestions_heading | escape
     if suggestions_heading == blank
       assign suggestions_heading = 'search.suggestions_heading' | t
     endif
@@ -284,7 +284,7 @@
             {%- if suggestions_menu != blank and suggestions_menu.links.size > 0 -%}
               <nav class="search-suggestions" aria-labelledby="SearchSuggestionsTitle-{{ section.id }}">
                 <h2 id="SearchSuggestionsTitle-{{ section.id }}" class="search-suggestions__title title-m">
-                  {{- suggestions_heading | escape -}}
+                  {{- suggestions_heading -}}
                 </h2>
                 <ul class="search-suggestions__list" role="list">
                   {%- for link in suggestions_menu.links -%}

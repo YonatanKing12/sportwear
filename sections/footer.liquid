@@ -285,6 +285,9 @@
             <p class="footer__editor-note">{{ 'footer.editor.accessibility_page' | t }}</p>
           {%- endif -%}
 
+          {%- if request.design_mode and has_business == false -%}
+            <p class="footer__editor-note">{{ 'footer.editor.business_details' | t }}</p>
+          {%- endif -%}
           {%- if has_business -%}
             <address class="footer__business">
               {%- if settings.business_name != blank -%}
@@ -730,7 +733,7 @@
           "type": "text",
           "id": "heading",
           "label": "t:settings.heading",
-          "info": "t:settings.default_text_info"
+          "info": "t:sections.footer.blocks.menu.settings.heading.info"
         },
         {
           "type": "checkbox",

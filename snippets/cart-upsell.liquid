@@ -23,9 +23,12 @@
   assign in_cart_ids = ',' | append: in_cart_ids | append: ','
   assign shown_ids = ','
 
-  assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
   assign check_free_shipping = false
-  if threshold_cents > 0 and cart.total_price < threshold_cents and cart.currency.iso_code == shop.currency
+  if threshold_cents > 0 and cart.total_price < threshold_cents
     assign check_free_shipping = true
   endif
 -%}

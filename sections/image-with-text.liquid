@@ -54,8 +54,24 @@
             class: 'image-with-text__image'
           -%}
         {%- else -%}
-          <span class="image-with-text__illustration">
-            {%- render 'icon', name: 'shirt', size: 120, class: 'image-with-text__icon' -%}
+          {%- comment -%} No image yet: a drawn kids kit next to the height scale of the kids sizes (116–164 cm). {%- endcomment -%}
+          <span class="image-with-text__illustration" aria-hidden="true">
+            <svg class="image-with-text__art" viewBox="0 0 400 300" focusable="false">
+              <g transform="translate(70 56) scale(1.05)">
+                <path class="image-with-text__art-ink" d="M78 30C86 42 114 42 122 30L160 42L186 74L166 90L154 78L152 176Q100 182 48 176L46 78L34 90L14 74L40 42Z"/>
+                <path class="image-with-text__art-accent" d="M166 90L186 74L182 69L162 85Z M34 90L14 74L18 69L38 85Z M48 172Q100 178 152 172L152 176Q100 182 48 176Z"/>
+                <path class="image-with-text__art-line" d="M78 30C86 42 114 42 122 30"/>
+              </g>
+              <g class="image-with-text__scale" transform="translate(330 70)">
+                <path d="M0 0V200"/>
+                <path d="M0 8H14M0 56H14M0 104H14M0 152H14M0 200H14"/>
+                <text x="-8" y="13">164</text>
+                <text x="-8" y="61">152</text>
+                <text x="-8" y="109">140</text>
+                <text x="-8" y="157">128</text>
+                <text x="-8" y="205">116</text>
+              </g>
+            </svg>
           </span>
         {%- endif -%}
         {%- if section.settings.show_badge -%}
@@ -107,10 +123,40 @@
     color: color-mix(in srgb, var(--color-badge-dark) 32%, transparent);
   }
 
-  .image-with-text__icon {
-    inline-size: auto;
-    block-size: 58%;
-    stroke-width: 1.1;
+  .image-with-text__art {
+    inline-size: 82%;
+    max-block-size: 82%;
+    direction: ltr; /* keeps the scale labels anchored left of the ruler on RTL pages */
+  }
+
+  .image-with-text__art-ink {
+    fill: #0d0e11;
+  }
+
+  .image-with-text__art-accent {
+    fill: var(--color-accent);
+  }
+
+  .image-with-text__art-line {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 5;
+    stroke-linecap: round;
+  }
+
+  .image-with-text__scale {
+    stroke: #0d0e11;
+    stroke-width: 2;
+
+    & text {
+      stroke: none;
+      fill: #0d0e11;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 700;
+      text-anchor: end;
+      font-variant-numeric: tabular-nums;
+    }
   }
 
   .image-with-text__badge {

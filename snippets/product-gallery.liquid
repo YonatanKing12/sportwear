@@ -44,7 +44,7 @@
     assign media_ratio = '1 / 1'
   endif
 
-  assign badge_label = badge_text
+  assign badge_label = badge_text | escape
   if badge_label == blank
     assign badge_label = 'general.trust.original' | t
   endif
@@ -124,7 +124,7 @@
     {%- if show_badge -%}
       <p class="product-gallery__badge">
         {%- render 'icon', name: 'shield-check', size: 16 -%}
-        <span>{{ badge_label | escape }}</span>
+        <span>{{ badge_label }}</span>
       </p>
     {%- endif -%}
 
@@ -164,7 +164,7 @@
         aria-live="polite"
         aria-atomic="true"
         data-gallery-status
-        data-template="{{ status_template | escape }}"
+        data-template="{{ status_template }}"
       ></p>
     {%- endif -%}
   </div>

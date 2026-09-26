@@ -4,7 +4,7 @@
   otherwise every collection: A to Z across pages, or another order for up to 50 collections.
 {%- endcomment -%}
 {%- liquid
-  assign heading = section.settings.heading
+  assign heading = section.settings.heading | escape
   if heading == blank
     assign heading = 'collections.list_title' | t
   endif
@@ -49,7 +49,7 @@
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
-    <h1 class="list-collections__title display-l">{{ heading | escape }}</h1>
+    <h1 class="list-collections__title display-l">{{ heading }}</h1>
 
     {%- paginate collections by section.settings.per_page -%}
       {%- liquid

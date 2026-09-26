@@ -18,14 +18,17 @@
 {%- liquid
   assign items = complements | where: 'available'
 
-  assign heading = block.settings.heading
+  assign heading = block.settings.heading | escape
   if heading == blank
     assign heading = 'products.complete_set.heading' | t
   endif
 
   assign threshold_cents = 0
-  if block.settings.show_free_shipping_note and settings.free_shipping_threshold != blank
-    assign threshold_cents = settings.free_shipping_threshold | times: 100
+  if block.settings.show_free_shipping_note
+    capture threshold_cents
+      render 'free-shipping-cents'
+    endcapture
+    assign threshold_cents = threshold_cents | plus: 0
   endif
 
   assign main_price = product.price
@@ -36,7 +39,7 @@
 -%}
 {%- if items.size > 0 -%}
   <div class="product-set color-{{ block.settings.color_scheme.id }}">
-    <h2 id="{{ heading_id }}" class="product-set__heading display-s">{{ heading | escape }}</h2>
+    <h2 id="{{ heading_id }}" class="product-set__heading display-s">{{ heading }}</h2>
     <ul class="product-set__list" role="list" aria-labelledby="{{ heading_id }}">
       {%- for item in items limit: block.settings.products_to_show -%}
         {%- liquid

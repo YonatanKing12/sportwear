@@ -55,7 +55,7 @@
 -%}
 {%- if has_rows -%}
   {%- liquid
-    assign caption = chart.name.value
+    assign caption = chart.name.value | escape
     if caption == blank
       assign caption = 'products.size_chart.caption' | t: title: product.title
     endif
@@ -65,7 +65,7 @@
     <div class="size-chart__scroll table-scroll" role="region" aria-labelledby="{{ caption_id }}" tabindex="0">
       <table class="size-chart__table">
         <caption id="{{ caption_id }}" class="size-chart__caption">
-          {{ caption | escape }}
+          {{ caption }}
         </caption>
         <thead>
           <tr>

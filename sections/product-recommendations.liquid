@@ -9,7 +9,7 @@
   assign columns_tablet = columns | at_most: 3
   assign limit = section.settings.products_to_show
 
-  assign heading = section.settings.heading
+  assign heading = section.settings.heading | escape
   if heading == blank
     if section.settings.intent == 'complementary'
       assign heading = 'products.recommendations.heading_complementary' | t
@@ -37,7 +37,7 @@
     {%- if recommendations.performed? -%}
       {%- if recommendations.products_count > 0 -%}
         <div class="section-header">
-          <h2 class="product-recommendations__heading display-m">{{ heading | escape }}</h2>
+          <h2 class="product-recommendations__heading display-m">{{ heading }}</h2>
         </div>
         <ul
           class="grid product-recommendations__grid"

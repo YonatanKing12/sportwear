@@ -172,7 +172,7 @@
         },
         "free_shipping_threshold": {
           "label": "Free shipping from (₪)",
-          "info": "Shows the free shipping progress bar in the cart. Must match the shipping rate in Settings > Shipping. Leave empty to hide the bar."
+          "info": "Free-shipping messages use this amount: the cart bar, announcement bar, product page, empty cart and the set and upsell notes. They show to visitors in Israel only. Must match the free rate in Settings > Shipping. Leave empty to hide them all."
         },
         "cart_show_upsell": {
           "label": "Suggest set items in the cart"

@@ -40,7 +40,7 @@
         },
         "image_1": {
           "label": "Product image 1",
-          "info": "A product photo with a transparent background (PNG), about 1000 × 1000 px. Without images, the circle and the outlined text are shown on their own."
+          "info": "A product photo with a transparent background (PNG), about 1000 × 1000 px. Until you add one, two drawn kits are shown on the circle."
         },
         "image_2": {
           "label": "Product image 2"
@@ -126,7 +126,7 @@
     "featured_collection": {
       "name": "Featured collection",
       "presets": {
-        "name": "Best sellers"
+        "name": "Featured collection"
       },
       "settings": {
         "heading": {

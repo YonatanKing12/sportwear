@@ -35,9 +35,13 @@
   endunless
 
   assign free_amount = ''
-  if settings.free_shipping_threshold != blank and settings.free_shipping_threshold > 0 and localization.country.iso_code == 'IL'
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
+  if threshold_cents > 0
     # The amount is wrapped in invisible Unicode isolates (U+2068/U+2069) so it keeps its direction in RTL sentences.
-    assign free_amount = settings.free_shipping_threshold | times: 100 | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+    assign free_amount = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
   endif
 -%}
 <div
@@ -100,6 +104,10 @@
                     {{- league_name | escape -}}
                   </span>
                 </p>
+              {%- elsif request.design_mode -%}
+                <p class="product-info__block product-editor-note" {{ block.shopify_attributes }}>
+                  {{ 'products.editor.eyebrow' | t }}
+                </p>
               {%- endif -%}
 
             {%- when 'title' -%}
@@ -118,7 +126,7 @@
                   {%- else -%}
                     {%- render 'price', product: product, class: 'product-price__amount' -%}
                   {%- endif -%}
-                  {%- if block.settings.show_tax_note -%}
+                  {%- if block.settings.show_tax_note and cart.taxes_included -%}
                     <span class="product-price__note">{{ 'products.price.tax_included' | t }}</span>
                   {%- endif -%}
                 </div>
@@ -160,6 +168,10 @@
                     </li>
                   </ul>
                 </nav>
+              {%- elsif request.design_mode -%}
+                <p class="product-info__block product-editor-note" {{ block.shopify_attributes }}>
+                  {{ 'products.editor.audience_toggle' | t }}
+                </p>
               {%- endif -%}
 
             {%- when 'variant_picker' -%}
@@ -208,7 +220,7 @@
 
             {%- when 'shipping_note' -%}
               {%- liquid
-                assign delivery_text = block.settings.text
+                assign delivery_text = block.settings.text | escape
                 if delivery_text == blank
                   assign delivery_text = 'products.shipping_note.delivery' | t
                 endif
@@ -223,26 +235,26 @@
               >
                 {%- render 'icon', name: 'truck', size: 18 -%}
                 <span>
-                  {{- delivery_text | escape -}}
+                  {{- delivery_text -}}
                   {%- if free_text != blank %} · {{ free_text }}{% endif -%}
                 </span>
               </p>
 
             {%- when 'trust' -%}
               {%- liquid
-                assign trust_original = block.settings.text_original
+                assign trust_original = block.settings.text_original | escape
                 if trust_original == blank
                   assign trust_original = 'general.trust.original' | t
                 endif
-                assign trust_shipping = block.settings.text_shipping
+                assign trust_shipping = block.settings.text_shipping | escape
                 if trust_shipping == blank
                   assign trust_shipping = 'general.trust.shipping' | t
                 endif
-                assign trust_returns = block.settings.text_returns
+                assign trust_returns = block.settings.text_returns | escape
                 if trust_returns == blank
                   assign trust_returns = 'general.trust.returns' | t
                 endif
-                assign trust_payment = block.settings.text_payment
+                assign trust_payment = block.settings.text_payment | escape
                 if trust_payment == blank
                   assign trust_payment = 'general.trust.secure_payment' | t
                 endif
@@ -254,19 +266,19 @@
               >
                 <li class="product-trust__item">
                   {%- render 'icon', name: 'shield-check', size: 20 -%}
-                  <span>{{ trust_original | escape }}</span>
+                  <span>{{ trust_original }}</span>
                 </li>
                 <li class="product-trust__item">
                   {%- render 'icon', name: 'truck', size: 20 -%}
-                  <span>{{ trust_shipping | escape }}</span>
+                  <span>{{ trust_shipping }}</span>
                 </li>
                 <li class="product-trust__item">
                   {%- render 'icon', name: 'return', size: 20 -%}
-                  <span>{{ trust_returns | escape }}</span>
+                  <span>{{ trust_returns }}</span>
                 </li>
                 <li class="product-trust__item">
                   {%- render 'icon', name: 'lock', size: 20 -%}
-                  <span>{{ trust_payment | escape }}</span>
+                  <span>{{ trust_payment }}</span>
                 </li>
               </ul>
 
@@ -284,6 +296,10 @@
                     -%}
                   </div>
                 {%- endif -%}
+              {%- elsif request.design_mode -%}
+                <p class="product-info__block product-editor-note" {{ block.shopify_attributes }}>
+                  {{ 'products.editor.complete_set' | t }}
+                </p>
               {%- endif -%}
 
             {%- when 'description' -%}
@@ -303,6 +319,10 @@
                   content: accordion_content,
                   open: block.settings.open
                 -%}
+              {%- elsif request.design_mode -%}
+                <p class="product-info__block product-editor-note" {{ block.shopify_attributes }}>
+                  {{ 'products.editor.description' | t }}
+                </p>
               {%- endif -%}
 
             {%- when 'collapsible' -%}
@@ -328,7 +348,10 @@
                       {{- 'products.shipping_returns.delivery' | t -}}
                       {%- if free_amount != blank %} {{ 'products.shipping_returns.free_shipping' | t: amount: free_amount }}{% endif -%}
                     </p>
-                    <p>{{ 'products.shipping_returns.returns' | t }}</p>
+                    <p>
+                      {{- 'products.shipping_returns.returns' | t -}}
+                      {%- if shop.refund_policy != blank %} {{ 'products.shipping_returns.returns_policy' | t }}{% endif -%}
+                    </p>
                     {%- if shop.shipping_policy != blank or shop.refund_policy != blank -%}
                       <p>
                         {{- 'products.shipping_returns.details' | t }}
@@ -406,6 +429,14 @@
 <script type="module" src="{{ 'product-gallery.js' | asset_url }}"></script>
 
 {% stylesheet %}
+  .product-editor-note {
+    padding: var(--space-2) var(--space-3);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-card);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
   /* Layout: mobile single column with a full-bleed gallery; desktop media (58%) at the start side and
      the product info at the end side, sticky under the header. */
   .main-product__layout {

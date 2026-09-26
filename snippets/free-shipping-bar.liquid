@@ -12,10 +12,12 @@
   {% render 'free-shipping-bar', cart: cart %}
 {%- enddoc -%}
 {%- liquid
-  assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
   assign show_bar = false
-  # Israel only: the international shipping zone has no free-shipping rate.
-  if threshold_cents > 0 and cart.item_count > 0 and cart.currency.iso_code == shop.currency and localization.country.iso_code == 'IL'
+  if threshold_cents > 0 and cart.item_count > 0
     assign show_bar = true
     assign remaining = threshold_cents | minus: cart.total_price
     if remaining > 0
