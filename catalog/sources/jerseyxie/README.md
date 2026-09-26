@@ -6,7 +6,7 @@ so the owner can decide what to import next. Nothing here writes to Shopify.
 | File | What it is |
 | --- | --- |
 | `albums.json` | The supplier's full inventory, normalized: one line per product album |
-| `wave1.json` | The first import wave recommended to the owner (2026-09-26): 178 current-season home/away/third kits of the Israeli teams, 17 top clubs and 12 national teams, one supplier album per product. The owner ticks what goes in on the review page (https://claude.ai/code/artifact/3e9da8d7-5548-4440-b5b0-5f02ea7d03f1); the selection is stored in that page's database (`review/wave1`) |
+| `wave1.json` | The first import wave recommended to the owner (2026-09-26): current-season home/away/third kits of the Israeli teams, 17 top clubs and 12 national teams, one row per product (161 after merging the supplier's duplicate kids albums: 69 adult, 60 kids, 32 women). Review page: https://claude.ai/code/artifact/3e9da8d7-5548-4440-b5b0-5f02ea7d03f1. The owner approved the adult and kids rows on 2026-09-26 (see Importing a wave) |
 | `gap-report.json` | Per album: `have`, `close_variant`, `missing`, `unparsed` or `out_of_scope`, with our matching product handle. The summary at the top groups the missing items |
 | `scripts/catalog/yupoo-crawl.mjs` | Crawls the category tree and album listings into a cache (no photos) |
 | `scripts/catalog/yupoo-normalize.mjs` | Title parser (Node, no dependencies). Writes `albums.json`, prints the titles it cannot parse. Reusable for the import (`normalizeTitle`, `normalizeAlbum`, `parseSeason`, `expand`) |
@@ -163,3 +163,39 @@ From 70 sampled album pages and the listings:
   unknown or obfuscated ones (Aravis, Bula, Hatz, Corvado, Dinamo, Glasgow…) and titles without a team
   are `unparsed`.
 - The crawl is a snapshot: the supplier adds albums daily ("Daily new arrivals").
+
+## Importing a wave
+
+The owner approved wave 1 on 2026-09-26: the adult and kids rows of `wave1.json` (129 products, women
+left out). Adults get one short-sleeve fan jersey in S–XL at ₪120; kids get the set, jersey and shorts,
+in the supplier's sizes 16–28 at ₪99 (`catalog/pricing.json`), each with the supplier's size chart
+(`catalog/size-charts/jerseyxie.json`, metaobjects in `catalog/store-setup.json`). 5 units per size.
+
+1. **Photos.** `python3 scripts/catalog/jerseyxie-photos.py fetch <ids.json> <work>` downloads every
+   album of each row, and `sheet` draws one labeled contact sheet per row. Pick the album and the front
+   and back photos by looking at the sheet, never by the title: the titles are often wrong (below).
+   Write `<work>/picks.json`: `[{"id", "album", "front": "<album>/<NN.ext>", "back": … | null}]`.
+2. **Studio photos.** `refs`, then `scripts/images/studio.py <work>/studio-products.json <work>/studio`
+   (key from `OPENAI_API_KEY`), `scripts/images/normalize.py <work>/studio/raw <work>/studio/norm`, then
+   `qa` draws supplier | studio pairs. Re-render a photo that lost a detail with `note_front` /
+   `note_back` in the pick, or drop it (design/imagery/README.md).
+3. **Product files.** `jerseyxie-photos.py build` writes `<work>/picks-build.json`, then
+   `python3 scripts/catalog/jerseyxie-build.py <work>/picks-build.json` writes `catalog/ready/<handle>.json`:
+   titles, factual descriptions and SEO in he/en/ar, variants and SKUs, tags (through `classify.mjs`),
+   the size chart. Link adult/kids pairs with `relations.counterpart_handle`, then
+   `node scripts/catalog/validate.mjs catalog/ready/*.json`.
+4. **Images to Shopify.** `stagedUploadsCreate` (IMAGE, image/png, PUT) for every PNG, PUT the files,
+   and put each `resourceUrl` in the file's `images[].url` (keep `studio_file`).
+5. **Drafts.** The `product-publisher` agent creates the products as DRAFT, sets the metafields and
+   counterparts, and moves the files to `catalog/published/`; then `catalog-translator` registers the
+   en/ar translations from the files.
+
+Handles: `{team}-{kit}-jersey-{season}` and `{team}-{kit}-kit-{season}-kids`, season `2026-27` for clubs
+and `2026` for national teams.
+
+Supplier traps seen in wave 1 (check every product's photos):
+
+- Albums titled "Inter Milan" that show Inter Miami kits; "Paris" albums with Paris FC instead of PSG.
+- Baby onesies in adult albums (Barcelona, Spain), kids sets in adult albums (Manchester United).
+- Long-sleeve versions under short-sleeve titles (Argentina kids), and angled or partial photos.
+- The same kids product posted several times (merged in `wave1.json`).
