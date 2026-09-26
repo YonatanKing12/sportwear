@@ -1,0 +1,138 @@
+{
+  "handle": "italy-home-jersey-2026",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "italy",
+    "code": "ITA",
+    "he": "נבחרת איטליה",
+    "en": "Italy",
+    "ar": "منتخب إيطاليا"
+  },
+  "leagues": ["national-teams"],
+  "kit": "home",
+  "season": "2026",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית נבחרת איטליה 2026",
+  "description_html_he": "<p>חולצת הבית של נבחרת איטליה ל-2026, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית נבחרת איטליה 2026 | SportWear",
+    "description_he": "חולצת הבית של נבחרת איטליה ל-2026 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-ITA-H-2026-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-ITA-H-2026-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-ITA-H-2026-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-ITA-H-2026-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/italy-home-jersey-2026.png?v=1790455142",
+      "alt_he": "חולצת בית נבחרת איטליה 2026 – חזית",
+      "view": "front",
+      "studio_file": "italy-home-jersey-2026.png"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/italy-home-jersey-2026__back.png?v=1790455142",
+      "alt_he": "חולצת בית נבחרת איטליה 2026 – גב",
+      "view": "back",
+      "studio_file": "italy-home-jersey-2026__back.png"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Italy Home Jersey 2026",
+      "description_html": "<p>The Italy home jersey for 2026, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Italy Home Jersey 2026 | SportWear",
+      "seo_description": "The Italy home jersey for 2026, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص منتخب إيطاليا الأساسي 2026",
+      "description_html": "<p>القميص الأساسي لمنتخب إيطاليا لعام 2026، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص منتخب إيطاليا الأساسي 2026 | SportWear",
+      "seo_description": "القميص الأساسي لمنتخب إيطاليا لعام 2026، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/209904663?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "Mens Italy 2026 World Cup Home Jersey",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:italy",
+    "league:national-teams",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:209904663",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "italy",
+    "إيطاليا",
+    "national team",
+    "منتخب"
+  ],
+  "relations": {
+    "counterpart_handle": "italy-home-kit-2026-kids",
+    "complements_handles": []
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309488488752",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856321118512",
+      "M": "gid://shopify/ProductVariant/67856321151280",
+      "L": "gid://shopify/ProductVariant/67856321184048",
+      "XL": "gid://shopify/ProductVariant/67856321216816"
+    },
+    "created_at": "2026-09-26T20:39:00Z"
+  }
+}

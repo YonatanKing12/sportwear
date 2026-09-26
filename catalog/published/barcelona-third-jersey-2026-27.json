@@ -1,0 +1,142 @@
+{
+  "handle": "barcelona-third-jersey-2026-27",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "barcelona",
+    "code": "BAR",
+    "he": "ברצלונה",
+    "en": "FC Barcelona",
+    "ar": "برشلونة"
+  },
+  "leagues": ["la-liga"],
+  "kit": "third",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצה שלישית ברצלונה 26/27",
+  "description_html_he": "<p>החולצה השלישית של ברצלונה לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצה שלישית ברצלונה 26/27 | SportWear",
+    "description_he": "החולצה השלישית של ברצלונה לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-BAR-T-2627-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-BAR-T-2627-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-BAR-T-2627-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-BAR-T-2627-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/barcelona-third-jersey-2026-27.png?v=1790454863",
+      "alt_he": "חולצה שלישית ברצלונה 26/27 – חזית",
+      "view": "front",
+      "studio_file": "barcelona-third-jersey-2026-27.png"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/barcelona-third-jersey-2026-27__back.png?v=1790454863",
+      "alt_he": "חולצה שלישית ברצלונה 26/27 – גב",
+      "view": "back",
+      "studio_file": "barcelona-third-jersey-2026-27__back.png"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "FC Barcelona Third Jersey 26/27",
+      "description_html": "<p>The FC Barcelona third jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "FC Barcelona Third Jersey 26/27 | SportWear",
+      "seo_description": "The FC Barcelona third jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص برشلونة الثالث 26/27",
+      "description_html": "<p>القميص الثالث لنادي برشلونة لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص برشلونة الثالث 26/27 | SportWear",
+      "seo_description": "القميص الثالث لنادي برشلونة لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/251141687?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "26-27 Barc Third Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:barcelona",
+    "league:la-liga",
+    "kit:third",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:251141687",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "fc barcelona",
+    "barcelona",
+    "barca",
+    "برشلونة",
+    "البارسا",
+    "la liga",
+    "الدوري الإسباني"
+  ],
+  "relations": {
+    "counterpart_handle": "barcelona-third-kit-2026-27-kids",
+    "complements_handles": []
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309486489904",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856314007856",
+      "M": "gid://shopify/ProductVariant/67856314040624",
+      "L": "gid://shopify/ProductVariant/67856314073392",
+      "XL": "gid://shopify/ProductVariant/67856314106160"
+    },
+    "created_at": "2026-09-26T20:34:21Z"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "handle": "israel-away-jersey-2026",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "israel",
+    "code": "ISR",
+    "he": "נבחרת ישראל",
+    "en": "Israel",
+    "ar": "منتخب إسرائيل"
+  },
+  "leagues": ["national-teams"],
+  "kit": "away",
+  "season": "2026",
+  "vendor": "SportWear",
+  "title_he": "חולצת חוץ נבחרת ישראל 2026",
+  "description_html_he": "<p>חולצת החוץ של נבחרת ישראל ל-2026, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת חוץ נבחרת ישראל 2026 | SportWear",
+    "description_he": "חולצת החוץ של נבחרת ישראל ל-2026 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-ISR-A-2026-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-ISR-A-2026-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-ISR-A-2026-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-ISR-A-2026-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/israel-away-jersey-2026.png?v=1790455050",
+      "alt_he": "חולצת חוץ נבחרת ישראל 2026 – חזית",
+      "view": "front",
+      "studio_file": "israel-away-jersey-2026.png"
+    },
+    {
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/israel-away-jersey-2026__back.png?v=1790455050",
+      "alt_he": "חולצת חוץ נבחרת ישראל 2026 – גב",
+      "view": "back",
+      "studio_file": "israel-away-jersey-2026__back.png"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Israel Away Jersey 2026",
+      "description_html": "<p>The Israel away jersey for 2026, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Israel Away Jersey 2026 | SportWear",
+      "seo_description": "The Israel away jersey for 2026, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص منتخب إسرائيل الاحتياطي 2026",
+      "description_html": "<p>القميص الاحتياطي لمنتخب إسرائيل لعام 2026، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص منتخب إسرائيل الاحتياطي 2026 | SportWear",
+      "seo_description": "القميص الاحتياطي لمنتخب إسرائيل لعام 2026، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/217151031?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "2026 Israel Away Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:israel",
+    "league:national-teams",
+    "kit:away",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:217151031",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "israel",
+    "إسرائيل",
+    "national team",
+    "منتخب"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309487571248",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856318791984",
+      "M": "gid://shopify/ProductVariant/67856318824752",
+      "L": "gid://shopify/ProductVariant/67856318857520",
+      "XL": "gid://shopify/ProductVariant/67856318890288"
+    },
+    "created_at": "2026-09-26T20:37:27Z"
+  }
+}
