@@ -1,7 +1,8 @@
 {%- doc -%}
-  The store logo: the uploaded logo image (Theme settings > Brand) or, until one is uploaded,
-  the text wordmark with its highlighted end ("SPORT" + "WEAR" in the accent color).
-  Always LTR and isolated, so it reads the same in Hebrew and Arabic.
+  The store logo: the uploaded logo image (Theme settings > Brand) or, without one, the built-in
+  SW mark (snippets/logo-mark) and/or the text wordmark with its highlighted end ("SPORT" + "WEAR" in
+  the accent color), as chosen in the "Logo style" setting. Always LTR and isolated, so it reads the
+  same in Hebrew and Arabic.
 
   @param {boolean} [link] - Wrap in a link to the home page (default true)
   @param {string} [class] - Extra classes
@@ -13,6 +14,14 @@
     assign logo_link = false
   endif
   assign logo_loading = loading | default: 'eager'
+  assign logo_style = settings.logo_style | default: 'mark'
+  assign logo_classes = 'logo'
+  if settings.logo == blank and logo_style == 'mark'
+    assign logo_classes = 'logo logo--mark'
+  endif
+  if class != blank
+    assign logo_classes = logo_classes | append: ' ' | append: class
+  endif
 -%}
 {%- capture logo_inner -%}
   {%- if settings.logo != blank -%}
@@ -31,21 +40,28 @@
     }}
   {%- else -%}
     <span class="wordmark" aria-hidden="true">
-      {{- settings.wordmark_start -}}
-      <span class="wordmark__end">{{ settings.wordmark_end }}</span>
+      {%- unless logo_style == 'wordmark' -%}
+        {%- render 'logo-mark', class: 'wordmark__mark' -%}
+      {%- endunless -%}
+      {%- unless logo_style == 'mark' -%}
+        <span class="wordmark__text">
+          {{- settings.wordmark_start -}}
+          <span class="wordmark__end">{{ settings.wordmark_end }}</span>
+        </span>
+      {%- endunless -%}
     </span>
     <span class="visually-hidden">{{ shop.name }}</span>
   {%- endif -%}
 {%- endcapture -%}
 {%- if logo_link -%}
-  <a href="{{ routes.root_url }}" class="logo{% if class != blank %} {{ class }}{% endif %}">
+  <a href="{{ routes.root_url }}" class="{{ logo_classes }}">
     {{- logo_inner -}}
     {%- if request.page_type == 'index' -%}
       <span class="visually-hidden">, {{ 'general.home' | t }}</span>
     {%- endif -%}
   </a>
 {%- else -%}
-  <span class="logo{% if class != blank %} {{ class }}{% endif %}">{{ logo_inner }}</span>
+  <span class="{{ logo_classes }}">{{ logo_inner }}</span>
 {%- endif -%}
 
 {% stylesheet %}
@@ -55,6 +71,11 @@
     min-block-size: var(--touch-target);
     color: inherit;
     text-decoration: none;
+  }
+
+  /* The mark on its own is sized by the place it sits in (--logo-mark-size on the header, footer…). */
+  .logo--mark .wordmark__mark {
+    block-size: var(--logo-mark-size, 32px);
   }
 
   .logo__image {

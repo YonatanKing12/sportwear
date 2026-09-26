@@ -314,6 +314,9 @@ a {
 }
 
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
   font-family: 'SW Display', var(--font-display);
   font-size: 27px;
   line-height: 1;
@@ -323,6 +326,14 @@ a {
   white-space: nowrap;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* The SW mark is as tall as the line, about 1.4 times the cap height of the name next to it. */
+.wordmark__mark {
+  flex: none;
+  inline-size: auto;
+  block-size: 1em;
+  aspect-ratio: 144.92 / 120;
 }
 
 .wordmark__end {

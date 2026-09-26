@@ -1,11 +1,13 @@
 {%- comment -%}
   Site header (header group): the banner landmark with the logo, the main menu, search, account,
   language and cart.
-  - Mobile and tablet (< 990px): menu button, centered logo, search and cart. The menu button opens
-    the menu drawer (snippets/menu-drawer, id MenuDrawer) with drill-down category panels.
-  - Desktop (990px and up): logo, the main menu (snippets/header-menu) whose top-level links with
-    sub-links open full-width mega panels (snippets/header-mega-panel), then search (a search field
-    look-alike from 1200px, an icon below that), account, language and cart.
+  The logo sits in the center of the bar at every width.
+  - Below 1200px: menu button, centered logo, search and cart. The menu button opens the menu drawer
+    (snippets/menu-drawer, id MenuDrawer) with drill-down category panels.
+  - Desktop (1200px and up): the main menu (snippets/header-menu) at the start, whose top-level links
+    with sub-links open full-width mega panels (snippets/header-mega-panel); the logo in the center;
+    then a search field look-alike, account, language and cart at the end. The two sides share the
+    width equally, so the logo stays centered.
   The search sheet (snippets/header-search, id SearchModal) opens from either search control, and
   both are plain links to the search page without JavaScript.
   "Hide empty categories" leaves links to collections without products out of the menu, the mega
@@ -218,19 +220,15 @@
     margin-inline: auto;
     padding-inline: var(--space-2);
 
-    /* Logo and menu take their natural width; the actions (with the search field) take the rest. */
-    @media screen and (min-width: 990px) {
+    /* Menu and actions share the sides equally, so the logo sits in the exact center. */
+    @media screen and (min-width: 1200px) {
       --header-bar-height: 72px;
 
-      grid-template-areas: 'logo nav end';
-      grid-template-columns: auto auto minmax(0, 1fr);
-      column-gap: var(--space-6);
+      grid-template-areas: 'nav logo end';
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      column-gap: 28px;
       min-block-size: var(--header-bar-height);
       padding-inline: var(--gutter);
-    }
-
-    @media screen and (min-width: 1200px) {
-      column-gap: 28px;
     }
 
     @media screen and (min-width: 1400px) {
@@ -243,16 +241,22 @@
     grid-area: start;
     align-items: center;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 1200px) {
       display: none;
     }
   }
 
   .header__logo {
+    --logo-mark-size: 30px;
+
     display: flex;
     grid-area: logo;
     justify-content: center;
     min-inline-size: 0;
+
+    @media screen and (min-width: 1200px) {
+      --logo-mark-size: 36px;
+    }
   }
 
   /* The nav fills the height of the bar, so every top-level link is a full-height target. */
@@ -260,9 +264,10 @@
     display: none;
     grid-area: nav;
     align-self: stretch;
+    justify-self: start;
     min-inline-size: 0;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 1200px) {
       display: flex;
     }
   }
@@ -275,7 +280,7 @@
     justify-self: end;
     gap: 2px;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 1200px) {
       justify-self: stretch;
       min-inline-size: 0;
     }
@@ -284,7 +289,7 @@
   .header__desktop-actions {
     display: none;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 1200px) {
       display: flex;
       align-items: center;
       gap: 2px;

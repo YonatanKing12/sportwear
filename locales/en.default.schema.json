@@ -1086,7 +1086,16 @@
       "settings": {
         "logo": {
           "label": "Logo",
-          "info": "Until you upload a logo, the text logo below is shown."
+          "info": "Replaces the built-in SW mark and the text logo. Leave empty to use them."
+        },
+        "logo_style": {
+          "label": "Logo style",
+          "info": "Used when no logo image is uploaded.",
+          "options": {
+            "mark_and_wordmark": "SW mark and name",
+            "mark": "SW mark only",
+            "wordmark": "Name only"
+          }
         },
         "logo_width": {
           "label": "Logo width"

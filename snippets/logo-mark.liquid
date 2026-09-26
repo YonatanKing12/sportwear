@@ -1,0 +1,17 @@
+{%- doc -%}
+  The SW monogram: the store's logo mark as an inline SVG, filled with the current text color (white
+  on the dark header and footer, black on light surfaces). Traced from the owner's logo on a 30° grid;
+  source files in design/logo/. Decorative: the logo link carries the store name.
+
+  @param {string} [class] - Extra classes
+{%- enddoc -%}
+<svg
+  class="logo-mark{% if class != blank %} {{ class }}{% endif %}"
+  viewBox="0 0 144.92 120"
+  aria-hidden="true"
+  focusable="false"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path fill="currentColor" d="M0 0L69.28 40V60L17.32 30V40L69.28 70V120L0 80V60L51.96 90V80L0 50Z"/>
+  <path fill="currentColor" d="M144.92 0L127.6 10V70L118.94 75V15L101.62 25V85L92.96 90V30L75.64 40V120L144.92 80Z"/>
+</svg>

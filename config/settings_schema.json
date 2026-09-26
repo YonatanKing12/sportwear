@@ -17,6 +17,27 @@
         "info": "t:settings_schema.brand.settings.logo.info"
       },
       {
+        "type": "select",
+        "id": "logo_style",
+        "label": "t:settings_schema.brand.settings.logo_style.label",
+        "info": "t:settings_schema.brand.settings.logo_style.info",
+        "options": [
+          {
+            "value": "mark_and_wordmark",
+            "label": "t:settings_schema.brand.settings.logo_style.options.mark_and_wordmark"
+          },
+          {
+            "value": "mark",
+            "label": "t:settings_schema.brand.settings.logo_style.options.mark"
+          },
+          {
+            "value": "wordmark",
+            "label": "t:settings_schema.brand.settings.logo_style.options.wordmark"
+          }
+        ],
+        "default": "mark"
+      },
+      {
         "type": "range",
         "id": "logo_width",
         "min": 80,

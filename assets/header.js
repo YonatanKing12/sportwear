@@ -15,7 +15,7 @@ const OPEN_DELAY = 140;
 /** Grace period after the mouse leaves an item and its panel, so a slip does not close it (ms). */
 const CLOSE_DELAY = 260;
 /** The mega menu exists from this width (sections/header.liquid shows the menu button below it). */
-const desktopQuery = window.matchMedia('(min-width: 990px)');
+const desktopQuery = window.matchMedia('(min-width: 1200px)');
 /** Only a real mouse opens panels on hover; touch and pens open them with a tap. */
 const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
 
@@ -39,7 +39,7 @@ const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
  * - a click on an item that hover has just opened pins the panel open instead of closing it;
  * - one panel at a time (the details share name="HeaderMenu"), Escape closes and returns focus to
  *   the item, a click outside (on the dimmed page) closes, focus leaving the item closes;
- * - panels close when the header hides, when a drawer or the search opens, and below 990px.
+ * - panels close when the header hides, when a drawer or the search opens, and below 1200px.
  * Other dropdowns in the bar (the language switcher) share the outside click, focus and Escape
  * handling.
  * ------------------------------------------------------------------------------------------- */
