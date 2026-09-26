@@ -24,7 +24,9 @@ The theme is built for it. Product cards are square (`card_image_ratio: square`)
 2. `python3 scripts/images/normalize.py <out_dir>/raw <out_dir>/norm` sets the exact background and the
    framing. Product pixels are only scaled. It flags renders that touch the frame edge.
 3. **QA before upload.** Put each render next to its supplier photo and check the team, colors, number,
-   player name, sponsor, patches and tags. Re-render or drop anything that changed.
+   player name, sponsor, patches, tags, signatures and all-over prints. Re-render or drop anything that
+   changed. For a re-render, add a `"note"` to the product entry that names the lost detail; `studio.py`
+   appends it to the prompt.
 4. Upload: `stagedUploadsCreate` (resource `IMAGE`, PUT), then `fileCreate` (alt = the product title; a
    back view adds " (גב)"), then one `fileUpdate` that adds each new file to its product
    (`referencesToAdd`) and removes the supplier photo from it (`referencesToRemove`). The supplier

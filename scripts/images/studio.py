@@ -1,7 +1,8 @@
 """Studio packshots of store products with the OpenAI Images edit endpoint (reference = the supplier photo).
 Reads the key from the OPENAI_API_KEY environment variable (never printed or committed). See design/imagery/README.md.
 Usage: python3 scripts/images/studio.py <products.json> <out_dir> [size] [quality] [workers]
-products.json: [{"handle", "title", "type", "media": [{"url", ...}]}]; only media[0] is rendered.
+products.json: [{"handle", "title", "type", "media": [{"url", ...}], "note"?}]; only media[0] is rendered.
+An optional "note" is appended to the prompt (for a re-render: the detail the last render lost).
 Writes <out_dir>/ref/<handle>.jpg, <out_dir>/raw/<handle>.png and one JSON result line per product."""
 import base64, io, json, os, subprocess, sys, time, urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -63,6 +64,8 @@ def run(product):
     except Exception as e:  # noqa: BLE001
         return {'handle': name, 'error': f'ref: {e}'}
     prompt = PROMPT.format(kind=KIND.get(product.get('type'), 'garment'))
+    if product.get('note'):  # a re-render names the detail the last render lost
+        prompt += ' ' + product['note']
     cmd = ['curl', '-sS', '--max-time', '300', 'https://api.openai.com/v1/images/edits',
            '-H', f'Authorization: Bearer {key}',
            '-F', 'model=gpt-image-2',
