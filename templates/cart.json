@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "upsell_color_scheme": "scheme-accent",
+        "padding_top": 36,
+        "padding_bottom": 48
+      }
+    }
+  },
+  "order": ["main"]
+}

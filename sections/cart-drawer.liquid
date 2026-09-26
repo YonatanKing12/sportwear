@@ -1,12 +1,200 @@
 {%- comment -%}
-  STUB owned by the cart builder. Replaced by the real cart drawer (sw-drawer id="CartDrawer").
+  Cart drawer: static section rendered by layout/theme.liquid on every page.
+  <sw-drawer id="CartDrawer"> keeps its <dialog> in place; everything inside [data-cart-content] is
+  re-rendered by assets/cart.js through the Section Rendering API, so updates never close the
+  drawer. When Theme settings > Cart > Cart type is "Page", only an empty hidden container renders.
 {%- endcomment -%}
-<div data-cart-drawer-stub></div>
+{%- if settings.cart_type == 'page' -%}
+  <div class="cart-drawer-off" hidden></div>
+{%- else -%}
+  {%- liquid
+    assign shop_url = routes.all_products_collection_url
+    if section.settings.empty_collection != blank
+      assign shop_url = section.settings.empty_collection.url
+    endif
+    assign total_money = cart.total_price | money_without_trailing_zeros
+  -%}
+  <sw-drawer id="CartDrawer" class="cart-drawer">
+    <dialog
+      class="drawer cart-drawer__dialog color-{{ settings.drawer_color_scheme.id }}"
+      aria-labelledby="CartDrawerTitle"
+    >
+      <sw-cart
+        class="cart-drawer__cart"
+        data-section-id="{{ section.id }}"
+        data-removed-message="{{ 'cart.status.removed' | t: title: '[title]' }}"
+        data-max-quantity-message="{{ 'cart.errors.max_quantity' | t: quantity: '[quantity]' }}"
+      >
+        {%- comment -%}
+          The page's live region is inert while this modal dialog is open, so the drawer has its own.
+        {%- endcomment -%}
+        <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-cart-live></div>
+        <div class="cart-drawer__content" data-cart-content>
+          <div class="cart-drawer__header color-{{ section.settings.header_color_scheme.id }}">
+            <h2 class="cart-drawer__title display-s" id="CartDrawerTitle" tabindex="-1" data-cart-focus-fallback>
+              {{ 'cart.title' | t }}
+              {% if cart.item_count > 0 %}
+                <span class="cart-drawer__count" aria-hidden="true">({{ cart.item_count }})</span>
+                <span class="visually-hidden">{{ 'cart.item_count' | t: count: cart.item_count }}</span>
+              {% endif %}
+            </h2>
+            <button
+              type="button"
+              class="button button--icon cart-drawer__close"
+              data-drawer-close
+              data-cart-focus="close"
+            >
+              {%- render 'icon', name: 'close', size: 22 -%}
+              <span class="visually-hidden">{{ 'cart.close' | t }}</span>
+            </button>
+          </div>
+
+          {%- if cart.empty? -%}
+            <div class="cart-drawer__body cart-drawer__body--empty">
+              {%- render 'cart-empty', url: shop_url -%}
+            </div>
+          {%- else -%}
+            {%- render 'free-shipping-bar', cart: cart, class: 'cart-drawer__shipping' -%}
+            <div class="cart-drawer__body" data-cart-scroll>
+              <p class="cart-alert" data-cart-error hidden></p>
+              {%- render 'cart-items', cart: cart, id_prefix: 'CartDrawer', form_id: 'CartDrawerForm' -%}
+              {%- if settings.cart_show_upsell -%}
+                {%- render 'cart-upsell',
+                  cart: cart,
+                  id_prefix: 'CartDrawer',
+                  heading_tag: 'h3',
+                  color_scheme: section.settings.upsell_color_scheme.id
+                -%}
+              {%- endif -%}
+              {%- if settings.cart_show_note -%}
+                {%- render 'cart-note', cart: cart, id_prefix: 'CartDrawer', form_id: 'CartDrawerForm' -%}
+              {%- endif -%}
+            </div>
+            <form
+              class="cart-drawer__footer"
+              id="CartDrawerForm"
+              action="{{ routes.cart_url }}"
+              method="post"
+              novalidate
+            >
+              {%- render 'cart-summary', cart: cart, id_prefix: 'CartDrawer' -%}
+            </form>
+          {%- endif -%}
+
+          <p hidden data-cart-status>
+            {%- if cart.empty? -%}
+              {{- 'cart.status.empty' | t -}}
+            {%- else -%}
+              {{- 'cart.status.summary' | t: count: cart.item_count, total: total_money -}}
+            {%- endif -%}
+          </p>
+        </div>
+      </sw-cart>
+    </dialog>
+  </sw-drawer>
+  <script type="module" src="{{ 'cart.js' | asset_url }}"></script>
+{%- endif -%}
+
+{% stylesheet %}
+  .drawer.cart-drawer__dialog {
+    inline-size: min(440px, 100vw);
+  }
+
+  .cart-drawer__cart,
+  .cart-drawer__content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-block-size: 0;
+  }
+
+  /* Dark header strip (brand shell) above the light shopping surface, like the approved board. */
+  .cart-drawer__header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-block-size: 64px;
+    padding-inline: var(--space-5) var(--space-2);
+  }
+
+  .cart-drawer__title {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    line-height: 1;
+  }
+
+  .cart-drawer__count {
+    color: var(--color-muted);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .cart-drawer__close {
+    flex-shrink: 0;
+  }
+
+  .cart-drawer__shipping {
+    flex-shrink: 0;
+  }
+
+  .cart-drawer__body {
+    flex: 1 1 auto;
+    min-block-size: 0;
+    padding-inline: var(--space-5);
+    padding-block-end: var(--space-5);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .cart-drawer__body--empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .cart-drawer__footer {
+    flex-shrink: 0;
+    padding-inline: var(--space-5);
+    padding-block: var(--space-4) max(var(--space-5), env(safe-area-inset-bottom));
+    border-block-start: 1px solid var(--color-border);
+    background: var(--color-background);
+  }
+{% endstylesheet %}
 
 {% schema %}
 {
-  "name": "t:sections.cart_drawer_stub.name",
+  "name": "t:sections.cart_drawer.name",
   "tag": "div",
-  "settings": []
+  "class": "cart-drawer-section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.cart_drawer.settings.info.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "header_color_scheme",
+      "label": "t:sections.cart_drawer.settings.header_color_scheme.label",
+      "default": "scheme-night"
+    },
+    {
+      "type": "color_scheme",
+      "id": "upsell_color_scheme",
+      "label": "t:sections.cart_drawer.settings.upsell_color_scheme.label",
+      "default": "scheme-accent"
+    },
+    {
+      "type": "collection",
+      "id": "empty_collection",
+      "label": "t:sections.cart_drawer.settings.empty_collection.label",
+      "info": "t:sections.cart_drawer.settings.empty_collection.info"
+    }
+  ]
 }
 {% endschema %}

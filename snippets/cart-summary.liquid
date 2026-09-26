@@ -1,0 +1,173 @@
+{%- doc -%}
+  Cart totals and checkout, for the drawer footer and the cart page summary: cart-level discounts,
+  a "Shipping: Free" row once the free-shipping threshold is reached, the subtotal after discounts,
+  the taxes/shipping note, the checkout button (submits the enclosing cart form with
+  name="checkout"), payment icons and a secure-payment line. Render it inside the cart form
+  (action routes.cart_url, method post).
+
+  @param {object} cart - The cart object
+  @param {string} id_prefix - Unique prefix; keeps the payment icon title ids unique on the page
+  @param {boolean} [express] - Show the store's accelerated checkout buttons when it has any (default false)
+
+  @example
+  {% render 'cart-summary', cart: cart, id_prefix: 'CartDrawer' %}
+{%- enddoc -%}
+{%- liquid
+  assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
+  assign free_shipping = false
+  if threshold_cents > 0 and cart.total_price >= threshold_cents and cart.currency.iso_code == shop.currency
+    assign free_shipping = true
+  endif
+
+  # payment_type_svg_tag prints fixed title ids (pi-visa, ...). Prefix them so the drawer and the
+  # cart page can both show the icons without duplicate ids.
+  assign payment_id_attribute = '"' | append: id_prefix | append: '-pi-'
+-%}
+<div class="cart-summary">
+  <dl class="cart-summary__rows">
+    {%- for discount in cart.cart_level_discount_applications -%}
+      <div class="cart-summary__row">
+        <dt class="cart-summary__label cart-summary__label--discount">
+          {%- render 'icon', name: 'tag', size: 16 -%}
+          <span class="visually-hidden">{{ 'cart.item.discount' | t }}</span>
+          <span>{{ discount.title | escape }}</span>
+        </dt>
+        <dd class="cart-summary__value">
+          <bdi dir="ltr">−{{ discount.total_allocated_amount | money_without_trailing_zeros }}</bdi>
+        </dd>
+      </div>
+    {%- endfor -%}
+    {%- if free_shipping -%}
+      <div class="cart-summary__row">
+        <dt class="cart-summary__label">{{ 'cart.summary.shipping' | t }}</dt>
+        <dd class="cart-summary__value">
+          <span class="badge badge--highlight">{{ 'cart.summary.free' | t }}</span>
+        </dd>
+      </div>
+    {%- endif -%}
+    <div class="cart-summary__row cart-summary__row--total">
+      <dt class="cart-summary__label">{{ 'cart.summary.subtotal' | t }}</dt>
+      <dd class="cart-summary__value">{{ cart.total_price | money_without_trailing_zeros }}</dd>
+    </div>
+  </dl>
+
+  <p class="cart-summary__note">
+    {%- if cart.taxes_included -%}
+      {{- 'cart.summary.taxes_included' | t -}}
+    {%- else -%}
+      {{- 'cart.summary.taxes_at_checkout' | t -}}
+    {%- endif -%}
+    {%- unless free_shipping %} {{ 'cart.summary.shipping_at_checkout' | t }}{%- endunless -%}
+  </p>
+
+  <button
+    type="submit"
+    name="checkout"
+    class="button button--primary button--large button--full cart-summary__checkout"
+    data-cart-focus="checkout"
+  >
+    {%- render 'icon', name: 'lock', size: 18 -%}
+    {{ 'cart.checkout' | t }}
+  </button>
+
+  {%- if express and additional_checkout_buttons -%}
+    <div class="cart-summary__express" data-cart-keep="express">
+      {{- content_for_additional_checkout_buttons -}}
+    </div>
+  {%- endif -%}
+
+  {%- if shop.enabled_payment_types.size > 0 -%}
+    <ul class="cart-payment-icons" role="list" aria-label="{{ 'cart.payment_methods' | t }}">
+      {%- for type in shop.enabled_payment_types -%}
+        <li class="cart-payment-icons__item">
+          {{- type | payment_type_svg_tag: class: 'cart-payment-icons__icon' | replace: '"pi-', payment_id_attribute -}}
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
+  <p class="cart-summary__secure">
+    {%- render 'icon', name: 'shield-check', size: 16 -%}
+    {{ 'cart.secure_payment' | t }}
+  </p>
+</div>
+
+{% stylesheet %}
+  .cart-summary {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .cart-summary__rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .cart-summary__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    color: color-mix(in srgb, var(--color-text) 82%, var(--color-background));
+    font-size: var(--text-md);
+  }
+
+  .cart-summary__row--total {
+    color: var(--color-text);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+
+  .cart-summary__label--discount {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .cart-summary__value {
+    margin: 0;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .cart-summary__note {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    line-height: 1.45;
+  }
+
+  .cart-summary__checkout {
+    margin-block-start: var(--space-2);
+  }
+
+  .cart-summary__express:empty {
+    display: none;
+  }
+
+  .cart-payment-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-block-start: var(--space-1);
+  }
+
+  .cart-payment-icons__icon {
+    inline-size: 38px;
+    block-size: 24px;
+  }
+
+  .cart-summary__secure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+{% endstylesheet %}

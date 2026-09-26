@@ -1,4 +1,49 @@
 {
+  "sections": {
+    "cart_drawer": {
+      "name": "Cart drawer",
+      "settings": {
+        "info": {
+          "content": "Opens when a product is added to the cart. Free shipping, set suggestions, order notes and the cart type (drawer or page) are in Theme settings > Cart. The drawer body uses the \"Drawers and pop-ups\" color scheme."
+        },
+        "header_color_scheme": {
+          "label": "Header color scheme"
+        },
+        "upsell_color_scheme": {
+          "label": "\"Complete the set\" color scheme"
+        },
+        "empty_collection": {
+          "label": "Empty cart button link",
+          "info": "Pick a collection. Leave empty to link to all products."
+        }
+      }
+    },
+    "main_cart": {
+      "name": "Cart page",
+      "settings": {
+        "info": {
+          "content": "Free shipping, set suggestions and order notes are in Theme settings > Cart."
+        },
+        "upsell_color_scheme": {
+          "label": "\"Complete the set\" color scheme"
+        },
+        "empty_collection": {
+          "label": "Empty cart and \"Continue shopping\" link",
+          "info": "Pick a collection. Leave empty to link to all products."
+        }
+      }
+    },
+    "groups": {
+      "header": "Header",
+      "footer": "Footer"
+    },
+    "cart_bubble": {
+      "name": "Cart count"
+    },
+    "cart_drawer_stub": {
+      "name": "Cart drawer"
+    }
+  },
   "settings_schema": {
     "brand": {
       "name": "Brand",
@@ -233,18 +278,6 @@
           "label": "Show suggestions while typing"
         }
       }
-    }
-  },
-  "sections": {
-    "groups": {
-      "header": "Header",
-      "footer": "Footer"
-    },
-    "cart_bubble": {
-      "name": "Cart count"
-    },
-    "cart_drawer_stub": {
-      "name": "Cart drawer"
     }
   },
   "settings": {

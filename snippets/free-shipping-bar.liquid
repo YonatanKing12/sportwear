@@ -1,0 +1,103 @@
+{%- doc -%}
+  Free-shipping progress for the cart drawer and the cart page: how much is left before the order
+  ships free, or a confirmation once it does. Compares the cart total after discounts with the
+  free_shipping_threshold theme setting (₪). Renders nothing when the setting is empty, when the
+  cart is empty, or when the customer shops in another currency (the threshold is in the store
+  currency). The bar is decorative (aria-hidden): the text carries the information.
+
+  @param {object} cart - The cart object
+  @param {string} [class] - Extra classes on the wrapper
+
+  @example
+  {% render 'free-shipping-bar', cart: cart %}
+{%- enddoc -%}
+{%- liquid
+  assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
+  assign show_bar = false
+  if threshold_cents > 0 and cart.item_count > 0 and cart.currency.iso_code == shop.currency
+    assign show_bar = true
+    assign remaining = threshold_cents | minus: cart.total_price
+    if remaining > 0
+      assign progress = cart.total_price | times: 100 | divided_by: threshold_cents
+    else
+      assign progress = 100
+    endif
+  endif
+-%}
+{%- if show_bar -%}
+  <div class="free-shipping{% if remaining <= 0 %} free-shipping--unlocked{% endif %}{% if class != blank %} {{ class }}{% endif %}">
+    <p class="free-shipping__message" data-free-shipping-message>
+      {%- if remaining > 0 -%}
+        {%- assign remaining_money = remaining | money_without_trailing_zeros -%}
+        {%- assign remaining_html = '<bdi>' | append: remaining_money | append: '</bdi>' -%}
+        {{- 'cart.free_shipping.remaining_html' | t: amount: remaining_html -}}
+      {%- else -%}
+        <span class="free-shipping__check">{% render 'icon', name: 'check', size: 14 %}</span>
+        {{- 'cart.free_shipping.unlocked' | t -}}
+      {%- endif -%}
+    </p>
+    <div class="free-shipping__track" aria-hidden="true">
+      <span class="free-shipping__fill" style="--free-shipping-progress: {{ progress }}%;"></span>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .free-shipping {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: var(--space-4) var(--space-5);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+
+  .free-shipping__message {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-1) var(--space-2);
+    font-size: var(--text-md);
+    font-weight: 600;
+    line-height: 1.4;
+
+    & strong {
+      font-weight: 800;
+    }
+  }
+
+  .free-shipping--unlocked .free-shipping__message {
+    font-weight: 800;
+  }
+
+  .free-shipping__check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    inline-size: 22px;
+    block-size: 22px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  /* Dark track (lighter on dark schemes), accent fill growing from the inline start (right in RTL). */
+  .free-shipping__track {
+    block-size: 10px;
+    padding: 2px;
+    border-radius: 5px;
+    background: var(--color-on-accent);
+    background: light-dark(var(--color-on-accent), var(--color-border));
+    overflow: hidden;
+  }
+
+  .free-shipping__fill {
+    display: block;
+    inline-size: var(--free-shipping-progress, 0%);
+    min-inline-size: 6px;
+    block-size: 100%;
+    border-radius: 3px;
+    background: var(--color-accent);
+  }
+{% endstylesheet %}
