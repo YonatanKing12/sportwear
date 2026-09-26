@@ -1,0 +1,72 @@
+[
+  {
+    "file": "sw-hero-fans.jpg",
+    "size": "3840x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Ultra-wide cinematic night scene in the stands of a floodlit football stadium: a group of about eight young fictional fans, men and women in their twenties, celebrate a goal together, arms raised, shouting and laughing, some hugging. They wear plain football jerseys with no crests, no numbers and no sponsor text: several black with thin lime trim, some white with black trim, one red, one royal blue. The group fills the left 45 percent of the frame; the right side is the floodlit pitch far below and dark hazy stands falling off into deep darkness, leaving clean negative space for a headline. Confetti-like dust in the floodlight beams with a lime tint. Keep the faces inside the middle horizontal band of the frame."
+  },
+  {
+    "file": "sw-hero-fans-mobile.jpg",
+    "size": "1216x1520",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical cinematic night scene in the stands of a floodlit football stadium: a group of about six young fictional fans, men and women in their twenties, celebrate a goal together, arms raised, shouting and laughing, some hugging. They wear plain football jerseys with no crests, no numbers and no sponsor text: black with thin lime trim, white with black trim, one red, one royal blue. The group fills the upper half of the frame, with confetti-like dust in lime-tinted floodlight beams above them; the lower half is darker stands falling off into near black, leaving space for text."
+  },
+  {
+    "file": "sw-cat-football.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of a floodlit football pitch at night, low angle from the grass: a player in a plain black jersey with thin lime trim, seen from behind and slightly to the side with the face not visible, sprints with the ball at their feet; the ball is a plain white match ball, small in the frame and motion-blurred. Floodlights flare behind through haze, the stands are dark and anonymous. Keep the lower third of the frame darker for a caption."
+  },
+  {
+    "file": "sw-cat-basketball.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of friends playing streetball at night on an outdoor court under a single lime-tinted floodlight: one fictional young man in a plain black sleeveless basketball jersey with lime trim and matching black shorts rises for a layup towards the hoop, two friends in plain white and plain red basketball jerseys with matching shorts watch and react. Chain-link fence and city lights in bokeh. Energetic, authentic street-sport atmosphere. Keep the lower third of the frame darker for a caption."
+  },
+  {
+    "file": "sw-cat-kids.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of two children around ten years old seen from behind, faces not visible, running happily across a floodlit community football pitch at dusk. One wears a plain black football jersey with lime trim, the other a plain white jersey with black trim, both with shorts and football boots. Joyful energy, slight motion blur, warm dusk sky fading into lime-tinted floodlight. Keep the lower third of the frame darker for a caption."
+  },
+  {
+    "file": "sw-cat-teams.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of a fictional amateur football team celebrating together on a floodlit community pitch at night: about ten players of mixed ages in matching plain black jerseys with thin lime trim and black shorts, arms around each other, some shouting with joy, one holding a plain white football. Genuine grassroots team spirit, not professional. Floodlight haze with a lime tint behind them. Keep the lower third of the frame darker for a caption."
+  },
+  {
+    "file": "sw-life-stands.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot in the stands at a night football match: three fictional friends in their twenties, two young men and a young woman, jump and cheer with arms around each other, wearing plain football jerseys, one black with lime trim, one white with black trim, one royal blue, and plain knitted scarves with no text. Floodlights and a blurred crowd behind them, lime-tinted haze, real emotion and joy."
+  },
+  {
+    "file": "sw-life-streetball.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of four fictional friends in their late teens resting on the bench of an outdoor basketball court at night after a game, laughing together, one spinning a basketball on a finger. They wear plain sleeveless basketball jerseys and matching shorts, black with lime trim, white with black trim and red with white trim. A lime-tinted floodlight, chain-link fence and city lights in bokeh. Relaxed, authentic urban sport culture."
+  },
+  {
+    "file": "sw-life-family.jpg",
+    "size": "1024x1280",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical shot of a fictional father and his son of about eight walking hand in hand along the concourse towards the stadium entrance before an evening match, seen from behind and slightly to the side, both wearing matching plain black football jerseys with thin lime trim. Warm stadium lights ahead, other fans in plain jerseys around them out of focus, a sense of excitement and togetherness."
+  },
+  {
+    "file": "sw-life-tunnel.jpg",
+    "size": "1216x1520",
+    "model": "gpt-image-2",
+    "quality": "high",
+    "prompt": "Vertical cinematic night scene: a footballer seen from behind, face not visible, standing at the mouth of a dark stadium tunnel and looking out at a brilliantly floodlit pitch with blurred crowds in the stands. The player wears a plain black football jersey with thin lime trim on the collar and sleeves, with no number, no name and no crest. The player and the bright tunnel opening fill the upper half of the frame; the lower half is the dark, slightly wet concrete tunnel floor fading to near black, leaving space for text. Floodlight haze spills into the tunnel with a lime tint."
+  }
+]

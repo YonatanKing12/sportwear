@@ -104,7 +104,7 @@
 >
   <div class="page-width">
     <div
-      class="hero__banner color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% endif %}"
+      class="hero__banner color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% if section.settings.mirror_ltr %} hero--mirror-ltr{% endif %}{% endif %}"
       {% if layout == 'image' %}
         style="--hero-overlay: {{ section.settings.overlay_opacity }}%;"
       {% endif %}
@@ -544,6 +544,15 @@
     color: var(--color-text);
   }
 
+  /* Photos are composed for right-to-left pages (subject on the left, text on the right). In
+     left-to-right languages the text moves to the left, so the photo is mirrored to keep the subject
+     clear of it. Only for photos without text or logos (a merchant setting). */
+  @media screen and (min-width: 750px) {
+    [dir='ltr'] .hero--mirror-ltr .hero__media-image {
+      transform: scaleX(-1);
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .hero__banner {
       min-block-size: 300px;
@@ -821,6 +830,14 @@
       "step": 5,
       "unit": "%",
       "default": 70,
+      "visible_if": "{{ section.settings.layout == 'image' }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "mirror_ltr",
+      "label": "t:sections.hero.settings.mirror_ltr.label",
+      "info": "t:sections.hero.settings.mirror_ltr.info",
+      "default": false,
       "visible_if": "{{ section.settings.layout == 'image' }}"
     },
     {

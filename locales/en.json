@@ -576,6 +576,16 @@
       "heading": "By fans, for fans",
       "text": "Jerseys from the teams you love, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
       "button_label": "Shop all"
+    },
+    "category_tiles": {
+      "heading": "Shop by category",
+      "placeholder_title": "Category"
+    },
+    "lifestyle": {
+      "eyebrow": "Game-day energy",
+      "heading": "By fans, for fans",
+      "text": "In the stands, on the pitch and on the street: jerseys for every game.",
+      "button_label": "Shop all jerseys"
     }
   },
   "products": {

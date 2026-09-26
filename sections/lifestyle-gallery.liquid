@@ -1,0 +1,284 @@
+{%- comment -%}
+  Lifestyle gallery (home): a brand moment with a short pitch and up to four atmosphere photos, a
+  2 × 2 grid on phones and one staggered row from 750px. The photos are decorative (empty alt): they
+  set the mood and do not describe products for sale.
+{%- endcomment -%}
+{%- liquid
+  assign scheme = section.settings.color_scheme
+
+  assign eyebrow = section.settings.eyebrow | escape
+  if eyebrow == blank
+    assign eyebrow = 'home.lifestyle.eyebrow' | t
+  endif
+
+  assign heading = section.settings.heading | escape
+  if heading == blank
+    assign heading = 'home.lifestyle.heading' | t
+  endif
+
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'home.lifestyle.text' | t
+  endif
+
+  assign button_label = section.settings.button_label | escape
+  if button_label == blank
+    assign button_label = 'home.lifestyle.button_label' | t
+  endif
+  assign button_link = section.settings.button_link | default: routes.all_products_collection_url
+
+  assign photo_count = 0
+  for block in section.blocks
+    if block.settings.image != blank or request.design_mode
+      assign photo_count = photo_count | plus: 1
+    endif
+  endfor
+
+  # Half the page on phones, a quarter of it from 750px.
+  assign photo_sizes = '(min-width: 990px) calc((min(100vw, 1440px) - 136px) / 4), (min-width: 750px) calc((100vw - 112px) / 4), calc((100vw - 44px) / 2)'
+-%}
+
+<div
+  class="section lifestyle color-{{ scheme.id }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+>
+  <div class="page-width">
+    <div class="lifestyle__header">
+      <div class="lifestyle__intro">
+        {%- if section.settings.show_eyebrow -%}
+          <p class="lifestyle__eyebrow eyebrow">{{ eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="lifestyle__heading display-m">{{ heading }}</h2>
+        <p class="lifestyle__text">{{ text }}</p>
+      </div>
+      {%- if section.settings.show_button -%}
+        <a class="button button--primary lifestyle__button" href="{{ button_link }}">{{ button_label }}</a>
+      {%- endif -%}
+    </div>
+
+    {%- if photo_count > 0 -%}
+      <ul class="lifestyle__list" role="list" style="--photos: {{ photo_count | at_most: 4 }};">
+        {%- for block in section.blocks limit: 4 -%}
+          {%- if block.settings.image != blank or request.design_mode -%}
+            <li class="lifestyle__item" {{ block.shopify_attributes }}>
+              <figure class="lifestyle__figure">
+                <div class="lifestyle__media">
+                  {%- if block.settings.image != blank -%}
+                    {%- render 'image',
+                      image: block.settings.image,
+                      sizes: photo_sizes,
+                      widths: '360, 540, 720, 900',
+                      alt: '',
+                      class: 'lifestyle__image'
+                    -%}
+                  {%- else -%}
+                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg lifestyle__image' }}
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.caption != blank -%}
+                  <figcaption class="lifestyle__caption">{{ block.settings.caption | escape }}</figcaption>
+                {%- endif -%}
+              </figure>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .lifestyle__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-4) var(--space-8);
+    margin-block-end: var(--space-6);
+  }
+
+  .lifestyle__intro {
+    max-inline-size: 40rem;
+  }
+
+  .lifestyle__heading {
+    margin-block-start: var(--space-2);
+  }
+
+  .lifestyle__text {
+    margin-block-start: var(--space-3);
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+    line-height: 1.5;
+  }
+
+  .lifestyle__button {
+    flex: none;
+  }
+
+  .lifestyle__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap, 12px);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--photos, 4), minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+  }
+
+  /* From 990px every other photo drops a little, for an editorial rhythm. */
+  @media screen and (min-width: 990px) {
+    .lifestyle__list {
+      padding-block-end: var(--space-10);
+    }
+
+    .lifestyle__item:nth-child(even) {
+      translate: 0 var(--space-10);
+    }
+  }
+
+  .lifestyle__figure {
+    margin: 0;
+  }
+
+  .lifestyle__media {
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-card);
+    background: #16181d;
+  }
+
+  .lifestyle__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .lifestyle__caption {
+    margin-block-start: var(--space-2);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.lifestyle.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_eyebrow",
+      "label": "t:sections.lifestyle.settings.show_eyebrow.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_eyebrow }}"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "t:sections.lifestyle.settings.show_button.label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:settings.button_label",
+      "info": "t:settings.default_text_info",
+      "visible_if": "{{ section.settings.show_button }}"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:settings.button_link",
+      "info": "t:sections.lifestyle.settings.button_link.info",
+      "visible_if": "{{ section.settings.show_button }}"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 44
+    }
+  ],
+  "blocks": [
+    {
+      "type": "photo",
+      "name": "t:sections.lifestyle.blocks.photo.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "caption",
+          "label": "t:sections.lifestyle.blocks.photo.settings.caption.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.lifestyle.name",
+      "blocks": [
+        {
+          "type": "photo"
+        },
+        {
+          "type": "photo"
+        },
+        {
+          "type": "photo"
+        },
+        {
+          "type": "photo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

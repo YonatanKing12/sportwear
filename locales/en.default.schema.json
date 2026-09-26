@@ -660,6 +660,10 @@
         },
         "height": {
           "label": "Height"
+        },
+        "mirror_ltr": {
+          "label": "Mirror the photo in left-to-right languages",
+          "info": "Photos are composed for Hebrew: people on the left, text on the right. In English the text moves to the left, and mirroring keeps the people on the other side. Don't use it for photos with text or logos."
         }
       }
     },
@@ -895,6 +899,64 @@
         },
         "button_link": {
           "info": "The button is shown only when it has a link."
+        }
+      }
+    },
+    "category_tiles": {
+      "name": "Category tiles",
+      "settings": {
+        "show_count": {
+          "label": "Show product count"
+        }
+      },
+      "blocks": {
+        "tile": {
+          "name": "Category",
+          "settings": {
+            "image": {
+              "info": "Portrait photo (4:5). Without one, the collection's image shows."
+            },
+            "collection": {
+              "label": "Collection",
+              "info": "A collection without products isn't shown on the storefront."
+            },
+            "page": {
+              "label": "Page",
+              "info": "Instead of a collection, e.g. team orders. The title comes from the page's title."
+            },
+            "title": {
+              "label": "Title",
+              "info": "Leave empty to use the collection's or page's title."
+            },
+            "link": {
+              "label": "Other link",
+              "info": "Only when no collection or page is chosen."
+            }
+          }
+        }
+      }
+    },
+    "lifestyle": {
+      "name": "Lifestyle gallery",
+      "settings": {
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "show_button": {
+          "label": "Show button"
+        },
+        "button_link": {
+          "info": "Leave empty to link to all products."
+        }
+      },
+      "blocks": {
+        "photo": {
+          "name": "Photo",
+          "settings": {
+            "caption": {
+              "label": "Caption (optional)"
+            }
+          }
         }
       }
     },

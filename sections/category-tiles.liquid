@@ -1,0 +1,355 @@
+{%- comment -%}
+  Category tiles (home): up to six large photo tiles, each linking to a collection (with its product
+  count), a page (such as team orders, titled with the page's translated title) or any link. The title and an arrow sit on a dark gradient at the
+  bottom of the photo. Tiles for collections without products are left out of the storefront (the
+  theme editor still shows them). Two columns on phones, one row from 750px.
+{%- endcomment -%}
+{%- liquid
+  assign scheme = section.settings.color_scheme
+  assign heading = section.settings.heading | escape
+  if heading == blank
+    assign heading = 'home.category_tiles.heading' | t
+  endif
+
+  assign tile_count = 0
+  for block in section.blocks
+    assign tile_collection = block.settings.collection
+    if tile_collection != blank
+      if tile_collection.all_products_count > 0 or request.design_mode
+        assign tile_count = tile_count | plus: 1
+      endif
+    elsif block.settings.page != blank or block.settings.link != blank or request.design_mode
+      assign tile_count = tile_count | plus: 1
+    endif
+  endfor
+
+  assign columns_desktop = tile_count | at_most: 4
+  if tile_count > 4
+    assign columns_desktop = 3
+  endif
+
+  # Two columns on phones (page gutters and one gap), up to four across the page from 750px.
+  assign tile_sizes = '(min-width: 990px) calc((min(100vw, 1440px) - 112px) / 4), (min-width: 750px) calc((100vw - 88px) / 4), calc((100vw - 44px) / 2)'
+
+  assign tile_loading = 'lazy'
+  unless section.index > 3
+    assign tile_loading = 'eager'
+  endunless
+-%}
+
+{%- if tile_count > 0 -%}
+  <div
+    class="section category-tiles color-{{ scheme.id }}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="page-width">
+      <div class="section-header category-tiles__header">
+        <h2 class="category-tiles__heading display-m">{{ heading }}</h2>
+      </div>
+
+      <ul class="category-tiles__list" role="list" style="--tiles-desktop: {{ columns_desktop }};">
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign tile_collection = block.settings.collection
+            assign tile_page = block.settings.page
+            assign tile_url = block.settings.link
+            assign show_tile = true
+            if tile_collection != blank
+              if tile_collection.all_products_count == 0 and request.design_mode == false
+                assign show_tile = false
+              endif
+              if tile_url == blank
+                assign tile_url = tile_collection.url
+              endif
+            elsif tile_page != blank
+              if tile_url == blank
+                assign tile_url = tile_page.url
+              endif
+            elsif tile_url == blank and request.design_mode == false
+              assign show_tile = false
+            endif
+
+            assign tile_title = block.settings.title | escape
+            if tile_title == blank and tile_collection != blank
+              assign tile_title = tile_collection.title | escape
+            endif
+            if tile_title == blank and tile_page != blank
+              assign tile_title = tile_page.title | escape
+            endif
+            if tile_title == blank
+              assign tile_title = 'home.category_tiles.placeholder_title' | t
+            endif
+
+            assign tile_count_label = ''
+            if section.settings.show_count and tile_collection != blank and tile_collection.all_products_count > 0
+              assign tile_count_label = 'home.featured_collection.count' | t: count: tile_collection.all_products_count
+            endif
+
+            assign tile_image = block.settings.image
+            if tile_image == blank and tile_collection != blank
+              assign tile_image = tile_collection.featured_image
+            endif
+          -%}
+          {%- if show_tile -%}
+            <li class="category-tiles__item" {{ block.shopify_attributes }}>
+              <a class="category-tiles__tile" href="{{ tile_url | default: '#' }}">
+                <div class="category-tiles__media">
+                  {%- if tile_image != blank -%}
+                    {%- render 'image',
+                      image: tile_image,
+                      sizes: tile_sizes,
+                      widths: '360, 540, 720, 900, 1080',
+                      loading: tile_loading,
+                      alt: '',
+                      class: 'category-tiles__image'
+                    -%}
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg category-tiles__image' }}
+                  {%- endif -%}
+                </div>
+                <div class="category-tiles__info">
+                  <div class="category-tiles__text">
+                    <h3 class="category-tiles__title">{{ tile_title }}</h3>
+                    {%- if tile_count_label != blank -%}
+                      <p class="category-tiles__count">{{ tile_count_label }}</p>
+                    {%- endif -%}
+                  </div>
+                  <span class="category-tiles__cta" aria-hidden="true">
+                    {%- render 'icon', name: 'arrow-forward', size: 20 -%}
+                  </span>
+                </div>
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .category-tiles__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--grid-gap, 12px);
+
+    @media screen and (min-width: 750px) {
+      grid-template-columns: repeat(var(--tiles-desktop, 4), minmax(0, 1fr));
+    }
+  }
+
+  .category-tiles__item {
+    min-inline-size: 0;
+  }
+
+  /* The photo fills the tile; a dark gradient at the bottom keeps the white title readable on any photo. */
+  .category-tiles__tile {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    aspect-ratio: 4 / 5;
+    border-radius: var(--radius-card);
+    background: #16181d;
+    color: #ffffff;
+    text-decoration: none;
+
+    &:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 3px;
+    }
+  }
+
+  .category-tiles__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgb(13 14 17 / 0.88) 0%, rgb(13 14 17 / 0.45) 38%, rgb(13 14 17 / 0) 65%);
+    }
+  }
+
+  .category-tiles__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: transform 600ms var(--ease);
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .category-tiles__tile:hover .category-tiles__image {
+      transform: scale(1.05);
+    }
+
+    .category-tiles__tile:hover .category-tiles__cta {
+      translate: calc(4px * var(--dir-sign, 1)) 0;
+    }
+  }
+
+  [dir='rtl'] .category-tiles__tile {
+    --dir-sign: -1;
+  }
+
+  .category-tiles__info {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-3);
+    inline-size: 100%;
+    padding: var(--space-4);
+
+    @media screen and (min-width: 990px) {
+      padding: var(--space-5) var(--space-6);
+    }
+  }
+
+  .category-tiles__text {
+    min-inline-size: 0;
+  }
+
+  .category-tiles__title {
+    font-family: var(--font-display);
+    font-size: calc(26px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+    line-height: var(--leading-display);
+    overflow-wrap: break-word;
+
+    @media screen and (min-width: 990px) {
+      font-size: calc(36px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+    }
+  }
+
+  .category-tiles__count {
+    margin-block-start: var(--space-1);
+    color: rgb(255 255 255 / 0.82);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .category-tiles__cta {
+    display: none;
+    flex: none;
+    place-items: center;
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+    transition: translate var(--duration) var(--ease);
+
+    @media screen and (min-width: 750px) {
+      display: grid;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.category_tiles.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "t:sections.category_tiles.settings.show_count.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 24
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tile",
+      "name": "t:sections.category_tiles.blocks.tile.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image",
+          "info": "t:sections.category_tiles.blocks.tile.settings.image.info"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.category_tiles.blocks.tile.settings.collection.label",
+          "info": "t:sections.category_tiles.blocks.tile.settings.collection.info"
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.category_tiles.blocks.tile.settings.page.label",
+          "info": "t:sections.category_tiles.blocks.tile.settings.page.info"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.category_tiles.blocks.tile.settings.title.label",
+          "info": "t:sections.category_tiles.blocks.tile.settings.title.info"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.category_tiles.blocks.tile.settings.link.label",
+          "info": "t:sections.category_tiles.blocks.tile.settings.link.info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.category_tiles.name",
+      "blocks": [
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        },
+        {
+          "type": "tile"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

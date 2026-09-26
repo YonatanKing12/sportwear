@@ -4,11 +4,31 @@
       "type": "hero",
       "settings": {
         "color_scheme": "scheme-night",
-        "layout": "graphic",
+        "layout": "image",
         "season": "26/27",
         "padding_top": 16,
         "padding_bottom": 16,
-        "heading_tag": "h1"
+        "heading_tag": "h1",
+        "image": "shopify://shop_images/sw-hero-fans.jpg",
+        "image_mobile": "shopify://shop_images/sw-hero-fans-mobile.jpg",
+        "mirror_ltr": true,
+        "overlay_opacity": 65,
+        "height": "medium"
+      }
+    },
+    "best_sellers": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "collection": "best-sellers",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "show_count": false,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "trust_strip": {
@@ -38,6 +58,46 @@
         "color_scheme": "scheme-day",
         "padding_top": 20,
         "padding_bottom": 20
+      }
+    },
+    "category_tiles": {
+      "type": "category-tiles",
+      "blocks": {
+        "football": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-cat-football.jpg",
+            "collection": "football"
+          }
+        },
+        "basketball": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-cat-basketball.jpg",
+            "collection": "basketball"
+          }
+        },
+        "kids": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-cat-kids.jpg",
+            "collection": "kids"
+          }
+        },
+        "teams": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-cat-teams.jpg",
+            "page": "team-orders"
+          }
+        }
+      },
+      "block_order": ["football", "basketball", "kids", "teams"],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "show_count": true,
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "collection_links": {
@@ -86,7 +146,8 @@
         "color_scheme": "scheme-day",
         "padding_top": 36,
         "padding_bottom": 8
-      }
+      },
+      "disabled": true
     },
     "featured_collection": {
       "type": "featured-collection",
@@ -112,6 +173,21 @@
         "button_link": "shopify://collections/basketball-shorts",
         "padding_top": 24,
         "padding_bottom": 24
+      }
+    },
+    "nba": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "collection": "nba",
+        "layout": "carousel",
+        "products_to_show": 12,
+        "columns_desktop": 5,
+        "columns_mobile": "2",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
       }
     },
     "kids_sizes": {
@@ -160,46 +236,6 @@
         "padding_bottom": 24
       }
     },
-    "cta_band": {
-      "type": "cta-band",
-      "settings": {
-        "color_scheme": "scheme-night",
-        "icon": "chat",
-        "button_link": "shopify://pages/team-orders",
-        "padding_top": 24,
-        "padding_bottom": 48
-      }
-    },
-    "best_sellers": {
-      "type": "featured-collection",
-      "settings": {
-        "color_scheme": "scheme-day",
-        "collection": "best-sellers",
-        "layout": "carousel",
-        "products_to_show": 12,
-        "columns_desktop": 5,
-        "columns_mobile": "2",
-        "show_view_all": true,
-        "show_count": false,
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "nba": {
-      "type": "featured-collection",
-      "settings": {
-        "color_scheme": "scheme-night",
-        "collection": "nba",
-        "layout": "carousel",
-        "products_to_show": 12,
-        "columns_desktop": 5,
-        "columns_mobile": "2",
-        "show_view_all": true,
-        "show_count": true,
-        "padding_top": 44,
-        "padding_bottom": 44
-      }
-    },
     "kids": {
       "type": "featured-collection",
       "settings": {
@@ -213,6 +249,43 @@
         "show_count": true,
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "lifestyle": {
+      "type": "lifestyle-gallery",
+      "blocks": {
+        "stands": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-life-stands.jpg"
+          }
+        },
+        "streetball": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-life-streetball.jpg"
+          }
+        },
+        "family": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-life-family.jpg"
+          }
+        },
+        "tunnel": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-life-tunnel.jpg"
+          }
+        }
+      },
+      "block_order": ["stands", "streetball", "family", "tunnel"],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "show_eyebrow": true,
+        "show_button": true,
+        "padding_top": 48,
+        "padding_bottom": 48
       }
     },
     "national_teams": {
@@ -229,18 +302,30 @@
         "padding_top": 44,
         "padding_bottom": 44
       }
+    },
+    "cta_band": {
+      "type": "cta-band",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "icon": "chat",
+        "button_link": "shopify://pages/team-orders",
+        "padding_top": 24,
+        "padding_bottom": 48
+      }
     }
   },
   "order": [
     "hero",
     "best_sellers",
     "trust_strip",
+    "category_tiles",
     "collection_links",
     "featured_collection",
     "promo_banner",
     "nba",
     "kids_sizes",
     "kids",
+    "lifestyle",
     "national_teams",
     "cta_band"
   ]
