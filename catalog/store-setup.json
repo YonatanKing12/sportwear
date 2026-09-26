@@ -499,8 +499,8 @@
     "team-orders": "gid://shopify/Page/162272051504",
     "faq": "gid://shopify/Page/162272084272",
     "size-guide": "gid://shopify/Page/162272117040",
-    "shipping-returns (DRAFT, placeholders for the lawyer)": "gid://shopify/Page/162272149808",
-    "accessibility (DRAFT, placeholders)": "gid://shopify/Page/162272182576"
+    "shipping-returns (published; the text still has [placeholders] for the returns terms and the cancellation wording, for the lawyer)": "gid://shopify/Page/162272149808",
+    "accessibility (published; the text still has [placeholders] for the accessibility coordinator and the date)": "gid://shopify/Page/162272182576"
   },
   "menus": {
     "main-menu": "gid://shopify/Menu/316216410416",
