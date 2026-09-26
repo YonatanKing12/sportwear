@@ -13,7 +13,7 @@
     "payment_methods": "Payment methods",
     "empty": {
       "title": "Your cart is empty",
-      "text": "Your next jersey is waiting. Let's find it.",
+      "text": "You haven't added anything yet",
       "button": "Start shopping",
       "free_shipping": "Free shipping on orders over {{ amount }}"
     },

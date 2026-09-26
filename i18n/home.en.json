@@ -2,9 +2,9 @@
   "home": {
     "hero": {
       "eyebrow": "Season 2026/27 is here",
-      "heading": "Your team's jersey.",
-      "heading_highlight": "Fan prices.",
-      "subheading": "Football and basketball, for adults and kids. In stock in Israel and delivered to your door within 3 business days.",
+      "heading": "Football and basketball jerseys",
+      "heading_highlight": "For adults and kids",
+      "subheading": "In stock in Israel, delivered to your door within 3 business days",
       "button_label": "Football jerseys",
       "secondary_button_label": "Basketball jerseys"
     },
@@ -23,20 +23,20 @@
     "promo_banner": {
       "eyebrow": "Complete the set",
       "heading": "Jersey + shorts",
-      "text": "A jersey and shorts from the same team: the full set for the court and the stands.",
+      "text": "Add the matching shorts from the same team",
       "button_label": "Shop basketball shorts"
     },
     "image_with_text": {
       "badge": "Ages 5–14",
       "eyebrow": "Kids",
       "heading": "Sizes by age",
-      "text": "From age 5 to 14, with a size chart by height. No guesswork.",
+      "text": "Ages 5 to 14, with a size chart by height",
       "button_label": "Shop the kids collection"
     },
     "kids_sizes": {
       "eyebrow": "Kids",
       "heading": "Sizes by age",
-      "text": "Ages 5 to 14. Choose by your child's height.",
+      "text": "Sizes for ages 5 to 14, by the child's height",
       "years": {
         "one": "year",
         "other": "years"
@@ -48,15 +48,15 @@
     },
     "cta_band": {
       "heading": "Ordering for a team?",
-      "text": "A quote based on quantity for amateur teams, schools and clubs. Send us a message and we'll get back to you with an offer.",
+      "text": "For amateur teams, schools and clubs. Send us the quantity and sizes and we'll get back to you with a quote.",
       "button_label": "Get a quote",
       "whatsapp_label": "Chat with us on WhatsApp",
       "whatsapp_message": "Hi, we would like a quote for a team order."
     },
     "rich_text": {
       "eyebrow": "Why {{ shop }}",
-      "heading": "By fans, for fans",
-      "text": "Jerseys from the teams you love, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
+      "heading": "Stock held in Israel",
+      "text": "Orders ship from our stock in Israel and reach your door within 3 business days. Returns are accepted within 45 days.",
       "button_label": "Shop all"
     },
     "category_tiles": {
@@ -64,9 +64,9 @@
       "placeholder_title": "Category"
     },
     "lifestyle": {
-      "eyebrow": "Game-day energy",
-      "heading": "By fans, for fans",
-      "text": "In the stands, on the pitch and on the street: jerseys for every game.",
+      "eyebrow": "Lookbook",
+      "heading": "Fan style",
+      "text": "Jerseys that work on the pitch and on the street",
       "button_label": "Shop all jerseys"
     },
     "hero_slideshow": {
@@ -79,25 +79,22 @@
       "play": "Play the slideshow",
       "copy": {
         "football": {
-          "heading": "Your team's jersey.",
-          "highlight": "Fan prices.",
-          "text": "Football and basketball, for adults and kids. In stock in Israel and delivered to your door within 3 business days.",
-          "button_label": "Football jerseys",
+          "heading": "Football jerseys",
+          "text": "Real Madrid, Barcelona, Arsenal, Milan and more",
+          "button_label": "Shop football jerseys",
           "secondary_button_label": "Basketball jerseys"
         },
         "basketball": {
-          "heading": "NBA jerseys.",
-          "highlight": "From the Lakers to the Bulls.",
-          "text": "Basketball jerseys and shorts from the big teams, in stock in Israel.",
+          "heading": "NBA jerseys",
+          "text": "Lakers, Bulls, Warriors, Celtics and more",
           "button_label": "Shop NBA jerseys",
           "secondary_button_label": "Basketball shorts"
         },
         "national": {
-          "heading": "National team jerseys.",
-          "highlight": "Brazil, France, Japan and more.",
-          "text": "Your favourite national teams, in stock in Israel with home delivery.",
+          "heading": "National team jerseys",
+          "text": "Brazil, France, Japan, Germany and more",
           "button_label": "Shop national teams",
-          "secondary_button_label": "All football jerseys"
+          "secondary_button_label": "Football jerseys"
         }
       }
     }

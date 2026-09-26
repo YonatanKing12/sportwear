@@ -1,6 +1,6 @@
 {
   "footer": {
-    "brand_text": "Football jerseys and basketball kits for adults and kids.",
+    "brand_text": "Football jerseys and basketball kits for adults and kids",
     "menu_heading": "Useful links",
     "contact_heading": "Customer service",
     "whatsapp_link": "Chat with us on WhatsApp",
@@ -11,8 +11,8 @@
     "business_id": "Business ID: {{ id }}",
     "payment_methods": "Payment methods",
     "newsletter": {
-      "heading": "Be the first to know",
-      "text": "New arrivals and promotions, straight to your inbox.",
+      "heading": "Join our newsletter",
+      "text": "Promotions and new arrivals, straight to your inbox",
       "email_label": "Email address",
       "submit": "Subscribe",
       "consent": "By subscribing, you agree to receive marketing emails from us. You can unsubscribe at any time.",
@@ -75,7 +75,7 @@
   "team_orders": {
     "eyebrow": "Team orders",
     "heading": "Ordering for a team?",
-    "text": "Amateur teams, schools and clubs: send us the quantity and sizes you need, and we'll get back to you with a tailored quote.",
+    "text": "For amateur teams, schools and clubs. Send us the quantity and sizes you need and we'll get back to you with a quote.",
     "whatsapp": "Chat with us on WhatsApp",
     "whatsapp_message": "Hi {{ shop }}, I would like a quote for a team order.",
     "benefits": {
@@ -227,8 +227,8 @@
   },
   "password": {
     "heading": "Opening",
-    "heading_highlight": "soon.",
-    "text": "The new home for football and basketball jerseys. Leave your email and we'll let you know when we open.",
+    "heading_highlight": "soon",
+    "text": "Football jerseys, basketball jerseys and shorts for adults and kids. Leave your email and we'll let you know when we open.",
     "signup": {
       "label": "Email address",
       "submit": "Notify me",
