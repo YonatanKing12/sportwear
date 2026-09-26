@@ -1,0 +1,3257 @@
+{
+  "_note": "How an imported product's Hebrew title maps to our tags: team, league, season, style, player, plus plain search-keyword tags in English and Arabic. Read by scripts/catalog/classify.mjs. Every team, league, style and player has he/en/ar names; they match catalog/taxonomy.json (classify.mjs warns on a mismatch). 'match' lists Hebrew spellings as they appear in titles.",
+  "version": "2026-09-26",
+  "tag_conventions": {
+    "sport": "sport:football | sport:basketball | sport:american-football",
+    "league": "league:<slug>, one per product (see leagues)",
+    "team": "team:<slug>, one per product (see teams)",
+    "style": "style:retro | style:city-edition | style:special (any combination)",
+    "audience": "audience:adult | audience:kids | audience:women",
+    "season": "season:YYYY-YY, football only, read from the title (26/27 -> season:2026-27)",
+    "player": "player:<slug>, plus the player's Hebrew name as a plain tag (for Hebrew site search)",
+    "keywords": "plain tags for site search: team, league, player, product-type, audience and style words in English (lowercase) and Arabic. Imported products have no EN/AR translations, and Shopify's storefront search matches product tags."
+  },
+  "rules": {
+    "team": "The longest team name ('match') found in the title, among teams of the product's sport. National teams match as 'נבחרת <country>'. Falls back to the product's existing team: tag (through team_tag_aliases for old slugs).",
+    "league": "From the team. Every basketball product must end with a league (nba, wnba, ncaa, national-teams) or style:special; anything else is reported as unclassified.",
+    "season": "Football titles only: 26/27 -> season:2026-27, 12/13 -> season:2012-13. A bare year (2026) is not a season.",
+    "style": "Title keywords (styles.*.match); a team's own styles (collabs are special, SuperSonics are retro); and style:retro when the title's season starts before retro_before_season.",
+    "player": "A player named in the title wins. Otherwise basketball titles with 'מספר N' use player_numbers (high-confidence team + number pairs only). For Mitchell & Ness retro jerseys the jock tag (season + name) must agree; disagreements go to overrides.",
+    "audience": "Kept when present. Missing: 'לילדים' -> kids, 'לנשים' -> women, otherwise adult.",
+    "overrides": "Per-handle corrections checked against the product photos. 'team': null or 'player': null means none (and removes an existing tag). 'styles' are added to the ones found in the title."
+  },
+  "retro_before_season": 2016,
+  "product_types": {
+    "Basketball Jersey": {
+      "sport": "basketball",
+      "keywords": [
+        "גופייה",
+        "גופיה",
+        "חולצה",
+        "jersey",
+        "basketball jersey",
+        "قميص"
+      ]
+    },
+    "Basketball Shorts": {
+      "sport": "basketball",
+      "keywords": [
+        "מכנס",
+        "מכנסיים",
+        "shorts",
+        "شورت"
+      ]
+    },
+    "Football Jersey": {
+      "sport": "football",
+      "keywords": [
+        "חולצה",
+        "חולצת כדורגל",
+        "jersey",
+        "football shirt",
+        "soccer jersey",
+        "قميص"
+      ]
+    },
+    "Hoodie": {
+      "sport": "american-football",
+      "keywords": [
+        "קפוצון",
+        "קפוצ'ון",
+        "סווטשירט",
+        "hoodie",
+        "sweatshirt",
+        "هودي"
+      ]
+    }
+  },
+  "audiences": {
+    "adult": {
+      "he": "מבוגרים",
+      "en": "Adults",
+      "ar": "الكبار",
+      "match": [
+        "לגברים"
+      ],
+      "keywords": []
+    },
+    "kids": {
+      "he": "ילדים",
+      "en": "Kids",
+      "ar": "الأطفال",
+      "match": [
+        "לילדים",
+        "– ילדים"
+      ],
+      "keywords": [
+        "ילד",
+        "ילדים",
+        "נוער",
+        "kids",
+        "youth",
+        "أطفال"
+      ]
+    },
+    "women": {
+      "he": "נשים",
+      "en": "Women",
+      "ar": "النساء",
+      "match": [
+        "לנשים"
+      ],
+      "keywords": [
+        "נשים",
+        "women",
+        "نساء"
+      ]
+    }
+  },
+  "styles": {
+    "retro": {
+      "he": "רטרו",
+      "en": "Retro",
+      "ar": "ريترو",
+      "match": [
+        "רטרו"
+      ],
+      "keywords": [
+        "retro",
+        "vintage",
+        "throwback",
+        "ريترو"
+      ]
+    },
+    "city-edition": {
+      "he": "מהדורת עיר",
+      "en": "City Edition",
+      "ar": "إصدار المدينة",
+      "match": [
+        "מהדורת עיר"
+      ],
+      "keywords": [
+        "city edition"
+      ]
+    },
+    "special": {
+      "he": "מהדורה מיוחדת",
+      "en": "Special Edition",
+      "ar": "إصدار خاص",
+      "match": [
+        "הדפס",
+        "מהדורה מיוחדת",
+        "מהדורה משותפת",
+        "מהדורת הנצחה",
+        "מהדורת פרישה",
+        "מהדורת אליפות"
+      ],
+      "keywords": []
+    }
+  },
+  "leagues": {
+    "premier-league": {
+      "sport": "football",
+      "he": "פרמייר ליג",
+      "en": "Premier League",
+      "ar": "الدوري الإنجليزي الممتاز",
+      "keywords": [
+        "premier league",
+        "الدوري الإنجليزي"
+      ]
+    },
+    "la-liga": {
+      "sport": "football",
+      "he": "לה ליגה",
+      "en": "LaLiga",
+      "ar": "الدوري الإسباني",
+      "keywords": [
+        "la liga",
+        "الدوري الإسباني"
+      ]
+    },
+    "serie-a": {
+      "sport": "football",
+      "he": "סרייה A",
+      "en": "Serie A",
+      "ar": "الدوري الإيطالي",
+      "keywords": [
+        "serie a",
+        "الدوري الإيطالي"
+      ]
+    },
+    "bundesliga": {
+      "sport": "football",
+      "he": "בונדסליגה",
+      "en": "Bundesliga",
+      "ar": "الدوري الألماني",
+      "keywords": [
+        "bundesliga",
+        "الدوري الألماني"
+      ]
+    },
+    "ligue-1": {
+      "sport": "football",
+      "he": "ליג 1",
+      "en": "Ligue 1",
+      "ar": "الدوري الفرنسي",
+      "keywords": [
+        "ligue 1",
+        "الدوري الفرنسي"
+      ]
+    },
+    "primeira-liga": {
+      "sport": "football",
+      "he": "ליגה פורטוגלית",
+      "en": "Primeira Liga",
+      "ar": "الدوري البرتغالي",
+      "keywords": [
+        "primeira liga",
+        "الدوري البرتغالي"
+      ]
+    },
+    "saudi-pro-league": {
+      "sport": "football",
+      "he": "הליגה הסעודית",
+      "en": "Saudi Pro League",
+      "ar": "دوري روشن السعودي",
+      "keywords": [
+        "saudi pro league",
+        "الدوري السعودي"
+      ]
+    },
+    "mls": {
+      "sport": "football",
+      "he": "MLS",
+      "en": "MLS",
+      "ar": "الدوري الأمريكي لكرة القدم",
+      "keywords": [
+        "mls",
+        "الدوري الأمريكي لكرة القدم"
+      ]
+    },
+    "liga-mx": {
+      "sport": "football",
+      "he": "הליגה המקסיקנית",
+      "en": "Liga MX",
+      "ar": "الدوري المكسيكي",
+      "keywords": [
+        "liga mx",
+        "الدوري المكسيكي"
+      ]
+    },
+    "brasileirao": {
+      "sport": "football",
+      "he": "הליגה הברזילאית",
+      "en": "Brasileirão",
+      "ar": "الدوري البرازيلي",
+      "keywords": [
+        "brasileirao",
+        "الدوري البرازيلي"
+      ]
+    },
+    "israeli-premier-league": {
+      "sport": "football",
+      "he": "ליגת העל",
+      "en": "Israeli Premier League",
+      "ar": "الدوري الإسرائيلي الممتاز",
+      "keywords": [
+        "israeli premier league",
+        "الدوري الإسرائيلي"
+      ]
+    },
+    "national-teams": {
+      "sport": [
+        "football",
+        "basketball"
+      ],
+      "he": "נבחרות",
+      "en": "National Teams",
+      "ar": "المنتخبات",
+      "keywords": [
+        "national team",
+        "منتخب"
+      ]
+    },
+    "nba": {
+      "sport": "basketball",
+      "he": "NBA",
+      "en": "NBA",
+      "ar": "NBA",
+      "keywords": [
+        "nba",
+        "الدوري الأمريكي لكرة السلة"
+      ]
+    },
+    "wnba": {
+      "sport": "basketball",
+      "he": "WNBA",
+      "en": "WNBA",
+      "ar": "WNBA",
+      "keywords": [
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ]
+    },
+    "ncaa": {
+      "sport": "basketball",
+      "he": "מכללות (NCAA)",
+      "en": "NCAA",
+      "ar": "الدوري الجامعي الأمريكي",
+      "keywords": [
+        "ncaa",
+        "college basketball",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "euroleague": {
+      "sport": "basketball",
+      "he": "יורוליג",
+      "en": "EuroLeague",
+      "ar": "اليوروليغ",
+      "keywords": [
+        "euroleague",
+        "اليوروليغ"
+      ]
+    },
+    "israeli-basketball-league": {
+      "sport": "basketball",
+      "he": "ליגת העל בכדורסל",
+      "en": "Israeli Basketball Premier League",
+      "ar": "دوري كرة السلة الإسرائيلي الممتاز",
+      "keywords": [
+        "israeli basketball league",
+        "دوري السلة الإسرائيلي"
+      ]
+    },
+    "nfl": {
+      "sport": "american-football",
+      "he": "NFL",
+      "en": "NFL",
+      "ar": "NFL",
+      "keywords": [
+        "nfl",
+        "دوري كرة القدم الأمريكية"
+      ]
+    }
+  },
+  "teams": {
+    "arsenal": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ארסנל",
+      "en": "Arsenal",
+      "ar": "آرسنال",
+      "match": [
+        "ארסנל"
+      ],
+      "keywords": [
+        "arsenal",
+        "آرسنال",
+        "أرسنال"
+      ]
+    },
+    "chelsea": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "צ׳לסי",
+      "en": "Chelsea",
+      "ar": "تشيلسي",
+      "match": [
+        "צ׳לסי"
+      ],
+      "keywords": [
+        "chelsea",
+        "تشيلسي"
+      ]
+    },
+    "manchester-city": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "מנצ׳סטר סיטי",
+      "en": "Manchester City",
+      "ar": "مانشستر سيتي",
+      "match": [
+        "מנצ׳סטר סיטי"
+      ],
+      "keywords": [
+        "manchester city",
+        "man city",
+        "مانشستر سيتي",
+        "السيتي"
+      ]
+    },
+    "newcastle-united": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ניוקאסל",
+      "en": "Newcastle United",
+      "ar": "نيوكاسل يونايتد",
+      "match": [
+        "ניוקאסל",
+        "ניוקאסל יונייטד"
+      ],
+      "keywords": [
+        "newcastle united",
+        "newcastle",
+        "نيوكاسل يونايتد",
+        "نيوكاسل"
+      ]
+    },
+    "real-madrid": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ריאל מדריד",
+      "en": "Real Madrid",
+      "ar": "ريال مدريد",
+      "match": [
+        "ריאל מדריד"
+      ],
+      "keywords": [
+        "real madrid",
+        "ريال مدريد",
+        "الريال"
+      ]
+    },
+    "barcelona": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ברצלונה",
+      "en": "FC Barcelona",
+      "ar": "برشلونة",
+      "match": [
+        "ברצלונה"
+      ],
+      "keywords": [
+        "fc barcelona",
+        "barcelona",
+        "barca",
+        "برشلونة",
+        "البارسا"
+      ]
+    },
+    "atletico-madrid": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "אתלטיקו מדריד",
+      "en": "Atlético Madrid",
+      "ar": "أتلتيكو مدريد",
+      "match": [
+        "אתלטיקו מדריד"
+      ],
+      "keywords": [
+        "atletico madrid",
+        "atletico",
+        "أتلتيكو مدريد",
+        "أتلتيكو"
+      ]
+    },
+    "juventus": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "יובנטוס",
+      "en": "Juventus",
+      "ar": "يوفنتوس",
+      "match": [
+        "יובנטוס"
+      ],
+      "keywords": [
+        "juventus",
+        "juve",
+        "يوفنتوس",
+        "اليوفي"
+      ]
+    },
+    "ac-milan": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "מילאן",
+      "en": "AC Milan",
+      "ar": "إيه سي ميلان",
+      "match": [
+        "מילאן",
+        "איי סי מילאן"
+      ],
+      "keywords": [
+        "ac milan",
+        "milan",
+        "إيه سي ميلان",
+        "ميلان"
+      ]
+    },
+    "inter-milan": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "אינטר",
+      "en": "Inter Milan",
+      "ar": "إنتر ميلان",
+      "match": [
+        "אינטר",
+        "אינטר מילאן"
+      ],
+      "keywords": [
+        "inter milan",
+        "inter",
+        "إنتر ميلان",
+        "الإنتر"
+      ]
+    },
+    "as-roma": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "רומא",
+      "en": "AS Roma",
+      "ar": "روما",
+      "match": [
+        "רומא",
+        "א.ס. רומא"
+      ],
+      "keywords": [
+        "as roma",
+        "roma",
+        "روما"
+      ]
+    },
+    "napoli": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "נאפולי",
+      "en": "Napoli",
+      "ar": "نابولي",
+      "match": [
+        "נאפולי"
+      ],
+      "keywords": [
+        "napoli",
+        "نابولي"
+      ]
+    },
+    "bayern-munich": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "באיירן מינכן",
+      "en": "Bayern Munich",
+      "ar": "بايرن ميونخ",
+      "match": [
+        "באיירן מינכן"
+      ],
+      "keywords": [
+        "bayern munich",
+        "bayern",
+        "بايرن ميونخ",
+        "البايرن"
+      ]
+    },
+    "rb-leipzig": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "ר.ב. לייפציג",
+      "en": "RB Leipzig",
+      "ar": "آر بي لايبزيغ",
+      "match": [
+        "ר.ב. לייפציג",
+        "לייפציג"
+      ],
+      "keywords": [
+        "rb leipzig",
+        "leipzig",
+        "آر بي لايبزيغ",
+        "لايبزيغ"
+      ]
+    },
+    "paris-saint-germain": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "פריז סן ז׳רמן",
+      "en": "Paris Saint-Germain",
+      "ar": "باريس سان جيرمان",
+      "match": [
+        "פריז סן ז׳רמן"
+      ],
+      "keywords": [
+        "paris saint-germain",
+        "psg",
+        "باريس سان جيرمان",
+        "باريس"
+      ]
+    },
+    "olympique-marseille": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "מארסיי",
+      "en": "Olympique de Marseille",
+      "ar": "أولمبيك مارسيليا",
+      "match": [
+        "מארסיי",
+        "אולימפיק מארסיי"
+      ],
+      "keywords": [
+        "olympique marseille",
+        "marseille",
+        "أولمبيك مارسيليا",
+        "مارسيليا"
+      ]
+    },
+    "benfica": {
+      "sport": "football",
+      "league": "primeira-liga",
+      "he": "בנפיקה",
+      "en": "Benfica",
+      "ar": "بنفيكا",
+      "match": [
+        "בנפיקה"
+      ],
+      "keywords": [
+        "benfica",
+        "بنفيكا"
+      ]
+    },
+    "porto": {
+      "sport": "football",
+      "league": "primeira-liga",
+      "he": "פורטו",
+      "en": "FC Porto",
+      "ar": "بورتو",
+      "match": [
+        "פורטו"
+      ],
+      "keywords": [
+        "fc porto",
+        "porto",
+        "بورتو"
+      ]
+    },
+    "sporting-cp": {
+      "sport": "football",
+      "league": "primeira-liga",
+      "he": "ספורטינג ליסבון",
+      "en": "Sporting CP",
+      "ar": "سبورتينغ لشبونة",
+      "match": [
+        "ספורטינג ליסבון"
+      ],
+      "keywords": [
+        "sporting cp",
+        "sporting lisbon",
+        "سبورتينغ لشبونة",
+        "سبورتينغ"
+      ]
+    },
+    "al-nassr": {
+      "sport": "football",
+      "league": "saudi-pro-league",
+      "he": "אל נאסר",
+      "en": "Al Nassr",
+      "ar": "النصر",
+      "match": [
+        "אל נאסר"
+      ],
+      "keywords": [
+        "al nassr",
+        "النصر"
+      ]
+    },
+    "al-ittihad": {
+      "sport": "football",
+      "league": "saudi-pro-league",
+      "he": "אל איתיחאד",
+      "en": "Al Ittihad",
+      "ar": "الاتحاد",
+      "match": [
+        "אל איתיחאד"
+      ],
+      "keywords": [
+        "al ittihad",
+        "الاتحاد"
+      ]
+    },
+    "inter-miami": {
+      "sport": "football",
+      "league": "mls",
+      "he": "אינטר מיאמי",
+      "en": "Inter Miami",
+      "ar": "إنتر ميامي",
+      "match": [
+        "אינטר מיאמי"
+      ],
+      "keywords": [
+        "inter miami",
+        "إنتر ميامي"
+      ]
+    },
+    "club-america": {
+      "sport": "football",
+      "league": "liga-mx",
+      "he": "קלוב אמריקה",
+      "en": "Club América",
+      "ar": "كلوب أمريكا",
+      "match": [
+        "קלוב אמריקה"
+      ],
+      "keywords": [
+        "club america",
+        "كلوب أمريكا"
+      ]
+    },
+    "monterrey": {
+      "sport": "football",
+      "league": "liga-mx",
+      "he": "מונטריי",
+      "en": "Monterrey",
+      "ar": "مونتيري",
+      "match": [
+        "מונטריי"
+      ],
+      "keywords": [
+        "monterrey",
+        "مونتيري"
+      ]
+    },
+    "pumas-unam": {
+      "sport": "football",
+      "league": "liga-mx",
+      "he": "פומאס",
+      "en": "Pumas UNAM",
+      "ar": "بوماس أونام",
+      "match": [
+        "פומאס"
+      ],
+      "keywords": [
+        "pumas unam",
+        "pumas",
+        "بوماس أونام",
+        "بوماس"
+      ]
+    },
+    "santos": {
+      "sport": "football",
+      "league": "brasileirao",
+      "he": "סנטוס",
+      "en": "Santos",
+      "ar": "سانتوس",
+      "match": [
+        "סנטוס"
+      ],
+      "keywords": [
+        "santos",
+        "سانتوس"
+      ]
+    },
+    "palmeiras": {
+      "sport": "football",
+      "league": "brasileirao",
+      "he": "פלמייראס",
+      "en": "Palmeiras",
+      "ar": "بالميراس",
+      "match": [
+        "פלמייראס"
+      ],
+      "keywords": [
+        "palmeiras",
+        "بالميراس"
+      ]
+    },
+    "corinthians": {
+      "sport": "football",
+      "league": "brasileirao",
+      "he": "קורינתיאנס",
+      "en": "Corinthians",
+      "ar": "كورينثيانز",
+      "match": [
+        "קורינתיאנס"
+      ],
+      "keywords": [
+        "corinthians",
+        "كورينثيانز"
+      ]
+    },
+    "algeria": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת אלג׳יריה",
+      "en": "Algeria",
+      "ar": "منتخب الجزائر",
+      "match": [
+        "נבחרת אלג׳יריה"
+      ],
+      "keywords": [
+        "algeria",
+        "الجزائر"
+      ]
+    },
+    "argentina": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ארגנטינה",
+      "en": "Argentina",
+      "ar": "منتخب الأرجنتين",
+      "match": [
+        "נבחרת ארגנטינה"
+      ],
+      "keywords": [
+        "argentina",
+        "الأرجنتين"
+      ]
+    },
+    "belgium": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת בלגיה",
+      "en": "Belgium",
+      "ar": "منتخب بلجيكا",
+      "match": [
+        "נבחרת בלגיה"
+      ],
+      "keywords": [
+        "belgium",
+        "بلجيكا"
+      ]
+    },
+    "brazil": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ברזיל",
+      "en": "Brazil",
+      "ar": "منتخب البرازيل",
+      "match": [
+        "נבחרת ברזיל"
+      ],
+      "keywords": [
+        "brazil",
+        "البرازيل"
+      ]
+    },
+    "colombia": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת קולומביה",
+      "en": "Colombia",
+      "ar": "منتخب كولومبيا",
+      "match": [
+        "נבחרת קולומביה"
+      ],
+      "keywords": [
+        "colombia",
+        "كولومبيا"
+      ]
+    },
+    "croatia": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת קרואטיה",
+      "en": "Croatia",
+      "ar": "منتخب كرواتيا",
+      "match": [
+        "נבחרת קרואטיה"
+      ],
+      "keywords": [
+        "croatia",
+        "كرواتيا"
+      ]
+    },
+    "england": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת אנגליה",
+      "en": "England",
+      "ar": "منتخب إنجلترا",
+      "match": [
+        "נבחרת אנגליה"
+      ],
+      "keywords": [
+        "england",
+        "إنجلترا"
+      ]
+    },
+    "france": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת צרפת",
+      "en": "France",
+      "ar": "منتخب فرنسا",
+      "match": [
+        "נבחרת צרפת"
+      ],
+      "keywords": [
+        "france",
+        "فرنسا"
+      ]
+    },
+    "germany": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת גרמניה",
+      "en": "Germany",
+      "ar": "منتخب ألمانيا",
+      "match": [
+        "נבחרת גרמניה"
+      ],
+      "keywords": [
+        "germany",
+        "ألمانيا"
+      ]
+    },
+    "italy": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת איטליה",
+      "en": "Italy",
+      "ar": "منتخب إيطاليا",
+      "match": [
+        "נבחרת איטליה"
+      ],
+      "keywords": [
+        "italy",
+        "إيطاليا"
+      ]
+    },
+    "ivory-coast": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת חוף השנהב",
+      "en": "Ivory Coast",
+      "ar": "منتخب ساحل العاج",
+      "match": [
+        "נבחרת חוף השנהב"
+      ],
+      "keywords": [
+        "ivory coast",
+        "ساحل العاج"
+      ]
+    },
+    "japan": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת יפן",
+      "en": "Japan",
+      "ar": "منتخب اليابان",
+      "match": [
+        "נבחרת יפן"
+      ],
+      "keywords": [
+        "japan",
+        "اليابان"
+      ]
+    },
+    "mexico": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת מקסיקו",
+      "en": "Mexico",
+      "ar": "منتخب المكسيك",
+      "match": [
+        "נבחרת מקסיקו"
+      ],
+      "keywords": [
+        "mexico",
+        "المكسيك"
+      ]
+    },
+    "morocco": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת מרוקו",
+      "en": "Morocco",
+      "ar": "منتخب المغرب",
+      "match": [
+        "נבחרת מרוקו"
+      ],
+      "keywords": [
+        "morocco",
+        "المغرب"
+      ]
+    },
+    "netherlands": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת הולנד",
+      "en": "Netherlands",
+      "ar": "منتخب هولندا",
+      "match": [
+        "נבחרת הולנד"
+      ],
+      "keywords": [
+        "netherlands",
+        "هولندا"
+      ]
+    },
+    "portugal": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת פורטוגל",
+      "en": "Portugal",
+      "ar": "منتخب البرتغال",
+      "match": [
+        "נבחרת פורטוגל"
+      ],
+      "keywords": [
+        "portugal",
+        "البرتغال"
+      ]
+    },
+    "senegal": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת סנגל",
+      "en": "Senegal",
+      "ar": "منتخب السنغال",
+      "match": [
+        "נבחרת סנגל"
+      ],
+      "keywords": [
+        "senegal",
+        "السنغال"
+      ]
+    },
+    "south-korea": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת דרום קוריאה",
+      "en": "South Korea",
+      "ar": "منتخب كوريا الجنوبية",
+      "match": [
+        "נבחרת דרום קוריאה"
+      ],
+      "keywords": [
+        "south korea",
+        "كوريا الجنوبية"
+      ]
+    },
+    "spain": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ספרד",
+      "en": "Spain",
+      "ar": "منتخب إسبانيا",
+      "match": [
+        "נבחרת ספרד"
+      ],
+      "keywords": [
+        "spain",
+        "إسبانيا"
+      ]
+    },
+    "venezuela": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ונצואלה",
+      "en": "Venezuela",
+      "ar": "منتخب فنزويلا",
+      "match": [
+        "נבחרת ונצואלה"
+      ],
+      "keywords": [
+        "venezuela",
+        "فنزويلا"
+      ]
+    },
+    "atlanta-hawks": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "אטלנטה הוקס",
+      "en": "Atlanta Hawks",
+      "ar": "أتلانتا هوكس",
+      "match": [
+        "אטלנטה הוקס"
+      ],
+      "keywords": [
+        "atlanta hawks",
+        "hawks",
+        "أتلانتا هوكس",
+        "هوكس"
+      ]
+    },
+    "boston-celtics": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "בוסטון סלטיקס",
+      "en": "Boston Celtics",
+      "ar": "بوسطن سيلتيكس",
+      "match": [
+        "בוסטון סלטיקס"
+      ],
+      "keywords": [
+        "boston celtics",
+        "celtics",
+        "بوسطن سيلتيكس",
+        "سيلتيكس"
+      ]
+    },
+    "brooklyn-nets": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "ברוקלין נטס",
+      "en": "Brooklyn Nets",
+      "ar": "بروكلين نتس",
+      "match": [
+        "ברוקלין נטס"
+      ],
+      "keywords": [
+        "brooklyn nets",
+        "nets",
+        "بروكلين نتس",
+        "نتس"
+      ]
+    },
+    "charlotte-hornets": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "שארלוט הורנטס",
+      "en": "Charlotte Hornets",
+      "ar": "شارلوت هورنتس",
+      "match": [
+        "שארלוט הורנטס"
+      ],
+      "keywords": [
+        "charlotte hornets",
+        "hornets",
+        "شارلوت هورنتس",
+        "هورنتس"
+      ]
+    },
+    "chicago-bulls": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "שיקגו בולס",
+      "en": "Chicago Bulls",
+      "ar": "شيكاغو بولز",
+      "match": [
+        "שיקגו בולס"
+      ],
+      "keywords": [
+        "chicago bulls",
+        "bulls",
+        "شيكاغو بولز",
+        "بولز"
+      ]
+    },
+    "cleveland-cavaliers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "קליבלנד קאבלירס",
+      "en": "Cleveland Cavaliers",
+      "ar": "كليفلاند كافالييرز",
+      "match": [
+        "קליבלנד קאבלירס"
+      ],
+      "keywords": [
+        "cleveland cavaliers",
+        "cavaliers",
+        "cavs",
+        "كليفلاند كافالييرز",
+        "كافالييرز"
+      ]
+    },
+    "dallas-mavericks": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "דאלאס מאבריקס",
+      "en": "Dallas Mavericks",
+      "ar": "دالاس مافريكس",
+      "match": [
+        "דאלאס מאבריקס"
+      ],
+      "keywords": [
+        "dallas mavericks",
+        "mavericks",
+        "mavs",
+        "دالاس مافريكس",
+        "مافريكس"
+      ]
+    },
+    "denver-nuggets": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "דנבר נאגטס",
+      "en": "Denver Nuggets",
+      "ar": "دنفر ناغتس",
+      "match": [
+        "דנבר נאגטס"
+      ],
+      "keywords": [
+        "denver nuggets",
+        "nuggets",
+        "دنفر ناغتس",
+        "ناغتس"
+      ]
+    },
+    "detroit-pistons": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "דטרויט פיסטונס",
+      "en": "Detroit Pistons",
+      "ar": "ديترويت بيستونز",
+      "match": [
+        "דטרויט פיסטונס"
+      ],
+      "keywords": [
+        "detroit pistons",
+        "pistons",
+        "ديترويت بيستونز",
+        "بيستونز"
+      ]
+    },
+    "golden-state-warriors": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "גולדן סטייט ווריורס",
+      "en": "Golden State Warriors",
+      "ar": "غولدن ستايت ووريرز",
+      "match": [
+        "גולדן סטייט ווריורס"
+      ],
+      "keywords": [
+        "golden state warriors",
+        "warriors",
+        "غولدن ستايت ووريرز",
+        "ووريرز"
+      ]
+    },
+    "houston-rockets": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "יוסטון רוקטס",
+      "en": "Houston Rockets",
+      "ar": "هيوستن روكتس",
+      "match": [
+        "יוסטון רוקטס"
+      ],
+      "keywords": [
+        "houston rockets",
+        "rockets",
+        "هيوستن روكتس",
+        "روكتس"
+      ]
+    },
+    "indiana-pacers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "אינדיאנה פייסרס",
+      "en": "Indiana Pacers",
+      "ar": "إنديانا بيسرز",
+      "match": [
+        "אינדיאנה פייסרס"
+      ],
+      "keywords": [
+        "indiana pacers",
+        "pacers",
+        "إنديانا بيسرز",
+        "بيسرز"
+      ]
+    },
+    "los-angeles-clippers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "לוס אנג׳לס קליפרס",
+      "en": "Los Angeles Clippers",
+      "ar": "لوس أنجلوس كليبرز",
+      "match": [
+        "לוס אנג׳לס קליפרס"
+      ],
+      "keywords": [
+        "los angeles clippers",
+        "clippers",
+        "لوس أنجلوس كليبرز",
+        "كليبرز"
+      ]
+    },
+    "los-angeles-lakers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "לוס אנג׳לס לייקרס",
+      "en": "Los Angeles Lakers",
+      "ar": "لوس أنجلوس ليكرز",
+      "match": [
+        "לוס אנג׳לס לייקרס"
+      ],
+      "keywords": [
+        "los angeles lakers",
+        "lakers",
+        "لوس أنجلوس ليكرز",
+        "ليكرز"
+      ]
+    },
+    "memphis-grizzlies": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "ממפיס גריזליס",
+      "en": "Memphis Grizzlies",
+      "ar": "ممفيس غريزليز",
+      "match": [
+        "ממפיס גריזליס"
+      ],
+      "keywords": [
+        "memphis grizzlies",
+        "grizzlies",
+        "ممفيس غريزليز",
+        "غريزليز"
+      ]
+    },
+    "miami-heat": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "מיאמי היט",
+      "en": "Miami Heat",
+      "ar": "ميامي هيت",
+      "match": [
+        "מיאמי היט"
+      ],
+      "keywords": [
+        "miami heat",
+        "heat",
+        "ميامي هيت",
+        "هيت"
+      ]
+    },
+    "milwaukee-bucks": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "מילווקי באקס",
+      "en": "Milwaukee Bucks",
+      "ar": "ميلووكي باكس",
+      "match": [
+        "מילווקי באקס"
+      ],
+      "keywords": [
+        "milwaukee bucks",
+        "bucks",
+        "ميلووكي باكس",
+        "باكس"
+      ]
+    },
+    "minnesota-timberwolves": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "מינסוטה טימברוולבס",
+      "en": "Minnesota Timberwolves",
+      "ar": "مينيسوتا تمبروولفز",
+      "match": [
+        "מינסוטה טימברוולבס"
+      ],
+      "keywords": [
+        "minnesota timberwolves",
+        "timberwolves",
+        "مينيسوتا تمبروولفز",
+        "تمبروولفز"
+      ]
+    },
+    "new-orleans-pelicans": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "ניו אורלינס פליקנס",
+      "en": "New Orleans Pelicans",
+      "ar": "نيو أورلينز بيليكانز",
+      "match": [
+        "ניו אורלינס פליקנס"
+      ],
+      "keywords": [
+        "new orleans pelicans",
+        "pelicans",
+        "نيو أورلينز بيليكانز",
+        "بيليكانز"
+      ]
+    },
+    "new-york-knicks": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "ניו יורק ניקס",
+      "en": "New York Knicks",
+      "ar": "نيويورك نيكس",
+      "match": [
+        "ניו יורק ניקס"
+      ],
+      "keywords": [
+        "new york knicks",
+        "knicks",
+        "نيويورك نيكس",
+        "نيكس"
+      ]
+    },
+    "oklahoma-city-thunder": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "אוקלהומה סיטי ת׳אנדר",
+      "en": "Oklahoma City Thunder",
+      "ar": "أوكلاهوما سيتي ثاندر",
+      "match": [
+        "אוקלהומה סיטי ת׳אנדר"
+      ],
+      "keywords": [
+        "oklahoma city thunder",
+        "okc",
+        "thunder",
+        "أوكلاهوما سيتي ثاندر",
+        "ثاندر"
+      ]
+    },
+    "orlando-magic": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "אורלנדו מג׳יק",
+      "en": "Orlando Magic",
+      "ar": "أورلاندو ماجيك",
+      "match": [
+        "אורלנדו מג׳יק"
+      ],
+      "keywords": [
+        "orlando magic",
+        "magic",
+        "أورلاندو ماجيك",
+        "ماجيك"
+      ]
+    },
+    "philadelphia-76ers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "פילדלפיה 76׳",
+      "en": "Philadelphia 76ers",
+      "ar": "فيلادلفيا سفنتي سيكسرز",
+      "match": [
+        "פילדלפיה 76׳"
+      ],
+      "keywords": [
+        "philadelphia 76ers",
+        "76ers",
+        "sixers",
+        "فيلادلفيا سفنتي سيكسرز",
+        "سيكسرز"
+      ]
+    },
+    "phoenix-suns": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "פיניקס סאנס",
+      "en": "Phoenix Suns",
+      "ar": "فينيكس صنز",
+      "match": [
+        "פיניקס סאנס"
+      ],
+      "keywords": [
+        "phoenix suns",
+        "suns",
+        "فينيكس صنز",
+        "صنز"
+      ]
+    },
+    "portland-trail-blazers": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "פורטלנד טרייל בלייזרס",
+      "en": "Portland Trail Blazers",
+      "ar": "بورتلاند ترايل بليزرز",
+      "match": [
+        "פורטלנד טרייל בלייזרס"
+      ],
+      "keywords": [
+        "portland trail blazers",
+        "blazers",
+        "بورتلاند ترايل بليزرز",
+        "بليزرز"
+      ]
+    },
+    "sacramento-kings": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "סקרמנטו קינגס",
+      "en": "Sacramento Kings",
+      "ar": "ساكرامنتو كينغز",
+      "match": [
+        "סקרמנטו קינגס"
+      ],
+      "keywords": [
+        "sacramento kings",
+        "kings",
+        "ساكرامنتو كينغز",
+        "كينغز"
+      ]
+    },
+    "san-antonio-spurs": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "סן אנטוניו ספרס",
+      "en": "San Antonio Spurs",
+      "ar": "سان أنطونيو سبيرز",
+      "match": [
+        "סן אנטוניו ספרס"
+      ],
+      "keywords": [
+        "san antonio spurs",
+        "spurs",
+        "سان أنطونيو سبيرز",
+        "سبيرز"
+      ]
+    },
+    "toronto-raptors": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "טורונטו ראפטורס",
+      "en": "Toronto Raptors",
+      "ar": "تورونتو رابتورز",
+      "match": [
+        "טורונטו ראפטורס"
+      ],
+      "keywords": [
+        "toronto raptors",
+        "raptors",
+        "تورونتو رابتورز",
+        "رابتورز"
+      ]
+    },
+    "utah-jazz": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "יוטה ג׳אז",
+      "en": "Utah Jazz",
+      "ar": "يوتا جاز",
+      "match": [
+        "יוטה ג׳אז"
+      ],
+      "keywords": [
+        "utah jazz",
+        "jazz",
+        "يوتا جاز",
+        "جاز"
+      ]
+    },
+    "washington-wizards": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "וושינגטון וויזארדס",
+      "en": "Washington Wizards",
+      "ar": "واشنطن ويزاردز",
+      "match": [
+        "וושינגטון וויזארדס"
+      ],
+      "keywords": [
+        "washington wizards",
+        "wizards",
+        "واشنطن ويزاردز",
+        "ويزاردز"
+      ]
+    },
+    "seattle-supersonics": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "סיאטל סופרסוניקס",
+      "en": "Seattle SuperSonics",
+      "ar": "سياتل سوبرسونيكس",
+      "match": [
+        "סיאטל סופרסוניקס"
+      ],
+      "keywords": [
+        "seattle supersonics",
+        "supersonics",
+        "sonics",
+        "سياتل سوبرسونيكس",
+        "سوبرسونيكس"
+      ],
+      "styles": [
+        "retro"
+      ],
+      "_note": "Moved to Oklahoma City in 2008, so every SuperSonics jersey is a throwback."
+    },
+    "all-star": {
+      "sport": "basketball",
+      "league": "nba",
+      "he": "אולסטאר",
+      "en": "NBA All-Star",
+      "ar": "كل النجوم NBA",
+      "match": [
+        "אולסטאר"
+      ],
+      "keywords": [
+        "all-star",
+        "all star",
+        "كل النجوم"
+      ]
+    },
+    "usa": {
+      "sport": [
+        "basketball",
+        "football"
+      ],
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ארצות הברית",
+      "en": "USA",
+      "ar": "منتخب الولايات المتحدة",
+      "match": [
+        "נבחרת ארצות הברית",
+        "נבחרת ארה״ב"
+      ],
+      "keywords": [
+        "usa",
+        "united states",
+        "الولايات المتحدة",
+        "أمريكا"
+      ]
+    },
+    "iowa": {
+      "sport": "basketball",
+      "league": "ncaa",
+      "he": "איווה",
+      "en": "Iowa Hawkeyes",
+      "ar": "أيوا هوكايز",
+      "match": [
+        "איווה"
+      ],
+      "keywords": [
+        "iowa hawkeyes",
+        "iowa",
+        "أيوا"
+      ]
+    },
+    "north-carolina": {
+      "sport": "basketball",
+      "league": "ncaa",
+      "he": "נורת׳ קרוליינה",
+      "en": "North Carolina Tar Heels",
+      "ar": "نورث كارولينا",
+      "match": [
+        "נורת׳ קרוליינה"
+      ],
+      "keywords": [
+        "north carolina",
+        "unc",
+        "نورث كارولينا"
+      ]
+    },
+    "georgetown": {
+      "sport": "basketball",
+      "league": "ncaa",
+      "he": "ג׳ורג׳טאון",
+      "en": "Georgetown Hoyas",
+      "ar": "جورجتاون",
+      "match": [
+        "ג׳ורג׳טאון"
+      ],
+      "keywords": [
+        "georgetown",
+        "hoyas",
+        "جورجتاون"
+      ]
+    },
+    "dallas-wings": {
+      "sport": "basketball",
+      "league": "wnba",
+      "he": "דאלאס ווינגס",
+      "en": "Dallas Wings",
+      "ar": "دالاس وينغز",
+      "match": [
+        "דאלאס ווינגס"
+      ],
+      "keywords": [
+        "dallas wings",
+        "wings",
+        "دالاس وينغز"
+      ]
+    },
+    "new-york-liberty": {
+      "sport": "basketball",
+      "league": "wnba",
+      "he": "ניו יורק ליברטי",
+      "en": "New York Liberty",
+      "ar": "نيويورك ليبرتي",
+      "match": [
+        "ניו יורק ליברטי"
+      ],
+      "keywords": [
+        "new york liberty",
+        "liberty",
+        "نيويورك ليبرتي"
+      ]
+    },
+    "indiana-fever": {
+      "sport": "basketball",
+      "league": "wnba",
+      "he": "אינדיאנה פיבר",
+      "en": "Indiana Fever",
+      "ar": "إنديانا فيفر",
+      "match": [
+        "אינדיאנה פיבר"
+      ],
+      "keywords": [
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر"
+      ]
+    },
+    "st-vincent-st-mary": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "school",
+      "he": "סנט וינסנט-סנט מרי",
+      "en": "St. Vincent–St. Mary",
+      "ar": "سانت فنسنت سانت ماري",
+      "match": [],
+      "keywords": [
+        "st. vincent-st. mary",
+        "irish",
+        "سانت فنسنت سانت ماري"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "lower-merion": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "school",
+      "he": "לואר מריון",
+      "en": "Lower Merion",
+      "ar": "لوير ميريون",
+      "match": [],
+      "keywords": [
+        "lower merion",
+        "لوير ميريون"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "metropolitans-92": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "club",
+      "he": "מטרופוליטנס 92",
+      "en": "Metropolitans 92",
+      "ar": "ميتروبوليتان 92",
+      "match": [],
+      "keywords": [
+        "metropolitans 92",
+        "mets 92",
+        "ميتروبوليتان 92"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "bape": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "collab",
+      "he": "BAPE",
+      "en": "BAPE",
+      "ar": "بيب",
+      "match": [
+        "BAPE"
+      ],
+      "keywords": [
+        "bape",
+        "a bathing ape",
+        "بيب"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "space-jam": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "collab",
+      "he": "ספייס ג׳אם",
+      "en": "Space Jam",
+      "ar": "سبيس جام",
+      "match": [
+        "ספייס ג׳אם"
+      ],
+      "keywords": [
+        "space jam",
+        "tune squad",
+        "سبيس جام"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "slam-dunk": {
+      "sport": "basketball",
+      "league": null,
+      "kind": "collab",
+      "he": "סלאם דאנק",
+      "en": "Slam Dunk",
+      "ar": "سلام دانك",
+      "match": [
+        "סלאם דאנק"
+      ],
+      "keywords": [
+        "slam dunk",
+        "سلام دانك"
+      ],
+      "styles": [
+        "special"
+      ]
+    },
+    "arizona-cardinals": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "אריזונה קרדינלס",
+      "en": "Arizona Cardinals",
+      "ar": "أريزونا كاردينالز",
+      "match": [
+        "אריזונה קרדינלס"
+      ],
+      "keywords": [
+        "arizona cardinals",
+        "cardinals",
+        "أريزونا كاردينالز",
+        "كاردينالز"
+      ]
+    },
+    "atlanta-falcons": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "אטלנטה פאלקונס",
+      "en": "Atlanta Falcons",
+      "ar": "أتلانتا فالكونز",
+      "match": [
+        "אטלנטה פאלקונס"
+      ],
+      "keywords": [
+        "atlanta falcons",
+        "falcons",
+        "أتلانتا فالكونز",
+        "فالكونز"
+      ]
+    },
+    "baltimore-ravens": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "בולטימור רייבנס",
+      "en": "Baltimore Ravens",
+      "ar": "بالتيمور رافنز",
+      "match": [
+        "בולטימור רייבנס"
+      ],
+      "keywords": [
+        "baltimore ravens",
+        "ravens",
+        "بالتيمور رافنز",
+        "رافنز"
+      ]
+    },
+    "buffalo-bills": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "באפלו בילס",
+      "en": "Buffalo Bills",
+      "ar": "بافالو بيلز",
+      "match": [
+        "באפלו בילס"
+      ],
+      "keywords": [
+        "buffalo bills",
+        "bills",
+        "بافالو بيلز",
+        "بيلز"
+      ]
+    },
+    "carolina-panthers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "קרוליינה פנתרס",
+      "en": "Carolina Panthers",
+      "ar": "كارولينا بانثرز",
+      "match": [
+        "קרוליינה פנתרס"
+      ],
+      "keywords": [
+        "carolina panthers",
+        "panthers",
+        "كارولينا بانثرز",
+        "بانثرز"
+      ]
+    },
+    "chicago-bears": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "שיקגו ברס",
+      "en": "Chicago Bears",
+      "ar": "شيكاغو بيرز",
+      "match": [
+        "שיקגו ברס"
+      ],
+      "keywords": [
+        "chicago bears",
+        "bears",
+        "شيكاغو بيرز",
+        "بيرز"
+      ]
+    },
+    "cincinnati-bengals": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "סינסינטי בנגלס",
+      "en": "Cincinnati Bengals",
+      "ar": "سينسيناتي بنغالز",
+      "match": [
+        "סינסינטי בנגלס"
+      ],
+      "keywords": [
+        "cincinnati bengals",
+        "bengals",
+        "سينسيناتي بنغالز",
+        "بنغالز"
+      ]
+    },
+    "cleveland-browns": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "קליבלנד בראונס",
+      "en": "Cleveland Browns",
+      "ar": "كليفلاند براونز",
+      "match": [
+        "קליבלנד בראונס"
+      ],
+      "keywords": [
+        "cleveland browns",
+        "browns",
+        "كليفلاند براونز",
+        "براونز"
+      ]
+    },
+    "dallas-cowboys": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "דאלאס קאובויס",
+      "en": "Dallas Cowboys",
+      "ar": "دالاس كاوبويز",
+      "match": [
+        "דאלאס קאובויס"
+      ],
+      "keywords": [
+        "dallas cowboys",
+        "cowboys",
+        "دالاس كاوبويز",
+        "كاوبويز"
+      ]
+    },
+    "denver-broncos": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "דנבר ברונקוס",
+      "en": "Denver Broncos",
+      "ar": "دنفر برونكوز",
+      "match": [
+        "דנבר ברונקוס"
+      ],
+      "keywords": [
+        "denver broncos",
+        "broncos",
+        "دنفر برونكوز",
+        "برونكوز"
+      ]
+    },
+    "detroit-lions": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "דטרויט ליונס",
+      "en": "Detroit Lions",
+      "ar": "ديترويت لايونز",
+      "match": [
+        "דטרויט ליונס"
+      ],
+      "keywords": [
+        "detroit lions",
+        "lions",
+        "ديترويت لايونز",
+        "لايونز"
+      ]
+    },
+    "green-bay-packers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "גרין ביי פאקרס",
+      "en": "Green Bay Packers",
+      "ar": "غرين باي باكرز",
+      "match": [
+        "גרין ביי פאקרס"
+      ],
+      "keywords": [
+        "green bay packers",
+        "packers",
+        "غرين باي باكرز",
+        "باكرز"
+      ]
+    },
+    "houston-texans": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "יוסטון טקסאנס",
+      "en": "Houston Texans",
+      "ar": "هيوستن تكسانز",
+      "match": [
+        "יוסטון טקסאנס"
+      ],
+      "keywords": [
+        "houston texans",
+        "texans",
+        "هيوستن تكسانز",
+        "تكسانز"
+      ]
+    },
+    "indianapolis-colts": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "אינדיאנפוליס קולטס",
+      "en": "Indianapolis Colts",
+      "ar": "إنديانابوليس كولتس",
+      "match": [
+        "אינדיאנפוליס קולטס"
+      ],
+      "keywords": [
+        "indianapolis colts",
+        "colts",
+        "إنديانابوليس كولتس",
+        "كولتس"
+      ]
+    },
+    "jacksonville-jaguars": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "ג׳קסונוויל ג׳גוארס",
+      "en": "Jacksonville Jaguars",
+      "ar": "جاكسونفيل جاغوارز",
+      "match": [
+        "ג׳קסונוויל ג׳גוארס"
+      ],
+      "keywords": [
+        "jacksonville jaguars",
+        "jaguars",
+        "جاكسونفيل جاغوارز",
+        "جاغوارز"
+      ]
+    },
+    "kansas-city-chiefs": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "קנזס סיטי צ׳יפס",
+      "en": "Kansas City Chiefs",
+      "ar": "كانساس سيتي تشيفز",
+      "match": [
+        "קנזס סיטי צ׳יפס"
+      ],
+      "keywords": [
+        "kansas city chiefs",
+        "chiefs",
+        "كانساس سيتي تشيفز",
+        "تشيفز"
+      ]
+    },
+    "las-vegas-raiders": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "לאס וגאס ריידרס",
+      "en": "Las Vegas Raiders",
+      "ar": "لاس فيغاس رايدرز",
+      "match": [
+        "לאס וגאס ריידרס"
+      ],
+      "keywords": [
+        "las vegas raiders",
+        "raiders",
+        "لاس فيغاس رايدرز",
+        "رايدرز"
+      ]
+    },
+    "los-angeles-chargers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "לוס אנג׳לס צ׳ארג׳רס",
+      "en": "Los Angeles Chargers",
+      "ar": "لوس أنجلوس تشارجرز",
+      "match": [
+        "לוס אנג׳לס צ׳ארג׳רס"
+      ],
+      "keywords": [
+        "los angeles chargers",
+        "chargers",
+        "لوس أنجلوس تشارجرز",
+        "تشارجرز"
+      ]
+    },
+    "los-angeles-rams": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "לוס אנג׳לס ראמס",
+      "en": "Los Angeles Rams",
+      "ar": "لوس أنجلوس رامز",
+      "match": [
+        "לוס אנג׳לס ראמס"
+      ],
+      "keywords": [
+        "los angeles rams",
+        "rams",
+        "لوس أنجلوس رامز",
+        "رامز"
+      ]
+    },
+    "miami-dolphins": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "מיאמי דולפינס",
+      "en": "Miami Dolphins",
+      "ar": "ميامي دولفينز",
+      "match": [
+        "מיאמי דולפינס"
+      ],
+      "keywords": [
+        "miami dolphins",
+        "dolphins",
+        "ميامي دولفينز",
+        "دولفينز"
+      ]
+    },
+    "minnesota-vikings": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "מינסוטה ויקינגס",
+      "en": "Minnesota Vikings",
+      "ar": "مينيسوتا فايكنغز",
+      "match": [
+        "מינסוטה ויקינגס"
+      ],
+      "keywords": [
+        "minnesota vikings",
+        "vikings",
+        "مينيسوتا فايكنغز",
+        "فايكنغز"
+      ]
+    },
+    "new-england-patriots": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "ניו אינגלנד פטריוטס",
+      "en": "New England Patriots",
+      "ar": "نيو إنجلاند باتريوتس",
+      "match": [
+        "ניו אינגלנד פטריוטס"
+      ],
+      "keywords": [
+        "new england patriots",
+        "patriots",
+        "نيو إنجلاند باتريوتس",
+        "باتريوتس"
+      ]
+    },
+    "new-orleans-saints": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "ניו אורלינס סיינטס",
+      "en": "New Orleans Saints",
+      "ar": "نيو أورلينز سينتس",
+      "match": [
+        "ניו אורלינס סיינטס"
+      ],
+      "keywords": [
+        "new orleans saints",
+        "saints",
+        "نيو أورلينز سينتس",
+        "سينتس"
+      ]
+    },
+    "new-york-giants": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "ניו יורק ג׳איינטס",
+      "en": "New York Giants",
+      "ar": "نيويورك جاينتس",
+      "match": [
+        "ניו יורק ג׳איינטס"
+      ],
+      "keywords": [
+        "new york giants",
+        "giants",
+        "نيويورك جاينتس",
+        "جاينتس"
+      ]
+    },
+    "new-york-jets": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "ניו יורק ג׳טס",
+      "en": "New York Jets",
+      "ar": "نيويورك جتس",
+      "match": [
+        "ניו יורק ג׳טס"
+      ],
+      "keywords": [
+        "new york jets",
+        "jets",
+        "نيويورك جتس",
+        "جتس"
+      ]
+    },
+    "philadelphia-eagles": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "פילדלפיה איגלס",
+      "en": "Philadelphia Eagles",
+      "ar": "فيلادلفيا إيغلز",
+      "match": [
+        "פילדלפיה איגלס"
+      ],
+      "keywords": [
+        "philadelphia eagles",
+        "eagles",
+        "فيلادلفيا إيغلز",
+        "إيغلز"
+      ]
+    },
+    "pittsburgh-steelers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "פיטסבורג סטילרס",
+      "en": "Pittsburgh Steelers",
+      "ar": "بيتسبرغ ستيلرز",
+      "match": [
+        "פיטסבורג סטילרס"
+      ],
+      "keywords": [
+        "pittsburgh steelers",
+        "steelers",
+        "بيتسبرغ ستيلرز",
+        "ستيلرز"
+      ]
+    },
+    "san-francisco-49ers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "סן פרנסיסקו 49׳",
+      "en": "San Francisco 49ers",
+      "ar": "سان فرانسيسكو فورتي ناينرز",
+      "match": [
+        "סן פרנסיסקו 49׳"
+      ],
+      "keywords": [
+        "san francisco 49ers",
+        "49ers",
+        "سان فرانسيسكو فورتي ناينرز",
+        "ناينرز"
+      ]
+    },
+    "seattle-seahawks": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "סיאטל סיהוקס",
+      "en": "Seattle Seahawks",
+      "ar": "سياتل سيهوكس",
+      "match": [
+        "סיאטל סיהוקס"
+      ],
+      "keywords": [
+        "seattle seahawks",
+        "seahawks",
+        "سياتل سيهوكس",
+        "سيهوكس"
+      ]
+    },
+    "tampa-bay-buccaneers": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "טמפה ביי באקנירס",
+      "en": "Tampa Bay Buccaneers",
+      "ar": "تامبا باي بوكانيرز",
+      "match": [
+        "טמפה ביי באקנירס"
+      ],
+      "keywords": [
+        "tampa bay buccaneers",
+        "buccaneers",
+        "تامبا باي بوكانيرز",
+        "بوكانيرز"
+      ]
+    },
+    "tennessee-titans": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "טנסי טייטאנס",
+      "en": "Tennessee Titans",
+      "ar": "تينيسي تايتنز",
+      "match": [
+        "טנסי טייטאנס"
+      ],
+      "keywords": [
+        "tennessee titans",
+        "titans",
+        "تينيسي تايتنز",
+        "تايتنز"
+      ]
+    },
+    "washington-commanders": {
+      "sport": "american-football",
+      "league": "nfl",
+      "he": "וושינגטון קומנדרס",
+      "en": "Washington Commanders",
+      "ar": "واشنطن كوماندرز",
+      "match": [
+        "וושינגטון קומנדרס"
+      ],
+      "keywords": [
+        "washington commanders",
+        "commanders",
+        "واشنطن كوماندرز",
+        "كوماندرز"
+      ]
+    }
+  },
+  "players": {
+    "kobe-bryant": {
+      "he": "קובי בראיינט",
+      "en": "Kobe Bryant",
+      "ar": "كوبي براينت",
+      "keywords": [
+        "kobe bryant",
+        "kobe",
+        "كوبي براينت"
+      ],
+      "match": [
+        "קובי בראיינט"
+      ]
+    },
+    "lebron-james": {
+      "he": "לברון ג׳יימס",
+      "en": "LeBron James",
+      "ar": "ليبرون جيمس",
+      "keywords": [
+        "lebron james",
+        "lebron",
+        "ليبرون جيمس"
+      ],
+      "match": [
+        "לברון ג׳יימס"
+      ]
+    },
+    "anthony-davis": {
+      "he": "אנתוני דייוויס",
+      "en": "Anthony Davis",
+      "ar": "أنتوني ديفيس",
+      "keywords": [
+        "anthony davis",
+        "أنتوني ديفيس"
+      ]
+    },
+    "magic-johnson": {
+      "he": "מג׳יק ג׳ונסון",
+      "en": "Magic Johnson",
+      "ar": "ماجيك جونسون",
+      "keywords": [
+        "magic johnson",
+        "ماجيك جونسون"
+      ]
+    },
+    "shaquille-oneal": {
+      "he": "שאקיל אוניל",
+      "en": "Shaquille O'Neal",
+      "ar": "شاكيل أونيل",
+      "keywords": [
+        "shaquille o'neal",
+        "shaq",
+        "شاكيل أونيل"
+      ]
+    },
+    "kareem-abdul-jabbar": {
+      "he": "קארים עבדול-ג׳באר",
+      "en": "Kareem Abdul-Jabbar",
+      "ar": "كريم عبد الجبار",
+      "keywords": [
+        "kareem abdul-jabbar",
+        "kareem",
+        "كريم عبد الجبار"
+      ]
+    },
+    "wilt-chamberlain": {
+      "he": "וילט צ׳מברליין",
+      "en": "Wilt Chamberlain",
+      "ar": "ويلت تشامبرلين",
+      "keywords": [
+        "wilt chamberlain",
+        "ويلت تشامبرلين"
+      ]
+    },
+    "luka-doncic": {
+      "he": "לוקה דונצ׳יץ׳",
+      "en": "Luka Dončić",
+      "ar": "لوكا دونتشيتش",
+      "keywords": [
+        "luka doncic",
+        "luka",
+        "لوكا دونتشيتش"
+      ],
+      "match": [
+        "לוקה דונצ׳יץ׳"
+      ]
+    },
+    "michael-jordan": {
+      "he": "מייקל ג׳ורדן",
+      "en": "Michael Jordan",
+      "ar": "مايكل جوردان",
+      "keywords": [
+        "michael jordan",
+        "jordan",
+        "مايكل جوردان"
+      ],
+      "match": [
+        "מייקל ג׳ורדן"
+      ]
+    },
+    "dennis-rodman": {
+      "he": "דניס רודמן",
+      "en": "Dennis Rodman",
+      "ar": "دينيس رودمان",
+      "keywords": [
+        "dennis rodman",
+        "rodman",
+        "دينيس رودمان"
+      ]
+    },
+    "scottie-pippen": {
+      "he": "סקוטי פיפן",
+      "en": "Scottie Pippen",
+      "ar": "سكوتي بيبن",
+      "keywords": [
+        "scottie pippen",
+        "pippen",
+        "سكوتي بيبن"
+      ]
+    },
+    "derrick-rose": {
+      "he": "דריק רוז",
+      "en": "Derrick Rose",
+      "ar": "ديريك روز",
+      "keywords": [
+        "derrick rose",
+        "ديريك روز"
+      ]
+    },
+    "stephen-curry": {
+      "he": "סטפן קרי",
+      "en": "Stephen Curry",
+      "ar": "ستيفن كاري",
+      "keywords": [
+        "stephen curry",
+        "steph curry",
+        "curry",
+        "ستيفن كاري"
+      ],
+      "match": [
+        "סטפן קרי",
+        "סטף קרי"
+      ]
+    },
+    "klay-thompson": {
+      "he": "קליי תומפסון",
+      "en": "Klay Thompson",
+      "ar": "كلاي طومسون",
+      "keywords": [
+        "klay thompson",
+        "klay",
+        "كلاي طومسون"
+      ]
+    },
+    "kevin-durant": {
+      "he": "קווין דוראנט",
+      "en": "Kevin Durant",
+      "ar": "كيفن دورانت",
+      "keywords": [
+        "kevin durant",
+        "durant",
+        "كيفن دورانت"
+      ],
+      "match": [
+        "קווין דוראנט"
+      ]
+    },
+    "jayson-tatum": {
+      "he": "ג׳ייסון טייטום",
+      "en": "Jayson Tatum",
+      "ar": "جايسون تاتوم",
+      "keywords": [
+        "jayson tatum",
+        "tatum",
+        "جايسون تاتوم"
+      ]
+    },
+    "jaylen-brown": {
+      "he": "ג׳יילן בראון",
+      "en": "Jaylen Brown",
+      "ar": "جايلن براون",
+      "keywords": [
+        "jaylen brown",
+        "جايلن براون"
+      ]
+    },
+    "larry-bird": {
+      "he": "לארי בירד",
+      "en": "Larry Bird",
+      "ar": "لاري بيرد",
+      "keywords": [
+        "larry bird",
+        "لاري بيرد"
+      ]
+    },
+    "paul-pierce": {
+      "he": "פול פירס",
+      "en": "Paul Pierce",
+      "ar": "بول بيرس",
+      "keywords": [
+        "paul pierce",
+        "بول بيرس"
+      ]
+    },
+    "allen-iverson": {
+      "he": "אלן אייברסון",
+      "en": "Allen Iverson",
+      "ar": "ألين آيفرسون",
+      "keywords": [
+        "allen iverson",
+        "iverson",
+        "ألين آيفرسون"
+      ],
+      "match": [
+        "אלן אייברסון"
+      ]
+    },
+    "joel-embiid": {
+      "he": "ג׳ואל אמביד",
+      "en": "Joel Embiid",
+      "ar": "جويل إمبيد",
+      "keywords": [
+        "joel embiid",
+        "embiid",
+        "جويل إمبيد"
+      ]
+    },
+    "tyrese-maxey": {
+      "he": "טייריס מקסי",
+      "en": "Tyrese Maxey",
+      "ar": "تايريس ماكسي",
+      "keywords": [
+        "tyrese maxey",
+        "maxey",
+        "تايريس ماكسي"
+      ]
+    },
+    "dwyane-wade": {
+      "he": "דוויין וייד",
+      "en": "Dwyane Wade",
+      "ar": "دواين وايد",
+      "keywords": [
+        "dwyane wade",
+        "wade",
+        "دواين وايد"
+      ]
+    },
+    "jimmy-butler": {
+      "he": "ג׳ימי באטלר",
+      "en": "Jimmy Butler",
+      "ar": "جيمي باتلر",
+      "keywords": [
+        "jimmy butler",
+        "butler",
+        "جيمي باتلر"
+      ]
+    },
+    "tyler-herro": {
+      "he": "טיילר הירו",
+      "en": "Tyler Herro",
+      "ar": "تايلر هيرو",
+      "keywords": [
+        "tyler herro",
+        "herro",
+        "تايلر هيرو"
+      ]
+    },
+    "dirk-nowitzki": {
+      "he": "דירק נוביצקי",
+      "en": "Dirk Nowitzki",
+      "ar": "ديرك نوفيتسكي",
+      "keywords": [
+        "dirk nowitzki",
+        "dirk",
+        "ديرك نوفيتسكي"
+      ]
+    },
+    "kyrie-irving": {
+      "he": "קיירי אירווינג",
+      "en": "Kyrie Irving",
+      "ar": "كايري إيرفينغ",
+      "keywords": [
+        "kyrie irving",
+        "kyrie",
+        "كايري إيرفينغ"
+      ]
+    },
+    "devin-booker": {
+      "he": "דווין בוקר",
+      "en": "Devin Booker",
+      "ar": "ديفين بوكر",
+      "keywords": [
+        "devin booker",
+        "booker",
+        "ديفين بوكر"
+      ]
+    },
+    "steve-nash": {
+      "he": "סטיב נאש",
+      "en": "Steve Nash",
+      "ar": "ستيف ناش",
+      "keywords": [
+        "steve nash",
+        "nash",
+        "ستيف ناش"
+      ]
+    },
+    "charles-barkley": {
+      "he": "צ׳ארלס בארקלי",
+      "en": "Charles Barkley",
+      "ar": "تشارلز باركلي",
+      "keywords": [
+        "charles barkley",
+        "barkley",
+        "تشارلز باركلي"
+      ]
+    },
+    "james-harden": {
+      "he": "ג׳יימס הארדן",
+      "en": "James Harden",
+      "ar": "جيمس هاردن",
+      "keywords": [
+        "james harden",
+        "harden",
+        "جيمس هاردن"
+      ]
+    },
+    "giannis-antetokounmpo": {
+      "he": "יאניס אנטטוקומפו",
+      "en": "Giannis Antetokounmpo",
+      "ar": "يانيس أنتيتوكونمبو",
+      "keywords": [
+        "giannis antetokounmpo",
+        "giannis",
+        "يانيس أنتيتوكونمبو"
+      ],
+      "match": [
+        "יאניס אנטטוקומפו"
+      ]
+    },
+    "nikola-jokic": {
+      "he": "ניקולה יוקיץ׳",
+      "en": "Nikola Jokić",
+      "ar": "نيكولا يوكيتش",
+      "keywords": [
+        "nikola jokic",
+        "jokic",
+        "نيكولا يوكيتش"
+      ],
+      "match": [
+        "ניקולה יוקיץ׳"
+      ]
+    },
+    "ja-morant": {
+      "he": "ג׳ה מוראנט",
+      "en": "Ja Morant",
+      "ar": "جا مورانت",
+      "keywords": [
+        "ja morant",
+        "morant",
+        "جا مورانت"
+      ]
+    },
+    "anthony-edwards": {
+      "he": "אנתוני אדוארדס",
+      "en": "Anthony Edwards",
+      "ar": "أنتوني إدواردز",
+      "keywords": [
+        "anthony edwards",
+        "أنتوني إدواردز"
+      ]
+    },
+    "kevin-garnett": {
+      "he": "קווין גארנט",
+      "en": "Kevin Garnett",
+      "ar": "كيفن غارنيت",
+      "keywords": [
+        "kevin garnett",
+        "garnett",
+        "كيفن غارنيت"
+      ]
+    },
+    "victor-wembanyama": {
+      "he": "ויקטור וומבניאמה",
+      "en": "Victor Wembanyama",
+      "ar": "فيكتور ويمبانياما",
+      "keywords": [
+        "victor wembanyama",
+        "wembanyama",
+        "wemby",
+        "فيكتور ويمبانياما"
+      ]
+    },
+    "tim-duncan": {
+      "he": "טים דאנקן",
+      "en": "Tim Duncan",
+      "ar": "تيم دنكان",
+      "keywords": [
+        "tim duncan",
+        "duncan",
+        "تيم دنكان"
+      ],
+      "match": [
+        "טים דאנקן"
+      ]
+    },
+    "manu-ginobili": {
+      "he": "מאנו ג׳ינובילי",
+      "en": "Manu Ginóbili",
+      "ar": "مانو جينوبيلي",
+      "keywords": [
+        "manu ginobili",
+        "ginobili",
+        "مانو جينوبيلي"
+      ]
+    },
+    "russell-westbrook": {
+      "he": "ראסל ווסטברוק",
+      "en": "Russell Westbrook",
+      "ar": "راسل وستبروك",
+      "keywords": [
+        "russell westbrook",
+        "westbrook",
+        "راسل وستبروك"
+      ]
+    },
+    "shai-gilgeous-alexander": {
+      "he": "שיי גילג׳ס-אלכסנדר",
+      "en": "Shai Gilgeous-Alexander",
+      "ar": "شاي غيلجيوس ألكسندر",
+      "keywords": [
+        "shai gilgeous-alexander",
+        "sga",
+        "شاي غيلجيوس ألكسندر"
+      ]
+    },
+    "gary-payton": {
+      "he": "גארי פייטון",
+      "en": "Gary Payton",
+      "ar": "غاري بايتون",
+      "keywords": [
+        "gary payton",
+        "payton",
+        "غاري بايتون"
+      ]
+    },
+    "shawn-kemp": {
+      "he": "שון קמפ",
+      "en": "Shawn Kemp",
+      "ar": "شون كيمب",
+      "keywords": [
+        "shawn kemp",
+        "kemp",
+        "شون كيمب"
+      ]
+    },
+    "ray-allen": {
+      "he": "ריי אלן",
+      "en": "Ray Allen",
+      "ar": "راي آلن",
+      "keywords": [
+        "ray allen",
+        "راي آلن"
+      ]
+    },
+    "tracy-mcgrady": {
+      "he": "טרייסי מקגריידי",
+      "en": "Tracy McGrady",
+      "ar": "تريسي ماكغريدي",
+      "keywords": [
+        "tracy mcgrady",
+        "mcgrady",
+        "تريسي ماكغريدي"
+      ]
+    },
+    "yao-ming": {
+      "he": "יאו מינג",
+      "en": "Yao Ming",
+      "ar": "ياو مينغ",
+      "keywords": [
+        "yao ming",
+        "ياو مينغ"
+      ]
+    },
+    "hakeem-olajuwon": {
+      "he": "חכים אולג׳ואן",
+      "en": "Hakeem Olajuwon",
+      "ar": "حكيم أولاجوان",
+      "keywords": [
+        "hakeem olajuwon",
+        "hakeem",
+        "حكيم أولاجوان"
+      ]
+    },
+    "vince-carter": {
+      "he": "וינס קרטר",
+      "en": "Vince Carter",
+      "ar": "فينس كارتر",
+      "keywords": [
+        "vince carter",
+        "فينس كارتر"
+      ]
+    },
+    "kawhi-leonard": {
+      "he": "קוואי לנארד",
+      "en": "Kawhi Leonard",
+      "ar": "كاواي ليونارد",
+      "keywords": [
+        "kawhi leonard",
+        "kawhi",
+        "كاواي ليونارد"
+      ]
+    },
+    "trae-young": {
+      "he": "טריי יאנג",
+      "en": "Trae Young",
+      "ar": "تراي يونغ",
+      "keywords": [
+        "trae young",
+        "trae",
+        "تراي يونغ"
+      ]
+    },
+    "patrick-ewing": {
+      "he": "פטריק יואינג",
+      "en": "Patrick Ewing",
+      "ar": "باتريك يوينغ",
+      "keywords": [
+        "patrick ewing",
+        "ewing",
+        "باتريك يوينغ"
+      ]
+    },
+    "jalen-brunson": {
+      "he": "ג׳יילן ברונסון",
+      "en": "Jalen Brunson",
+      "ar": "جالين برونسون",
+      "keywords": [
+        "jalen brunson",
+        "brunson",
+        "جالين برونسون"
+      ]
+    },
+    "isiah-thomas": {
+      "he": "אייזיה תומאס",
+      "en": "Isiah Thomas",
+      "ar": "إيزايا توماس",
+      "keywords": [
+        "isiah thomas",
+        "إيزايا توماس"
+      ]
+    },
+    "grant-hill": {
+      "he": "גרנט היל",
+      "en": "Grant Hill",
+      "ar": "غرانت هيل",
+      "keywords": [
+        "grant hill",
+        "غرانت هيل"
+      ]
+    },
+    "john-stockton": {
+      "he": "ג׳ון סטוקטון",
+      "en": "John Stockton",
+      "ar": "جون ستوكتون",
+      "keywords": [
+        "john stockton",
+        "stockton",
+        "جون ستوكتون"
+      ]
+    },
+    "karl-malone": {
+      "he": "קרל מלון",
+      "en": "Karl Malone",
+      "ar": "كارل مالون",
+      "keywords": [
+        "karl malone",
+        "malone",
+        "كارل مالون"
+      ]
+    },
+    "damian-lillard": {
+      "he": "דמיאן לילארד",
+      "en": "Damian Lillard",
+      "ar": "داميان ليلارد",
+      "keywords": [
+        "damian lillard",
+        "lillard",
+        "داميان ليلارد"
+      ]
+    },
+    "lamelo-ball": {
+      "he": "למלו בול",
+      "en": "LaMelo Ball",
+      "ar": "لاميلو بول",
+      "keywords": [
+        "lamelo ball",
+        "lamelo",
+        "لاميلو بول"
+      ]
+    },
+    "reggie-miller": {
+      "he": "רג׳י מילר",
+      "en": "Reggie Miller",
+      "ar": "ريجي ميلر",
+      "keywords": [
+        "reggie miller",
+        "ريجي ميلر"
+      ]
+    },
+    "paul-george": {
+      "he": "פול ג׳ורג׳",
+      "en": "Paul George",
+      "ar": "بول جورج",
+      "keywords": [
+        "paul george",
+        "بول جورج"
+      ]
+    },
+    "zion-williamson": {
+      "he": "זאיון ויליאמסון",
+      "en": "Zion Williamson",
+      "ar": "زايون ويليامسون",
+      "keywords": [
+        "zion williamson",
+        "zion",
+        "زايون ويليامسون"
+      ]
+    },
+    "chris-paul": {
+      "he": "כריס פול",
+      "en": "Chris Paul",
+      "ar": "كريس بول",
+      "keywords": [
+        "chris paul",
+        "cp3",
+        "كريس بول"
+      ],
+      "match": [
+        "כריס פול"
+      ]
+    },
+    "jamal-murray": {
+      "he": "ג׳מאל מארי",
+      "en": "Jamal Murray",
+      "ar": "جمال موراي",
+      "keywords": [
+        "jamal murray",
+        "جمال موراي"
+      ],
+      "match": [
+        "ג׳מאל מארי"
+      ]
+    },
+    "paige-bueckers": {
+      "he": "פייג׳ בוקרס",
+      "en": "Paige Bueckers",
+      "ar": "بايج بيكرز",
+      "keywords": [
+        "paige bueckers",
+        "bueckers",
+        "بايج بيكرز"
+      ],
+      "match": [
+        "פייג׳ בוקרס"
+      ]
+    },
+    "penny-hardaway": {
+      "he": "פני הארדוויי",
+      "en": "Penny Hardaway",
+      "ar": "بيني هارداواي",
+      "keywords": [
+        "penny hardaway",
+        "anfernee hardaway",
+        "hardaway",
+        "بيني هارداواي"
+      ]
+    },
+    "caitlin-clark": {
+      "he": "קייטלין קלארק",
+      "en": "Caitlin Clark",
+      "ar": "كيتلين كلارك",
+      "keywords": [
+        "caitlin clark",
+        "كيتلين كلارك"
+      ],
+      "match": [
+        "קייטלין קלארק"
+      ]
+    }
+  },
+  "player_numbers": {
+    "los-angeles-lakers": {
+      "24": "kobe-bryant",
+      "8": "kobe-bryant",
+      "23": "lebron-james",
+      "6": "lebron-james",
+      "3": "anthony-davis",
+      "32": "magic-johnson",
+      "34": "shaquille-oneal",
+      "33": "kareem-abdul-jabbar",
+      "13": "wilt-chamberlain",
+      "77": "luka-doncic"
+    },
+    "chicago-bulls": {
+      "23": "michael-jordan",
+      "45": "michael-jordan",
+      "91": "dennis-rodman",
+      "33": "scottie-pippen",
+      "1": "derrick-rose"
+    },
+    "golden-state-warriors": {
+      "30": "stephen-curry",
+      "11": "klay-thompson",
+      "35": "kevin-durant"
+    },
+    "boston-celtics": {
+      "0": "jayson-tatum",
+      "7": "jaylen-brown",
+      "33": "larry-bird",
+      "34": "paul-pierce"
+    },
+    "philadelphia-76ers": {
+      "3": "allen-iverson",
+      "21": "joel-embiid",
+      "0": "tyrese-maxey"
+    },
+    "miami-heat": {
+      "3": "dwyane-wade",
+      "22": "jimmy-butler",
+      "6": "lebron-james",
+      "14": "tyler-herro"
+    },
+    "dallas-mavericks": {
+      "77": "luka-doncic",
+      "41": "dirk-nowitzki",
+      "11": "kyrie-irving"
+    },
+    "phoenix-suns": {
+      "1": "devin-booker",
+      "35": "kevin-durant",
+      "13": "steve-nash",
+      "34": "charles-barkley"
+    },
+    "brooklyn-nets": {
+      "7": "kevin-durant",
+      "11": "kyrie-irving",
+      "13": "james-harden"
+    },
+    "milwaukee-bucks": {
+      "34": "giannis-antetokounmpo"
+    },
+    "denver-nuggets": {
+      "15": "nikola-jokic"
+    },
+    "memphis-grizzlies": {
+      "12": "ja-morant"
+    },
+    "minnesota-timberwolves": {
+      "5": "anthony-edwards",
+      "21": "kevin-garnett"
+    },
+    "cleveland-cavaliers": {
+      "23": "lebron-james"
+    },
+    "san-antonio-spurs": {
+      "1": "victor-wembanyama",
+      "21": "tim-duncan",
+      "20": "manu-ginobili"
+    },
+    "oklahoma-city-thunder": {
+      "0": "russell-westbrook",
+      "35": "kevin-durant",
+      "2": "shai-gilgeous-alexander"
+    },
+    "seattle-supersonics": {
+      "20": "gary-payton",
+      "40": "shawn-kemp",
+      "35": "kevin-durant",
+      "34": "ray-allen"
+    },
+    "houston-rockets": {
+      "13": "james-harden",
+      "1": "tracy-mcgrady",
+      "11": "yao-ming",
+      "34": "hakeem-olajuwon"
+    },
+    "toronto-raptors": {
+      "15": "vince-carter",
+      "2": "kawhi-leonard"
+    },
+    "orlando-magic": {
+      "32": "shaquille-oneal"
+    },
+    "atlanta-hawks": {
+      "11": "trae-young"
+    },
+    "new-york-knicks": {
+      "33": "patrick-ewing",
+      "11": "jalen-brunson"
+    },
+    "detroit-pistons": {
+      "11": "isiah-thomas",
+      "33": "grant-hill"
+    },
+    "utah-jazz": {
+      "12": "john-stockton",
+      "32": "karl-malone"
+    },
+    "portland-trail-blazers": {
+      "0": "damian-lillard"
+    },
+    "charlotte-hornets": {
+      "1": "lamelo-ball"
+    },
+    "indiana-pacers": {
+      "31": "reggie-miller"
+    },
+    "los-angeles-clippers": {
+      "2": "kawhi-leonard",
+      "13": "paul-george"
+    },
+    "new-orleans-pelicans": {
+      "1": "zion-williamson"
+    }
+  },
+  "title_names": {
+    "gianna-bryant": {
+      "he": "ג׳יאנה בראיינט",
+      "en": "Gianna Bryant",
+      "ar": "جيانا براينت",
+      "_note": "Tribute jersey (MAMBA #2). Not tagged as a player."
+    }
+  },
+  "team_tag_aliases": {
+    "ac": "ac-milan"
+  },
+  "overrides": {
+    "sw-jerseys-209197059": {
+      "team": "indiana-fever",
+      "player": null,
+      "note": "Title names Caitlin Clark #8, but the photos show an Indiana Fever #8 jersey (Clark wears 22). Title mismatch, reported to the owner."
+    },
+    "sw-jerseys-209197090": {
+      "team": "indiana-fever",
+      "player": null,
+      "note": "Title names Caitlin Clark #8, but the photos show an Indiana Fever #8 jersey (Clark wears 22). Title mismatch, reported to the owner."
+    },
+    "sw-jerseys-209196990": {
+      "team": "indiana-fever",
+      "player": null,
+      "note": "Title names Caitlin Clark #8, but the photos show an Indiana Fever #8 jersey (Clark wears 22). Title mismatch, reported to the owner."
+    },
+    "sw-jerseys-201617738": {
+      "team": "dallas-wings",
+      "note": "The photo shows a Dallas Wings #5 jersey (Paige Bueckers)."
+    },
+    "sw-jerseys-110047699": {
+      "team": "st-vincent-st-mary",
+      "player": "lebron-james",
+      "note": "'IRISH 23': LeBron James's St. Vincent–St. Mary high-school jersey. The replica's jock tag reads 'K. BRYANT 1996'; the front is LeBron's."
+    },
+    "sw-jerseys-110047649": {
+      "team": "st-vincent-st-mary",
+      "player": "lebron-james",
+      "note": "'IRISH 23': LeBron James's St. Vincent–St. Mary high-school jersey. The replica's jock tag reads 'K. BRYANT 1996'; the front is LeBron's."
+    },
+    "sw-jerseys-168443140": {
+      "team": "new-york-knicks",
+      "player": "patrick-ewing",
+      "note": "Title names LeBron James #33, but the photo is a New York Knicks #33 graffiti print with the Mitchell & Ness jock tag '1991-92 Patrick Ewing'. Title mismatch, reported to the owner."
+    },
+    "sw-jerseys-90282514": {
+      "team": "chicago-bulls",
+      "note": "Chicago Bulls #23, Mitchell & Ness jock tag '1997-98 Michael Jordan'."
+    },
+    "sw-jerseys-125774208": {
+      "team": "metropolitans-92",
+      "player": null,
+      "note": "Title says Paris #1, but the photo is a Metropolitans 92 (METS92) #1 jersey, Victor Wembanyama's French club. Title mismatch, reported to the owner. No player: the club is not in player_numbers."
+    },
+    "sw-jerseys-87652346": {
+      "team": "paris-saint-germain",
+      "league": null,
+      "styles": [
+        "special"
+      ],
+      "note": "Jordan x Paris Saint-Germain basketball jersey (a collab, not a football kit)."
+    },
+    "sw-jerseys-122738447": {
+      "team": "paris-saint-germain",
+      "league": null,
+      "styles": [
+        "special"
+      ],
+      "note": "Jordan x Paris Saint-Germain basketball jersey (a collab, not a football kit)."
+    },
+    "sw-jerseys-89381412": {
+      "team": null,
+      "styles": [
+        "special"
+      ],
+      "note": "'MAMBA 2' tribute jersey for Gianna Bryant. Not a team; not tagged as a player."
+    },
+    "sw-jerseys-134343761": {
+      "team": "lower-merion",
+      "player": "kobe-bryant",
+      "note": "Title says Lakers #33, but the photo is Lower Merion #33 (Kobe Bryant's high school), jock tag 'K. BRYANT 1996'. Title mismatch, reported to the owner."
+    },
+    "sw-jerseys-121071914": {
+      "team": null,
+      "league": "nba",
+      "styles": [
+        "special"
+      ],
+      "note": "Supreme x Nike NBA jersey #94 with many team logos: an NBA collab, no single team."
+    },
+    "sw-jerseys-106292062": {
+      "team": null,
+      "league": "nba",
+      "styles": [
+        "special"
+      ],
+      "note": "Supreme x Nike NBA jersey #94 with many team logos: an NBA collab, no single team."
+    },
+    "sw-football-222641859": {
+      "team": null,
+      "styles": [
+        "special"
+      ],
+      "note": "Fashion football shirt (brand 'bravest') with a Virgin Mary print: no club, league or national team."
+    },
+    "sw-jerseys-218037687": {
+      "team": "usa",
+      "player": "penny-hardaway",
+      "styles": [
+        "retro"
+      ],
+      "note": "USA 1996 Olympic team #6, Mitchell & Ness jock tag '1996 Anfernee Hardaway'. Was team:hardaway, league:nba."
+    }
+  }
+}
