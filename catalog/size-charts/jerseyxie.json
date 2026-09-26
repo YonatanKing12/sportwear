@@ -1,0 +1,365 @@
+{
+  "_note": "The size charts of the supplier jerseyxie (Yupoo), transcribed from its \"Sizes Chart\" album. Owner decision, 2026-09-26: products added from this supplier use these charts, and kids sizes follow its kids chart. Products imported before that (other sources) keep their own chart, which the owner will send. Measurements are of the garment, in cm (weight in kg); the supplier allows 1-2 cm of difference. Ranges stay as text (\"160-170\").",
+  "source": {
+    "album": "https://jerseyxie.x.yupoo.com/albums/179636411?uid=1",
+    "title": "Sizes Chart",
+    "fetched": "2026-09-26"
+  },
+  "keys": {
+    "size": "the size as the supplier labels it (and as our variant is named)",
+    "age": "age in years, kids only",
+    "height_cm": "suggested height of the wearer",
+    "weight_kg": "suggested weight of the wearer",
+    "length_cm": "garment length (jersey), from the shoulder to the hem",
+    "chest_width_cm": "chest width, garment lying flat, armpit to armpit (half the circumference)",
+    "chest_cm": "chest circumference",
+    "shorts_length_cm": "shorts length (kids sets)",
+    "waist_half_cm": "half waist of the shorts, relaxed-stretched (kids sets); kept for reference, not shown",
+    "sleeve_cm": "sleeve length as the supplier measures it; kept for reference, not shown",
+    "shoulder_cm": "shoulder width; kept for reference, not shown",
+    "back_length_cm": "back length (basketball jerseys, longer than the front)",
+    "tag": "the number on the garment tag, when it differs from the size"
+  },
+  "charts": {
+    "football-adult-fan": {
+      "used_for": "Football jerseys, adults, fan version (what we import). We sell S-XL (owner, 2026-09-26); 2XL-4XL are listed for reference.",
+      "image": 4,
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "160-170",
+          "weight_kg": "60-65",
+          "length_cm": 71,
+          "chest_width_cm": 50,
+          "sleeve_cm": 36.5
+        },
+        {
+          "size": "M",
+          "height_cm": "170-175",
+          "weight_kg": "66-70",
+          "length_cm": 73,
+          "chest_width_cm": 52,
+          "sleeve_cm": 38
+        },
+        {
+          "size": "L",
+          "height_cm": "175-180",
+          "weight_kg": "71-75",
+          "length_cm": 75,
+          "chest_width_cm": 54,
+          "sleeve_cm": 39.5
+        },
+        {
+          "size": "XL",
+          "height_cm": "180-185",
+          "weight_kg": "76-80",
+          "length_cm": 77,
+          "chest_width_cm": 56,
+          "sleeve_cm": 41
+        },
+        {
+          "size": "2XL",
+          "height_cm": "185-190",
+          "weight_kg": "81-87",
+          "length_cm": 81,
+          "chest_width_cm": 59,
+          "sleeve_cm": 42
+        },
+        {
+          "size": "3XL",
+          "height_cm": "190-195",
+          "weight_kg": "88-95",
+          "length_cm": 83,
+          "chest_width_cm": 61,
+          "sleeve_cm": 43
+        },
+        {
+          "size": "4XL",
+          "height_cm": "190-199",
+          "weight_kg": "96-105",
+          "length_cm": 85,
+          "chest_width_cm": 63,
+          "sleeve_cm": 44
+        }
+      ]
+    },
+    "football-kids-set": {
+      "used_for": "Football kids sets (jersey + shorts). Sizes 16-28 as the supplier labels them.",
+      "image": 3,
+      "rows": [
+        {
+          "size": "16",
+          "age": "2-3",
+          "height_cm": "95-105",
+          "length_cm": 44,
+          "chest_width_cm": 35,
+          "shorts_length_cm": 32,
+          "waist_half_cm": "20-37"
+        },
+        {
+          "size": "18",
+          "age": "4-5",
+          "height_cm": "105-115",
+          "length_cm": 47,
+          "chest_width_cm": 37,
+          "shorts_length_cm": 34,
+          "waist_half_cm": "21-39"
+        },
+        {
+          "size": "20",
+          "age": "5-6",
+          "height_cm": "115-125",
+          "length_cm": 50,
+          "chest_width_cm": 39,
+          "shorts_length_cm": 36,
+          "waist_half_cm": "22-41"
+        },
+        {
+          "size": "22",
+          "age": "7-8",
+          "height_cm": "125-135",
+          "length_cm": 53,
+          "chest_width_cm": 41,
+          "shorts_length_cm": 38,
+          "waist_half_cm": "23-42"
+        },
+        {
+          "size": "24",
+          "age": "8-9",
+          "height_cm": "135-145",
+          "length_cm": 56,
+          "chest_width_cm": 43,
+          "shorts_length_cm": 39,
+          "waist_half_cm": "24-44"
+        },
+        {
+          "size": "26",
+          "age": "10-11",
+          "height_cm": "145-155",
+          "length_cm": 59,
+          "chest_width_cm": 45,
+          "shorts_length_cm": 40,
+          "waist_half_cm": "25-47"
+        },
+        {
+          "size": "28",
+          "age": "12-13",
+          "height_cm": "155-165",
+          "length_cm": 62,
+          "chest_width_cm": 47,
+          "shorts_length_cm": 43,
+          "waist_half_cm": "26-50"
+        }
+      ]
+    },
+    "football-women": {
+      "used_for": "Women's football jerseys (not imported yet; the owner has not asked for them).",
+      "image": 7,
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "150-160",
+          "weight_kg": "40-50",
+          "length_cm": 62,
+          "chest_cm": 84
+        },
+        {
+          "size": "M",
+          "height_cm": "160-170",
+          "weight_kg": "50-55",
+          "length_cm": 64,
+          "chest_cm": 88
+        },
+        {
+          "size": "L",
+          "height_cm": "170-180",
+          "weight_kg": "55-60",
+          "length_cm": 66,
+          "chest_cm": 92
+        },
+        {
+          "size": "XL",
+          "height_cm": "180-185",
+          "weight_kg": "60-67.5",
+          "length_cm": 68,
+          "chest_cm": 96
+        }
+      ]
+    },
+    "football-adult-player": {
+      "used_for": "Player version (slimmer; not imported). Reference only.",
+      "image": 5,
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "160-165",
+          "weight_kg": "55-60",
+          "length_cm": 70,
+          "chest_width_cm": 46,
+          "shoulder_cm": 40.5,
+          "sleeve_cm": 24
+        },
+        {
+          "size": "M",
+          "height_cm": "165-170",
+          "weight_kg": "60-70",
+          "length_cm": 72,
+          "chest_width_cm": 48,
+          "shoulder_cm": 41.9,
+          "sleeve_cm": 24.8
+        },
+        {
+          "size": "L",
+          "height_cm": "170-175",
+          "weight_kg": "70-80",
+          "length_cm": 74,
+          "chest_width_cm": 50,
+          "shoulder_cm": 43.3,
+          "sleeve_cm": 25.6
+        },
+        {
+          "size": "XL",
+          "height_cm": "175-185",
+          "weight_kg": "80-92.5",
+          "length_cm": 76,
+          "chest_width_cm": 52,
+          "shoulder_cm": 44.7,
+          "sleeve_cm": 26.4
+        },
+        {
+          "size": "2XL",
+          "height_cm": "185-190",
+          "weight_kg": "90-95",
+          "length_cm": 78,
+          "chest_width_cm": 54,
+          "shoulder_cm": 46.1,
+          "sleeve_cm": 27.2
+        }
+      ]
+    },
+    "basketball-adult-jersey": {
+      "used_for": "Adult basketball jerseys from this supplier (the tag also shows 44-54). Our existing basketball products come from elsewhere and keep their own chart.",
+      "image": 12,
+      "rows": [
+        {
+          "size": "S",
+          "tag": "44",
+          "height_cm": "165-173",
+          "weight_kg": "50-67",
+          "length_cm": 75,
+          "back_length_cm": 80,
+          "chest_cm": 110
+        },
+        {
+          "size": "M",
+          "tag": "48",
+          "height_cm": "170-177",
+          "weight_kg": "65-77",
+          "length_cm": 78,
+          "back_length_cm": 83,
+          "chest_cm": 116
+        },
+        {
+          "size": "L",
+          "tag": "50",
+          "height_cm": "175-182",
+          "weight_kg": "75-87",
+          "length_cm": 80,
+          "back_length_cm": 85,
+          "chest_cm": 120
+        },
+        {
+          "size": "XL",
+          "tag": "52",
+          "height_cm": "180-187",
+          "weight_kg": "85-97",
+          "length_cm": 83,
+          "back_length_cm": 87,
+          "chest_cm": 124
+        },
+        {
+          "size": "2XL",
+          "tag": "54",
+          "height_cm": "185-198",
+          "weight_kg": "95-110",
+          "length_cm": 85,
+          "back_length_cm": 89,
+          "chest_cm": 128
+        }
+      ]
+    },
+    "basketball-shorts": {
+      "used_for": "Basketball shorts from this supplier. waist_half_cm is the flat waist.",
+      "image": 12,
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "165-172",
+          "shorts_length_cm": 51,
+          "waist_half_cm": 33
+        },
+        {
+          "size": "M",
+          "height_cm": "172-180",
+          "shorts_length_cm": 54,
+          "waist_half_cm": 35
+        },
+        {
+          "size": "L",
+          "height_cm": "178-185",
+          "shorts_length_cm": 57,
+          "waist_half_cm": 37
+        },
+        {
+          "size": "XL",
+          "height_cm": "183-190",
+          "shorts_length_cm": 60,
+          "waist_half_cm": 39
+        },
+        {
+          "size": "2XL",
+          "height_cm": "186-200",
+          "shorts_length_cm": 63,
+          "waist_half_cm": 41
+        }
+      ]
+    },
+    "basketball-kids-jersey": {
+      "used_for": "Kids basketball jerseys from this supplier. The chart says \"Chest\" without saying flat or around; the values fit a circumference.",
+      "image": 1,
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "115-125",
+          "length_cm": 51,
+          "chest_cm": 77
+        },
+        {
+          "size": "M",
+          "height_cm": "125-135",
+          "length_cm": 53,
+          "chest_cm": 80
+        },
+        {
+          "size": "L",
+          "height_cm": "135-145",
+          "length_cm": 56,
+          "chest_cm": 85
+        },
+        {
+          "size": "XL",
+          "height_cm": "145-155",
+          "length_cm": 60,
+          "chest_cm": 89
+        },
+        {
+          "size": "2XL",
+          "height_cm": "155-165",
+          "length_cm": 65,
+          "chest_cm": 96
+        }
+      ]
+    }
+  },
+  "not_transcribed": "Training suits, jackets, coats, baby, NFL, MLB, NHL, rugby and football shorts charts (images 2, 6, 8-11, 13-21): out of scope. Image 22 compares player and fan versions; image 23 is a notice."
+}
