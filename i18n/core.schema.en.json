@@ -242,9 +242,6 @@
     },
     "cart_bubble": {
       "name": "Cart count"
-    },
-    "cart_drawer_stub": {
-      "name": "Cart drawer"
     }
   },
   "settings": {

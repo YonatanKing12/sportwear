@@ -1,0 +1,72 @@
+{
+  "cart": {
+    "title": "הסל שלי",
+    "close": "סגירת הסל",
+    "item_count": {
+      "one": "פריט אחד",
+      "two": "2 פריטים",
+      "many": "{{ count }} פריטים",
+      "other": "{{ count }} פריטים"
+    },
+    "continue_shopping": "המשך קנייה",
+    "update": "עדכון הסל",
+    "checkout": "לתשלום מאובטח",
+    "secure_payment": "תשלום מאובטח",
+    "payment_methods": "אמצעי תשלום",
+    "empty": {
+      "title": "הסל שלכם ריק",
+      "text": "החולצה הבאה שלכם כבר מחכה. בואו נמצא אותה.",
+      "button": "התחילו לקנות",
+      "free_shipping": "משלוח חינם בהזמנה מעל {{ amount }}"
+    },
+    "free_shipping": {
+      "remaining_html": "עוד <strong>{{ amount }}</strong> ותקבלו משלוח חינם",
+      "unlocked": "יש לכם משלוח חינם"
+    },
+    "item": {
+      "remove": "הסרת {{ title }} מהסל",
+      "decrease": "הקטנת הכמות של {{ title }}",
+      "increase": "הגדלת הכמות של {{ title }}",
+      "quantity": "הכמות של {{ title }}",
+      "each": "{{ price }} ליחידה",
+      "discount": "הנחה",
+      "audience": {
+        "adult": "מבוגרים",
+        "kids": "ילדים"
+      }
+    },
+    "upsell": {
+      "heading": "השלימו את הסט",
+      "add": "הוספה",
+      "option_label": "{{ option }}: {{ title }}",
+      "unlocks_free_shipping": "והמשלוח חינם"
+    },
+    "note": {
+      "summary": "הוספת הערה להזמנה",
+      "label": "הערה להזמנה",
+      "placeholder": "למשל: הוראות למסירת המשלוח"
+    },
+    "summary": {
+      "heading": "סיכום ההזמנה",
+      "subtotal": "סכום ביניים",
+      "shipping": "משלוח",
+      "free": "חינם",
+      "taxes_included": "המחירים כוללים מע״מ.",
+      "taxes_at_checkout": "המסים יחושבו בשלב התשלום.",
+      "shipping_at_checkout": "דמי המשלוח יחושבו בשלב התשלום."
+    },
+    "status": {
+      "summary": {
+        "one": "הסל עודכן: פריט אחד, סכום ביניים {{ total }}.",
+        "two": "הסל עודכן: 2 פריטים, סכום ביניים {{ total }}.",
+        "many": "הסל עודכן: {{ count }} פריטים, סכום ביניים {{ total }}.",
+        "other": "הסל עודכן: {{ count }} פריטים, סכום ביניים {{ total }}."
+      },
+      "empty": "הסל שלכם ריק עכשיו.",
+      "removed": "הסרנו את {{ title }} מהסל."
+    },
+    "errors": {
+      "max_quantity": "הכמות המקסימלית שאפשר להזמין: {{ quantity }}."
+    }
+  }
+}

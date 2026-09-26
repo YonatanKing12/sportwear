@@ -1,4 +1,70 @@
 {
+  "cart": {
+    "title": "My cart",
+    "close": "Close cart",
+    "item_count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    },
+    "continue_shopping": "Continue shopping",
+    "update": "Update cart",
+    "checkout": "Secure checkout",
+    "secure_payment": "Secure payment",
+    "payment_methods": "Payment methods",
+    "empty": {
+      "title": "Your cart is empty",
+      "text": "Your next jersey is waiting. Let's find it.",
+      "button": "Start shopping",
+      "free_shipping": "Free shipping on orders over {{ amount }}"
+    },
+    "free_shipping": {
+      "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",
+      "unlocked": "You've got free shipping"
+    },
+    "item": {
+      "remove": "Remove {{ title }}",
+      "decrease": "Decrease quantity for {{ title }}",
+      "increase": "Increase quantity for {{ title }}",
+      "quantity": "Quantity for {{ title }}",
+      "each": "{{ price }} each",
+      "discount": "Discount",
+      "audience": {
+        "adult": "Adults",
+        "kids": "Kids"
+      }
+    },
+    "upsell": {
+      "heading": "Complete the set",
+      "add": "Add",
+      "option_label": "{{ option }}: {{ title }}",
+      "unlocks_free_shipping": "unlocks free shipping"
+    },
+    "note": {
+      "summary": "Add a note to your order",
+      "label": "Order note",
+      "placeholder": "For example: delivery instructions"
+    },
+    "summary": {
+      "heading": "Order summary",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "free": "Free",
+      "taxes_included": "Prices include VAT.",
+      "taxes_at_checkout": "Taxes are calculated at checkout.",
+      "shipping_at_checkout": "Shipping is calculated at checkout."
+    },
+    "status": {
+      "summary": {
+        "one": "Cart updated: {{ count }} item, subtotal {{ total }}.",
+        "other": "Cart updated: {{ count }} items, subtotal {{ total }}."
+      },
+      "empty": "Your cart is now empty.",
+      "removed": "{{ title }} was removed from your cart."
+    },
+    "errors": {
+      "max_quantity": "Maximum available quantity: {{ quantity }}."
+    }
+  },
   "general": {
     "home": "Home page",
     "close": "Close",

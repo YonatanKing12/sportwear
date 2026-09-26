@@ -1,0 +1,77 @@
+{%- doc -%}
+  Optional order note (Theme settings > Cart > Allow order notes): a disclosure with a textarea that
+  belongs to the cart form, so the note is always sent with the checkout. assets/cart.js also saves
+  it while the customer types (debounced) and keeps it across re-renders.
+
+  @param {object} cart - The cart object
+  @param {string} id_prefix - Unique prefix for element ids, e.g. 'CartDrawer' or 'MainCart'
+  @param {string} form_id - Id of the cart form the textarea submits with
+
+  @example
+  {% render 'cart-note', cart: cart, id_prefix: 'CartDrawer', form_id: 'CartDrawerForm' %}
+{%- enddoc -%}
+{%- assign note_id = id_prefix | append: '-Note' -%}
+<details
+  class="cart-note"
+  {% if cart.note != blank %}
+    open
+  {% endif %}
+  data-cart-keep-open="note"
+>
+  <summary class="cart-note__summary" data-cart-focus="note-toggle">
+    <span>{{ 'cart.note.summary' | t }}</span>
+    {%- render 'icon', name: 'plus', size: 18, class: 'cart-note__icon' -%}
+  </summary>
+  <div class="cart-note__body">
+    <label class="visually-hidden" for="{{ note_id }}">{{ 'cart.note.label' | t }}</label>
+    <textarea
+      class="field__textarea cart-note__input"
+      id="{{ note_id }}"
+      name="note"
+      form="{{ form_id }}"
+      rows="3"
+      placeholder="{{ 'cart.note.placeholder' | t }}"
+      data-cart-note
+      data-cart-focus="note"
+    >{{ cart.note | escape }}</textarea>
+  </div>
+</details>
+
+{% stylesheet %}
+  .cart-note {
+    margin-block-start: var(--space-4);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .cart-note__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-block-size: var(--touch-target);
+    font-size: var(--text-md);
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .cart-note__icon {
+    transition: transform var(--duration-fast) var(--ease);
+  }
+
+  .cart-note[open] .cart-note__icon {
+    transform: rotate(45deg);
+  }
+
+  .cart-note__body {
+    padding-block-end: var(--space-4);
+  }
+
+  .cart-note__input {
+    min-block-size: 88px;
+  }
+{% endstylesheet %}

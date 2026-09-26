@@ -1,0 +1,76 @@
+{
+  "cart": {
+    "title": "سلتي",
+    "close": "إغلاق السلة",
+    "item_count": {
+      "zero": "لا توجد منتجات",
+      "one": "منتج واحد",
+      "two": "منتجان",
+      "few": "{{ count }} منتجات",
+      "many": "{{ count }} منتجًا",
+      "other": "{{ count }} منتج"
+    },
+    "continue_shopping": "متابعة التسوق",
+    "update": "تحديث السلة",
+    "checkout": "إلى الدفع الآمن",
+    "secure_payment": "دفع آمن",
+    "payment_methods": "وسائل الدفع",
+    "empty": {
+      "title": "سلة التسوق فارغة",
+      "text": "قميصكم القادم بانتظاركم، فلنعثر عليه معًا.",
+      "button": "تسوّقوا الآن",
+      "free_shipping": "توصيل مجاني للطلبات التي تزيد على {{ amount }}"
+    },
+    "free_shipping": {
+      "remaining_html": "تبقّى <strong>{{ amount }}</strong> فقط للحصول على توصيل مجاني",
+      "unlocked": "حصلتم على توصيل مجاني"
+    },
+    "item": {
+      "remove": "إزالة {{ title }} من السلة",
+      "decrease": "تقليل كمية {{ title }}",
+      "increase": "زيادة كمية {{ title }}",
+      "quantity": "كمية {{ title }}",
+      "each": "{{ price }} للقطعة",
+      "discount": "خصم",
+      "audience": {
+        "adult": "الكبار",
+        "kids": "الأطفال"
+      }
+    },
+    "upsell": {
+      "heading": "أكملوا الطقم",
+      "add": "إضافة",
+      "option_label": "{{ option }}: {{ title }}",
+      "unlocks_free_shipping": "ويصبح التوصيل مجانيًا"
+    },
+    "note": {
+      "summary": "إضافة ملاحظة إلى الطلب",
+      "label": "ملاحظة الطلب",
+      "placeholder": "مثلًا: تعليمات التوصيل"
+    },
+    "summary": {
+      "heading": "ملخص الطلب",
+      "subtotal": "المجموع الفرعي",
+      "shipping": "التوصيل",
+      "free": "مجاني",
+      "taxes_included": "الأسعار تشمل ضريبة القيمة المضافة.",
+      "taxes_at_checkout": "تُحسب الضرائب عند الدفع.",
+      "shipping_at_checkout": "تُحسب رسوم التوصيل عند الدفع."
+    },
+    "status": {
+      "summary": {
+        "zero": "تم تحديث السلة: لا توجد منتجات، المجموع الفرعي {{ total }}.",
+        "one": "تم تحديث السلة: منتج واحد، المجموع الفرعي {{ total }}.",
+        "two": "تم تحديث السلة: منتجان، المجموع الفرعي {{ total }}.",
+        "few": "تم تحديث السلة: {{ count }} منتجات، المجموع الفرعي {{ total }}.",
+        "many": "تم تحديث السلة: {{ count }} منتجًا، المجموع الفرعي {{ total }}.",
+        "other": "تم تحديث السلة: {{ count }} منتج، المجموع الفرعي {{ total }}."
+      },
+      "empty": "أصبحت سلة التسوق فارغة.",
+      "removed": "تمت إزالة {{ title }} من السلة."
+    },
+    "errors": {
+      "max_quantity": "أقصى كمية متاحة: {{ quantity }}."
+    }
+  }
+}

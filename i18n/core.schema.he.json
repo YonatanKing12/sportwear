@@ -242,9 +242,6 @@
     },
     "cart_bubble": {
       "name": "מונה הסל"
-    },
-    "cart_drawer_stub": {
-      "name": "חלונית הסל"
     }
   },
   "settings": {

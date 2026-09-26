@@ -1,250 +1,44 @@
 {
-  "settings_schema": {
-    "brand": {
-      "name": "Brand",
-      "settings": {
-        "logo": {
-          "label": "Logo",
-          "info": "Until you upload a logo, the text logo below is shown."
-        },
-        "logo_width": {
-          "label": "Logo width"
-        },
-        "wordmark_start": {
-          "label": "Text logo: first part"
-        },
-        "wordmark_end": {
-          "label": "Text logo: highlighted part"
-        },
-        "accent": {
-          "label": "Brand accent",
-          "info": "Used for badges, the text logo and highlights. If you change it, update the color schemes that use it too."
-        },
-        "browser_theme_color": {
-          "label": "Mobile browser bar color"
-        },
-        "favicon": {
-          "label": "Favicon",
-          "info": "Shown at 32 × 32 px"
-        },
-        "share_image": {
-          "label": "Social sharing image",
-          "info": "Shown when a page without its own image is shared. 1200 × 628 px recommended."
-        }
-      }
-    },
-    "colors": {
-      "name": "Colors",
-      "settings": {
-        "background": {
-          "label": "Background"
-        },
-        "surface": {
-          "label": "Surface (cards, fields, chips)"
-        },
-        "border": {
-          "label": "Borders"
-        },
-        "text": {
-          "label": "Text"
-        },
-        "muted": {
-          "label": "Secondary text"
-        },
-        "highlight": {
-          "label": "Highlight",
-          "info": "Accent used for selected states and highlights"
-        },
-        "on_highlight": {
-          "label": "Text on highlight"
-        },
-        "button": {
-          "label": "Primary button"
-        },
-        "button_label": {
-          "label": "Primary button text"
-        },
-        "secondary_button_label": {
-          "label": "Secondary button and links"
-        },
-        "sale": {
-          "label": "Sale price"
-        },
-        "defaults": {
-          "content": "Defaults"
-        },
-        "body_color_scheme": {
-          "label": "Page background"
-        },
-        "drawer_color_scheme": {
-          "label": "Drawers and pop-ups"
-        },
-        "background_gradient": {
-          "label": "Background gradient",
-          "info": "Optional. Replaces the background color when set."
-        }
-      }
-    },
-    "typography": {
-      "name": "Typography",
-      "settings": {
-        "fonts_info": {
-          "content": "The theme uses its own fonts for Hebrew, English and Arabic."
-        },
-        "body_scale": {
-          "label": "Body text size"
-        },
-        "heading_scale": {
-          "label": "Heading size"
-        },
-        "uppercase_latin_headings": {
-          "label": "Uppercase English headings"
-        }
-      }
-    },
-    "layout": {
-      "name": "Layout",
-      "settings": {
-        "page_width": {
-          "label": "Page width",
-          "options": {
-            "narrow": "Narrow (1200 px)",
-            "normal": "Normal (1440 px)",
-            "wide": "Wide (1680 px)"
-          }
-        },
-        "radius_card": {
-          "label": "Card corner radius"
-        },
-        "radius_button": {
-          "label": "Button corner radius"
-        }
-      }
-    },
-    "product_cards": {
-      "name": "Product cards",
-      "settings": {
-        "card_subtitle": {
-          "label": "Line above the product title",
-          "options": {
-            "team": "Team",
-            "vendor": "Brand",
-            "none": "None"
-          }
-        },
-        "card_image_ratio": {
-          "label": "Image shape",
-          "options": {
-            "square": "Square",
-            "portrait": "Portrait (4:5)",
-            "tall": "Tall (3:4)"
-          }
-        },
-        "card_image_fit": {
-          "label": "Image fit",
-          "info": "\"Fit\" shows the whole product on a light background. \"Fill\" crops to fill the tile.",
-          "options": {
-            "contain": "Fit",
-            "cover": "Fill"
-          }
-        },
-        "card_secondary_image": {
-          "label": "Show second image on hover"
-        },
-        "card_show_sale_badge": {
-          "label": "Show sale badge"
-        },
-        "card_new_tag": {
-          "label": "Tag for the \"New\" badge",
-          "info": "Products with this tag get the \"New\" badge."
-        }
-      }
-    },
-    "cart": {
-      "name": "Cart",
-      "settings": {
-        "cart_type": {
-          "label": "Cart type",
-          "options": {
-            "drawer": "Drawer",
-            "page": "Page"
-          }
-        },
-        "free_shipping_threshold": {
-          "label": "Free shipping from (₪)",
-          "info": "Shows the free shipping progress bar in the cart. Must match the shipping rate in Settings > Shipping. Leave empty to hide the bar."
-        },
-        "cart_show_upsell": {
-          "label": "Suggest set items in the cart"
-        },
-        "cart_show_note": {
-          "label": "Allow order notes"
-        }
-      }
-    },
-    "contact": {
-      "name": "Business details",
+  "sections": {
+    "cart_drawer": {
+      "name": "Cart drawer",
       "settings": {
         "info": {
-          "content": "Shown in the footer, on the contact page and in the accessibility statement. Israeli law requires sellers to publish these details."
+          "content": "Opens when a product is added to the cart. Free shipping, set suggestions, order notes and the cart type (drawer or page) are in Theme settings > Cart. The drawer body uses the \"Drawers and pop-ups\" color scheme."
         },
-        "business_name": {
-          "label": "Business name"
+        "header_color_scheme": {
+          "label": "Header color scheme"
         },
-        "business_id": {
-          "label": "Business ID (עוסק / ח.פ.)"
+        "upsell_color_scheme": {
+          "label": "\"Complete the set\" color scheme"
         },
-        "business_address": {
-          "label": "Address"
-        },
-        "support_phone": {
-          "label": "Phone"
-        },
-        "support_email": {
-          "label": "Email"
-        },
-        "whatsapp_number": {
-          "label": "WhatsApp number",
-          "info": "International format without +, for example 972501234567"
+        "empty_collection": {
+          "label": "Empty cart button link",
+          "info": "Pick a collection. Leave empty to link to all products."
         }
       }
     },
-    "social": {
-      "name": "Social media",
+    "main_cart": {
+      "name": "Cart page",
       "settings": {
-        "instagram": {
-          "label": "Instagram"
+        "info": {
+          "content": "Free shipping, set suggestions and order notes are in Theme settings > Cart."
         },
-        "tiktok": {
-          "label": "TikTok"
+        "upsell_color_scheme": {
+          "label": "\"Complete the set\" color scheme"
         },
-        "facebook": {
-          "label": "Facebook"
-        },
-        "youtube": {
-          "label": "YouTube"
+        "empty_collection": {
+          "label": "Empty cart and \"Continue shopping\" link",
+          "info": "Pick a collection. Leave empty to link to all products."
         }
       }
     },
-    "search": {
-      "name": "Search",
-      "settings": {
-        "predictive_search": {
-          "label": "Show suggestions while typing"
-        }
-      }
-    }
-  },
-  "sections": {
     "groups": {
       "header": "Header",
       "footer": "Footer"
     },
     "cart_bubble": {
       "name": "Cart count"
-    },
-    "cart_drawer_stub": {
-      "name": "Cart drawer"
     },
     "hero": {
       "name": "Hero",
@@ -488,6 +282,242 @@
         },
         "button_link": {
           "info": "The button is shown only when it has a link."
+        }
+      }
+    }
+  },
+  "settings_schema": {
+    "brand": {
+      "name": "Brand",
+      "settings": {
+        "logo": {
+          "label": "Logo",
+          "info": "Until you upload a logo, the text logo below is shown."
+        },
+        "logo_width": {
+          "label": "Logo width"
+        },
+        "wordmark_start": {
+          "label": "Text logo: first part"
+        },
+        "wordmark_end": {
+          "label": "Text logo: highlighted part"
+        },
+        "accent": {
+          "label": "Brand accent",
+          "info": "Used for badges, the text logo and highlights. If you change it, update the color schemes that use it too."
+        },
+        "browser_theme_color": {
+          "label": "Mobile browser bar color"
+        },
+        "favicon": {
+          "label": "Favicon",
+          "info": "Shown at 32 × 32 px"
+        },
+        "share_image": {
+          "label": "Social sharing image",
+          "info": "Shown when a page without its own image is shared. 1200 × 628 px recommended."
+        }
+      }
+    },
+    "colors": {
+      "name": "Colors",
+      "settings": {
+        "background": {
+          "label": "Background"
+        },
+        "surface": {
+          "label": "Surface (cards, fields, chips)"
+        },
+        "border": {
+          "label": "Borders"
+        },
+        "text": {
+          "label": "Text"
+        },
+        "muted": {
+          "label": "Secondary text"
+        },
+        "highlight": {
+          "label": "Highlight",
+          "info": "Accent used for selected states and highlights"
+        },
+        "on_highlight": {
+          "label": "Text on highlight"
+        },
+        "button": {
+          "label": "Primary button"
+        },
+        "button_label": {
+          "label": "Primary button text"
+        },
+        "secondary_button_label": {
+          "label": "Secondary button and links"
+        },
+        "sale": {
+          "label": "Sale price"
+        },
+        "defaults": {
+          "content": "Defaults"
+        },
+        "body_color_scheme": {
+          "label": "Page background"
+        },
+        "drawer_color_scheme": {
+          "label": "Drawers and pop-ups"
+        },
+        "background_gradient": {
+          "label": "Background gradient",
+          "info": "Optional. Replaces the background color when set."
+        }
+      }
+    },
+    "typography": {
+      "name": "Typography",
+      "settings": {
+        "fonts_info": {
+          "content": "The theme uses its own fonts for Hebrew, English and Arabic."
+        },
+        "body_scale": {
+          "label": "Body text size"
+        },
+        "heading_scale": {
+          "label": "Heading size"
+        },
+        "uppercase_latin_headings": {
+          "label": "Uppercase English headings"
+        }
+      }
+    },
+    "layout": {
+      "name": "Layout",
+      "settings": {
+        "page_width": {
+          "label": "Page width",
+          "options": {
+            "narrow": "Narrow (1200 px)",
+            "normal": "Normal (1440 px)",
+            "wide": "Wide (1680 px)"
+          }
+        },
+        "radius_card": {
+          "label": "Card corner radius"
+        },
+        "radius_button": {
+          "label": "Button corner radius"
+        }
+      }
+    },
+    "product_cards": {
+      "name": "Product cards",
+      "settings": {
+        "card_subtitle": {
+          "label": "Line above the product title",
+          "options": {
+            "team": "Team",
+            "vendor": "Brand",
+            "none": "None"
+          }
+        },
+        "card_image_ratio": {
+          "label": "Image shape",
+          "options": {
+            "square": "Square",
+            "portrait": "Portrait (4:5)",
+            "tall": "Tall (3:4)"
+          }
+        },
+        "card_image_fit": {
+          "label": "Image fit",
+          "info": "\"Fit\" shows the whole product on a light background. \"Fill\" crops to fill the tile.",
+          "options": {
+            "contain": "Fit",
+            "cover": "Fill"
+          }
+        },
+        "card_secondary_image": {
+          "label": "Show second image on hover"
+        },
+        "card_show_sale_badge": {
+          "label": "Show sale badge"
+        },
+        "card_new_tag": {
+          "label": "Tag for the \"New\" badge",
+          "info": "Products with this tag get the \"New\" badge."
+        }
+      }
+    },
+    "cart": {
+      "name": "Cart",
+      "settings": {
+        "cart_type": {
+          "label": "Cart type",
+          "options": {
+            "drawer": "Drawer",
+            "page": "Page"
+          }
+        },
+        "free_shipping_threshold": {
+          "label": "Free shipping from (₪)",
+          "info": "Shows the free shipping progress bar in the cart. Must match the shipping rate in Settings > Shipping. Leave empty to hide the bar."
+        },
+        "cart_show_upsell": {
+          "label": "Suggest set items in the cart"
+        },
+        "cart_show_note": {
+          "label": "Allow order notes"
+        }
+      }
+    },
+    "contact": {
+      "name": "Business details",
+      "settings": {
+        "info": {
+          "content": "Shown in the footer, on the contact page and in the accessibility statement. Israeli law requires sellers to publish these details."
+        },
+        "business_name": {
+          "label": "Business name"
+        },
+        "business_id": {
+          "label": "Business ID (עוסק / ח.פ.)"
+        },
+        "business_address": {
+          "label": "Address"
+        },
+        "support_phone": {
+          "label": "Phone"
+        },
+        "support_email": {
+          "label": "Email"
+        },
+        "whatsapp_number": {
+          "label": "WhatsApp number",
+          "info": "International format without +, for example 972501234567"
+        }
+      }
+    },
+    "social": {
+      "name": "Social media",
+      "settings": {
+        "instagram": {
+          "label": "Instagram"
+        },
+        "tiktok": {
+          "label": "TikTok"
+        },
+        "facebook": {
+          "label": "Facebook"
+        },
+        "youtube": {
+          "label": "YouTube"
+        }
+      }
+    },
+    "search": {
+      "name": "Search",
+      "settings": {
+        "predictive_search": {
+          "label": "Show suggestions while typing"
         }
       }
     }
