@@ -15,7 +15,8 @@
     "format:check": "prettier --check .",
     "catalog:validate": "node scripts/catalog/validate.mjs",
     "qa:shots": "node scripts/qa/screenshots.mjs",
-    "qa:a11y": "node scripts/qa/a11y.mjs"
+    "qa:a11y": "node scripts/qa/a11y.mjs",
+    "theme:pack": "rm -f qa-output/theme.zip && mkdir -p qa-output && zip -qr qa-output/theme.zip layout templates sections blocks snippets assets config locales -x '*.DS_Store' && unzip -l qa-output/theme.zip | tail -1"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.13.0",

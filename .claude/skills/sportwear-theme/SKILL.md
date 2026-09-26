@@ -13,6 +13,9 @@ generic, this file wins. Where this file is silent, follow `shopify-liquid-theme
 APIs (tokens, classes, snippets, `@theme/core`), cross-component contracts, section conventions and
 the i18n parts workflow (`i18n/<area>.<lang>.json` → `npm run i18n` → `locales/*`).
 
+**To put the theme on the store, follow `references/deploy.md`** (zip + `themeCreate` for a new
+theme, staged uploads + `themeFilesUpsert` for changes).
+
 ## Non-negotiables
 
 1. **From scratch.** Do not copy code from Horizon, Dawn or any other theme. Reading Shopify docs
