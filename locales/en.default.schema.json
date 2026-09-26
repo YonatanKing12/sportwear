@@ -865,7 +865,12 @@
         "collapsible_info": "Leave the heading and content empty to show the default shipping and returns text.",
         "content": "Content",
         "page_info": "Shows the content of this page instead of the text above.",
-        "size_table_info": "Uses the product's size chart (metafield sportwear.size_chart). Without one, kids products show sizes by height and adult products show how to measure."
+        "size_table_info": "Uses the product's size chart (metafield sportwear.size_chart). Without one, kids products show sizes by height and adult products show how to measure.",
+        "show_sticky_buy": "Sticky buy bar",
+        "show_sticky_buy_info": "Appears at the bottom of the screen once the add to cart button has scrolled out of view.",
+        "show_payment_icons": "Show payment methods under the buttons",
+        "show_whatsapp": "WhatsApp question button",
+        "show_whatsapp_info": "Shown when a WhatsApp number is set in Theme settings > Business details."
       },
       "options": {
         "media_ratio_square": "Square",

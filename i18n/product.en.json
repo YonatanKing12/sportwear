@@ -15,10 +15,13 @@
       "previous": "Previous image",
       "next": "Next image",
       "play_video": "Play video",
-      "view_3d": "View in 3D"
+      "view_3d": "View in 3D",
+      "thumbnails_label": "Thumbnails",
+      "show_image": "Show image {{ index }} of {{ count }}"
     },
     "price": {
-      "tax_included": "Incl. VAT"
+      "tax_included": "Incl. VAT",
+      "save": "Save {{ amount }}"
     },
     "audience": {
       "label": "Adults or kids version",
@@ -35,7 +38,8 @@
       "low_stock": {
         "one": "Only 1 left in this size",
         "other": "Only {{ count }} left in this size"
-      }
+      },
+      "in_stock": "In stock"
     },
     "buy": {
       "add_to_cart": "Add to cart",
@@ -44,7 +48,8 @@
       "quantity": "Quantity",
       "decrease": "Decrease quantity",
       "increase": "Increase quantity",
-      "choose_size": "Choose a size to continue."
+      "choose_size": "Choose a size to continue.",
+      "secure_checkout": "Secure checkout"
     },
     "shipping_note": {
       "delivery": "Delivered within 3 business days",
@@ -95,6 +100,13 @@
       "audience_toggle": "An adults/kids switch shows here once the product's counterpart field points to the matching product. Only shown in the editor.",
       "complete_set": "Matching products (like a jersey and shorts) from the product's complements field show here when in stock. Only shown in the editor.",
       "description": "The product description shows here. This product has none yet. Only shown in the editor."
+    },
+    "help": {
+      "whatsapp": "Question about sizing or this product? Message us on WhatsApp",
+      "whatsapp_message_html": "Hi, I have a question about {{ title }}"
+    },
+    "sticky": {
+      "label": "Quick buy"
     }
   }
 }

@@ -1,17 +1,16 @@
 /**
  * SportWear product gallery: <sw-product-gallery> (snippets/product-gallery.liquid).
  *
- * - Slider (below 990px): keeps the dots and the "1 / 4" counter in step with the scroll position,
- *   announces the image number politely once scrolling settles, drives the previous/next buttons and
- *   stops media that scrolls out of view. Works the same in right-to-left languages.
+ * - Slider (every width): keeps the dots, the thumbnails and the "1 / 4" counter in step with the
+ *   scroll position, announces the image number politely once scrolling settles, drives the
+ *   previous/next buttons and the thumbnails, and stops media that scrolls out of view. Works the
+ *   same in right-to-left languages.
  * - Zoom: the zoom buttons open the dialog through <sw-drawer> (data-drawer-open); this scrolls the
  *   dialog to the image that was clicked.
  * - Deferred media: swaps a video, external video or 3D model poster for its player on demand.
  * - Variant media: shows the media of the variant chosen in the product form (EVENTS.variantChanged).
  */
 import { EVENTS, prefersReducedMotion, subscribe } from '@theme/core';
-
-const desktop = window.matchMedia('(min-width: 990px)');
 
 /** @type {Promise<void> | null} */
 let modelViewerLoader = null;
@@ -97,6 +96,11 @@ class SwProductGallery extends HTMLElement {
     }
     const current = this.querySelector('[data-gallery-current]');
     if (current) current.textContent = String(index + 1);
+    for (const thumb of this.querySelectorAll('[data-gallery-thumb]')) {
+      const active = Number(thumb.getAttribute('data-gallery-thumb')) === index;
+      thumb.setAttribute('aria-current', String(active));
+      if (active) this.#reveal(thumb);
+    }
     this.querySelector('[data-gallery-prev]')?.setAttribute('aria-disabled', String(index <= 0));
     this.querySelector('[data-gallery-next]')?.setAttribute('aria-disabled', String(index >= count - 1));
   }
@@ -118,9 +122,23 @@ class SwProductGallery extends HTMLElement {
     this.#stopHiddenMedia(index);
   }
 
+  /**
+   * Scrolls the thumbnail strip (never the page) so the current thumbnail is in view.
+   * @param {Element} thumb
+   */
+  #reveal(thumb) {
+    const strip = thumb.closest('.product-gallery__thumbs');
+    if (!(strip instanceof HTMLElement) || !(thumb instanceof HTMLElement)) return;
+    const box = thumb.getBoundingClientRect();
+    const area = strip.getBoundingClientRect();
+    if (box.top < area.top) strip.scrollTop -= area.top - box.top;
+    else if (box.bottom > area.bottom) strip.scrollTop += box.bottom - area.bottom;
+    if (box.left < area.left) strip.scrollLeft -= area.left - box.left;
+    else if (box.right > area.right) strip.scrollLeft += box.right - area.right;
+  }
+
   /** @param {number} index - the slide in view */
   #stopHiddenMedia(index) {
-    if (desktop.matches) return;
     for (const [position, item] of this.#items.entries()) {
       if (position === index) continue;
       for (const video of item.querySelectorAll('video')) video.pause();
@@ -151,6 +169,12 @@ class SwProductGallery extends HTMLElement {
     if (arrow) {
       if (arrow.getAttribute('aria-disabled') === 'true') return;
       this.#go(this.#index + (arrow.hasAttribute('data-gallery-next') ? 1 : -1));
+      return;
+    }
+
+    const thumb = target.closest('[data-gallery-thumb]');
+    if (thumb) {
+      this.#go(Number(thumb.getAttribute('data-gallery-thumb')) || 0);
       return;
     }
 
@@ -213,18 +237,7 @@ class SwProductGallery extends HTMLElement {
     const list = this.#list;
     const item = list?.querySelector(`:scope > [data-media-id="${CSS.escape(String(variant.mediaId))}"]`);
     if (!list || !(item instanceof HTMLElement)) return;
-
-    if (!desktop.matches) {
-      this.#go(this.#items.indexOf(item));
-      return;
-    }
-
-    // Desktop grid: bring the variant's media into the large first position.
-    if (item === list.firstElementChild) return;
-    list.prepend(item);
-    const image = item.querySelector('img');
-    const firstSizes = list.dataset.firstSizes;
-    if (image && firstSizes) image.sizes = firstSizes;
+    this.#go(this.#items.indexOf(item));
   };
 }
 

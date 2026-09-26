@@ -1,8 +1,9 @@
 {%- doc -%}
   Product media gallery of the main product section.
-  - Mobile and tablet: a horizontal scroll-snap slider with dots, a "1 / 4" counter (announced
-    politely) and previous/next buttons for mouse users.
-  - Desktop (990px+): the first media large, the others in a 2-column grid.
+  - Every width: a horizontal scroll-snap slider, one media at a time, announced politely ("image 2
+    of 4"), with previous/next buttons for mouse users (always shown from 990px).
+  - Phones: dots under the image. From 750px: a thumbnail strip instead (below the image on tablets,
+    a vertical column beside it on desktop); the thumbnails need JavaScript, the slider does not.
   Media sit on the light tile, contained. The selected variant's media (else the featured media) comes
   first and is the LCP image. Images open a full-screen zoom dialog (sw-drawer + dialog.modal) that
   lists every image large. Behaviour: assets/product-gallery.js (<sw-product-gallery>).
@@ -51,9 +52,9 @@
 
   assign status_template = 'products.gallery.image_status' | t: index: '[index]', count: '[count]'
 
-  # The first media spans the media column on desktop; the others take half of it.
-  assign sizes_first = '(min-width: 990px) calc((min(100vw, 1440px) - 112px) * 0.58), (min-width: 750px) calc(100vw - 64px), 100vw'
-  assign sizes_rest = '(min-width: 990px) calc((min(100vw, 1440px) - 120px) * 0.29), (min-width: 750px) calc(100vw - 64px), 100vw'
+  # Every slide takes the media column (less the thumbnail column on desktop).
+  assign sizes_first = '(min-width: 990px) calc((min(100vw, 1440px) - 112px) * 0.55 - 88px), (min-width: 750px) calc(100vw - 64px), 100vw'
+  assign sizes_rest = sizes_first
 
   assign position = 0
   assign zoom_position = 0
@@ -71,7 +72,6 @@
       role="list"
       aria-label="{{ 'products.gallery.label' | t }}"
       data-gallery-list
-      data-first-sizes="{{ sizes_first }}"
     >
       {%- if featured != blank -%}
         {%- assign position = position | plus: 1 -%}
@@ -169,6 +169,56 @@
     {%- endif -%}
   </div>
 
+  {%- if media_count > 1 -%}
+    <ul class="product-gallery__thumbs js-only" role="list" aria-label="{{ 'products.gallery.thumbnails_label' | t }}">
+      {%- assign thumb_index = 0 -%}
+      {%- if featured != blank -%}
+        <li>
+          <button
+            type="button"
+            class="product-gallery__thumb media-tile"
+            aria-controls="{{ list_id }}"
+            aria-current="true"
+            data-gallery-thumb="0"
+          >
+            {{-
+              featured.preview_image
+              | image_url: width: 160
+              | image_tag: loading: 'lazy', alt: '', class: 'product-gallery__thumb-image'
+            -}}
+            <span class="visually-hidden">{{ 'products.gallery.show_image' | t: index: 1, count: media_count }}</span>
+          </button>
+        </li>
+        {%- assign thumb_index = 1 -%}
+      {%- endif -%}
+      {%- for media in product.media -%}
+        {%- if media.id == featured.id -%}
+          {%- continue -%}
+        {%- endif -%}
+        {%- assign thumb_number = thumb_index | plus: 1 -%}
+        <li>
+          <button
+            type="button"
+            class="product-gallery__thumb media-tile"
+            aria-controls="{{ list_id }}"
+            aria-current="false"
+            data-gallery-thumb="{{ thumb_index }}"
+          >
+            {{-
+              media.preview_image
+              | image_url: width: 160
+              | image_tag: loading: 'lazy', alt: '', class: 'product-gallery__thumb-image'
+            -}}
+            <span class="visually-hidden">
+              {{- 'products.gallery.show_image' | t: index: thumb_number, count: media_count -}}
+            </span>
+          </button>
+        </li>
+        {%- assign thumb_index = thumb_index | plus: 1 -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+
   {%- if zoom_enabled -%}
     <sw-drawer id="{{ zoom_id }}">
       <dialog
@@ -250,14 +300,6 @@
     &::-webkit-scrollbar {
       display: none;
     }
-
-    @media screen and (min-width: 990px) {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: var(--space-2);
-      overflow: visible;
-      scroll-snap-type: none;
-    }
   }
 
   .product-gallery__item {
@@ -265,14 +307,6 @@
     min-inline-size: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-
-    @media screen and (min-width: 990px) {
-      /* The first image spans the grid; a last image left alone in its row does too. */
-      &:first-child,
-      &:last-child:nth-child(even) {
-        grid-column: 1 / -1;
-      }
-    }
   }
 
   .product-gallery .media-tile {
@@ -311,7 +345,7 @@
     gap: 6px;
     pointer-events: none;
 
-    @media screen and (min-width: 990px) {
+    @media screen and (min-width: 750px) {
       display: none;
     }
   }
@@ -357,7 +391,85 @@
 
   @media screen and (min-width: 990px) {
     .product-gallery__arrows {
+      display: block;
+    }
+  }
+
+  /* Thumbnails: hidden on phones (the dots show the position there), a row under the image on
+     tablets, a column beside it on desktop. The current one is outlined. */
+  .product-gallery__thumbs {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
       display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+      gap: var(--space-2);
+      margin-block-start: var(--space-3);
+      overflow-x: auto;
+    }
+  }
+
+  .product-gallery__thumb {
+    --thumb-ring: transparent;
+    display: block;
+    inline-size: 76px;
+    aspect-ratio: var(--media-ratio);
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius-card);
+    box-shadow: inset 0 0 0 2px var(--thumb-ring);
+    cursor: pointer;
+    transition: box-shadow var(--duration-fast) var(--ease);
+
+    &:hover {
+      --thumb-ring: color-mix(in srgb, var(--gallery-ink) 35%, transparent);
+    }
+
+    &[aria-current='true'] {
+      --thumb-ring: var(--gallery-ink);
+    }
+  }
+
+  .product-gallery__thumb-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-gallery:has(.product-gallery__thumbs) {
+      display: grid;
+      grid-template-columns: 76px minmax(0, 1fr);
+      align-items: start;
+      gap: var(--space-3);
+    }
+
+    .product-gallery__thumbs {
+      grid-row: 1;
+      grid-column: 1;
+      flex-direction: column;
+      max-block-size: calc(100vh - var(--header-height, 0px) - 48px);
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+    .product-gallery__viewport {
+      grid-row: 1;
+      grid-column: 2;
+    }
+
+    /* The closed zoom dialog's wrapper takes no grid cell. */
+    .product-gallery > sw-drawer {
+      position: absolute;
     }
   }
 

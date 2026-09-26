@@ -5,6 +5,7 @@
   assign has_title = false
   assign has_picker = false
   assign has_size_guide = false
+  assign has_buy_buttons = false
   for block in section.blocks
     case block.type
       when 'title'
@@ -14,8 +15,14 @@
         if block.settings.show_size_guide
           assign has_size_guide = true
         endif
+      when 'buy_buttons'
+        assign has_buy_buttons = true
     endcase
   endfor
+
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   if product.has_only_default_variant
     assign has_size_guide = false
   endif
@@ -126,6 +133,14 @@
                   {%- else -%}
                     {%- render 'price', product: product, class: 'product-price__amount' -%}
                   {%- endif -%}
+                  {%- if current_variant.compare_at_price > current_variant.price -%}
+                    {%- liquid
+                      assign saved_cents = current_variant.compare_at_price | minus: current_variant.price
+                      # Unicode isolates keep the amount's direction inside the RTL sentence.
+                      assign saved = saved_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+                    -%}
+                    <span class="product-price__save">{{ 'products.price.save' | t: amount: saved }}</span>
+                  {%- endif -%}
                   {%- if block.settings.show_tax_note and cart.taxes_included -%}
                     <span class="product-price__note">{{ 'products.price.tax_included' | t }}</span>
                   {%- endif -%}
@@ -185,6 +200,10 @@
                     <p class="product-inventory__note product-inventory__note--low">
                       {{- 'products.variant_picker.low_stock' | t: count: current_variant.inventory_quantity -}}
                     </p>
+                  {%- else -%}
+                    <p class="product-inventory__note product-inventory__note--in">
+                      {{- 'products.variant_picker.in_stock' | t -}}
+                    </p>
                   {%- endif -%}
                 {%- endif -%}
               {%- endcapture -%}
@@ -216,6 +235,21 @@
                   form_id: form_id,
                   id_disabled: picker_submits_id
                 -%}
+                {%- if block.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+                  <div class="product-payments">
+                    <p class="product-payments__label">
+                      {%- render 'icon', name: 'lock', size: 14 -%}
+                      <span>{{ 'products.buy.secure_checkout' | t }}</span>
+                    </p>
+                    <ul class="product-payments__list" role="list">
+                      {%- for type in shop.enabled_payment_types -%}
+                        <li class="product-payments__item">
+                          {{- type | payment_type_svg_tag: class: 'product-payments__icon' -}}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                {%- endif -%}
               </div>
 
             {%- when 'shipping_note' -%}
@@ -259,28 +293,43 @@
                   assign trust_payment = 'general.trust.secure_payment' | t
                 endif
               -%}
-              <ul
-                class="product-info__block product-info__block--trust product-trust"
-                role="list"
-                {{ block.shopify_attributes }}
-              >
-                <li class="product-trust__item">
-                  {%- render 'icon', name: 'shield-check', size: 20 -%}
-                  <span>{{ trust_original }}</span>
-                </li>
-                <li class="product-trust__item">
-                  {%- render 'icon', name: 'truck', size: 20 -%}
-                  <span>{{ trust_shipping }}</span>
-                </li>
-                <li class="product-trust__item">
-                  {%- render 'icon', name: 'return', size: 20 -%}
-                  <span>{{ trust_returns }}</span>
-                </li>
-                <li class="product-trust__item">
-                  {%- render 'icon', name: 'lock', size: 20 -%}
-                  <span>{{ trust_payment }}</span>
-                </li>
-              </ul>
+              <div class="product-info__block product-info__block--trust" {{ block.shopify_attributes }}>
+                <ul class="product-trust" role="list">
+                  <li class="product-trust__item">
+                    <span class="product-trust__icon">{%- render 'icon', name: 'shield-check', size: 20 -%}</span>
+                    <span>{{ trust_original }}</span>
+                  </li>
+                  <li class="product-trust__item">
+                    <span class="product-trust__icon">{%- render 'icon', name: 'truck', size: 20 -%}</span>
+                    <span>{{ trust_shipping }}</span>
+                  </li>
+                  <li class="product-trust__item">
+                    <span class="product-trust__icon">{%- render 'icon', name: 'return', size: 20 -%}</span>
+                    <span>{{ trust_returns }}</span>
+                  </li>
+                  <li class="product-trust__item">
+                    <span class="product-trust__icon">{%- render 'icon', name: 'lock', size: 20 -%}</span>
+                    <span>{{ trust_payment }}</span>
+                  </li>
+                </ul>
+                {%- if block.settings.show_whatsapp and whatsapp_digits != blank -%}
+                  {%- assign help_message = 'products.help.whatsapp_message_html'
+                    | t: title: product.title
+                    | url_encode
+                    | replace: '+', '%20'
+                  -%}
+                  <a
+                    class="product-help"
+                    href="https://wa.me/{{ whatsapp_digits }}?text={{ help_message }}"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {%- render 'icon', name: 'whatsapp', size: 20 -%}
+                    <span>{{ 'products.help.whatsapp' | t }}</span>
+                    <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+                  </a>
+                {%- endif -%}
+              </div>
 
             {%- when 'complete_set' -%}
               {%- assign complements = product.metafields.sportwear.complements.value -%}
@@ -397,6 +446,55 @@
               -%}
           {%- endcase -%}
         {%- endfor -%}
+
+        {%- if section.settings.show_sticky_buy and has_buy_buttons -%}
+          <sw-sticky-buy
+            class="product-sticky js-only color-{{ section.settings.color_scheme.id }}"
+            role="region"
+            aria-label="{{ 'products.sticky.label' | t }}"
+            inert
+          >
+            <div class="page-width product-sticky__inner">
+              <div class="product-sticky__product">
+                {%- if product.featured_media != blank -%}
+                  <span class="product-sticky__thumb media-tile">
+                    {{-
+                      product.featured_media.preview_image
+                      | image_url: width: 120
+                      | image_tag: loading: 'lazy', alt: ''
+                    -}}
+                  </span>
+                {%- endif -%}
+                <span class="product-sticky__text">
+                  <span class="product-sticky__title">{{ product.title | escape }}</span>
+                  <span class="product-sticky__variant" data-product-dynamic="sticky-variant">
+                    {%- unless product.has_only_default_variant -%}{{ current_variant.title | escape }}{%- endunless -%}
+                  </span>
+                </span>
+              </div>
+              <div class="product-sticky__buy" data-product-dynamic="sticky-buy">
+                {%- if current_variant != blank -%}
+                  {%- render 'price', variant: current_variant, class: 'product-sticky__price' -%}
+                {%- endif -%}
+                <button
+                  type="submit"
+                  form="{{ form_id }}"
+                  class="button button--primary product-sticky__button"
+                  {% unless current_variant.available %}
+                    disabled
+                  {% endunless %}
+                >
+                  {%- if current_variant.available -%}
+                    {%- render 'icon', name: 'bag', size: 18 -%}
+                    <span>{{ 'products.buy.add_to_cart' | t }}</span>
+                  {%- else -%}
+                    <span>{{ 'products.buy.sold_out' | t }}</span>
+                  {%- endif -%}
+                </button>
+              </div>
+            </div>
+          </sw-sticky-buy>
+        {%- endif -%}
       </sw-product-info>
     </div>
   </div>
@@ -445,7 +543,7 @@
     row-gap: var(--space-5);
 
     @media screen and (min-width: 990px) {
-      grid-template-columns: minmax(0, 58fr) minmax(0, 42fr);
+      grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
       align-items: start;
       column-gap: clamp(32px, 4vw, 64px);
     }
@@ -519,12 +617,15 @@
     box-shadow: 0 0 0 1px var(--color-text);
   }
 
+  /* A product title, not a poster: large enough to lead, small enough to leave the price and sizes
+     in the first screen. */
   .product-info .product-info__title {
+    font-size: calc(34px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
     overflow-wrap: break-word;
     text-wrap: pretty;
 
     @media screen and (min-width: 990px) {
-      font-size: min(var(--display-l), calc(60px * var(--heading-scale, 1)));
+      font-size: calc(46px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
     }
   }
 
@@ -544,6 +645,17 @@
   .product-price__note {
     color: var(--color-muted);
     font-size: var(--text-sm);
+  }
+
+  .product-price__save {
+    align-self: center;
+    padding: 3px 10px;
+    border-radius: var(--radius-badge);
+    background: var(--color-sale);
+    color: #ffffff;
+    font-size: var(--text-sm);
+    font-weight: 800;
+    line-height: 1.3;
   }
 
   .product-info[aria-busy='true'] :is(.product-price, .product-buy__submit) {
@@ -611,9 +723,56 @@
     background: var(--color-sale);
   }
 
+  .product-inventory__note--in::before {
+    content: '';
+    flex-shrink: 0;
+    inline-size: 8px;
+    block-size: 8px;
+    border-radius: 50%;
+    background: #1f9d55;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #1f9d55 22%, transparent);
+  }
+
   .product-inventory__note--out {
     color: var(--color-muted);
     font-weight: 600;
+  }
+
+  /* Payment options right under the buy buttons. */
+  .product-payments {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2) var(--space-3);
+    margin-block-start: var(--space-3);
+  }
+
+  .product-payments__label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+
+  .product-payments__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .product-payments__item {
+    display: flex;
+  }
+
+  .product-payments__icon {
+    inline-size: 34px;
+    block-size: 22px;
   }
 
   /* Block, not flex: a longer English or Arabic sentence wraps as text around the inline icon. */
@@ -631,11 +790,17 @@
     }
   }
 
+  /* Trust: four short promises in a 2 x 2 grid of cells split by hairlines. */
   .product-trust {
-    margin-block-end: 0;
-    padding: var(--space-1) var(--space-4);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
-    background: color-mix(in srgb, var(--color-surface) 60%, var(--color-background));
+    background: var(--color-border);
     list-style: none;
   }
 
@@ -643,13 +808,150 @@
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    min-block-size: 48px;
-    padding-block: var(--space-2);
-    font-size: var(--text-md);
-    line-height: 1.4;
+    min-block-size: 64px;
+    padding: var(--space-3);
+    background: var(--color-background);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.35;
+  }
 
-    & + & {
-      border-block-start: 1px solid var(--color-border);
+  .product-trust__icon {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    inline-size: 36px;
+    block-size: 36px;
+    border-radius: 50%;
+    background: var(--color-surface);
+  }
+
+  .product-help {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-block-size: var(--touch-target);
+    margin-block-start: var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-button);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: none;
+
+    & .icon {
+      color: #1f9d55;
+    }
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+
+  /* Sticky buy bar: slides up from the bottom once the main buy button has scrolled out of view
+     (assets/product-info.js, <sw-sticky-buy>). Phones show the price and the button; wider screens add
+     the product. The page gets matching bottom room so the bar never hides the footer. */
+  .product-sticky {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 30;
+    padding-block: var(--space-3) calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
+    border-block-start: 1px solid var(--color-border);
+    box-shadow: 0 -10px 30px rgb(13 14 17 / 0.1);
+    transform: translateY(110%);
+    transition: transform 240ms var(--ease);
+
+    &[data-visible] {
+      transform: none;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  html:has(.product-sticky[data-visible]) body {
+    padding-block-end: 84px;
+  }
+
+  .product-sticky__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  .product-sticky__product {
+    display: none;
+    align-items: center;
+    gap: var(--space-3);
+    min-inline-size: 0;
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+
+  .product-sticky__thumb {
+    flex-shrink: 0;
+    inline-size: 52px;
+    block-size: 52px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+
+    & img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .product-sticky__text {
+    display: grid;
+    min-inline-size: 0;
+  }
+
+  .product-sticky__title {
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .product-sticky__variant {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+
+  .product-sticky__buy {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+
+    @media screen and (min-width: 750px) {
+      flex: none;
+    }
+  }
+
+  .product-sticky__price {
+    flex-shrink: 0;
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+
+  .product-sticky__button {
+    flex: 1 1 auto;
+    gap: var(--space-2);
+
+    @media screen and (min-width: 750px) {
+      flex: none;
+      min-inline-size: 220px;
     }
   }
 
@@ -700,6 +1002,13 @@
       "type": "checkbox",
       "id": "sticky_info",
       "label": "t:sections.main_product.settings.sticky_info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sticky_buy",
+      "label": "t:sections.main_product.settings.show_sticky_buy",
+      "info": "t:sections.main_product.settings.show_sticky_buy_info",
       "default": true
     },
     {
@@ -854,6 +1163,12 @@
           "label": "t:sections.main_product.settings.show_dynamic_checkout",
           "info": "t:sections.main_product.settings.show_dynamic_checkout_info",
           "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_payment_icons",
+          "label": "t:sections.main_product.settings.show_payment_icons",
+          "default": true
         }
       ]
     },
@@ -905,6 +1220,13 @@
           "type": "text",
           "id": "text_payment",
           "label": "t:sections.main_product.settings.trust_payment"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_whatsapp",
+          "label": "t:sections.main_product.settings.show_whatsapp",
+          "info": "t:sections.main_product.settings.show_whatsapp_info",
+          "default": true
         }
       ]
     },

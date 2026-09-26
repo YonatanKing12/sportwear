@@ -11,6 +11,11 @@
  * <sw-product-form> wraps a product form (the main buy buttons and each "complete the set" row) and
  * adds it to the cart through CartAPI, with a loading state and inline errors. Without JavaScript
  * the forms post to the cart normally.
+ *
+ * <sw-sticky-buy> is the bar that slides up once the main buy buttons have scrolled out of view
+ * above the screen. Its button submits the main product form (form="…"), so the size, the checks
+ * and the cart drawer are the same as the main button's; its price and button are re-rendered with
+ * the variant like the rest of the info column. While hidden it is inert.
  */
 import { CartAPI, EVENTS, announce, config, parseHTML, publish } from '@theme/core';
 
@@ -262,8 +267,38 @@ class SwProductForm extends HTMLElement {
   }
 }
 
+class SwStickyBuy extends HTMLElement {
+  /** @type {IntersectionObserver | null} */
+  #observer = null;
+
+  connectedCallback() {
+    const target = this.closest('sw-product-info')?.querySelector('.product-info__block--buy-buttons');
+    if (!target) return;
+    // The observed area runs from the top of the screen to far below it, so the only change that
+    // counts is the buttons passing above the screen's top edge; a fast fling or a jump from below the
+    // screen to above it (never intersecting the screen itself) still flips the state.
+    this.#observer = new IntersectionObserver(
+      ([entry]) => this.#toggle(!entry.isIntersecting && entry.boundingClientRect.bottom < 0),
+      { rootMargin: '0px 0px 100000px 0px' },
+    );
+    this.#observer.observe(target);
+  }
+
+  disconnectedCallback() {
+    this.#observer?.disconnect();
+    this.#observer = null;
+  }
+
+  /** @param {boolean} visible */
+  #toggle(visible) {
+    this.toggleAttribute('data-visible', visible);
+    this.inert = !visible;
+  }
+}
+
 if (!customElements.get('sw-product-info')) customElements.define('sw-product-info', SwProductInfo);
 if (!customElements.get('sw-product-form')) customElements.define('sw-product-form', SwProductForm);
+if (!customElements.get('sw-sticky-buy')) customElements.define('sw-sticky-buy', SwStickyBuy);
 
 /* Theme editor: open a collapsible block when it is selected, and close the product dialogs (size
    guide, zoom) so they never cover the block being edited. */
