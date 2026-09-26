@@ -6,6 +6,7 @@ so the owner can decide what to import next. Nothing here writes to Shopify.
 | File | What it is |
 | --- | --- |
 | `albums.json` | The supplier's full inventory, normalized: one line per product album |
+| `wave1.json` | The first import wave recommended to the owner (2026-09-26): 178 current-season home/away/third kits of the Israeli teams, 17 top clubs and 12 national teams, one supplier album per product. The owner ticks what goes in on the review page (https://claude.ai/code/artifact/3e9da8d7-5548-4440-b5b0-5f02ea7d03f1); the selection is stored in that page's database (`review/wave1`) |
 | `gap-report.json` | Per album: `have`, `close_variant`, `missing`, `unparsed` or `out_of_scope`, with our matching product handle. The summary at the top groups the missing items |
 | `scripts/catalog/yupoo-crawl.mjs` | Crawls the category tree and album listings into a cache (no photos) |
 | `scripts/catalog/yupoo-normalize.mjs` | Title parser (Node, no dependencies). Writes `albums.json`, prints the titles it cannot parse. Reusable for the import (`normalizeTitle`, `normalizeAlbum`, `parseSeason`, `expand`) |
