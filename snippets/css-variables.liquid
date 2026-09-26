@@ -38,6 +38,10 @@
       --color-button-label: {{ scheme.settings.button_label }};
       --color-secondary-button-label: {{ scheme.settings.secondary_button_label }};
       --color-sale: {{ scheme.settings.sale }};
+      {%- if scheme.settings.background.lightness < 50 %}
+        --color-error: #ff6b5e;
+        --color-success: #5fd07a;
+      {%- endif %}
       color-scheme: {% if scheme.settings.background.lightness < 50 %}dark{% else %}light{% endif %};
       background: {% if scheme.settings.background_gradient != blank %}{{ scheme.settings.background_gradient }}{% else %}var(--color-background){% endif %};
       color: var(--color-text);

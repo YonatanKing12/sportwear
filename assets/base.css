@@ -447,6 +447,7 @@ a {
 
 .chip--active,
 .chip[aria-current='true'],
+.chip[aria-current='page'],
 .chip[aria-pressed='true'] {
   background: var(--color-text);
   border-color: var(--color-text);
@@ -504,7 +505,8 @@ a {
   inline-size: 100%;
   min-block-size: 48px;
   padding: 10px 14px;
-  border: 1.5px solid var(--color-border);
+  /* Form controls need a 3:1 boundary (WCAG 1.4.11); the decorative --color-border is too faint. */
+  border: 1.5px solid color-mix(in srgb, var(--color-text) 45%, var(--color-background));
   border-radius: var(--radius-button);
   background: var(--color-background);
   color: var(--color-text);
