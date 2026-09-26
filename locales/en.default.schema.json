@@ -789,6 +789,43 @@
         }
       }
     },
+    "kids_sizes": {
+      "name": "Kids sizes",
+      "headers": {
+        "content": "Text",
+        "links": "Links"
+      },
+      "settings": {
+        "show_eyebrow": {
+          "label": "Show small label"
+        },
+        "button_link": {
+          "info": "Leave empty to link to the collection whose URL ends in /collections/kids, or to all products until it exists."
+        },
+        "secondary_label": {
+          "label": "Size guide link label"
+        },
+        "secondary_link": {
+          "label": "Size guide link",
+          "info": "Leave empty to open the kids' table on the page whose URL ends in /pages/size-guide. If that page doesn't exist, the link is hidden."
+        }
+      },
+      "blocks": {
+        "size": {
+          "name": "Size",
+          "settings": {
+            "title": {
+              "label": "Size",
+              "info": "As it appears on the kids products, for example 9-10. The word \"years\" is added automatically."
+            },
+            "height": {
+              "label": "Height (cm)",
+              "info": "The child's approximate height for this size, numbers only. Leave empty to hide it."
+            }
+          }
+        }
+      }
+    },
     "cta_band": {
       "name": "Call to action",
       "presets": {
