@@ -18,7 +18,12 @@ import { fileURLToPath } from 'node:url';
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 function parseArgs(argv) {
-  const args = { input: null, out: null, json: false, classification: path.join(repoRoot, 'catalog/classification.json') };
+  const args = {
+    input: null,
+    out: null,
+    json: false,
+    classification: path.join(repoRoot, 'catalog/classification.json'),
+  };
   for (let i = 0; i < argv.length; i += 1) {
     const a = argv[i];
     if (a === '--out') args.out = argv[++i];
@@ -101,7 +106,18 @@ function parseSeason(title) {
 }
 
 const shirtNumber = (title) => title.match(/מספר\s+(\d{1,3})(?![\d/])/)?.[1] ?? null;
-const tagValues = (tags, prefix) => tags.filter((t) => t.startsWith(`${prefix}:`)).map((t) => t.slice(prefix.length + 1));
+const tagValues = (tags, prefix) =>
+  tags.filter((t) => t.startsWith(`${prefix}:`)).map((t) => t.slice(prefix.length + 1));
+
+// Shopify treats two tags with the same handle as one tag and keeps only the first: "all star" and
+// "all-star", or "קפוצ'ון" and "קפוצון". Compare tags by this key so a re-run neither plans a tag that
+// Shopify would drop nor removes the spelling it kept.
+const tagKey = (tag) =>
+  tag
+    .toLowerCase()
+    .replace(/['"’`]/g, '')
+    .replace(/[^\p{L}\p{N}]+/gu, '-')
+    .replace(/^-+|-+$/g, '');
 
 // Every plain tag this script manages, so stale ones can be removed on a re-run.
 const managedKeywords = new Set();
@@ -215,7 +231,9 @@ function classify(product) {
   if (player && !C.players[player]) problems.push(`unknown player "${player}"`);
 
   // audience
-  const titleAudience = Object.entries(C.audiences).find(([, a]) => (a.match ?? []).some((p) => hasPhrase(title, p)))?.[0];
+  const titleAudience = Object.entries(C.audiences).find(([, a]) =>
+    (a.match ?? []).some((p) => hasPhrase(title, p)),
+  )?.[0];
   const existingAudience = tagValues(tags, 'audience');
   const audience = existingAudience[0] ?? titleAudience ?? 'adult';
   if (titleAudience && existingAudience.length && !existingAudience.includes(titleAudience)) {
@@ -223,7 +241,8 @@ function classify(product) {
   }
 
   // coverage: every product needs a sub-category
-  if (sport === 'basketball' && !league && !styles.has('special') && leagueKnown) problems.push('league (or style:special)');
+  if (sport === 'basketball' && !league && !styles.has('special') && leagueKnown)
+    problems.push('league (or style:special)');
   if (sport === 'football' && !league && !styles.has('special') && leagueKnown) problems.push('league');
 
   // desired tags
@@ -241,18 +260,26 @@ function classify(product) {
     want.add(C.players[player].he);
   }
   addKeywords(C.product_types[product.productType]?.keywords);
-  existingAudience.concat(existingAudience.length ? [] : [audience]).forEach((a) => addKeywords(C.audiences[a]?.keywords));
+  existingAudience
+    .concat(existingAudience.length ? [] : [audience])
+    .forEach((a) => addKeywords(C.audiences[a]?.keywords));
   if (teamEntry) addKeywords(teamEntry.keywords);
   if (league) addKeywords(C.leagues[league]?.keywords);
   else if (!leagueKnown) tagValues(tags, 'league').forEach((l) => addKeywords(C.leagues[l]?.keywords));
   if (player && C.players[player]) addKeywords(C.players[player].keywords);
   styles.forEach((s) => addKeywords(C.styles[s]?.keywords));
   keywords.forEach((k) => want.add(k));
+  // one spelling per tag handle (the first one wins, as in Shopify)
+  const wantKeys = new Set();
+  for (const t of [...want]) {
+    if (wantKeys.has(tagKey(t))) want.delete(t);
+    else wantKeys.add(tagKey(t));
+  }
 
   // removals: stale values in the namespaces we decided, and stale managed keywords
   const remove = new Set();
   for (const t of tags) {
-    if (want.has(t)) continue;
+    if (wantKeys.has(tagKey(t))) continue;
     const ns = t.includes(':') ? t.slice(0, t.indexOf(':')) : null;
     if (ns === 'team' && teamKnown) remove.add(t);
     else if (ns === 'league' && leagueKnown) remove.add(t);
@@ -260,7 +287,8 @@ function classify(product) {
     else if (ns === 'season' && sport === 'football') remove.add(t);
     else if (!ns && managedKeywords.has(t)) remove.add(t);
   }
-  const add = [...want].filter((t) => !tags.includes(t));
+  const haveKeys = new Set(tags.filter((t) => !remove.has(t)).map(tagKey));
+  const add = [...want].filter((t) => !haveKeys.has(tagKey(t)));
 
   return {
     id: product.id,
@@ -305,11 +333,12 @@ for (const product of products) {
 
 const changed = results.filter((r) => r.add.length || r.remove.length);
 const unclassified = results.filter((r) => r.problems.length);
-const count = (fn) => results.reduce((map, r) => {
-  const key = fn(r);
-  if (key !== undefined && key !== null) map[key] = (map[key] ?? 0) + 1;
-  return map;
-}, {});
+const count = (fn) =>
+  results.reduce((map, r) => {
+    const key = fn(r);
+    if (key !== undefined && key !== null) map[key] = (map[key] ?? 0) + 1;
+    return map;
+  }, {});
 
 const plan = {
   generated_at: new Date().toISOString(),
@@ -349,7 +378,9 @@ if (args.json) {
   console.log(`${s.to_change} to change: +${s.tags_to_add} tag(s), -${s.tags_to_remove} tag(s).`);
   console.log(`Leagues: ${JSON.stringify(s.by_league)}`);
   console.log(`Styles: ${JSON.stringify(s.by_style)}`);
-  console.log(`Players: ${Object.keys(s.by_player).length} (${Object.values(s.by_player).reduce((a, b) => a + b, 0)} products)`);
+  console.log(
+    `Players: ${Object.keys(s.by_player).length} (${Object.values(s.by_player).reduce((a, b) => a + b, 0)} products)`,
+  );
   for (const w of warnings) console.log(`! ${w}`);
   const noted = results.filter((r) => r.notes.some((n) => !n.startsWith('override:')));
   for (const r of noted) console.log(`! ${r.handle}: ${r.notes.filter((n) => !n.startsWith('override:')).join('; ')}`);
