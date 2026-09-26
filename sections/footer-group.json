@@ -11,6 +11,13 @@
             "show_text": true
           }
         },
+        "menu_shop": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer-shop",
+            "show_heading": true
+          }
+        },
         "menu": {
           "type": "menu",
           "settings": {
@@ -23,12 +30,13 @@
           "settings": {}
         }
       },
-      "block_order": ["brand", "menu", "contact"],
+      "block_order": ["brand", "menu_shop", "menu", "contact"],
       "settings": {
         "color_scheme": "scheme-night",
         "show_language_selector": true,
         "show_social": true,
         "show_payment_icons": true,
+        "accessibility_page": "accessibility",
         "padding_top": 48,
         "padding_bottom": 36
       }
