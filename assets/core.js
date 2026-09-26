@@ -118,11 +118,17 @@ export function replaceContent(target, html, selector) {
 }
 
 /**
- * Announces a message to screen readers through the page's polite live region.
+ * Announces a message to screen readers through a polite live region. While a modal dialog is open
+ * the rest of the page is inert, so the dialog's own region (`[data-live-region]` or any
+ * `[aria-live]` inside it) is used instead of the page-level `#SwLiveRegion`.
  * @param {string} message
  */
 export function announce(message) {
-  const region = document.getElementById('SwLiveRegion');
+  const modal = [...document.querySelectorAll('dialog[open]')].filter((dialog) => dialog.matches(':modal')).pop();
+  const region =
+    modal?.querySelector('[data-live-region]') ??
+    modal?.querySelector('[aria-live]') ??
+    document.getElementById('SwLiveRegion');
   if (!region || !message) return;
   region.textContent = '';
   requestAnimationFrame(() => {

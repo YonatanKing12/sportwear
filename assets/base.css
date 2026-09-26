@@ -35,8 +35,8 @@ ol {
   margin: 0;
 }
 
-ul[role='list'],
-ol[role='list'] {
+/* :where() keeps this reset at 0-1-0 so a component's own padding class wins by source order. */
+:where(ul, ol)[role='list'] {
   list-style: none;
   padding: 0;
 }
@@ -546,8 +546,8 @@ a {
 
 [dir='rtl'] .field__select {
   background-position:
-    20px 50%,
-    15px 50%;
+    15px 50%,
+    20px 50%;
 }
 
 .field__message {
@@ -570,11 +570,11 @@ a {
 }
 
 .form-status--success {
-  box-shadow: inset 3px 0 0 var(--color-success);
+  border-inline-start: 3px solid var(--color-success);
 }
 
 .form-status--error {
-  box-shadow: inset 3px 0 0 var(--color-error);
+  border-inline-start: 3px solid var(--color-error);
 }
 
 /* ---------- Price ---------- */

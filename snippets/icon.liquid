@@ -4,7 +4,7 @@
   Stroke icons use currentColor lines; brand icons (instagram, tiktok, facebook, whatsapp, youtube, x)
   are filled and come from Simple Icons (CC0).
 
-  @param {string} name - Icon name, e.g. 'bag', 'search', 'chevron-forward', 'whatsapp'
+  @param {string} name - Icon name, e.g. 'bag', 'search', 'chevron-forward', 'pause', 'play', 'whatsapp'
   @param {number} [size] - Width and height in px (default 24)
   @param {string} [class] - Extra classes
 
@@ -42,6 +42,10 @@
     <path d="M4 7h16M4 12h16M4 17h16"/>
     {%- when 'close' -%}
     <path d="M6 6l12 12M18 6L6 18"/>
+    {%- when 'pause' -%}
+    <path d="M9 6v12M15 6v12"/>
+    {%- when 'play' -%}
+    <path d="M8 5.5v13l10.5-6.5z"/>
     {%- when 'search' -%}
     <circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.3-4.3"/>
     {%- when 'bag' -%}

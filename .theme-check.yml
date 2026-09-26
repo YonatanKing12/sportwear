@@ -1,10 +1,12 @@
 # Shopify Theme Check configuration for the SportWear theme (repo root = theme root).
 # Run with: npm run theme:check
 extends: theme-check:recommended
+# Leading slashes anchor the patterns at the theme root. Without them theme-check treats a pattern
+# as **/pattern, which silently skips every file when the repo is checked out under .claude/worktrees.
 ignore:
-  - node_modules/**
-  - .claude/**
-  - catalog/**
-  - design/**
-  - scripts/**
-  - qa-output/**
+  - /node_modules/**
+  - /.claude/**
+  - /catalog/**
+  - /design/**
+  - /scripts/**
+  - /qa-output/**
