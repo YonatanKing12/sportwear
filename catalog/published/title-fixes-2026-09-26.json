@@ -1,0 +1,33 @@
+{
+  "_note": "Titles of products imported before (source:yupoo) that named the wrong team or player, fixed on 2026-09-26 during the polish pass the owner asked for. The studio photos show the jersey; the tags were already right (the categories work set them from the photos). The same text was changed in the description's first line and in the image alt. Nothing else changed (price, stock, status, handle). These products have no en/ar translations yet.",
+  "products": [
+    {
+      "id": "gid://shopify/Product/15308558565680",
+      "handle": "sw-jerseys-209197090",
+      "before": "גופיית כדורסל קייטלין קלארק מספר 8 כחול כהה",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 8 כחול כהה",
+      "why": "The photo shows an Indiana Fever #8 jersey with no player name; Caitlin Clark wears 22."
+    },
+    {
+      "id": "gid://shopify/Product/15308558598448",
+      "handle": "sw-jerseys-209197059",
+      "before": "גופיית כדורסל קייטלין קלארק מספר 8 אדום",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 8 אדום",
+      "why": "The photo shows an Indiana Fever #8 jersey with no player name; Caitlin Clark wears 22."
+    },
+    {
+      "id": "gid://shopify/Product/15308558696752",
+      "handle": "sw-jerseys-209196990",
+      "before": "גופיית כדורסל קייטלין קלארק מספר 8 לבן",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 8 לבן",
+      "why": "The photo shows an Indiana Fever #8 jersey with no player name; Caitlin Clark wears 22."
+    },
+    {
+      "id": "gid://shopify/Product/15308634915120",
+      "handle": "sw-jerseys-134343761",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 33 לבן רטרו",
+      "after": "גופיית כדורסל לואר מריון מספר 33 לבן רטרו",
+      "why": "The photo shows the Lower Merion high school #33 jersey (Kobe Bryant, 1996), not a Lakers jersey."
+    }
+  ]
+}
