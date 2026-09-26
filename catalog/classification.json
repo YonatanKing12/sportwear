@@ -3252,6 +3252,34 @@
         "retro"
       ],
       "note": "USA 1996 Olympic team #6, Mitchell & Ness jock tag '1996 Anfernee Hardaway'. Was team:hardaway, league:nba."
+    },
+    "sw-jerseys-164118431": {
+      "player": null,
+      "note": "Clippers #13 in the 2024-25 uniform design (new script and 'Clips' City Edition), made after Paul George left the Clippers in July 2024, so the number table's Paul George does not apply."
+    },
+    "sw-jerseys-183134209": {
+      "player": null,
+      "note": "Clippers #13 in the 2024-25 uniform design (new script and 'Clips' City Edition), made after Paul George left the Clippers in July 2024, so the number table's Paul George does not apply."
+    },
+    "sw-jerseys-164339120": {
+      "player": null,
+      "note": "Clippers #13 in the 2024-25 uniform design (new script and 'Clips' City Edition), made after Paul George left the Clippers in July 2024, so the number table's Paul George does not apply."
+    },
+    "sw-jerseys-163399706": {
+      "player": null,
+      "note": "Clippers #13 in the 2024-25 uniform design (new script and 'Clips' City Edition), made after Paul George left the Clippers in July 2024, so the number table's Paul George does not apply."
+    },
+    "sw-jerseys-150865991": {
+      "styles": [
+        "retro"
+      ],
+      "note": "Georgetown #3, Mitchell & Ness jock tag '1995-96 Allen Iverson': a throwback."
+    },
+    "sw-jerseys-149291071": {
+      "styles": [
+        "retro"
+      ],
+      "note": "Georgetown 'HOYAS' #3 in the mid-1990s design: a throwback. No player tag: Georgetown is not in player_numbers and the title names no player."
     }
   }
 }
