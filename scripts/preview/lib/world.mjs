@@ -237,6 +237,12 @@ export class World {
         }),
       ]),
     );
+    /** type → Map(handle → metaobject drop), for metaobject settings. */
+    this.metaobjectsByType = new Map([
+      ['sw_team', this.teams],
+      ['sw_league', this.leagues],
+      ['sw_size_chart', this.sizeCharts],
+    ]);
     const typeMap = (map) =>
       new MapDrop('metaobjects', map, {
         props: {},
@@ -286,7 +292,8 @@ export class World {
     const id = numericId(`product:${def.handle}`, 15307595000000);
     const title = t(def.title, locale);
     const url = `${this.root}/products/${def.handle}`;
-    const sizes = def.audience === 'kids' ? KIDS_SIZES : ADULT_SIZES;
+    const sizes = def.sizes ?? (def.audience === 'kids' ? KIDS_SIZES : ADULT_SIZES);
+    const price = def.price ?? PRICE;
     const optionName = OPTION_NAME[locale] ?? OPTION_NAME.he;
     const images = ['front', 'back'].map((side, index) => {
       const fixture = this.fixtureImage(`${def.image}-${side}`, {
@@ -328,7 +335,7 @@ export class World {
           option2: null,
           option3: null,
           options: [size],
-          price: PRICE,
+          price,
           compare_at_price: def.compareAt ?? null,
           available,
           inventory_quantity: available ? 5 : 0,
@@ -387,7 +394,8 @@ export class World {
 
     const team = this.teams.get(def.team);
     const league = this.leagues.get(def.league);
-    const chart = this.sizeCharts.get(def.audience === 'kids' ? 'demo-kids' : 'demo-adult');
+    const chart = this.sizeCharts.get(def.sizeChart ?? (def.audience === 'kids' ? 'demo-kids' : 'demo-adult'));
+    if (!chart) this.gap('resource', `size chart "${def.sizeChart}" of ${def.handle} is not in SIZE_CHARTS`);
     const sportwear = new MetafieldNamespaceDrop(
       'product',
       'sportwear',
@@ -420,9 +428,9 @@ export class World {
         description,
         content: description,
         available: variants.some((v) => v.available),
-        price: PRICE,
-        price_min: PRICE,
-        price_max: PRICE,
+        price,
+        price_min: price,
+        price_max: price,
         price_varies: false,
         compare_at_price: compareAt,
         compare_at_price_min: compareAt ?? 0,
@@ -610,9 +618,14 @@ export class World {
       });
     };
 
-    const sizes = products.some((p) => p.__def.audience === 'kids')
-      ? [...(products.some((p) => p.__def.audience !== 'kids') ? ADULT_SIZES : []), ...KIDS_SIZES]
-      : ADULT_SIZES;
+    const hasKids = products.some((p) => p.__def.audience === 'kids');
+    const hasAdults = products.some((p) => p.__def.audience !== 'kids');
+    const standard = hasKids ? [...(hasAdults ? ADULT_SIZES : []), ...KIDS_SIZES] : ADULT_SIZES;
+    // Then any other size the products have (the kids sets' 16-28).
+    const others = [...new Set(products.flatMap((p) => p.variants.map((v) => v.option1)))].filter(
+      (size) => !standard.includes(size),
+    );
+    const sizes = [...standard, ...others];
     const optionParam = `filter.v.option.${handleize(optionName)}`;
     const typeParam = 'filter.p.product_type';
     const availabilityParam = 'filter.v.availability';
@@ -1147,10 +1160,13 @@ export class World {
       case 'font_picker':
         return value ? this.#fontDrop(value) : null;
       case 'metaobject':
+        return value ? this.#metaobject(def, value, owner) : null;
       case 'metaobject_list':
-        if (value)
-          this.gap('unsupported', `${owner}: ${def.type} setting "${def.id}" is not emulated (rendered as nil)`);
-        return def.type === 'metaobject_list' ? [] : null;
+        return listOf(
+          (Array.isArray(value) ? value : value ? [value] : [])
+            .map((entry) => this.#metaobject(def, entry, owner))
+            .filter(Boolean),
+        );
       case 'liquid':
         if (value) this.gap('unsupported', `${owner}: liquid setting "${def.id}" is output as raw text`);
         return value ?? '';
@@ -1180,6 +1196,33 @@ export class World {
             ? this.page(handle)
             : this.linklist(handle);
     return found ?? this.#missingResource(kind, handle, owner);
+  }
+
+  /**
+   * A metaobject setting's entry of the setting's metaobject_type. The value may be the entry's handle,
+   * "type/handle", "shopify://metaobjects/type/handle" or its GID.
+   */
+  #metaobject(def, value, owner) {
+    if (value instanceof BaseDrop) return value;
+    const type = def.metaobject_type;
+    const entries = this.metaobjectsByType.get(type);
+    if (!entries) {
+      this.gap('resource', `${owner}: metaobject type "${type}" (setting "${def.id}") is not in the preview mock`);
+      return null;
+    }
+    const text = String(value);
+    let found = null;
+    if (text.startsWith('gid://')) {
+      found = [...entries.values()].find((entry) => entry.system.id === text) ?? null;
+    } else {
+      const parts = text.replace(/^shopify:\/\/metaobjects\//, '').split('/');
+      const handle = parts.pop();
+      const valueType = parts.pop();
+      if (!valueType || valueType === type) found = entries.get(handle) ?? null;
+    }
+    if (!found)
+      this.gap('resource', `${owner}: ${type} metaobject "${text}" is not in the preview mock (rendered as nil)`);
+    return found;
   }
 
   #missingResource(kind, handle, owner) {

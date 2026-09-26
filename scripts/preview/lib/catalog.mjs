@@ -1,7 +1,14 @@
 // Mock catalog for the preview harness. Mirrors the demo products created in the store
-// (catalog/store-setup.json, tag `demo`) and the store's collections, pages and menus.
+// (catalog/store-setup.json, tag `demo`) and the store's collections, pages and menus, plus two
+// preview-only products that carry the supplier jerseyxie's size charts (catalog/size-charts/jerseyxie.json).
 // Hebrew is the store's primary language; English and Arabic are the translations the catalog
 // translator will publish. Everything here is fixture data for screenshots only.
+import { readFileSync } from 'node:fs';
+
+/** The supplier's transcribed size charts (owner decision, 2026-09-26: its products use them). */
+const JERSEYXIE = JSON.parse(
+  readFileSync(new URL('../../../catalog/size-charts/jerseyxie.json', import.meta.url), 'utf8'),
+);
 
 /** Shop facts read from the Admin API on 2026-09-26 (shop.currencyFormats etc.). */
 export const SHOP = {
@@ -113,14 +120,55 @@ export const SIZE_CHARTS = {
       ar: 'أرقام تجريبية لمراجعة التصميم فقط.',
     },
   },
+  // The supplier's charts in the shape the store keeps them: { rows: [...] } with the sizes we sell.
+  // Keys the theme does not show (sleeve_cm, waist_half_cm) stay in, as they would in the store.
+  'jerseyxie-football-adult': {
+    name: {
+      he: 'טבלת מידות – חולצת כדורגל למבוגרים',
+      en: 'Size chart – adult football jersey',
+      ar: 'جدول المقاسات – قميص كرة قدم للكبار',
+    },
+    audience: 'adult',
+    table: { rows: supplierRows('football-adult-fan', ['S', 'M', 'L', 'XL']) },
+    fit_note: {
+      he: 'המידות נמדדו על הבגד עצמו, וייתכן הבדל של 1–2 ס״מ.',
+      en: 'Measured on the garment itself; allow 1–2 cm of difference.',
+      ar: 'القياسات مأخوذة من القطعة نفسها، وقد يوجد فرق 1–2 سم.',
+    },
+  },
+  'jerseyxie-football-kids-set': {
+    name: {
+      he: 'טבלת מידות – סט כדורגל לילדים (חולצה ומכנס)',
+      en: 'Size chart – kids football kit (jersey and shorts)',
+      ar: 'جدول المقاسات – طقم كرة قدم للأطفال (قميص وشورت)',
+    },
+    audience: 'kids',
+    table: { rows: supplierRows('football-kids-set', ['16', '18', '20', '22', '24', '26', '28']) },
+    fit_note: {
+      he: 'המידות נמדדו על הבגד עצמו, וייתכן הבדל של 1–2 ס״מ. בין שתי מידות? כדאי לבחור את הגדולה.',
+      en: 'Measured on the garment itself; allow 1–2 cm of difference. Between two sizes? Choose the larger one.',
+      ar: 'القياسات مأخوذة من القطعة نفسها، وقد يوجد فرق 1–2 سم. بين مقاسين؟ اختاروا المقاس الأكبر.',
+    },
+  },
 };
+
+/** Rows of one of the supplier's charts, limited to the given sizes (in the chart's order). */
+function supplierRows(chart, sizes) {
+  const rows = JERSEYXIE.charts[chart]?.rows ?? [];
+  const picked = rows.filter((row) => sizes.includes(row.size));
+  if (picked.length !== sizes.length) throw new Error(`jerseyxie chart "${chart}" lacks some of ${sizes.join(', ')}`);
+  return picked;
+}
 
 export const OPTION_NAME = { he: 'מידה', en: 'Size', ar: 'المقاس' };
 export const ADULT_SIZES = ['S', 'M', 'L', 'XL'];
 export const KIDS_SIZES = ['5-6', '7-8', '9-10', '11-12', '13-14'];
+/** The supplier's kids set sizes (ages 2-3 ... 12-13 in its chart). */
+export const KIDS_SET_SIZES = ['16', '18', '20', '22', '24', '26', '28'];
 
 export const PRODUCT_TYPES = {
   'Football Jersey': { he: 'חולצת כדורגל', en: 'Football Jersey', ar: 'قميص كرة قدم' },
+  'Football Kit': { he: 'סט כדורגל', en: 'Football Kit', ar: 'طقم كرة قدم' },
   'Basketball Jersey': { he: 'גופיית כדורסל', en: 'Basketball Jersey', ar: 'قميص كرة سلة' },
   'Basketball Shorts': { he: 'מכנס כדורסל', en: 'Basketball Shorts', ar: 'شورت كرة سلة' },
 };
@@ -135,6 +183,11 @@ const DESCRIPTION = {
     he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>מידות ילדים: 5-6 עד 13-14 (גובה 116 עד 164 ס״מ)</li><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
     en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kids sizes: 5-6 to 13-14 (height 116 to 164 cm)</li><li>Home delivery within 3 business days</li><li>Returns within 45 days</li></ul>',
     ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>مقاسات الأطفال: من 5-6 إلى 13-14 (الطول من 116 إلى 164 سم)</li><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
+  },
+  'kids-set': {
+    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>סט: חולצה ומכנס</li><li>מידות 16 עד 28 (גילאי 2-3 עד 12-13, לפי טבלת המידות)</li><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
+    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kit: jersey and shorts</li><li>Sizes 16 to 28 (ages 2-3 to 12-13, see the size chart)</li><li>Home delivery within 3 business days</li><li>Returns within 45 days</li></ul>',
+    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>طقم: قميص وشورت</li><li>المقاسات من 16 إلى 28 (الأعمار من 2-3 إلى 12-13، حسب جدول المقاسات)</li><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
   },
 };
 
@@ -159,7 +212,11 @@ const KIDS_KEYWORDS = ['ילדים', 'kids', 'أطفال'];
 const BASKETBALL_JERSEY_KEYWORDS = ['גופייה', 'גופיית כדורסל', 'jersey', 'tank', 'قميص', 'قميص كرة سلة', 'NBA'];
 const BASKETBALL_SHORTS_KEYWORDS = ['מכנס', 'מכנסיים', 'shorts', 'شورت', 'NBA'];
 
-/** The 8 demo products (prices in agorot, like Shopify's cents). */
+/**
+ * The 8 demo products of the store, then 2 preview-only ones with the supplier's size charts. Optional
+ * fields: sizes (default by audience), sizeChart (SIZE_CHARTS handle, default demo-adult / demo-kids),
+ * soldOut, price (agorot, like Shopify's cents; default PRICE), description (DESCRIPTION key).
+ */
 const DEMO_PRODUCTS = [
   {
     key: 'fc-home',
@@ -311,13 +368,64 @@ const DEMO_PRODUCTS = [
     keywords: BASKETBALL_JERSEY_KEYWORDS,
     createdAt: '2026-09-19T10:00:00+03:00',
   },
+  // Preview-only (not in the store): products from the supplier jerseyxie, with its size charts.
+  {
+    key: 'united-away',
+    handle: 'demo-united-away-jersey-2026-27',
+    title: {
+      he: 'חולצת חוץ דמו יונייטד 26/27',
+      en: 'Demo United Away Jersey 26/27',
+      ar: 'قميص ديمو يونايتد الاحتياطي 26/27',
+    },
+    type: 'Football Jersey',
+    sport: 'football',
+    team: 'demo-united',
+    league: 'la-liga',
+    kit: 'away',
+    audience: 'adult',
+    image: 'demo-united-third',
+    extraTags: [],
+    keywords: FOOTBALL_KEYWORDS,
+    sizeChart: 'jerseyxie-football-adult',
+    soldOut: ['L'],
+    counterpart: 'demo-united-away-kit-2026-27-kids',
+    createdAt: '2026-09-14T10:00:00+03:00',
+  },
+  {
+    key: 'united-away-kids',
+    handle: 'demo-united-away-kit-2026-27-kids',
+    title: {
+      he: 'סט חוץ דמו יונייטד 26/27 – ילדים',
+      en: 'Demo United Away Kit 26/27 – Kids',
+      ar: 'طقم ديمو يونايتد الاحتياطي 26/27 – أطفال',
+    },
+    type: 'Football Kit',
+    sport: 'football',
+    team: 'demo-united',
+    league: 'la-liga',
+    kit: 'away',
+    audience: 'kids',
+    image: 'demo-united-third',
+    extraTags: [],
+    keywords: [...FOOTBALL_KEYWORDS, ...KIDS_KEYWORDS],
+    sizes: KIDS_SET_SIZES,
+    sizeChart: 'jerseyxie-football-kids-set',
+    soldOut: ['26'],
+    // Kids sets: catalog/pricing.json (Football Kit, kids).
+    price: 9900,
+    description: 'kids-set',
+    counterpart: 'demo-united-away-jersey-2026-27',
+    createdAt: '2026-09-14T11:00:00+03:00',
+  },
 ];
 
+/** Default price in agorot (catalog/pricing.json: adult football jersey); a product can set its own. */
 export const PRICE = 12000;
 export const VENDOR = 'SportWear (דמו)';
 
 export function descriptionFor(product, locale) {
-  return DESCRIPTION[product.audience === 'kids' ? 'kids' : 'adult'][locale] ?? DESCRIPTION.adult.he;
+  const text = DESCRIPTION[product.description ?? (product.audience === 'kids' ? 'kids' : 'adult')];
+  return text[locale] ?? text.he;
 }
 
 /**

@@ -7,7 +7,7 @@
 // Usage: node scripts/preview/selftest.mjs   (npm run preview:selftest)
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { COLLECTIONS } from './lib/catalog.mjs';
+import { COLLECTIONS, PRODUCTS } from './lib/catalog.mjs';
 import { Preview } from './lib/preview.mjs';
 import { startServer } from './lib/server.mjs';
 
@@ -244,10 +244,13 @@ const compiled = (preview, html, kind) => {
 
 /* ---------------------------------------------------------------------------- collection */
 {
+  // The football collection holds every football product of the mock catalog; the smoke theme shows 3 per page.
+  const football = PRODUCTS.filter((p) => p.sport === 'football').length;
+  const pages = Math.ceil(football / 3);
   const first = render('collection', 'he');
   check(
-    'paginate page 1',
-    first.html.includes('data-paginate="1/2/5"') && count(first.html, 'class="smoke-card"') === 3,
+    `paginate page 1 (${football} football products)`,
+    first.html.includes(`data-paginate="1/${pages}/${football}"`) && count(first.html, 'class="smoke-card"') === 3,
   );
   check('pagination parts', first.html.includes('<a href="/collections/football?page=2">2</a>'));
   check('default_pagination', first.html.includes('<span class="page current">1</span>'));
@@ -256,10 +259,11 @@ const compiled = (preview, html, kind) => {
     first.html.includes('data-filter="filter.v.availability"') && first.html.includes('data-type="price_range"'),
   );
   check('sort options localized', /<option\s+value="manual"\s+selected\s*>מומלצים<\/option>/.test(first.html));
-  const second = render('collection:football?page=2', 'he');
+  const last = render(`collection:football?page=${pages}`, 'he');
   check(
-    'paginate page 2',
-    second.html.includes('data-paginate="2/2/5"') && count(second.html, 'class="smoke-card"') === 2,
+    `paginate last page (${pages})`,
+    last.html.includes(`data-paginate="${pages}/${pages}/${football}"`) &&
+      count(last.html, 'class="smoke-card"') === football - 3 * (pages - 1),
   );
   const filtered = render('collection:football?filter.v.option.מידה=5-6', 'he');
   check(
@@ -280,12 +284,30 @@ const compiled = (preview, html, kind) => {
   check('empty collection placeholder', list2.html.includes('data-placeholder="collection-apparel-1"'));
 }
 
+/* ------------------------------------------------------------------ metaobject settings */
+{
+  const world = smoke.world(smoke.pageSpec('index', 'en'));
+  const def = { type: 'metaobject', id: 'chart', metaobject_type: 'sw_size_chart' };
+  const byHandle = world.resolveSetting(def, 'jerseyxie-football-adult', 'selftest');
+  const byType = world.resolveSetting(def, 'sw_size_chart/jerseyxie-football-kids-set', 'selftest');
+  const byGid = world.resolveSetting(def, byHandle?.system.id, 'selftest');
+  check('metaobject setting by handle', byHandle?.name.value === 'Size chart – adult football jersey');
+  check('metaobject setting by type/handle', byType?.table.value.rows.length === 7);
+  check('metaobject setting by GID', byGid === byHandle);
+  check('metaobject setting of another type is nil', world.resolveSetting(def, 'sw_team/demo-fc', 'selftest') === null);
+  const list = world.resolveSetting({ ...def, type: 'metaobject_list' }, ['demo-adult', 'nope'], 'selftest');
+  check('metaobject_list setting skips unknown entries', list.length === 1);
+}
+
 /* ------------------------------------------------------------------ search, cart, pages */
 {
+  // Every mock product has "דמו" in its Hebrew title; the smoke theme shows 4 results per page.
+  const results = PRODUCTS.filter((p) => p.title.he.includes('דמו')).length;
   const search = render('search', 'he');
   check(
-    'search results',
-    search.html.includes('8 תוצאות עבור &quot;דמו&quot;') && search.html.includes('data-paginate="1/2"'),
+    `search results (${results})`,
+    search.html.includes(`${results} תוצאות עבור &quot;דמו&quot;`) &&
+      search.html.includes(`data-paginate="1/${Math.ceil(results / 4)}"`),
   );
   const cart = render('cart', 'he');
   check(

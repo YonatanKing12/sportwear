@@ -34,7 +34,11 @@
       "fields": [
         { "key": "name", "type": "single_line_text_field", "required": true },
         { "key": "audience", "type": "single_line_text_field", "choices": ["adult", "kids"] },
-        { "key": "table", "type": "json", "note": "rows: size, height_cm, chest_cm, length_cm" },
+        {
+          "key": "table",
+          "type": "json",
+          "note": "{\"rows\": [...]} (or a bare array). Row keys, all optional but size: size, age, height_cm, weight_kg, chest_width_cm (flat, armpit to armpit), chest_cm (circumference), length_cm, shorts_length_cm. Values are numbers or ranges such as \"160-170\". Other keys are kept but not shown."
+        },
         { "key": "fit_note", "type": "multi_line_text_field" }
       ]
     }
