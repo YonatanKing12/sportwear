@@ -290,6 +290,10 @@
       "h1": "H1 (main page heading)",
       "h2": "H2",
       "h3": "H3"
+    },
+    "columns": {
+      "one": "1 column",
+      "two": "2 columns"
     }
   }
 }

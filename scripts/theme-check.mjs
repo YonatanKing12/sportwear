@@ -7,6 +7,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { check, Severity } from '@shopify/theme-check-node';
+import { schemaProblems } from './schema-rules.mjs';
 
 const THEME_DIRS = ['layout', 'templates', 'sections', 'blocks', 'snippets', 'assets', 'config', 'locales'];
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -44,8 +45,14 @@ for (const [file, list] of [...byFile.entries()].sort(([a], [b]) => a.localeComp
   }
 }
 
+// Upload-time schema rules that theme-check does not know (see schema-rules.mjs).
+const schemaErrors = schemaProblems(root);
+for (const { file, message } of schemaErrors) {
+  console.log(`\n${file}\n  schema  error    ShopifyUploadRule  ${message}`);
+}
+
 const count = (severity) => offenses.filter((o) => o.severity === severity).length;
-const errors = count(Severity.ERROR);
+const errors = count(Severity.ERROR) + schemaErrors.length;
 console.log(
   `\n${errors} error(s), ${count(Severity.WARNING)} warning(s), ${count(Severity.INFO)} info in ${byFile.size} file(s).`,
 );

@@ -47,7 +47,7 @@
     endif
 
     assign cols_desktop = section.settings.columns_desktop
-    assign cols_mobile = section.settings.columns_mobile
+    assign cols_mobile = section.settings.columns_mobile | plus: 0
     assign desktop_space = cols_desktop | minus: 1 | times: 20 | plus: sidebar_space
     assign mobile_size = 'calc((100vw - 52px) / 2)'
     if cols_mobile == 1
@@ -443,13 +443,14 @@
       "default": 4
     },
     {
-      "type": "range",
+      "type": "select",
       "id": "columns_mobile",
-      "min": 1,
-      "max": 2,
-      "step": 1,
       "label": "t:settings.columns_mobile",
-      "default": 2
+      "options": [
+        { "value": "1", "label": "t:options.columns.one" },
+        { "value": "2", "label": "t:options.columns.two" }
+      ],
+      "default": "2"
     },
     {
       "type": "select",

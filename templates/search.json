@@ -5,7 +5,7 @@
       "settings": {
         "products_per_page": 24,
         "columns_desktop": 4,
-        "columns_mobile": 2,
+        "columns_mobile": "2",
         "pagination_style": "load_more",
         "enable_filtering": true,
         "filter_layout": "sidebar",

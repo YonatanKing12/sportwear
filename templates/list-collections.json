@@ -9,7 +9,7 @@
         "image_ratio": "square",
         "per_page": 24,
         "columns_desktop": 4,
-        "columns_mobile": 2,
+        "columns_mobile": "2",
         "color_scheme": "scheme-day",
         "padding_top": 36,
         "padding_bottom": 64

@@ -3,7 +3,7 @@
   assign product_limit = section.settings.products_to_show
   assign columns_desktop = section.settings.columns_desktop
   assign columns_tablet = columns_desktop | at_most: 4
-  assign columns_mobile = section.settings.columns_mobile
+  assign columns_mobile = section.settings.columns_mobile | plus: 0
   assign use_scroller = section.settings.mobile_scroller
 
   assign has_products = false
@@ -198,13 +198,14 @@
       "default": 4
     },
     {
-      "type": "range",
+      "type": "select",
       "id": "columns_mobile",
-      "min": 1,
-      "max": 2,
-      "step": 1,
       "label": "t:settings.columns_mobile",
-      "default": 2
+      "options": [
+        { "value": "1", "label": "t:options.columns.one" },
+        { "value": "2", "label": "t:options.columns.two" }
+      ],
+      "default": "2"
     },
     {
       "type": "checkbox",
