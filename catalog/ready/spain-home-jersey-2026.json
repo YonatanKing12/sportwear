@@ -1,0 +1,126 @@
+{
+  "handle": "spain-home-jersey-2026",
+  "status": "ready",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "spain",
+    "code": "ESP",
+    "he": "נבחרת ספרד",
+    "en": "Spain",
+    "ar": "منتخب إسبانيا"
+  },
+  "leagues": ["national-teams"],
+  "kit": "home",
+  "season": "2026",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית נבחרת ספרד 2026",
+  "description_html_he": "<p>חולצת הבית של נבחרת ספרד ל-2026, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית נבחרת ספרד 2026 | SportWear",
+    "description_he": "חולצת הבית של נבחרת ספרד ל-2026 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-ESP-H-2026-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-ESP-H-2026-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-ESP-H-2026-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-ESP-H-2026-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-home-jersey-2026.png",
+      "alt_he": "חולצת בית נבחרת ספרד 2026 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-home-jersey-2026__back.png",
+      "alt_he": "חולצת בית נבחרת ספרד 2026 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Spain Home Jersey 2026",
+      "description_html": "<p>The Spain home jersey for 2026, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Spain Home Jersey 2026 | SportWear",
+      "seo_description": "The Spain home jersey for 2026, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص منتخب إسبانيا الأساسي 2026",
+      "description_html": "<p>القميص الأساسي لمنتخب إسبانيا لعام 2026، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص منتخب إسبانيا الأساسي 2026 | SportWear",
+      "seo_description": "القميص الأساسي لمنتخب إسبانيا لعام 2026، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/216168891?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "26-27 Spain Home Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:spain",
+    "league:national-teams",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:216168891",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "spain",
+    "إسبانيا",
+    "national team",
+    "منتخب"
+  ],
+  "relations": {
+    "counterpart_handle": "spain-home-kit-2026-kids",
+    "complements_handles": []
+  }
+}

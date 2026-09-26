@@ -1,0 +1,129 @@
+{
+  "handle": "borussia-dortmund-home-jersey-2026-27",
+  "status": "ready",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "borussia-dortmund",
+    "code": "BVB",
+    "he": "בורוסיה דורטמונד",
+    "en": "Borussia Dortmund",
+    "ar": "بوروسيا دورتموند"
+  },
+  "leagues": ["bundesliga"],
+  "kit": "home",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית בורוסיה דורטמונד 26/27",
+  "description_html_he": "<p>חולצת הבית של בורוסיה דורטמונד לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית בורוסיה דורטמונד 26/27 | SportWear",
+    "description_he": "חולצת הבית של בורוסיה דורטמונד לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-BVB-H-2627-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-BVB-H-2627-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-BVB-H-2627-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-BVB-H-2627-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-jersey-2026-27.png",
+      "alt_he": "חולצת בית בורוסיה דורטמונד 26/27 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-jersey-2026-27__back.png",
+      "alt_he": "חולצת בית בורוסיה דורטמונד 26/27 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Borussia Dortmund Home Jersey 26/27",
+      "description_html": "<p>The Borussia Dortmund home jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Borussia Dortmund Home Jersey 26/27 | SportWear",
+      "seo_description": "The Borussia Dortmund home jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص بوروسيا دورتموند الأساسي 26/27",
+      "description_html": "<p>القميص الأساسي لنادي بوروسيا دورتموند لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص بوروسيا دورتموند الأساسي 26/27 | SportWear",
+      "seo_description": "القميص الأساسي لنادي بوروسيا دورتموند لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/222142118?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "26-27 Dortmund Home Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:borussia-dortmund",
+    "league:bundesliga",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:222142118",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "borussia dortmund",
+    "dortmund",
+    "bvb",
+    "دورتموند",
+    "bundesliga",
+    "الدوري الألماني"
+  ],
+  "relations": {
+    "counterpart_handle": "borussia-dortmund-home-kit-2026-27-kids",
+    "complements_handles": []
+  }
+}

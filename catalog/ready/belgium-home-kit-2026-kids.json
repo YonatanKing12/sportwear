@@ -1,0 +1,163 @@
+{
+  "handle": "belgium-home-kit-2026-kids",
+  "status": "ready",
+  "sport": "football",
+  "product_type": "Football Kit",
+  "audience": "kids",
+  "size_chart": "jerseyxie-football-kids-set",
+  "team": {
+    "slug": "belgium",
+    "code": "BEL",
+    "he": "נבחרת בלגיה",
+    "en": "Belgium",
+    "ar": "منتخب بلجيكا"
+  },
+  "leagues": ["national-teams"],
+  "kit": "home",
+  "season": "2026",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים",
+  "description_html_he": "<p>חולצת הבית של נבחרת בלגיה לילדים ל-2026, בסט עם המכנס התואם.</p><ul><li>סט של חולצה ומכנס, גרסת אוהד</li><li>מידות 16 עד 28 (גיל 2 עד 13). טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים | SportWear",
+    "description_he": "חולצת הבית והמכנס של נבחרת בלגיה לילדים ל-2026, במידות 16 עד 28."
+  },
+  "variants": [
+    {
+      "size": "16",
+      "source_size_label": "16",
+      "sku": "SW-FK-BEL-H-2026-K-16",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "18",
+      "source_size_label": "18",
+      "sku": "SW-FK-BEL-H-2026-K-18",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "20",
+      "source_size_label": "20",
+      "sku": "SW-FK-BEL-H-2026-K-20",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "22",
+      "source_size_label": "22",
+      "sku": "SW-FK-BEL-H-2026-K-22",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "24",
+      "source_size_label": "24",
+      "sku": "SW-FK-BEL-H-2026-K-24",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "26",
+      "source_size_label": "26",
+      "sku": "SW-FK-BEL-H-2026-K-26",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "28",
+      "source_size_label": "28",
+      "sku": "SW-FK-BEL-H-2026-K-28",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/belgium-home-kit-2026-kids.png",
+      "alt_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/belgium-home-kit-2026-kids__back.png",
+      "alt_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Belgium Home Kit 2026 – Kids",
+      "description_html": "<p>The Belgium home kit for kids (2026): the jersey with its matching shorts.</p><ul><li>A set of a jersey and shorts, fan version</li><li>Sizes 16 to 28 (ages 2 to 13); the size chart is on this page</li></ul>",
+      "seo_title": "Belgium Home Kit 2026 – Kids | SportWear",
+      "seo_description": "The Belgium home kit for kids (2026): jersey and shorts, sizes 16 to 28."
+    },
+    "ar": {
+      "title": "طقم منتخب بلجيكا الأساسي 2026 – أطفال",
+      "description_html": "<p>الطقم الأساسي لمنتخب بلجيكا للأطفال لعام 2026: القميص مع الشورت المطابق.</p><ul><li>طقم من قميص وشورت، نسخة المشجعين</li><li>المقاسات من 16 إلى 28 (من عمر 2 إلى 13 سنة)، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "طقم منتخب بلجيكا الأساسي 2026 – أطفال | SportWear",
+      "seo_description": "الطقم الأساسي لمنتخب بلجيكا للأطفال لعام 2026: قميص وشورت، بمقاسات من 16 إلى 28."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/215842740?uid=1",
+    "fetched_at": "2026-09-26T20:11:26Z",
+    "original_title": "2026 Belgium Home Kids Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:belgium",
+    "league:national-teams",
+    "kit:home",
+    "audience:kids",
+    "new",
+    "source:jerseyxie",
+    "album:215842740",
+    "סט כדורגל",
+    "סט ילדים",
+    "kit",
+    "football kit",
+    "kids kit",
+    "طقم",
+    "طقم كرة قدم",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "belgium",
+    "بلجيكا",
+    "national team",
+    "منتخب"
+  ],
+  "relations": {
+    "counterpart_handle": "belgium-home-jersey-2026",
+    "complements_handles": []
+  }
+}

@@ -1324,7 +1324,28 @@
       "cover": "https://photo.yupoo.com/jerseyxie/5f83606b67/small.jpeg",
       "status": "missing",
       "we_have": null,
-      "differs": null
+      "differs": null,
+      "review": "Not imported (2026-09-26): its only album, 251141653, shows the navy/gold third kit, not the white away kit; no kids set of the away kit at the supplier. Imported as manchester-city-third-2026-27-kids instead."
+    },
+    {
+      "id": "manchester-city-third-2026-27-kids",
+      "team": "manchester-city",
+      "team_he": "מנצ׳סטר סיטי",
+      "team_en": "Manchester City",
+      "league": "premier-league",
+      "group": "clubs",
+      "kit": "third",
+      "season": "26/27",
+      "audience": "kids",
+      "album": "251141653",
+      "albums": ["251141653"],
+      "title": "26-27 Manchester City Away Kids Cheap Soccer Jerseys and shorts Yupoo",
+      "photos": null,
+      "cover": "https://photo.yupoo.com/jerseyxie/5f83606b67/small.jpeg",
+      "status": "missing",
+      "we_have": null,
+      "differs": null,
+      "review": "Added 2026-09-26 in place of manchester-city-away-2026-27-kids: album 251141653 (titled 'Away Kids') shows the third kit, the same navy/gold design as manchester-city-third-2026-27-adult."
     },
     {
       "id": "manchester-city-home-2026-27-women",
@@ -2681,7 +2702,8 @@
       "cover": "https://photo.yupoo.com/jerseyxie/a865902277/small.jpeg",
       "status": "close_variant",
       "we_have": "sw-football-233520444",
-      "differs": ["kit"]
+      "differs": ["kit"],
+      "review": "Not imported (2026-09-26): its only album, 253236387, shows AS Monaco's shirt (the title mixes up Monaco and Morocco)."
     },
     {
       "id": "morocco-away-2026-kids",
