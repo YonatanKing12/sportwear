@@ -1,0 +1,218 @@
+{%- doc -%}
+  Filtering and sorting chrome shared by main-collection and main-search. Render it first inside a
+  .facets-layout element (add .facets-layout--filters when filters show, and .facets-layout--sidebar
+  for the desktop sidebar), followed by the section's own results element (.facets-results with
+  data-facets-region="results"). Render 'facets-drawer' after the .facets-layout element. Outputs:
+  - the sidebar holding the filter form (the form's home, so filtering works without JavaScript),
+  - the toolbar: filter button (opens the FacetsDrawer) and the sort select,
+  - the active filter chips (re-rendered region "active").
+
+  @param {string} section_id - The section id
+  @param {filter[]} filters - collection.filters or search.filters
+  @param {string} action - Filter form action: collection.url or routes.search_url
+  @param {boolean} show_filters - Filters are enabled in the section and available on this page
+  @param {boolean} show_sort - Show the sort select
+  @param {sort_option[]} sort_options - collection.sort_options or search.sort_options
+  @param {string} sort_by - The current sort value
+  @param {number} active_count - Number of active filter values (a price range counts once)
+  @param {string} clear_url - URL that clears every filter and keeps the sort order
+  @param {string} [results_label] - Results count text shown with the active filters (collection page)
+  @param {string} [option_style] - 'buttons' (default) or 'checkboxes' for product option filters
+  @param {string} [search_terms] - Search terms, kept in the filter form (search page)
+  @param {string} [search_types] - Search types, kept in the filter form (search page)
+
+  @example
+  {% render 'facets', section_id: section.id, filters: collection.filters, action: collection.url, show_filters: true, show_sort: true, sort_options: collection.sort_options, sort_by: sort_by, active_count: active_count, clear_url: clear_url %}
+{%- enddoc -%}
+{%- liquid
+  assign form_id = 'FacetsForm-' | append: section_id
+  assign sort_id = 'SortBy-' | append: section_id
+-%}
+<div
+  class="facets-sidebar"
+  data-facets-sidebar
+  {% unless show_filters %}
+    hidden
+  {% endunless %}
+>
+  {%- if show_filters -%}
+    <h2 class="facets-sidebar__title title-m">{{ 'facets.heading' | t }}</h2>
+  {%- endif -%}
+  {%- render 'facets-form',
+    section_id: section_id,
+    form_id: form_id,
+    action: action,
+    filters: filters,
+    show_filters: show_filters,
+    option_style: option_style,
+    search_terms: search_terms,
+    search_types: search_types
+  -%}
+</div>
+
+{%- if show_filters or show_sort -%}
+  <div class="facets-toolbar">
+    {%- if show_filters -%}
+      <button
+        type="button"
+        class="button button--secondary facets-toolbar__filter js-only"
+        data-drawer-open="FacetsDrawer"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+      >
+        {%- render 'icon', name: 'filter', size: 20 -%}
+        <span>{{ 'facets.filter_button' | t }}</span>
+        <span class="facets-toolbar__count" data-facets-region="filter-count">
+          {%- if active_count > 0 -%}
+            <span class="facets-toolbar__badge" aria-hidden="true">{{ active_count }}</span>
+            <span class="visually-hidden"> ({{ 'facets.active_count' | t: count: active_count }})</span>
+          {%- endif -%}
+        </span>
+      </button>
+    {%- endif -%}
+    {%- if show_sort -%}
+      {%- render 'sort-by', id: sort_id, form_id: form_id, sort_options: sort_options, sort_by: sort_by -%}
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+<div class="facets-active-region" data-facets-region="active">
+  {%- render 'facets-active',
+    filters: filters,
+    active_count: active_count,
+    clear_url: clear_url,
+    results_label: results_label
+  -%}
+</div>
+
+{% stylesheet %}
+  sw-facets {
+    display: block;
+  }
+
+  .facets-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .facets-sidebar {
+    min-inline-size: 0;
+    margin-block-end: var(--space-6);
+  }
+
+  .js .facets-sidebar {
+    display: none;
+  }
+
+  .facets-sidebar__title {
+    padding-block-end: var(--space-3);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .facets-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-block-end: var(--space-4);
+  }
+
+  .facets-toolbar > * {
+    flex: 1 1 0;
+    min-inline-size: 0;
+  }
+
+  .facets-toolbar__filter {
+    padding-inline: var(--space-4);
+  }
+
+  .facets-toolbar__count {
+    display: contents;
+  }
+
+  .facets-toolbar__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 22px;
+    block-size: 22px;
+    padding-inline: 6px;
+    border-radius: 11px;
+    background: var(--color-button);
+    color: var(--color-button-label);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .facets-results {
+    min-inline-size: 0;
+    transition: opacity var(--duration-fast) var(--ease);
+  }
+
+  .facets-results[aria-busy='true'] {
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .product-grid {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .product-grid__item {
+    display: flex;
+    min-inline-size: 0;
+
+    & > * {
+      flex: 1 1 auto;
+    }
+  }
+
+  @media screen and (min-width: 750px) {
+    .facets-toolbar > * {
+      flex: 0 1 auto;
+    }
+
+    .facets-toolbar .facets-sort {
+      inline-size: min(100%, 300px);
+      margin-inline-start: auto;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .facets-layout--sidebar,
+    .no-js .facets-layout--filters {
+      grid-template-columns: 264px minmax(0, 1fr);
+      grid-template-rows: auto auto 1fr;
+      column-gap: var(--space-10);
+    }
+
+    .facets-layout--sidebar > :not(.facets-sidebar),
+    .no-js .facets-layout--filters > :not(.facets-sidebar) {
+      grid-column: 2;
+    }
+
+    .facets-layout--sidebar .facets-sidebar,
+    .no-js .facets-layout--filters .facets-sidebar {
+      display: block;
+      grid-row: 1 / span 3;
+      grid-column: 1;
+      position: sticky;
+      inset-block-start: calc(var(--header-height, 0px) + var(--space-4));
+      max-block-size: calc(100dvh - var(--header-height, 0px) - var(--space-8));
+      margin-block-end: 0;
+      margin-inline-start: -6px;
+      padding-block: 0 var(--space-1);
+      padding-inline: 6px var(--space-2);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: thin;
+    }
+
+    .facets-layout--sidebar .facets-toolbar__filter {
+      display: none;
+    }
+  }
+{% endstylesheet %}

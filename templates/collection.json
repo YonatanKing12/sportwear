@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "show_image": false,
+        "show_description": true,
+        "show_count": true,
+        "enable_filtering": true,
+        "filter_layout": "sidebar",
+        "option_style": "buttons",
+        "enable_sorting": true,
+        "products_per_page": 24,
+        "columns_desktop": 4,
+        "columns_mobile": 2,
+        "pagination_style": "load_more",
+        "color_scheme": "scheme-day",
+        "padding_top": 36,
+        "padding_bottom": 64
+      }
+    }
+  },
+  "order": ["main"]
+}

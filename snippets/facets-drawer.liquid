@@ -1,0 +1,83 @@
+{%- doc -%}
+  The filter drawer (<sw-drawer id="FacetsDrawer">, opened by the toolbar's filter button). Its body
+  starts empty: assets/facets.js moves the filter form into it on small screens, or on every screen
+  with the drawer layout (the form's home is the sidebar, so filtering works without JavaScript).
+  The footer clears every filter or closes the drawer on the results ("Show 24 products"). A live
+  region inside the dialog lets announce() report result counts while the modal drawer is open.
+  Render it after the .facets-layout element, inside <sw-facets>.
+
+  @param {string} section_id - The section id (the filter form is FacetsForm-<section_id>)
+  @param {number} active_count - Number of active filter values
+  @param {string} clear_url - URL that clears every filter and keeps the sort order
+  @param {number} results_count - Number of results for the current filters
+
+  @example
+  {% render 'facets-drawer', section_id: section.id, active_count: active_count, clear_url: clear_url, results_count: collection.products_count %}
+{%- enddoc -%}
+{%- assign form_id = 'FacetsForm-' | append: section_id -%}
+<sw-drawer id="FacetsDrawer">
+  <dialog
+    class="drawer drawer--start facets-drawer color-{{ settings.drawer_color_scheme.id }}"
+    aria-labelledby="FacetsDrawerTitle-{{ section_id }}"
+  >
+    <div class="drawer__header facets-drawer__header color-scheme-night">
+      <h2 id="FacetsDrawerTitle-{{ section_id }}" class="facets-drawer__title display-s">
+        {{- 'facets.heading' | t -}}
+      </h2>
+      <button type="button" class="button button--icon" data-drawer-close aria-label="{{ 'general.close' | t }}">
+        {%- render 'icon', name: 'close' -%}
+      </button>
+    </div>
+    <div class="drawer__body facets-drawer__body" data-facets-drawer-body></div>
+    <div class="drawer__footer facets-drawer__footer">
+      <div class="facets-drawer__clear" data-facets-region="drawer-clear">
+        <a
+          id="FacetsDrawerClear-{{ section_id }}"
+          class="button button--secondary button--full"
+          href="{{ clear_url }}"
+          data-facets-link
+          {% if active_count == 0 %}
+            aria-disabled="true"
+          {% endif %}
+        >
+          {{- 'facets.clear' | t -}}
+        </a>
+      </div>
+      <button
+        type="submit"
+        form="{{ form_id }}"
+        class="button button--primary facets-drawer__apply"
+        data-facets-apply
+      >
+        <span data-facets-region="apply-label">{{ 'facets.show_results' | t: count: results_count }}</span>
+      </button>
+    </div>
+    {%- comment -%} announce() speaks here while the modal drawer makes the rest of the page inert. {%- endcomment -%}
+    <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-live-region></div>
+  </dialog>
+</sw-drawer>
+
+{% stylesheet %}
+  .facets-drawer__header {
+    padding-inline: var(--space-5) var(--space-2);
+  }
+
+  .facets-drawer__title {
+    margin: 0;
+  }
+
+  .facets-drawer__body .facets-form {
+    padding-block: var(--space-1) var(--space-4);
+    padding-inline: var(--space-5);
+  }
+
+  .facets-drawer__footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    gap: var(--space-3);
+  }
+
+  .facets-drawer__apply {
+    padding-inline: var(--space-3);
+  }
+{% endstylesheet %}

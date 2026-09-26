@@ -1,0 +1,201 @@
+{%- doc -%}
+  Pagination for product grids and lists: an accessible nav with previous/next and page numbers
+  (aria-current on the current page) that always works as plain links. With load_more, it also
+  renders a "Load more" button with a progress line; assets/facets.js appends the next page in place
+  and, while the visitor started on page 1, hides the page numbers.
+
+  @param {paginate} paginate - The paginate object from the enclosing paginate tag
+  @param {boolean} [load_more] - Render the progressive "Load more" button (needs <sw-facets>)
+  @param {string} [load_more_label] - Translated button label, e.g. 'pagination.load_more' | t
+
+  @example
+  {% render 'pagination', paginate: paginate, load_more: true, load_more_label: load_more_label %}
+{%- enddoc -%}
+{%- liquid
+  assign current_title = paginate.current_page | append: ''
+  assign shown = paginate.current_offset | plus: paginate.page_size | at_most: paginate.items
+  assign progress = 100
+  if paginate.items > 0
+    assign progress = shown | times: 100 | divided_by: paginate.items
+  endif
+-%}
+<div
+  class="pagination{% if load_more and paginate.current_page == 1 %} pagination--load-more{% endif %}"
+  data-pagination
+  {% if paginate.pages < 2 %}
+    hidden
+  {% endif %}
+>
+  {%- if paginate.pages > 1 -%}
+    {%- if load_more -%}
+      <div class="pagination__more js-only">
+        <p class="pagination__status" data-pagination-status>
+          {{- 'pagination.progress' | t: shown: shown, total: paginate.items -}}
+        </p>
+        <span class="pagination__bar" aria-hidden="true">
+          <span class="pagination__bar-fill" style="--pagination-progress: {{ progress }}%;"></span>
+        </span>
+        {%- if paginate.next.is_link -%}
+          <button
+            type="button"
+            class="button button--secondary pagination__button"
+            data-load-more
+            data-next-url="{{ paginate.next.url }}"
+          >
+            <span>{{ load_more_label }}</span>
+            <span class="spinner pagination__spinner" aria-hidden="true"></span>
+          </button>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <nav class="pagination__nav" aria-label="{{ 'pagination.label' | t }}">
+      <ul class="pagination__list" role="list">
+        {%- if paginate.previous.is_link -%}
+          <li>
+            <a class="pagination__link" href="{{ paginate.previous.url }}" rel="prev" data-pagination-link>
+              {%- render 'icon', name: 'chevron-back', size: 20 -%}
+              <span class="visually-hidden">{{ 'pagination.previous' | t }}</span>
+            </a>
+          </li>
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+          <li>
+            {%- if part.is_link -%}
+              <a class="pagination__link" href="{{ part.url }}" data-pagination-link>
+                <span class="visually-hidden">{{ 'pagination.page' | t: page: part.title }}</span>
+                <span aria-hidden="true">{{ part.title }}</span>
+              </a>
+            {%- elsif part.title == current_title -%}
+              <span class="pagination__link pagination__link--current" aria-current="page">
+                <span class="visually-hidden">{{ 'pagination.page' | t: page: part.title }}</span>
+                <span aria-hidden="true">{{ part.title }}</span>
+              </span>
+            {%- else -%}
+              <span class="pagination__gap" aria-hidden="true">…</span>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+        {%- if paginate.next.is_link -%}
+          <li>
+            <a class="pagination__link" href="{{ paginate.next.url }}" rel="next" data-pagination-link>
+              <span class="visually-hidden">{{ 'pagination.next' | t }}</span>
+              {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </nav>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .pagination {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-6);
+    margin-block-start: var(--space-10);
+  }
+
+  .pagination__more {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-3);
+    inline-size: min(100%, 360px);
+  }
+
+  .pagination__status {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pagination__bar {
+    display: block;
+    inline-size: 100%;
+    block-size: 4px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--color-border);
+  }
+
+  .pagination__bar-fill {
+    display: block;
+    inline-size: var(--pagination-progress, 0%);
+    block-size: 100%;
+    background: var(--color-text);
+  }
+
+  .pagination__button {
+    inline-size: 100%;
+    margin-block-start: var(--space-2);
+
+    &[aria-busy='true'] {
+      cursor: progress;
+    }
+  }
+
+  .pagination__spinner {
+    display: none;
+  }
+
+  .pagination__button[aria-busy='true'] .pagination__spinner {
+    display: block;
+  }
+
+  .pagination__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .pagination__link,
+  .pagination__gap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: var(--touch-target);
+    min-block-size: var(--touch-target);
+    padding-inline: var(--space-2);
+    border-radius: var(--radius-button);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .pagination__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      background: var(--color-surface);
+    }
+  }
+
+  .pagination__link--current,
+  .pagination__link--current:hover {
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  .pagination__gap {
+    color: var(--color-muted);
+  }
+
+  .js .pagination--load-more .pagination__nav {
+    display: none;
+  }
+
+  @media (forced-colors: active) {
+    .pagination__link--current {
+      outline: 2px solid CanvasText;
+      outline-offset: -2px;
+    }
+  }
+{% endstylesheet %}
