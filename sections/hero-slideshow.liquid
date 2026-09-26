@@ -1,0 +1,625 @@
+{%- comment -%}
+  Hero slideshow (home): full-width photo slides, edge to edge on every screen, each with a headline,
+  a line of text and up to two buttons over a gradient on the text side. Slides rotate on their own
+  (pausing on hover and focus, with a pause button and dots) and can be swiped. The first slide's
+  headline is the page's h1. Behaviour: assets/hero-slideshow.js (<sw-slideshow>).
+
+  Each slide has a desktop photo, an optional photo for left-to-right languages (English: the text
+  sits on the left, so the people go on the right) and an optional mobile photo. Texts come from a
+  ready-made, translated set (football, basketball, national teams) unless the merchant types them.
+{%- endcomment -%}
+{%- liquid
+  assign scheme = section.settings.color_scheme
+  assign slide_count = section.blocks.size
+  assign autoplay = section.settings.autoplay
+  if slide_count < 2
+    assign autoplay = false
+  endif
+  assign is_ltr = false
+  if request.locale.direction == 'ltr'
+    assign is_ltr = true
+  endif
+  assign track_id = 'HeroSlides-' | append: section.id
+-%}
+
+{%- if slide_count > 0 -%}
+  <sw-slideshow
+    class="hero-slideshow color-{{ scheme.id }}"
+    data-autoplay="{{ autoplay }}"
+    data-interval="{{ section.settings.speed }}"
+    style="--hero-overlay: {{ section.settings.overlay_opacity }}%;"
+  >
+    <div
+      class="hero-slideshow__viewport"
+      role="region"
+      aria-roledescription="{{ 'home.hero_slideshow.carousel' | t }}"
+      aria-label="{{ 'home.hero_slideshow.label' | t }}"
+    >
+      <ul id="{{ track_id }}" class="hero-slideshow__track" role="list" data-slideshow-track>
+        {%- for block in section.blocks -%}
+          {%- liquid
+            assign copy = block.settings.copy
+            assign heading = block.settings.heading | escape
+            assign highlight = block.settings.highlight | escape
+            assign text = block.settings.text
+            assign button_label = block.settings.button_label | escape
+            assign secondary_label = block.settings.secondary_button_label | escape
+
+            if copy != 'custom'
+              assign copy_key = 'home.hero_slideshow.copy.' | append: copy
+              if heading == blank
+                assign heading = copy_key | append: '.heading' | t
+              endif
+              if highlight == blank
+                assign highlight = copy_key | append: '.highlight' | t
+              endif
+              if text == blank
+                assign text = copy_key | append: '.text' | t
+              endif
+              if button_label == blank
+                assign button_label = copy_key | append: '.button_label' | t
+              endif
+              if secondary_label == blank and block.settings.secondary_button_link != blank
+                assign secondary_label = copy_key | append: '.secondary_button_label' | t
+              endif
+            endif
+
+            assign desktop_image = block.settings.image
+            if is_ltr and block.settings.image_ltr != blank
+              assign desktop_image = block.settings.image_ltr
+            endif
+            assign mobile_image = block.settings.image_mobile
+            if desktop_image == blank
+              assign desktop_image = mobile_image
+            endif
+
+            assign image_loading = 'lazy'
+            assign image_priority = 'auto'
+            if forloop.first and section.index == 1
+              assign image_loading = 'eager'
+              assign image_priority = 'high'
+            endif
+
+            assign heading_tag = 'h2'
+            if forloop.first and section.index == 1
+              assign heading_tag = 'h1'
+            endif
+          -%}
+          <li
+            class="hero-slideshow__slide"
+            role="group"
+            aria-roledescription="{{ 'home.hero_slideshow.slide' | t }}"
+            aria-label="{{ 'home.hero_slideshow.slide_label' | t: index: forloop.index, count: slide_count }}"
+            data-slide
+            {% unless forloop.first %}
+              inert
+            {% endunless %}
+            {{ block.shopify_attributes }}
+          >
+            <div class="hero-slideshow__media">
+              {%- if desktop_image != blank -%}
+                <picture>
+                  {%- if mobile_image != blank -%}
+                    <source
+                      media="(max-width: 749px)"
+                      srcset="
+                        {{ mobile_image | image_url: width: 600 }} 600w,
+                        {{ mobile_image | image_url: width: 900 }} 900w,
+                        {{ mobile_image | image_url: width: 1200 }} 1200w
+                      "
+                      sizes="100vw"
+                      width="{{ mobile_image.width }}"
+                      height="{{ mobile_image.height }}"
+                    >
+                  {%- endif -%}
+                  {{
+                    desktop_image
+                    | image_url: width: 3840
+                    | image_tag:
+                      widths: '750, 1100, 1500, 1920, 2560, 3840',
+                      sizes: '100vw',
+                      loading: image_loading,
+                      fetchpriority: image_priority,
+                      alt: '',
+                      class: 'hero-slideshow__image'
+                  }}
+                </picture>
+              {%- else -%}
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg hero-slideshow__image' }}
+              {%- endif -%}
+            </div>
+
+            <div class="hero-slideshow__content page-width">
+              <div class="hero-slideshow__text">
+                <{{ heading_tag }} class="hero-slideshow__heading">
+                  {{- heading -}}
+                  {%- if highlight != blank %}
+                    <span class="hero-slideshow__highlight">{{ highlight }}</span>
+                  {%- endif -%}
+                </{{ heading_tag }}>
+                {%- if text != blank -%}
+                  <p class="hero-slideshow__lead">{{ text }}</p>
+                {%- endif -%}
+                {%- if button_label != blank or secondary_label != blank -%}
+                  <div class="hero-slideshow__buttons">
+                    {%- if button_label != blank -%}
+                      <a
+                        class="button button--primary hero-slideshow__button"
+                        href="{{ block.settings.button_link | default: routes.all_products_collection_url }}"
+                      >
+                        {{- button_label -}}
+                      </a>
+                    {%- endif -%}
+                    {%- if secondary_label != blank and block.settings.secondary_button_link != blank -%}
+                      <a
+                        class="button button--secondary hero-slideshow__button"
+                        href="{{ block.settings.secondary_button_link }}"
+                      >
+                        {{- secondary_label -}}
+                      </a>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      {%- if slide_count > 1 -%}
+        <div class="hero-slideshow__controls js-only">
+          {%- if autoplay -%}
+            <button
+              type="button"
+              class="hero-slideshow__toggle"
+              aria-controls="{{ track_id }}"
+              data-slideshow-toggle
+              data-label-pause="{{ 'home.hero_slideshow.pause' | t }}"
+              data-label-play="{{ 'home.hero_slideshow.play' | t }}"
+            >
+              {%- comment -%} Media icons keep their direction in right-to-left languages. {%- endcomment -%}
+              <svg
+                class="icon hero-slideshow__pause-icon"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.6"
+                stroke-linecap="round"
+              >
+                <path d="M8.5 5.5v13M15.5 5.5v13"/>
+              </svg>
+              <svg
+                class="icon hero-slideshow__play-icon"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+                fill="currentColor"
+              >
+                <path d="M8 5.2v13.6a.8.8 0 0 0 1.2.7l10.6-6.8a.8.8 0 0 0 0-1.4L9.2 4.5a.8.8 0 0 0-1.2.7z"/>
+              </svg>
+              <span class="visually-hidden" data-slideshow-toggle-label>{{ 'home.hero_slideshow.pause' | t }}</span>
+            </button>
+          {%- endif -%}
+          <div class="hero-slideshow__dots">
+            {%- for block in section.blocks -%}
+              <button
+                type="button"
+                class="hero-slideshow__dot"
+                aria-controls="{{ track_id }}"
+                data-slideshow-dot="{{ forloop.index0 }}"
+                {% if forloop.first %}
+                  aria-current="true"
+                {% endif %}
+              >
+                <span class="visually-hidden">
+                  {{- 'home.hero_slideshow.go_to' | t: index: forloop.index, count: slide_count -}}
+                </span>
+              </button>
+            {%- endfor -%}
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </sw-slideshow>
+
+  <script type="module" src="{{ 'hero-slideshow.js' | asset_url }}"></script>
+{%- endif -%}
+
+{% stylesheet %}
+  .hero-slideshow {
+    display: block;
+    position: relative;
+    color: #ffffff;
+  }
+
+  .hero-slideshow__viewport {
+    position: relative;
+  }
+
+  .hero-slideshow__track {
+    display: flex;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  /* Phones: a tall edge-to-edge photo with the text at the bottom. From 750px: a wide, short band. */
+  .hero-slideshow__slide {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex: 0 0 100%;
+    align-items: flex-end;
+    min-inline-size: 0;
+    min-block-size: clamp(420px, 118vw, 560px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    @media screen and (min-width: 750px) {
+      align-items: center;
+      min-block-size: clamp(300px, 26vw, 500px);
+    }
+  }
+
+  .hero-slideshow__media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: #16181d;
+
+    & picture {
+      display: block;
+      block-size: 100%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 20%)) 0%,
+        rgb(13 14 17 / calc(var(--hero-overlay, 55%) * 0.6)) 45%,
+        rgb(13 14 17 / 0) 72%
+      );
+    }
+
+    @media screen and (min-width: 750px) {
+      &::after {
+        background: linear-gradient(
+          var(--hero-gradient-direction, to right),
+          rgb(13 14 17 / var(--hero-overlay, 55%)) 0%,
+          rgb(13 14 17 / calc(var(--hero-overlay, 55%) * 0.55)) 38%,
+          rgb(13 14 17 / 0) 62%
+        );
+      }
+    }
+  }
+
+  [dir='rtl'] .hero-slideshow__media {
+    --hero-gradient-direction: to left;
+  }
+
+  /* Desktop photos are 3:1 while the band is thinner: the crop keeps a little more of the top, where
+     the heads are. */
+  .hero-slideshow__image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+
+    @media screen and (min-width: 750px) {
+      object-position: 50% 30%;
+    }
+  }
+
+  .hero-slideshow__content {
+    inline-size: 100%;
+    padding-block: var(--space-6) var(--space-12);
+
+    @media screen and (min-width: 750px) {
+      padding-block: var(--space-8);
+    }
+  }
+
+  .hero-slideshow__text {
+    max-inline-size: 34rem;
+  }
+
+  .hero-slideshow__heading {
+    font-family: var(--font-display);
+    font-size: calc(38px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+    font-weight: 700;
+    line-height: var(--leading-display);
+    text-wrap: balance;
+
+    @media screen and (min-width: 990px) {
+      font-size: var(--display-m);
+    }
+  }
+
+  .hero-slideshow__highlight {
+    display: block;
+    color: var(--color-accent);
+  }
+
+  .hero-slideshow__lead {
+    margin-block-start: var(--space-3);
+    max-inline-size: 30rem;
+    color: rgb(255 255 255 / 0.9);
+    font-size: var(--text-base);
+    line-height: 1.5;
+  }
+
+  .hero-slideshow__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-block-start: var(--space-5);
+  }
+
+  .hero-slideshow__button {
+    flex: 1 1 auto;
+
+    @media screen and (min-width: 750px) {
+      flex: 0 0 auto;
+      min-inline-size: 180px;
+    }
+  }
+
+  .hero-slideshow__button.button--secondary {
+    border-color: rgb(255 255 255 / 0.85);
+    color: #ffffff;
+  }
+
+  /* Dots and the pause button sit at the bottom edge, centred. */
+  .hero-slideshow__controls {
+    position: absolute;
+    inset-block-end: var(--space-3);
+    inset-inline: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    pointer-events: none;
+
+    & > * {
+      pointer-events: auto;
+    }
+  }
+
+  .hero-slideshow__dots {
+    display: flex;
+    gap: 2px;
+  }
+
+  .hero-slideshow__dot {
+    display: grid;
+    place-items: center;
+    inline-size: 28px;
+    block-size: 28px;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    &::before {
+      content: '';
+      inline-size: 8px;
+      block-size: 8px;
+      border-radius: 999px;
+      background: rgb(255 255 255 / 0.55);
+      transition:
+        inline-size var(--duration) var(--ease),
+        background-color var(--duration) var(--ease);
+    }
+
+    &[aria-current='true']::before {
+      inline-size: 22px;
+      background: var(--color-accent);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 0;
+      border-radius: 999px;
+    }
+  }
+
+  .hero-slideshow__toggle {
+    display: grid;
+    place-items: center;
+    inline-size: 28px;
+    block-size: 28px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(13 14 17 / 0.55);
+    color: #ffffff;
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  .hero-slideshow__play-icon,
+  .hero-slideshow__toggle[data-state='paused'] .hero-slideshow__pause-icon {
+    display: none;
+  }
+
+  .hero-slideshow__toggle[data-state='paused'] .hero-slideshow__play-icon {
+    display: block;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.hero_slideshow.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 5,
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "t:sections.hero_slideshow.settings.autoplay.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "t:sections.hero_slideshow.settings.speed.label",
+      "min": 4,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 6,
+      "visible_if": "{{ section.settings.autoplay }}"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "t:sections.hero.settings.overlay_opacity.label",
+      "info": "t:sections.hero.settings.overlay_opacity.info",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 55
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.hero_slideshow.blocks.slide.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.image.label",
+          "info": "t:sections.hero_slideshow.blocks.slide.settings.image.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_ltr",
+          "label": "t:sections.hero.settings.image_ltr.label",
+          "info": "t:sections.hero.settings.image_ltr.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "t:settings.image_mobile",
+          "info": "t:sections.hero_slideshow.blocks.slide.settings.image_mobile.info"
+        },
+        {
+          "type": "select",
+          "id": "copy",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.label",
+          "info": "t:sections.hero_slideshow.blocks.slide.settings.copy.info",
+          "options": [
+            {
+              "value": "football",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.football"
+            },
+            {
+              "value": "basketball",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.basketball"
+            },
+            {
+              "value": "national",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.national"
+            },
+            {
+              "value": "custom",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.custom"
+            }
+          ],
+          "default": "football"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:settings.heading",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "text",
+          "id": "highlight",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.highlight.label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text",
+          "label": "t:settings.text",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:settings.button_label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "t:settings.button_link"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_label",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.secondary_button_label.label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_link",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.secondary_button_link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero_slideshow.name",
+      "blocks": [
+        {
+          "type": "slide",
+          "settings": {
+            "copy": "football"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "copy": "basketball"
+          }
+        },
+        {
+          "type": "slide",
+          "settings": {
+            "copy": "national"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

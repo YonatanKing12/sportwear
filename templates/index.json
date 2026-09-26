@@ -1,5 +1,50 @@
 {
   "sections": {
+    "hero_slideshow": {
+      "type": "hero-slideshow",
+      "blocks": {
+        "football": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sw-v3-s1.jpg",
+            "image_ltr": "shopify://shop_images/sw-v3-s1-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v2-hero-mobile.jpg",
+            "copy": "football",
+            "button_link": "shopify://collections/football",
+            "secondary_button_link": "shopify://collections/basketball"
+          }
+        },
+        "nba": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sw-v3-s2.jpg",
+            "image_ltr": "shopify://shop_images/sw-v3-s2-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v3-s2-mobile.jpg",
+            "copy": "basketball",
+            "button_link": "shopify://collections/nba",
+            "secondary_button_link": "shopify://collections/basketball-shorts"
+          }
+        },
+        "national": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sw-v3-s3.jpg",
+            "image_ltr": "shopify://shop_images/sw-v3-s3-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v3-s3-mobile.jpg",
+            "copy": "national",
+            "button_link": "shopify://collections/national-teams",
+            "secondary_button_link": "shopify://collections/football"
+          }
+        }
+      },
+      "block_order": ["football", "nba", "national"],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "autoplay": true,
+        "speed": 6,
+        "overlay_opacity": 55
+      }
+    },
     "hero": {
       "type": "hero",
       "settings": {
@@ -15,7 +60,8 @@
         "overlay_opacity": 55,
         "height": "large",
         "image_ltr": "shopify://shop_images/sw-v2-hero-ltr.jpg"
-      }
+      },
+      "disabled": true
     },
     "best_sellers": {
       "type": "featured-collection",
@@ -316,6 +362,7 @@
     }
   },
   "order": [
+    "hero_slideshow",
     "hero",
     "best_sellers",
     "trust_strip",

@@ -360,6 +360,50 @@
           }
         }
       }
+    },
+    "hero_slideshow": {
+      "name": "Hero slideshow",
+      "settings": {
+        "autoplay": {
+          "label": "Rotate automatically"
+        },
+        "speed": {
+          "label": "Time per slide"
+        }
+      },
+      "blocks": {
+        "slide": {
+          "name": "Slide",
+          "settings": {
+            "image": {
+              "label": "Desktop image",
+              "info": "A wide, short photo, at least 3000 px wide (4:1). People on the left; the text sits on the right."
+            },
+            "image_mobile": {
+              "info": "Portrait photo (4:5). Without one, the desktop photo is cropped."
+            },
+            "copy": {
+              "label": "Ready-made text",
+              "info": "Text already translated into every store language. Anything you type in the fields below replaces it.",
+              "options": {
+                "football": "Football jerseys",
+                "basketball": "NBA jerseys",
+                "national": "National teams",
+                "custom": "My own text"
+              }
+            },
+            "highlight": {
+              "label": "Highlighted line"
+            },
+            "secondary_button_label": {
+              "label": "Second button label"
+            },
+            "secondary_button_link": {
+              "label": "Second button link"
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -586,6 +586,38 @@
       "heading": "By fans, for fans",
       "text": "In the stands, on the pitch and on the street: jerseys for every game.",
       "button_label": "Shop all jerseys"
+    },
+    "hero_slideshow": {
+      "label": "Main banner",
+      "carousel": "carousel",
+      "slide": "slide",
+      "slide_label": "{{ index }} of {{ count }}",
+      "go_to": "Go to slide {{ index }} of {{ count }}",
+      "pause": "Pause the slideshow",
+      "play": "Play the slideshow",
+      "copy": {
+        "football": {
+          "heading": "Your team's jersey.",
+          "highlight": "Fan prices.",
+          "text": "Football and basketball, for adults and kids. In stock in Israel and delivered to your door within 3 business days.",
+          "button_label": "Football jerseys",
+          "secondary_button_label": "Basketball jerseys"
+        },
+        "basketball": {
+          "heading": "NBA jerseys.",
+          "highlight": "From the Lakers to the Bulls.",
+          "text": "Basketball jerseys and shorts from the big teams, in stock in Israel.",
+          "button_label": "Shop NBA jerseys",
+          "secondary_button_label": "Basketball shorts"
+        },
+        "national": {
+          "heading": "National team jerseys.",
+          "highlight": "Brazil, France, Japan and more.",
+          "text": "Your favourite national teams, in stock in Israel with home delivery.",
+          "button_label": "Shop national teams",
+          "secondary_button_label": "All football jerseys"
+        }
+      }
     }
   },
   "products": {
