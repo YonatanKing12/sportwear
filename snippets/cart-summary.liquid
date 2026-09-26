@@ -1,9 +1,9 @@
 {%- doc -%}
   Cart totals and checkout, for the drawer footer and the cart page summary: cart-level discounts,
-  a "Shipping: Free" row once the free-shipping threshold is reached, the subtotal after discounts,
-  the taxes/shipping note, the checkout button (submits the enclosing cart form with
-  name="checkout"), payment icons and a secure-payment line. Render it inside the cart form
-  (action routes.cart_url, method post).
+  a "Shipping: Free" row when every order ships free or once the free-shipping threshold is reached
+  (see free-shipping-cents), the subtotal after discounts, the taxes/shipping note, the checkout
+  button (submits the enclosing cart form with name="checkout"), payment icons and a secure-payment
+  line. Render it inside the cart form (action routes.cart_url, method post).
 
   @param {object} cart - The cart object
   @param {string} id_prefix - Unique prefix; keeps the payment icon title ids unique on the page
@@ -17,8 +17,11 @@
     render 'free-shipping-cents'
   endcapture
   assign threshold_cents = threshold_cents | plus: 0
+  # -1 = every order ships free, a positive amount = free from that amount, 0 = no promise.
   assign free_shipping = false
-  if threshold_cents > 0 and cart.total_price >= threshold_cents
+  if threshold_cents < 0
+    assign free_shipping = true
+  elsif threshold_cents > 0 and cart.total_price >= threshold_cents
     assign free_shipping = true
   endif
 

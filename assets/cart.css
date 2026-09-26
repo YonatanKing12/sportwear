@@ -586,7 +586,8 @@
   }
 }
 
-.free-shipping--unlocked .free-shipping__message {
+/* Unlocked threshold, or free shipping on every order (no bar): a check and one bold line. */
+:is(.free-shipping--unlocked, .free-shipping--all) .free-shipping__message {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

@@ -57,12 +57,17 @@
     assign is_lcp = true
   endunless
 
+  # Free shipping (see free-shipping-cents): free_all when every order ships free, free_amount when
+  # orders ship free from an amount, neither when no free-shipping promise applies to the visitor.
+  assign free_all = false
   assign free_amount = ''
   capture threshold_cents
     render 'free-shipping-cents'
   endcapture
   assign threshold_cents = threshold_cents | plus: 0
-  if threshold_cents > 0
+  if threshold_cents < 0
+    assign free_all = true
+  elsif threshold_cents > 0
     # The amount is wrapped in invisible Unicode isolates (U+2068/U+2069) so it keeps its direction in RTL sentences.
     assign free_amount = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
   endif
@@ -296,8 +301,12 @@
                   assign delivery_text = 'products.shipping_note.delivery' | t
                 endif
                 assign free_text = ''
-                if block.settings.show_free_shipping and free_amount != blank
-                  assign free_text = 'products.shipping_note.free_from' | t: amount: free_amount
+                if block.settings.show_free_shipping
+                  if free_all
+                    assign free_text = 'products.shipping_note.free_all' | t
+                  elsif free_amount != blank
+                    assign free_text = 'products.shipping_note.free_from' | t: amount: free_amount
+                  endif
                 endif
               -%}
               <p
@@ -307,7 +316,8 @@
                 {%- render 'icon', name: 'truck', size: 18 -%}
                 <span>
                   {{- delivery_text -}}
-                  {%- if free_text != blank %} · {{ free_text }}{% endif -%}
+                  {%- # The no-break space keeps the dot at the end of a line when the note wraps. -%}
+                  {%- if free_text != blank %}&nbsp;· {{ free_text }}{% endif -%}
                 </span>
               </p>
 
@@ -315,7 +325,11 @@
               {%- liquid
                 assign trust_shipping = block.settings.text_shipping | escape
                 if trust_shipping == blank
-                  assign trust_shipping = 'general.trust.shipping' | t
+                  if free_all
+                    assign trust_shipping = 'general.trust.shipping_free' | t
+                  else
+                    assign trust_shipping = 'general.trust.shipping' | t
+                  endif
                 endif
                 assign trust_returns = block.settings.text_returns | escape
                 if trust_returns == blank
@@ -432,7 +446,9 @@
                   {%- if use_default -%}
                     <p>
                       {{- 'products.shipping_returns.delivery' | t -}}
-                      {%- if free_amount != blank %} {{ 'products.shipping_returns.free_shipping' | t: amount: free_amount }}{% endif -%}
+                      {%- if free_all %} {{ 'products.shipping_returns.free_shipping_all' | t }}
+                      {%- elsif free_amount != blank %} {{ 'products.shipping_returns.free_shipping' | t: amount: free_amount }}
+                      {%- endif -%}
                     </p>
                     <p>
                       {{- 'products.shipping_returns.returns' | t -}}

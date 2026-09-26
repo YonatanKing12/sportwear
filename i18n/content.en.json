@@ -88,8 +88,8 @@
         "text": "Adult sizes and kids' sizes for ages 5 to 14, all in one order."
       },
       "delivery": {
-        "title": "Delivery within 3 business days",
-        "text": "Items in stock are delivered to your door within 3 business days."
+        "title": "Delivery within 10 business days",
+        "text": "Items in stock are delivered to your door within 10 business days."
       }
     },
     "form": {
@@ -115,7 +115,8 @@
     "presets": {
       "delivery": {
         "question": "How long does delivery take?",
-        "answer_html": "<p>We deliver to your door within 3 business days. The shipping cost is shown in the cart and at checkout, before you pay.</p>",
+        "answer_html": "<p>We deliver to your door within 10 business days. The shipping cost is shown in the cart and at checkout, before you pay.</p>",
+        "answer_free_html": "<p>We deliver to your door within 10 business days, and shipping is free on every order.</p>",
         "link": "Read our shipping policy"
       },
       "returns": {

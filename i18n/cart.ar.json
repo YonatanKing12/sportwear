@@ -23,7 +23,8 @@
     },
     "free_shipping": {
       "remaining_html": "تبقّى <strong>{{ amount }}</strong> فقط للحصول على توصيل مجاني",
-      "unlocked": "حصلتم على توصيل مجاني"
+      "unlocked": "حصلتم على توصيل مجاني",
+      "all": "شحن مجاني على كل طلب"
     },
     "item": {
       "remove": "إزالة {{ title }} من السلة",

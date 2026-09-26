@@ -9,8 +9,9 @@
       "next": "Next announcement",
       "pause": "Pause announcements",
       "play": "Play announcements",
-      "free_shipping": "Free shipping from {{ amount }}\u00a0· Delivered within 3 business days",
-      "delivery": "Delivered within 3 business days"
+      "free_shipping": "Free shipping from {{ amount }}\u00a0· Delivered within 10 business days",
+      "free_shipping_all": "Free shipping on every order\u00a0· Delivered within 10 business days",
+      "delivery": "Delivered within 10 business days"
     },
     "menu": {
       "open": "Menu",

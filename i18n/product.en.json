@@ -58,8 +58,9 @@
       "secure_checkout": "Secure checkout"
     },
     "shipping_note": {
-      "delivery": "Delivered within 3 business days",
-      "free_from": "Free shipping from {{ amount }}"
+      "delivery": "Delivered within 10\u00a0business\u00a0days",
+      "free_from": "Free shipping from {{ amount }}",
+      "free_all": "Free shipping on every order"
     },
     "complete_set": {
       "heading": "Complete the set",
@@ -74,8 +75,9 @@
     },
     "shipping_returns": {
       "heading": "Shipping & returns",
-      "delivery": "We deliver to your door within 3 business days of your order.",
+      "delivery": "We deliver to your door within 10 business days of your order.",
       "free_shipping": "Shipping is free on orders from {{ amount }}.",
+      "free_shipping_all": "Shipping is free on every order.",
       "returns": "You can return items within 45 days.",
       "returns_policy": "The full terms are in our returns policy.",
       "details": "Full details:"

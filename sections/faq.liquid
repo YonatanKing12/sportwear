@@ -10,6 +10,12 @@
     assign heading = 'faq.heading' | t
   endif
   assign faq_json = ''
+
+  # The ready-made delivery answer says shipping is free when every order ships free (see free-shipping-cents).
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
 -%}
 <div
   class="section faq color-{{ section.settings.color_scheme.id }}"
@@ -43,6 +49,9 @@
             assign policy_label = ''
             if answer == blank and preset != 'none'
               assign answer_key = 'faq.presets.' | append: preset | append: '.answer_html'
+              if preset == 'delivery' and threshold_cents < 0
+                assign answer_key = 'faq.presets.delivery.answer_free_html'
+              endif
               assign answer = answer_key | t
               case preset
                 when 'delivery'

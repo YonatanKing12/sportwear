@@ -19,7 +19,8 @@
     },
     "free_shipping": {
       "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",
-      "unlocked": "You've got free shipping"
+      "unlocked": "You've got free shipping",
+      "all": "Free shipping on every order"
     },
     "item": {
       "remove": "Remove {{ title }}",
@@ -221,8 +222,8 @@
         "text": "Adult sizes and kids' sizes for ages 5 to 14, all in one order."
       },
       "delivery": {
-        "title": "Delivery within 3 business days",
-        "text": "Items in stock are delivered to your door within 3 business days."
+        "title": "Delivery within 10 business days",
+        "text": "Items in stock are delivered to your door within 10 business days."
       }
     },
     "form": {
@@ -248,7 +249,8 @@
     "presets": {
       "delivery": {
         "question": "How long does delivery take?",
-        "answer_html": "<p>We deliver to your door within 3 business days. The shipping cost is shown in the cart and at checkout, before you pay.</p>",
+        "answer_html": "<p>We deliver to your door within 10 business days. The shipping cost is shown in the cart and at checkout, before you pay.</p>",
+        "answer_free_html": "<p>We deliver to your door within 10 business days, and shipping is free on every order.</p>",
         "link": "Read our shipping policy"
       },
       "returns": {
@@ -425,7 +427,8 @@
       "product_title": "Product name"
     },
     "trust": {
-      "shipping": "Delivery in up to 3 business days",
+      "shipping": "Delivery in up to 10 business days",
+      "shipping_free": "Free home delivery",
       "returns": "Returns within 45 days",
       "stock": "Stock held in Israel",
       "secure_payment": "Secure payment: credit card, Apple Pay and Google Pay"
@@ -462,8 +465,9 @@
       "next": "Next announcement",
       "pause": "Pause announcements",
       "play": "Play announcements",
-      "free_shipping": "Free shipping from {{ amount }} · Delivered within 3 business days",
-      "delivery": "Delivered within 3 business days"
+      "free_shipping": "Free shipping from {{ amount }} · Delivered within 10 business days",
+      "free_shipping_all": "Free shipping on every order · Delivered within 10 business days",
+      "delivery": "Delivered within 10 business days"
     },
     "menu": {
       "open": "Menu",
@@ -520,7 +524,7 @@
       "eyebrow": "Season 2026/27 is here",
       "heading": "Football and basketball jerseys",
       "heading_highlight": "For adults and kids",
-      "subheading": "In stock in Israel, delivered to your door within 3 business days",
+      "subheading": "In stock in Israel, delivered to your door within 10 business days",
       "button_label": "Football jerseys",
       "secondary_button_label": "Basketball jerseys"
     },
@@ -572,7 +576,7 @@
     "rich_text": {
       "eyebrow": "Why {{ shop }}",
       "heading": "Stock held in Israel",
-      "text": "Orders ship from our stock in Israel and reach your door within 3 business days. Returns are accepted within 45 days.",
+      "text": "Orders ship from our stock in Israel and reach your door within 10 business days. Returns are accepted within 45 days.",
       "button_label": "Shop all"
     },
     "category_tiles": {
@@ -674,8 +678,9 @@
       "secure_checkout": "Secure checkout"
     },
     "shipping_note": {
-      "delivery": "Delivered within 3 business days",
-      "free_from": "Free shipping from {{ amount }}"
+      "delivery": "Delivered within 10 business days",
+      "free_from": "Free shipping from {{ amount }}",
+      "free_all": "Free shipping on every order"
     },
     "complete_set": {
       "heading": "Complete the set",
@@ -690,8 +695,9 @@
     },
     "shipping_returns": {
       "heading": "Shipping & returns",
-      "delivery": "We deliver to your door within 3 business days of your order.",
+      "delivery": "We deliver to your door within 10 business days of your order.",
       "free_shipping": "Shipping is free on orders from {{ amount }}.",
+      "free_shipping_all": "Shipping is free on every order.",
       "returns": "You can return items within 45 days.",
       "returns_policy": "The full terms are in our returns policy.",
       "details": "Full details:"
