@@ -77,6 +77,10 @@ Each product is one team × one kit × one season × one audience.
   - Alt text in Hebrew: `{title} – חזית` / `– גב` / `– פרט`.
   - **Only images the business may use**: the supplier's or importer's own product photos. Never
     images from competitor stores or official club shops unless the owner confirms rights.
+  - **The store shows studio photos** (square, #F4F4F4, garment centered at ~95% height), made from
+    the supplier photos with `scripts/images/studio.py` + `normalize.py` and checked against them
+    before upload. Only the views the supplier photographed. The supplier photos stay in Files.
+    Full process: `design/imagery/README.md`.
 - **Description (Hebrew):**
   - One or two benefit-led sentences, then bullets: fabric and technology, fit, care.
   - No invented specs.

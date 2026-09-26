@@ -40,7 +40,8 @@ Read `.claude/skills/sportwear-catalog/SKILL.md` and `catalog/product.schema.jso
   - the single `מידה` option and its values
   - variants with SKU, price, `compareAtPrice` only if set, `inventoryPolicy: DENY` and the
     inventory quantity at the store's location (query the location ID once)
-  - media from the image URLs with their Hebrew alt text
+  - media from the image URLs with their Hebrew alt text (then the studio photos replace them on the
+    product, per `design/imagery/README.md`, once the owner has seen the batch)
   - `sportwear.*` metafields
 - **References:**
   - Set team and leagues as metaobject references once those metaobjects exist.
