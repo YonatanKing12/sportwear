@@ -9,7 +9,8 @@
       "resources": 282,
       "fields": 391,
       "verified": "Read back from Shopify after registering: all values match this file and none is outdated. The 59 original resources survived the switch of the primary language to Hebrew.",
-      "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop)."
+      "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop).",
+      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated."
     },
     "en": {
       "status": "registered",
@@ -17,7 +18,8 @@
       "resources": 282,
       "fields": 391,
       "verified": "translationsRegister returned no userErrors, and every field reads back with outdated: false.",
-      "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop)."
+      "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop).",
+      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated."
     }
   },
   "not_translated": {
@@ -2112,6 +2114,456 @@
           "digest": "4203a36283eab65a0e48c024dd9d3efc40c106dbc96d0bb77bb74ff13dfb9427"
         }
       }
+    },
+    {
+      "handle": "manchester-united",
+      "resource_id": "gid://shopify/Collection/512869138736",
+      "fields": {
+        "title": {
+          "he": "מנצ׳סטר יונייטד",
+          "en": "Manchester United",
+          "ar": "مانشستر يونايتد",
+          "digest": "264224e8256aba9e364e6885215445f4363849edfb4271e5fd52e892626bf25f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של מנצ׳סטר יונייטד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Manchester United football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان مانشستر يونايتد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bd61fd8646492bb3dd108801cf579664a62640bbce8d6e0a5c67b2f43cac9233"
+        }
+      }
+    },
+    {
+      "handle": "chelsea",
+      "resource_id": "gid://shopify/Collection/512869171504",
+      "fields": {
+        "title": {
+          "he": "צ׳לסי",
+          "en": "Chelsea",
+          "ar": "تشيلسي",
+          "digest": "7bc43d3b6cd8fd81297ef965285edbd2b5818e6917079a7724cc51d9f4566fa2"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של צ׳לסי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Chelsea football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان تشيلسي لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "5ff3bb27a94908029b763cf38d2d6ed6cae3ecdbb5ceae2be0dec4ee546fff32"
+        }
+      }
+    },
+    {
+      "handle": "tottenham-hotspur",
+      "resource_id": "gid://shopify/Collection/512869204272",
+      "fields": {
+        "title": {
+          "he": "טוטנהאם",
+          "en": "Tottenham Hotspur",
+          "ar": "توتنهام هوتسبير",
+          "digest": "d8c323cf5abb19497200f824955677e42ae2724a6fc32fc3cd45f51c728cf474"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של טוטנהאם באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Tottenham Hotspur football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان توتنهام هوتسبير لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "0dcc7a11814f458d22237775aa4df10fdd35e344380fdc354d641ff5099b7cfb"
+        }
+      }
+    },
+    {
+      "handle": "bayern-munich",
+      "resource_id": "gid://shopify/Collection/512869237040",
+      "fields": {
+        "title": {
+          "he": "באיירן מינכן",
+          "en": "Bayern Munich",
+          "ar": "بايرن ميونخ",
+          "digest": "67200f418965b7103b3b9380f1fe6321c2bdcf3350dadbe6fb0964379be82cef"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של באיירן מינכן באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Bayern Munich football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بايرن ميونخ لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "71e0bb04ed862db5ad6032450911e4ef26815cbf949b1d9a3ec26a976f503612"
+        }
+      }
+    },
+    {
+      "handle": "borussia-dortmund",
+      "resource_id": "gid://shopify/Collection/512869269808",
+      "fields": {
+        "title": {
+          "he": "בורוסיה דורטמונד",
+          "en": "Borussia Dortmund",
+          "ar": "بوروسيا دورتموند",
+          "digest": "78ed15714a49a37d13d7c415d8dc3b269a99310dbc4b60225927f26cbc823719"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בורוסיה דורטמונד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Borussia Dortmund football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بوروسيا دورتموند لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bb38b3008856a7cb49251d4c47c5a0295e941ade8f9ba03e406a571efb949b56"
+        }
+      }
+    },
+    {
+      "handle": "inter-milan",
+      "resource_id": "gid://shopify/Collection/512869302576",
+      "fields": {
+        "title": {
+          "he": "אינטר",
+          "en": "Inter Milan",
+          "ar": "إنتر ميلان",
+          "digest": "eff4671fa50ace5c68b1c4069605b33a73b14f27a7cb6b120022c76a21e802db"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אינטר באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Inter Milan football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان إنتر ميلان لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "9d1089c9bf74a160acdbd9dac27c9c0d5ed5a29e19a05b3ac37c2971920f8e32"
+        }
+      }
+    },
+    {
+      "handle": "napoli",
+      "resource_id": "gid://shopify/Collection/512869335344",
+      "fields": {
+        "title": {
+          "he": "נאפולי",
+          "en": "Napoli",
+          "ar": "نابولي",
+          "digest": "58449537748947c61a7d05137e7142f3af838c1c7ef1cb80ee1a56fa54474913"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נאפולי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Napoli football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان نابولي لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f29e1953cd2674c21623014ae170c54144c8ce04f441300d73b03a9fae8eacf2"
+        }
+      }
+    },
+    {
+      "handle": "al-nassr",
+      "resource_id": "gid://shopify/Collection/512869368112",
+      "fields": {
+        "title": {
+          "he": "אל נאסר",
+          "en": "Al Nassr",
+          "ar": "النصر",
+          "digest": "98d668d650f849a30fb24d24dae465c88a2ad7d906bb22effd4be23481654c5c"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אל נאסר באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Al Nassr football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان النصر لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f59b2fc66ac6a656116e755b5e3b841c8a0d38bba8728ee079b0ee1957ca8b36"
+        }
+      }
+    },
+    {
+      "handle": "inter-miami",
+      "resource_id": "gid://shopify/Collection/512869400880",
+      "fields": {
+        "title": {
+          "he": "אינטר מיאמי",
+          "en": "Inter Miami",
+          "ar": "إنتر ميامي",
+          "digest": "74ab951e30d8f93fc4fe1c6dcf30f609320e82641b3068b773774a65bb34d6c3"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אינטר מיאמי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Inter Miami football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان إنتر ميامي لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "2a02c79e735e8f7ad4f2211cdb8782b7030f31d94156ce3276624ec1b2d291d0"
+        }
+      }
+    },
+    {
+      "handle": "maccabi-haifa",
+      "resource_id": "gid://shopify/Collection/512869433648",
+      "fields": {
+        "title": {
+          "he": "מכבי חיפה",
+          "en": "Maccabi Haifa",
+          "ar": "مكابي حيفا",
+          "digest": "c852bb553effc1f872eca2948fb52609cd65086fb40841ad28cb071d3303d60a"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של מכבי חיפה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Maccabi Haifa football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان مكابي حيفا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "130a4f2ea2c0120f6e51a384dc91bbe272ce587a1c0d24e7f9c45f23a7c42853"
+        }
+      }
+    },
+    {
+      "handle": "hapoel-tel-aviv",
+      "resource_id": "gid://shopify/Collection/512869466416",
+      "fields": {
+        "title": {
+          "he": "הפועל תל אביב",
+          "en": "Hapoel Tel Aviv",
+          "ar": "هبوعيل تل أبيب",
+          "digest": "2e6cb9889cbd4fd13a6688f1152d30080a971c1d40b4e2ba33a21ab95fc5b9b6"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של הפועל תל אביב באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Hapoel Tel Aviv football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان هبوعيل تل أبيب لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a0137117dd11abfb74e32fd5762a8d3549df695f11bccea266c8e4b4b95fbcc6"
+        }
+      }
+    },
+    {
+      "handle": "hapoel-petah-tikva",
+      "resource_id": "gid://shopify/Collection/512869499184",
+      "fields": {
+        "title": {
+          "he": "הפועל פתח תקווה",
+          "en": "Hapoel Petah Tikva",
+          "ar": "هبوعيل بيتاح تكفا",
+          "digest": "e2d6363dd236ff7643935de1f134f5cc339cc4a1c02b4c2413dbc3eb8339df1b"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של הפועל פתח תקווה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Hapoel Petah Tikva football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان هبوعيل بيتاح تكفا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a9e670d47fc98480b7e2f1aac67f13958b48d994a653529ca6ec730e0ec3dde2"
+        }
+      }
+    },
+    {
+      "handle": "argentina",
+      "resource_id": "gid://shopify/Collection/512869531952",
+      "fields": {
+        "title": {
+          "he": "נבחרת ארגנטינה",
+          "en": "Argentina",
+          "ar": "منتخب الأرجنتين",
+          "digest": "95eaa78023252489bba81584fe0bf00dcfaca3556622565a3da5ac5e2e6f2d3f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת ארגנטינה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Argentina national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب الأرجنتين لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a661d46d10f3bbaf95837016feb629f0fcc9b9a79c2494f7d04ee9eacffbcc1f"
+        }
+      }
+    },
+    {
+      "handle": "brazil",
+      "resource_id": "gid://shopify/Collection/512869564720",
+      "fields": {
+        "title": {
+          "he": "נבחרת ברזיל",
+          "en": "Brazil",
+          "ar": "منتخب البرازيل",
+          "digest": "87e9e047bf1a75f779b30aa70f7a7f3021607b0fa1cf62abeb2b5f85f0630ba4"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת ברזיל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Brazil national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب البرازيل لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f6f16ab6f94b324412a677c99fe6e555d7cb5effc3ac305619f49383f29adb28"
+        }
+      }
+    },
+    {
+      "handle": "israel",
+      "resource_id": "gid://shopify/Collection/512869597488",
+      "fields": {
+        "title": {
+          "he": "נבחרת ישראל",
+          "en": "Israel",
+          "ar": "منتخب إسرائيل",
+          "digest": "42b487a0dbf4a9a029f14daa1ddb61b6e6f3fe9e80f6a167540c9905a63e80c0"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת ישראל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Israel national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب إسرائيل لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "64db51a556b0e8d86bd22592542ac11a8691bd9d9c1271b736924930b79a714a"
+        }
+      }
+    },
+    {
+      "handle": "spain",
+      "resource_id": "gid://shopify/Collection/512869630256",
+      "fields": {
+        "title": {
+          "he": "נבחרת ספרד",
+          "en": "Spain",
+          "ar": "منتخب إسبانيا",
+          "digest": "7a0cccd9c308903f0af8f9bf59fd4b14c9366612e7d4051c70847fdd2448b60f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת ספרד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Spain national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب إسبانيا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b7f6ed8674d4e4b551c7bee9ef3b39504007d883d8f4b91af70b74f4fac1b978"
+        }
+      }
+    },
+    {
+      "handle": "portugal",
+      "resource_id": "gid://shopify/Collection/512869663024",
+      "fields": {
+        "title": {
+          "he": "נבחרת פורטוגל",
+          "en": "Portugal",
+          "ar": "منتخب البرتغال",
+          "digest": "bc9f9afe73ac3bb8c4bb3c7b609a93ac5d6613536517c1543a05ac127120a4b7"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת פורטוגל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Portugal national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب البرتغال لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "95f6466bf2ec5138f9bf957924646d7587f6377d922eda16a9ee990a0b692243"
+        }
+      }
+    },
+    {
+      "handle": "france",
+      "resource_id": "gid://shopify/Collection/512869695792",
+      "fields": {
+        "title": {
+          "he": "נבחרת צרפת",
+          "en": "France",
+          "ar": "منتخب فرنسا",
+          "digest": "9be3264af6a250996873ed87e574ecd7b8ced0ad311b9e25ce632686ba815a0d"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת צרפת באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>France national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب فرنسا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "950bd2ae817ba4fd2f6e4c40c7dee3303d13222e4806a3057bd7b8b6669c193a"
+        }
+      }
+    },
+    {
+      "handle": "germany",
+      "resource_id": "gid://shopify/Collection/512869728560",
+      "fields": {
+        "title": {
+          "he": "נבחרת גרמניה",
+          "en": "Germany",
+          "ar": "منتخب ألمانيا",
+          "digest": "ea29f4a5c0effb83a3b6444d0c2f1a4b870fe531eddf860be42ed1e8150ee81e"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת גרמניה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Germany national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب ألمانيا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f75e2d1a8bef73924117e9e778ec791270681b69f48286b335d046ddc6be5556"
+        }
+      }
+    },
+    {
+      "handle": "england",
+      "resource_id": "gid://shopify/Collection/512869761328",
+      "fields": {
+        "title": {
+          "he": "נבחרת אנגליה",
+          "en": "England",
+          "ar": "منتخب إنجلترا",
+          "digest": "c8a8d48ce6ed2247fb23a9ec12b9c8a815fcde9d4ff1d9b77bf88ae8e76ff93c"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת אנגליה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>England national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب إنجلترا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "1b4fdd9bbd36fa7837310ec8c84f2b0efb638bdb53928732a01cb12deebde426"
+        }
+      }
+    },
+    {
+      "handle": "italy",
+      "resource_id": "gid://shopify/Collection/512869794096",
+      "fields": {
+        "title": {
+          "he": "נבחרת איטליה",
+          "en": "Italy",
+          "ar": "منتخب إيطاليا",
+          "digest": "aa477aa77617a5a191f9bffb6f65bf9464bf6fcd21353d96c0cc0880749cccd5"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת איטליה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Italy national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب إيطاليا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "6c11279526752e75ad32559a58dcaefa674d4c8966e40bdee6f88ba45820ba51"
+        }
+      }
+    },
+    {
+      "handle": "netherlands",
+      "resource_id": "gid://shopify/Collection/512869826864",
+      "fields": {
+        "title": {
+          "he": "נבחרת הולנד",
+          "en": "Netherlands",
+          "ar": "منتخب هولندا",
+          "digest": "737859584c14731729eb30c646c732305c5d688c97509f7c37d9456eb206532c"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת הולנד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Netherlands national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب هولندا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "c28b95821b42b5c9aeeb45fbf76f0e63564b5138d0de8a779f3775106a57408d"
+        }
+      }
+    },
+    {
+      "handle": "belgium",
+      "resource_id": "gid://shopify/Collection/512869859632",
+      "fields": {
+        "title": {
+          "he": "נבחרת בלגיה",
+          "en": "Belgium",
+          "ar": "منتخب بلجيكا",
+          "digest": "0feb3735e57a8d08388f00ea38db5277438fc47ee8b62810adc02a374e613e37"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת בלגיה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Belgium national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب بلجيكا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "096d1f7e6536ce10a8f3b07099f0118f696788df4f25768dcf8500ae810eee5b"
+        }
+      }
+    },
+    {
+      "handle": "croatia",
+      "resource_id": "gid://shopify/Collection/512869892400",
+      "fields": {
+        "title": {
+          "he": "נבחרת קרואטיה",
+          "en": "Croatia",
+          "ar": "منتخب كرواتيا",
+          "digest": "1b73465440cab3d51884c199b3edef163211c17ea114112932d569ccac359e90"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת קרואטיה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Croatia national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب كرواتيا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "169d3d3bae228dd20460ad7dcb882defd6487a8996ae7bb2338484cdcb72b08c"
+        }
+      }
+    },
+    {
+      "handle": "morocco",
+      "resource_id": "gid://shopify/Collection/512869925168",
+      "fields": {
+        "title": {
+          "he": "נבחרת מרוקו",
+          "en": "Morocco",
+          "ar": "منتخب المغرب",
+          "digest": "559b8dae1eaf13a8e91d5df77f96b870f298ded1903b3470b7852b10bdda3ea8"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נבחרת מרוקו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Morocco national team football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان منتخب المغرب لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "751e0a12e554a1a612d1d2b6391b2c729bc54d826663a98bec5358b50c65dbda"
+        }
+      }
     }
   ],
   "menus": [
@@ -2184,6 +2636,42 @@
                       "en": "Manchester City",
                       "ar": "مانشستر سيتي",
                       "digest": "fb15950479aab333a45dd88305216e8068158f7fb2ba7c05949ae4e614834d8c"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/805999903024",
+                  "url": "/collections/manchester-united",
+                  "fields": {
+                    "title": {
+                      "he": "מנצ׳סטר יונייטד",
+                      "en": "Manchester United",
+                      "ar": "مانشستر يونايتد",
+                      "digest": "264224e8256aba9e364e6885215445f4363849edfb4271e5fd52e892626bf25f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/805999935792",
+                  "url": "/collections/chelsea",
+                  "fields": {
+                    "title": {
+                      "he": "צ׳לסי",
+                      "en": "Chelsea",
+                      "ar": "تشيلسي",
+                      "digest": "7bc43d3b6cd8fd81297ef965285edbd2b5818e6917079a7724cc51d9f4566fa2"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/805999968560",
+                  "url": "/collections/tottenham-hotspur",
+                  "fields": {
+                    "title": {
+                      "he": "טוטנהאם",
+                      "en": "Tottenham Hotspur",
+                      "ar": "توتنهام هوتسبير",
+                      "digest": "d8c323cf5abb19497200f824955677e42ae2724a6fc32fc3cd45f51c728cf474"
                     }
                   }
                 }
@@ -2286,6 +2774,30 @@
                       "digest": "9b92cca4a7db61a68b2b98f45d046852fbe4e68e8bb361b33b8f4fa70c90b184"
                     }
                   }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000001328",
+                  "url": "/collections/inter-milan",
+                  "fields": {
+                    "title": {
+                      "he": "אינטר",
+                      "en": "Inter Milan",
+                      "ar": "إنتر ميلان",
+                      "digest": "eff4671fa50ace5c68b1c4069605b33a73b14f27a7cb6b120022c76a21e802db"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000034096",
+                  "url": "/collections/napoli",
+                  "fields": {
+                    "title": {
+                      "he": "נאפולי",
+                      "en": "Napoli",
+                      "ar": "نابولي",
+                      "digest": "58449537748947c61a7d05137e7142f3af838c1c7ef1cb80ee1a56fa54474913"
+                    }
+                  }
                 }
               ]
             },
@@ -2299,7 +2811,33 @@
                   "ar": "الدوري الألماني",
                   "digest": "d5f8ec488585a48cb8fc7988504479c8f6ecc1641af2900fe45c931b909899f8"
                 }
-              }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000066864",
+                  "url": "/collections/bayern-munich",
+                  "fields": {
+                    "title": {
+                      "he": "באיירן מינכן",
+                      "en": "Bayern Munich",
+                      "ar": "بايرن ميونخ",
+                      "digest": "67200f418965b7103b3b9380f1fe6321c2bdcf3350dadbe6fb0964379be82cef"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000099632",
+                  "url": "/collections/borussia-dortmund",
+                  "fields": {
+                    "title": {
+                      "he": "בורוסיה דורטמונד",
+                      "en": "Borussia Dortmund",
+                      "ar": "بوروسيا دورتموند",
+                      "digest": "78ed15714a49a37d13d7c415d8dc3b269a99310dbc4b60225927f26cbc823719"
+                    }
+                  }
+                }
+              ]
             },
             {
               "resource_id": "gid://shopify/Link/805103763760",
@@ -2363,7 +2901,33 @@
                   "ar": "دوريات أخرى",
                   "digest": "07a4ac4b5bacd6a7d0b9497b87677dcdc6bf3bf3e667301aa1b44ce0055aad2e"
                 }
-              }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000132400",
+                  "url": "/collections/al-nassr",
+                  "fields": {
+                    "title": {
+                      "he": "אל נאסר",
+                      "en": "Al Nassr",
+                      "ar": "النصر",
+                      "digest": "98d668d650f849a30fb24d24dae465c88a2ad7d906bb22effd4be23481654c5c"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000165168",
+                  "url": "/collections/inter-miami",
+                  "fields": {
+                    "title": {
+                      "he": "אינטר מיאמי",
+                      "en": "Inter Miami",
+                      "ar": "إنتر ميامي",
+                      "digest": "74ab951e30d8f93fc4fe1c6dcf30f609320e82641b3068b773774a65bb34d6c3"
+                    }
+                  }
+                }
+              ]
             },
             {
               "resource_id": "gid://shopify/Link/805103829296",
@@ -2375,7 +2939,178 @@
                   "ar": "المنتخبات",
                   "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
                 }
-              }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000197936",
+                  "url": "/collections/argentina",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "ארגנטינה",
+                      "en": "Argentina",
+                      "ar": "الأرجنتين",
+                      "digest": "a9408d6f03e98fc699cf0acdcc9f06d830d44cdf5f69db1d57641c96ca7d7a5b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000230704",
+                  "url": "/collections/brazil",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "ברזיל",
+                      "en": "Brazil",
+                      "ar": "البرازيل",
+                      "digest": "80fcd42dc5895334d8087d9a4ad925df81d33c35e1ec48f2a74f72804f392d53"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000263472",
+                  "url": "/collections/israel",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "ישראל",
+                      "en": "Israel",
+                      "ar": "إسرائيل",
+                      "digest": "320ec40a3f33f385d5bcc3f4ea9ec4bdc1cc01d6a03b34313f00bdfa50b69b71"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000296240",
+                  "url": "/collections/spain",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "ספרד",
+                      "en": "Spain",
+                      "ar": "إسبانيا",
+                      "digest": "dabb94430056bbcd736c987b63d2e451374c8b05fe67249758938e61e2f3df21"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000329008",
+                  "url": "/collections/portugal",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "פורטוגל",
+                      "en": "Portugal",
+                      "ar": "البرتغال",
+                      "digest": "3d9f5da85f6f8a72b33c106d0fad86469f002008a5fc176acb0f62de767a3f2a"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000361776",
+                  "url": "/collections/france",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "צרפת",
+                      "en": "France",
+                      "ar": "فرنسا",
+                      "digest": "f8b0af8caa275180de0203da6ab109f483184da9b9d2a5ca186c84bffbe37f93"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000394544",
+                  "url": "/collections/germany",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "גרמניה",
+                      "en": "Germany",
+                      "ar": "ألمانيا",
+                      "digest": "720947126afe08bb7a7efd2bb82aae23f8ac9ffc7e1a0a2a0faed04cda1a9edf"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000427312",
+                  "url": "/collections/england",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "אנגליה",
+                      "en": "England",
+                      "ar": "إنجلترا",
+                      "digest": "0792362a7ce40200c2c24866dbd68bf44c0cd173582dfa1f7c3d0eff98815091"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000460080",
+                  "url": "/collections/italy",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "איטליה",
+                      "en": "Italy",
+                      "ar": "إيطاليا",
+                      "digest": "fa011d75ed692f496090411bfca3bf82a171937fe5a8a13ad1b79b2262f696e9"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000492848",
+                  "url": "/collections/netherlands",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "הולנד",
+                      "en": "Netherlands",
+                      "ar": "هولندا",
+                      "digest": "25f4b6a5d422ffd8ffe58fc45f035158433b52ddb72d349414de36e95d363a74"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000525616",
+                  "url": "/collections/belgium",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "בלגיה",
+                      "en": "Belgium",
+                      "ar": "بلجيكا",
+                      "digest": "9b60cd05a02048059fe9ebf82200cc0ff3db740911af7a3b8b10cf667739cb7b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000558384",
+                  "url": "/collections/croatia",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "קרואטיה",
+                      "en": "Croatia",
+                      "ar": "كرواتيا",
+                      "digest": "66cf82038cbe9bcc249b26080fbb27e23e5ac942745f25f48f01ad8f2f87e8ac"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000591152",
+                  "url": "/collections/morocco",
+                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "fields": {
+                    "title": {
+                      "he": "מרוקו",
+                      "en": "Morocco",
+                      "ar": "المغرب",
+                      "digest": "92cb33b355874129539480199c7fed8d6a70cf73ef3b0092cae4c159eaece6d1"
+                    }
+                  }
+                }
+              ]
             },
             {
               "resource_id": "gid://shopify/Link/805103796528",
@@ -2387,7 +3122,45 @@
                   "ar": "الدوري الإسرائيلي الممتاز",
                   "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
                 }
-              }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000623920",
+                  "url": "/collections/maccabi-haifa",
+                  "fields": {
+                    "title": {
+                      "he": "מכבי חיפה",
+                      "en": "Maccabi Haifa",
+                      "ar": "مكابي حيفا",
+                      "digest": "c852bb553effc1f872eca2948fb52609cd65086fb40841ad28cb071d3303d60a"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000656688",
+                  "url": "/collections/hapoel-tel-aviv",
+                  "fields": {
+                    "title": {
+                      "he": "הפועל תל אביב",
+                      "en": "Hapoel Tel Aviv",
+                      "ar": "هبوعيل تل أبيب",
+                      "digest": "2e6cb9889cbd4fd13a6688f1152d30080a971c1d40b4e2ba33a21ab95fc5b9b6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000689456",
+                  "url": "/collections/hapoel-petah-tikva",
+                  "fields": {
+                    "title": {
+                      "he": "הפועל פתח תקווה",
+                      "en": "Hapoel Petah Tikva",
+                      "ar": "هبوعيل بيتاح تكفا",
+                      "digest": "e2d6363dd236ff7643935de1f134f5cc339cc4a1c02b4c2413dbc3eb8339df1b"
+                    }
+                  }
+                }
+              ]
             }
           ]
         },
@@ -3529,6 +4302,18 @@
           },
           "items": [
             {
+              "resource_id": "gid://shopify/Link/806000722224",
+              "url": "/collections/kids-football",
+              "fields": {
+                "title": {
+                  "he": "כדורגל לילדים",
+                  "en": "Kids' Football",
+                  "ar": "كرة القدم للأطفال",
+                  "digest": "cda63d50e00d6d53fd19dad141f6f617fbdba96ef8a7960d48243469aef16260"
+                }
+              }
+            },
+            {
               "resource_id": "gid://shopify/Link/805847105840",
               "url": "/collections/kids-basketball",
               "fields": {
@@ -3711,6 +4496,54 @@
               "en": "Kids",
               "ar": "الأطفال",
               "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'בונדסליגה' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/316364751152",
+          "fields": {
+            "title": {
+              "he": "בונדסליגה",
+              "en": "Bundesliga",
+              "ar": "الدوري الألماني",
+              "digest": "d5f8ec488585a48cb8fc7988504479c8f6ecc1641af2900fe45c931b909899f8"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגות נוספות' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/316364783920",
+          "fields": {
+            "title": {
+              "he": "ליגות נוספות",
+              "en": "More Leagues",
+              "ar": "دوريات أخرى",
+              "digest": "07a4ac4b5bacd6a7d0b9497b87677dcdc6bf3bf3e667301aa1b44ce0055aad2e"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'נבחרות' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/316364816688",
+          "fields": {
+            "title": {
+              "he": "נבחרות",
+              "en": "National Teams",
+              "ar": "المنتخبات",
+              "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגת העל' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/316364849456",
+          "fields": {
+            "title": {
+              "he": "ליגת העל",
+              "en": "Israeli Premier League",
+              "ar": "الدوري الإسرائيلي الممتاز",
+              "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
             }
           }
         }
