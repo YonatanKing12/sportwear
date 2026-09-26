@@ -37,7 +37,7 @@
       "shipping_free": "Free home delivery",
       "returns": "Returns within 45 days",
       "stock": "Stock held in Israel",
-      "secure_payment": "Secure payment: credit card, Apple Pay and Google Pay"
+      "secure_payment": "Secure payment: credit card, Apple\u00a0Pay and Google\u00a0Pay"
     },
     "js": {
       "cart_error_html": "We couldn't update your cart. Please try again.",

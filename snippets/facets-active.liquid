@@ -33,12 +33,23 @@
             </li>
           {%- endif -%}
         {%- else -%}
+          {%- liquid
+            # An option filter is named after the product option ("מידה" in every language unless
+            # translated), so it is shown in the shopper's language (snippets/option-name.liquid).
+            if filter.param_name contains 'filter.v.option.'
+              capture filter_label
+                render 'option-name', name: filter.label
+              endcapture
+            else
+              assign filter_label = filter.label | escape
+            endif
+          -%}
           {%- for value in filter.active_values -%}
             <li>
               <a class="chip facets-active__chip" href="{{ value.url_to_remove }}" data-facets-link>
                 <span class="visually-hidden">{{ 'facets.remove_filter' | t }}</span>
                 <span>
-                  {{- filter.label | escape }}: <bdi>{{ value.label | escape }}</bdi></span
+                  {{- filter_label }}: <bdi>{{ value.label | escape }}</bdi></span
                 >
                 {%- render 'icon', name: 'close', size: 16, class: 'facets-active__icon' -%}
               </a>

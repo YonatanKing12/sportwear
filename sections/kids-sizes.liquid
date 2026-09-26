@@ -1,8 +1,10 @@
 {%- comment -%}
-  Kids sizes: a compact strip with the kids' sizes by age and each size's approximate height, plus
-  links to the kids collection and to the size guide. Each tile is a "size" block (label + height in cm).
-  Phones stack everything, tablets put the text and links on one row above the tiles, and desktop puts
-  all three on one row.
+  Kids sizes: a compact strip with the kids' sizes, each with its age and the child's height, plus
+  links to the kids collection and to the size guide. Each tile is a "size" block: the size as the
+  products name it (e.g. 16), with its age and height in cm under it, as in the product page's size
+  picker. A block without a size shows its age as the main label instead ("5-6" over "years").
+  The text and links sit on one row above the tiles (phones stack them), and all three share one row
+  once the panel is wide enough for them. Phones fit up to five tiles on a row; more wrap four to a row.
 {%- endcomment -%}
 {%- liquid
   assign scheme_class = 'color-' | append: section.settings.color_scheme.id
@@ -49,10 +51,11 @@
     endif
   endif
 
-  # A tile without a size label is skipped, except in the theme editor, where it stays selectable.
+  # A tile without a size and without an age is skipped, except in the theme editor, where it stays
+  # selectable.
   assign tile_count = 0
   for block in section.blocks
-    if block.settings.title != blank or request.design_mode
+    if block.settings.size_code != blank or block.settings.title != blank or request.design_mode
       assign tile_count = tile_count | plus: 1
     endif
   endfor
@@ -62,7 +65,7 @@
   class="section kids-sizes"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
+  <div class="page-width kids-sizes__container">
     <div
       class="kids-sizes__panel {{ scheme_class }}{% if secondary_link != blank %} kids-sizes__panel--guide{% endif %}"
       style="--kids-sizes-count: {{ tile_count }};"
@@ -76,27 +79,44 @@
       </div>
 
       {%- if tile_count > 0 -%}
-        <ul class="kids-sizes__list" role="list">
+        <ul class="kids-sizes__list{% if tile_count > 5 %} kids-sizes__list--wrap{% endif %}" role="list">
           {%- for block in section.blocks -%}
-            {%- if block.settings.title != blank or request.design_mode -%}
+            {%- if block.settings.size_code != blank or block.settings.title != blank or request.design_mode -%}
               {%- liquid
-                assign size_label = block.settings.title | strip | escape
-                # "Years" agrees with the label's last number (Arabic: 5-6 سنوات, but 11-12 سنة).
-                assign age = size_label | replace: '–', '-' | split: '-' | last | strip | plus: 0
-                assign height = block.settings.height
+                assign size_code = block.settings.size_code | strip | escape
+                assign age_label = block.settings.title | strip | escape
+                # "Years" agrees with the age's last number (Arabic: 5-6 سنوات, but 11-12 سنة).
+                assign age = age_label | replace: '–', '-' | split: '-' | last | strip | plus: 0
+                assign height = block.settings.height_cm | strip | escape
+                assign main_label = size_code
+                if main_label == blank
+                  assign main_label = age_label
+                endif
               -%}
               <li class="kids-sizes__tile" {{ block.shopify_attributes }}>
                 <span class="kids-sizes__age">
-                  <span class="kids-sizes__size"
-                    ><bdi>{{ size_label | default: '–' }}</bdi></span
-                  >
-                  {%- if age > 0 -%}
+                  <span class="kids-sizes__size">
+                    {%- if size_code != blank -%}
+                      <span class="visually-hidden">{{ 'home.kids_sizes.size_label' | t }} </span>
+                    {%- endif -%}
+                    <bdi>{{ main_label | default: '–' }}</bdi>
+                  </span>
+                  {%- if size_code != blank -%}
+                    {%- if age_label != blank -%}
+                      {%- capture age_html -%}<bdi>{{ age_label }}</bdi>{%- endcapture -%}
+                      <span class="kids-sizes__years">
+                        {%- comment -%} A pause between the size and its age for screen readers. {%- endcomment -%}
+                        <span class="visually-hidden">, </span>
+                        {{- 'home.kids_sizes.age_html' | t: age: age_html -}}
+                      </span>
+                    {%- endif -%}
+                  {%- elsif age > 0 -%}
                     <span class="kids-sizes__years">{{ 'home.kids_sizes.years' | t: count: age }}</span>
                   {%- endif -%}
                 </span>
                 {%- if height != blank -%}
                   <span class="kids-sizes__height">
-                    <span class="visually-hidden">{{ 'home.kids_sizes.height_label' | t }}</span>
+                    <span class="visually-hidden">, {{ 'home.kids_sizes.height_label' | t }}</span>
                     <bdi>{{ height }}</bdi>
                     {{ 'home.kids_sizes.height_unit' | t -}}
                   </span>
@@ -174,10 +194,28 @@
   /* Equal columns that always fit the row (no sideways scrolling). Each tile is a size container, so
      its numbers scale with the tile's own width. */
   .kids-sizes__list {
+    --kids-sizes-gap: 6px;
+
     grid-area: sizes;
     display: grid;
     grid-template-columns: repeat(var(--kids-sizes-count, 5), minmax(0, 1fr));
-    gap: 6px;
+    gap: var(--kids-sizes-gap);
+  }
+
+  /* Phones: more than five tiles wrap four to a row, the last row centered (seven sizes: 4 + 3).
+     Wider screens put them back on one row. */
+  .kids-sizes__list--wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > .kids-sizes__tile {
+      flex: 0 0 calc((100% - 3 * var(--kids-sizes-gap)) / 4);
+    }
+
+    @media screen and (min-width: 750px) {
+      display: grid;
+    }
   }
 
   /* The age sits at the top and the height row at the bottom, so height rows line up across tiles
@@ -220,13 +258,15 @@
     line-height: 1.3;
   }
 
+  /* One line, sized to the tile ("145-155 cm" fits), so the height rows line up across tiles. */
   .kids-sizes__height {
     padding-block: 5px 6px;
     border-block-start: 1px solid var(--color-border);
     color: var(--color-muted);
-    font-size: clamp(10px, 19cqi, 13px);
+    font-size: clamp(10px, 16cqi, 13px);
     font-weight: 600;
     line-height: 1.3;
+    white-space: nowrap;
   }
 
   /* The gap keeps the link's focus ring off the dark button. */
@@ -249,7 +289,7 @@
     font-size: var(--text-md);
   }
 
-  /* Tablet: the text and links on one row, the tiles on a second row. */
+  /* Tablet and up: the text and links on one row, the tiles on a second row. */
   @media screen and (min-width: 750px) {
     .kids-sizes__panel {
       grid-template-columns: minmax(0, 1fr) auto;
@@ -265,7 +305,7 @@
     }
 
     .kids-sizes__list {
-      gap: var(--space-2);
+      --kids-sizes-gap: var(--space-2);
     }
 
     .kids-sizes__size {
@@ -277,10 +317,17 @@
     }
   }
 
-  /* Desktop: one row, text on the start side, tiles in the middle, links on the end side. The text
+  /* Wide panels: one row, text on the start side, tiles in the middle, links on the end side. The text
      column is as wide as its text (capped, it wraps below that), the tiles always keep at least 60px
-     each, and the tile row is centered in the space between the text and the links. */
-  @media screen and (min-width: 990px) {
+     each, and the tile row is centered in the space between the text and the links. The row forms
+     from the width of the page container, not a viewport breakpoint: at 1340px there is room for
+     seven tiles of about 75px next to the text and links (a 1440px screen); below it, the two-row
+     layout above stays. */
+  .kids-sizes__container {
+    container: kids-sizes / inline-size;
+  }
+
+  @container kids-sizes (min-width: 1340px) {
     .kids-sizes__panel {
       grid-template-columns:
         minmax(0, max-content)
@@ -295,17 +342,18 @@
       max-inline-size: 400px;
     }
 
-    /* Grows from the small display size at 990px to 45px at 1440px, so it leads the tile numbers
-       while the longer Arabic heading still fits on one line next to the tiles. */
+    /* 45px at 1440px, so it leads the tile numbers while the longer Arabic heading still fits on one
+       line next to the tiles. */
     .kids-sizes .kids-sizes__heading {
       font-size: calc(clamp(30px, 8px + 2.55vw, 45px) * var(--heading-scale, 1) * var(--display-lang-scale));
     }
 
     .kids-sizes__list {
+      --kids-sizes-gap: clamp(8px, 0.7vw, 10px);
+
       justify-self: center;
       inline-size: 100%;
       max-inline-size: calc(var(--kids-sizes-count, 5) * 112px);
-      gap: clamp(8px, 0.7vw, 10px);
     }
   }
 {% endstylesheet %}
@@ -316,7 +364,7 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
-  "max_blocks": 6,
+  "max_blocks": 8,
   "settings": [
     {
       "type": "color_scheme",
@@ -409,17 +457,24 @@
       "settings": [
         {
           "type": "text",
+          "id": "size_code",
+          "label": "t:sections.kids_sizes.blocks.size.settings.size_code.label",
+          "info": "t:sections.kids_sizes.blocks.size.settings.size_code.info",
+          "placeholder": "16"
+        },
+        {
+          "type": "text",
           "id": "title",
           "label": "t:sections.kids_sizes.blocks.size.settings.title.label",
           "info": "t:sections.kids_sizes.blocks.size.settings.title.info",
-          "placeholder": "9-10"
+          "placeholder": "2-3"
         },
         {
-          "type": "number",
-          "id": "height",
-          "label": "t:sections.kids_sizes.blocks.size.settings.height.label",
-          "info": "t:sections.kids_sizes.blocks.size.settings.height.info",
-          "placeholder": "140"
+          "type": "text",
+          "id": "height_cm",
+          "label": "t:sections.kids_sizes.blocks.size.settings.height_cm.label",
+          "info": "t:sections.kids_sizes.blocks.size.settings.height_cm.info",
+          "placeholder": "95-105"
         }
       ]
     }
@@ -431,36 +486,57 @@
         {
           "type": "size",
           "settings": {
+            "size_code": "16",
+            "title": "2-3",
+            "height_cm": "95-105"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_code": "18",
+            "title": "4-5",
+            "height_cm": "105-115"
+          }
+        },
+        {
+          "type": "size",
+          "settings": {
+            "size_code": "20",
             "title": "5-6",
-            "height": 116
+            "height_cm": "115-125"
           }
         },
         {
           "type": "size",
           "settings": {
+            "size_code": "22",
             "title": "7-8",
-            "height": 128
+            "height_cm": "125-135"
           }
         },
         {
           "type": "size",
           "settings": {
-            "title": "9-10",
-            "height": 140
+            "size_code": "24",
+            "title": "8-9",
+            "height_cm": "135-145"
           }
         },
         {
           "type": "size",
           "settings": {
-            "title": "11-12",
-            "height": 152
+            "size_code": "26",
+            "title": "10-11",
+            "height_cm": "145-155"
           }
         },
         {
           "type": "size",
           "settings": {
-            "title": "13-14",
-            "height": 164
+            "size_code": "28",
+            "title": "12-13",
+            "height_cm": "155-165"
           }
         }
       ]

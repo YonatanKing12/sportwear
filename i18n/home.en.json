@@ -27,16 +27,18 @@
       "button_label": "Shop basketball shorts"
     },
     "image_with_text": {
-      "badge": "Ages 5–14",
+      "badge": "Ages 2–13",
       "eyebrow": "Kids",
       "heading": "Sizes by age",
-      "text": "Ages 5 to 14, with a size chart by height",
+      "text": "Jersey and shorts sets in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013. The age is shown under each size.",
       "button_label": "Shop the kids collection"
     },
     "kids_sizes": {
       "eyebrow": "Kids",
       "heading": "Sizes by age",
-      "text": "Sizes for ages 5 to 14, by the child's height",
+      "text": "Jersey and shorts sets in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013",
+      "size_label": "Size",
+      "age_html": "Age {{ age }}",
       "years": {
         "one": "year",
         "other": "years"

@@ -294,7 +294,8 @@ export class World {
     const url = `${this.root}/products/${def.handle}`;
     const sizes = def.sizes ?? (def.audience === 'kids' ? KIDS_SIZES : ADULT_SIZES);
     const price = def.price ?? PRICE;
-    const optionName = OPTION_NAME[locale] ?? OPTION_NAME.he;
+    // Some products keep the Hebrew option name in every language, like the store's supplier products.
+    const optionName = def.untranslatedOption ? OPTION_NAME.he : (OPTION_NAME[locale] ?? OPTION_NAME.he);
     const images = ['front', 'back'].map((side, index) => {
       const fixture = this.fixtureImage(`${def.image}-${side}`, {
         alt: `${title} – ${IMAGE_ALT_SUFFIX[side][locale] ?? IMAGE_ALT_SUFFIX[side].he}`,
@@ -1199,8 +1200,9 @@ export class World {
   }
 
   /**
-   * A metaobject setting's entry of the setting's metaobject_type. The value may be the entry's handle,
-   * "type/handle", "shopify://metaobjects/type/handle" or its GID.
+   * A metaobject setting's entry of the setting's metaobject_type. Shopify stores the entry's handle
+   * (the type comes from the setting), which is what templates should hold; "type/handle",
+   * "shopify://metaobjects/type/handle" and the GID are accepted here too.
    */
   #metaobject(def, value, owner) {
     if (value instanceof BaseDrop) return value;

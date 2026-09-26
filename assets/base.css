@@ -267,12 +267,14 @@ a {
   font-size: var(--display-s);
 }
 
-:lang(en) :is(.display-xl, .display-l, .display-m, .display-s) {
+/* Display headings, including the ones sections set in the display face at their own sizes (the hero
+   slideshow's heading, the category tiles' titles): uppercase Latin, roomier Arabic. */
+:lang(en) :is(.display-xl, .display-l, .display-m, .display-s, .hero-slideshow__heading, .category-tiles__title) {
   text-transform: var(--latin-heading-transform, uppercase);
   letter-spacing: 0.01em;
 }
 
-:lang(ar) :is(.display-xl, .display-l, .display-m, .display-s) {
+:lang(ar) :is(.display-xl, .display-l, .display-m, .display-s, .hero-slideshow__heading, .category-tiles__title) {
   line-height: 1.22;
   letter-spacing: 0;
 }

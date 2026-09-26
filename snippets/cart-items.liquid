@@ -83,7 +83,8 @@
             data-cart-focus="{{ item.key }}:title"
             data-cart-control="title"
           >
-            {{- item.product.title | escape -}}
+            {%- comment -%} The title's ending stays together, as on product cards (snippets/product-card.liquid). {%- endcomment -%}
+            {{- item.product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
           </a>
         </p>
 
@@ -97,7 +98,7 @@
               {%- if audience_label != blank or forloop.index > 1 %}
                 <span class="cart-item__separator" aria-hidden="true">·</span>
               {% endif -%}
-              <span>{{ option.name | escape }}: <bdi>{{ option.value | escape }}</bdi></span>
+              <span>{% render 'option-name', name: option.name %}: <bdi>{{ option.value | escape }}</bdi></span>
             {%- endfor -%}
           {%- endunless -%}
         {%- endcapture -%}

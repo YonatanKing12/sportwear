@@ -1,0 +1,21 @@
+{%- doc -%}
+  Prints a product option's name in the shopper's language, HTML-escaped. The store's products name
+  their size option in Hebrew ("מידה") and most have no English or Arabic translation of it, so a size
+  option ("מידה", "Size", "size", "المقاس", "مقاس", in any letter case) prints the theme's own word for
+  "Size"; any other option prints its own name. Used wherever an option name is shown: the size
+  picker's legend, cart lines, the cart upsell's size label and the option filters.
+
+  @param {string} name - The option's name (option.name, a cart line option's name, a filter label)
+
+  @example
+  {% render 'option-name', name: option.name %}
+{%- enddoc -%}
+{%- liquid
+  assign option_key = name | strip | downcase
+  case option_key
+    when 'מידה', 'size', 'المقاس', 'مقاس'
+      echo 'products.size_chart.size' | t
+    else
+      echo name | escape
+  endcase
+-%}

@@ -9,6 +9,8 @@ import { readFileSync } from 'node:fs';
 const JERSEYXIE = JSON.parse(
   readFileSync(new URL('../../../catalog/size-charts/jerseyxie.json', import.meta.url), 'utf8'),
 );
+/** The row keys the store's sw_size_chart entries keep (the reference-only ones, e.g. sleeve_cm, are left out). */
+const STORE_ROW_KEYS = ['size', 'age', 'height_cm', 'weight_kg', 'chest_width_cm', 'length_cm', 'shorts_length_cm'];
 
 /** Shop facts read from the Admin API on 2026-09-26 (shop.currencyFormats etc.). */
 export const SHOP = {
@@ -120,34 +122,35 @@ export const SIZE_CHARTS = {
       ar: 'أرقام تجريبية لمراجعة التصميم فقط.',
     },
   },
-  // The supplier's charts in the shape the store keeps them: { rows: [...] } with the sizes we sell.
-  // Keys the theme does not show (sleeve_cm, waist_half_cm) stay in, as they would in the store.
-  'jerseyxie-football-adult': {
+  // The supplier's charts as the store holds them (sw_size_chart entries: same handles, names, fit
+  // notes and en/ar translations, read from the Admin API on 2026-09-26): { rows: [...] } with the
+  // sizes we sell and the keys the store keeps (see supplierRows).
+  'jerseyxie-football-adult-fan': {
     name: {
-      he: 'טבלת מידות – חולצת כדורגל למבוגרים',
-      en: 'Size chart – adult football jersey',
-      ar: 'جدول المقاسات – قميص كرة قدم للكبار',
+      he: 'מידות חולצת כדורגל למבוגרים',
+      en: 'Adult football jersey sizes',
+      ar: 'مقاسات قميص كرة القدم للكبار',
     },
     audience: 'adult',
     table: { rows: supplierRows('football-adult-fan', ['S', 'M', 'L', 'XL']) },
     fit_note: {
-      he: 'המידות נמדדו על הבגד עצמו, וייתכן הבדל של 1–2 ס״מ.',
-      en: 'Measured on the garment itself; allow 1–2 cm of difference.',
-      ar: 'القياسات مأخوذة من القطعة نفسها، وقد يوجد فرق 1–2 سم.',
+      he: 'המידות נמדדו על החולצה כשהיא מונחת שטוחה. רוחב החזה נמדד מבית שחי לבית שחי. ייתכן הבדל של 1–2 ס״מ.',
+      en: 'Measured on the jersey lying flat. Chest width is measured from armpit to armpit. Allow 1–2 cm of difference.',
+      ar: 'تم القياس والقميص مفرود على سطح مستوٍ. يُقاس عرض الصدر من الإبط إلى الإبط. قد يوجد فرق 1–2 سم.',
     },
   },
   'jerseyxie-football-kids-set': {
     name: {
-      he: 'טבלת מידות – סט כדורגל לילדים (חולצה ומכנס)',
-      en: 'Size chart – kids football kit (jersey and shorts)',
-      ar: 'جدول المقاسات – طقم كرة قدم للأطفال (قميص وشورت)',
+      he: 'מידות סט כדורגל לילדים',
+      en: 'Kids football set sizes',
+      ar: 'مقاسات طقم كرة القدم للأطفال',
     },
     audience: 'kids',
     table: { rows: supplierRows('football-kids-set', ['16', '18', '20', '22', '24', '26', '28']) },
     fit_note: {
-      he: 'המידות נמדדו על הבגד עצמו, וייתכן הבדל של 1–2 ס״מ. בין שתי מידות? כדאי לבחור את הגדולה.',
-      en: 'Measured on the garment itself; allow 1–2 cm of difference. Between two sizes? Choose the larger one.',
-      ar: 'القياسات مأخوذة من القطعة نفسها، وقد يوجد فرق 1–2 سم. بين مقاسين؟ اختاروا المقاس الأكبر.',
+      he: 'הסט כולל חולצה ומכנס. המידות נמדדו על הבגד כשהוא מונח שטוח, ורוחב החזה נמדד מבית שחי לבית שחי. ייתכן הבדל של 1–2 ס״מ. כדאי לבחור לפי הגובה של הילד; הגיל הוא רק כיוון.',
+      en: "The set includes a jersey and shorts. Measured on the garment lying flat; chest width is measured from armpit to armpit. Allow 1–2 cm of difference. Choose by your child's height; the age is only a guide.",
+      ar: 'يشمل الطقم قميصًا وشورتًا. تم القياس والقطعة مفرودة على سطح مستوٍ، ويُقاس عرض الصدر من الإبط إلى الإبط. قد يوجد فرق 1–2 سم. اختاروا حسب طول الطفل، فالعمر للإرشاد فقط.',
     },
   },
 };
@@ -157,7 +160,9 @@ function supplierRows(chart, sizes) {
   const rows = JERSEYXIE.charts[chart]?.rows ?? [];
   const picked = rows.filter((row) => sizes.includes(row.size));
   if (picked.length !== sizes.length) throw new Error(`jerseyxie chart "${chart}" lacks some of ${sizes.join(', ')}`);
-  return picked;
+  return picked.map((row) =>
+    Object.fromEntries(STORE_ROW_KEYS.filter((key) => key in row).map((key) => [key, row[key]])),
+  );
 }
 
 export const OPTION_NAME = { he: 'מידה', en: 'Size', ar: 'المقاس' };
@@ -215,7 +220,10 @@ const BASKETBALL_SHORTS_KEYWORDS = ['מכנס', 'מכנסיים', 'shorts', 'ش�
 /**
  * The 8 demo products of the store, then 2 preview-only ones with the supplier's size charts. Optional
  * fields: sizes (default by audience), sizeChart (SIZE_CHARTS handle, default demo-adult / demo-kids),
- * soldOut, price (agorot, like Shopify's cents; default PRICE), description (DESCRIPTION key).
+ * soldOut, price (agorot, like Shopify's cents; default PRICE), description (DESCRIPTION key),
+ * untranslatedOption (the size option keeps its Hebrew name "מידה" in every language, as the store's
+ * supplier products do: e.g. real-madrid-home-jersey-2026-27 has no en/ar translation of it, read on
+ * 2026-09-26).
  */
 const DEMO_PRODUCTS = [
   {
@@ -386,7 +394,8 @@ const DEMO_PRODUCTS = [
     image: 'demo-united-third',
     extraTags: [],
     keywords: FOOTBALL_KEYWORDS,
-    sizeChart: 'jerseyxie-football-adult',
+    sizeChart: 'jerseyxie-football-adult-fan',
+    untranslatedOption: true,
     soldOut: ['L'],
     counterpart: 'demo-united-away-kit-2026-27-kids',
     createdAt: '2026-09-14T10:00:00+03:00',
@@ -410,6 +419,7 @@ const DEMO_PRODUCTS = [
     keywords: [...FOOTBALL_KEYWORDS, ...KIDS_KEYWORDS],
     sizes: KIDS_SET_SIZES,
     sizeChart: 'jerseyxie-football-kids-set',
+    untranslatedOption: true,
     soldOut: ['26'],
     // Kids sets: catalog/pricing.json (Football Kit, kids).
     price: 9900,
@@ -605,10 +615,11 @@ export const PAGES = [
   {
     handle: 'size-guide',
     title: { he: 'מדריך מידות', en: 'Size guide', ar: 'دليل المقاسات' },
+    // The store page's text and its translations (read from the Admin API on 2026-09-26).
     content: {
-      he: '<p>טבלאות המידות יופיעו כאן.</p>',
-      en: '<p>Size charts will appear here.</p>',
-      ar: '<p>ستظهر جداول المقاسات هنا.</p>',
+      he: '<p>כאן תמצאו איך לבחור מידה למבוגרים ולילדים. בעמוד של כל מוצר יש גם טבלת מידות משלו, כשהיא זמינה.</p>',
+      en: "<p>Here's how to choose a size for adults and kids. Each product page also has its own size chart, when one is available.</p>",
+      ar: '<p>ستجدون هنا طريقة اختيار المقاس المناسب للكبار والأطفال. كما تحتوي صفحة كل منتج على جدول مقاسات خاص به، عند توفره.</p>',
     },
   },
   {

@@ -54,6 +54,16 @@
         else
           assign selected = filter.active_values.size
         endif
+
+        # An option filter is named after the product option ("מידה" in every language unless
+        # translated), so it is shown in the shopper's language (snippets/option-name.liquid).
+        if filter.param_name contains 'filter.v.option.'
+          capture filter_label
+            render 'option-name', name: filter.label
+          endcapture
+        else
+          assign filter_label = filter.label | escape
+        endif
       -%}
       <details
         id="{{ group_id }}"
@@ -63,7 +73,7 @@
         {% endif %}
       >
         <summary id="{{ group_id }}-summary" class="facets-group__summary">
-          <span class="facets-group__label">{{ filter.label | escape }}</span>
+          <span class="facets-group__label">{{ filter_label }}</span>
           {%- if selected > 0 and filter.type != 'price_range' -%}
             <span class="facets-group__selected" aria-hidden="true">{{ selected }}</span>
             <span class="visually-hidden"> ({{ 'facets.selected_count' | t: count: selected }})</span>
@@ -149,7 +159,7 @@
             endif
           -%}
           <fieldset class="facets-group__body">
-            <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+            <legend class="visually-hidden">{{ filter_label }}</legend>
             <ul
               id="{{ list_id }}"
               class="facets-values{% if as_buttons %} facets-values--buttons{% endif %}{% if collapsible and extra_selected == false %} facets-values--collapsed{% endif %}"

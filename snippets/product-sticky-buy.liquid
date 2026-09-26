@@ -48,6 +48,20 @@
   assign bar_id = 'StickyBuy-' | append: section_id
   assign bar_error_id = bar_id | append: '-error'
   assign thumb = product.featured_media.preview_image
+
+  # A short ending after the title's last dash (kids products end in " – Kids", " – ילדים") stays in
+  # view: when the bar's title has to be cut, the rest of the title is cut instead.
+  assign title_name = product.title
+  assign title_end = ''
+  assign title_parts = product.title | split: ' – '
+  if title_parts.size > 1
+    assign title_end = title_parts | last | strip
+    if title_end.size > 0 and title_end.size <= 12
+      assign title_name = product.title | remove_last: title_end | strip | remove_last: ' –' | strip
+    else
+      assign title_end = ''
+    endif
+  endif
 -%}
 <sw-sticky-buy class="product-sticky js-only" role="region" aria-label="{{ 'products.sticky.label' | t }}" inert>
   <div class="product-sticky__card color-{{ color_scheme }}">
@@ -56,7 +70,12 @@
         {{- thumb | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' -}}
       </span>
     {%- endif -%}
-    <p class="product-sticky__title">{{ product.title | escape }}</p>
+    <p class="product-sticky__title">
+      <span class="product-sticky__name">{{ title_name | escape }}</span>
+      {%- if title_end != blank -%}
+        <span class="product-sticky__title-end">&nbsp;– {{ title_end | escape }}</span>
+      {%- endif -%}
+    </p>
     <div class="product-sticky__price" data-product-dynamic="sticky-price">
       {%- if show_product_price -%}
         {%- render 'price', product: product -%}
@@ -146,7 +165,10 @@
           </span>
         {%- endif -%}
         <div class="size-sheet__product">
-          <h2 id="{{ sheet_title_id }}" class="size-sheet__title">{{ product.title | escape }}</h2>
+          {%- comment -%} The title's ending stays together, as on product cards (snippets/product-card.liquid). {%- endcomment -%}
+          <h2 id="{{ sheet_title_id }}" class="size-sheet__title">
+            {{- product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+          </h2>
           <div class="size-sheet__price" data-product-dynamic="sheet-price">
             {%- if show_product_price -%}
               {%- render 'price', product: product -%}
@@ -299,20 +321,32 @@
     border-radius: var(--radius-card);
   }
 
+  /* One line. When it has to be cut, the name gets the ellipsis and the short ending after the dash
+     (the audience of kids products) stays whole. */
   .product-sticky__title {
     grid-area: title;
     align-self: end;
-    overflow: hidden;
+    display: flex;
+    min-inline-size: 0;
     font-size: var(--text-sm);
     font-weight: 800;
     line-height: var(--leading-tight);
-    text-overflow: ellipsis;
     white-space: nowrap;
 
     @media screen and (min-width: 990px) {
       align-self: center;
       font-size: var(--text-md);
     }
+  }
+
+  .product-sticky__name {
+    min-inline-size: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-sticky__title-end {
+    flex: none;
   }
 
   /* The price never wraps; when the column is too narrow for both prices (a size chip, a long

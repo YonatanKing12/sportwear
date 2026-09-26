@@ -54,7 +54,10 @@
             class: 'image-with-text__image'
           -%}
         {%- else -%}
-          {%- comment -%} No image yet: a drawn kids kit next to the height scale of the kids sizes (116–164 cm). {%- endcomment -%}
+          {%- comment -%}
+            No image yet: a drawn kids kit next to a height scale for the kids sets (sizes 16-28:
+            95-165 cm, catalog/size-charts/jerseyxie.json).
+          {%- endcomment -%}
           <span class="image-with-text__illustration" aria-hidden="true">
             <svg class="image-with-text__art" viewBox="0 0 400 300" focusable="false">
               <g transform="translate(70 56) scale(1.05)">
@@ -64,12 +67,11 @@
               </g>
               <g class="image-with-text__scale" transform="translate(330 70)">
                 <path d="M0 0V200"/>
-                <path d="M0 8H14M0 56H14M0 104H14M0 152H14M0 200H14"/>
-                <text x="-8" y="13">164</text>
-                <text x="-8" y="61">152</text>
-                <text x="-8" y="109">140</text>
-                <text x="-8" y="157">128</text>
-                <text x="-8" y="205">116</text>
+                <path d="M0 8H14M0 72H14M0 136H14M0 200H14"/>
+                <text x="-8" y="13">165</text>
+                <text x="-8" y="77">145</text>
+                <text x="-8" y="141">125</text>
+                <text x="-8" y="205">105</text>
               </g>
             </svg>
           </span>

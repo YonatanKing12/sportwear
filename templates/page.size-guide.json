@@ -17,6 +17,8 @@
         "color_scheme": "scheme-day",
         "show_heading": false,
         "default_tab": "adults",
+        "adult_chart": "jerseyxie-football-adult-fan",
+        "kids_chart": "jerseyxie-football-kids-set",
         "show_help": true,
         "padding_top": 16,
         "padding_bottom": 64

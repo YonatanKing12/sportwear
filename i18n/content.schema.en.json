@@ -234,11 +234,11 @@
         },
         "adult_chart": {
           "label": "Adult size chart",
-          "info": "A \"Size chart\" entry from Content > Metaobjects. Without one, measuring tips are shown."
+          "info": "A \"Size chart\" entry from Content > Metaobjects. Without one, the tab says that each product's chart is on its product page."
         },
         "kids_chart": {
           "label": "Kids' size chart",
-          "info": "Optional. Without one, the standard kids' table by height is shown."
+          "info": "A \"Size chart\" entry for kids. Without one, the tab shows a short note on kids' sizes. How to measure is shown below the tabs either way."
         },
         "show_help": {
           "label": "Show WhatsApp help",

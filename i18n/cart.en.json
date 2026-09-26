@@ -37,7 +37,7 @@
     "upsell": {
       "heading": "Complete the set",
       "add": "Add",
-      "option_label": "{{ option }}: {{ title }}",
+      "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "unlocks free shipping"
     },
     "note": {
