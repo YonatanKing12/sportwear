@@ -1,0 +1,41 @@
+{
+  "date_formats": {
+    "month_day_year": "%B %d, %Y"
+  },
+  "smoke": {
+    "skip": "Skip to content",
+    "added": "Added to cart",
+    "menu": "Menu",
+    "close": "Close",
+    "cart_title": "Cart",
+    "cart_count": {
+      "one": "Cart, {{ count }} item",
+      "other": "Cart, {{ count }} items"
+    },
+    "cart_empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Check out",
+    "add_to_cart": "Add to cart",
+    "sold_out": "Sold out",
+    "size": "Size",
+    "sale": "Sale",
+    "team": "Team",
+    "kids_version": "Kids version",
+    "adult_version": "Adult version",
+    "complete_set": "Complete the set",
+    "results": {
+      "one": "{{ count }} result for \"{{ terms }}\"",
+      "other": "{{ count }} results for \"{{ terms }}\""
+    },
+    "page_of": "Page {{ current }} of {{ total }}",
+    "language": "Language",
+    "hello_html": "<strong>Hello</strong> {{ name }}",
+    "escaped": "Tom & \"Jerry's\"",
+    "not_found": "Page not found",
+    "collections_title": "Collections",
+    "filters": "Filter",
+    "sort": "Sort",
+    "view_all": "View all",
+    "fallback_only": "A string that also exists in English"
+  }
+}

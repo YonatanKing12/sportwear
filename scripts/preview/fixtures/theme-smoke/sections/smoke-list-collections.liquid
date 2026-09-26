@@ -1,0 +1,29 @@
+<div class="smoke-collections color-{{ section.settings.color_scheme.id }}">
+  <h1>{{ 'smoke.collections_title' | t }}</h1>
+  {%- paginate collections by section.settings.per_page -%}
+    <ul class="smoke-grid" role="list" data-paginate="{{ paginate.current_page }}/{{ paginate.pages }}">
+      {%- for item in collections -%}
+        <li>
+          <a href="{{ item.url }}">
+            {%- if item.featured_image -%}
+              {{ item.featured_image | image_url: width: 400 | image_tag: sizes: '200px', loading: 'lazy', alt: '' }}
+            {%- else -%}
+              {{ 'collection-apparel-1' | placeholder_svg_tag: 'smoke-placeholder' }}
+            {%- endif -%}
+            {{ item.title }} ({{ item.products_count }})
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endpaginate -%}
+</div>
+
+{% schema %}
+{
+  "name": "Collections list",
+  "settings": [
+    { "type": "range", "id": "per_page", "label": "Per page", "min": 4, "max": 24, "step": 2, "default": 12 },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ]
+}
+{% endschema %}

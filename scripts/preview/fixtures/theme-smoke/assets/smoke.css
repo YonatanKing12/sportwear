@@ -1,0 +1,128 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+}
+
+img,
+svg {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+.smoke-cart table {
+  display: block;
+  overflow-x: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.skip {
+  position: absolute;
+  inset-inline-start: 8px;
+  transform: translateY(-200%);
+}
+
+.skip:focus {
+  transform: none;
+}
+
+.smoke-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 990px) {
+  .smoke-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.smoke-blocks,
+.smoke-featured,
+.smoke-checks,
+.smoke-product,
+.smoke-collection,
+.smoke-cart,
+.smoke-search,
+.smoke-page,
+.smoke-404,
+.smoke-collections,
+.smoke-footer,
+.smoke-announcement {
+  padding: 16px;
+}
+
+.smoke-product__image {
+  display: block;
+  inline-size: 100%;
+  max-inline-size: 480px;
+  block-size: auto;
+  background: #f1f2f4;
+}
+
+.smoke-placeholder {
+  inline-size: 120px;
+  block-size: 120px;
+  fill: currentColor;
+}
+
+.smoke-button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #0d0e11;
+}
+
+.smoke-drawer {
+  position: fixed;
+  inset-block: 0;
+  inset-inline: auto 0;
+  inline-size: min(380px, 90vw);
+  block-size: 100dvh;
+  max-block-size: none;
+  margin: 0;
+  border: 0;
+  padding: 16px;
+}
+
+.smoke-drawer--start {
+  inset-inline: 0 auto;
+}
+
+.smoke-drawer::backdrop {
+  background: rgb(0 0 0 / 0.5);
+}
+
+.smoke-lines {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.smoke-line {
+  display: flex;
+  gap: 12px;
+}
+
+.smoke-size--sold-out span {
+  text-decoration: line-through;
+}

@@ -1,0 +1,29 @@
+<div class="smoke-search color-{{ section.settings.color_scheme.id }}">
+  <form action="{{ routes.search_url }}" role="search">
+    <input type="search" name="q" value="{{ search.terms | escape }}" aria-label="search">
+  </form>
+  {%- if search.performed -%}
+    <h1>{{ 'smoke.results' | t: count: search.results_count, terms: search.terms }}</h1>
+    {%- paginate search.results by 4 -%}
+      <ul class="smoke-grid" role="list">
+        {%- for item in search.results -%}
+          {%- if item.object_type == 'product' -%}
+            {% render 'smoke-card', product: item %}
+          {%- else -%}
+            <li>
+              <a href="{{ item.url }}">{{ item.title | highlight: search.terms }}</a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+      <p data-paginate="{{ paginate.current_page }}/{{ paginate.pages }}">{{ paginate | default_pagination }}</p>
+    {%- endpaginate -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Search",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }]
+}
+{% endschema %}

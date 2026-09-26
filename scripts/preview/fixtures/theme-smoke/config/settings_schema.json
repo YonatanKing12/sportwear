@@ -1,0 +1,54 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Preview smoke theme",
+    "theme_version": "1.0.0",
+    "theme_author": "SportWear",
+    "theme_documentation_url": "https://example.com",
+    "theme_support_url": "https://example.com"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color_scheme_group",
+        "id": "color_schemes",
+        "definition": [
+          { "type": "color", "id": "background", "label": "Background", "default": "#FFFFFF" },
+          { "type": "color", "id": "text", "label": "Text", "default": "#111111" }
+        ],
+        "role": {
+          "text": "text",
+          "background": { "solid": "background", "gradient": "background" },
+          "links": "text",
+          "icons": "text",
+          "primary_button": "text",
+          "on_primary_button": "background",
+          "primary_button_border": "text",
+          "secondary_button": "background",
+          "on_secondary_button": "text",
+          "secondary_button_border": "text"
+        }
+      },
+      { "type": "color_scheme", "id": "body_color_scheme", "label": "Body", "default": "scheme-light" },
+      { "type": "color", "id": "accent", "label": "Accent", "default": "#C6FF3D" }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "radius",
+        "label": "Radius",
+        "min": 0,
+        "max": 16,
+        "step": 2,
+        "unit": "px",
+        "default": 4
+      },
+      { "type": "checkbox", "id": "show_vendor", "label": "Show vendor", "default": false },
+      { "type": "image_picker", "id": "logo", "label": "Logo" }
+    ]
+  }
+]

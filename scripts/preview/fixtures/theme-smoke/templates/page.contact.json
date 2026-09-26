@@ -1,0 +1,11 @@
+{
+  "wrapper": "div#SmokeWrapper.smoke-wrapper[data-template=contact]",
+  "sections": {
+    "main": {
+      "type": "smoke-page",
+      "settings": { "color_scheme": "scheme-light" },
+      "custom_css": [".rte { outline: 2px dashed currentColor; }"]
+    }
+  },
+  "order": ["main"]
+}

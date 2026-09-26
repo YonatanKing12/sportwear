@@ -1,0 +1,43 @@
+{
+  "date_formats": {
+    "month_day_year": "%d/%m/%Y"
+  },
+  "smoke": {
+    "skip": "דילוג לתוכן",
+    "added": "נוסף לסל",
+    "menu": "תפריט",
+    "close": "סגירה",
+    "cart_title": "סל הקניות",
+    "cart_count": {
+      "one": "סל, פריט אחד",
+      "two": "סל, 2 פריטים",
+      "other": "סל, {{ count }} פריטים"
+    },
+    "cart_empty": "הסל ריק",
+    "subtotal": "סכום ביניים",
+    "checkout": "לתשלום",
+    "add_to_cart": "הוספה לסל",
+    "sold_out": "אזל",
+    "size": "מידה",
+    "sale": "מבצע",
+    "team": "קבוצה",
+    "kids_version": "לגרסת הילדים",
+    "adult_version": "לגרסת המבוגרים",
+    "complete_set": "השלימו את הסט",
+    "results": {
+      "one": "תוצאה אחת עבור \"{{ terms }}\"",
+      "two": "2 תוצאות עבור \"{{ terms }}\"",
+      "other": "{{ count }} תוצאות עבור \"{{ terms }}\""
+    },
+    "page_of": "עמוד {{ current }} מתוך {{ total }}",
+    "language": "שפה",
+    "hello_html": "<strong>שלום</strong> {{ name }}",
+    "escaped": "טום & \"ג'רי\"",
+    "not_found": "הדף לא נמצא",
+    "collections_title": "קטגוריות",
+    "filters": "סינון",
+    "sort": "מיון",
+    "view_all": "הצגת הכול",
+    "fallback_only": "מחרוזת שקיימת רק בעברית"
+  }
+}

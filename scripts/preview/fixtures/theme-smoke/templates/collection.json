@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "smoke-collection", "settings": { "per_page": 3 } }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,16 @@
+{%- doc -%}
+  Price of a product's selected (or first available) variant, with compare-at.
+
+  @param {product} product - The product
+{%- enddoc -%}
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign current = variant.price
+  assign compare = variant.compare_at_price
+-%}
+<span class="smoke-price" data-cents="{{ current }}">
+  {{- current | money_without_trailing_zeros -}}
+  {%- if compare > current %}
+    <s>{{ compare | money_without_trailing_zeros }}</s>
+  {%- endif -%}
+</span>

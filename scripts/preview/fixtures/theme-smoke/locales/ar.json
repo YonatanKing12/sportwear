@@ -1,0 +1,48 @@
+{
+  "date_formats": {
+    "month_day_year": "%d/%m/%Y"
+  },
+  "smoke": {
+    "skip": "الانتقال إلى المحتوى",
+    "added": "تمت الإضافة إلى السلة",
+    "menu": "القائمة",
+    "close": "إغلاق",
+    "cart_title": "السلة",
+    "cart_count": {
+      "zero": "السلة فارغة",
+      "one": "السلة، منتج واحد",
+      "two": "السلة، منتجان",
+      "few": "السلة، {{ count }} منتجات",
+      "many": "السلة، {{ count }} منتجًا",
+      "other": "السلة، {{ count }} منتج"
+    },
+    "cart_empty": "سلتكم فارغة",
+    "subtotal": "المجموع الفرعي",
+    "checkout": "الدفع",
+    "add_to_cart": "أضف إلى السلة",
+    "sold_out": "نفد",
+    "size": "المقاس",
+    "sale": "تخفيض",
+    "team": "الفريق",
+    "kids_version": "نسخة الأطفال",
+    "adult_version": "نسخة الكبار",
+    "complete_set": "أكملوا الطقم",
+    "results": {
+      "zero": "لا نتائج لـ \"{{ terms }}\"",
+      "one": "نتيجة واحدة لـ \"{{ terms }}\"",
+      "two": "نتيجتان لـ \"{{ terms }}\"",
+      "few": "{{ count }} نتائج لـ \"{{ terms }}\"",
+      "many": "{{ count }} نتيجة لـ \"{{ terms }}\"",
+      "other": "{{ count }} نتيجة لـ \"{{ terms }}\""
+    },
+    "page_of": "صفحة {{ current }} من {{ total }}",
+    "language": "اللغة",
+    "hello_html": "<strong>مرحبًا</strong> {{ name }}",
+    "escaped": "توم & \"جيري\"",
+    "not_found": "الصفحة غير موجودة",
+    "collections_title": "المجموعات",
+    "filters": "تصفية",
+    "sort": "ترتيب",
+    "view_all": "عرض الكل"
+  }
+}

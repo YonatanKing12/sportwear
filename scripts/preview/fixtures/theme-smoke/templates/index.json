@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ * (Smoke-test fixture: Shopify writes a comment like this at the top of JSON templates.)
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "smoke-hero",
+      "settings": {
+        "image": "shopify://shop_images/demo-fc-home-front.png",
+        "secondary_image": "shopify://shop_images/not-uploaded-banner.jpg",
+        "heading": "",
+        "link": "shopify://collections/football",
+        "padding": 24,
+        "color_scheme": "scheme-dark"
+      }
+    },
+    "blocks": {
+      "type": "smoke-blocks",
+      "blocks": {
+        "group_1": {
+          "type": "smoke-group",
+          "settings": { "heading": "Nested group", "color_scheme": "scheme-dark" },
+          "blocks": {
+            "text_1": { "type": "smoke-text", "settings": { "text": "First <b>nested</b> text", "size": "large" } },
+            "text_2": { "type": "smoke-text", "settings": { "text": "Second nested text" } },
+            "text_off": { "type": "smoke-text", "disabled": true, "settings": { "text": "DISABLED BLOCK" } }
+          },
+          "block_order": ["text_1", "text_2", "text_off"]
+        },
+        "text_3": { "type": "smoke-text", "settings": { "text": "Top-level text" } },
+        "app_1": { "type": "shopify://apps/demo-app/blocks/badge/0000", "settings": {} },
+        "cta": {
+          "type": "smoke-button",
+          "static": true,
+          "settings": { "label": "From JSON", "link": "shopify://pages/contact" }
+        }
+      },
+      "block_order": ["group_1", "text_3", "app_1"],
+      "settings": { "heading": "Theme blocks", "cta_label": "" }
+    },
+    "featured": {
+      "type": "smoke-featured",
+      "blocks": {
+        "heading_1": { "type": "heading", "settings": { "text": "" } },
+        "note_1": { "type": "note", "settings": {} }
+      },
+      "block_order": ["heading_1", "note_1"],
+      "settings": { "collection": "football", "limit": 4, "stale_setting": "not in schema" }
+    },
+    "checks": {
+      "type": "smoke-checks",
+      "settings": { "show_gaps": true }
+    },
+    "off": {
+      "type": "smoke-checks",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": ["hero", "blocks", "featured", "checks", "off"]
+}

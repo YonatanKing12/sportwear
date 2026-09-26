@@ -1,0 +1,31 @@
+<p class="smoke-text smoke-text--{{ block.settings.size }}" {{ block.shopify_attributes }}>
+  {{- block.settings.text -}}
+  {%- if closest.product != blank %} · {{ closest.product.title }}{% endif -%}
+</p>
+
+{% stylesheet %}
+  .smoke-text--large {
+    font-size: 1.4rem;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Text",
+  "tag": null,
+  "settings": [
+    { "type": "inline_richtext", "id": "text", "label": "Text", "default": "Text block" },
+    {
+      "type": "select",
+      "id": "size",
+      "label": "Size",
+      "options": [
+        { "value": "small", "label": "Small" },
+        { "value": "large", "label": "Large" }
+      ],
+      "default": "small"
+    }
+  ],
+  "presets": [{ "name": "Text" }]
+}
+{% endschema %}

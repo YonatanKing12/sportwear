@@ -1,0 +1,25 @@
+{%- liquid
+  assign text = section.settings.text
+  if text == blank
+    assign text = 'smoke.hello_html' | t: name: shop.name
+  endif
+-%}
+<div
+  class="smoke-announcement color-{{ section.settings.color_scheme.id }}"
+  data-index="{{ section.index }}"
+  data-location="{{ section.location }}"
+>
+  <p>{{ text }} · {{ 'smoke.escaped' | t }}</p>
+</div>
+
+{% schema %}
+{
+  "name": "Announcement",
+  "tag": "aside",
+  "class": "smoke-announcement-section",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Text" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ]
+}
+{% endschema %}

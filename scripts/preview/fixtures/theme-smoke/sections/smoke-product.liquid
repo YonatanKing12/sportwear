@@ -1,0 +1,124 @@
+{%- liquid
+  assign variant = product.selected_or_first_available_variant
+  assign team = product.metafields.sportwear.team.value
+  assign counterpart = product.metafields.sportwear.counterpart.value
+  assign complements = product.metafields.sportwear.complements.value
+  assign chart = product.metafields.sportwear.size_chart.value
+-%}
+<div class="smoke-product color-{{ section.settings.color_scheme.id }}">
+  <div class="smoke-product__media">
+    {%- for media in product.media -%}
+      {%- if forloop.first -%}
+        {{
+          media
+          | image_url: width: 1440
+          | image_tag:
+            widths: '360, 720, 1080, 1440',
+            sizes: '(min-width: 990px) 50vw, 100vw',
+            loading: 'eager',
+            fetchpriority: 'high',
+            class: 'smoke-product__image'
+        }}
+      {%- else -%}
+        {{
+          media.preview_image
+          | image_url: width: 720
+          | image_tag: sizes: '(min-width: 990px) 25vw, 50vw', loading: 'lazy', class: 'smoke-product__image'
+        }}
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+  <div class="smoke-product__info">
+    {%- if team != blank -%}
+      <p class="smoke-product__team">
+        {{ team.name.value }}
+        {%- for league in team.leagues.value %}
+          · {{ league.name.value -}}
+        {%- endfor -%}
+        · <bdi>{{ product.metafields.sportwear.season.value }}</bdi> ·
+        {{ product.metafields.sportwear.kit }}
+      </p>
+    {%- endif -%}
+    <h1>{{ product.title }}</h1>
+    {% render 'smoke-price', product: product %}
+    {%- form 'product', product, id: 'SmokeProductForm', class: 'smoke-form', data-type: 'add-to-cart' -%}
+      <input type="hidden" name="id" value="{{ variant.id }}">
+      {%- for option in product.options_with_values -%}
+        <fieldset>
+          <legend>{{ option.name }}</legend>
+          {%- for value in option.values -%}
+            <label class="smoke-size{% if value.available == false %} smoke-size--sold-out{% endif %}">
+              <input
+                type="radio"
+                name="option-{{ option.position }}"
+                value="{{ value | escape }}"
+                data-variant-id="{{ value.variant.id }}"
+                {% if value.selected %}
+                  checked
+                {% endif %}
+                {% if value.available == false %}
+                  disabled
+                {% endif %}
+              >
+              <span>{{ value }}</span>
+            </label>
+          {%- endfor -%}
+        </fieldset>
+      {%- endfor -%}
+      <button
+        type="submit"
+        name="add"
+        {% if variant.available == false %}
+          disabled
+        {% endif %}
+      >
+        {{ 'smoke.add_to_cart' | t }}
+      </button>
+    {%- endform -%}
+    {%- if counterpart != blank -%}
+      <p>
+        <a href="{{ counterpart.url }}">
+          {%- if product.metafields.sportwear.audience.value == 'kids' -%}
+            {{ 'smoke.adult_version' | t }}
+          {%- else -%}
+            {{ 'smoke.kids_version' | t }}
+          {%- endif -%}
+        </a>
+      </p>
+    {%- endif -%}
+    {%- if complements != blank -%}
+      <h2>{{ 'smoke.complete_set' | t }}</h2>
+      <ul role="list" class="smoke-grid">
+        {%- render 'smoke-card' for complements as product -%}
+      </ul>
+    {%- endif -%}
+    {%- if chart != blank -%}
+      <table class="smoke-chart">
+        <caption>
+          {{ chart.name.value }}
+        </caption>
+        {%- for row in chart.table.value -%}
+          <tr>
+            <th scope="row">{{ row.size }}</th>
+            <td>{{ row.chest_cm }}</td>
+            <td>{{ row.length_cm }}</td>
+          </tr>
+        {%- endfor -%}
+      </table>
+    {%- endif -%}
+    <div class="rte">{{ product.description }}</div>
+    {% content_for 'blocks', closest.product: product %}
+  </div>
+</div>
+{{ product | structured_data }}
+<script type="application/json" data-product-json>
+  {{ product | json }}
+</script>
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }],
+  "blocks": [{ "type": "@theme" }]
+}
+{% endschema %}

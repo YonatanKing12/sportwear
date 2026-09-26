@@ -1,0 +1,17 @@
+<div class="smoke-group color-{{ block.settings.color_scheme.id }}" {{ block.shopify_attributes }}>
+  <h3>{{ block.settings.heading }}</h3>
+  {% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "Group",
+  "class": "smoke-group-block",
+  "blocks": [{ "type": "@theme" }],
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Group" },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }
+  ],
+  "presets": [{ "name": "Group" }]
+}
+{% endschema %}

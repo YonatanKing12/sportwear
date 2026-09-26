@@ -1,0 +1,41 @@
+<div class="smoke-cart color-{{ section.settings.color_scheme.id }}">
+  <h1>{{ 'smoke.cart_title' | t }}</h1>
+  {%- if cart.item_count == 0 -%}
+    <p data-cart-empty>{{ 'smoke.cart_empty' | t }}</p>
+  {%- else -%}
+    {%- form 'cart', cart, id: 'SmokeCartForm' -%}
+      <table>
+        {%- for item in cart.items -%}
+          <tr data-key="{{ item.key }}">
+            <td>
+              {{ item.image | image_url: width: 200 | image_tag: sizes: '100px', widths: '100, 200', alt: item.title }}
+            </td>
+            <td>
+              <a href="{{ item.url }}">{{ item.product.title }}</a> ·
+              <bdi>{{ item.variant.title }}</bdi>
+            </td>
+            <td>
+              <input
+                type="number"
+                name="updates[]"
+                value="{{ item.quantity }}"
+                min="0"
+                aria-label="{{ item.title | escape }}"
+              >
+            </td>
+            <td>{{ item.final_line_price | money }}</td>
+          </tr>
+        {%- endfor -%}
+      </table>
+      <p>{{ 'smoke.subtotal' | t }}: {{ cart.total_price | money_with_currency }}</p>
+      <button type="submit" name="checkout">{{ 'smoke.checkout' | t }}</button>
+    {%- endform -%}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-light" }]
+}
+{% endschema %}

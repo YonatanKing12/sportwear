@@ -1,0 +1,6 @@
+{
+  "sections": {
+    "main": { "type": "smoke-404", "settings": {} }
+  },
+  "order": ["main"]
+}

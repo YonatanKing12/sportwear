@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "smoke-product",
+      "blocks": {
+        "text_1": { "type": "smoke-text", "settings": { "text": "Closest product" } }
+      },
+      "block_order": ["text_1"],
+      "settings": {}
+    },
+    "featured": {
+      "type": "smoke-featured",
+      "settings": { "collection": "new", "limit": 2 }
+    }
+  },
+  "order": ["main", "featured"]
+}

@@ -1,0 +1,34 @@
+{%- assign menu_handles = 'footer-shop,footer' | split: ',' -%}
+<footer class="smoke-footer color-{{ section.settings.color_scheme.id }}">
+  {%- for handle in menu_handles -%}
+    {%- assign menu = linklists[handle] -%}
+    <nav aria-label="{{ menu.title }}">
+      <h2>{{ menu.title }}</h2>
+      <ul role="list">
+        {%- for link in menu.links -%}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endfor -%}
+  <ul class="smoke-footer__payments" role="list">
+    {%- for type in shop.enabled_payment_types -%}
+      <li>{{ type | payment_type_svg_tag: class: 'smoke-icon' }}</li>
+    {%- endfor -%}
+  </ul>
+  <p>
+    <small>
+      &copy; {{ 'now' | date: '%Y' }}
+      {{ shop.name }} · {{ '2026-09-26T09:00:00+03:00' | date: format: 'month_day_year' }} · {{ powered_by_link }}
+    </small>
+  </p>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [{ "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-dark" }]
+}
+{% endschema %}
