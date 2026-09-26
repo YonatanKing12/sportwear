@@ -1,16 +1,25 @@
 {%- doc -%}
-  Mobile menu drawer (<sw-drawer id="MenuDrawer">), opened by the header's menu button. Shows the
-  menu (up to 3 levels, sub-levels collapse with details/summary), then the account link, the
-  language switcher, a WhatsApp link for team orders, the social links and the trust lines.
-  The branch of the current page starts expanded.
+  Mobile menu drawer (<sw-drawer id="MenuDrawer">), opened by the header's menu button below 990px.
+  The first level lists the top-level links as large rows with a small category image; a link with
+  sub-links opens a panel that slides over the list (<sw-drill-menu> in assets/header.js) with a
+  back button, a "Shop all" row and the sub-links as a two-column grid of image tiles
+  (snippets/header-tile, the same tiles as the desktop mega menu). Opening a panel moves focus to its
+  back button; back (or Escape) returns focus to the row. Without JavaScript the panels are plain
+  details/summary accordions. Under the menu: account, language, a WhatsApp link for team orders,
+  the social links and the delivery, returns and payment lines.
 
   @param {linklist} [menu] - The menu to show (the header's "Menu" setting)
+  @param {string} [hidden_links] - Positions of links to leave out, e.g. ',4,1-3,' (see sections/header.liquid)
+  @param {number} [visible_links] - How many top-level links are left to show (default: all of them)
   @param {string} color_scheme - Color scheme id for the drawer, the header's, e.g. 'scheme-night'
 
   @example
-  {% render 'menu-drawer', menu: section.settings.menu, color_scheme: section.settings.color_scheme.id %}
+  {% render 'menu-drawer', menu: section.settings.menu, hidden_links: hidden_links, color_scheme: section.settings.color_scheme.id %}
 {%- enddoc -%}
 {%- liquid
+  assign hidden = hidden_links | default: ','
+  assign link_total = visible_links | default: menu.links.size
+
   capture whatsapp_digits
     render 'whatsapp-digits'
   endcapture
@@ -21,7 +30,7 @@
 <sw-drawer id="MenuDrawer">
   <dialog
     id="MenuDrawerDialog"
-    class="drawer drawer--start color-{{ color_scheme }}"
+    class="drawer drawer--start menu-drawer color-{{ color_scheme }}"
     aria-labelledby="MenuDrawerTitle"
   >
     <div class="drawer__header">
@@ -38,147 +47,198 @@
       </button>
     </div>
 
-    <div class="drawer__body">
-      {%- if menu.links.size > 0 -%}
-        <nav class="menu-drawer__nav" aria-label="{{ 'header.menu.nav_label' | t }}">
-          <ul class="menu-drawer__list" role="list">
-            {%- for link in menu.links -%}
-              <li class="menu-drawer__entry">
-                {%- if link.links.size > 0 -%}
-                  <details
-                    class="menu-drawer__details"
-                    {% if link.child_active %}
-                      open
-                    {% endif %}
-                  >
-                    <summary class="menu-drawer__item menu-drawer__toggle">
-                      <span>{{ link.title | escape }}</span>
-                      {%- render 'icon', name: 'chevron-down', size: 20, class: 'menu-drawer__chevron' -%}
-                    </summary>
-                    <ul class="menu-drawer__sublist" role="list">
-                      {%- if link.url != blank and link.url != '#' -%}
-                        <li>
-                          <a class="menu-drawer__subitem menu-drawer__subitem--strong" href="{{ link.url }}">
-                            {{- 'general.view_all' | t -}}
-                            <span class="visually-hidden">: {{ link.title | escape }}</span>
-                          </a>
-                        </li>
-                      {%- endif -%}
-                      {%- for child in link.links -%}
-                        <li>
-                          {%- if child.links.size > 0 -%}
-                            <details
-                              class="menu-drawer__details"
-                              {% if child.child_active %}
-                                open
-                              {% endif %}
-                            >
-                              <summary class="menu-drawer__subitem menu-drawer__toggle">
-                                <span>{{ child.title | escape }}</span>
-                                {%- render 'icon', name: 'chevron-down', size: 18, class: 'menu-drawer__chevron' -%}
-                              </summary>
-                              <ul class="menu-drawer__sublist" role="list">
-                                {%- if child.url != blank and child.url != '#' -%}
-                                  <li>
-                                    <a
-                                      class="menu-drawer__subitem menu-drawer__subitem--strong"
-                                      href="{{ child.url }}"
-                                    >
-                                      {{- 'general.view_all' | t -}}
-                                      <span class="visually-hidden">: {{ child.title | escape }}</span>
-                                    </a>
-                                  </li>
-                                {%- endif -%}
-                                {%- for grandchild in child.links -%}
-                                  <li>
-                                    <a
-                                      class="menu-drawer__subitem"
-                                      href="{{ grandchild.url }}"
-                                      {% if grandchild.current %}
-                                        aria-current="page"
-                                      {% endif %}
-                                    >
-                                      {{- grandchild.title | escape -}}
-                                    </a>
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
-                            </details>
-                          {%- else -%}
-                            <a
-                              class="menu-drawer__subitem"
-                              href="{{ child.url }}"
-                              {% if child.current %}
-                                aria-current="page"
-                              {% endif %}
-                            >
-                              {{- child.title | escape -}}
+    <sw-drill-menu class="menu-drawer__body">
+      <div class="menu-drawer__main">
+        {%- if menu.links.size > 0 and link_total > 0 -%}
+          <nav class="menu-drawer__nav" aria-label="{{ 'header.menu.nav_label' | t }}">
+            <ul class="menu-drawer__list" role="list">
+              {%- for link in menu.links -%}
+                {%- liquid
+                  assign link_index = forloop.index
+                  assign link_key = ',' | append: link_index | append: ','
+
+                  assign visible_children = 0
+                  for child in link.links
+                    assign child_key = ',' | append: link_index | append: '-' | append: forloop.index | append: ','
+                    unless hidden contains child_key
+                      assign visible_children = visible_children | plus: 1
+                    endunless
+                  endfor
+
+                  assign thumb = null
+                  assign parent_count = 0
+                  case link.type
+                    when 'collection_link'
+                      assign thumb = link.object.featured_image
+                      assign parent_count = link.object.all_products_count
+                    when 'product_link'
+                      assign thumb = link.object.featured_media.preview_image
+                  endcase
+
+                  assign row_class = 'menu-drawer__row'
+                  if link.active or link.child_active
+                    assign row_class = row_class | append: ' menu-drawer__row--active'
+                  endif
+                  if link.type == 'collection_link' and link.object.handle == 'sale'
+                    assign row_class = row_class | append: ' menu-drawer__row--sale'
+                  endif
+                -%}
+                {%- capture row_thumb -%}
+                  <span class="menu-drawer__thumb" aria-hidden="true">
+                    {%- if thumb -%}
+                      {%- render 'image',
+                        image: thumb,
+                        sizes: '48px',
+                        widths: '48, 96, 144',
+                        alt: '',
+                        class: 'menu-drawer__thumb-image'
+                      -%}
+                    {%- else -%}
+                      {%- render 'icon', name: 'shirt', size: 24 -%}
+                    {%- endif -%}
+                  </span>
+                {%- endcapture -%}
+                {%- unless hidden contains link_key -%}
+                  <li class="menu-drawer__entry">
+                    {%- if visible_children > 0 -%}
+                      <details class="menu-drawer__details" data-drill>
+                        <summary class="{{ row_class }}">
+                          {{- row_thumb -}}
+                          <span class="menu-drawer__row-label">{{ link.title | escape }}</span>
+                          {%- render 'icon', name: 'chevron-forward', size: 20, class: 'menu-drawer__chevron' -%}
+                        </summary>
+
+                        <div class="menu-drawer__panel">
+                          <button type="button" class="menu-drawer__back" data-drill-back>
+                            {%- render 'icon', name: 'chevron-back', size: 22 -%}
+                            <span class="menu-drawer__back-title display-s">{{ link.title | escape }}</span>
+                            <span class="visually-hidden">, {{ 'header.menu.back' | t }}</span>
+                          </button>
+
+                          {%- if link.url != blank and link.url != '#' -%}
+                            <a class="menu-drawer__view-all" href="{{ link.url }}">
+                              <span class="menu-drawer__view-all-text">
+                                {{- 'header.mega.shop_all' | t -}}
+                                <span class="visually-hidden">: {{ link.title | escape }}</span>
+                              </span>
+                              {%- if parent_count > 0 -%}
+                                <span class="menu-drawer__view-all-count">
+                                  <span class="visually-hidden">, </span>
+                                  {{- 'header.mega.product_count' | t: count: parent_count -}}
+                                </span>
+                              {%- endif -%}
+                              {%- render 'icon', name: 'arrow-forward', size: 20 -%}
                             </a>
                           {%- endif -%}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </details>
+
+                          <ul class="menu-drawer__grid" role="list">
+                            {%- for child in link.links -%}
+                              {%- liquid
+                                assign child_index = forloop.index
+                                assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+                              -%}
+                              {%- unless hidden contains child_key -%}
+                                <li class="menu-drawer__grid-item">
+                                  {%- render 'header-tile',
+                                    link: child,
+                                    sizes: '(min-width: 480px) 190px, calc(46vw - 28px)'
+                                  -%}
+                                  {%- if child.links.size > 0 -%}
+                                    <ul class="menu-drawer__sublinks" role="list">
+                                      {%- for grandchild in child.links -%}
+                                        {%- liquid
+                                          assign grandchild_key = ',' | append: link_index | append: '-' | append: child_index
+                                          assign grandchild_key = grandchild_key | append: '-' | append: forloop.index | append: ','
+                                        -%}
+                                        {%- unless hidden contains grandchild_key -%}
+                                          <li>
+                                            <a
+                                              class="menu-drawer__sublink"
+                                              href="{{ grandchild.url }}"
+                                              {% if grandchild.current %}
+                                                aria-current="page"
+                                              {% endif %}
+                                            >
+                                              {{- grandchild.title | escape -}}
+                                            </a>
+                                          </li>
+                                        {%- endunless -%}
+                                      {%- endfor -%}
+                                    </ul>
+                                  {%- endif -%}
+                                </li>
+                              {%- endunless -%}
+                            {%- endfor -%}
+                          </ul>
+                        </div>
+                      </details>
+                    {%- else -%}
+                      <a
+                        class="{{ row_class }}"
+                        href="{{ link.url }}"
+                        {% if link.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        {{- row_thumb -}}
+                        <span class="menu-drawer__row-label">{{ link.title | escape }}</span>
+                      </a>
+                    {%- endif -%}
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
+          </nav>
+        {%- endif -%}
+
+        <div class="menu-drawer__footer">
+          {%- if shop.customer_accounts_enabled -%}
+            <a class="menu-drawer__link" href="{{ routes.account_url }}">
+              {%- render 'icon', name: 'user', size: 22 -%}
+              <span>
+                {%- if customer -%}
+                  {{- 'header.account.account' | t -}}
                 {%- else -%}
-                  <a
-                    class="menu-drawer__item"
-                    href="{{ link.url }}"
-                    {% if link.current %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    {{- link.title | escape -}}
-                  </a>
+                  {{- 'header.account.log_in' | t -}}
                 {%- endif -%}
-              </li>
-            {%- endfor -%}
+              </span>
+            </a>
+          {%- endif -%}
+
+          {%- render 'localization-switcher', id: 'MenuLocalization' -%}
+
+          {%- if whatsapp_digits != blank -%}
+            <a
+              class="button button--secondary button--full"
+              href="https://wa.me/{{ whatsapp_digits }}?text={{ whatsapp_text }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {%- render 'icon', name: 'whatsapp', size: 20 -%}
+              <span>{{ 'header.menu.team_orders' | t }}</span>
+              <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+            </a>
+          {%- endif -%}
+
+          {%- render 'social-icons', class: 'menu-drawer__social' -%}
+
+          <ul class="menu-drawer__trust" role="list">
+            <li class="menu-drawer__trust-item">
+              {%- render 'icon', name: 'truck', size: 18 -%}
+              <span>{{ 'general.trust.shipping' | t }}</span>
+            </li>
+            <li class="menu-drawer__trust-item">
+              {%- render 'icon', name: 'return', size: 18 -%}
+              <span>{{ 'general.trust.returns' | t }}</span>
+            </li>
+            <li class="menu-drawer__trust-item">
+              {%- render 'icon', name: 'lock', size: 18 -%}
+              <span>{{ 'general.trust.secure_payment' | t }}</span>
+            </li>
           </ul>
-        </nav>
-      {%- endif -%}
-
-      <div class="menu-drawer__footer">
-        {%- if shop.customer_accounts_enabled -%}
-          <a class="menu-drawer__link" href="{{ routes.account_url }}">
-            {%- render 'icon', name: 'user', size: 22 -%}
-            <span>
-              {%- if customer -%}
-                {{- 'header.account.account' | t -}}
-              {%- else -%}
-                {{- 'header.account.log_in' | t -}}
-              {%- endif -%}
-            </span>
-          </a>
-        {%- endif -%}
-
-        {%- render 'localization-switcher', id: 'MenuLocalization' -%}
-
-        {%- if whatsapp_digits != blank -%}
-          <a
-            class="button button--secondary button--full"
-            href="https://wa.me/{{ whatsapp_digits }}?text={{ whatsapp_text }}"
-            target="_blank"
-            rel="noopener"
-          >
-            {%- render 'icon', name: 'whatsapp', size: 20 -%}
-            <span>{{ 'header.menu.team_orders' | t }}</span>
-            <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
-          </a>
-        {%- endif -%}
-
-        {%- render 'social-icons', class: 'menu-drawer__social' -%}
-
-        <ul class="menu-drawer__trust" role="list">
-          <li class="menu-drawer__trust-item">
-            {%- render 'icon', name: 'truck', size: 16 -%}
-            <span>{{ 'general.trust.shipping' | t }}</span>
-          </li>
-          <li class="menu-drawer__trust-item">
-            {%- render 'icon', name: 'return', size: 16 -%}
-            <span>{{ 'general.trust.returns' | t }}</span>
-          </li>
-        </ul>
+        </div>
       </div>
-    </div>
+    </sw-drill-menu>
   </dialog>
 </sw-drawer>
 
@@ -188,36 +248,56 @@
     font-size: calc(36px * var(--heading-scale, 1) * var(--display-lang-scale));
   }
 
+  /* Without JavaScript the body scrolls and the panels open in place (accordions). */
+  .menu-drawer__body {
+    display: block;
+    flex: 1;
+    min-block-size: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  /* With <sw-drill-menu> running, a panel covers the list: the body stops scrolling (each layer
+     scrolls on its own) and becomes the panels' containing block. */
+  .menu-drawer__body:defined {
+    position: relative;
+    overflow: hidden;
+
+    & .menu-drawer__main {
+      block-size: 100%;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+  }
+
   .menu-drawer__nav {
-    padding-inline: var(--space-5);
+    padding-inline: var(--space-4);
   }
 
   .menu-drawer__list,
-  .menu-drawer__sublist {
+  .menu-drawer__grid,
+  .menu-drawer__sublinks {
     margin: 0;
     padding: 0;
     list-style: none;
-  }
-
-  /* Margins, not padding: base.css resets padding on ul[role='list'] with a stronger selector. */
-  .menu-drawer__sublist {
-    margin-block-end: var(--space-3);
-    margin-inline-start: var(--space-4);
   }
 
   .menu-drawer__entry {
     border-block-end: 1px solid var(--color-border);
   }
 
-  .menu-drawer__item,
-  .menu-drawer__subitem {
+  .menu-drawer__row {
+    position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: var(--space-3);
+    gap: 14px;
+    min-block-size: 68px;
+    padding-block: var(--space-2);
     color: inherit;
+    font-size: calc(18px * var(--body-scale, 1));
+    font-weight: 700;
+    line-height: 1.3;
     text-decoration: none;
-    text-underline-offset: 5px;
     list-style: none;
     cursor: pointer;
 
@@ -225,41 +305,217 @@
       display: none;
     }
 
-    &[aria-current='page'] {
-      text-decoration-line: underline;
+    &:focus-visible {
+      outline-offset: -2px;
+      border-radius: var(--radius-button);
     }
   }
 
-  .menu-drawer__item {
-    min-block-size: 56px;
-    font-size: calc(18px * var(--body-scale, 1));
-    font-weight: 700;
-    line-height: 1.3;
+  .menu-drawer__row-label {
+    flex: 1;
+    min-inline-size: 0;
   }
 
-  .menu-drawer__subitem {
-    min-block-size: 48px;
-    font-size: var(--text-base);
-    font-weight: 600;
-    line-height: 1.35;
+  .menu-drawer__row[aria-current='page'] .menu-drawer__row-label {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 6px;
   }
 
-  .menu-drawer__subitem--strong {
-    font-weight: 800;
+  /* The current section: an accent bar on the image's edge. */
+  .menu-drawer__row--active .menu-drawer__thumb {
+    box-shadow:
+      0 0 0 2px var(--color-background),
+      0 0 0 4px var(--color-accent);
+  }
+
+  .menu-drawer__row--sale {
+    color: var(--color-sale);
+  }
+
+  .menu-drawer__thumb {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    inline-size: 48px;
+    block-size: 48px;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--color-tile);
+    color: #0d0e11;
+  }
+
+  .menu-drawer__thumb-image {
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 3px;
+    object-fit: contain;
+    mix-blend-mode: multiply;
   }
 
   .menu-drawer__chevron {
-    transition: transform var(--duration-fast) var(--ease);
+    color: var(--color-muted);
   }
 
-  .menu-drawer__details[open] > .menu-drawer__toggle .menu-drawer__chevron {
-    transform: rotate(180deg);
+  /* Panel: an accordion body without JavaScript… */
+  .menu-drawer__panel {
+    display: grid;
+    gap: var(--space-5);
+    padding-block: var(--space-2) var(--space-6);
+  }
+
+  .menu-drawer__back {
+    display: none;
+  }
+
+  .menu-drawer__details[open] > .menu-drawer__row .menu-drawer__chevron {
+    rotate: 90deg;
+  }
+
+  [dir='rtl'] .menu-drawer__details[open] > .menu-drawer__row .menu-drawer__chevron {
+    rotate: -90deg;
+  }
+
+  /* …and a layer that slides over the list with <sw-drill-menu>. */
+  .menu-drawer__body:defined {
+    & .menu-drawer__panel {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      align-content: start;
+      padding: 0 var(--space-4) var(--space-8);
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: var(--color-background);
+    }
+
+    & .menu-drawer__back {
+      position: sticky;
+      inset-block-start: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      inline-size: calc(100% + var(--space-8));
+      min-block-size: 64px;
+      margin-inline: calc(var(--space-4) * -1);
+      padding: 0 var(--space-4);
+      border: 0;
+      border-block-end: 1px solid var(--color-border);
+      background: var(--color-background);
+      color: inherit;
+      text-align: start;
+      cursor: pointer;
+
+      &:focus-visible {
+        outline-offset: -3px;
+      }
+    }
+
+    & .menu-drawer__details[open] > .menu-drawer__row .menu-drawer__chevron {
+      rotate: none;
+    }
+  }
+
+  /* The list stays painted under the sliding panel, then leaves the tab order. */
+  .menu-drawer__body[data-drilled] .menu-drawer__main {
+    visibility: hidden;
+    transition: visibility 0s linear var(--duration);
+  }
+
+  .menu-drawer__body[data-drilled] .menu-drawer__panel {
+    visibility: visible;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .menu-drawer__body:defined .menu-drawer__panel {
+      transition: translate var(--duration) var(--ease);
+
+      @starting-style {
+        translate: 100% 0;
+      }
+    }
+
+    [dir='rtl'] .menu-drawer__body:defined .menu-drawer__panel {
+      @starting-style {
+        translate: -100% 0;
+      }
+    }
+  }
+
+  .menu-drawer__back-title {
+    min-inline-size: 0;
+    font-size: calc(30px * var(--heading-scale, 1) * var(--display-lang-scale));
+    line-height: 1;
+    overflow-wrap: anywhere;
+  }
+
+  .menu-drawer__view-all {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-block-size: 56px;
+    padding-inline: var(--space-4);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    color: inherit;
+    font-weight: 800;
+    text-decoration: none;
+
+    & .icon {
+      color: var(--color-accent-text);
+    }
+  }
+
+  .menu-drawer__view-all-text {
+    flex: 1;
+  }
+
+  .menu-drawer__view-all-count {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .menu-drawer__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-5) var(--space-3);
+  }
+
+  .menu-drawer__grid-item {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+  }
+
+  .menu-drawer__sublinks {
+    display: grid;
+    margin-block-start: var(--space-1);
+  }
+
+  .menu-drawer__sublink {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
+
+    &[aria-current='page'] {
+      color: var(--color-text);
+      text-decoration: underline;
+    }
   }
 
   .menu-drawer__footer {
     display: grid;
     gap: var(--space-4);
-    padding: var(--space-6) var(--space-5) var(--space-8);
+    margin-block-start: var(--space-6);
+    padding: var(--space-5) var(--space-5) var(--space-8);
+    border-block-start: 1px solid var(--color-border);
+    background: var(--color-surface);
   }
 
   .menu-drawer__link {
@@ -284,17 +540,23 @@
 
   .menu-drawer__trust {
     display: grid;
-    gap: var(--space-2);
+    gap: var(--space-3);
     margin: 0;
-    padding: 0;
+    padding: var(--space-4) 0 0;
+    border-block-start: 1px solid var(--color-border);
     color: var(--color-muted);
     font-size: var(--text-sm);
+    line-height: 1.4;
     list-style: none;
   }
 
   .menu-drawer__trust-item {
     display: flex;
     align-items: center;
-    gap: var(--space-2);
+    gap: var(--space-3);
+
+    & .icon {
+      color: var(--color-text);
+    }
   }
 {% endstylesheet %}

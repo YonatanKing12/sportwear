@@ -17,8 +17,21 @@
       "title": "Menu",
       "close": "Close menu",
       "nav_label": "Main navigation",
+      "back": "back to the main menu",
       "team_orders": "Team orders on WhatsApp",
       "whatsapp_message": "Hi, I would like to hear about a team order"
+    },
+    "mega": {
+      "shop_all": "Shop all",
+      "categories": "Shop by category",
+      "featured": "Featured",
+      "newest": "Newest first",
+      "price_ascending": "Price: low to high",
+      "promo_button": "Shop now",
+      "product_count": {
+        "one": "{{ count }} product",
+        "other": "{{ count }} products"
+      }
     },
     "account": {
       "account": "My account",
@@ -29,6 +42,7 @@
       "title": "Search the store",
       "label": "What are you looking for?",
       "placeholder": "Search for a jersey, team or league",
+      "field": "Search jerseys, teams and players",
       "submit": "Search",
       "close": "Close search"
     }

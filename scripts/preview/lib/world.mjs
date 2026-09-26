@@ -1299,7 +1299,8 @@ export class World {
       settings: this.settings,
       shop: this.shop,
       request: new BaseDrop('request', {
-        design_mode: false,
+        // SW_PREVIEW_DESIGN_MODE=1 renders pages the way the theme editor does (request.design_mode).
+        design_mode: process.env.SW_PREVIEW_DESIGN_MODE === '1',
         visual_preview_mode: false,
         host: SHOP.domain,
         origin: SHOP.url,

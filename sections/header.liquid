@@ -1,14 +1,80 @@
 {%- comment -%}
   Site header (header group): the banner landmark with the logo, the main menu, search, account,
-  language and cart. Mobile (< 990px): menu button, centered logo, search and cart. Desktop: logo,
-  inline menu with dropdowns (snippets/header-menu), then search, account, language and cart.
-  Also renders the mobile menu drawer (MenuDrawer) and the search sheet (SearchModal).
+  language and cart.
+  - Mobile and tablet (< 990px): menu button, centered logo, search and cart. The menu button opens
+    the menu drawer (snippets/menu-drawer, id MenuDrawer) with drill-down category panels.
+  - Desktop (990px and up): logo, the main menu (snippets/header-menu) whose top-level links with
+    sub-links open full-width mega panels (snippets/header-mega-panel), then search (a search field
+    look-alike from 1200px, an icon below that), account, language and cart.
+  The search sheet (snippets/header-search, id SearchModal) opens from either search control, and
+  both are plain links to the search page without JavaScript.
+  "Hide empty categories" leaves links to collections without products out of the menu, the mega
+  panels and the drawer on the storefront; the theme editor always shows the whole menu.
+  Blocks: "Mega menu promo" shows a promo card in the mega panel of the menu item that links to its
+  collection, in place of the featured products.
   assets/header.js (<sw-header>) keeps --header-height up to date, hides the header while scrolling
-  down when "Sticky header" is "When scrolling up", and manages the dropdowns.
+  down when "Sticky header" is "When scrolling up", and runs the mega menu (hover intent, one panel
+  at a time, Escape, outside clicks, closing when the header hides).
 {%- endcomment -%}
 {%- liquid
   assign color_scheme = section.settings.color_scheme.id
+  assign mega_scheme = section.settings.mega_color_scheme.id | default: 'scheme-day'
   assign menu = section.settings.menu
+
+  # Positions of the menu links to leave out, shared by the desktop menu and the menu drawer:
+  # ",4,1-3,2-5-1," is the 4th top-level link, the 3rd sub-link of the 1st and so on. A link to a
+  # collection without products is left out unless one of its own sub-links still leads somewhere.
+  # Only on the storefront: in the theme editor the owner sees the whole menu.
+  assign hidden_links = ','
+  assign visible_links = menu.links.size
+  if section.settings.hide_empty_collections and request.design_mode != true
+    assign visible_links = 0
+    for link in menu.links
+      assign link_index = forloop.index
+      assign link_visible_children = 0
+      for child in link.links
+        assign child_key = link_index | append: '-' | append: forloop.index
+        assign child_visible_children = 0
+        for grandchild in child.links
+          assign grandchild_empty = false
+          if grandchild.type == 'collection_link'
+            if grandchild.object.all_products_count == 0
+              assign grandchild_empty = true
+            endif
+          endif
+          if grandchild_empty
+            assign hidden_links = hidden_links | append: child_key | append: '-' | append: forloop.index | append: ','
+          else
+            assign child_visible_children = child_visible_children | plus: 1
+          endif
+        endfor
+
+        assign child_empty = false
+        if child.type == 'collection_link' and child_visible_children == 0
+          if child.object.all_products_count == 0
+            assign child_empty = true
+          endif
+        endif
+        if child_empty
+          assign hidden_links = hidden_links | append: child_key | append: ','
+        else
+          assign link_visible_children = link_visible_children | plus: 1
+        endif
+      endfor
+
+      assign link_empty = false
+      if link.type == 'collection_link' and link_visible_children == 0
+        if link.object.all_products_count == 0
+          assign link_empty = true
+        endif
+      endif
+      if link_empty
+        assign hidden_links = hidden_links | append: link_index | append: ','
+      else
+        assign visible_links = visible_links | plus: 1
+      endif
+    endfor
+  endif
 -%}
 <sw-header class="header-root" data-sticky="{{ section.settings.sticky }}">
   <header class="header color-{{ color_scheme }}">
@@ -36,16 +102,33 @@
         {%- render 'logo' -%}
       </div>
 
-      {%- if menu.links.size > 0 -%}
+      {%- if visible_links > 0 -%}
         <div class="header__nav">
-          {%- render 'header-menu', menu: menu -%}
+          {%- render 'header-menu',
+            menu: menu,
+            hidden_links: hidden_links,
+            mega_scheme: mega_scheme,
+            show_featured: section.settings.show_featured_products,
+            promos: section.blocks
+          -%}
         </div>
       {%- endif -%}
 
       <div class="header__actions">
         <a
           href="{{ routes.search_url }}"
-          class="header__icon"
+          class="header__search-field"
+          data-drawer-open="SearchModal"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          {%- render 'icon', name: 'search', size: 20, class: 'header__search-field-icon' -%}
+          <span class="header__search-field-text">{{ 'header.search.field' | t }}</span>
+        </a>
+
+        <a
+          href="{{ routes.search_url }}"
+          class="header__icon header__search-icon"
           data-drawer-open="SearchModal"
           aria-haspopup="dialog"
           aria-expanded="false"
@@ -84,7 +167,15 @@
     </div>
   </header>
 
-  {%- render 'menu-drawer', menu: menu, color_scheme: color_scheme -%}
+  {%- comment -%} Dims the page under an open mega panel; a click on it closes the panel (assets/header.js). {%- endcomment -%}
+  <div class="header__overlay" aria-hidden="true"></div>
+
+  {%- render 'menu-drawer',
+    menu: menu,
+    hidden_links: hidden_links,
+    visible_links: visible_links,
+    color_scheme: color_scheme
+  -%}
   {%- render 'header-search' -%}
 </sw-header>
 
@@ -127,12 +218,23 @@
     margin-inline: auto;
     padding-inline: var(--space-2);
 
+    /* Logo and menu take their natural width; the actions (with the search field) take the rest. */
     @media screen and (min-width: 990px) {
+      --header-bar-height: 72px;
+
       grid-template-areas: 'logo nav end';
-      grid-template-columns: auto minmax(0, 1fr) auto;
-      column-gap: var(--space-8);
-      min-block-size: 72px;
+      grid-template-columns: auto auto minmax(0, 1fr);
+      column-gap: var(--space-6);
+      min-block-size: var(--header-bar-height);
       padding-inline: var(--gutter);
+    }
+
+    @media screen and (min-width: 1200px) {
+      column-gap: 28px;
+    }
+
+    @media screen and (min-width: 1400px) {
+      column-gap: var(--space-8);
     }
   }
 
@@ -153,13 +255,15 @@
     min-inline-size: 0;
   }
 
+  /* The nav fills the height of the bar, so every top-level link is a full-height target. */
   .header__nav {
     display: none;
     grid-area: nav;
+    align-self: stretch;
     min-inline-size: 0;
 
     @media screen and (min-width: 990px) {
-      display: block;
+      display: flex;
     }
   }
 
@@ -170,6 +274,11 @@
     justify-content: flex-end;
     justify-self: end;
     gap: 2px;
+
+    @media screen and (min-width: 990px) {
+      justify-self: stretch;
+      min-inline-size: 0;
+    }
   }
 
   .header__desktop-actions {
@@ -203,6 +312,77 @@
       background: color-mix(in srgb, currentColor 10%, transparent);
     }
   }
+
+  /* Search: a link styled as a search field on wide screens (it opens the search sheet), an icon below. */
+  .header__search-field {
+    display: none;
+    flex: 0 1 300px;
+    align-items: center;
+    gap: 10px;
+    min-inline-size: 180px;
+    block-size: var(--touch-target);
+    margin-inline-end: var(--space-2);
+    padding-inline: var(--space-4);
+    border: 1px solid color-mix(in srgb, var(--color-text) 22%, transparent);
+    border-radius: var(--radius-chip);
+    background: color-mix(in srgb, var(--color-text) 7%, transparent);
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+      border-color var(--duration-fast) var(--ease),
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover {
+      border-color: color-mix(in srgb, var(--color-text) 45%, transparent);
+      background: color-mix(in srgb, var(--color-text) 11%, transparent);
+      color: var(--color-text);
+    }
+
+    @media screen and (min-width: 1200px) {
+      display: inline-flex;
+    }
+  }
+
+  .header__search-field-icon {
+    color: var(--color-text);
+  }
+
+  .header__search-field-text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .header__search-icon {
+    @media screen and (min-width: 1200px) {
+      display: none;
+    }
+  }
+
+  /* Dims the page under an open mega panel. It sits under the header bar (z-index -1 inside the
+     header's stacking context) and only exists once assets/header.js runs, so it can always close. */
+  .header__overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: var(--color-overlay);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition:
+      opacity var(--duration) var(--ease),
+      visibility 0s linear var(--duration);
+  }
+
+  .header-root:defined:has(.header-menu__details[open]) .header__overlay {
+    opacity: 0.8;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity var(--duration) var(--ease);
+  }
 {% endstylesheet %}
 
 {% schema %}
@@ -214,6 +394,7 @@
   "enabled_on": {
     "groups": ["header"]
   },
+  "max_blocks": 8,
   "settings": [
     {
       "type": "paragraph",
@@ -249,6 +430,79 @@
         {
           "value": "scroll-up",
           "label": "t:sections.header.settings.sticky.options.scroll_up"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.header.settings.mega_menu.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "mega_color_scheme",
+      "label": "t:sections.header.settings.mega_color_scheme.label",
+      "default": "scheme-day"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_empty_collections",
+      "label": "t:sections.header.settings.hide_empty_collections.label",
+      "info": "t:sections.header.settings.hide_empty_collections.info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_featured_products",
+      "label": "t:sections.header.settings.show_featured_products.label",
+      "info": "t:sections.header.settings.show_featured_products.info",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mega_promo",
+      "name": "t:sections.header.blocks.mega_promo.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.header.blocks.mega_promo.settings.info.content"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.header.blocks.mega_promo.settings.collection.label",
+          "info": "t:sections.header.blocks.mega_promo.settings.collection.info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:settings.image"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "t:settings.eyebrow"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "t:settings.heading"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:settings.text"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "t:settings.button_label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings.link"
         }
       ]
     }

@@ -543,7 +543,7 @@
               "label": "Icon",
               "options": {
                 "truck": "Delivery truck",
-                "shield_check": "Shield (original)",
+                "shield_check": "Shield",
                 "return": "Return arrow",
                 "tag": "Tag (sale)",
                 "none": "None"
@@ -560,7 +560,7 @@
           "content": "The logo is set in Theme settings > Brand, and the language switcher shows every language published in Settings > Languages."
         },
         "menu": {
-          "info": "Links with sub-links open as dropdowns on desktop and as expandable rows in the mobile menu, up to 3 levels."
+          "info": "A link with sub-links opens a mega menu on desktop, with an image for each sub-category and products from the category. On mobile it opens a panel of image tiles. Up to 3 levels."
         },
         "sticky": {
           "label": "Sticky header",
@@ -568,6 +568,34 @@
             "none": "Off",
             "always": "Always",
             "scroll_up": "When scrolling up"
+          }
+        },
+        "mega_menu": {
+          "content": "Mega menu"
+        },
+        "mega_color_scheme": {
+          "label": "Mega menu color scheme"
+        },
+        "hide_empty_collections": {
+          "label": "Hide empty categories",
+          "info": "Links to a category with no products in the online store are left out of the menu, the mega menu and the mobile menu. Draft products and products that are not on the Online Store sales channel don't count. The theme editor always shows the whole menu."
+        },
+        "show_featured_products": {
+          "label": "Show products in the mega menu",
+          "info": "The category's first 3 products, in its own sort order."
+        }
+      },
+      "blocks": {
+        "mega_promo": {
+          "name": "Mega menu promo",
+          "settings": {
+            "info": {
+              "content": "Shows in the mega menu of the top-level link that leads to the category you choose, in place of the products."
+            },
+            "collection": {
+              "label": "Category of the menu link",
+              "info": "Choose the category that the top-level menu link leads to, for example Football jerseys."
+            }
           }
         }
       }
