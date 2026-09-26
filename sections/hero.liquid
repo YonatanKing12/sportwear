@@ -93,165 +93,179 @@
     if figure_2 != blank
       assign figure_count = 2
     endif
-    assign figure_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - 48px) * 0.245), (min-width: 750px) 272px, 49vw'
+    # The shots are about half the art's width, which follows the banner's height (hidden on phones).
+    assign figure_sizes = '(min-width: 990px) 240px, 200px'
   endif
 -%}
 
 <div
-  class="section hero hero--{{ layout }} color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% endif %}"
-  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;{% if layout == 'image' %} --hero-overlay: {{ section.settings.overlay_opacity }}%;{% endif %}"
+  class="section hero hero--{{ layout }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
-  {%- if layout == 'image' -%}
-    <div class="hero__media">
-      {%- if media_image != blank -%}
-        <picture class="hero__picture">
-          {%- if media_image_mobile != blank -%}
-            {%- liquid
-              assign mobile_max_width = media_image_mobile.width | at_most: 2200
-              assign mobile_widths = '375,550,750,1100,1500,1800' | split: ','
-              capture mobile_srcset
-                for candidate in mobile_widths
-                  assign candidate_width = candidate | plus: 0
-                  if candidate_width < mobile_max_width
-                    echo media_image_mobile | image_url: width: candidate_width
+  <div class="page-width">
+    <div
+      class="hero__banner color-{{ scheme.id }}{% if on_dark %} hero--on-dark{% endif %}{% if layout == 'image' %} hero--height-{{ section.settings.height }}{% endif %}"
+      {% if layout == 'image' %}
+        style="--hero-overlay: {{ section.settings.overlay_opacity }}%;"
+      {% endif %}
+    >
+      {%- if layout == 'image' -%}
+        <div class="hero__media">
+          {%- if media_image != blank -%}
+            <picture class="hero__picture">
+              {%- if media_image_mobile != blank -%}
+                {%- liquid
+                  assign mobile_max_width = media_image_mobile.width | at_most: 2200
+                  assign mobile_widths = '375,550,750,1100,1500,1800' | split: ','
+                  capture mobile_srcset
+                    for candidate in mobile_widths
+                      assign candidate_width = candidate | plus: 0
+                      if candidate_width < mobile_max_width
+                        echo media_image_mobile | image_url: width: candidate_width
+                        echo ' '
+                        echo candidate_width
+                        echo 'w, '
+                      endif
+                    endfor
+                    echo media_image_mobile | image_url: width: mobile_max_width
                     echo ' '
-                    echo candidate_width
-                    echo 'w, '
-                  endif
-                endfor
-                echo media_image_mobile | image_url: width: mobile_max_width
-                echo ' '
-                echo mobile_max_width
-                echo 'w'
-              endcapture
-            -%}
-            <source
-              media="(max-width: 749px)"
-              srcset="{{ mobile_srcset }}"
-              sizes="100vw"
-              width="{{ media_image_mobile.width }}"
-              height="{{ media_image_mobile.height }}"
+                    echo mobile_max_width
+                    echo 'w'
+                  endcapture
+                -%}
+                <source
+                  media="(max-width: 749px)"
+                  srcset="{{ mobile_srcset }}"
+                  sizes="100vw"
+                  width="{{ media_image_mobile.width }}"
+                  height="{{ media_image_mobile.height }}"
+                >
+              {%- endif -%}
+              {%- render 'image',
+                image: media_image,
+                sizes: '100vw',
+                widths: '750, 1100, 1500, 1920, 2400',
+                loading: media_loading,
+                fetchpriority: media_priority,
+                preload: preload_media,
+                class: 'hero__media-image'
+              -%}
+            </picture>
+          {%- elsif request.design_mode -%}
+            {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg hero__media-image' }}
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      <div class="hero__content">
+        {%- if section.settings.show_eyebrow -%}
+          <p class="hero__eyebrow">
+            <span class="hero__eyebrow-dot" aria-hidden="true"></span>
+            {{- eyebrow -}}
+          </p>
+        {%- endif -%}
+
+        <{{ heading_tag }} class="hero__heading display-l">
+          {%- if heading != blank -%}
+            <span class="hero__line">{{ heading }}</span>
+          {%- endif -%}
+          {%- if heading_highlight != blank -%}
+            <span class="hero__line"
+              ><span class="hero__highlight">{{ heading_highlight }}</span></span
             >
           {%- endif -%}
-          {%- render 'image',
-            image: media_image,
-            sizes: '100vw',
-            widths: '750, 1100, 1500, 1920, 2400',
-            loading: media_loading,
-            fetchpriority: media_priority,
-            preload: preload_media,
-            class: 'hero__media-image'
-          -%}
-        </picture>
-      {%- elsif request.design_mode -%}
-        {{ 'hero-apparel-1' | placeholder_svg_tag: 'placeholder-svg hero__media-image' }}
+        </{{ heading_tag }}>
+
+        <p class="hero__text">{{ subheading }}</p>
+
+        <div class="hero__buttons">
+          <a class="button button--primary hero__button" href="{{ button_link }}">{{ button_label }}</a>
+          {%- if section.settings.show_secondary_button -%}
+            <a class="button button--secondary hero__button" href="{{ secondary_link }}">{{ secondary_label }}</a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- if layout != 'image' -%}
+        <div class="hero__visual{% if figure_count == 1 %} hero__visual--single{% endif %}">
+          {%- if season != blank -%}
+            <span class="hero__season" aria-hidden="true">{{ season }}</span>
+          {%- endif -%}
+          <span class="hero__circle" aria-hidden="true"></span>
+          {%- if figure_count == 0 -%}
+            {%- comment -%} No product shots chosen yet: two drawn kits keep the composition. {%- endcomment -%}
+            <div class="hero__figure hero__figure--first hero__figure--art" aria-hidden="true">
+              <svg class="hero__figure-image" viewBox="0 0 200 200" focusable="false">
+                <path class="hero__art-light" d="M78 30C86 42 114 42 122 30L160 42L186 74L166 90L154 78L152 176Q100 182 48 176L46 78L34 90L14 74L40 42Z"/>
+                <path class="hero__art-ink" d="M166 90L186 74L182 69L162 85Z M34 90L14 74L18 69L38 85Z M48 172Q100 178 152 172L152 176Q100 182 48 176Z"/>
+                <path class="hero__art-line" d="M78 30C86 42 114 42 122 30"/>
+              </svg>
+            </div>
+            <div class="hero__figure hero__figure--second hero__figure--art" aria-hidden="true">
+              <svg class="hero__figure-image hero__art-tank" viewBox="0 0 200 200" focusable="false">
+                <path class="hero__art-tank-body" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
+                <path class="hero__art-accent" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
+                <path class="hero__art-accent-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
+                <text class="hero__art-number" x="100" y="138">12</text>
+              </svg>
+            </div>
+          {%- endif -%}
+          {%- if figure_1 != blank -%}
+            <div class="hero__figure hero__figure--first">
+              {%- render 'image',
+                image: figure_1,
+                sizes: figure_sizes,
+                widths: '240, 360, 480, 640, 800, 960',
+                loading: 'lazy',
+                class: 'hero__figure-image'
+              -%}
+            </div>
+          {%- endif -%}
+          {%- if figure_2 != blank -%}
+            <div class="hero__figure hero__figure--second">
+              {%- render 'image',
+                image: figure_2,
+                sizes: figure_sizes,
+                widths: '240, 360, 480, 640, 800, 960',
+                loading: 'lazy',
+                class: 'hero__figure-image'
+              -%}
+            </div>
+          {%- endif -%}
+        </div>
       {%- endif -%}
     </div>
-  {%- endif -%}
-
-  <div class="page-width hero__inner">
-    <div class="hero__content">
-      {%- if section.settings.show_eyebrow -%}
-        <p class="hero__eyebrow">
-          <span class="hero__eyebrow-dot" aria-hidden="true"></span>
-          {{- eyebrow -}}
-        </p>
-      {%- endif -%}
-
-      <{{ heading_tag }} class="hero__heading display-xl">
-        {%- if heading != blank -%}
-          <span class="hero__line">{{ heading }}</span>
-        {%- endif -%}
-        {%- if heading_highlight != blank -%}
-          <span class="hero__line"
-            ><span class="hero__highlight">{{ heading_highlight }}</span></span
-          >
-        {%- endif -%}
-      </{{ heading_tag }}>
-
-      <p class="hero__text">{{ subheading }}</p>
-
-      <div class="hero__buttons">
-        <a class="button button--primary hero__button" href="{{ button_link }}">{{ button_label }}</a>
-        {%- if section.settings.show_secondary_button -%}
-          <a class="button button--secondary hero__button" href="{{ secondary_link }}">{{ secondary_label }}</a>
-        {%- endif -%}
-      </div>
-    </div>
-
-    {%- if layout != 'image' -%}
-      <div class="hero__visual{% if figure_count == 1 %} hero__visual--single{% endif %}">
-        {%- if season != blank -%}
-          <span class="hero__season" aria-hidden="true">{{ season }}</span>
-        {%- endif -%}
-        <span class="hero__circle" aria-hidden="true"></span>
-        {%- if figure_count == 0 -%}
-          {%- comment -%} No product shots chosen yet: two drawn kits keep the composition. {%- endcomment -%}
-          <div class="hero__figure hero__figure--first hero__figure--art" aria-hidden="true">
-            <svg class="hero__figure-image" viewBox="0 0 200 200" focusable="false">
-              <path class="hero__art-light" d="M78 30C86 42 114 42 122 30L160 42L186 74L166 90L154 78L152 176Q100 182 48 176L46 78L34 90L14 74L40 42Z"/>
-              <path class="hero__art-ink" d="M166 90L186 74L182 69L162 85Z M34 90L14 74L18 69L38 85Z M48 172Q100 178 152 172L152 176Q100 182 48 176Z"/>
-              <path class="hero__art-line" d="M78 30C86 42 114 42 122 30"/>
-            </svg>
-          </div>
-          <div class="hero__figure hero__figure--second hero__figure--art" aria-hidden="true">
-            <svg class="hero__figure-image hero__art-tank" viewBox="0 0 200 200" focusable="false">
-              <path class="hero__art-tank-body" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
-              <path class="hero__art-accent" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
-              <path class="hero__art-accent-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
-              <text class="hero__art-number" x="100" y="138">12</text>
-            </svg>
-          </div>
-        {%- endif -%}
-        {%- if figure_1 != blank -%}
-          <div class="hero__figure hero__figure--first">
-            {%- render 'image',
-              image: figure_1,
-              sizes: figure_sizes,
-              widths: '240, 360, 480, 640, 800, 960',
-              loading: media_loading,
-              fetchpriority: media_priority,
-              preload: above_fold,
-              class: 'hero__figure-image'
-            -%}
-          </div>
-        {%- endif -%}
-        {%- if figure_2 != blank -%}
-          <div class="hero__figure hero__figure--second">
-            {%- render 'image',
-              image: figure_2,
-              sizes: figure_sizes,
-              widths: '240, 360, 480, 640, 800, 960',
-              loading: media_loading,
-              class: 'hero__figure-image'
-            -%}
-          </div>
-        {%- endif -%}
-      </div>
-    {%- endif -%}
   </div>
 </div>
 
 {% stylesheet %}
-  /* Accent is text only on dark schemes; on light ones the highlight line becomes an accent marker. */
-  .hero {
+  /* A compact banner inside the page margins. Graphic layout: the text on the start side and, from
+     750px, the season, accent circle and product shots on the end side. Image layout: a photo behind
+     the text, shaded on the text side. */
+  .hero__banner {
     --hero-accent: var(--color-text);
     --hero-outline: color-mix(in srgb, var(--color-text) 16%, transparent);
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-block-size: 260px;
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    isolation: isolate;
   }
 
   .hero--on-dark {
     --hero-accent: var(--color-highlight);
   }
 
-  .hero__inner {
-    display: grid;
-    gap: var(--space-6);
-  }
-
   .hero__content {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    inline-size: 100%;
     min-inline-size: 0;
   }
 
@@ -259,26 +273,27 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    min-block-size: 30px;
+    min-block-size: 26px;
     padding-inline: var(--space-3);
     border: 1px solid currentColor;
     border-radius: var(--radius-chip);
     color: var(--hero-accent);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     font-weight: 700;
     line-height: 1.2;
   }
 
   .hero__eyebrow-dot {
-    inline-size: 7px;
-    block-size: 7px;
+    inline-size: 6px;
+    block-size: 6px;
     border-radius: 50%;
     background: currentColor;
   }
 
-  .hero__heading {
+  .hero .hero__heading {
     max-inline-size: 100%;
-    margin-block-start: var(--space-4);
+    margin-block-start: var(--space-3);
+    font-size: var(--display-m);
     overflow-wrap: break-word;
     isolation: isolate;
   }
@@ -317,9 +332,9 @@
 
   .hero__text {
     max-inline-size: 34em;
-    margin-block-start: var(--space-4);
+    margin-block-start: var(--space-3);
     color: var(--color-muted);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
   }
 
   /* Mobile: two equal buttons side by side (they wrap only if a label cannot fit). */
@@ -328,7 +343,7 @@
     flex-wrap: wrap;
     gap: 10px;
     inline-size: 100%;
-    margin-block-start: var(--space-6);
+    margin-block-start: var(--space-5);
   }
 
   .hero__button {
@@ -336,18 +351,10 @@
     padding-inline: var(--space-3);
   }
 
-  /* Graphic layout: outlined season, accent circle and up to two tilted product shots. */
+  /* Graphic layout: outlined season, accent circle and up to two tilted product shots, sized by the
+     banner's height. Phones get the text alone, so the banner stays short. */
   .hero__visual {
-    --hero-tilt: 1;
-    position: relative;
-    container-type: inline-size;
-    aspect-ratio: 390 / 290;
-    margin-inline: calc(var(--gutter) * -1);
-    overflow: hidden;
-  }
-
-  [dir='rtl'] .hero__visual {
-    --hero-tilt: -1;
+    display: none;
   }
 
   .hero__season {
@@ -485,28 +492,23 @@
     }
   }
 
-  /* Image layout: full-bleed photo under a gradient in the scheme's background color. */
-  .hero--image {
-    --hero-min-height: 600px;
+  /* Image layout: the photo fills the banner under a gradient in the scheme's background color. */
+  .hero--image .hero__banner {
     --hero-gradient-direction: to right;
-    position: relative;
-    display: grid;
-    align-items: end;
-    min-block-size: var(--hero-min-height);
-    isolation: isolate;
-    overflow: hidden;
+    align-items: flex-end;
+    min-block-size: 320px;
   }
 
-  [dir='rtl'] .hero--image {
+  [dir='rtl'] .hero--image .hero__banner {
     --hero-gradient-direction: to left;
   }
 
-  .hero--height-small {
-    --hero-min-height: 480px;
+  .hero--image .hero--height-small {
+    min-block-size: 280px;
   }
 
-  .hero--height-large {
-    --hero-min-height: min(760px, 92svh);
+  .hero--image .hero--height-large {
+    min-block-size: 380px;
   }
 
   /* Phones: the text covers most of the photo, so the whole photo is shaded, more strongly at the bottom. */
@@ -538,70 +540,63 @@
     object-fit: cover;
   }
 
-  .hero--image .hero__inner {
-    padding-block: var(--space-12) var(--space-8);
-  }
-
   .hero--image .hero__text {
     color: var(--color-text);
   }
 
   @media screen and (min-width: 750px) {
+    .hero__banner {
+      min-block-size: 300px;
+      padding: var(--space-8) var(--space-10);
+    }
+
+    .hero--graphic .hero__content {
+      inline-size: 56%;
+    }
+
     .hero__buttons {
       inline-size: auto;
     }
 
     .hero__button {
       flex: 0 0 auto;
-      min-inline-size: 200px;
-      padding-inline: var(--space-8);
+      min-inline-size: 180px;
+      padding-inline: var(--space-6);
     }
 
+    /* The art keeps its proportions on the end side. Tablets size it by the banner's width and center
+       it, so text that wraps (and makes the banner taller) never grows the art into the text. */
     .hero__visual {
-      inline-size: min(100%, 560px);
-      margin-inline: auto;
+      --hero-tilt: 1;
+      position: absolute;
+      inset-block-start: 50%;
+      inset-inline-end: 0;
+      display: block;
+      inline-size: 40%;
+      aspect-ratio: 390 / 290;
+      translate: 0 -50%;
+      container-type: inline-size;
     }
-  }
 
-  @media screen and (min-width: 990px) {
-    /* Bottom room so a long heading never pushes the buttons against the next section. */
-    .hero--graphic .hero__inner {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    [dir='rtl'] .hero__visual {
+      --hero-tilt: -1;
+    }
+
+    .hero--image .hero__banner {
       align-items: center;
-      column-gap: var(--space-12);
-      padding-block-end: var(--space-10);
+      min-block-size: 340px;
     }
 
-    .hero__heading {
-      margin-block-start: var(--space-5);
+    .hero--image .hero--height-small {
+      min-block-size: 300px;
     }
 
-    .hero__text {
-      margin-block-start: var(--space-5);
-      font-size: var(--text-lg);
+    .hero--image .hero--height-large {
+      min-block-size: 420px;
     }
 
-    .hero__buttons {
-      margin-block-start: var(--space-8);
-    }
-
-    .hero__visual {
-      inline-size: 100%;
-      margin-inline: 0;
-      overflow: visible;
-    }
-
-    .hero--image {
-      --hero-min-height: 640px;
-      align-items: center;
-    }
-
-    .hero--height-small {
-      --hero-min-height: 480px;
-    }
-
-    .hero--height-large {
-      --hero-min-height: min(780px, 92svh);
+    .hero--image .hero__content {
+      inline-size: min(60%, 560px);
     }
 
     .hero__media::after {
@@ -611,13 +606,48 @@
         transparent 80%
       );
     }
+  }
 
-    .hero--image .hero__inner {
-      padding-block: var(--space-16);
+  @media screen and (min-width: 990px) {
+    .hero__banner {
+      min-block-size: 340px;
+      padding: var(--space-10) var(--space-16);
     }
 
-    .hero--image .hero__content {
-      max-inline-size: 640px;
+    .hero .hero__heading {
+      font-size: var(--display-l);
+    }
+
+    .hero__text {
+      margin-block-start: var(--space-4);
+      font-size: var(--text-base);
+    }
+
+    .hero__buttons {
+      margin-block-start: var(--space-6);
+    }
+
+    .hero--graphic .hero__content {
+      inline-size: 55%;
+    }
+
+    /* Desktop: the art takes the banner's full height (the text column is wide enough not to wrap). */
+    .hero__visual {
+      inset-block: 0;
+      inline-size: auto;
+      translate: none;
+    }
+
+    .hero--image .hero__banner {
+      min-block-size: 380px;
+    }
+
+    .hero--image .hero--height-small {
+      min-block-size: 320px;
+    }
+
+    .hero--image .hero--height-large {
+      min-block-size: 460px;
     }
   }
 {% endstylesheet %}
