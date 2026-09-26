@@ -33,6 +33,156 @@
         }
       }
     },
+    "main_collection": {
+      "name": "Collection",
+      "headers": {
+        "header": "Collection heading",
+        "filtering": "Filtering and sorting",
+        "grid": "Product grid",
+        "style": "Colors and spacing"
+      },
+      "settings": {
+        "show_image": {
+          "label": "Show collection image",
+          "info": "Uses the image of the collection (Products > Collections). A wide image works best."
+        },
+        "show_description": {
+          "label": "Show collection description",
+          "info": "Long descriptions are shortened, with a \"Read more\" button."
+        },
+        "show_count": {
+          "label": "Show product count"
+        },
+        "subnav_menu": {
+          "label": "Related collections menu",
+          "info": "Shown as chips under the heading. Use it to link related collections, such as leagues or teams."
+        },
+        "enable_filtering": {
+          "label": "Enable filtering",
+          "info": "Choose the filters in the Shopify Search & Discovery app."
+        },
+        "filter_layout": {
+          "label": "Filters on desktop",
+          "options": {
+            "sidebar": "Sidebar",
+            "drawer": "Drawer"
+          }
+        },
+        "option_style": {
+          "label": "Size filter style",
+          "info": "Applies to product option filters, such as size.",
+          "options": {
+            "buttons": "Buttons",
+            "checkboxes": "Checkboxes"
+          }
+        },
+        "enable_sorting": {
+          "label": "Enable sorting"
+        },
+        "products_per_page": {
+          "label": "Products per page"
+        },
+        "pagination_style": {
+          "label": "Pagination",
+          "options": {
+            "load_more": "\"Load more\" button",
+            "pages": "Page numbers"
+          }
+        }
+      }
+    },
+    "main_search": {
+      "name": "Search results",
+      "headers": {
+        "results": "Results",
+        "filtering": "Filtering and sorting",
+        "suggestions": "Search suggestions",
+        "style": "Colors and spacing"
+      },
+      "settings": {
+        "products_per_page": {
+          "label": "Results per page"
+        },
+        "pagination_style": {
+          "label": "Pagination",
+          "options": {
+            "load_more": "\"Load more\" button",
+            "pages": "Page numbers"
+          }
+        },
+        "enable_filtering": {
+          "label": "Enable filtering",
+          "info": "Choose the filters in the Shopify Search & Discovery app. Filters show only for product results."
+        },
+        "filter_layout": {
+          "label": "Filters on desktop",
+          "options": {
+            "sidebar": "Sidebar",
+            "drawer": "Drawer"
+          }
+        },
+        "option_style": {
+          "label": "Size filter style",
+          "info": "Applies to product option filters, such as size.",
+          "options": {
+            "buttons": "Buttons",
+            "checkboxes": "Checkboxes"
+          }
+        },
+        "enable_sorting": {
+          "label": "Enable sorting"
+        },
+        "suggestions_menu": {
+          "label": "Suggestions menu",
+          "info": "Shown as chips before a search and when a search has no results. Link popular searches or collections."
+        },
+        "suggestions_heading": {
+          "label": "Suggestions heading"
+        }
+      }
+    },
+    "main_list_collections": {
+      "name": "Collections list",
+      "settings": {
+        "collections": {
+          "info": "Leave empty to show all collections."
+        },
+        "sort": {
+          "label": "Order",
+          "info": "Applies when showing all collections. A to Z shows every collection across pages; other orders show up to 50.",
+          "options": {
+            "alphabetical": "A to Z",
+            "alphabetical_reversed": "Z to A",
+            "products_high": "Most products first",
+            "products_low": "Fewest products first",
+            "date": "Newest first",
+            "date_reversed": "Oldest first"
+          }
+        },
+        "hide_empty": {
+          "label": "Hide empty collections"
+        },
+        "show_count": {
+          "label": "Show product count"
+        },
+        "image_ratio": {
+          "label": "Image shape",
+          "options": {
+            "square": "Square",
+            "portrait": "Portrait",
+            "landscape": "Landscape"
+          }
+        },
+        "per_page": {
+          "label": "Collections per page"
+        }
+      },
+      "headers": {
+        "content": "Content",
+        "layout": "Layout",
+        "style": "Colors and spacing"
+      }
+    },
     "footer": {
       "name": "Footer",
       "settings": {

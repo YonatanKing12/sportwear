@@ -1,0 +1,80 @@
+{
+  "collections": {
+    "product_count": {
+      "zero": "لا توجد منتجات",
+      "one": "منتج واحد",
+      "two": "منتجان",
+      "few": "{{ count }} منتجات",
+      "many": "{{ count }} منتجًا",
+      "other": "{{ count }} منتج"
+    },
+    "products_heading": "المنتجات",
+    "subnav_label": "التنقل بين الفئات",
+    "read_more": "قراءة المزيد",
+    "read_less": "عرض أقل",
+    "empty_heading": "لا توجد منتجات هنا بعد",
+    "empty_text": "منتجات جديدة في الطريق. وحتى ذلك الحين، يمكنكم تصفّح بقية منتجات المتجر.",
+    "all_products": "عرض جميع المنتجات",
+    "list_title": "جميع الفئات",
+    "list_empty": "لا توجد فئات لعرضها بعد."
+  },
+  "facets": {
+    "heading": "التصفية",
+    "filter_button": "تصفية",
+    "active_count": "عوامل التصفية المفعّلة: {{ count }}",
+    "selected_count": "المحدَّد: {{ count }}",
+    "active_label": "عوامل التصفية المفعّلة",
+    "remove_filter": "إزالة عامل التصفية:",
+    "clear_all": "مسح الكل",
+    "clear": "مسح",
+    "clear_filters": "مسح عوامل التصفية",
+    "apply": "تطبيق التصفية",
+    "show_results": {
+      "zero": "لا توجد منتجات",
+      "one": "عرض منتج واحد",
+      "two": "عرض منتجين",
+      "few": "عرض {{ count }} منتجات",
+      "many": "عرض {{ count }} منتجًا",
+      "other": "عرض {{ count }} منتج"
+    },
+    "show_more": "عرض المزيد",
+    "show_less": "عرض أقل",
+    "price_min": "الحد الأدنى",
+    "price_max": "الحد الأقصى",
+    "sort_by": "ترتيب حسب",
+    "sort_apply": "ترتيب",
+    "no_results_heading": "لا توجد منتجات تطابق عوامل التصفية هذه",
+    "no_results_text": "جرّبوا إزالة عامل تصفية أو اثنين، أو امسحوها كلها وابدؤوا من جديد."
+  },
+  "pagination": {
+    "label": "التنقل بين الصفحات",
+    "previous": "الصفحة السابقة",
+    "next": "الصفحة التالية",
+    "page": "الصفحة {{ page }}",
+    "load_more": "عرض المزيد من المنتجات",
+    "load_more_results": "عرض المزيد من النتائج",
+    "progress": "يُعرض {{ shown }} من أصل {{ total }}"
+  },
+  "search": {
+    "title": "البحث",
+    "results_heading_html": "نتائج البحث عن «{{ terms }}»",
+    "no_results_heading_html": "لا توجد نتائج عن «{{ terms }}»",
+    "no_results_text": "تحقّقوا من الإملاء، أو جرّبوا اسم فريق أو دوري أو كلمة أعمّ.",
+    "results_count": {
+      "zero": "لا توجد نتائج",
+      "one": "نتيجة واحدة",
+      "two": "نتيجتان",
+      "few": "{{ count }} نتائج",
+      "many": "{{ count }} نتيجة",
+      "other": "{{ count }} نتيجة"
+    },
+    "form_label": "البحث في المتجر",
+    "placeholder": "قمصان، فرق، دوريات…",
+    "submit": "بحث",
+    "prompt": "تبحثون عن شيء محدد؟ ابحثوا حسب الفريق أو الدوري أو نوع المنتج.",
+    "other_heading": "صفحات ومقالات",
+    "type_page": "صفحة",
+    "type_article": "مقال",
+    "suggestions_heading": "عمليات بحث شائعة"
+  }
+}

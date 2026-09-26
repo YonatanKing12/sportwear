@@ -1,0 +1,628 @@
+{%- comment -%}
+  Search results page: heading (the page's h1), a search form, the results count, product results as
+  a product-card grid with storefront filtering and sorting (Shopify filters product results only),
+  pages and articles as a simple list, pagination, and empty states with suggestion chips.
+  Works without JavaScript; assets/facets.js (<sw-facets>) updates results in place.
+{%- endcomment -%}
+{%- paginate search.results by section.settings.products_per_page -%}
+  {%- liquid
+    assign terms = search.terms
+    assign terms_html = terms | escape | prepend: '<bdi>' | append: '</bdi>'
+    assign layout = section.settings.filter_layout
+
+    assign active_count = 0
+    for filter in search.filters
+      if filter.type == 'price_range'
+        if filter.min_value.value != null or filter.max_value.value != null
+          assign active_count = active_count | plus: 1
+        endif
+      else
+        assign active_count = active_count | plus: filter.active_values.size
+      endif
+    endfor
+
+    assign show_results = false
+    if search.performed
+      if search.results_count > 0 or active_count > 0
+        assign show_results = true
+      endif
+    endif
+
+    # Filters apply to products only: hide them when no product in the results can be filtered.
+    assign show_filters = false
+    if show_results and section.settings.enable_filtering and search.filters.size > 0
+      if active_count > 0
+        assign show_filters = true
+      else
+        for filter in search.filters
+          for value in filter.values
+            if value.count > 0
+              assign show_filters = true
+              break
+            endif
+          endfor
+          if show_filters
+            break
+          endif
+        endfor
+      endif
+    endif
+
+    assign show_sort = false
+    if show_results and section.settings.enable_sorting and search.sort_options.size > 0
+      assign show_sort = true
+    endif
+
+    assign sort_by = search.sort_by | default: search.default_sort_by
+    assign search_types = search.types | join: ','
+    assign encoded_terms = terms | url_encode
+    assign encoded_types = search_types | url_encode
+    assign clear_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&options%5Bprefix%5D=last&type=' | append: encoded_types
+    if search.sort_by != blank
+      assign encoded_sort = search.sort_by | url_encode
+      assign clear_url = clear_url | append: '&sort_by=' | append: encoded_sort
+    endif
+
+    assign layout_class = 'facets-layout'
+    assign sidebar_space = 0
+    if show_filters
+      assign layout_class = layout_class | append: ' facets-layout--filters'
+      if layout == 'sidebar'
+        assign layout_class = layout_class | append: ' facets-layout--sidebar'
+        assign sidebar_space = 304
+      endif
+    endif
+
+    assign cols_desktop = section.settings.columns_desktop
+    assign cols_mobile = section.settings.columns_mobile
+    assign desktop_space = cols_desktop | minus: 1 | times: 20 | plus: sidebar_space
+    assign mobile_size = 'calc((100vw - 52px) / 2)'
+    if cols_mobile == 1
+      assign mobile_size = 'calc(100vw - 40px)'
+    endif
+    assign card_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - ' | append: desktop_space | append: 'px) / ' | append: cols_desktop | append: '), (min-width: 750px) calc((100vw - 104px) / 3), ' | append: mobile_size
+
+    assign page_products = 0
+    assign page_others = 0
+    for item in search.results
+      if item.object_type == 'product'
+        assign page_products = page_products | plus: 1
+      else
+        assign page_others = page_others | plus: 1
+      endif
+    endfor
+
+    assign load_more = false
+    if section.settings.pagination_style == 'load_more'
+      assign load_more = true
+    endif
+    assign load_more_label = 'pagination.load_more_results' | t
+    assign results_label = 'search.results_count' | t: count: search.results_count
+
+    assign suggestions_menu = section.settings.suggestions_menu
+    assign suggestions_heading = section.settings.suggestions_heading
+    if suggestions_heading == blank
+      assign suggestions_heading = 'search.suggestions_heading' | t
+    endif
+  -%}
+  <div
+    class="section main-search color-{{ section.settings.color_scheme.id }}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="page-width">
+      <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
+        <header class="search-header">
+          <h1 class="search-header__title display-l">
+            {%- if search.performed == false -%}
+              {{- 'search.title' | t -}}
+            {%- elsif show_results -%}
+              {{- 'search.results_heading_html' | t: terms: terms_html -}}
+            {%- else -%}
+              {{- 'search.no_results_heading_html' | t: terms: terms_html -}}
+            {%- endif -%}
+          </h1>
+
+          <form
+            class="search-form"
+            action="{{ routes.search_url }}"
+            method="get"
+            role="search"
+            aria-label="{{ 'search.form_label' | t }}"
+          >
+            <label class="visually-hidden" for="SearchInput-{{ section.id }}">{{ 'search.form_label' | t }}</label>
+            <div class="search-form__field">
+              {%- render 'icon', name: 'search', size: 20, class: 'search-form__icon' -%}
+              <input
+                class="search-form__input"
+                type="search"
+                id="SearchInput-{{ section.id }}"
+                name="q"
+                value="{{ terms | escape }}"
+                placeholder="{{ 'search.placeholder' | t }}"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+                enterkeyhint="search"
+              >
+            </div>
+            <input type="hidden" name="options[prefix]" value="last">
+            <button class="button button--primary search-form__submit" type="submit">{{ 'search.submit' | t }}</button>
+          </form>
+
+          {%- if search.performed -%}
+            <p class="search-header__count" tabindex="-1" data-facets-region="count" data-facets-focus>
+              {{- results_label -}}
+            </p>
+          {%- endif -%}
+        </header>
+
+        {%- if show_results -%}
+          <div class="{{ layout_class }}">
+            {%- render 'facets',
+              section_id: section.id,
+              filters: search.filters,
+              action: routes.search_url,
+              show_filters: show_filters,
+              show_sort: show_sort,
+              sort_options: search.sort_options,
+              sort_by: sort_by,
+              active_count: active_count,
+              clear_url: clear_url,
+              option_style: section.settings.option_style,
+              search_terms: terms,
+              search_types: search_types
+            -%}
+
+            <div
+              id="FacetsResults-{{ section.id }}"
+              class="facets-results"
+              data-facets-region="results"
+              data-facets-results
+            >
+              <span hidden data-facets-status>{{ results_label }}</span>
+              {%- if search.results_count > 0 -%}
+                <div
+                  class="search-results__group"
+                  data-results-group
+                  {% if page_products == 0 %}
+                    hidden
+                  {% endif %}
+                >
+                  <h2 class="visually-hidden">{{ 'collections.products_heading' | t }}</h2>
+                  <ul
+                    class="grid product-grid"
+                    role="list"
+                    style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
+                    data-results-list="products"
+                  >
+                    {%- assign product_index = 0 -%}
+                    {%- for item in search.results -%}
+                      {%- if item.object_type == 'product' -%}
+                        {%- liquid
+                          assign product_index = product_index | plus: 1
+                          assign card_loading = 'lazy'
+                          if paginate.current_page == 1 and product_index <= 4
+                            assign card_loading = 'eager'
+                          endif
+                        -%}
+                        <li class="product-grid__item">
+                          {%- render 'product-card', product: item, sizes: card_sizes, loading: card_loading -%}
+                        </li>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </ul>
+                </div>
+
+                <section
+                  class="search-other"
+                  aria-labelledby="SearchOtherTitle-{{ section.id }}"
+                  data-results-group
+                  {% if page_others == 0 %}
+                    hidden
+                  {% endif %}
+                >
+                  <h2 id="SearchOtherTitle-{{ section.id }}" class="search-other__title title-l">
+                    {{- 'search.other_heading' | t -}}
+                  </h2>
+                  <ul class="search-other__list" role="list" data-results-list="other">
+                    {%- for item in search.results -%}
+                      {%- unless item.object_type == 'product' -%}
+                        {%- liquid
+                          if item.object_type == 'article'
+                            assign item_type = 'search.type_article' | t
+                            assign excerpt = item.excerpt_or_content | strip_html | truncatewords: 26
+                          else
+                            assign item_type = 'search.type_page' | t
+                            assign excerpt = item.content | strip_html | truncatewords: 26
+                          endif
+                        -%}
+                        <li class="search-other__item">
+                          <p class="search-other__type">{{ item_type }}</p>
+                          <h3 class="search-other__heading">
+                            <a class="search-other__link" href="{{ item.url }}">{{ item.title | escape }}</a>
+                          </h3>
+                          {%- if excerpt != blank -%}
+                            <p class="search-other__excerpt">{{ excerpt | highlight: terms }}</p>
+                          {%- endif -%}
+                        </li>
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  </ul>
+                </section>
+
+                {%- render 'pagination', paginate: paginate, load_more: load_more, load_more_label: load_more_label -%}
+              {%- else -%}
+                {%- liquid
+                  assign empty_title = 'facets.no_results_heading' | t
+                  assign empty_text = 'facets.no_results_text' | t
+                -%}
+                {%- render 'facets-empty',
+                  title: empty_title,
+                  text: empty_text,
+                  clear_url: clear_url,
+                  heading_tag: 'h2'
+                -%}
+              {%- endif -%}
+            </div>
+          </div>
+          {%- if show_filters -%}
+            {%- render 'facets-drawer',
+              section_id: section.id,
+              active_count: active_count,
+              clear_url: clear_url,
+              results_count: search.results_count
+            -%}
+          {%- endif -%}
+        {%- else -%}
+          <div class="search-state">
+            {%- if search.performed -%}
+              <p class="search-state__text">{{ 'search.no_results_text' | t }}</p>
+            {%- else -%}
+              <p class="search-state__text">{{ 'search.prompt' | t }}</p>
+            {%- endif -%}
+
+            {%- if suggestions_menu != blank and suggestions_menu.links.size > 0 -%}
+              <nav class="search-suggestions" aria-labelledby="SearchSuggestionsTitle-{{ section.id }}">
+                <h2 id="SearchSuggestionsTitle-{{ section.id }}" class="search-suggestions__title title-m">
+                  {{- suggestions_heading | escape -}}
+                </h2>
+                <ul class="search-suggestions__list" role="list">
+                  {%- for link in suggestions_menu.links -%}
+                    <li>
+                      <a class="chip" href="{{ link.url }}">{{ link.title | escape }}</a>
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              </nav>
+            {%- endif -%}
+
+            {%- if search.performed -%}
+              <a class="button button--secondary" href="{{ routes.all_products_collection_url }}">
+                {{- 'collections.all_products' | t -}}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </sw-facets>
+    </div>
+  </div>
+{%- endpaginate -%}
+
+<script type="module" src="{{ 'facets.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .search-header {
+    display: grid;
+    gap: var(--space-4);
+    margin-block-end: var(--space-8);
+  }
+
+  .search-header__title {
+    overflow-wrap: anywhere;
+  }
+
+  .search-form {
+    display: flex;
+    gap: var(--space-2);
+    max-inline-size: 720px;
+  }
+
+  .search-form__field {
+    position: relative;
+    flex: 1 1 auto;
+    min-inline-size: 0;
+  }
+
+  .search-form__icon {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 16px;
+    translate: 0 -50%;
+    color: var(--color-muted);
+    pointer-events: none;
+  }
+
+  .search-form__input {
+    inline-size: 100%;
+    min-block-size: var(--control-height);
+    padding-block: 10px;
+    padding-inline: 48px 14px;
+    border: 1.5px solid var(--color-secondary-button-label);
+    border-radius: var(--radius-button);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--text-base);
+
+    &::placeholder {
+      color: var(--color-muted);
+      opacity: 1;
+    }
+  }
+
+  .search-form__submit {
+    flex: 0 0 auto;
+  }
+
+  .search-header__count {
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .search-other {
+    margin-block-start: var(--space-12);
+  }
+
+  .search-results__group[hidden] + .search-other {
+    margin-block-start: 0;
+  }
+
+  .search-other__title {
+    margin-block-end: var(--space-4);
+  }
+
+  .search-other__list {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  .search-other__item {
+    position: relative;
+    display: grid;
+    gap: var(--space-1);
+    padding-block: var(--space-4);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .search-other__type {
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+
+  .search-other__heading {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+  }
+
+  .search-other__link {
+    color: inherit;
+    text-decoration: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 2px solid var(--color-text);
+        outline-offset: 2px;
+        border-radius: var(--radius-card);
+      }
+    }
+  }
+
+  .search-other__excerpt {
+    max-inline-size: 72ch;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+
+    & .highlight {
+      color: var(--color-text);
+      font-weight: 800;
+    }
+  }
+
+  .search-state {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-6);
+  }
+
+  .search-state__text {
+    max-inline-size: 60ch;
+    color: var(--color-muted);
+    font-size: var(--text-lg);
+  }
+
+  .search-suggestions {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .search-suggestions__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.main_search.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main_search.headers.results"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "label": "t:sections.main_search.settings.products_per_page.label",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 5,
+      "step": 1,
+      "label": "t:settings.columns_desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "t:settings.columns_mobile",
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "t:sections.main_search.settings.pagination_style.label",
+      "options": [
+        {
+          "value": "load_more",
+          "label": "t:sections.main_search.settings.pagination_style.options.load_more"
+        },
+        {
+          "value": "pages",
+          "label": "t:sections.main_search.settings.pagination_style.options.pages"
+        }
+      ],
+      "default": "load_more"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_search.headers.filtering"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "label": "t:sections.main_search.settings.enable_filtering.label",
+      "info": "t:sections.main_search.settings.enable_filtering.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "filter_layout",
+      "label": "t:sections.main_search.settings.filter_layout.label",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "t:sections.main_search.settings.filter_layout.options.sidebar"
+        },
+        {
+          "value": "drawer",
+          "label": "t:sections.main_search.settings.filter_layout.options.drawer"
+        }
+      ],
+      "default": "sidebar",
+      "visible_if": "{{ section.settings.enable_filtering }}"
+    },
+    {
+      "type": "select",
+      "id": "option_style",
+      "label": "t:sections.main_search.settings.option_style.label",
+      "info": "t:sections.main_search.settings.option_style.info",
+      "options": [
+        {
+          "value": "buttons",
+          "label": "t:sections.main_search.settings.option_style.options.buttons"
+        },
+        {
+          "value": "checkboxes",
+          "label": "t:sections.main_search.settings.option_style.options.checkboxes"
+        }
+      ],
+      "default": "buttons",
+      "visible_if": "{{ section.settings.enable_filtering }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "label": "t:sections.main_search.settings.enable_sorting.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_search.headers.suggestions"
+    },
+    {
+      "type": "link_list",
+      "id": "suggestions_menu",
+      "label": "t:sections.main_search.settings.suggestions_menu.label",
+      "info": "t:sections.main_search.settings.suggestions_menu.info"
+    },
+    {
+      "type": "text",
+      "id": "suggestions_heading",
+      "label": "t:sections.main_search.settings.suggestions_heading.label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_search.headers.style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

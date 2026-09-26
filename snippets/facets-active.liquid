@@ -1,0 +1,110 @@
+{%- doc -%}
+  Active filters as removable chips, followed by "Clear all". The chips are plain links to Shopify's
+  url_to_remove, so they work without JavaScript; assets/facets.js intercepts them (data-facets-link)
+  and updates the results in place.
+
+  @param {filter[]} filters - collection.filters or search.filters
+  @param {number} active_count - Number of active filter values (a price range counts once)
+  @param {string} clear_url - URL without any filter (keeps the sort order)
+  @param {string} [results_label] - Results count shown before the chips, e.g. "12 products"
+
+  @example
+  {% render 'facets-active', filters: collection.filters, active_count: active_count, clear_url: clear_url %}
+{%- enddoc -%}
+{%- if active_count > 0 -%}
+  <div class="facets-active">
+    {%- if results_label != blank -%}
+      <p class="facets-active__count" tabindex="-1" data-facets-focus>{{ results_label }}</p>
+    {%- endif -%}
+    <ul class="facets-active__list" role="list" aria-label="{{ 'facets.active_label' | t }}">
+      {%- for filter in filters -%}
+        {%- if filter.type == 'price_range' -%}
+          {%- if filter.min_value.value != null or filter.max_value.value != null -%}
+            {%- liquid
+              assign price_min = filter.min_value.value | default: 0 | money_without_trailing_zeros
+              assign price_max = filter.max_value.value | default: filter.range_max | money_without_trailing_zeros
+            -%}
+            <li>
+              <a class="chip facets-active__chip" href="{{ filter.url_to_remove }}" data-facets-link>
+                <span class="visually-hidden">{{ 'facets.remove_filter' | t }}</span>
+                <span>{{ filter.label | escape }}: {{ price_min }}–{{ price_max }}</span>
+                {%- render 'icon', name: 'close', size: 16, class: 'facets-active__icon' -%}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- else -%}
+          {%- for value in filter.active_values -%}
+            <li>
+              <a class="chip facets-active__chip" href="{{ value.url_to_remove }}" data-facets-link>
+                <span class="visually-hidden">{{ 'facets.remove_filter' | t }}</span>
+                <span>
+                  {{- filter.label | escape }}: <bdi>{{ value.label | escape }}</bdi></span
+                >
+                {%- render 'icon', name: 'close', size: 16, class: 'facets-active__icon' -%}
+              </a>
+            </li>
+          {%- endfor -%}
+        {%- endif -%}
+      {%- endfor -%}
+      <li>
+        <a class="facets-active__clear" href="{{ clear_url }}" data-facets-link>{{ 'facets.clear_all' | t }}</a>
+      </li>
+    </ul>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .facets-active {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2) var(--space-4);
+    margin-block-end: var(--space-5);
+  }
+
+  .facets-active__count {
+    font-size: var(--text-md);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .facets-active__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .facets-active__chip {
+    gap: var(--space-2);
+    padding-inline: var(--space-4) var(--space-3);
+    background: var(--color-background);
+    border-color: var(--color-text);
+    font-weight: 700;
+    white-space: normal;
+    text-align: start;
+  }
+
+  .facets-active__icon {
+    flex-shrink: 0;
+  }
+
+  .facets-active__clear {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    padding-inline: var(--space-2);
+    color: inherit;
+    font-size: var(--text-md);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+  }
+{% endstylesheet %}

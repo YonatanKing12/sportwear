@@ -69,6 +69,78 @@
       "max_quantity": "הכמות המקסימלית שאפשר להזמין: {{ quantity }}."
     }
   },
+  "collections": {
+    "product_count": {
+      "one": "מוצר אחד",
+      "two": "2 מוצרים",
+      "many": "{{ count }} מוצרים",
+      "other": "{{ count }} מוצרים"
+    },
+    "products_heading": "מוצרים",
+    "subnav_label": "מעבר בין קטגוריות",
+    "read_more": "להמשך קריאה",
+    "read_less": "הצגת פחות",
+    "empty_heading": "עדיין אין כאן מוצרים",
+    "empty_text": "מוצרים חדשים כבר בדרך. בינתיים אתם מוזמנים להציץ בכל שאר המוצרים בחנות.",
+    "all_products": "לכל המוצרים",
+    "list_title": "כל הקטגוריות",
+    "list_empty": "עדיין אין קטגוריות להצגה."
+  },
+  "facets": {
+    "heading": "סינון",
+    "filter_button": "סינון",
+    "active_count": "מסננים פעילים: {{ count }}",
+    "selected_count": "נבחרו: {{ count }}",
+    "active_label": "מסננים פעילים",
+    "remove_filter": "הסרת המסנן:",
+    "clear_all": "ניקוי הכול",
+    "clear": "ניקוי",
+    "clear_filters": "ניקוי הסינון",
+    "apply": "החלת הסינון",
+    "show_results": {
+      "one": "הצגת מוצר אחד",
+      "two": "הצגת 2 מוצרים",
+      "many": "הצגת {{ count }} מוצרים",
+      "other": "הצגת {{ count }} מוצרים"
+    },
+    "show_more": "הצגת עוד",
+    "show_less": "הצגת פחות",
+    "price_min": "מינימום",
+    "price_max": "מקסימום",
+    "sort_by": "מיון לפי",
+    "sort_apply": "מיון",
+    "no_results_heading": "אין מוצרים שמתאימים לסינון הזה",
+    "no_results_text": "נסו להסיר מסנן או שניים, או לנקות את כל הסינון ולהתחיל מחדש."
+  },
+  "pagination": {
+    "label": "ניווט בין עמודים",
+    "previous": "לעמוד הקודם",
+    "next": "לעמוד הבא",
+    "page": "עמוד {{ page }}",
+    "load_more": "הצגת מוצרים נוספים",
+    "load_more_results": "הצגת תוצאות נוספות",
+    "progress": "מוצגים {{ shown }} מתוך {{ total }}"
+  },
+  "search": {
+    "title": "חיפוש",
+    "results_heading_html": "תוצאות חיפוש עבור \"{{ terms }}\"",
+    "no_results_heading_html": "לא מצאנו תוצאות עבור \"{{ terms }}\"",
+    "no_results_text": "בדקו את האיות, או נסו שם של קבוצה, ליגה או מילה כללית יותר.",
+    "results_count": {
+      "one": "תוצאה אחת",
+      "two": "2 תוצאות",
+      "many": "{{ count }} תוצאות",
+      "other": "{{ count }} תוצאות"
+    },
+    "form_label": "חיפוש בחנות",
+    "placeholder": "חולצות, קבוצות, ליגות…",
+    "submit": "חיפוש",
+    "prompt": "מחפשים משהו מסוים? אפשר לחפש לפי קבוצה, ליגה או סוג מוצר.",
+    "other_heading": "עמודים וכתבות",
+    "type_page": "עמוד",
+    "type_article": "כתבה",
+    "suggestions_heading": "חיפושים פופולריים"
+  },
   "footer": {
     "brand_text": "חולצות כדורגל, גופיות ומכנסי כדורסל, למבוגרים ולילדים.",
     "menu_heading": "קישורים שימושיים",

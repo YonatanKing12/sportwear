@@ -65,6 +65,72 @@
       "max_quantity": "Maximum available quantity: {{ quantity }}."
     }
   },
+  "collections": {
+    "product_count": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "products_heading": "Products",
+    "subnav_label": "Browse collections",
+    "read_more": "Read more",
+    "read_less": "Show less",
+    "empty_heading": "No products here yet",
+    "empty_text": "New products are on the way. In the meantime, have a look at everything else in the store.",
+    "all_products": "Shop all products",
+    "list_title": "All collections",
+    "list_empty": "There are no collections to show yet."
+  },
+  "facets": {
+    "heading": "Filters",
+    "filter_button": "Filter",
+    "active_count": "Active filters: {{ count }}",
+    "selected_count": "Selected: {{ count }}",
+    "active_label": "Active filters",
+    "remove_filter": "Remove filter:",
+    "clear_all": "Clear all",
+    "clear": "Clear",
+    "clear_filters": "Clear filters",
+    "apply": "Apply filters",
+    "show_results": {
+      "one": "Show {{ count }} product",
+      "other": "Show {{ count }} products"
+    },
+    "show_more": "Show more",
+    "show_less": "Show less",
+    "price_min": "Min",
+    "price_max": "Max",
+    "sort_by": "Sort by",
+    "sort_apply": "Sort",
+    "no_results_heading": "No products match these filters",
+    "no_results_text": "Try removing a filter or two, or clear them all and start again."
+  },
+  "pagination": {
+    "label": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {{ page }}",
+    "load_more": "Load more products",
+    "load_more_results": "Load more results",
+    "progress": "Showing {{ shown }} of {{ total }}"
+  },
+  "search": {
+    "title": "Search",
+    "results_heading_html": "Search results for “{{ terms }}”",
+    "no_results_heading_html": "No results for “{{ terms }}”",
+    "no_results_text": "Check the spelling, or try a team, a league or a more general word.",
+    "results_count": {
+      "one": "{{ count }} result",
+      "other": "{{ count }} results"
+    },
+    "form_label": "Search the store",
+    "placeholder": "Jerseys, teams, leagues…",
+    "submit": "Search",
+    "prompt": "Looking for something? Search by team, league or product type.",
+    "other_heading": "Pages and articles",
+    "type_page": "Page",
+    "type_article": "Article",
+    "suggestions_heading": "Popular searches"
+  },
   "footer": {
     "brand_text": "Football jerseys and basketball kits for adults and kids.",
     "menu_heading": "Useful links",

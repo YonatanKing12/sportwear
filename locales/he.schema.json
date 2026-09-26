@@ -33,6 +33,156 @@
         }
       }
     },
+    "main_collection": {
+      "name": "קטגוריה",
+      "headers": {
+        "header": "כותרת הקטגוריה",
+        "filtering": "סינון ומיון",
+        "grid": "רשת המוצרים",
+        "style": "צבעים ומרווחים"
+      },
+      "settings": {
+        "show_image": {
+          "label": "הצגת תמונת הקטגוריה",
+          "info": "משתמש בתמונה שהוגדרה לקטגוריה (מוצרים > קטגוריות). תמונה רחבה נראית הכי טוב."
+        },
+        "show_description": {
+          "label": "הצגת תיאור הקטגוריה",
+          "info": "תיאור ארוך מקוצר, עם כפתור \"להמשך קריאה\"."
+        },
+        "show_count": {
+          "label": "הצגת מספר המוצרים"
+        },
+        "subnav_menu": {
+          "label": "תפריט קטגוריות קשורות",
+          "info": "מוצג ככפתורים מעוגלים מתחת לכותרת. אפשר לקשר בו לקטגוריות קשורות, כמו ליגות או קבוצות."
+        },
+        "enable_filtering": {
+          "label": "הפעלת סינון",
+          "info": "את המסננים בוחרים באפליקציה Search & Discovery של Shopify."
+        },
+        "filter_layout": {
+          "label": "מיקום המסננים במחשב",
+          "options": {
+            "sidebar": "סרגל צד",
+            "drawer": "חלונית נפתחת"
+          }
+        },
+        "option_style": {
+          "label": "סגנון סינון המידות",
+          "info": "חל על מסננים של אפשרויות מוצר, כמו מידה.",
+          "options": {
+            "buttons": "כפתורים",
+            "checkboxes": "תיבות סימון"
+          }
+        },
+        "enable_sorting": {
+          "label": "הפעלת מיון"
+        },
+        "products_per_page": {
+          "label": "מוצרים בכל עמוד"
+        },
+        "pagination_style": {
+          "label": "מעבר בין עמודים",
+          "options": {
+            "load_more": "כפתור \"הצגת מוצרים נוספים\"",
+            "pages": "מספרי עמודים"
+          }
+        }
+      }
+    },
+    "main_search": {
+      "name": "תוצאות חיפוש",
+      "headers": {
+        "results": "תוצאות",
+        "filtering": "סינון ומיון",
+        "suggestions": "הצעות חיפוש",
+        "style": "צבעים ומרווחים"
+      },
+      "settings": {
+        "products_per_page": {
+          "label": "תוצאות בכל עמוד"
+        },
+        "pagination_style": {
+          "label": "מעבר בין עמודים",
+          "options": {
+            "load_more": "כפתור \"הצגת תוצאות נוספות\"",
+            "pages": "מספרי עמודים"
+          }
+        },
+        "enable_filtering": {
+          "label": "הפעלת סינון",
+          "info": "את המסננים בוחרים באפליקציה Search & Discovery של Shopify. המסננים מוצגים רק לתוצאות של מוצרים."
+        },
+        "filter_layout": {
+          "label": "מיקום המסננים במחשב",
+          "options": {
+            "sidebar": "סרגל צד",
+            "drawer": "חלונית נפתחת"
+          }
+        },
+        "option_style": {
+          "label": "סגנון סינון המידות",
+          "info": "חל על מסננים של אפשרויות מוצר, כמו מידה.",
+          "options": {
+            "buttons": "כפתורים",
+            "checkboxes": "תיבות סימון"
+          }
+        },
+        "enable_sorting": {
+          "label": "הפעלת מיון"
+        },
+        "suggestions_menu": {
+          "label": "תפריט הצעות",
+          "info": "מוצג כתגיות לפני חיפוש וכשחיפוש לא מחזיר תוצאות. אפשר לקשר בו לחיפושים פופולריים או לקטגוריות."
+        },
+        "suggestions_heading": {
+          "label": "כותרת ההצעות"
+        }
+      }
+    },
+    "main_list_collections": {
+      "name": "רשימת קטגוריות",
+      "settings": {
+        "collections": {
+          "info": "השאירו ריק כדי להציג את כל הקטגוריות."
+        },
+        "sort": {
+          "label": "סדר",
+          "info": "חל כשמוצגות כל הקטגוריות. בסדר א׳-ת׳ מוצגות כל הקטגוריות בכמה עמודים; בסדר אחר מוצגות עד 50.",
+          "options": {
+            "alphabetical": "א׳ עד ת׳",
+            "alphabetical_reversed": "ת׳ עד א׳",
+            "products_high": "הכי הרבה מוצרים קודם",
+            "products_low": "הכי מעט מוצרים קודם",
+            "date": "החדשות קודם",
+            "date_reversed": "הישנות קודם"
+          }
+        },
+        "hide_empty": {
+          "label": "הסתרת קטגוריות ריקות"
+        },
+        "show_count": {
+          "label": "הצגת מספר המוצרים"
+        },
+        "image_ratio": {
+          "label": "צורת התמונה",
+          "options": {
+            "square": "ריבוע",
+            "portrait": "לאורך",
+            "landscape": "לרוחב"
+          }
+        },
+        "per_page": {
+          "label": "קטגוריות בכל עמוד"
+        }
+      },
+      "headers": {
+        "content": "תוכן",
+        "layout": "פריסה",
+        "style": "צבעים ומרווחים"
+      }
+    },
     "footer": {
       "name": "תחתית העמוד",
       "settings": {

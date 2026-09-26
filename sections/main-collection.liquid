@@ -1,0 +1,502 @@
+{%- comment -%}
+  Collection page: heading (the page's h1), optional image banner, description and chips menu, then
+  storefront filtering (sidebar on desktop, drawer on small screens), sorting, the product grid and
+  pagination. Works without JavaScript; assets/facets.js (<sw-facets>) updates results in place
+  through the Section Rendering API.
+{%- endcomment -%}
+{%- paginate collection.products by section.settings.products_per_page -%}
+  {%- liquid
+    assign layout = section.settings.filter_layout
+
+    assign show_filters = false
+    if section.settings.enable_filtering and collection.filters.size > 0
+      assign show_filters = true
+    endif
+
+    assign show_sort = false
+    if section.settings.enable_sorting and collection.sort_options.size > 0
+      assign show_sort = true
+    endif
+
+    assign active_count = 0
+    for filter in collection.filters
+      if filter.type == 'price_range'
+        if filter.min_value.value != null or filter.max_value.value != null
+          assign active_count = active_count | plus: 1
+        endif
+      else
+        assign active_count = active_count | plus: filter.active_values.size
+      endif
+    endfor
+
+    assign sort_by = collection.sort_by | default: collection.default_sort_by
+    assign clear_url = collection.url
+    if collection.sort_by != blank
+      assign sort_param = collection.sort_by | url_encode
+      assign clear_url = clear_url | append: '?sort_by=' | append: sort_param
+    endif
+
+    assign layout_class = 'facets-layout'
+    assign sidebar_space = 0
+    if show_filters
+      assign layout_class = layout_class | append: ' facets-layout--filters'
+      if layout == 'sidebar'
+        assign layout_class = layout_class | append: ' facets-layout--sidebar'
+        assign sidebar_space = 304
+      endif
+    endif
+
+    assign cols_desktop = section.settings.columns_desktop
+    assign cols_mobile = section.settings.columns_mobile
+    assign desktop_space = cols_desktop | minus: 1 | times: 20 | plus: sidebar_space
+    assign mobile_size = 'calc((100vw - 52px) / 2)'
+    if cols_mobile == 1
+      assign mobile_size = 'calc(100vw - 40px)'
+    endif
+    assign card_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - ' | append: desktop_space | append: 'px) / ' | append: cols_desktop | append: '), (min-width: 750px) calc((100vw - 104px) / 3), ' | append: mobile_size
+    assign banner_sizes = '(min-width: 750px) min(100vw - 64px, ' | append: settings.page_width | append: 'px), calc(100vw - 40px)'
+
+    assign banner_loading = 'lazy'
+    assign banner_priority = 'auto'
+    assign banner_preload = false
+    if section.index == 1
+      assign banner_loading = 'eager'
+      assign banner_priority = 'high'
+      assign banner_preload = true
+    endif
+
+    assign load_more = false
+    if section.settings.pagination_style == 'load_more'
+      assign load_more = true
+    endif
+    assign load_more_label = 'pagination.load_more' | t
+
+    assign has_products = true
+    if collection.all_products_count == 0
+      assign has_products = false
+    endif
+    assign show_placeholders = false
+    if has_products == false and request.design_mode
+      assign show_placeholders = true
+    endif
+
+    assign results_label = 'collections.product_count' | t: count: collection.products_count
+    assign subnav = section.settings.subnav_menu
+  -%}
+  <div
+    class="section main-collection color-{{ section.settings.color_scheme.id }}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="page-width">
+      <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
+        <header class="collection-header">
+          {%- if section.settings.show_image and collection.image != blank -%}
+            <div class="collection-header__media media-tile">
+              {%- render 'image',
+                image: collection.image,
+                sizes: banner_sizes,
+                widths: '540, 720, 960, 1280, 1600, 1920',
+                loading: banner_loading,
+                fetchpriority: banner_priority,
+                preload: banner_preload,
+                class: 'collection-header__image'
+              -%}
+            </div>
+          {%- endif -%}
+
+          <h1 class="collection-header__title display-l">{{ collection.title | escape }}</h1>
+
+          {%- if section.settings.show_count and has_products -%}
+            <p class="collection-header__count">
+              {{- 'collections.product_count' | t: count: collection.all_products_count -}}
+            </p>
+          {%- endif -%}
+
+          {%- if section.settings.show_description and collection.description != blank -%}
+            {%- assign description_length = collection.description | strip_html | size -%}
+            <sw-read-more class="read-more{% if description_length > 240 %} read-more--collapsed{% endif %}">
+              <div
+                id="CollectionDescription-{{ section.id }}"
+                class="collection-header__description rte read-more__content"
+              >
+                {{ collection.description }}
+              </div>
+              {%- if description_length > 240 -%}
+                <button
+                  type="button"
+                  class="read-more__toggle js-only"
+                  aria-expanded="false"
+                  aria-controls="CollectionDescription-{{ section.id }}"
+                  data-label-more="{{ 'collections.read_more' | t | escape }}"
+                  data-label-less="{{ 'collections.read_less' | t | escape }}"
+                >
+                  {{- 'collections.read_more' | t -}}
+                </button>
+              {%- endif -%}
+            </sw-read-more>
+          {%- endif -%}
+        </header>
+
+        {%- if subnav != blank and subnav.links.size > 0 -%}
+          <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
+            <sw-chip-scroller>
+              <ul class="collection-subnav__list scroller" role="list">
+                {%- for link in subnav.links -%}
+                  <li>
+                    <a
+                      class="chip{% if link.current %} chip--active{% endif %}"
+                      href="{{ link.url }}"
+                      {% if link.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{- link.title | escape -}}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </sw-chip-scroller>
+          </nav>
+        {%- endif -%}
+
+        {%- if has_products or show_placeholders -%}
+          <div class="{{ layout_class }}">
+            {%- render 'facets',
+              section_id: section.id,
+              filters: collection.filters,
+              action: collection.url,
+              show_filters: show_filters,
+              show_sort: show_sort,
+              sort_options: collection.sort_options,
+              sort_by: sort_by,
+              active_count: active_count,
+              clear_url: clear_url,
+              results_label: results_label,
+              option_style: section.settings.option_style
+            -%}
+
+            <div
+              id="FacetsResults-{{ section.id }}"
+              class="facets-results"
+              data-facets-region="results"
+              data-facets-results
+            >
+              <h2 class="visually-hidden" tabindex="-1" data-facets-focus>
+                {{- 'collections.products_heading' | t -}}
+              </h2>
+              <span hidden data-facets-status>{{ results_label }}</span>
+
+              {%- if collection.products.size > 0 -%}
+                <ul
+                  class="grid product-grid"
+                  role="list"
+                  style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
+                  data-results-list="products"
+                >
+                  {%- for product in collection.products -%}
+                    {%- liquid
+                      assign card_loading = 'lazy'
+                      if paginate.current_page == 1 and forloop.index <= 4
+                        assign card_loading = 'eager'
+                      endif
+                    -%}
+                    <li class="product-grid__item">
+                      {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {%- render 'pagination', paginate: paginate, load_more: load_more, load_more_label: load_more_label -%}
+              {%- elsif show_placeholders -%}
+                <ul
+                  class="grid product-grid"
+                  role="list"
+                  style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
+                >
+                  {%- for i in (1..8) -%}
+                    <li class="product-grid__item">
+                      {%- render 'product-card', product: blank, sizes: card_sizes -%}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+              {%- elsif active_count > 0 -%}
+                {%- liquid
+                  assign empty_title = 'facets.no_results_heading' | t
+                  assign empty_text = 'facets.no_results_text' | t
+                -%}
+                {%- render 'facets-empty', title: empty_title, text: empty_text, clear_url: clear_url -%}
+              {%- else -%}
+                {%- liquid
+                  assign empty_title = 'collections.empty_heading' | t
+                  assign empty_text = 'collections.empty_text' | t
+                -%}
+                {%- render 'facets-empty', title: empty_title, text: empty_text -%}
+                {%- render 'pagination', paginate: paginate -%}
+              {%- endif -%}
+            </div>
+          </div>
+          {%- if show_filters -%}
+            {%- render 'facets-drawer',
+              section_id: section.id,
+              active_count: active_count,
+              clear_url: clear_url,
+              results_count: collection.products_count
+            -%}
+          {%- endif -%}
+        {%- else -%}
+          {%- liquid
+            assign empty_title = 'collections.empty_heading' | t
+            assign empty_text = 'collections.empty_text' | t
+          -%}
+          {%- render 'facets-empty', title: empty_title, text: empty_text, heading_tag: 'h2' -%}
+        {%- endif -%}
+      </sw-facets>
+    </div>
+  </div>
+{%- endpaginate -%}
+
+<script type="module" src="{{ 'facets.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .collection-header {
+    display: grid;
+    gap: var(--space-3);
+    margin-block-end: var(--space-6);
+  }
+
+  .collection-header__media {
+    --media-ratio: 2 / 1;
+    --media-fit: cover;
+    margin-block-end: var(--space-3);
+
+    @media screen and (min-width: 750px) {
+      --media-ratio: 4 / 1;
+    }
+  }
+
+  .collection-header__title {
+    overflow-wrap: anywhere;
+  }
+
+  .collection-header__count {
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .collection-header__description {
+    max-inline-size: 72ch;
+    color: var(--color-muted);
+  }
+
+  sw-read-more,
+  sw-chip-scroller {
+    display: block;
+  }
+
+  .read-more {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-1);
+  }
+
+  .js .read-more--collapsed .read-more__content {
+    max-block-size: 5.1em;
+    overflow: hidden;
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+  }
+
+  .read-more__toggle {
+    min-block-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: var(--text-md);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .collection-subnav {
+    margin-block-end: var(--space-6);
+  }
+
+  /* Edge-to-edge chip scroller aligned with the page gutter. Two classes, so the padding wins over
+     the list reset in base.css whatever its specificity. */
+  .collection-subnav .collection-subnav__list {
+    margin-block: 0;
+    margin-inline: calc(var(--gutter) * -1);
+    padding-block: 0;
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    list-style: none;
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.main_collection.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main_collection.headers.header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "t:sections.main_collection.settings.show_image.label",
+      "info": "t:sections.main_collection.settings.show_image.info",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_description",
+      "label": "t:sections.main_collection.settings.show_description.label",
+      "info": "t:sections.main_collection.settings.show_description.info",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "t:sections.main_collection.settings.show_count.label",
+      "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "subnav_menu",
+      "label": "t:sections.main_collection.settings.subnav_menu.label",
+      "info": "t:sections.main_collection.settings.subnav_menu.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_collection.headers.filtering"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_filtering",
+      "label": "t:sections.main_collection.settings.enable_filtering.label",
+      "info": "t:sections.main_collection.settings.enable_filtering.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "filter_layout",
+      "label": "t:sections.main_collection.settings.filter_layout.label",
+      "options": [
+        {
+          "value": "sidebar",
+          "label": "t:sections.main_collection.settings.filter_layout.options.sidebar"
+        },
+        {
+          "value": "drawer",
+          "label": "t:sections.main_collection.settings.filter_layout.options.drawer"
+        }
+      ],
+      "default": "sidebar",
+      "visible_if": "{{ section.settings.enable_filtering }}"
+    },
+    {
+      "type": "select",
+      "id": "option_style",
+      "label": "t:sections.main_collection.settings.option_style.label",
+      "info": "t:sections.main_collection.settings.option_style.info",
+      "options": [
+        {
+          "value": "buttons",
+          "label": "t:sections.main_collection.settings.option_style.options.buttons"
+        },
+        {
+          "value": "checkboxes",
+          "label": "t:sections.main_collection.settings.option_style.options.checkboxes"
+        }
+      ],
+      "default": "buttons",
+      "visible_if": "{{ section.settings.enable_filtering }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "label": "t:sections.main_collection.settings.enable_sorting.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_collection.headers.grid"
+    },
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 48,
+      "step": 4,
+      "label": "t:sections.main_collection.settings.products_per_page.label",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 5,
+      "step": 1,
+      "label": "t:settings.columns_desktop",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "label": "t:settings.columns_mobile",
+      "default": 2
+    },
+    {
+      "type": "select",
+      "id": "pagination_style",
+      "label": "t:sections.main_collection.settings.pagination_style.label",
+      "options": [
+        {
+          "value": "load_more",
+          "label": "t:sections.main_collection.settings.pagination_style.options.load_more"
+        },
+        {
+          "value": "pages",
+          "label": "t:sections.main_collection.settings.pagination_style.options.pages"
+        }
+      ],
+      "default": "load_more"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_collection.headers.style"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ]
+}
+{% endschema %}

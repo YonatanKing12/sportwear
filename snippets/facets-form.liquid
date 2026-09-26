@@ -1,0 +1,548 @@
+{%- doc -%}
+  The storefront filter form for collection and search results: a GET form that works without
+  JavaScript (a submit button shows when JavaScript is off). Every filter from collection.filters or
+  search.filters becomes a collapsible group:
+  - list and boolean filters: checkboxes with result counts, color swatches or images when the
+    filter's presentation asks for them; product option filters (such as size) can show as buttons.
+    Values without results are disabled unless selected. Long lists show 10 values and a
+    "Show more" toggle.
+  - price_range filters: two labelled number inputs in the store currency.
+  assets/facets.js submits it on change and moves it into the filter drawer on small screens.
+
+  @param {string} section_id - The section id, for unique element ids
+  @param {string} form_id - Id of the form element (the sort select points to it)
+  @param {string} action - The form action: collection.url or routes.search_url
+  @param {filter[]} filters - collection.filters or search.filters
+  @param {boolean} show_filters - Render the filter groups (false keeps only the hidden inputs)
+  @param {string} [option_style] - 'buttons' (default) or 'checkboxes' for product option filters
+  @param {string} [search_terms] - Search terms, kept as a hidden input (search page)
+  @param {string} [search_types] - Comma-separated search types (search page)
+
+  @example
+  {% render 'facets-form', section_id: section.id, form_id: form_id, action: collection.url, filters: collection.filters, show_filters: true %}
+{%- enddoc -%}
+{%- liquid
+  assign visible_limit = 10
+  assign currency_symbol = cart.currency.symbol
+-%}
+<form
+  id="{{ form_id }}"
+  class="facets-form"
+  action="{{ action }}"
+  method="get"
+  aria-label="{{ 'facets.heading' | t }}"
+  data-facets-form
+>
+  {%- if search_terms != blank -%}
+    <input type="hidden" name="q" value="{{ search_terms | escape }}">
+    <input type="hidden" name="options[prefix]" value="last">
+    {%- if search_types != blank -%}
+      <input type="hidden" name="type" value="{{ search_types | escape }}">
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if show_filters -%}
+    {%- for filter in filters -%}
+      {%- liquid
+        assign group_index = forloop.index
+        assign group_id = 'FacetGroup-' | append: section_id | append: '-' | append: group_index
+        assign selected = 0
+        if filter.type == 'price_range'
+          if filter.min_value.value != null or filter.max_value.value != null
+            assign selected = 1
+          endif
+        else
+          assign selected = filter.active_values.size
+        endif
+      -%}
+      <details
+        id="{{ group_id }}"
+        class="facets-group"
+        {% if selected > 0 or group_index <= 3 %}
+          open
+        {% endif %}
+      >
+        <summary id="{{ group_id }}-summary" class="facets-group__summary">
+          <span class="facets-group__label">{{ filter.label | escape }}</span>
+          {%- if selected > 0 and filter.type != 'price_range' -%}
+            <span class="facets-group__selected" aria-hidden="true">{{ selected }}</span>
+            <span class="visually-hidden"> ({{ 'facets.selected_count' | t: count: selected }})</span>
+          {%- endif -%}
+          {%- render 'icon', name: 'plus', size: 18, class: 'facets-group__icon facets-group__icon--plus' -%}
+          {%- render 'icon', name: 'minus', size: 18, class: 'facets-group__icon facets-group__icon--minus' -%}
+        </summary>
+
+        {%- if filter.type == 'price_range' -%}
+          {%- liquid
+            assign price_id = 'Filter-' | append: section_id | append: '-' | append: group_index
+            assign range_max = filter.range_max | money_without_currency | replace: ',', '' | remove: '.00'
+            assign min_value = ''
+            if filter.min_value.value != null
+              assign min_value = filter.min_value.value | money_without_currency | replace: ',', '' | remove: '.00'
+            endif
+            assign max_value = ''
+            if filter.max_value.value != null
+              assign max_value = filter.max_value.value | money_without_currency | replace: ',', '' | remove: '.00'
+            endif
+          -%}
+          <fieldset class="facets-group__body facets-price" data-price-range>
+            <legend class="visually-hidden">{{ filter.label | escape }} ({{ currency_symbol }})</legend>
+            <div class="facets-price__field">
+              <label class="facets-price__label" for="{{ price_id }}-min">{{ 'facets.price_min' | t }}</label>
+              <div class="facets-price__control" dir="ltr">
+                <span class="facets-price__currency" aria-hidden="true">{{ currency_symbol }}</span>
+                <input
+                  class="facets-price__input"
+                  type="number"
+                  id="{{ price_id }}-min"
+                  name="{{ filter.min_value.param_name }}"
+                  value="{{ min_value }}"
+                  placeholder="0"
+                  min="0"
+                  step="any"
+                  data-price="min"
+                >
+              </div>
+            </div>
+            <span class="facets-price__dash" aria-hidden="true">–</span>
+            <div class="facets-price__field">
+              <label class="facets-price__label" for="{{ price_id }}-max">{{ 'facets.price_max' | t }}</label>
+              <div class="facets-price__control" dir="ltr">
+                <span class="facets-price__currency" aria-hidden="true">{{ currency_symbol }}</span>
+                <input
+                  class="facets-price__input"
+                  type="number"
+                  id="{{ price_id }}-max"
+                  name="{{ filter.max_value.param_name }}"
+                  value="{{ max_value }}"
+                  {% if filter.range_max > 0 %}
+                    placeholder="{{ range_max }}"
+                  {% endif %}
+                  min="0"
+                  step="any"
+                  data-price="max"
+                >
+              </div>
+            </div>
+          </fieldset>
+        {%- else -%}
+          {%- liquid
+            assign as_buttons = false
+            if option_style != 'checkboxes' and filter.param_name contains 'filter.v.option.'
+              assign as_buttons = true
+            endif
+            if filter.presentation == 'swatch' or filter.presentation == 'image'
+              assign as_buttons = false
+            endif
+
+            assign list_id = 'FacetValues-' | append: section_id | append: '-' | append: group_index
+            assign collapsible = false
+            assign extra_selected = false
+            if as_buttons == false and filter.values.size > visible_limit
+              assign collapsible = true
+              for value in filter.values offset: visible_limit
+                if value.active
+                  assign extra_selected = true
+                  break
+                endif
+              endfor
+            endif
+          -%}
+          <fieldset class="facets-group__body">
+            <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+            <ul
+              id="{{ list_id }}"
+              class="facets-values{% if as_buttons %} facets-values--buttons{% endif %}{% if collapsible and extra_selected == false %} facets-values--collapsed{% endif %}"
+              role="list"
+            >
+              {%- for value in filter.values -%}
+                {%- liquid
+                  assign input_id = 'Filter-' | append: section_id | append: '-' | append: group_index | append: '-' | append: forloop.index
+                  assign value_disabled = false
+                  if value.count == 0 and value.active == false
+                    assign value_disabled = true
+                  endif
+                -%}
+                <li class="facets-values__item{% if collapsible and forloop.index > visible_limit %} facets-values__item--extra{% endif %}">
+                  <input
+                    class="facets-values__input visually-hidden"
+                    type="checkbox"
+                    id="{{ input_id }}"
+                    name="{{ value.param_name | escape }}"
+                    value="{{ value.value | escape }}"
+                    {% if value.active %}
+                      checked
+                    {% endif %}
+                    {% if value_disabled %}
+                      disabled
+                    {% endif %}
+                  >
+                  <label class="facets-value{% if as_buttons %} facets-value--button{% endif %}" for="{{ input_id }}">
+                    {%- unless as_buttons -%}
+                      <span class="facets-value__box" aria-hidden="true">
+                        {%- render 'icon', name: 'check', size: 14, class: 'facets-value__check' -%}
+                      </span>
+                      {%- if filter.presentation == 'swatch' -%}
+                        <span
+                          class="facets-value__swatch"
+                          aria-hidden="true"
+                          {% if value.swatch.color != blank %}
+                            style="--swatch-color: {{ value.swatch.color }};"
+                          {% endif %}
+                        >
+                          {%- if value.swatch.image != blank -%}
+                            {{
+                              value.swatch.image
+                              | image_url: width: 48
+                              | image_tag: alt: '', loading: 'lazy', width: 24, height: 24
+                            }}
+                          {%- endif -%}
+                        </span>
+                      {%- elsif filter.presentation == 'image' and value.image != blank -%}
+                        <span class="facets-value__image" aria-hidden="true">
+                          {{-
+                            value.image
+                            | image_url: width: 80
+                            | image_tag: alt: '', loading: 'lazy', width: 40, height: 40
+                          -}}
+                        </span>
+                      {%- endif -%}
+                    {%- endunless -%}
+                    <bdi class="facets-value__label">{{ value.label | escape }}</bdi>
+                    {%- unless as_buttons -%}
+                      <span class="facets-value__count" aria-hidden="true">{{ value.count }}</span>
+                    {%- endunless -%}
+                    <span class="visually-hidden"> ({{ 'collections.product_count' | t: count: value.count }})</span>
+                  </label>
+                </li>
+              {%- endfor -%}
+            </ul>
+            {%- if collapsible -%}
+              <button
+                type="button"
+                id="{{ list_id }}-more"
+                class="facets-values__more js-only"
+                aria-controls="{{ list_id }}"
+                aria-expanded="{{ extra_selected }}"
+                data-facets-more
+                data-label-more="{{ 'facets.show_more' | t | escape }}"
+                data-label-less="{{ 'facets.show_less' | t | escape }}"
+              >
+                {%- if extra_selected -%}
+                  {{- 'facets.show_less' | t -}}
+                {%- else -%}
+                  {{- 'facets.show_more' | t -}}
+                {%- endif -%}
+              </button>
+            {%- endif -%}
+          </fieldset>
+        {%- endif -%}
+      </details>
+    {%- endfor -%}
+
+    <div class="facets-form__submit no-js-only">
+      <button type="submit" class="button button--primary button--full">{{ 'facets.apply' | t }}</button>
+    </div>
+  {%- endif -%}
+</form>
+
+{% stylesheet %}
+  .facets-form {
+    display: grid;
+  }
+
+  .facets-group {
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .facets-group__summary {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-block-size: 56px;
+    font-size: var(--text-md);
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .facets-group__label {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .facets-group__selected {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-inline-size: 22px;
+    block-size: 22px;
+    padding-inline: 6px;
+    border-radius: 11px;
+    background: var(--color-button);
+    color: var(--color-button-label);
+    font-size: var(--text-xs);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .facets-group__icon {
+    flex-shrink: 0;
+  }
+
+  .facets-group__icon--minus,
+  .facets-group[open] .facets-group__icon--plus {
+    display: none;
+  }
+
+  .facets-group[open] .facets-group__icon--minus {
+    display: block;
+  }
+
+  .facets-group__body {
+    min-inline-size: 0;
+    margin: 0;
+    padding-block: 0 var(--space-4);
+    padding-inline: 0;
+    border: 0;
+  }
+
+  .facets-values {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .facets-values--buttons {
+    grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+    gap: var(--space-2);
+  }
+
+  .facets-values__item {
+    position: relative;
+  }
+
+  .js .facets-values--collapsed .facets-values__item--extra {
+    display: none;
+  }
+
+  .facets-value {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-block-size: var(--touch-target);
+    font-size: var(--text-md);
+    cursor: pointer;
+  }
+
+  .facets-value__box {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    inline-size: 20px;
+    block-size: 20px;
+    border: 1.5px solid var(--color-muted);
+    border-radius: 3px;
+    background: var(--color-background);
+    color: var(--color-button-label);
+  }
+
+  .facets-value__check {
+    opacity: 0;
+  }
+
+  .facets-value__swatch {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    inline-size: 24px;
+    block-size: 24px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: var(--swatch-color, var(--color-surface));
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.16);
+
+    & img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .facets-value__image {
+    display: inline-flex;
+    flex-shrink: 0;
+    inline-size: 40px;
+    block-size: 40px;
+    overflow: hidden;
+    border-radius: var(--radius-badge);
+    background: var(--color-tile);
+
+    & img {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .facets-value__label {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .facets-value__count {
+    flex-shrink: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .facets-values__input:checked + .facets-value .facets-value__box {
+    border-color: var(--color-button);
+    background: var(--color-button);
+  }
+
+  .facets-values__input:checked + .facets-value .facets-value__check {
+    opacity: 1;
+  }
+
+  .facets-values__input:checked + .facets-value {
+    font-weight: 700;
+  }
+
+  .facets-values__input:focus-visible + .facets-value .facets-value__box,
+  .facets-values__input:focus-visible + .facets-value--button {
+    outline: 2px solid var(--color-text);
+    outline-offset: 2px;
+  }
+
+  .facets-values__input:disabled + .facets-value {
+    color: var(--color-muted);
+    cursor: not-allowed;
+  }
+
+  .facets-values__input:disabled + .facets-value .facets-value__box {
+    border-color: var(--color-border);
+  }
+
+  .facets-value--button {
+    justify-content: center;
+    gap: 0;
+    padding-inline: var(--space-1);
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-button);
+    background: var(--color-background);
+    font-weight: 800;
+    text-align: center;
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+
+  .facets-values__input:checked + .facets-value--button {
+    border-color: var(--color-button);
+    background: var(--color-button);
+    color: var(--color-button-label);
+  }
+
+  .facets-values__input:disabled + .facets-value--button {
+    border-style: dashed;
+    background: var(--color-surface);
+    text-decoration: line-through;
+  }
+
+  .facets-values__more {
+    min-block-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font-size: var(--text-md);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .facets-price {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--space-2);
+  }
+
+  .facets-price__field {
+    display: grid;
+    flex: 1 1 0;
+    gap: var(--space-1);
+    min-inline-size: 0;
+  }
+
+  .facets-price__label {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .facets-price__control {
+    position: relative;
+  }
+
+  .facets-price__currency {
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 12px;
+    translate: 0 -50%;
+    color: var(--color-muted);
+    font-weight: 700;
+    pointer-events: none;
+  }
+
+  .facets-price__input {
+    inline-size: 100%;
+    min-block-size: var(--touch-target);
+    padding-block: 8px;
+    padding-inline: 30px 8px;
+    border: 1.5px solid var(--color-muted);
+    border-radius: var(--radius-button);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--text-base);
+    font-variant-numeric: tabular-nums;
+
+    &::placeholder {
+      color: var(--color-muted);
+      opacity: 1;
+    }
+
+    &:focus-visible {
+      border-color: var(--color-text);
+    }
+  }
+
+  .facets-price__dash {
+    display: flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    color: var(--color-muted);
+  }
+
+  .facets-form__submit {
+    padding-block: var(--space-5) var(--space-2);
+  }
+
+  @media (forced-colors: active) {
+    .facets-values__input:checked + .facets-value--button {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 4px;
+    }
+  }
+{% endstylesheet %}

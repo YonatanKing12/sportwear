@@ -1,0 +1,56 @@
+{%- doc -%}
+  Empty state for product results: a heading, a short text, an optional "Clear filters" button
+  (a plain link that assets/facets.js intercepts) and a link to all products.
+
+  @param {string} title - Translated heading
+  @param {string} text - Translated supporting text
+  @param {string} [clear_url] - URL without filters; renders the "Clear filters" button when set
+  @param {string} [heading_tag] - 'h2' or 'h3' (default)
+
+  @example
+  {% render 'facets-empty', title: empty_title, text: empty_text, clear_url: clear_url %}
+{%- enddoc -%}
+{%- assign empty_heading_tag = heading_tag | default: 'h3' -%}
+<div class="facets-empty">
+  {%- render 'icon', name: 'shirt', size: 40, class: 'facets-empty__icon' -%}
+  <{{ empty_heading_tag }} class="facets-empty__title title-l">{{ title }}</{{ empty_heading_tag }}>
+  <p class="facets-empty__text">{{ text }}</p>
+  <div class="facets-empty__actions">
+    {%- if clear_url != blank -%}
+      <a class="button button--primary" href="{{ clear_url }}" data-facets-link>{{ 'facets.clear_filters' | t }}</a>
+    {%- endif -%}
+    <a class="button button--secondary" href="{{ routes.all_products_collection_url }}">
+      {{- 'collections.all_products' | t -}}
+    </a>
+  </div>
+</div>
+
+{% stylesheet %}
+  .facets-empty {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-3);
+    padding-block: var(--space-12);
+    padding-inline: var(--space-5);
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+    text-align: center;
+  }
+
+  .facets-empty__icon {
+    color: var(--color-muted);
+  }
+
+  .facets-empty__text {
+    max-inline-size: 46ch;
+    color: var(--color-muted);
+  }
+
+  .facets-empty__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-3);
+    margin-block-start: var(--space-3);
+  }
+{% endstylesheet %}
