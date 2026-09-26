@@ -21,6 +21,11 @@ npm run preview:serve      # live server: http://127.0.0.1:4173/index.html (page
 npm run preview:selftest   # checks the harness itself (smoke theme + this repo's layout/snippets)
 ```
 
+`SW_PREVIEW_EMPTY_STORE=1` (before either command) renders the store with no products at all, the way
+the real theme preview looks before products reach the Online Store channel. Product pages don't exist
+in that mode, so pass `--pages` without them, e.g.
+`SW_PREVIEW_EMPTY_STORE=1 node scripts/preview/render.mjs --out qa-output/preview-empty --pages index,collection,search`.
+
 `render.mjs` options: `--theme <dir>` (default: repo root), `--out <dir>`, `--locales he,en,ar`,
 `--pages index,product,…`, `--money-format "₪{{amount}}"`, `--no-editor-attributes`, `--quiet`.
 `serve-and-shoot.mjs` options: `--out`, `--shots`, `--pages`, `--locales`, `--viewports mobile,desktop`,

@@ -143,8 +143,15 @@ export const IMAGE_ALT_SUFFIX = {
   back: { he: 'מאחור', en: 'back', ar: 'من الخلف' },
 };
 
+/**
+ * SW_PREVIEW_EMPTY_STORE=1 renders the store as it is before any product reaches the Online Store
+ * channel: no products, so collections, search and the cart are empty. Use it to see what the owner
+ * sees in the real theme preview today.
+ */
+export const EMPTY_STORE = process.env.SW_PREVIEW_EMPTY_STORE === '1';
+
 /** The 8 demo products (prices in agorot, like Shopify's cents). */
-export const PRODUCTS = [
+const DEMO_PRODUCTS = [
   {
     key: 'fc-home',
     handle: 'demo-fc-home-jersey-2026-27',
@@ -532,10 +539,14 @@ export const POLICIES = [
 ];
 
 /** Default cart (cart page, cart drawer on every page): a sale jersey and a basketball jersey. */
-export const CART_LINES = [
-  { handle: 'demo-fc-away-jersey-2026-27', size: 'M', quantity: 1 },
-  { handle: 'demo-stars-basketball-jersey-2026-27', size: 'L', quantity: 1 },
-];
+export const PRODUCTS = EMPTY_STORE ? [] : DEMO_PRODUCTS;
+
+export const CART_LINES = EMPTY_STORE
+  ? []
+  : [
+      { handle: 'demo-fc-away-jersey-2026-27', size: 'M', quantity: 1 },
+      { handle: 'demo-stars-basketball-jersey-2026-27', size: 'L', quantity: 1 },
+    ];
 
 /** Shopify-generated strings that the theme does not control (sort names, filter labels, titles). */
 export const SYSTEM_STRINGS = {
