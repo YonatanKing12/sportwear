@@ -10,3 +10,6 @@ config/settings_data.json
 design/fonts/google-fonts.css
 # Approved design boards: exported HTML kept verbatim as references.
 design/canvas/
+# Generated supplier inventories and gap reports: one compact JSON line per album (scripts/catalog/yupoo-*.mjs).
+catalog/sources/*/albums.json
+catalog/sources/*/gap-report.json
