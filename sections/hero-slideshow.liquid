@@ -35,7 +35,7 @@
       aria-roledescription="{{ 'home.hero_slideshow.carousel' | t }}"
       aria-label="{{ 'home.hero_slideshow.label' | t }}"
     >
-      <ul id="{{ track_id }}" class="hero-slideshow__track" role="list" data-slideshow-track>
+      <div id="{{ track_id }}" class="hero-slideshow__track" data-slideshow-track>
         {%- for block in section.blocks -%}
           {%- liquid
             assign copy = block.settings.copy
@@ -82,7 +82,7 @@
               assign heading_tag = 'h1'
             endif
           -%}
-          <li
+          <div
             class="hero-slideshow__slide"
             role="group"
             aria-roledescription="{{ 'home.hero_slideshow.slide' | t }}"
@@ -159,9 +159,9 @@
                 {%- endif -%}
               </div>
             </div>
-          </li>
+          </div>
         {%- endfor -%}
-      </ul>
+      </div>
 
       {%- if slide_count > 1 -%}
         <div class="hero-slideshow__controls js-only">
