@@ -54,6 +54,8 @@ day: 878 products (867 new, plus 11 football shirts from the earlier set, redone
 `sw-jerseys-244981217` (its two photos show two different jerseys) and `sw-shorts-117771218` (the group
 photo hides part of the product).
 
+Later the same day a crop bug came to light: `normalize.py` missed the thin outline of white garments on the light background and cut sleeves or edges. The script was fixed (a finer mask, with the old one as a fallback against background noise), the 947 earlier renders were measured with both masks, and the 19 uploaded photos the old crop had cut were re-cropped from their raw renders and replaced in place (`catalog/published/photo-recrop-2026-09-26.json`).
+
 ## Home page photography
 
 The hero slides (`sw-v3-s1/s2/s3`, with `-ltr` and `-mobile` versions), the category tiles

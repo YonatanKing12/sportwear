@@ -1,0 +1,157 @@
+{
+  "_note": "Studio photos of products imported before, re-cropped on 2026-09-26. normalize.py (before commit b113f24) cut white garments: its crop missed sleeves or edges. The raw renders were fine; they were normalized again with the fixed script and each file was replaced in place (fileUpdate with originalSource), so the products keep the same media IDs, alt text and order. 'grow_px' is how far the old crop cut into the garment on the worst side, in render pixels (1248 px square).",
+  "files": [
+    {
+      "product": "gid://shopify/Product/15308669026608",
+      "handle": "sw-football-189836665",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45288684781872",
+      "filename": "sw-studio-football-189836665.png",
+      "grow_px": 43
+    },
+    {
+      "product": "gid://shopify/Product/15308669387056",
+      "handle": "sw-football-185539542",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45288916484400",
+      "filename": "sw-studio-football-185539542.png",
+      "grow_px": 205
+    },
+    {
+      "product": "gid://shopify/Product/15308669321520",
+      "handle": "sw-football-185539995",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45288916517168",
+      "filename": "sw-studio-football-185539995.png",
+      "grow_px": 16
+    },
+    {
+      "product": "gid://shopify/Product/15308653199664",
+      "handle": "sw-football-201569025",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45288916943152",
+      "filename": "sw-studio-football-201569025.png",
+      "grow_px": 9
+    },
+    {
+      "product": "gid://shopify/Product/15308633014576",
+      "handle": "sw-football-233520444",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45288917532976",
+      "filename": "sw-studio-football-233520444.png",
+      "grow_px": 272
+    },
+    {
+      "product": "gid://shopify/Product/15308677022000",
+      "handle": "sw-jerseys-121956579",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289075540272",
+      "filename": "sw-studio-jerseys-121956579.png",
+      "grow_px": 209
+    },
+    {
+      "product": "gid://shopify/Product/15308664734000",
+      "handle": "sw-jerseys-122604804",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289075999024",
+      "filename": "sw-studio-jerseys-122604804.png",
+      "grow_px": 4
+    },
+    {
+      "product": "gid://shopify/Product/15308599230768",
+      "handle": "sw-jerseys-170956526",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289430810928",
+      "filename": "sw-studio-jerseys-170956526.png",
+      "grow_px": 24
+    },
+    {
+      "product": "gid://shopify/Product/15308554076464",
+      "handle": "sw-jerseys-225120828",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289717301552",
+      "filename": "sw-studio-jerseys-225120828.png",
+      "grow_px": 6
+    },
+    {
+      "product": "gid://shopify/Product/15308554109232",
+      "handle": "sw-jerseys-225120784",
+      "view": "back",
+      "media_image": "gid://shopify/MediaImage/45289717367088",
+      "filename": "sw-studio-jerseys-225120784-back.png",
+      "grow_px": 5
+    },
+    {
+      "product": "gid://shopify/Product/15308554797360",
+      "handle": "sw-jerseys-223292920",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289717629232",
+      "filename": "sw-studio-jerseys-223292920.png",
+      "grow_px": 4
+    },
+    {
+      "product": "gid://shopify/Product/15308556108080",
+      "handle": "sw-jerseys-221370910",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289718612272",
+      "filename": "sw-studio-jerseys-221370910.png",
+      "grow_px": 21
+    },
+    {
+      "product": "gid://shopify/Product/15308691013936",
+      "handle": "sw-jerseys-92980294",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289891496240",
+      "filename": "sw-studio-jerseys-92980294.png",
+      "grow_px": 27
+    },
+    {
+      "product": "gid://shopify/Product/15308691669296",
+      "handle": "sw-jerseys-89334506",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289891725616",
+      "filename": "sw-studio-jerseys-89334506.png",
+      "grow_px": 44
+    },
+    {
+      "product": "gid://shopify/Product/15308724633904",
+      "handle": "sw-jerseys-96835282",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289893101872",
+      "filename": "sw-studio-jerseys-96835282.png",
+      "grow_px": 36
+    },
+    {
+      "product": "gid://shopify/Product/15308669550896",
+      "handle": "sw-football-185464301",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289027207472",
+      "filename": "sw-studio-football-185464301.png",
+      "grow_px": 134
+    },
+    {
+      "product": "gid://shopify/Product/15308669583664",
+      "handle": "sw-football-185464242",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289027240240",
+      "filename": "sw-studio-football-185464242.png",
+      "grow_px": 28
+    },
+    {
+      "product": "gid://shopify/Product/15308669845808",
+      "handle": "sw-football-185464004",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289027305776",
+      "filename": "sw-studio-football-185464004.png",
+      "grow_px": 38
+    },
+    {
+      "product": "gid://shopify/Product/15308685902128",
+      "handle": "sw-football-185463670",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45289027404080",
+      "filename": "sw-studio-football-185463670.png",
+      "grow_px": 33
+    }
+  ]
+}
