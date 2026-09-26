@@ -40,6 +40,60 @@
     "cart_bubble": {
       "name": "Cart count"
     },
+    "announcement_bar": {
+      "name": "Announcement bar",
+      "settings": {
+        "autorotate": {
+          "label": "Rotate messages automatically",
+          "info": "Only when there is more than one message. Rotation pauses while visitors hover over or focus the bar, and they can stop it with the pause button. It never starts for visitors who prefer reduced motion."
+        },
+        "autorotate_speed": {
+          "label": "Show each message for"
+        }
+      },
+      "blocks": {
+        "message": {
+          "name": "Message",
+          "settings": {
+            "default_text": {
+              "content": "The default message shows free shipping from the amount set in Theme settings > Cart. When no amount is set, it shows the 3-business-day delivery promise."
+            },
+            "icon": {
+              "label": "Icon",
+              "options": {
+                "truck": "Delivery truck",
+                "shield_check": "Shield (original)",
+                "return": "Return arrow",
+                "tag": "Tag (sale)",
+                "none": "None"
+              }
+            }
+          }
+        }
+      }
+    },
+    "header": {
+      "name": "Header",
+      "settings": {
+        "info": {
+          "content": "The logo is set in Theme settings > Brand, and the language switcher shows every language published in Settings > Languages."
+        },
+        "menu": {
+          "info": "Links with sub-links open as dropdowns on desktop and as expandable rows in the mobile menu, up to 3 levels."
+        },
+        "sticky": {
+          "label": "Sticky header",
+          "options": {
+            "none": "Off",
+            "always": "Always",
+            "scroll_up": "When scrolling up"
+          }
+        }
+      }
+    },
+    "predictive_search": {
+      "name": "Search suggestions"
+    },
     "hero": {
       "name": "Hero",
       "headers": {

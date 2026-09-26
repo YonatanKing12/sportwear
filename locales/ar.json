@@ -133,6 +133,58 @@
     "youtube": "يوتيوب",
     "whatsapp": "واتساب"
   },
+  "header": {
+    "announcement": {
+      "label": "الإعلانات",
+      "carousel": "عرض دوّار",
+      "slide": "إعلان",
+      "slide_label": "{{ index }} من {{ count }}",
+      "previous": "الإعلان السابق",
+      "next": "الإعلان التالي",
+      "pause": "إيقاف تبديل الإعلانات",
+      "play": "تشغيل تبديل الإعلانات",
+      "free_shipping": "شحن مجاني من {{ amount }} · توصيل إلى البيت خلال 3 أيام عمل",
+      "delivery": "توصيل إلى البيت خلال 3 أيام عمل"
+    },
+    "menu": {
+      "open": "القائمة",
+      "title": "القائمة",
+      "close": "إغلاق القائمة",
+      "nav_label": "التنقل الرئيسي",
+      "team_orders": "طلبات الفرق عبر واتساب",
+      "whatsapp_message": "مرحبًا، أودّ الاستفسار عن طلب لفريق"
+    },
+    "account": {
+      "account": "حسابي",
+      "log_in": "تسجيل الدخول"
+    },
+    "search": {
+      "open": "بحث",
+      "title": "البحث في المتجر",
+      "label": "عمّ تبحثون؟",
+      "placeholder": "ابحثوا عن قميص أو فريق أو دوري",
+      "submit": "بحث",
+      "close": "إغلاق البحث"
+    }
+  },
+  "predictive_search": {
+    "label": "اقتراحات البحث",
+    "suggestions": "اقتراحات",
+    "collections": "الفئات",
+    "products": "المنتجات",
+    "view_all": "عرض كل نتائج «⁨{{ terms }}⁩»",
+    "search_all": "البحث عن «⁨{{ terms }}⁩» في كل المتجر",
+    "no_results": "لا توجد نتائج مطابقة لـ«⁨{{ terms }}⁩»",
+    "no_results_hint": "جرّبوا اسم فريق أو دوري أو نوع منتج.",
+    "results_count": {
+      "zero": "لا توجد نتائج",
+      "one": "نتيجة واحدة",
+      "two": "نتيجتان",
+      "few": "{{ count }} نتائج",
+      "many": "{{ count }} نتيجة",
+      "other": "{{ count }} نتيجة"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "موسم 2026/27 وصل",

@@ -1,0 +1,262 @@
+{%- comment -%}
+  Site header (header group): the banner landmark with the logo, the main menu, search, account,
+  language and cart. Mobile (< 990px): menu button, centered logo, search and cart. Desktop: logo,
+  inline menu with dropdowns (snippets/header-menu), then search, account, language and cart.
+  Also renders the mobile menu drawer (MenuDrawer) and the search sheet (SearchModal).
+  assets/header.js (<sw-header>) keeps --header-height up to date, hides the header while scrolling
+  down when "Sticky header" is "When scrolling up", and manages the dropdowns.
+{%- endcomment -%}
+{%- liquid
+  assign color_scheme = section.settings.color_scheme.id
+  assign menu = section.settings.menu
+-%}
+<sw-header class="header-root" data-sticky="{{ section.settings.sticky }}">
+  <header class="header color-{{ color_scheme }}">
+    <div class="header__inner">
+      <div class="header__start">
+        {%- comment -%}
+          commandfor/command open the menu natively where JavaScript is off; with JavaScript, the
+          <sw-drawer> click handler in @theme/core takes over (focus return, aria-expanded).
+        {%- endcomment -%}
+        <button
+          type="button"
+          class="header__icon"
+          data-drawer-open="MenuDrawer"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+          commandfor="MenuDrawerDialog"
+          command="show-modal"
+        >
+          {%- render 'icon', name: 'menu', size: 24 -%}
+          <span class="visually-hidden">{{ 'header.menu.open' | t }}</span>
+        </button>
+      </div>
+
+      <div class="header__logo">
+        {%- render 'logo' -%}
+      </div>
+
+      {%- if menu.links.size > 0 -%}
+        <div class="header__nav">
+          {%- render 'header-menu', menu: menu -%}
+        </div>
+      {%- endif -%}
+
+      <div class="header__actions">
+        <a
+          href="{{ routes.search_url }}"
+          class="header__icon"
+          data-drawer-open="SearchModal"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          {%- render 'icon', name: 'search', size: 23 -%}
+          <span class="visually-hidden">{{ 'header.search.open' | t }}</span>
+        </a>
+
+        <div class="header__desktop-actions">
+          {%- if shop.customer_accounts_enabled -%}
+            <a href="{{ routes.account_url }}" class="header__icon">
+              {%- render 'icon', name: 'user', size: 23 -%}
+              <span class="visually-hidden">
+                {%- if customer -%}
+                  {{- 'header.account.account' | t -}}
+                {%- else -%}
+                  {{- 'header.account.log_in' | t -}}
+                {%- endif -%}
+              </span>
+            </a>
+          {%- endif -%}
+          {%- render 'localization-switcher', id: 'HeaderLocalization', style: 'compact' -%}
+        </div>
+
+        <a
+          href="{{ routes.cart_url }}"
+          class="header__icon header__cart"
+          {% if settings.cart_type == 'drawer' %}
+            data-drawer-open="CartDrawer" aria-haspopup="dialog" aria-expanded="false"
+          {% endif %}
+        >
+          {%- render 'icon', name: 'bag', size: 23 -%}
+          <span data-cart-bubble>{% render 'cart-bubble' %}</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  {%- render 'menu-drawer', menu: menu, color_scheme: color_scheme -%}
+  {%- render 'header-search' -%}
+</sw-header>
+
+<script type="module" src="{{ 'header.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .header-section {
+    position: relative;
+    z-index: var(--z-header);
+    transition: transform var(--duration) var(--ease);
+  }
+
+  .header-section:has(> .header-root[data-sticky='always']),
+  .header-section:has(> .header-root[data-sticky='scroll-up']) {
+    position: sticky;
+    inset-block-start: 0;
+  }
+
+  .header-section[data-header-hidden] {
+    transform: translateY(-100%);
+  }
+
+  .header-root {
+    display: block;
+  }
+
+  .header {
+    position: relative;
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .header__inner {
+    display: grid;
+    grid-template-areas: 'start logo end';
+    grid-template-columns: minmax(var(--touch-target), 1fr) auto minmax(calc(var(--touch-target) * 2), 1fr);
+    align-items: center;
+    column-gap: var(--space-2);
+    min-block-size: 60px;
+    max-inline-size: calc(var(--page-width, 1440px) + var(--gutter) * 2);
+    margin-inline: auto;
+    padding-inline: var(--space-2);
+
+    @media screen and (min-width: 990px) {
+      grid-template-areas: 'logo nav end';
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      column-gap: var(--space-8);
+      min-block-size: 72px;
+      padding-inline: var(--gutter);
+    }
+  }
+
+  .header__start {
+    display: flex;
+    grid-area: start;
+    align-items: center;
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+  }
+
+  .header__logo {
+    display: flex;
+    grid-area: logo;
+    justify-content: center;
+    min-inline-size: 0;
+  }
+
+  .header__nav {
+    display: none;
+    grid-area: nav;
+    min-inline-size: 0;
+
+    @media screen and (min-width: 990px) {
+      display: block;
+    }
+  }
+
+  .header__actions {
+    display: flex;
+    grid-area: end;
+    align-items: center;
+    justify-content: flex-end;
+    justify-self: end;
+    gap: 2px;
+  }
+
+  .header__desktop-actions {
+    display: none;
+
+    @media screen and (min-width: 990px) {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+    }
+  }
+
+  .header__icon {
+    position: relative;
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease);
+
+    &:hover {
+      background: color-mix(in srgb, currentColor 10%, transparent);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "tag": "div",
+  "class": "header-section",
+  "limit": 1,
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.header.settings.info.content"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:settings.menu",
+      "info": "t:sections.header.settings.menu.info",
+      "default": "main-menu"
+    },
+    {
+      "type": "select",
+      "id": "sticky",
+      "label": "t:sections.header.settings.sticky.label",
+      "default": "scroll-up",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:sections.header.settings.sticky.options.none"
+        },
+        {
+          "value": "always",
+          "label": "t:sections.header.settings.sticky.options.always"
+        },
+        {
+          "value": "scroll-up",
+          "label": "t:sections.header.settings.sticky.options.scroll_up"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.header.name"
+    }
+  ]
+}
+{% endschema %}

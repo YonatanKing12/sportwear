@@ -1,6 +1,32 @@
 {
   "type": "header",
   "name": "t:sections.groups.header",
-  "sections": {},
-  "order": []
+  "sections": {
+    "announcement_bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "message_delivery": {
+          "type": "message",
+          "settings": {
+            "icon": "truck"
+          }
+        }
+      },
+      "block_order": ["message_delivery"],
+      "settings": {
+        "color_scheme": "scheme-accent",
+        "autorotate": true,
+        "autorotate_speed": 5
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "menu": "main-menu",
+        "sticky": "scroll-up"
+      }
+    }
+  },
+  "order": ["announcement_bar", "header"]
 }

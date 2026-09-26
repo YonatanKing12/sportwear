@@ -1,0 +1,52 @@
+{
+  "header": {
+    "announcement": {
+      "label": "הודעות",
+      "carousel": "קרוסלה",
+      "slide": "הודעה",
+      "slide_label": "{{ index }} מתוך {{ count }}",
+      "previous": "ההודעה הקודמת",
+      "next": "ההודעה הבאה",
+      "pause": "עצירת החלפת ההודעות",
+      "play": "הפעלת החלפת ההודעות",
+      "free_shipping": "משלוח חינם מ-{{ amount }}\u00a0· עד הבית תוך 3 ימי עסקים",
+      "delivery": "משלוח עד הבית תוך 3 ימי עסקים"
+    },
+    "menu": {
+      "open": "תפריט",
+      "title": "תפריט",
+      "close": "סגירת התפריט",
+      "nav_label": "ניווט ראשי",
+      "team_orders": "הזמנות לקבוצות בוואטסאפ",
+      "whatsapp_message": "היי, אשמח לשמוע על הזמנה לקבוצה"
+    },
+    "account": {
+      "account": "החשבון שלי",
+      "log_in": "התחברות"
+    },
+    "search": {
+      "open": "חיפוש",
+      "title": "חיפוש באתר",
+      "label": "מה מחפשים?",
+      "placeholder": "חפשו חולצה, קבוצה או ליגה",
+      "submit": "חיפוש",
+      "close": "סגירת החיפוש"
+    }
+  },
+  "predictive_search": {
+    "label": "הצעות חיפוש",
+    "suggestions": "הצעות",
+    "collections": "קטגוריות",
+    "products": "מוצרים",
+    "view_all": "הצגת כל התוצאות עבור \"⁨{{ terms }}⁩\"",
+    "search_all": "חיפוש \"⁨{{ terms }}⁩\" בכל החנות",
+    "no_results": "לא מצאנו תוצאות עבור \"⁨{{ terms }}⁩\"",
+    "no_results_hint": "נסו לחפש שם של קבוצה, ליגה או סוג מוצר.",
+    "results_count": {
+      "one": "תוצאה אחת",
+      "two": "שתי תוצאות",
+      "many": "{{ count }} תוצאות",
+      "other": "{{ count }} תוצאות"
+    }
+  }
+}
