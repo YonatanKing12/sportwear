@@ -190,6 +190,8 @@ in the supplier's sizes 16–28 at ₪99 (`catalog/pricing.json`), each with the
    counterparts, and moves the files to `catalog/published/`; then `catalog-translator` registers the
    en/ar translations from the files.
 
+Wave 1 (2026-09-26): 128 drafts (20 pilot + 108), reviewed by the owner on the page https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af, whose store document `review/drafts` lists the handles marked for fixing. Nothing is activated until the owner says so in the conversation.
+
 Handles: `{team}-{kit}-jersey-{season}` and `{team}-{kit}-kit-{season}-kids`, season `2026-27` for clubs
 and `2026` for national teams.
 
