@@ -1,6 +1,6 @@
 {
   "handle": "real-madrid-home-kit-2026-27-kids",
-  "status": "ready",
+  "status": "published_draft",
   "sport": "football",
   "product_type": "Football Kit",
   "audience": "kids",
@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/real-madrid-home-kit-2026-27-kids.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/real-madrid-home-kit-2026-27-kids.png?v=1790451113",
       "alt_he": "חולצת בית ומכנס ריאל מדריד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "real-madrid-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/real-madrid-home-kit-2026-27-kids__back.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/real-madrid-home-kit-2026-27-kids__back.png?v=1790451113",
       "alt_he": "חולצת בית ומכנס ריאל מדריד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "real-madrid-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {
@@ -161,5 +163,18 @@
   "relations": {
     "counterpart_handle": "real-madrid-home-jersey-2026-27",
     "complements_handles": []
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309469024560",
+    "variant_ids": {
+      "16": "gid://shopify/ProductVariant/67856205513008",
+      "18": "gid://shopify/ProductVariant/67856205545776",
+      "20": "gid://shopify/ProductVariant/67856205578544",
+      "22": "gid://shopify/ProductVariant/67856205611312",
+      "24": "gid://shopify/ProductVariant/67856205644080",
+      "26": "gid://shopify/ProductVariant/67856205676848",
+      "28": "gid://shopify/ProductVariant/67856205709616"
+    },
+    "created_at": "2026-09-26T19:31:51Z"
   }
 }

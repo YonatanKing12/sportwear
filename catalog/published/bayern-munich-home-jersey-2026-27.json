@@ -1,6 +1,6 @@
 {
   "handle": "bayern-munich-home-jersey-2026-27",
-  "status": "ready",
+  "status": "published_draft",
   "sport": "football",
   "product_type": "Football Jersey",
   "audience": "adult",
@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/bayern-munich-home-jersey-2026-27.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/bayern-munich-home-jersey-2026-27.png?v=1790450682",
       "alt_he": "חולצת בית באיירן מינכן 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "bayern-munich-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/bayern-munich-home-jersey-2026-27__back.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/bayern-munich-home-jersey-2026-27__back.png?v=1790450682",
       "alt_he": "חולצת בית באיירן מינכן 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "bayern-munich-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {
@@ -121,5 +123,15 @@
     "البايرن",
     "bundesliga",
     "الدوري الألماني"
-  ]
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309467517232",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856198271280",
+      "M": "gid://shopify/ProductVariant/67856198304048",
+      "L": "gid://shopify/ProductVariant/67856198336816",
+      "XL": "gid://shopify/ProductVariant/67856198369584"
+    },
+    "created_at": "2026-09-26T19:24:39Z"
+  }
 }

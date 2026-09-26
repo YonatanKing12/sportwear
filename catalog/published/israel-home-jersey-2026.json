@@ -1,6 +1,6 @@
 {
   "handle": "israel-home-jersey-2026",
-  "status": "ready",
+  "status": "published_draft",
   "sport": "football",
   "product_type": "Football Jersey",
   "audience": "adult",
@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/israel-home-jersey-2026.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/israel-home-jersey-2026.png?v=1790450861",
       "alt_he": "חולצת בית נבחרת ישראל 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "israel-home-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/israel-home-jersey-2026__back.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/israel-home-jersey-2026__back.png?v=1790450861",
       "alt_he": "חולצת בית נבחרת ישראל 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "israel-home-jersey-2026__back.png"
     }
   ],
   "translations": {
@@ -118,5 +120,15 @@
     "إسرائيل",
     "national team",
     "منتخب"
-  ]
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309468172592",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856203448624",
+      "M": "gid://shopify/ProductVariant/67856203481392",
+      "L": "gid://shopify/ProductVariant/67856203514160",
+      "XL": "gid://shopify/ProductVariant/67856203546928"
+    },
+    "created_at": "2026-09-26T19:27:39Z"
+  }
 }

@@ -1,6 +1,6 @@
 {
   "handle": "maccabi-haifa-home-jersey-2026-27",
-  "status": "ready",
+  "status": "published_draft",
   "sport": "football",
   "product_type": "Football Jersey",
   "audience": "adult",
@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/maccabi-haifa-home-jersey-2026-27.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/maccabi-haifa-home-jersey-2026-27.png?v=1790450894",
       "alt_he": "חולצת בית מכבי חיפה 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "maccabi-haifa-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/maccabi-haifa-home-jersey-2026-27__back.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/maccabi-haifa-home-jersey-2026-27__back.png?v=1790450893",
       "alt_he": "חולצת בית מכבי חיפה 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "maccabi-haifa-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {
@@ -119,5 +121,15 @@
     "مكابي حيفا",
     "israeli premier league",
     "الدوري الإسرائيلي"
-  ]
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309468303664",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67856203710768",
+      "M": "gid://shopify/ProductVariant/67856203743536",
+      "L": "gid://shopify/ProductVariant/67856203776304",
+      "XL": "gid://shopify/ProductVariant/67856203809072"
+    },
+    "created_at": "2026-09-26T19:28:11Z"
+  }
 }

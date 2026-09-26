@@ -1,6 +1,6 @@
 {
   "handle": "barcelona-home-kit-2026-27-kids",
-  "status": "ready",
+  "status": "published_draft",
   "sport": "football",
   "product_type": "Football Kit",
   "audience": "kids",
@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/barcelona-home-kit-2026-27-kids.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/barcelona-home-kit-2026-27-kids.png?v=1790450649",
       "alt_he": "חולצת בית ומכנס ברצלונה 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "barcelona-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/barcelona-home-kit-2026-27-kids__back.png",
+      "url": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/barcelona-home-kit-2026-27-kids__back.png?v=1790450649",
       "alt_he": "חולצת בית ומכנס ברצלונה 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "barcelona-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {
@@ -163,5 +165,18 @@
   "relations": {
     "counterpart_handle": "barcelona-home-jersey-2026-27",
     "complements_handles": []
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15309466829104",
+    "variant_ids": {
+      "16": "gid://shopify/ProductVariant/67856197845296",
+      "18": "gid://shopify/ProductVariant/67856197878064",
+      "20": "gid://shopify/ProductVariant/67856197910832",
+      "22": "gid://shopify/ProductVariant/67856197943600",
+      "24": "gid://shopify/ProductVariant/67856197976368",
+      "26": "gid://shopify/ProductVariant/67856198009136",
+      "28": "gid://shopify/ProductVariant/67856198041904"
+    },
+    "created_at": "2026-09-26T19:24:06Z"
   }
 }
