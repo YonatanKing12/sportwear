@@ -118,6 +118,13 @@
       "ar": "الدوري الألماني",
       "keywords": ["bundesliga", "الدوري الألماني"]
     },
+    "austrian-bundesliga": {
+      "sport": "football",
+      "he": "הבונדסליגה האוסטרית",
+      "en": "Austrian Bundesliga",
+      "ar": "الدوري النمساوي",
+      "keywords": ["austrian bundesliga", "الدوري النمساوي"]
+    },
     "ligue-1": {
       "sport": "football",
       "he": "ליג 1",
@@ -343,6 +350,15 @@
       "ar": "آر بي لايبزيغ",
       "match": ["ר.ב. לייפציג", "לייפציג"],
       "keywords": ["rb leipzig", "leipzig", "آر بي لايبزيغ", "لايبزيغ"]
+    },
+    "red-bull-salzburg": {
+      "sport": "football",
+      "league": "austrian-bundesliga",
+      "he": "רד בול זלצבורג",
+      "en": "Red Bull Salzburg",
+      "ar": "ريد بول سالزبورغ",
+      "match": ["רד בול זלצבורג", "זלצבורג"],
+      "keywords": ["red bull salzburg", "salzburg", "ريد بول سالزبورغ"]
     },
     "paris-saint-germain": {
       "sport": "football",
@@ -978,6 +994,24 @@
       "ar": "أيوا هوكايز",
       "match": ["איווה"],
       "keywords": ["iowa hawkeyes", "iowa", "أيوا"]
+    },
+    "indiana-state": {
+      "sport": "basketball",
+      "league": "ncaa",
+      "he": "אינדיאנה סטייט",
+      "en": "Indiana State Sycamores",
+      "ar": "إنديانا ستيت",
+      "match": ["אינדיאנה סטייט"],
+      "keywords": ["indiana state", "sycamores", "إنديانا ستيت"]
+    },
+    "duke": {
+      "sport": "basketball",
+      "league": "ncaa",
+      "he": "דיוק",
+      "en": "Duke Blue Devils",
+      "ar": "ديوك بلو ديفلز",
+      "match": ["דיוק"],
+      "keywords": ["duke", "blue devils", "ديوك"]
     },
     "north-carolina": {
       "sport": "basketball",
@@ -2043,7 +2077,7 @@
     "sw-jerseys-125774208": {
       "team": "metropolitans-92",
       "player": null,
-      "note": "Title says Paris #1, but the photo is a Metropolitans 92 (METS92) #1 jersey, Victor Wembanyama's French club. Title mismatch, reported to the owner. No player: the club is not in player_numbers."
+      "note": "Titled Paris #1, but the photo is a Metropolitans 92 (METS92) #1 jersey, Victor Wembanyama's French club. The title was fixed on 2026-09-27. No player: the club is not in player_numbers."
     },
     "sw-jerseys-87652346": {
       "team": "paris-saint-germain",
@@ -2113,6 +2147,24 @@
     "sw-jerseys-149291071": {
       "styles": ["retro"],
       "note": "Georgetown 'HOYAS' #3 in the mid-1990s design: a throwback. No player tag: Georgetown is not in player_numbers and the title names no player."
+    },
+    "sw-jerseys-115260939": {
+      "team": "chicago-bulls",
+      "player": "michael-jordan",
+      "note": "A split jersey, half Chicago Bulls and half Washington Wizards, #23 (Michael Jordan played for both). The title names both teams; the tags keep the Bulls."
+    },
+    "sw-jerseys-106849861": {
+      "team": "chicago-bulls",
+      "player": "michael-jordan",
+      "note": "KAWS art jersey with JORDAN 23 on the back and no Bulls branding on the front; the title names the player."
+    },
+    "sw-football-217853848": {
+      "team": null,
+      "note": "A brown Maria-print fashion shirt (the same design as sw-football-222641859), not a Brazil national-team shirt: there is no CBF crest. The title was fixed on 2026-09-27."
+    },
+    "sw-jerseys-159102690": {
+      "player": "larry-bird",
+      "note": "Indiana State #33, Larry Bird's college jersey (the title said Boston Celtics until 2026-09-27)."
     }
   }
 }

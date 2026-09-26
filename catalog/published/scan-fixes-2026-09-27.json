@@ -1,0 +1,788 @@
+{
+  "_note": "Full scan of 2026-09-27 (night of 26 to 27 September, Israel time), asked for by the owner: every product's photos were compared with its title and description, all 1,227 products (1,098 imported before, 128 from wave 1 and the demo product). 55 were flagged and every flag was checked against the supplier's album (Yupoo). Results: 47 titles fixed (the same text in the description's first line and in the photo alt text; tags re-derived with scripts/catalog/classify.mjs and catalog/classification.json), 4 photo problems fixed, 4 titles confirmed correct from back photos in the album (those backs were added to the products). Nothing else changed: price, stock, status, handle and channels are as before. These products have no en/ar translations yet (task: translations for the older products).",
+  "summary": {
+    "checked": 1227,
+    "flagged": 55,
+    "titles_fixed": 47,
+    "products_retagged": 23,
+    "alt_texts_updated": 50,
+    "photo_fixes": 4,
+    "confirmed_correct": 4
+  },
+  "titles": [
+    {
+      "id": "gid://shopify/Product/15308681347376",
+      "handle": "sw-jerseys-108094000",
+      "before": "גופיית כדורסל אולסטאר מספר 23 ירוק רטרו",
+      "after": "גופיית כדורסל אולסטאר מספר 23 טורקיז רטרו",
+      "why": "The teal 1996 NBA All-Stars jersey; the catalog calls this teal טורקיז.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308658704688",
+      "handle": "sw-jerseys-123472805",
+      "before": "גופיית כדורסל אולסטאר מספר 8 סגול רטרו",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול רטרו",
+      "why": "The shirt reads LAKERS 8 (with an All-Star patch), not an All-Star team jersey.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308660048176",
+      "handle": "sw-jerseys-125236513",
+      "before": "גופיית כדורסל אולסטאר לילדים מספר 23 ירוק רטרו",
+      "after": "גופיית כדורסל אולסטאר לילדים מספר 23 טורקיז רטרו",
+      "why": "Kids version of the teal 1996 All-Stars jersey (טורקיז, not ירוק).",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308651921712",
+      "handle": "sw-jerseys-86849794",
+      "before": "גופיית כדורסל אולסטאר מספר 23 לבן",
+      "after": "גופיית כדורסל שיקגו בולס מספר 23 לבן",
+      "why": "The shirt reads BULLS 23 (with an All-Star patch).",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308610601264",
+      "handle": "sw-jerseys-159102690",
+      "before": "גופיית כדורסל בוסטון סלטיקס מספר 33 תכלת",
+      "after": "גופיית כדורסל אינדיאנה סטייט מספר 33 תכלת",
+      "why": "The shirt reads INDIANA STATE 33, not Celtics.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308614205744",
+      "handle": "sw-jerseys-168442674",
+      "before": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק",
+      "after": "גופיית כדורסל בוסטון סלטיקס מספר 9 שחור",
+      "why": "The jersey is black, not green.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308557812016",
+      "handle": "sw-jerseys-218036357",
+      "before": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק",
+      "after": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן",
+      "why": "The jersey is white, not green (supplier photos confirm).",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308676759856",
+      "handle": "sw-jerseys-122454550",
+      "before": "גופיית כדורסל ברוקלין נטס מהדורת עיר",
+      "after": "גופיית כדורסל פילדלפיה 76׳ מספר 1 כחול כהה מהדורת עיר",
+      "why": "The shirt reads Sixers 1 (navy City Edition), not Brooklyn Nets.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308603752752",
+      "handle": "sw-jerseys-152428791",
+      "before": "גופיית כדורסל שארלוט הורנטס לילדים מספר 1 תכלת",
+      "after": "גופיית כדורסל סן אנטוניו ספרס לילדים מספר 1 טורקיז",
+      "why": "The shirt reads SPURS 1 (teal), not Charlotte Hornets.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308603687216",
+      "handle": "sw-jerseys-155383847",
+      "before": "גופיית כדורסל שארלוט הורנטס מספר 1 ירוק בהיר מהדורת עיר 2024",
+      "after": "גופיית כדורסל שארלוט הורנטס מספר 1 טורקיז מהדורת עיר 2024",
+      "why": "The BUZZCITY jersey is teal, not light green.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308698517808",
+      "handle": "sw-jerseys-105012782",
+      "before": "גופיית כדורסל שיקגו בולס מספר 11 אדום",
+      "after": "גופיית כדורסל שיקגו בולס מספר 11 שחור",
+      "why": "The jersey is black, not red.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308696256816",
+      "handle": "sw-jerseys-106849861",
+      "before": "גופיית כדורסל שיקגו בולס מספר 23 שחור הדפס",
+      "after": "גופיית כדורסל מייקל ג׳ורדן מספר 23 שחור הדפס",
+      "why": "A KAWS art jersey with JORDAN 23 on the back and no Bulls branding.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308678005040",
+      "handle": "sw-jerseys-115260939",
+      "before": "גופיית כדורסל שיקגו בולס מספר 23 רטרו שילוב צבעים",
+      "after": "גופיית כדורסל שיקגו בולס / וושינגטון וויזארדס מספר 23 רטרו שילוב צבעים",
+      "why": "A half Bulls, half Wizards split jersey.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308642550064",
+      "handle": "sw-jerseys-134343871",
+      "before": "גופיית כדורסל שיקגו בולס מספר 33 אדום",
+      "after": "גופיית כדורסל בוסטון סלטיקס מספר 33 אדום",
+      "why": "The shirt reads CELTICS 33 (red), not Bulls.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308608799024",
+      "handle": "sw-jerseys-165920845",
+      "before": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה מהדורת עיר",
+      "after": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה",
+      "why": "The navy MAVS Statement jersey, not a City Edition.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308605849904",
+      "handle": "sw-jerseys-169089088",
+      "before": "גופיית כדורסל דאלאס מאבריקס לילדים מספר 11 תכלת",
+      "after": "גופיית כדורסל דאלאס מאבריקס לילדים מספר 77 תכלת",
+      "why": "The jersey shows number 77, not 11.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308617384240",
+      "handle": "sw-jerseys-150257941",
+      "before": "גופיית כדורסל דנבר נאגטס מספר 15 כחול מהדורת עיר 2024",
+      "after": "גופיית כדורסל דנבר נאגטס מספר 15 כחול רטרו",
+      "why": "A Mitchell & Ness rainbow-skyline throwback, not a 2024 City Edition.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308717621552",
+      "handle": "sw-jerseys-99028614",
+      "before": "גופיית כדורסל דטרויט פיסטונס מספר 33 ירוק רטרו",
+      "after": "גופיית כדורסל דטרויט פיסטונס מספר 33 טורקיז רטרו",
+      "why": "The teal Pistons jersey (טורקיז, not ירוק).",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308677251376",
+      "handle": "sw-jerseys-116024178",
+      "before": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 לבן",
+      "after": "גופיית כדורסל ניו יורק ניקס מספר 30 לבן",
+      "why": "The shirt reads NEW YORK 30 (Knicks), not Warriors.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308663914800",
+      "handle": "sw-jerseys-125775146",
+      "before": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור",
+      "after": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה",
+      "why": "The jersey body is navy in the site photo and slate-navy in the supplier photo, not black.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308593529136",
+      "handle": "sw-jerseys-188303645",
+      "before": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 מהדורת עיר",
+      "after": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 שחור",
+      "why": "The black Statement jersey, not a City Edition.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308606734640",
+      "handle": "sw-jerseys-162811479",
+      "before": "גופיית כדורסל איווה מספר 22 כחול כהה",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה",
+      "why": "The shirt is Indiana Fever (WNBA) 22, not Iowa.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308614631728",
+      "handle": "sw-jerseys-163400119",
+      "before": "גופיית כדורסל איווה מספר 22 אדום",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 22 אדום",
+      "why": "The shirt reads FEVER 22 (Indiana Fever), not Iowa.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308603294000",
+      "handle": "sw-jerseys-163400884",
+      "before": "גופיית כדורסל איווה מספר 22",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 22 שחור ואדום",
+      "why": "The shirt reads INDIANA FEVER 22 (black and red), not Iowa.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308602048816",
+      "handle": "sw-jerseys-163401010",
+      "before": "גופיית כדורסל איווה לילדים מספר 22 כחול כהה",
+      "after": "גופיית כדורסל אינדיאנה פיבר לילדים מספר 22 כחול כהה",
+      "why": "The shirt is Indiana Fever (WNBA) 22, not Iowa.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308602016048",
+      "handle": "sw-jerseys-164118671",
+      "before": "גופיית כדורסל איווה מספר 22 כחול כהה",
+      "after": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה",
+      "why": "The shirt is Indiana Fever (WNBA) 22, not Iowa.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308696191280",
+      "handle": "sw-jerseys-127467029",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 כחול כהה",
+      "why": "The jersey is navy in the supplier and site photos, not black.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308651036976",
+      "handle": "sw-jerseys-143753665",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס לילדים מספר 24 שחור",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס לילדים מספר 24 כחול כהה",
+      "why": "The jersey is navy in the supplier and site photos, not black.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308724699440",
+      "handle": "sw-jerseys-96558079",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 מהדורת עיר 2021",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 מהדורת עיר 2021",
+      "why": "The jersey shows number 23, not 24.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308670337328",
+      "handle": "sw-jerseys-86622894",
+      "before": "גופיית כדורסל ממפיס גריזליס מספר 10 ירוק רטרו",
+      "after": "גופיית כדורסל ממפיס גריזליס מספר 10 טורקיז רטרו",
+      "why": "The teal Grizzlies throwback (טורקיז, as on the same design elsewhere).",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308696912176",
+      "handle": "sw-jerseys-125774208",
+      "before": "גופיית כדורסל פריז מספר 1 כחול",
+      "after": "גופיית כדורסל מטרופוליטנס 92 מספר 1 כחול",
+      "why": "The shirt reads METS92 (Metropolitans 92), not Paris.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308551553328",
+      "handle": "sw-jerseys-244982115",
+      "before": "גופיית כדורסל מיאמי היט מספר 34 בורדו",
+      "after": "גופיית כדורסל מיאמי היט מספר 34 אדום",
+      "why": "The Heat red, named אדום on the same jersey elsewhere.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308606046512",
+      "handle": "sw-jerseys-168443140",
+      "before": "גופיית כדורסל לברון ג׳יימס מספר 33 רטרו הדפס",
+      "after": "גופיית כדורסל ניו יורק ניקס מספר 33 כתום רטרו הדפס",
+      "why": "An orange Knicks 33 print jersey, not a LeBron James jersey.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308615614768",
+      "handle": "sw-jerseys-152007478",
+      "before": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 2 שחור מהדורת עיר 2024",
+      "after": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 2 אפור כהה מהדורת עיר 2024",
+      "why": "The jersey is dark charcoal grey, not black.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308622790960",
+      "handle": "sw-jerseys-152007602",
+      "before": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 7 שחור מהדורת עיר 2024",
+      "after": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 7 אפור כהה מהדורת עיר 2024",
+      "why": "The jersey is dark charcoal grey, not black.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308553978160",
+      "handle": "sw-jerseys-225120852",
+      "before": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 8 תכלת",
+      "after": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 8 כחול",
+      "why": "The Thunder royal blue (כחול, as on the same jersey elsewhere), not light blue.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308561056048",
+      "handle": "sw-jerseys-193350770",
+      "before": "גופיית כדורסל פילדלפיה 76׳ מספר 2 כחול",
+      "after": "גופיית כדורסל דיוק מספר 2 כחול",
+      "why": "The shirt reads DUKE 2 (college), not the 76ers.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308723093808",
+      "handle": "sw-jerseys-95806572",
+      "before": "גופיית כדורסל פילדלפיה 76׳ מספר 21 כחול 17/18",
+      "after": "גופיית כדורסל פילדלפיה 76׳ מספר 25 כחול 17/18",
+      "why": "The jersey shows number 25, not 21.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308635111728",
+      "handle": "sw-jerseys-132028643",
+      "before": "גופיית כדורסל פיניקס סאנס מספר 1 תכלת מהדורת עיר 2023",
+      "after": "גופיית כדורסל פיניקס סאנס מספר 3 תכלת מהדורת עיר 2023",
+      "why": "The jersey shows number 3, not 1.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308614762800",
+      "handle": "sw-jerseys-162811135",
+      "before": "גופיית כדורסל סן אנטוניו ספרס מספר 10 אדום רטרו",
+      "after": "גופיית כדורסל סן אנטוניו ספרס מספר 10 שחור רטרו",
+      "why": "The jersey is black, not red.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308651659568",
+      "handle": "sw-jerseys-87107169",
+      "before": "גופיית כדורסל טורונטו ראפטורס מספר 1 לבן רטרו",
+      "after": "גופיית כדורסל טורונטו ראפטורס מספר 1 סגול רטרו",
+      "why": "The jersey is purple, not white.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308556894512",
+      "handle": "sw-jerseys-218038351",
+      "before": "גופיית כדורסל נבחרת ארצות הברית מספר 13",
+      "after": "גופיית כדורסל נבחרת ארצות הברית מספר 15",
+      "why": "The jersey shows number 15, not 13.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308640092464",
+      "handle": "sw-jerseys-112868704",
+      "before": "גופיית כדורסל יוטה ג׳אז מספר 21 מהדורת עיר 2021",
+      "after": "גופיית כדורסל יוטה ג׳אז מספר 27 מהדורת עיר 2021",
+      "why": "The jersey shows number 27, not 21.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308652511536",
+      "handle": "sw-football-217853848",
+      "before": "חולצת כדורגל נבחרת ברזיל חום 25/26",
+      "after": "חולצת כדורגל עם הדפס מריה חום 25/26",
+      "why": "A brown Maria-print fashion shirt (the same design as the black one), not a Brazil shirt.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308668961072",
+      "handle": "sw-football-191110409",
+      "before": "חולצת כדורגל נבחרת מקסיקו אדום מהדורה מיוחדת",
+      "after": "חולצת כדורגל נבחרת מקסיקו בורדו מהדורה מיוחדת",
+      "why": "The México de Oro shirt is burgundy, not red.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308669124912",
+      "handle": "sw-football-188076699",
+      "before": "חולצת כדורגל ר.ב. לייפציג בית 25/26",
+      "after": "חולצת כדורגל רד בול זלצבורג בית 25/26",
+      "why": "The crest reads Red Bull SALZBURG, not RB Leipzig.",
+      "description_changed": true
+    },
+    {
+      "id": "gid://shopify/Product/15308632916272",
+      "handle": "sw-football-236063085",
+      "before": "חולצת כדורגל ריאל מדריד חוץ 26/27",
+      "after": "חולצת כדורגל ריאל מדריד שלישית 26/27",
+      "why": "The pink shirt is Real Madrid's 26/27 third kit (the away kit is green; club announcement 2026-08-12).",
+      "description_changed": true
+    }
+  ],
+  "tags": {
+    "sw-jerseys-123472805": {
+      "id": "gid://shopify/Product/15308658704688",
+      "add": [
+        "team:los-angeles-lakers",
+        "player:kobe-bryant",
+        "קובי בראיינט",
+        "los angeles lakers",
+        "lakers",
+        "لوس أنجلوس ليكرز",
+        "ليكرز",
+        "kobe bryant",
+        "kobe",
+        "كوبي براينت"
+      ],
+      "remove": ["all-star", "team:all-star", "كل النجوم"]
+    },
+    "sw-jerseys-86849794": {
+      "id": "gid://shopify/Product/15308651921712",
+      "add": [
+        "team:chicago-bulls",
+        "player:michael-jordan",
+        "מייקל ג׳ורדן",
+        "chicago bulls",
+        "bulls",
+        "شيكاغو بولز",
+        "بولز",
+        "michael jordan",
+        "jordan",
+        "مايكل جوردان"
+      ],
+      "remove": ["all-star", "team:all-star", "كل النجوم"]
+    },
+    "sw-jerseys-159102690": {
+      "id": "gid://shopify/Product/15308610601264",
+      "add": [
+        "team:indiana-state",
+        "league:ncaa",
+        "indiana state",
+        "sycamores",
+        "إنديانا ستيت",
+        "ncaa",
+        "college basketball",
+        "كرة السلة الجامعية"
+      ],
+      "remove": [
+        "boston celtics",
+        "celtics",
+        "league:nba",
+        "nba",
+        "team:boston-celtics",
+        "الدوري الأمريكي لكرة السلة",
+        "بوسطن سيلتيكس",
+        "سيلتيكس"
+      ]
+    },
+    "sw-jerseys-122454550": {
+      "id": "gid://shopify/Product/15308676759856",
+      "add": ["team:philadelphia-76ers", "philadelphia 76ers", "76ers", "sixers", "فيلادلفيا سفنتي سيكسرز", "سيكسرز"],
+      "remove": ["brooklyn nets", "nets", "team:brooklyn-nets", "بروكلين نتس", "نتس"]
+    },
+    "sw-jerseys-152428791": {
+      "id": "gid://shopify/Product/15308603752752",
+      "add": [
+        "team:san-antonio-spurs",
+        "player:victor-wembanyama",
+        "ויקטור וומבניאמה",
+        "san antonio spurs",
+        "spurs",
+        "سان أنطونيو سبيرز",
+        "سبيرز",
+        "victor wembanyama",
+        "wembanyama",
+        "wemby",
+        "فيكتور ويمبانياما"
+      ],
+      "remove": [
+        "charlotte hornets",
+        "hornets",
+        "lamelo",
+        "lamelo ball",
+        "player:lamelo-ball",
+        "team:charlotte-hornets",
+        "למלו בול",
+        "شارلوت هورنتس",
+        "لاميلو بول",
+        "هورنتس"
+      ]
+    },
+    "sw-jerseys-134343871": {
+      "id": "gid://shopify/Product/15308642550064",
+      "add": [
+        "team:boston-celtics",
+        "player:larry-bird",
+        "לארי בירד",
+        "boston celtics",
+        "celtics",
+        "بوسطن سيلتيكس",
+        "سيلتيكس",
+        "larry bird",
+        "لاري بيرد"
+      ],
+      "remove": [
+        "bulls",
+        "chicago bulls",
+        "pippen",
+        "player:scottie-pippen",
+        "scottie pippen",
+        "team:chicago-bulls",
+        "סקוטי פיפן",
+        "بولز",
+        "سكوتي بيبن",
+        "شيكاغو بولز"
+      ]
+    },
+    "sw-jerseys-165920845": {
+      "id": "gid://shopify/Product/15308608799024",
+      "add": [],
+      "remove": ["city edition", "style:city-edition"]
+    },
+    "sw-jerseys-169089088": {
+      "id": "gid://shopify/Product/15308605849904",
+      "add": ["player:luka-doncic", "לוקה דונצ׳יץ׳", "luka doncic", "luka", "لوكا دونتشيتش"],
+      "remove": ["kyrie", "kyrie irving", "player:kyrie-irving", "קיירי אירווינג", "كايري إيرفينغ"]
+    },
+    "sw-jerseys-150257941": {
+      "id": "gid://shopify/Product/15308617384240",
+      "add": ["style:retro", "retro", "vintage", "throwback", "ريترو"],
+      "remove": ["city edition", "style:city-edition"]
+    },
+    "sw-jerseys-116024178": {
+      "id": "gid://shopify/Product/15308677251376",
+      "add": ["team:new-york-knicks", "new york knicks", "knicks", "نيويورك نيكس", "نيكس"],
+      "remove": [
+        "curry",
+        "golden state warriors",
+        "player:stephen-curry",
+        "steph curry",
+        "stephen curry",
+        "team:golden-state-warriors",
+        "warriors",
+        "סטפן קרי",
+        "ستيفن كاري",
+        "غولدن ستايت ووريرز",
+        "ووريرز"
+      ]
+    },
+    "sw-jerseys-188303645": {
+      "id": "gid://shopify/Product/15308593529136",
+      "add": [],
+      "remove": ["city edition", "style:city-edition"]
+    },
+    "sw-jerseys-162811479": {
+      "id": "gid://shopify/Product/15308606734640",
+      "add": [
+        "team:indiana-fever",
+        "league:wnba",
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر",
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ],
+      "remove": [
+        "college basketball",
+        "iowa",
+        "iowa hawkeyes",
+        "league:ncaa",
+        "ncaa",
+        "team:iowa",
+        "أيوا",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "sw-jerseys-163400119": {
+      "id": "gid://shopify/Product/15308614631728",
+      "add": [
+        "team:indiana-fever",
+        "league:wnba",
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر",
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ],
+      "remove": [
+        "college basketball",
+        "iowa",
+        "iowa hawkeyes",
+        "league:ncaa",
+        "ncaa",
+        "team:iowa",
+        "أيوا",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "sw-jerseys-163400884": {
+      "id": "gid://shopify/Product/15308603294000",
+      "add": [
+        "team:indiana-fever",
+        "league:wnba",
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر",
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ],
+      "remove": [
+        "college basketball",
+        "iowa",
+        "iowa hawkeyes",
+        "league:ncaa",
+        "ncaa",
+        "team:iowa",
+        "أيوا",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "sw-jerseys-163401010": {
+      "id": "gid://shopify/Product/15308602048816",
+      "add": [
+        "team:indiana-fever",
+        "league:wnba",
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر",
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ],
+      "remove": [
+        "college basketball",
+        "iowa",
+        "iowa hawkeyes",
+        "league:ncaa",
+        "ncaa",
+        "team:iowa",
+        "أيوا",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "sw-jerseys-164118671": {
+      "id": "gid://shopify/Product/15308602016048",
+      "add": [
+        "team:indiana-fever",
+        "league:wnba",
+        "indiana fever",
+        "fever",
+        "إنديانا فيفر",
+        "wnba",
+        "دوري كرة السلة الأمريكي للسيدات"
+      ],
+      "remove": [
+        "college basketball",
+        "iowa",
+        "iowa hawkeyes",
+        "league:ncaa",
+        "ncaa",
+        "team:iowa",
+        "أيوا",
+        "كرة السلة الجامعية"
+      ]
+    },
+    "sw-jerseys-96558079": {
+      "id": "gid://shopify/Product/15308724699440",
+      "add": ["player:lebron-james", "לברון ג׳יימס", "lebron james", "lebron", "ليبرون جيمس"],
+      "remove": ["kobe", "kobe bryant", "player:kobe-bryant", "קובי בראיינט", "كوبي براينت"]
+    },
+    "sw-jerseys-193350770": {
+      "id": "gid://shopify/Product/15308561056048",
+      "add": [
+        "team:duke",
+        "league:ncaa",
+        "duke",
+        "blue devils",
+        "ديوك",
+        "ncaa",
+        "college basketball",
+        "كرة السلة الجامعية"
+      ],
+      "remove": [
+        "76ers",
+        "league:nba",
+        "nba",
+        "philadelphia 76ers",
+        "sixers",
+        "team:philadelphia-76ers",
+        "الدوري الأمريكي لكرة السلة",
+        "سيكسرز",
+        "فيلادلفيا سفنتي سيكسرز"
+      ]
+    },
+    "sw-jerseys-95806572": {
+      "id": "gid://shopify/Product/15308723093808",
+      "add": [],
+      "remove": ["embiid", "joel embiid", "player:joel-embiid", "ג׳ואל אמביד", "جويل إمبيد"]
+    },
+    "sw-jerseys-132028643": {
+      "id": "gid://shopify/Product/15308635111728",
+      "add": [],
+      "remove": ["booker", "devin booker", "player:devin-booker", "דווין בוקר", "ديفين بوكر"]
+    },
+    "sw-football-217853848": {
+      "id": "gid://shopify/Product/15308652511536",
+      "add": ["style:special"],
+      "remove": ["brazil", "team:brazil", "البرازيل", "league:national-teams", "national team", "منتخب"]
+    },
+    "sw-football-188076699": {
+      "id": "gid://shopify/Product/15308669124912",
+      "add": [
+        "team:red-bull-salzburg",
+        "league:austrian-bundesliga",
+        "red bull salzburg",
+        "salzburg",
+        "ريد بول سالزبورغ",
+        "austrian bundesliga",
+        "الدوري النمساوي"
+      ],
+      "remove": [
+        "bundesliga",
+        "league:bundesliga",
+        "leipzig",
+        "rb leipzig",
+        "team:rb-leipzig",
+        "آر بي لايبزيغ",
+        "الدوري الألماني",
+        "لايبزيغ"
+      ]
+    },
+    "sw-jerseys-244984876": {
+      "id": "gid://shopify/Product/15308538806576",
+      "add": ["source:yupoo"],
+      "remove": ["source:yupoo-1464316803"],
+      "why": "The only product imported before whose source tag had the store number in it; now tagged like the other 1,097."
+    }
+  },
+  "photos": [
+    {
+      "handle": "sw-jerseys-209198041",
+      "product": "gid://shopify/Product/15308558369072",
+      "title": "גופיית כדורסל קליבלנד קאבלירס מספר 23 צהוב",
+      "problem": "The back photo showed a different jersey (Dallas, FLAGG 32). The supplier album mixes two jerseys.",
+      "fix": "Detached the wrong back (sw-studio-jerseys-209198041-back.png, gid://shopify/MediaImage/45289720185136) and added a studio render of the real back from the same album (JAMES 23): sw-studio-jerseys-209198041-back-v2.png, gid://shopify/MediaImage/45294425997616."
+    },
+    {
+      "handle": "sw-jerseys-244981217",
+      "product": "gid://shopify/Product/15308553519408",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 5 שחור",
+      "problem": "The second photo showed a different jersey (the San Antonio 'Fiesta' City Edition). The product had no studio photo.",
+      "fix": "Detached the Fiesta photo (sw-jerseys-244981217.jpg, gid://shopify/MediaImage/45283696247088). Added a studio render of the front (sw-studio-jerseys-244981217.png, gid://shopify/MediaImage/45294426030384) as the main photo; the supplier photo with the front and the back (CASTLE 5) stays second, alt '... (מלפנים ומאחור)'."
+    },
+    {
+      "handle": "sw-jerseys-128866462",
+      "product": "gid://shopify/Product/15308648710448",
+      "title": "גופיית כדורסל מיאמי היט מספר 14 לבן 2022",
+      "problem": "The studio render was made from a chest close-up and invented pink and blue trims; the jersey has plain white trims and gold side piping.",
+      "fix": "Re-rendered from the album's full front photo: sw-studio-jerseys-128866462-v2.png (gid://shopify/MediaImage/45294425932080) replaced sw-studio-jerseys-128866462.png (gid://shopify/MediaImage/45289147105584)."
+    },
+    {
+      "handle": "sw-shorts-117771218",
+      "product": "gid://shopify/Product/15308705431856",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול",
+      "problem": "The only photo showed three pairs (navy, white, blue); the product is the blue pair.",
+      "fix": "Studio render of the single blue pair from the album's front photo: sw-studio-shorts-117771218.png (gid://shopify/MediaImage/45294425964848) replaced the group photo (sw-shorts-117771218-original.jpg, gid://shopify/MediaImage/45284560273712)."
+    }
+  ],
+  "confirmed": [
+    {
+      "handle": "sw-jerseys-88684751",
+      "product": "gid://shopify/Product/15308650840368",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 הדפס",
+      "question": "Photo shows a Mitchell & Ness 'Big Face' Bulls jersey with no number on the front and no player line on the jock tag, so 'מספר 23' (tag player:michael-jordan) may be wrong.",
+      "answer": "Correct. The supplier album has a back photo that shows JORDAN 23. A studio render of that back was added as the second photo (sw-studio-jerseys-88684751-back.png, gid://shopify/MediaImage/45294445199664), so the number in the title is now visible on the site."
+    },
+    {
+      "handle": "sw-jerseys-86937776",
+      "product": "gid://shopify/Product/15308651856176",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור וזהב",
+      "question": "The title says number 23, but no number appears in any photo: the only photo is the front of a Lakers 'Golden Edition' jersey, which carries the team logo instead of a number.",
+      "answer": "Correct. The supplier album has a back photo that shows JAMES 23. A studio render of that back was added as the second photo (sw-studio-jerseys-86937776-back.png, gid://shopify/MediaImage/45294445232432), so the number in the title is now visible on the site."
+    },
+    {
+      "handle": "sw-jerseys-95721158",
+      "product": "gid://shopify/Product/15308632752432",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן וזהב",
+      "question": "The title says number 24, but no number appears in any photo: the only photo is the front of a white Lakers 'Golden Edition' jersey, which carries the team logo instead of a number.",
+      "answer": "Correct. The supplier album has a back photo that shows BRYANT 24. A studio render of that back was added as the second photo (sw-studio-jerseys-95721158-back.png, gid://shopify/MediaImage/45294445265200), so the number in the title is now visible on the site."
+    },
+    {
+      "handle": "sw-jerseys-97382254",
+      "product": "gid://shopify/Product/15308717982000",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 21 שחור",
+      "question": "The title says number 21 (tag tim-duncan), but the only photo is the front of a Mitchell & Ness 'Big Face' Spurs team jersey with no number or player name anywhere, so the 21 cannot be confirmed and this design may not carry one.",
+      "answer": "Correct. The supplier album has a back photo that shows DUNCAN 21. A studio render of that back was added as the second photo (sw-studio-jerseys-97382254-back.png, gid://shopify/MediaImage/45294445297968), so the number in the title is now visible on the site."
+    }
+  ],
+  "for_the_owner": [
+    "The store has two adult pink Real Madrid 26/27 third shirts: sw-football-236063085 (imported before) and real-madrid-third-jersey-2026-27 (wave 1). Both are correct; whether to keep both is the owner's call."
+  ]
+}

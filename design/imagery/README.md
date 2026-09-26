@@ -50,9 +50,10 @@ photos, named after the handle: `<handle>.png` and `<handle>__back.png`.
 History (2026-09-26): an earlier process gave 229 products studio photos in the same look (files named
 `sw-studio-…-main-v1.png` and similar, some with extra close-ups). This pipeline made the rest the same
 day: 878 products (867 new, plus 11 football shirts from the earlier set, redone), 922 photos in all
-(878 fronts, 44 backs). Three products keep their supplier photo: the demo product,
-`sw-jerseys-244981217` (its two photos show two different jerseys) and `sw-shorts-117771218` (the group
-photo hides part of the product).
+(878 fronts, 44 backs). Three products kept their supplier photo: the demo product,
+`sw-jerseys-244981217` (its two photos showed two different jerseys) and `sw-shorts-117771218` (a group
+photo). The full scan of 2026-09-27 gave both of them studio photos from their supplier albums, so only the
+demo product keeps its supplier photo (`catalog/published/scan-fixes-2026-09-27.json`).
 
 Later the same day a crop bug came to light: `normalize.py` missed the thin outline of white garments on the light background and cut sleeves or edges. The script was fixed (a finer mask, with the old one as a fallback against background noise), the 947 earlier renders were measured with both masks, and the 19 uploaded photos the old crop had cut were re-cropped from their raw renders and replaced in place (`catalog/published/photo-recrop-2026-09-26.json`).
 
