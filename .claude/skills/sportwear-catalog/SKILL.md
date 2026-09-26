@@ -44,8 +44,8 @@ Each product is one team × one kit × one season × one audience.
 - **Handle:** `{team-slug}-{kit-slug}-{season-slug}[-kids]` in lowercase ASCII, for example
   `real-madrid-home-jersey-2026-27` or `maccabi-tel-aviv-basketball-jersey-2026-27-kids`. It never
   changes after publishing.
-- **productType:** `Football Jersey` | `Basketball Jersey` | `Basketball Shorts` | `Hoodie` (the
-  imported NFL hoodies). New types need owner approval.
+- **productType:** `Football Jersey` | `Football Kit` (kids sets: jersey + shorts) | `Basketball Jersey`
+  | `Basketball Shorts` | `Hoodie` (the imported NFL hoodies). New types need owner approval.
 - **vendor:** the manufacturer brand as shown on the product (Nike, adidas, Puma…).
 - **status:** always `DRAFT` on creation.
 - **tags** (drive collections and filters; names and rules in `catalog/classification.json`):
@@ -86,7 +86,8 @@ Each product is one team × one kit × one season × one audience.
 - **Option:** a single `מידה` (Size) option. Values come from the size system (below).
 - **Variants:** one per size.
   - SKU: `SW-{TYPE}-{TEAM}-{KIT}-{SEASON}-{A|K}-{SIZE}`, for example `SW-BJ-MTA-H-2627-A-M`.
-    - TYPE codes: FJ (football jersey), BJ (basketball jersey), BS (basketball shorts).
+    - TYPE codes: FJ (football jersey), FK (football kit, the kids sets), BJ (basketball jersey), BS
+      (basketball shorts).
     - KIT codes: H, A, T, F, S, TR.
   - Inventory is tracked, with no overselling (`inventoryPolicy: DENY`).
   - Quantities come from the owner (default 0).
@@ -119,10 +120,21 @@ Each product is one team × one kit × one season × one audience.
 
 ## Size systems
 
-- **Adults:** `S`, `M`, `L`, `XL`, plus `XXL` only if the supplier lists it.
-- **Kids:** `5-6`, `7-8`, `9-10`, `11-12`, `13-14`, for heights 116, 128, 140, 152 and 164 cm.
-- Brand labels (for example Nike YXS–YXL, adidas 116–164) are recorded as-is in
-  `variants[].source_size_label`, mapped to our kids buckets, and flagged in `questions` when the
+- **Adults:** `S`, `M`, `L`, `XL`. For the jerseyxie import the owner chose S–XL only
+  (2026-09-26), even though the supplier also lists 2XL–4XL.
+- **Kids from the supplier jerseyxie** (owner decision, 2026-09-26): the supplier's own sizes `16`,
+  `18`, `20`, `22`, `24`, `26`, `28` (ages 2-3 to 12-13, heights 95–165 cm), as in its kids chart.
+  Kids football products there are sets (jersey + shorts): `productType` `Football Kit`, price in
+  `catalog/pricing.json`.
+- **Size charts:** products from jerseyxie get the supplier's chart through the
+  `sportwear.size_chart` metafield: `jerseyxie-football-adult-fan` (adults) or
+  `jerseyxie-football-kids-set` (kids sets). The transcribed charts are in
+  `catalog/size-charts/jerseyxie.json`; the metaobject IDs are in `catalog/store-setup.json`.
+- **Products imported before that** (other sources) keep their sizes and get their own chart when
+  the owner sends it. Don't give them the jerseyxie chart.
+- **Other sources (only if the owner adds one):** kids `5-6`, `7-8`, `9-10`, `11-12`, `13-14` (heights
+  116–164 cm). Brand labels (for example Nike YXS–YXL, adidas 116–164) are recorded as-is in
+  `variants[].source_size_label`, mapped to these buckets, and flagged in `questions` when the
   mapping is not exact.
 
 ## Pricing

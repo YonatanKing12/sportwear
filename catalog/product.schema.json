@@ -33,8 +33,12 @@
     },
     "status": { "enum": ["needs_review", "ready", "published_draft", "active"] },
     "sport": { "enum": ["football", "basketball"] },
-    "product_type": { "enum": ["Football Jersey", "Basketball Jersey", "Basketball Shorts"] },
+    "product_type": { "enum": ["Football Jersey", "Football Kit", "Basketball Jersey", "Basketball Shorts"] },
     "audience": { "enum": ["adult", "kids"] },
+    "size_chart": {
+      "type": ["string", "null"],
+      "description": "Handle of the sw_size_chart metaobject the product gets through sportwear.size_chart (IDs in catalog/store-setup.json). Products from jerseyxie: jerseyxie-football-adult-fan or jerseyxie-football-kids-set."
+    },
     "team": {
       "type": ["object", "null"],
       "required": ["slug", "code", "he", "en", "ar"],
@@ -84,10 +88,28 @@
         "required": ["size", "sku", "price", "quantity"],
         "properties": {
           "size": {
-            "enum": ["S", "M", "L", "XL", "XXL", "5-6", "7-8", "9-10", "11-12", "13-14"]
+            "enum": [
+              "S",
+              "M",
+              "L",
+              "XL",
+              "XXL",
+              "5-6",
+              "7-8",
+              "9-10",
+              "11-12",
+              "13-14",
+              "16",
+              "18",
+              "20",
+              "22",
+              "24",
+              "26",
+              "28"
+            ]
           },
           "source_size_label": { "type": ["string", "null"] },
-          "sku": { "type": "string", "pattern": "^SW-(FJ|BJ|BS)-[A-Z]{3}-(H|A|T|F|S|TR)-\\d{4}-(A|K)-[A-Z0-9-]+$" },
+          "sku": { "type": "string", "pattern": "^SW-(FJ|FK|BJ|BS)-[A-Z]{3}-(H|A|T|F|S|TR)-\\d{4}-(A|K)-[A-Z0-9-]+$" },
           "barcode": { "type": ["string", "null"] },
           "price": { "type": ["number", "null"], "minimum": 0 },
           "compare_at_price": { "type": ["number", "null"], "minimum": 0 },

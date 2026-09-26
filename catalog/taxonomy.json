@@ -30,6 +30,19 @@
         "ar": "قميص {team.ar} {kit.ar} {season}"
       }
     },
+    "Football Kit": {
+      "code": "FK",
+      "sport": "football",
+      "he": "סט כדורגל",
+      "en": "Football Kit",
+      "ar": "طقم كرة قدم",
+      "note": "Kids sets: jersey + shorts (owner, 2026-09-26). Titles add the kids suffix.",
+      "title_templates": {
+        "he": "סט {kit.he} {team.he} {season}",
+        "en": "{team.en} {kit.en} Kit {season}",
+        "ar": "طقم {team.ar} {kit.ar} {season}"
+      }
+    },
     "Basketball Jersey": {
       "code": "BJ",
       "sport": "basketball",
@@ -133,6 +146,28 @@
       "values": ["S", "M", "L", "XL"],
       "optional": ["XXL"]
     },
+    "kids_jerseyxie": {
+      "values": ["16", "18", "20", "22", "24", "26", "28"],
+      "age": {
+        "16": "2-3",
+        "18": "4-5",
+        "20": "5-6",
+        "22": "7-8",
+        "24": "8-9",
+        "26": "10-11",
+        "28": "12-13"
+      },
+      "height_cm": {
+        "16": "95-105",
+        "18": "105-115",
+        "20": "115-125",
+        "22": "125-135",
+        "24": "135-145",
+        "26": "145-155",
+        "28": "155-165"
+      },
+      "note": "Kids products from the supplier jerseyxie use its own sizes and chart (owner decision, 2026-09-26). Full chart: catalog/size-charts/jerseyxie.json."
+    },
     "kids": {
       "values": ["5-6", "7-8", "9-10", "11-12", "13-14"],
       "height_cm": {
@@ -142,7 +177,7 @@
         "11-12": 152,
         "13-14": 164
       },
-      "note": "Brand labels (Nike YXS-YXL, adidas 116-164, ...) are kept in source_size_label and mapped to these buckets; inexact mappings are flagged for the owner."
+      "note": "Brand labels (Nike YXS-YXL, adidas 116-164, ...) are kept in source_size_label and mapped to these buckets; inexact mappings are flagged for the owner. Used for other sources only; jerseyxie kids products use kids_jerseyxie."
     },
     "option_name": {
       "he": "מידה",

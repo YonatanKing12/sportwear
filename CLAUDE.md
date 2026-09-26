@@ -54,8 +54,11 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
      approved ones.
    - Tokens: `design/tokens.json`.
 3. **Sizes:**
-   - Adults: S, M, L, XL (XXL if stocked).
-   - Kids: 5-6, 7-8, 9-10, 11-12, 13-14 (heights 116–164 cm).
+   - Adults: S, M, L, XL.
+   - Kids from the supplier jerseyxie: its own sizes 16–28 (ages 2-3 to 12-13), sold as sets
+     (jersey + shorts). Owner decision, 2026-09-26.
+   - New products from jerseyxie use the supplier's size charts (`catalog/size-charts/jerseyxie.json`).
+     The products imported before keep their own chart, which the owner will send.
    - **Kids are separate products** from adults.
 4. **Catalog pipeline:** links → `product-scout` → owner review → `catalog-translator` →
    `product-publisher` (DRAFT only). See `.claude/skills/sportwear-catalog/` and `catalog/README.md`.

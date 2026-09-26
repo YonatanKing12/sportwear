@@ -2094,6 +2094,24 @@
           "digest": "6c2e2b4c1246b94c1f2c9a60f242b163347c6e50950077e129c9edf2ad47f697"
         }
       }
+    },
+    {
+      "handle": "kids-football",
+      "resource_id": "gid://shopify/Collection/512864780592",
+      "fields": {
+        "title": {
+          "he": "כדורגל לילדים",
+          "en": "Kids' Football",
+          "ar": "كرة القدم للأطفال",
+          "digest": "cda63d50e00d6d53fd19dad141f6f617fbdba96ef8a7960d48243469aef16260"
+        },
+        "body_html": {
+          "he": "<p>חולצות וסטים לכדורגל במידות ילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>",
+          "en": "<p>Football jerseys and kits in kids' sizes. Home delivery within 3 business days.</p>",
+          "ar": "<p>قمصان وأطقم كرة القدم بمقاسات الأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>",
+          "digest": "9c86668f5137c4f17587b92ca971f2230f317e4643771feb3515799995610009"
+        }
+      }
     }
   ],
   "menus": [
@@ -4096,7 +4114,45 @@
           }
         }
       }
-    }
+    },
+    "sw_size_chart": [
+      {
+        "handle": "jerseyxie-football-adult-fan",
+        "resource_id": "gid://shopify/Metaobject/282968949040",
+        "fields": {
+          "name": {
+            "he": "מידות חולצת כדורגל למבוגרים",
+            "en": "Adult football jersey sizes",
+            "ar": "مقاسات قميص كرة القدم للكبار",
+            "digest": "4700302242b3cd73d4cd88376bcb8a05d77910ba0fb35b961bc19c4799f4547e"
+          },
+          "fit_note": {
+            "he": "המידות נמדדו על החולצה כשהיא מונחת שטוחה. רוחב החזה נמדד מבית שחי לבית שחי. ייתכן הבדל של 1–2 ס״מ.",
+            "en": "Measured on the jersey lying flat. Chest width is measured from armpit to armpit. Allow 1–2 cm of difference.",
+            "ar": "تم القياس والقميص مفرود على سطح مستوٍ. يُقاس عرض الصدر من الإبط إلى الإبط. قد يوجد فرق 1–2 سم.",
+            "digest": "017372dec9c7fdf6ec223a8e2bc979d60b05bd4ce72c353796646dbd71a32a9d"
+          }
+        }
+      },
+      {
+        "handle": "jerseyxie-football-kids-set",
+        "resource_id": "gid://shopify/Metaobject/282968981808",
+        "fields": {
+          "name": {
+            "he": "מידות סט כדורגל לילדים",
+            "en": "Kids football set sizes",
+            "ar": "مقاسات طقم كرة القدم للأطفال",
+            "digest": "60dd4be952aa9dd01b79736cbf4324abfff5a0b31e94c94a795fabd8a880f38e"
+          },
+          "fit_note": {
+            "he": "הסט כולל חולצה ומכנס. המידות נמדדו על הבגד כשהוא מונח שטוח, ורוחב החזה נמדד מבית שחי לבית שחי. ייתכן הבדל של 1–2 ס״מ. כדאי לבחור לפי הגובה של הילד; הגיל הוא רק כיוון.",
+            "en": "The set includes a jersey and shorts. Measured on the garment lying flat; chest width is measured from armpit to armpit. Allow 1–2 cm of difference. Choose by your child's height; the age is only a guide.",
+            "ar": "يشمل الطقم قميصًا وشورتًا. تم القياس والقطعة مفرودة على سطح مستوٍ، ويُقاس عرض الصدر من الإبط إلى الإبط. قد يوجد فرق 1–2 سم. اختاروا حسب طول الطفل، فالعمر للإرشاد فقط.",
+            "digest": "ac3584c5e8e5d344975ab9b7e781aa8f496e3a9d2e4df18cc7244dc5a2c3f600"
+          }
+        }
+      }
+    ]
   },
   "skipped": [
     {

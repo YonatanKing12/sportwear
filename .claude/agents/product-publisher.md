@@ -42,7 +42,8 @@ Read `.claude/skills/sportwear-catalog/SKILL.md` and `catalog/product.schema.jso
     inventory quantity at the store's location (query the location ID once)
   - media from the image URLs with their Hebrew alt text (then the studio photos replace them on the
     product, per `design/imagery/README.md`, once the owner has seen the batch)
-  - `sportwear.*` metafields
+  - `sportwear.*` metafields, including `size_chart` (a metaobject reference) when the file names one:
+    the IDs of the size charts are in `catalog/store-setup.json` (`metaobjects.sw_size_chart`)
 - **References:**
   - Set team and leagues as metaobject references once those metaobjects exist.
   - Set `counterpart` and `complements` only when the referenced product already exists. If it

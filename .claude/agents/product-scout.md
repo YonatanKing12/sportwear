@@ -31,9 +31,11 @@ Read these before your first file:
      `questions`.
 3. **Build the file** exactly per the schema:
    - The handle and Hebrew title follow the templates in `taxonomy.json` and the catalog skill.
-   - Variants use our size system:
-     - adults S, M, L, XL (XXL only if listed)
-     - kids 5-6, 7-8, 9-10, 11-12, 13-14
+   - Variants use our size system (`size_systems` in `taxonomy.json`):
+     - adults S, M, L, XL (the jerseyxie import: S–XL only)
+     - kids from the supplier jerseyxie: its sizes 16, 18, 20, 22, 24, 26, 28; kids football there
+       are sets (jersey + shorts), product type `Football Kit`
+     - kids from other sources: 5-6, 7-8, 9-10, 11-12, 13-14
    - Keep the brand's own label in `source_size_label`, and flag any mapping that is not exact.
    - SKUs follow `SW-{TYPE}-{TEAM}-{KIT}-{SEASON}-{A|K}-{SIZE}`.
    - Price comes from `pricing.json`. If no rule matches, set `price: null` and add a question.
