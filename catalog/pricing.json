@@ -6,8 +6,8 @@
     {
       "product_type": "Football Jersey",
       "audience": "adult",
-      "price": 120,
-      "source": "owner, 2026-09-25; confirmed 2026-09-26 for the jerseyxie import"
+      "price": 139,
+      "source": "owner, 2026-09-26: 'תשווה את כולם ל139' (the new jerseyxie shirts match the ₪139 of the shirts imported before; was ₪120)"
     },
     { "product_type": "Football Jersey", "audience": "kids", "price": null, "source": "TBD" },
     {
@@ -29,6 +29,6 @@
     "flat_rate": 0,
     "free_shipping_threshold": 0,
     "delivery_promise": "free home delivery within up to 10 business days",
-    "_note": "Owner decision, 2026-09-26: free shipping on every order, delivery within up to 10 business days (before: ₪35, free from ₪250, 3 business days). Admin, Israel zone: one method 'משלוח חינם עד הבית' at ₪0, described 'עד 10 ימי עסקים', with en/ar translations. The international zone (27 countries, ₪58) is unchanged, waiting on the owner. The theme's free-shipping setting must match what admin charges."
+    "_note": "Owner decision, 2026-09-26: free shipping on every order, delivery within up to 10 business days (before: ₪35, free from ₪250, 3 business days). Admin, Israel zone: one method 'משלוח חינם עד הבית' at ₪0, described 'עד 10 ימי עסקים', with en/ar translations. Israel only: the international zone (27 countries, ₪58) was deleted on 2026-09-26 per the owner ('רק בישראל אנחנו עובדים'). The theme's free-shipping setting must match what admin charges."
   }
 }

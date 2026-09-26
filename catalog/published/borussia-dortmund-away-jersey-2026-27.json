@@ -1,6 +1,6 @@
 {
   "handle": "borussia-dortmund-away-jersey-2026-27",
-  "status": "published_draft",
+  "status": "active",
   "sport": "football",
   "product_type": "Football Jersey",
   "audience": "adult",
@@ -28,7 +28,7 @@
       "source_size_label": "S",
       "sku": "SW-FJ-BVB-A-2627-A-S",
       "barcode": null,
-      "price": 120,
+      "price": 139,
       "compare_at_price": null,
       "quantity": 5,
       "available_at_source": true
@@ -38,7 +38,7 @@
       "source_size_label": "M",
       "sku": "SW-FJ-BVB-A-2627-A-M",
       "barcode": null,
-      "price": 120,
+      "price": 139,
       "compare_at_price": null,
       "quantity": 5,
       "available_at_source": true
@@ -48,7 +48,7 @@
       "source_size_label": "L",
       "sku": "SW-FJ-BVB-A-2627-A-L",
       "barcode": null,
-      "price": 120,
+      "price": 139,
       "compare_at_price": null,
       "quantity": 5,
       "available_at_source": true
@@ -58,7 +58,7 @@
       "source_size_label": "XL",
       "sku": "SW-FJ-BVB-A-2627-A-XL",
       "barcode": null,
-      "price": 120,
+      "price": 139,
       "compare_at_price": null,
       "quantity": 5,
       "available_at_source": true
@@ -133,6 +133,8 @@
       "XL": "gid://shopify/ProductVariant/67856322199856"
     },
     "created_at": "2026-09-26T20:40:01Z",
+    "activated_at": "2026-09-26T21:40:00Z",
+    "online_store": true,
     "translations_registered": {
       "en": "2026-09-26T21:01:57Z",
       "ar": "2026-09-26T21:01:57Z"

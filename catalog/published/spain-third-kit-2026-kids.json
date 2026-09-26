@@ -1,6 +1,6 @@
 {
   "handle": "spain-third-kit-2026-kids",
-  "status": "published_draft",
+  "status": "active",
   "sport": "football",
   "product_type": "Football Kit",
   "audience": "kids",
@@ -174,6 +174,8 @@
       "28": "gid://shopify/ProductVariant/67856321446192"
     },
     "created_at": "2026-09-26T20:39:01Z",
+    "activated_at": "2026-09-26T21:40:00Z",
+    "online_store": true,
     "translations_registered": {
       "en": "2026-09-26T21:02:27Z",
       "ar": "2026-09-26T21:02:27Z"

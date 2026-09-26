@@ -167,9 +167,10 @@ From 70 sampled album pages and the listings:
 ## Importing a wave
 
 The owner approved wave 1 on 2026-09-26: the adult and kids rows of `wave1.json` (129 products, women
-left out). Adults get one short-sleeve fan jersey in S–XL at ₪120; kids get the set, jersey and shorts,
-in the supplier's sizes 16–28 at ₪99 (`catalog/pricing.json`), each with the supplier's size chart
-(`catalog/size-charts/jerseyxie.json`, metaobjects in `catalog/store-setup.json`). 5 units per size.
+left out). Adults get one short-sleeve fan jersey in S–XL at ₪139 (₪120 at import; the owner moved it to
+₪139 the same day); kids get the set, jersey and shorts, in the supplier's sizes 16–28 at ₪99
+(`catalog/pricing.json`), each with the supplier's size chart (`catalog/size-charts/jerseyxie.json`,
+metaobjects in `catalog/store-setup.json`). 5 units per size.
 
 1. **Photos.** `python3 scripts/catalog/jerseyxie-photos.py fetch <ids.json> <work>` downloads every
    album of each row, and `sheet` draws one labeled contact sheet per row. Pick the album and the front
@@ -190,7 +191,7 @@ in the supplier's sizes 16–28 at ₪99 (`catalog/pricing.json`), each with the
    counterparts, and moves the files to `catalog/published/`; then `catalog-translator` registers the
    en/ar translations from the files.
 
-Wave 1 (2026-09-26): 128 drafts (20 pilot + 108), reviewed by the owner on the page https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af, whose store document `review/drafts` lists the handles marked for fixing. Nothing is activated until the owner says so in the conversation.
+Wave 1 (2026-09-26): 128 drafts (20 pilot + 108), reviewed by the owner on the page https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af, whose store document `review/drafts` lists the handles marked for fixing (none were marked). The owner then told us to activate them ("אתה יכול להפעיל לבד"), and all 128 went ACTIVE and onto the Online Store the same day. Later waves stay drafts until the owner says so in the conversation.
 
 Handles: `{team}-{kit}-jersey-{season}` and `{team}-{kit}-kit-{season}-kids`, season `2026-27` for clubs
 and `2026` for national teams.

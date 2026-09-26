@@ -526,7 +526,7 @@
     }
   },
   "shipping": {
-    "_note": "Changed on 2026-09-26 per the owner: free shipping on every order, delivery within up to 10 business days. Before: Israel ₪35 'רגיל', free at ₪250 and above.",
+    "_note": "Changed on 2026-09-26 per the owner: free shipping on every order, delivery within up to 10 business days, Israel only. Before: Israel ₪35 'רגיל', free at ₪250 and above, plus an international zone.",
     "Israel": {
       "method": "משלוח חינם עד הבית",
       "description": "עד 10 ימי עסקים",
@@ -536,10 +536,10 @@
       "translations": "en 'Free home delivery' / 'Within 10 business days'; ar 'توصيل مجاني إلى المنزل' / 'خلال 10 أيام عمل'"
     },
     "International (27 countries)": {
-      "price": 58,
-      "method_definition_id": "gid://shopify/DeliveryMethodDefinition/1174970630448",
-      "status": "unchanged, the owner decides whether to keep it"
-    }
+      "status": "deleted on 2026-09-26 per the owner: 'כן, חינם לכולם ורק בישראל אנחנו עובדים'",
+      "was": "₪58, zone gid://shopify/DeliveryZone/591757181232, method gid://shopify/DeliveryMethodDefinition/1174970630448"
+    },
+    "markets": "one market, Israel (gid://shopify/Market/98940223792); the only delivery zone is Israel"
   },
   "demo_products": {
     "_note": "Theme-preview fixtures, tag 'demo'. Created ACTIVE but not published to any channel. Owner decides: keep and add the rest, switch to draft, or delete.",

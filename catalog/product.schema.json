@@ -170,6 +170,12 @@
         "product_id": { "type": "string" },
         "variant_ids": { "type": "object", "additionalProperties": { "type": "string" } },
         "created_at": { "type": "string", "format": "date-time" },
+        "activated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the product was set ACTIVE, on the owner's explicit instruction"
+        },
+        "online_store": { "type": "boolean", "description": "Published to the Online Store channel" },
         "translations_registered": {
           "type": "object",
           "properties": {
