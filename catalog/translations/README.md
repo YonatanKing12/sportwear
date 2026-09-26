@@ -2,8 +2,9 @@
 
 `store-content.json` holds the translations of the store's non-product content:
 
-- the 120 collections (101 added on 2026-09-26 by the categories work: clubs, NBA teams, players, styles, hoodies)
-- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 11 hidden child lists that Shopify keeps behind the main-menu items that have children
+- the 146 collections (on 2026-09-26: 101 added by the categories work, for clubs, NBA teams, players, styles and hoodies;
+  then `kids-football` and the 25 team collections of wave 1)
+- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 15 hidden child lists that Shopify keeps behind the main-menu items that have children
 - 4 pages
 - the 10 league metaobjects (`sw_league`), `name` field only
 
@@ -29,6 +30,12 @@ is outdated.
 The shipping change (2026-09-26 evening: free shipping on every order, up to 10 business days) rewrote the description
 of 104 collections ("משלוח חינם עד הבית, עד 10 ימי עסקים.") and of `kids`. Their `en` and `ar` were registered again
 with the new digests and read back: none is outdated.
+
+Wave 1 (2026-09-26 evening) added 55 resources and 80 fields: 25 team collections (12 clubs and 13 national teams; IDs in
+`store-setup.json`), 26 main-menu items (the teams under their leagues, national teams by their short country name, and
+`kids-football` first under ילדים) and the 4 hidden child lists that Shopify created behind בונדסליגה, ליגות נוספות,
+נבחרות and ליגת העל. Read back: every value matches this file, none is outdated, and the 119 existing main-menu items
+kept their IDs and translations.
 
 What is not translated:
 
