@@ -131,8 +131,8 @@
       "next": "Next announcement",
       "pause": "Pause announcements",
       "play": "Play announcements",
-      "free_shipping": "Free shipping from {{ amount }} · Delivered to your door within 3 business days",
-      "delivery": "Delivered to your door within 3 business days"
+      "free_shipping": "Free shipping from {{ amount }} · Delivered within 3 business days",
+      "delivery": "Delivered within 3 business days"
     },
     "menu": {
       "open": "Menu",

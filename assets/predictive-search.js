@@ -12,7 +12,7 @@ import { EVENTS, announce, config, debounce, fetchSection, parseHTML, subscribe 
 
 const SECTION_ID = 'predictive-search';
 const MIN_QUERY_LENGTH = 2;
-const RESULT_LIMIT = 6;
+const RESULT_LIMIT = 4; // per resource type (limit_scope=each)
 const DEBOUNCE_MS = 250;
 
 class SwPredictiveSearch extends HTMLElement {
@@ -96,6 +96,7 @@ class SwPredictiveSearch extends HTMLElement {
     url.searchParams.set('q', term);
     url.searchParams.set('resources[type]', 'product,collection,query');
     url.searchParams.set('resources[limit]', String(RESULT_LIMIT));
+    url.searchParams.set('resources[limit_scope]', 'each');
     url.searchParams.set('resources[options][unavailable_products]', 'last');
 
     try {

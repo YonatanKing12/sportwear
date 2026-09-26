@@ -73,7 +73,7 @@
         <a
           href="{{ routes.cart_url }}"
           class="header__icon header__cart"
-          {% if settings.cart_type == 'drawer' %}
+          {% if settings.cart_type == 'drawer' and request.page_type != 'cart' %}
             data-drawer-open="CartDrawer" aria-haspopup="dialog" aria-expanded="false"
           {% endif %}
         >
