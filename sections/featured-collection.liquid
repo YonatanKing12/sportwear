@@ -2,15 +2,21 @@
   assign featured = section.settings.collection
   assign product_limit = section.settings.products_to_show
   assign columns_desktop = section.settings.columns_desktop
-  assign columns_tablet = columns_desktop | at_most: 4
+  assign columns_tablet = columns_desktop | at_most: 3
   assign columns_mobile = section.settings.columns_mobile | plus: 0
   assign use_scroller = section.settings.mobile_scroller
   # Carousel: one row that runs to the screen's edge at every width, with previous/next buttons, a
-  # progress bar and a "view all" tile at its end.
+  # progress bar and a "view all" tile at its end. The next card peeks in: 0.3 of a card, or half a
+  # card on a phone showing one column, so a large card still reads as a row to swipe.
   assign is_carousel = false
   if section.settings.layout == 'carousel'
     assign is_carousel = true
   endif
+  assign mobile_peek = 0.3
+  if columns_mobile == 1
+    assign mobile_peek = 0.5
+  endif
+  assign mobile_visible = columns_mobile | plus: mobile_peek
   assign list_id = 'FeaturedCollection-' | append: section.id
 
   assign has_products = false
@@ -52,8 +58,8 @@
       echo '), (min-width: 750px) calc((100vw - 64px) / '
       echo columns_tablet
       echo '), calc((100vw - 40px) / '
-      echo columns_mobile
-      echo '.3)'
+      echo mobile_visible
+      echo ')'
     endcapture
   else
     # 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
@@ -188,7 +194,7 @@
           class="featured-collection__track"
           role="list"
           data-carousel-track
-          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
+          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }}; --carousel-peek: {{ mobile_peek }};"
         >
           {{- cards -}}
         </ul>
@@ -289,13 +295,13 @@
 
   /* Carousel: the header and progress bar keep the page width; the row itself spans the screen. It
      starts where the page content starts and runs past the end edge, where the next card peeks in
-     (the visible columns plus 0.3 of a card). */
+     (the visible columns plus 0.3 of a card; on phones --carousel-peek, half a card for one column). */
   .featured-collection__carousel {
     display: block;
   }
 
   .featured-collection__track {
-    --carousel-cols: calc(var(--grid-cols) + 0.3);
+    --carousel-cols: calc(var(--grid-cols) + var(--carousel-peek, 0.3));
     --carousel-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
     display: grid;
     grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
