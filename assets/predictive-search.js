@@ -47,6 +47,51 @@ export function normalizeSearchQuery(value) {
     .replace(GERESH, '$1׳');
 }
 
+/**
+ * Shopify's Predictive Search API only serves a fixed list of languages, and Hebrew and Arabic are not
+ * on it (it answers 417 there). The storefront says whether the current language is covered in
+ * <script id="shopify-features">. Where it isn't, the suggestions come from the regular storefront
+ * search, which works in every language, rendered by the same section.
+ * @returns {boolean}
+ */
+function predictiveSearchSupported() {
+  try {
+    const features = document.getElementById('shopify-features')?.textContent;
+    return Boolean(features && JSON.parse(features).predictiveSearch);
+  } catch {
+    return false;
+  }
+}
+
+const PREDICTIVE_SUPPORTED = predictiveSearchSupported();
+
+/**
+ * The URL whose rendered predictive-search section holds the suggestions for `term`. Both endpoints
+ * are locale-aware (/en/…, /ar/…), so each language searches its own content.
+ * @param {string} term
+ * @returns {URL}
+ */
+function suggestionsUrl(term) {
+  const url = new URL(
+    PREDICTIVE_SUPPORTED ? config().routes.predictive_search_url : config().routes.search_url,
+    window.location.origin,
+  );
+  url.searchParams.set('q', term);
+  if (PREDICTIVE_SUPPORTED) {
+    url.searchParams.set('resources[type]', 'product,collection,query');
+    url.searchParams.set('resources[limit]', String(RESULT_LIMIT));
+    url.searchParams.set('resources[limit_scope]', 'each');
+    url.searchParams.set('resources[options][fields]', SEARCH_FIELDS);
+    url.searchParams.set('resources[options][prefix]', 'last');
+    url.searchParams.set('resources[options][unavailable_products]', 'last');
+  } else {
+    url.searchParams.set('type', 'product');
+    url.searchParams.set('options[prefix]', 'last');
+    url.searchParams.set('options[unavailable_products]', 'last');
+  }
+  return url;
+}
+
 /** @param {FormDataEvent} event */
 function normalizeFormData(event) {
   const value = event.formData.get('q');
@@ -231,15 +276,7 @@ class SwPredictiveSearch extends HTMLElement {
     this.#request = request;
     this.#setLoading(true);
 
-    // Locale-aware endpoint (/en/search/suggest, /ar/search/suggest), so each language searches its own content.
-    const url = new URL(config().routes.predictive_search_url, window.location.origin);
-    url.searchParams.set('q', term);
-    url.searchParams.set('resources[type]', 'product,collection,query');
-    url.searchParams.set('resources[limit]', String(RESULT_LIMIT));
-    url.searchParams.set('resources[limit_scope]', 'each');
-    url.searchParams.set('resources[options][fields]', SEARCH_FIELDS);
-    url.searchParams.set('resources[options][prefix]', 'last');
-    url.searchParams.set('resources[options][unavailable_products]', 'last');
+    const url = suggestionsUrl(term);
 
     try {
       const html = await fetchSection(SECTION_ID, url.href, { signal: request.signal });

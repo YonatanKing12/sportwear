@@ -12,18 +12,101 @@
   Its CSS is in assets/predictive-search.css (sections fetched later miss {% stylesheet %} CSS).
   Not addable in the theme editor (no presets).
 {%- endcomment -%}
-{%- if predictive_search.performed -%}
+{%- comment -%}
+  Two sources. Where Shopify's Predictive Search API serves the storefront language, the script asks
+  it ({{ routes.predictive_search_url }}) and predictive_search is set. It doesn't serve Hebrew or
+  Arabic, so there the script renders this section on the storefront search page instead
+  ({{ routes.search_url }}?q=…&type=product&options[prefix]=last&section_id=predictive-search):
+  search is set, the products come from search.results, and the category chips are the main-menu
+  links whose title contains a word of the query (the menu holds every league, team and player
+  category, in the storefront's language).
+{%- endcomment -%}
+{%- liquid
+  assign source = ''
+  if predictive_search.performed
+    assign source = 'predictive'
+  elsif search.performed
+    assign source = 'search'
+  endif
+-%}
+{%- if source != '' -%}
   {%- liquid
-    assign terms = predictive_search.terms
-    assign queries = predictive_search.resources.queries
-    assign collections = predictive_search.resources.collections
-    assign products = predictive_search.resources.products
+    assign shown_collections = 0
+    assign shown_products = 0
+    assign shown_queries = 0
+    if source == 'predictive'
+      assign terms = predictive_search.terms
+      assign queries = predictive_search.resources.queries
+      assign collections = predictive_search.resources.collections
+      assign products = predictive_search.resources.products
+      assign shown_collections = collections.size | at_most: 6
+      assign shown_products = products.size | at_most: 6
+      assign shown_queries = queries.size | at_most: 4
+    else
+      assign terms = search.terms
+      assign products = search.results
+      assign shown_products = search.results_count | at_most: 6
+    endif
 
-    assign shown_collections = collections.size | at_most: 6
-    assign shown_products = products.size | at_most: 6
-    assign shown_queries = queries.size | at_most: 4
+    # Category chips, rendered once here and printed below. Predictive: its collection matches.
+    # Search page: main-menu links (any level) whose title contains a query word of 2+ letters,
+    # without links to empty collections and without repeats.
+    capture collection_chips
+      if source == 'predictive'
+        for collection in collections limit: 6
+          echo '<a id="PredictiveSearchOption-collection-'
+          echo collection.id
+          echo '" class="chip predictive-search__option predictive-search__chip" href="'
+          echo collection.url
+          echo '" role="option" aria-selected="false" tabindex="-1">'
+          echo collection.title | escape
+          echo '</a>'
+        endfor
+      else
+        assign query_words = terms | downcase | split: ' '
+        assign menu_links = linklists['main-menu'].links
+        for level_one in linklists['main-menu'].links
+          assign menu_links = menu_links | concat: level_one.links
+          for level_two in level_one.links
+            assign menu_links = menu_links | concat: level_two.links
+          endfor
+        endfor
+        assign seen_urls = '|'
+        for link in menu_links
+          if shown_collections >= 6
+            break
+          endif
+          if link.type != 'collection_link' or link.object.all_products_count == 0
+            continue
+          endif
+          assign url_key = '|' | append: link.url | append: '|'
+          if seen_urls contains url_key
+            continue
+          endif
+          assign link_title = link.title | downcase
+          assign link_match = false
+          for word in query_words
+            if word.size > 1 and link_title contains word
+              assign link_match = true
+              break
+            endif
+          endfor
+          if link_match
+            assign seen_urls = seen_urls | append: link.url | append: '|'
+            assign shown_collections = shown_collections | plus: 1
+            echo '<a id="PredictiveSearchOption-collection-'
+            echo link.object.id
+            echo '" class="chip predictive-search__option predictive-search__chip" href="'
+            echo link.url
+            echo '" role="option" aria-selected="false" tabindex="-1">'
+            echo link.title | escape
+            echo '</a>'
+          endif
+        endfor
+      endif
+    endcapture
+
     assign result_count = shown_collections | plus: shown_products | plus: shown_queries
-
     assign encoded_terms = terms | url_encode
     assign search_url = routes.search_url | append: '?q=' | append: encoded_terms | append: '&options%5Bprefix%5D=last'
   -%}
@@ -54,20 +137,7 @@
           <div id="PredictiveSearchGroup-collections" class="predictive-search__heading">
             {{- 'predictive_search.collections' | t -}}
           </div>
-          <div class="predictive-search__chips">
-            {%- for collection in collections limit: 6 -%}
-              <a
-                id="PredictiveSearchOption-collection-{{ collection.id }}"
-                class="chip predictive-search__option predictive-search__chip"
-                href="{{ collection.url }}"
-                role="option"
-                aria-selected="false"
-                tabindex="-1"
-              >
-                {{- collection.title | escape -}}
-              </a>
-            {%- endfor -%}
-          </div>
+          <div class="predictive-search__chips">{{ collection_chips }}</div>
         </div>
       {%- endif -%}
 
@@ -79,6 +149,10 @@
           <div class="predictive-search__products">
             {%- for product in products limit: 6 -%}
               {%- liquid
+                # Search-page results can hold pages and articles when the request isn't type=product.
+                if product.object_type != blank and product.object_type != 'product'
+                  continue
+                endif
                 assign subtitle = ''
                 case settings.card_subtitle
                   when 'team'

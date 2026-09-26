@@ -132,7 +132,10 @@ import {
   `snippets/header-search`) is the only header search; to send a visitor to it, focus that input or link
   to `routes.search_url`.
 - **Predictive search** section id `predictive-search`; rendered through
-  `routes.predictive_search_url?q=…&section_id=predictive-search` (fields include `tag`).
+  `routes.predictive_search_url?q=…&section_id=predictive-search` (fields include `tag`) where the
+  storefront language is supported (`<script id="shopify-features">` → `predictiveSearch`). Hebrew and
+  Arabic are not, so there it is rendered on `routes.search_url?q=…&type=product&options[prefix]=last`
+  and reads `search.results`, with category chips matched from the main menu's link titles.
 - **Search forms** elsewhere (search page, 404) sit in `<sw-search-form>` (`assets/predictive-search.js`),
   which sends the query normalized like the header's (Hebrew geresh/gershayim, spaces).
 - **"Complete the set"**: product metafield `sportwear.complements` (list of products). Product page and cart

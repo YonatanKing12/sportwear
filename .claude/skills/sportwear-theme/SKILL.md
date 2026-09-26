@@ -51,7 +51,9 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
   API** to re-render. Never rebuild cart HTML by hand in JS.
 - Collections: storefront filtering (`collection.filters`) plus the Section Rendering API. No full
   page reloads. Paginate by 24.
-- Search: the Predictive Search API for the header search.
+- Search: suggestions in the header field. Shopify's Predictive Search API doesn't serve Hebrew or
+  Arabic (it answers 417), so in those languages the same section is rendered on the storefront
+  search page (`search.results`) instead; see `assets/predictive-search.js`.
 - Product: the native variant picker built on `product.options_with_values` and
   `product.selected_or_first_available_variant`. Sold-out sizes stay visible but disabled.
 - Every section gets a `color_scheme` setting (see below) plus spacing settings. Every block
