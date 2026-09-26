@@ -40,7 +40,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |

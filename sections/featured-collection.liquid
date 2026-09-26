@@ -18,6 +18,11 @@
   endif
   assign mobile_visible = columns_mobile | plus: mobile_peek
   assign list_id = 'FeaturedCollection-' | append: section.id
+  # Which of the collection's products the row shows: all, adults only or kids only (kids carry the
+  # tag audience:kids), and optionally only the first product of each team (its team:<slug> tag), so
+  # a row sorted by date doesn't fill up with the team imported last.
+  assign audience_filter = section.settings.audience | default: 'all'
+  assign one_per_team = section.settings.one_per_team
 
   assign has_products = false
   if featured != blank and featured.products_count > 0
@@ -145,18 +150,55 @@
   </div>
 {%- endcapture -%}
 
+{%- assign shown = 0 -%}
 {%- capture cards -%}
   {%- if has_products -%}
-    {%- for product in featured.products limit: product_limit -%}
+    {%- assign seen_teams = '' -%}
+    {%- for product in featured.products -%}
+      {%- if shown >= product_limit -%}
+        {%- break -%}
+      {%- endif -%}
       {%- liquid
-        assign card_loading = 'lazy'
-        if forloop.index <= eager_cards
-          assign card_loading = 'eager'
+        assign skip = false
+        assign is_kids = false
+        if product.tags contains 'audience:kids'
+          assign is_kids = true
+        endif
+        if audience_filter == 'adult' and is_kids
+          assign skip = true
+        elsif audience_filter == 'kids' and is_kids == false
+          assign skip = true
+        endif
+        if one_per_team and skip == false
+          assign team_key = ''
+          for tag in product.tags
+            assign tag_prefix = tag | slice: 0, 5
+            if tag_prefix == 'team:'
+              assign team_key = '|' | append: tag | append: '|'
+              break
+            endif
+          endfor
+          if team_key != blank
+            if seen_teams contains team_key
+              assign skip = true
+            else
+              assign seen_teams = seen_teams | append: team_key
+            endif
+          endif
         endif
       -%}
-      <li class="featured-collection__item">
-        {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
-      </li>
+      {%- unless skip -%}
+        {%- liquid
+          assign shown = shown | plus: 1
+          assign card_loading = 'lazy'
+          if shown <= eager_cards
+            assign card_loading = 'eager'
+          endif
+        -%}
+        <li class="featured-collection__item">
+          {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
+        </li>
+      {%- endunless -%}
     {%- endfor -%}
     {%- if is_carousel and has_more -%}
       <li class="featured-collection__item featured-collection__more">
@@ -181,7 +223,17 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- if has_products or request.design_mode -%}
+{%- liquid
+  # A collection whose products the audience or team options filter out entirely shows nothing.
+  assign show_section = false
+  if has_products and shown > 0
+    assign show_section = true
+  endif
+  if request.design_mode
+    assign show_section = true
+  endif
+-%}
+{%- if show_section -%}
   <div
     class="section featured-collection color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
     style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
@@ -480,6 +532,25 @@
       "type": "collection",
       "id": "collection",
       "label": "t:settings.collection"
+    },
+    {
+      "type": "select",
+      "id": "audience",
+      "label": "t:sections.featured_collection.settings.audience.label",
+      "info": "t:sections.featured_collection.settings.audience.info",
+      "options": [
+        { "value": "all", "label": "t:sections.featured_collection.settings.audience.options.all" },
+        { "value": "adult", "label": "t:sections.featured_collection.settings.audience.options.adult" },
+        { "value": "kids", "label": "t:sections.featured_collection.settings.audience.options.kids" }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "checkbox",
+      "id": "one_per_team",
+      "label": "t:sections.featured_collection.settings.one_per_team.label",
+      "info": "t:sections.featured_collection.settings.one_per_team.info",
+      "default": false
     },
     {
       "type": "select",

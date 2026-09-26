@@ -141,6 +141,19 @@
         "heading": {
           "info": "Leave empty to use the collection's name, which is translated with the collection."
         },
+        "audience": {
+          "label": "Show",
+          "info": "Adults and kids are told apart by the product tag audience:kids.",
+          "options": {
+            "all": "All products",
+            "adult": "Adults only",
+            "kids": "Kids only"
+          }
+        },
+        "one_per_team": {
+          "label": "One product per team",
+          "info": "Shows only the first product of each team, so the row shows more teams."
+        },
         "mobile_scroller": {
           "label": "Swipe on mobile",
           "info": "Shows the products in one row that customers swipe through, instead of a grid."

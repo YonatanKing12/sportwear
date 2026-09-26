@@ -63,11 +63,13 @@
       },
       "disabled": true
     },
-    "best_sellers": {
+    "our_picks": {
       "type": "featured-collection",
       "settings": {
         "color_scheme": "scheme-day",
-        "collection": "best-sellers",
+        "collection": "our-picks",
+        "audience": "all",
+        "one_per_team": false,
         "layout": "carousel",
         "products_to_show": 12,
         "columns_desktop": 4,
@@ -201,6 +203,8 @@
       "settings": {
         "color_scheme": "scheme-soft",
         "collection": "football",
+        "audience": "adult",
+        "one_per_team": true,
         "layout": "carousel",
         "products_to_show": 12,
         "columns_desktop": 4,
@@ -227,6 +231,8 @@
       "settings": {
         "color_scheme": "scheme-night",
         "collection": "nba",
+        "audience": "adult",
+        "one_per_team": true,
         "layout": "carousel",
         "products_to_show": 12,
         "columns_desktop": 4,
@@ -309,6 +315,8 @@
       "settings": {
         "color_scheme": "scheme-day",
         "collection": "kids",
+        "audience": "kids",
+        "one_per_team": true,
         "layout": "carousel",
         "products_to_show": 12,
         "columns_desktop": 4,
@@ -361,6 +369,8 @@
       "settings": {
         "color_scheme": "scheme-day",
         "collection": "national-teams",
+        "audience": "adult",
+        "one_per_team": true,
         "layout": "carousel",
         "products_to_show": 12,
         "columns_desktop": 4,
@@ -385,7 +395,7 @@
   "order": [
     "hero_slideshow",
     "hero",
-    "best_sellers",
+    "our_picks",
     "trust_strip",
     "category_tiles",
     "collection_links",

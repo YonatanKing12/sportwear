@@ -494,6 +494,10 @@
     "croatia": "gid://shopify/Collection/512869892400",
     "morocco": "gid://shopify/Collection/512869925168"
   },
+  "collections_curated": {
+    "_note": "Manual collections the owner can edit in admin (Products > Collections). our-picks (2026-09-26) feeds the home page's first row instead of best-sellers, which is sorted by sales and so meant nothing before the first order. 20 adult shirts: 16 football (clubs and national teams, none with a design doubt on the review page) and 4 NBA, in a hand-set order. Published to the Online Store, EN/AR registered.",
+    "our-picks": "gid://shopify/Collection/512873431344"
+  },
   "pages": {
     "contact": "gid://shopify/Page/162268021040",
     "team-orders": "gid://shopify/Page/162272051504",

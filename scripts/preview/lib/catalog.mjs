@@ -558,6 +558,20 @@ export const COLLECTIONS = [
     ],
     match: () => true,
   },
+  {
+    // Like the store's manual collection that feeds the home page's first row.
+    handle: 'our-picks',
+    title: { he: 'המומלצים שלנו', en: 'Our Picks', ar: 'اختياراتنا' },
+    order: [
+      'demo-fc-home-jersey-2026-27',
+      'demo-united-home-jersey-2026-27',
+      'demo-stars-basketball-jersey-2026-27',
+      'demo-fc-away-jersey-2026-27',
+      'demo-united-third-jersey-2026-27',
+      'demo-stars-basketball-jersey-2026-27-away',
+    ],
+    match: () => true,
+  },
   ...Object.entries(LEAGUES).map(([handle, league]) => ({
     handle,
     title: { he: league.he, en: league.en, ar: league.ar },

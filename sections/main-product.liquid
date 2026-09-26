@@ -190,6 +190,14 @@
               {%- liquid
                 assign counterpart = product.metafields.sportwear.counterpart.value
                 assign audience = product.metafields.sportwear.audience.value | default: 'adult'
+                # The other version's option shows its price, so a parent sees the kids set's price before switching.
+                assign counterpart_price = ''
+                if counterpart != blank and counterpart.available
+                  assign counterpart_price = counterpart.price_min | money_without_trailing_zeros
+                  if counterpart.price_varies
+                    assign counterpart_price = 'general.price.from_price' | t: price: counterpart_price
+                  endif
+                endif
               -%}
               {%- if counterpart != blank and counterpart.id != product.id -%}
                 <nav
@@ -201,7 +209,12 @@
                     <li class="product-audience__item">
                       {%- if audience == 'kids' -%}
                         <a class="product-audience__option product-audience__option--link" href="{{ counterpart.url }}">
-                          {{- 'products.audience.adult' | t -}}
+                          <span>
+                            {{- 'products.audience.adult' | t -}}
+                            {%- if counterpart_price != blank %}
+                              <bdi class="product-audience__price">{{ counterpart_price }}</bdi>
+                            {%- endif -%}
+                          </span>
                         </a>
                       {%- else -%}
                         <span class="product-audience__option product-audience__option--current" aria-current="page">
@@ -216,7 +229,12 @@
                         </span>
                       {%- else -%}
                         <a class="product-audience__option product-audience__option--link" href="{{ counterpart.url }}">
-                          {{- 'products.audience.kids' | t -}}
+                          <span>
+                            {{- 'products.audience.kids' | t -}}
+                            {%- if counterpart_price != blank %}
+                              <bdi class="product-audience__price">{{ counterpart_price }}</bdi>
+                            {%- endif -%}
+                          </span>
                         </a>
                       {%- endif -%}
                     </li>
@@ -725,6 +743,14 @@
   .product-audience__option--current {
     background: var(--color-text);
     color: var(--color-background);
+  }
+
+  .product-audience__price {
+    margin-inline-start: var(--space-1);
+    color: var(--color-muted);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
   }
 
   .product-inventory:not(:empty) {

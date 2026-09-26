@@ -2564,6 +2564,24 @@
           "digest": "751e0a12e554a1a612d1d2b6391b2c729bc54d826663a98bec5358b50c65dbda"
         }
       }
+    },
+    {
+      "handle": "our-picks",
+      "resource_id": "gid://shopify/Collection/512873431344",
+      "fields": {
+        "title": {
+          "he": "המומלצים שלנו",
+          "en": "Our Picks",
+          "ar": "اختياراتنا",
+          "digest": "146ce429e603f220f232e4854a2a14ab93adb9792887e8de717cdd5ea4f447d0"
+        },
+        "body_html": {
+          "he": "<p>חולצות כדורגל וגופיות כדורסל שבחרנו בשבילכם: קבוצות מהארץ ומהעולם, נבחרות וקבוצות NBA. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Football shirts and basketball jerseys we picked for you: clubs from Israel and around the world, national teams and NBA teams. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان كرة قدم وكرة سلة اخترناها لكم: أندية من إسرائيل ومن العالم، منتخبات وفرق NBA. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bac8efc26c6304f71c156d9cc79e5b96398cab9d8ab1e3799d2402c8b9253ee4"
+        }
+      }
     }
   ],
   "menus": [

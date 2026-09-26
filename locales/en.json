@@ -249,8 +249,8 @@
     "presets": {
       "delivery": {
         "question": "How long does delivery take?",
-        "answer_html": "<p>We deliver to your door within 10 business days. The shipping cost is shown in the cart and at checkout, before you pay.</p>",
-        "answer_free_html": "<p>We deliver to your door within 10 business days, and shipping is free on every order.</p>",
+        "answer_html": "<p>We deliver to your door within 10 business days. The shipping cost is shown in the cart and at checkout, before you pay. We ship to addresses in Israel only.</p>",
+        "answer_free_html": "<p>We deliver to your door within 10 business days, and shipping is free on every order. We ship to addresses in Israel only.</p>",
         "link": "Read our shipping policy"
       },
       "returns": {
