@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/45faf678-d17a-44e9-8431-0fe8a4d1fff7/netherlands-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת הולנד 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "netherlands-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/bbc2a299-a7ba-420a-a0e2-b988388b47cb/netherlands-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת הולנד 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "netherlands-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-home-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/53ffbe2f-1c48-48a7-97bd-b2238b2f06b7/england-home-jersey-2026.png",
       "alt_he": "חולצת בית נבחרת אנגליה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "england-home-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-home-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/58be23c5-2f2d-48b8-be46-ff2a92f5bfae/england-home-jersey-2026__back.png",
       "alt_he": "חולצת בית נבחרת אנגליה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "england-home-jersey-2026__back.png"
     }
   ],
   "translations": {

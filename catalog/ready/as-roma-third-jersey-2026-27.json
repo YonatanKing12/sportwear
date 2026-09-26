@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/feb6b935-afe5-4d24-a7ef-0b2e3bb13436/as-roma-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית רומא 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "as-roma-third-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-third-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/ac02342e-4355-4ef5-aef9-1b16c439459a/as-roma-third-jersey-2026-27__back.png",
       "alt_he": "חולצה שלישית רומא 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "as-roma-third-jersey-2026-27__back.png"
     }
   ],
   "translations": {

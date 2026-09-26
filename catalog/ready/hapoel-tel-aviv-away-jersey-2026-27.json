@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/hapoel-tel-aviv-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/5a605f65-7a4e-4ed6-8d8d-d13ff1f6f84e/hapoel-tel-aviv-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ הפועל תל אביב 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "hapoel-tel-aviv-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/hapoel-tel-aviv-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/e9f3321c-1bc7-419d-9d01-8c2b7f642380/hapoel-tel-aviv-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ הפועל תל אביב 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "hapoel-tel-aviv-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {

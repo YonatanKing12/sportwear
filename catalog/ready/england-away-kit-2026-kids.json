@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/7cd65a97-de8f-4c18-9b53-f97d70fb68e1/england-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת אנגליה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "england-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4c8820bc-24cb-4ae9-9e8e-ea66112c5174/england-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת אנגליה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "england-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

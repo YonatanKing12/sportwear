@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/barcelona-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/b7dad398-fb34-4c59-9876-4ca67aa28108/barcelona-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית ברצלונה 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "barcelona-third-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/barcelona-third-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/b91cea04-ab73-47b9-bbad-f7424a25fc89/barcelona-third-jersey-2026-27__back.png",
       "alt_he": "חולצה שלישית ברצלונה 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "barcelona-third-jersey-2026-27__back.png"
     }
   ],
   "translations": {

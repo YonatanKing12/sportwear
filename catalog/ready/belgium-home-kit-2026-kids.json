@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/belgium-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c74991bc-a142-4dcd-97ad-0aba2e15558d/belgium-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "belgium-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/belgium-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/0d0d7248-4c70-403c-b893-d847b9b2c3d9/belgium-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת בלגיה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "belgium-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

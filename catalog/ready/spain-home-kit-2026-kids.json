@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/186373c2-1757-473f-a613-ad7a9765a722/spain-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת ספרד 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "spain-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/60e9c77a-c3eb-44f5-bc46-20e3ac67de0b/spain-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת ספרד 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "spain-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

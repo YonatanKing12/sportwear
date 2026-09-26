@@ -66,9 +66,10 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/atletico-madrid-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4dae077c-df32-4724-b759-31ab72bd63f0/atletico-madrid-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית אתלטיקו מדריד 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "atletico-madrid-third-jersey-2026-27.png"
     }
   ],
   "translations": {

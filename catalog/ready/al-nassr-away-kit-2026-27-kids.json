@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/al-nassr-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/647d4237-63fa-4297-8929-d8d9ae470767/al-nassr-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס אל נאסר 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "al-nassr-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/al-nassr-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/81b03212-1f60-4e63-8528-30789034bd48/al-nassr-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס אל נאסר 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "al-nassr-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/paris-saint-germain-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/818945d6-2111-405d-b73f-b30782df7b0e/paris-saint-germain-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס פריז סן ז׳רמן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "paris-saint-germain-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/paris-saint-germain-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/39736176-56ab-403c-bea9-0ff54c803ae4/paris-saint-germain-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס פריז סן ז׳רמן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "paris-saint-germain-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/atletico-madrid-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4d0f08a9-842a-49fa-8a80-046fcec1e07f/atletico-madrid-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס אתלטיקו מדריד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "atletico-madrid-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/atletico-madrid-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/8e0e0298-a550-4abc-9e36-1ffc24b7c09c/atletico-madrid-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס אתלטיקו מדריד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "atletico-madrid-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

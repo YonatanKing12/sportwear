@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/croatia-away-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/df2b237e-5088-4fcf-9c79-417462ce6118/croatia-away-jersey-2026.png",
       "alt_he": "חולצת חוץ נבחרת קרואטיה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "croatia-away-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/croatia-away-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c476e5da-1dfb-4ace-8bda-285cc51b8a18/croatia-away-jersey-2026__back.png",
       "alt_he": "חולצת חוץ נבחרת קרואטיה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "croatia-away-jersey-2026__back.png"
     }
   ],
   "translations": {

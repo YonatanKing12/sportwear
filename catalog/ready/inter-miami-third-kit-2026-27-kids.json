@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/inter-miami-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/e5660891-db4b-4789-8f5f-533d06faf9a6/inter-miami-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס אינטר מיאמי 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "inter-miami-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/inter-miami-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/5afbbe26-4afc-4431-bab7-848d3aaccb52/inter-miami-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס אינטר מיאמי 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "inter-miami-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2fad898f-c709-4341-b157-befc3bc56916/netherlands-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת הולנד 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "netherlands-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9116904a-8dd8-4485-9b43-bc40e6efe878/netherlands-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת הולנד 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "netherlands-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/germany-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/68c32001-b792-4d61-a8e0-47739868f97c/germany-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת גרמניה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "germany-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/germany-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/254362cd-9538-4b9b-a263-8b7d414da7a9/germany-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת גרמניה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "germany-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

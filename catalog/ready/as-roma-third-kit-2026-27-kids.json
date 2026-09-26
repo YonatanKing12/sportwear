@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/a6083418-cb48-42c3-9506-901cd60eed27/as-roma-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס רומא 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "as-roma-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2f9858dd-f60d-4334-bcf3-9ce2f8662aad/as-roma-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס רומא 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "as-roma-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

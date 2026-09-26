@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/chelsea-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/6d16f143-af72-495f-a91b-4f03f962849f/chelsea-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס צ׳לסי 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "chelsea-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/chelsea-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/5163417f-ea55-4953-b9b8-3626eca48dfd/chelsea-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס צ׳לסי 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "chelsea-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

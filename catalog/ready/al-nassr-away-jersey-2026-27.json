@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/al-nassr-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/77e32b76-b302-4cba-9abc-8f244189698a/al-nassr-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ אל נאסר 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "al-nassr-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/al-nassr-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/28c975e0-ed28-4256-b597-86812c1d431e/al-nassr-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ אל נאסר 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "al-nassr-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {

@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/manchester-united-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c945b01f-e825-4132-b2db-e7d890e2d5fa/manchester-united-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ מנצ׳סטר יונייטד 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-united-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/manchester-united-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/d2472020-0c49-41cc-83c9-07c9bac669a7/manchester-united-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ מנצ׳סטר יונייטד 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-united-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {

@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-home-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/fea6584f-7be2-46a7-bece-f02561a5fa47/as-roma-home-jersey-2026-27.png",
       "alt_he": "חולצת בית רומא 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "as-roma-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-home-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f65559e5-7ad5-475e-a738-506dcccaaf2b/as-roma-home-jersey-2026-27__back.png",
       "alt_he": "חולצת בית רומא 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "as-roma-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {

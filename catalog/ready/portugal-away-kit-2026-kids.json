@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/portugal-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/d4d320d1-e41b-4ece-a40a-ed6c3f07fbfa/portugal-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת פורטוגל 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "portugal-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/portugal-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/5f9cf929-9654-464f-b35c-312276a16747/portugal-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת פורטוגל 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "portugal-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

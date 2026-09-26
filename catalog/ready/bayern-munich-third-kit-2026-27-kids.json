@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/540e94f8-fbf1-4eb5-adfe-632455dc0381/bayern-munich-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס באיירן מינכן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "bayern-munich-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/407ab463-8188-48ba-a143-c660c7862a1d/bayern-munich-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס באיירן מינכן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "bayern-munich-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

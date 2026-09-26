@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-third-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c2233aa4-ce69-4fbc-8ce5-d4643f6f8564/spain-third-kit-2026-kids.png",
       "alt_he": "חולצה שלישית ומכנס נבחרת ספרד 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "spain-third-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/spain-third-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/dc90cf2a-1c93-420d-a57b-f9dd380d0d46/spain-third-kit-2026-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס נבחרת ספרד 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "spain-third-kit-2026-kids__back.png"
     }
   ],
   "translations": {

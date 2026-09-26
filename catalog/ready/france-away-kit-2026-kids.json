@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/france-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/a01eff31-5289-4abd-aa49-9d26de25762e/france-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת צרפת 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "france-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/france-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9b32e07d-32ad-487b-8648-6b6f9865b233/france-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת צרפת 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "france-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

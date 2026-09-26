@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-away-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f221961e-4456-4a5a-b123-ae29fd3f6129/england-away-jersey-2026.png",
       "alt_he": "חולצת חוץ נבחרת אנגליה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "england-away-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-away-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c7a93ba9-14a6-49a0-ab99-d59999d308f5/england-away-jersey-2026__back.png",
       "alt_he": "חולצת חוץ נבחרת אנגליה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "england-away-jersey-2026__back.png"
     }
   ],
   "translations": {

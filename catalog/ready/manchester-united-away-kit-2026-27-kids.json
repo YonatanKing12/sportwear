@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/manchester-united-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4f00900e-dc61-473c-9993-9f7de403a2bb/manchester-united-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס מנצ׳סטר יונייטד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-united-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/manchester-united-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/cb879564-4be0-4df3-b454-465475ec3d69/manchester-united-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס מנצ׳סטר יונייטד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-united-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

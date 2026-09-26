@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/croatia-home-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/3ea99563-ffcb-46c8-bb3e-ec4f0abc5d0a/croatia-home-jersey-2026.png",
       "alt_he": "חולצת בית נבחרת קרואטיה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "croatia-home-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/croatia-home-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/de67199d-1b06-4565-a766-66254b604416/croatia-home-jersey-2026__back.png",
       "alt_he": "חולצת בית נבחרת קרואטיה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "croatia-home-jersey-2026__back.png"
     }
   ],
   "translations": {

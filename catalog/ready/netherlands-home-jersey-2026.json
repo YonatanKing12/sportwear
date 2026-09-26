@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-home-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/010ef306-cf2e-404c-83a1-4b0a1cc9a9ed/netherlands-home-jersey-2026.png",
       "alt_he": "חולצת בית נבחרת הולנד 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "netherlands-home-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/netherlands-home-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/82b734b2-2518-4e35-8413-d43981cd073c/netherlands-home-jersey-2026__back.png",
       "alt_he": "חולצת בית נבחרת הולנד 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "netherlands-home-jersey-2026__back.png"
     }
   ],
   "translations": {

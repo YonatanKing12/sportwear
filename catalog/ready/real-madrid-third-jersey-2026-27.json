@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/b2da8d8e-0988-400e-8a65-c6c87b25b466/real-madrid-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית ריאל מדריד 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "real-madrid-third-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-third-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/b3a0489a-80af-4050-b630-c420d5ac78fa/real-madrid-third-jersey-2026-27__back.png",
       "alt_he": "חולצה שלישית ריאל מדריד 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "real-madrid-third-jersey-2026-27__back.png"
     }
   ],
   "translations": {

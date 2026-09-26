@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/a38c45c4-518c-4286-b896-764bf18f0d62/bayern-munich-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס באיירן מינכן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "bayern-munich-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/23deacd2-14e7-4039-81b6-5e6aa6e5fd6b/bayern-munich-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס באיירן מינכן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "bayern-munich-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

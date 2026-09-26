@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/961f5ff6-d3f4-44f3-997f-9f29f8dfc9c0/manchester-city-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס מנצ׳סטר סיטי 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-city-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/7263e32b-d90a-4868-a69e-7a1221f14396/manchester-city-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס מנצ׳סטר סיטי 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-city-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

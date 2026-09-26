@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/atletico-madrid-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/abbe6196-08c6-4841-9a72-9aac10fe2746/atletico-madrid-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס אתלטיקו מדריד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "atletico-madrid-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/atletico-madrid-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/7a1ad140-077f-40a6-a218-a76b534791d4/atletico-madrid-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס אתלטיקו מדריד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "atletico-madrid-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

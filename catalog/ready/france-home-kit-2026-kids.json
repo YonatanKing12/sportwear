@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/france-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/04e30163-6b2a-4cf1-898f-af5fa7ab3ef1/france-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת צרפת 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "france-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/france-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/53e9dffb-5d9f-4ccd-902f-8681abe9841b/france-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת צרפת 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "france-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

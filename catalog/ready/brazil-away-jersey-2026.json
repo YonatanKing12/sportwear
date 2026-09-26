@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/brazil-away-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2d7849d4-9495-406c-9ec7-343903b5dfe9/brazil-away-jersey-2026.png",
       "alt_he": "חולצת חוץ נבחרת ברזיל 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "brazil-away-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/brazil-away-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/1dfff2d8-c799-4192-bafa-e274f155a85a/brazil-away-jersey-2026__back.png",
       "alt_he": "חולצת חוץ נבחרת ברזיל 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "brazil-away-jersey-2026__back.png"
     }
   ],
   "translations": {

@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/d0230d6e-7fd5-4102-85b3-927cc0b04ed0/borussia-dortmund-home-jersey-2026-27.png",
       "alt_he": "חולצת בית בורוסיה דורטמונד 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "borussia-dortmund-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/d9c887a3-f39b-4fc0-a0bf-58d72f91b19e/borussia-dortmund-home-jersey-2026-27__back.png",
       "alt_he": "חולצת בית בורוסיה דורטמונד 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "borussia-dortmund-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {

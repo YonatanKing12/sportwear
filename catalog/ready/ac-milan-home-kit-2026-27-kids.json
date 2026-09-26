@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/907f68ba-3bc1-4429-9606-f5be5c93dc4b/ac-milan-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס מילאן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "ac-milan-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/bfd0b155-1d6e-43f0-9f80-774cf1eafe58/ac-milan-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס מילאן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "ac-milan-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

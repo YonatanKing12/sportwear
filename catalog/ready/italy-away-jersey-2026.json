@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-away-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/8a8ed5e5-8db9-4d1a-8910-63a860287684/italy-away-jersey-2026.png",
       "alt_he": "חולצת חוץ נבחרת איטליה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "italy-away-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-away-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9d84cec2-df81-41c7-928b-0c69085d4c89/italy-away-jersey-2026__back.png",
       "alt_he": "חולצת חוץ נבחרת איטליה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "italy-away-jersey-2026__back.png"
     }
   ],
   "translations": {

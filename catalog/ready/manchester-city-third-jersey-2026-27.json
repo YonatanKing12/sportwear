@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4452b9fb-dc19-4f33-84d1-85a6821c67b4/manchester-city-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית מנצ׳סטר סיטי 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-city-third-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-third-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2bb64231-eb21-4ead-a44e-6ebe55f24a7c/manchester-city-third-jersey-2026-27__back.png",
       "alt_he": "חולצה שלישית מנצ׳סטר סיטי 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-city-third-jersey-2026-27__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/54820229-e5ab-448a-8338-52a92de52217/italy-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת איטליה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "italy-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/81a83d38-666d-4e3e-a481-20e4bf3b2dff/italy-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת איטליה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "italy-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

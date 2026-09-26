@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/hapoel-petah-tikva-home-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/de123a73-ba40-4078-b058-8c8b3956a2e1/hapoel-petah-tikva-home-jersey-2026-27.png",
       "alt_he": "חולצת בית הפועל פתח תקווה 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "hapoel-petah-tikva-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/hapoel-petah-tikva-home-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/d65b8187-2b6d-4096-abc5-2f18708bc27f/hapoel-petah-tikva-home-jersey-2026-27__back.png",
       "alt_he": "חולצת בית הפועל פתח תקווה 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "hapoel-petah-tikva-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {

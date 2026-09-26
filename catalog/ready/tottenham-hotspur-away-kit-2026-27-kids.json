@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/133d4a8f-c8c8-4ae2-a72a-646210c29e89/tottenham-hotspur-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס טוטנהאם 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "tottenham-hotspur-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/dd37fbae-fbf0-4dee-8f77-3e158d809254/tottenham-hotspur-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס טוטנהאם 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "tottenham-hotspur-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

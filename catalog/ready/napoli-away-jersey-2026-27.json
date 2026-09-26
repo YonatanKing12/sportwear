@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/napoli-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/87168564-f5e3-4775-bdc1-728876f0b32c/napoli-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ נאפולי 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "napoli-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/napoli-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/849d7f89-454b-455c-ac4b-5b73fce5d074/napoli-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ נאפולי 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "napoli-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {

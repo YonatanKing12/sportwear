@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-third-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2b54b21a-5d86-4b17-abda-1192d5454479/borussia-dortmund-third-jersey-2026-27.png",
       "alt_he": "חולצה שלישית בורוסיה דורטמונד 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "borussia-dortmund-third-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-third-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/bcdc79f2-21b0-42ec-b245-68a9f3182a19/borussia-dortmund-third-jersey-2026-27__back.png",
       "alt_he": "חולצה שלישית בורוסיה דורטמונד 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "borussia-dortmund-third-jersey-2026-27__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9a31c156-1fdd-46e1-8313-a433fd9fbd52/real-madrid-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס ריאל מדריד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "real-madrid-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/0f80a9af-97f6-4b96-b16f-e7b2014f49c7/real-madrid-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס ריאל מדריד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "real-madrid-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

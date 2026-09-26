@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9b57ee45-1880-4cf1-a3fd-fbbd69c7d55f/borussia-dortmund-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס בורוסיה דורטמונד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "borussia-dortmund-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/borussia-dortmund-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/a9afa2f0-d676-438c-ab8a-00f19e91db5c/borussia-dortmund-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס בורוסיה דורטמונד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "borussia-dortmund-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

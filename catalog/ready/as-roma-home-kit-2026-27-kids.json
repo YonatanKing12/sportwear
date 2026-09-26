@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/869ccf6d-b1c0-49f8-a2a4-580d71133157/as-roma-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס רומא 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "as-roma-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/2b1b9936-780a-482b-aba6-c15ac088448e/as-roma-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס רומא 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "as-roma-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

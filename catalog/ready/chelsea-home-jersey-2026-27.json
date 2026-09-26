@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/chelsea-home-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/89a9c556-ef5d-4d73-917e-20ced2ef7b81/chelsea-home-jersey-2026-27.png",
       "alt_he": "חולצת בית צ׳לסי 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "chelsea-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/chelsea-home-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/5d9af5e1-4bc0-4a73-a9cb-c7f8447fd724/chelsea-home-jersey-2026-27__back.png",
       "alt_he": "חולצת בית צ׳לסי 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "chelsea-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {

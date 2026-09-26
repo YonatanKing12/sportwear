@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/brazil-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f1da294b-afbe-43e2-be46-67d50ec11bd1/brazil-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת ברזיל 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "brazil-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/brazil-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/cca0eae6-b884-40e5-958a-3d984040cdc0/brazil-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת ברזיל 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "brazil-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

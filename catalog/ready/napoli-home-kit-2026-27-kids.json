@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/napoli-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/41fdece1-9f5b-4a3e-b52e-430df9cca801/napoli-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס נאפולי 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "napoli-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/napoli-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f94efc0b-1a8a-4d25-89b7-f03cbfaadea7/napoli-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס נאפולי 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "napoli-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

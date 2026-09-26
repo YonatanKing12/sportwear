@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/9511e085-eec7-4eb7-b6a5-1d288d81f2ae/tottenham-hotspur-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ טוטנהאם 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "tottenham-hotspur-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/0c62c456-595f-41e2-a9e2-8f6d42cbdaa6/tottenham-hotspur-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ טוטנהאם 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "tottenham-hotspur-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {

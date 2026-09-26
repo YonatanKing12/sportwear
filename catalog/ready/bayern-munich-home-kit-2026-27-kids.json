@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/57221f17-8828-46d1-abb3-7cdf249b0df1/bayern-munich-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס באיירן מינכן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "bayern-munich-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/bayern-munich-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/40048e17-4c03-4b56-b25c-266d011858c2/bayern-munich-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס באיירן מינכן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "bayern-munich-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/92be0cd5-3b57-4700-b9e0-efd80063bff4/england-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת אנגליה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "england-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/england-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/321f39ce-799d-47f9-b684-fa514a644eaa/england-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת אנגליה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "england-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

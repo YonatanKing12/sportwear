@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-home-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/c6fe4ec2-84eb-41ec-80fc-56c4b8c14e43/italy-home-kit-2026-kids.png",
       "alt_he": "חולצת בית ומכנס נבחרת איטליה 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "italy-home-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/italy-home-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f94b55ed-acb9-4e5c-aca9-cfce8efba019/italy-home-kit-2026-kids__back.png",
       "alt_he": "חולצת בית ומכנס נבחרת איטליה 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "italy-home-kit-2026-kids__back.png"
     }
   ],
   "translations": {

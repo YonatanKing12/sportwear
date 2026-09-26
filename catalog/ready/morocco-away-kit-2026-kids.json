@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/morocco-away-kit-2026-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/18386710-4279-4f08-9376-a4cdd22e62ad/morocco-away-kit-2026-kids.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת מרוקו 2026 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "morocco-away-kit-2026-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/d/studio/norm/morocco-away-kit-2026-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/ebc3a882-fe3d-45df-8c92-3b7bd0bf8aac/morocco-away-kit-2026-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס נבחרת מרוקו 2026 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "morocco-away-kit-2026-kids__back.png"
     }
   ],
   "translations": {

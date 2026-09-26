@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/412e5fd3-5531-4adb-a0a7-a39723e9e76d/manchester-city-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס מנצ׳סטר סיטי 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-city-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/131cb000-0759-4363-911a-adadfe0b77af/manchester-city-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס מנצ׳סטר סיטי 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-city-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-home-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/e9f411db-6d91-4c71-817a-31977cc3bf29/tottenham-hotspur-home-kit-2026-27-kids.png",
       "alt_he": "חולצת בית ומכנס טוטנהאם 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "tottenham-hotspur-home-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/tottenham-hotspur-home-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/4a218d5e-a857-4547-b0c7-ab1bbf0f99c7/tottenham-hotspur-home-kit-2026-27-kids__back.png",
       "alt_he": "חולצת בית ומכנס טוטנהאם 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "tottenham-hotspur-home-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

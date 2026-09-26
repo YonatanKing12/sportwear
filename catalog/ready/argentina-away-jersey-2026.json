@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/argentina-away-jersey-2026.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/05612155-c154-480d-9ecd-c28512364fd1/argentina-away-jersey-2026.png",
       "alt_he": "חולצת חוץ נבחרת ארגנטינה 2026 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "argentina-away-jersey-2026.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/argentina-away-jersey-2026__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/1a5c8621-39ac-4d3c-8fd2-13c05a1fde8f/argentina-away-jersey-2026__back.png",
       "alt_he": "חולצת חוץ נבחרת ארגנטינה 2026 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "argentina-away-jersey-2026__back.png"
     }
   ],
   "translations": {

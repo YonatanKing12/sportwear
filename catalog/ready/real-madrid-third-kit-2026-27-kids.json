@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-third-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/7db8f9ce-da27-492d-b918-689a45215cde/real-madrid-third-kit-2026-27-kids.png",
       "alt_he": "חולצה שלישית ומכנס ריאל מדריד 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "real-madrid-third-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/c/studio/norm/real-madrid-third-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/ebf7516d-c7fe-435c-8282-099c9c6df4d8/real-madrid-third-kit-2026-27-kids__back.png",
       "alt_he": "חולצה שלישית ומכנס ריאל מדריד 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "real-madrid-third-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

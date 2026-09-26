@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/6e7d59d5-af66-454e-b257-e8d07941399e/as-roma-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס רומא 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "as-roma-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/as-roma-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/bb0b2f4d-cb0e-4782-91cf-37275bf60087/as-roma-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס רומא 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "as-roma-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

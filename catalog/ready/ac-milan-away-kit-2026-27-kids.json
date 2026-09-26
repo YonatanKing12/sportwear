@@ -96,14 +96,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-away-kit-2026-27-kids.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/adfda1ad-fb47-43db-877e-92bdbff2641a/ac-milan-away-kit-2026-27-kids.png",
       "alt_he": "חולצת חוץ ומכנס מילאן 26/27 – ילדים – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "ac-milan-away-kit-2026-27-kids.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-away-kit-2026-27-kids__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/f444bba4-67aa-4031-8372-2c5558f7de7f/ac-milan-away-kit-2026-27-kids__back.png",
       "alt_he": "חולצת חוץ ומכנס מילאן 26/27 – ילדים – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "ac-milan-away-kit-2026-27-kids__back.png"
     }
   ],
   "translations": {

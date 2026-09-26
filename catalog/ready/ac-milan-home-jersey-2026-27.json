@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-home-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/7154383c-1aaf-4ce9-acc2-173ed223cbd1/ac-milan-home-jersey-2026-27.png",
       "alt_he": "חולצת בית מילאן 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "ac-milan-home-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/a/studio/norm/ac-milan-home-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/8d28a1fa-9aaf-4a9a-80d7-0334ea7ae28e/ac-milan-home-jersey-2026-27__back.png",
       "alt_he": "חולצת בית מילאן 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "ac-milan-home-jersey-2026-27__back.png"
     }
   ],
   "translations": {

@@ -66,14 +66,16 @@
   ],
   "images": [
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-away-jersey-2026-27.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/014c53c9-1e10-4271-b02f-acfaf1eb2bc5/manchester-city-away-jersey-2026-27.png",
       "alt_he": "חולצת חוץ מנצ׳סטר סיטי 26/27 – חזית",
-      "view": "front"
+      "view": "front",
+      "studio_file": "manchester-city-away-jersey-2026-27.png"
     },
     {
-      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w1/b/studio/norm/manchester-city-away-jersey-2026-27__back.png",
+      "url": "https://shopify-staged-uploads.storage.googleapis.com/tmp/99967467824/files/fe7fb85e-711c-4211-95f4-be7680d774c0/manchester-city-away-jersey-2026-27__back.png",
       "alt_he": "חולצת חוץ מנצ׳סטר סיטי 26/27 – גב",
-      "view": "back"
+      "view": "back",
+      "studio_file": "manchester-city-away-jersey-2026-27__back.png"
     }
   ],
   "translations": {
