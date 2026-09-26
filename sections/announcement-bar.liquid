@@ -14,9 +14,11 @@
     assign rotating = true
   endif
 
-  if settings.free_shipping_threshold > 0
+  # Free shipping exists for Israel only; visitors from elsewhere see the delivery promise alone.
+  if settings.free_shipping_threshold > 0 and localization.country.iso_code == 'IL'
     assign threshold_cents = settings.free_shipping_threshold | times: 100 | round
-    assign threshold_amount = threshold_cents | money_without_trailing_zeros
+    # Unicode isolates (U+2068/U+2069) keep the amount's direction inside RTL text.
+    assign threshold_amount = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
     assign default_message = 'header.announcement.free_shipping' | t: amount: threshold_amount
   else
     assign default_message = 'header.announcement.delivery' | t

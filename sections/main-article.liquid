@@ -12,11 +12,11 @@
   assign image_loading = 'lazy'
   assign image_priority = 'auto'
   assign image_preload = false
-  if section.index == 1
+  unless section.index > 1
     assign image_loading = 'eager'
     assign image_priority = 'high'
     assign image_preload = true
-  endif
+  endunless
 
   assign show_meta = false
   if section.settings.show_date or section.settings.show_author

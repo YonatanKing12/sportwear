@@ -506,7 +506,7 @@ a {
   min-block-size: 48px;
   padding: 10px 14px;
   /* Form controls need a 3:1 boundary (WCAG 1.4.11); the decorative --color-border is too faint. */
-  border: 1.5px solid color-mix(in srgb, var(--color-text) 45%, var(--color-background));
+  border: 1.5px solid color-mix(in srgb, var(--color-text) 52%, var(--color-background));
   border-radius: var(--radius-button);
   background: var(--color-background);
   color: var(--color-text);

@@ -56,9 +56,9 @@
 
   # Only the first section of a page may load images eagerly: its first row of cards.
   assign eager_cards = 0
-  if section.index == 1
+  unless section.index > 1
     assign eager_cards = columns_desktop
-  endif
+  endunless
 -%}
 
 {%- if has_products or request.design_mode -%}

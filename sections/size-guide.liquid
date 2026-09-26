@@ -38,7 +38,9 @@
     assign has_kids_chart = true
   endif
 
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   assign whatsapp_message = 'size_guide.whatsapp_message' | t: shop: shop.name | url_encode | replace: '+', '%20'
 -%}
 <div

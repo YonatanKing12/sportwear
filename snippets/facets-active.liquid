@@ -21,8 +21,8 @@
         {%- if filter.type == 'price_range' -%}
           {%- if filter.min_value.value != null or filter.max_value.value != null -%}
             {%- liquid
-              assign price_min = filter.min_value.value | default: 0 | money_without_trailing_zeros
-              assign price_max = filter.max_value.value | default: filter.range_max | money_without_trailing_zeros
+              assign price_min = filter.min_value.value | default: 0 | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+              assign price_max = filter.max_value.value | default: filter.range_max | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
             -%}
             <li>
               <a class="chip facets-active__chip" href="{{ filter.url_to_remove }}" data-facets-link>

@@ -50,7 +50,9 @@
     assign form_heading = 'team_orders.form.heading' | t
   endif
 
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   assign whatsapp_message = 'team_orders.whatsapp_message' | t: shop: shop.name | url_encode | replace: '+', '%20'
   assign today = 'now' | date: '%Y-%m-%d'
 -%}

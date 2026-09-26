@@ -74,13 +74,13 @@
   "team_orders": {
     "eyebrow": "Team orders",
     "heading": "Ordering for a team?",
-    "text": "Volume pricing for amateur teams, schools and clubs. Send us the details and we'll get back to you with a quote.",
+    "text": "Amateur teams, schools and clubs: send us the quantity and sizes you need, and we'll get back to you with a tailored quote.",
     "whatsapp": "Chat with us on WhatsApp",
     "whatsapp_message": "Hi {{ shop }}, I would like a quote for a team order.",
     "benefits": {
       "volume": {
-        "title": "Volume pricing",
-        "text": "Special prices by quantity, with a personal quote."
+        "title": "Personal quote",
+        "text": "Send us quantities and sizes, and get a quote tailored to your order."
       },
       "sizes": {
         "title": "Adult and kids' sizes",
@@ -118,8 +118,8 @@
         "link": "Read our shipping policy"
       },
       "returns": {
-        "question": "Can I return or exchange an item?",
-        "answer_html": "<p>Yes. You can return or exchange items within 45 days. The full terms are in our returns policy.</p>",
+        "question": "Can I return an item?",
+        "answer_html": "<p>Yes, you can return items within 45 days. The full terms are in our returns policy.</p>",
         "link": "Read our returns policy"
       },
       "sizing": {
@@ -132,7 +132,7 @@
       },
       "team_orders": {
         "question": "Do you take team orders?",
-        "answer_html": "<p>Yes. We offer volume pricing for amateur teams, schools and clubs, in adult and kids' sizes. Send us the details on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>"
+        "answer_html": "<p>Sure. Amateur teams, schools and clubs can order together, in adult and kids' sizes. Send us the quantities and sizes on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>"
       },
       "printing": {
         "question": "Can you print names and numbers?",

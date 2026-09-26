@@ -16,8 +16,8 @@
   <a class="button button--primary button--large cart-empty__button" href="{{ url }}">
     {{- 'cart.empty.button' | t -}}
   </a>
-  {%- if threshold_cents > 0 and cart.currency.iso_code == shop.currency -%}
-    {%- assign threshold_money = threshold_cents | money_without_trailing_zeros -%}
+  {%- if threshold_cents > 0 and cart.currency.iso_code == shop.currency and localization.country.iso_code == 'IL' -%}
+    {%- assign threshold_money = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩' -%}
     <p class="cart-empty__perk">
       {%- render 'icon', name: 'truck', size: 18 -%}
       {{ 'cart.empty.free_shipping' | t: amount: threshold_money }}

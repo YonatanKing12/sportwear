@@ -28,7 +28,14 @@
         {%- comment -%}
           The page's live region is inert while this modal dialog is open, so the drawer has its own.
         {%- endcomment -%}
-        <div class="visually-hidden" role="status" aria-live="polite" aria-atomic="true" data-cart-live></div>
+        <div
+          class="visually-hidden"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          data-cart-live
+          data-live-region
+        ></div>
         <div class="cart-drawer__content" data-cart-content>
           <div class="cart-drawer__header color-{{ section.settings.header_color_scheme.id }}">
             <h2 class="cart-drawer__title display-s" id="CartDrawerTitle" tabindex="-1" data-cart-focus-fallback>

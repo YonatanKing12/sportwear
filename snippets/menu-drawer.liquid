@@ -11,7 +11,9 @@
   {% render 'menu-drawer', menu: section.settings.menu, color_scheme: section.settings.color_scheme.id %}
 {%- enddoc -%}
 {%- liquid
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   if whatsapp_digits != blank
     assign whatsapp_text = 'header.menu.whatsapp_message' | t | url_encode | replace: '+', '%20'
   endif

@@ -4,16 +4,18 @@
     'SW Display'  Anton (Latin), Karantina 700 (Hebrew), Changa 800 (Arabic). Static faces declared
                   for every weight, so bold is never synthesized.
     'SW Body'     Heebo (Hebrew + Latin) and Noto Sans Arabic, both variable 400-800.
-  Only the files for the current language are preloaded; others load on demand.
+  Only the display faces for the current language are preloaded; everything else loads on demand.
 {%- enddoc -%}
 {%- liquid
+  # Preload only the display faces above the fold (the page's headings plus Anton for the Latin
+  # wordmark). Body faces swap in; the Arabic one alone is 166 KB and would compete with the LCP image.
   case request.locale.iso_code
     when 'ar'
-      assign preload_fonts = 'font-noto-sans-arabic.woff2,font-changa-arabic.woff2'
+      assign preload_fonts = 'font-changa-arabic.woff2,font-anton-latin.woff2'
     when 'en'
-      assign preload_fonts = 'font-heebo-latin.woff2,font-anton-latin.woff2'
+      assign preload_fonts = 'font-anton-latin.woff2'
     else
-      assign preload_fonts = 'font-heebo-hebrew.woff2,font-karantina-hebrew.woff2,font-anton-latin.woff2'
+      assign preload_fonts = 'font-karantina-hebrew.woff2,font-anton-latin.woff2'
   endcase
   assign preload_fonts = preload_fonts | split: ','
 -%}

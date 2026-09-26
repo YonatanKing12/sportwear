@@ -109,7 +109,7 @@
                 class="product-set__error field__message field__message--error"
                 role="alert"
                 data-form-error
-                data-invalid-message="{{ 'products.buy.choose_size' | t | escape }}"
+                data-invalid-message="{{ 'products.buy.choose_size' | t }}"
               ></p>
             {%- endform -%}
           </sw-product-form>
@@ -156,13 +156,14 @@
     block-size: 88px;
     overflow: hidden;
     border-radius: var(--radius-card);
-    background: var(--color-surface);
+    background: var(--color-tile);
 
     & > img,
     & > svg {
       inline-size: 100%;
       block-size: 100%;
       object-fit: contain;
+      mix-blend-mode: multiply;
     }
   }
 

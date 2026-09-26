@@ -15,7 +15,8 @@
 {%- liquid
   assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
   assign free_shipping = false
-  if threshold_cents > 0 and cart.total_price >= threshold_cents and cart.currency.iso_code == shop.currency
+  # The free-shipping rate exists for Israel only (the international zone always charges).
+  if threshold_cents > 0 and cart.total_price >= threshold_cents and cart.currency.iso_code == shop.currency and localization.country.iso_code == 'IL'
     assign free_shipping = true
   endif
 
@@ -47,7 +48,9 @@
     {%- endif -%}
     <div class="cart-summary__row cart-summary__row--total">
       <dt class="cart-summary__label">{{ 'cart.summary.subtotal' | t }}</dt>
-      <dd class="cart-summary__value">{{ cart.total_price | money_without_trailing_zeros }}</dd>
+      <dd class="cart-summary__value">
+        <bdi>{{ cart.total_price | money_without_trailing_zeros }}</bdi>
+      </dd>
     </div>
   </dl>
 

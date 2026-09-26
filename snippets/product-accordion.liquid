@@ -4,7 +4,7 @@
   editor, selecting the block opens it (assets/product-info.js).
 
   @param {object} block - The section block (for its editor attributes)
-  @param {string} heading - Visible heading
+  @param {string} heading - Visible heading, already escaped (translations from t are; escape owner text)
   @param {string} content - Panel content (HTML)
   @param {boolean} [open] - Open by default
 
@@ -20,7 +20,7 @@
   {{ block.shopify_attributes }}
 >
   <summary class="product-accordion__summary">
-    <span class="product-accordion__heading">{{ heading | escape }}</span>
+    <span class="product-accordion__heading">{{ heading }}</span>
     <span class="product-accordion__icon">
       {%- render 'icon', name: 'plus', size: 18, class: 'product-accordion__plus' -%}
       {%- render 'icon', name: 'minus', size: 18, class: 'product-accordion__minus' -%}

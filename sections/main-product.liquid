@@ -30,13 +30,14 @@
   endif
 
   assign is_lcp = false
-  if section.index == 1
+  unless section.index > 1
     assign is_lcp = true
-  endif
+  endunless
 
   assign free_amount = ''
-  if settings.free_shipping_threshold != blank and settings.free_shipping_threshold > 0
-    assign free_amount = settings.free_shipping_threshold | times: 100 | money_without_trailing_zeros
+  if settings.free_shipping_threshold != blank and settings.free_shipping_threshold > 0 and localization.country.iso_code == 'IL'
+    # The amount is wrapped in invisible Unicode isolates (U+2068/U+2069) so it keeps its direction in RTL sentences.
+    assign free_amount = settings.free_shipping_threshold | times: 100 | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
   endif
 -%}
 <div
@@ -288,7 +289,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 {%- liquid
-                  assign accordion_heading = block.settings.heading
+                  assign accordion_heading = block.settings.heading | escape
                   if accordion_heading == blank
                     assign accordion_heading = 'products.description.heading' | t
                   endif
@@ -306,12 +307,12 @@
 
             {%- when 'collapsible' -%}
               {%- liquid
-                assign accordion_heading = block.settings.heading
+                assign accordion_heading = block.settings.heading | escape
                 assign accordion_body = block.settings.content
                 if block.settings.page != blank
                   assign accordion_body = block.settings.page.content
                   if accordion_heading == blank
-                    assign accordion_heading = block.settings.page.title
+                    assign accordion_heading = block.settings.page.title | escape
                   endif
                 endif
                 assign use_default = false
@@ -356,7 +357,7 @@
 
             {%- when 'size_table' -%}
               {%- liquid
-                assign accordion_heading = block.settings.heading
+                assign accordion_heading = block.settings.heading | escape
                 if accordion_heading == blank
                   assign accordion_heading = 'products.size_chart.heading' | t
                 endif

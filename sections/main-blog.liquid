@@ -52,10 +52,10 @@
             {%- liquid
               assign card_loading = 'lazy'
               assign card_priority = 'auto'
-              if forloop.first and section.index == 1
+              unless forloop.first == false or section.index > 1
                 assign card_loading = 'eager'
                 assign card_priority = 'high'
-              endif
+              endunless
             -%}
             <li class="main-blog__item">
               {%- render 'content-article-card',

@@ -24,7 +24,9 @@
   assign button_link = section.settings.button_link
   assign is_whatsapp = false
   if button_link == blank
-    assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
+    capture whatsapp_digits
+      render 'whatsapp-digits'
+    endcapture
     if whatsapp_digits != blank
       assign whatsapp_message = 'home.cta_band.whatsapp_message' | t | url_encode | replace: '+', '%20'
       assign button_link = 'https://wa.me/' | append: whatsapp_digits | append: '?text=' | append: whatsapp_message

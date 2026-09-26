@@ -65,7 +65,7 @@
       "heading": "Shipping & returns",
       "delivery": "We deliver to your door within 3 business days of your order.",
       "free_shipping": "Shipping is free on orders from {{ amount }}.",
-      "returns": "You can return items within 45 days of delivery, as long as they are unworn and unwashed with the tags still attached.",
+      "returns": "You can return items within 45 days. The full terms are in our returns policy.",
       "details": "Full details:"
     },
     "size_chart": {

@@ -14,7 +14,8 @@
 {%- liquid
   assign threshold_cents = settings.free_shipping_threshold | default: 0 | times: 100 | round
   assign show_bar = false
-  if threshold_cents > 0 and cart.item_count > 0 and cart.currency.iso_code == shop.currency
+  # Israel only: the international shipping zone has no free-shipping rate.
+  if threshold_cents > 0 and cart.item_count > 0 and cart.currency.iso_code == shop.currency and localization.country.iso_code == 'IL'
     assign show_bar = true
     assign remaining = threshold_cents | minus: cart.total_price
     if remaining > 0

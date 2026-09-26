@@ -207,15 +207,19 @@
         {%- if compare_line_price > item.final_line_price -%}
           <span class="visually-hidden">{{ 'general.price.sale_price' | t }}</span>
           <span class="cart-item__amount cart-item__amount--sale">
-            {{- item.final_line_price | money_without_trailing_zeros -}}
+            <bdi>{{- item.final_line_price | money_without_trailing_zeros -}}</bdi>
           </span>
           <span class="visually-hidden">{{ 'general.price.regular_price' | t }}</span>
-          <s class="cart-item__compare">{{ compare_line_price | money_without_trailing_zeros }}</s>
+          <s class="cart-item__compare"
+            ><bdi>{{ compare_line_price | money_without_trailing_zeros }}</bdi></s
+          >
         {%- else -%}
-          <span class="cart-item__amount">{{ item.final_line_price | money_without_trailing_zeros }}</span>
+          <span class="cart-item__amount"
+            ><bdi>{{ item.final_line_price | money_without_trailing_zeros }}</bdi></span
+          >
         {%- endif -%}
         {%- if item.quantity > 1 -%}
-          {%- assign unit_price = item.final_price | money_without_trailing_zeros -%}
+          {%- assign unit_price = item.final_price | money_without_trailing_zeros | prepend: '⁨' | append: '⁩' -%}
           <span class="cart-item__unit">{{ 'cart.item.each' | t: price: unit_price }}</span>
         {%- endif -%}
       </div>

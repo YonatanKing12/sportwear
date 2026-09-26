@@ -85,11 +85,11 @@
 
   <div class="product-card__info">
     {%- if subtitle != blank -%}
-      <p class="product-card__subtitle">{{ subtitle }}</p>
+      <p class="product-card__subtitle">{{ subtitle | escape }}</p>
     {%- endif -%}
     <{{ card_heading }} class="product-card__title">
       {%- if product != blank -%}
-        <a class="product-card__link" href="{{ product.url }}">{{ product.title }}</a>
+        <a class="product-card__link" href="{{ product.url }}">{{ product.title | escape }}</a>
       {%- else -%}
         {{ 'general.placeholders.product_title' | t }}
       {%- endif -%}

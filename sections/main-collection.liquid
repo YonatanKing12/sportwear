@@ -59,11 +59,11 @@
     assign banner_loading = 'lazy'
     assign banner_priority = 'auto'
     assign banner_preload = false
-    if section.index == 1
+    unless section.index > 1
       assign banner_loading = 'eager'
       assign banner_priority = 'high'
       assign banner_preload = true
-    endif
+    endunless
 
     assign load_more = false
     if section.settings.pagination_style == 'load_more'
@@ -127,8 +127,8 @@
                   class="read-more__toggle js-only"
                   aria-expanded="false"
                   aria-controls="CollectionDescription-{{ section.id }}"
-                  data-label-more="{{ 'collections.read_more' | t | escape }}"
-                  data-label-less="{{ 'collections.read_less' | t | escape }}"
+                  data-label-more="{{ 'collections.read_more' | t }}"
+                  data-label-less="{{ 'collections.read_less' | t }}"
                 >
                   {{- 'collections.read_more' | t -}}
                 </button>

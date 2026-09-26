@@ -37,7 +37,7 @@
   {%- endif -%}
   <span class="price__current">
     {%- if varies -%}
-      {%- assign current_money = current | money_without_trailing_zeros -%}
+      {%- assign current_money = current | money_without_trailing_zeros | prepend: '⁨' | append: '⁩' -%}
       {{- 'general.price.from_price' | t: price: current_money -}}
     {%- else -%}
       {{- current | money_without_trailing_zeros -}}

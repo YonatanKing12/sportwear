@@ -73,7 +73,7 @@
             {%- render 'icon', name: 'bag', size: 20 -%}
             <span>{{ 'products.buy.add_to_cart' | t }}</span>
             <span aria-hidden="true">·</span>
-            <span>{{ variant.price | money_without_trailing_zeros }}</span>
+            <bdi>{{ variant.price | money_without_trailing_zeros }}</bdi>
           {%- elsif variant == blank -%}
             <span>{{ 'products.buy.unavailable' | t }}</span>
           {%- else -%}

@@ -14,7 +14,9 @@
   assign phone_id = form_id | append: '-phone'
   assign body_id = form_id | append: '-body'
 
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   assign phone_href = settings.support_phone | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
   assign whatsapp_message = 'contact.card.whatsapp_message' | t: shop: shop.name | url_encode | replace: '+', '%20'
 

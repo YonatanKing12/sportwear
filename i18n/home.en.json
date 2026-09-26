@@ -13,7 +13,7 @@
       "placeholder_label": "League name"
     },
     "featured_collection": {
-      "heading": "Best sellers",
+      "heading": "This season's jerseys",
       "view_all": "View all"
     },
     "promo_banner": {
@@ -39,7 +39,7 @@
     "rich_text": {
       "eyebrow": "Why {{ shop }}",
       "heading": "By fans, for fans",
-      "text": "Original jerseys from the teams you love, from the current season, at fair prices. Everything is in stock in Israel, so your order reaches your door within 3 business days.",
+      "text": "Original jerseys from the teams you love, from the current season, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
       "button_label": "Shop all"
     }
   }

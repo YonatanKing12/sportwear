@@ -185,6 +185,23 @@
           <span class="hero__season" aria-hidden="true">{{ season }}</span>
         {%- endif -%}
         <span class="hero__circle" aria-hidden="true"></span>
+        {%- if figure_count == 0 -%}
+          {%- comment -%} No product shots chosen yet: two drawn kits keep the composition. {%- endcomment -%}
+          <div class="hero__figure hero__figure--first hero__figure--art" aria-hidden="true">
+            <svg class="hero__figure-image" viewBox="0 0 200 200" focusable="false">
+              <path class="hero__art-light" d="M78 30C86 42 114 42 122 30L160 42L186 74L166 90L154 78L152 176Q100 182 48 176L46 78L34 90L14 74L40 42Z"/>
+              <path class="hero__art-ink" d="M166 90L186 74L182 69L162 85Z M34 90L14 74L18 69L38 85Z M48 172Q100 178 152 172L152 176Q100 182 48 176Z"/>
+              <path class="hero__art-line" d="M78 30C86 42 114 42 122 30"/>
+            </svg>
+          </div>
+          <div class="hero__figure hero__figure--second hero__figure--art" aria-hidden="true">
+            <svg class="hero__figure-image" viewBox="0 0 200 200" focusable="false">
+              <path class="hero__art-ink" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
+              <path class="hero__art-accent" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
+              <path class="hero__art-accent-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
+            </svg>
+          </div>
+        {%- endif -%}
         {%- if figure_1 != blank -%}
           <div class="hero__figure hero__figure--first">
             {%- render 'image',
@@ -390,6 +407,33 @@
     block-size: 100%;
     object-fit: contain;
     filter: drop-shadow(0 2cqi 2.5cqi rgb(0 0 0 / 0.28));
+  }
+
+  .hero__art-light {
+    fill: #f4f5f7;
+  }
+
+  .hero__art-ink {
+    fill: #0d0e11;
+  }
+
+  .hero__art-accent {
+    fill: var(--color-highlight);
+  }
+
+  .hero__art-line,
+  .hero__art-accent-line {
+    fill: none;
+    stroke-width: 5;
+    stroke-linecap: round;
+  }
+
+  .hero__art-line {
+    stroke: #0d0e11;
+  }
+
+  .hero__art-accent-line {
+    stroke: var(--color-highlight);
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -618,7 +662,7 @@
       "type": "select",
       "id": "heading_tag",
       "label": "t:settings.heading_tag",
-      "default": "h1",
+      "default": "h2",
       "options": [
         {
           "value": "h1",

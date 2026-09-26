@@ -129,7 +129,7 @@
     "other_heading": "Pages and articles",
     "type_page": "Page",
     "type_article": "Article",
-    "suggestions_heading": "Popular searches"
+    "suggestions_heading": "Search suggestions"
   },
   "footer": {
     "brand_text": "Football jerseys and basketball kits for adults and kids.",
@@ -206,13 +206,13 @@
   "team_orders": {
     "eyebrow": "Team orders",
     "heading": "Ordering for a team?",
-    "text": "Volume pricing for amateur teams, schools and clubs. Send us the details and we'll get back to you with a quote.",
+    "text": "Amateur teams, schools and clubs: send us the quantity and sizes you need, and we'll get back to you with a tailored quote.",
     "whatsapp": "Chat with us on WhatsApp",
     "whatsapp_message": "Hi {{ shop }}, I would like a quote for a team order.",
     "benefits": {
       "volume": {
-        "title": "Volume pricing",
-        "text": "Special prices by quantity, with a personal quote."
+        "title": "Personal quote",
+        "text": "Send us quantities and sizes, and get a quote tailored to your order."
       },
       "sizes": {
         "title": "Adult and kids' sizes",
@@ -250,8 +250,8 @@
         "link": "Read our shipping policy"
       },
       "returns": {
-        "question": "Can I return or exchange an item?",
-        "answer_html": "<p>Yes. You can return or exchange items within 45 days. The full terms are in our returns policy.</p>",
+        "question": "Can I return an item?",
+        "answer_html": "<p>Yes, you can return items within 45 days. The full terms are in our returns policy.</p>",
         "link": "Read our returns policy"
       },
       "sizing": {
@@ -264,7 +264,7 @@
       },
       "team_orders": {
         "question": "Do you take team orders?",
-        "answer_html": "<p>Yes. We offer volume pricing for amateur teams, schools and clubs, in adult and kids' sizes. Send us the details on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>"
+        "answer_html": "<p>Sure. Amateur teams, schools and clubs can order together, in adult and kids' sizes. Send us the quantities and sizes on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>"
       },
       "printing": {
         "question": "Can you print names and numbers?",
@@ -516,7 +516,7 @@
       "placeholder_label": "League name"
     },
     "featured_collection": {
-      "heading": "Best sellers",
+      "heading": "This season's jerseys",
       "view_all": "View all"
     },
     "promo_banner": {
@@ -542,7 +542,7 @@
     "rich_text": {
       "eyebrow": "Why {{ shop }}",
       "heading": "By fans, for fans",
-      "text": "Original jerseys from the teams you love, from the current season, at fair prices. Everything is in stock in Israel, so your order reaches your door within 3 business days.",
+      "text": "Original jerseys from the teams you love, from the current season, at fair prices. Our stock is held in Israel, so your order reaches your door within 3 business days.",
       "button_label": "Shop all"
     }
   },
@@ -612,7 +612,7 @@
       "heading": "Shipping & returns",
       "delivery": "We deliver to your door within 3 business days of your order.",
       "free_shipping": "Shipping is free on orders from {{ amount }}.",
-      "returns": "You can return items within 45 days of delivery, as long as they are unworn and unwashed with the tags still attached.",
+      "returns": "You can return items within 45 days. The full terms are in our returns policy.",
       "details": "Full details:"
     },
     "size_chart": {

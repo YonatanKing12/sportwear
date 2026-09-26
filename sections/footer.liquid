@@ -8,7 +8,9 @@
   on tablet, four on desktop.
 {%- endcomment -%}
 {%- liquid
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   assign phone_href = settings.support_phone | remove: ' ' | remove: '-' | remove: '(' | remove: ')'
   assign accessibility_page = section.settings.accessibility_page
 
@@ -54,7 +56,11 @@
             {%- when 'menu' -%}
               {%- liquid
                 assign footer_menu = block.settings.menu
-                assign menu_heading = block.settings.heading
+                assign menu_heading = block.settings.heading | escape
+                # Fall back to the menu's own title (translated with the menu), then to a generic label.
+                if menu_heading == blank
+                  assign menu_heading = footer_menu.title | escape
+                endif
                 if menu_heading == blank
                   assign menu_heading = 'footer.menu_heading' | t
                 endif

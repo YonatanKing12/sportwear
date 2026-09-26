@@ -124,16 +124,26 @@ export function replaceContent(target, html, selector) {
  * @param {string} message
  */
 export function announce(message) {
+  if (!message) return;
+  // The region is looked up when the text is written, not when announce() is called: a drawer that
+  // opens in between (e.g. the cart drawer right after "Added to cart") makes the page inert.
+  requestAnimationFrame(() => {
+    const region = liveRegion();
+    if (!region) return;
+    region.textContent = '';
+    requestAnimationFrame(() => {
+      region.textContent = message;
+    });
+  });
+}
+
+function liveRegion() {
   const modal = [...document.querySelectorAll('dialog[open]')].filter((dialog) => dialog.matches(':modal')).pop();
-  const region =
+  return (
     modal?.querySelector('[data-live-region]') ??
     modal?.querySelector('[aria-live]') ??
-    document.getElementById('SwLiveRegion');
-  if (!region || !message) return;
-  region.textContent = '';
-  requestAnimationFrame(() => {
-    region.textContent = message;
-  });
+    document.getElementById('SwLiveRegion')
+  );
 }
 
 /** @returns {boolean} */

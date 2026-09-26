@@ -30,9 +30,9 @@
 
   assign image_sizes = '(min-width: 750px) calc(min(100vw - 64px, ' | append: settings.page_width | append: 'px) / 2), calc(100vw - 40px)'
   assign image_loading = 'lazy'
-  if section.index == 1
+  unless section.index > 1
     assign image_loading = 'eager'
-  endif
+  endunless
 -%}
 
 <div

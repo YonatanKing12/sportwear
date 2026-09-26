@@ -42,9 +42,9 @@
   assign figure_sizes = '(min-width: 750px) calc(min(292px, (100vw - 208px) * 0.27)), calc((100vw - 88px) * 0.32)'
 
   assign figure_loading = 'lazy'
-  if section.index == 1
+  unless section.index > 1
     assign figure_loading = 'eager'
-  endif
+  endunless
 -%}
 
 <div

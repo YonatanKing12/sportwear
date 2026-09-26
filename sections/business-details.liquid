@@ -19,7 +19,9 @@
   if section.settings.show_channels
     assign support_phone = settings.support_phone
     assign support_email = settings.support_email | strip
-    assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+    capture whatsapp_digits
+      render 'whatsapp-digits'
+    endcapture
   endif
 
   assign has_details = false

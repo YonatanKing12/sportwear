@@ -5,7 +5,9 @@
   @param {string} [class] - Extra classes on the list
 {%- enddoc -%}
 {%- liquid
-  assign whatsapp_digits = settings.whatsapp_number | remove: '+' | remove: ' ' | remove: '-'
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
   assign has_any = false
   if settings.social_instagram != blank or settings.social_tiktok != blank or settings.social_facebook != blank or settings.social_youtube != blank or whatsapp_digits != blank
     assign has_any = true
