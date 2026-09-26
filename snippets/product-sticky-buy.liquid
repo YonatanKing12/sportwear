@@ -1,0 +1,598 @@
+{%- doc -%}
+  Sticky buy bar of the main product section, plus its size sheet. Rendered inside <sw-product-info>
+  and driven by assets/product-info.js (<sw-sticky-buy>, <sw-product-info>). JavaScript-only (js-only):
+  without JavaScript the product form alone is the way to buy.
+
+  The bar slides up once the main buy button has scrolled out of view (phones), or once the whole
+  product section has (desktop, where the info column is sticky; on a page too short for that, at its
+  end), and slides away when the main buy button is back in view. Phones get a floating card: the
+  thumbnail, the title on one line, the price, and on the end side the main action:
+  - no size chosen yet: "Choose a size", which opens the size sheet;
+  - size chosen: a size chip that reopens the sheet, and "Add to cart";
+  - sold out: a disabled "Sold out".
+  Desktop gets one slim row inside the page width: thumbnail, title, the sizes as compact buttons,
+  price and button ("Choose a size" points to the sizes and asks for one).
+
+  The size sheet (<sw-drawer> + <dialog>, a bottom sheet) shows the product, the sizes as large buttons
+  (sold-out sizes visible but disabled), the size guide and a full-width "Add to cart" that stays
+  disabled until a size is chosen. Its sizes, the bar's sizes and the main size picker are kept in
+  step by <sw-product-info>; both add buttons submit the main product form (form="…"), so the size,
+  the checks and the cart drawer are the same as the main button's. Parts marked data-product-dynamic
+  are re-rendered with the variant.
+
+  @param {product} product - The product
+  @param {variant} [variant] - The selected (or first available) variant
+  @param {string} section_id - The section id, for unique ids
+  @param {string} form_id - Id of the main product form
+  @param {string} color_scheme - Color scheme id of the bar (the section's)
+  @param {object} [picker_block] - The variant_picker block (settings: show_size_guide)
+  @param {boolean} [size_choice] - The size can be chosen in the bar and the sheet (single-option product in stock, with a size picker)
+  @param {boolean} [size_required] - No size is chosen yet
+
+  @example
+  {% render 'product-sticky-buy', product: product, variant: current_variant, section_id: section.id, form_id: form_id, color_scheme: section.settings.color_scheme.id, picker_block: picker_block, size_choice: size_choice, size_required: size_required %}
+{%- enddoc -%}
+{%- liquid
+  assign available = false
+  if variant != blank and variant.available
+    assign available = true
+  endif
+  assign show_product_price = false
+  if size_required or variant == blank
+    assign show_product_price = true
+  endif
+
+  assign sheet_id = 'SizeSheet-' | append: section_id
+  assign sheet_title_id = sheet_id | append: '-title'
+  assign sheet_error_id = sheet_id | append: '-error'
+  assign bar_id = 'StickyBuy-' | append: section_id
+  assign bar_error_id = bar_id | append: '-error'
+  assign thumb = product.featured_media.preview_image
+-%}
+<sw-sticky-buy class="product-sticky js-only" role="region" aria-label="{{ 'products.sticky.label' | t }}" inert>
+  <div class="product-sticky__card color-{{ color_scheme }}">
+    {%- if thumb != blank -%}
+      <span class="product-sticky__thumb media-tile">
+        {{- thumb | image_url: width: 120 | image_tag: loading: 'lazy', alt: '' -}}
+      </span>
+    {%- endif -%}
+    <p class="product-sticky__title">{{ product.title | escape }}</p>
+    <div class="product-sticky__price" data-product-dynamic="sticky-price">
+      {%- if show_product_price -%}
+        {%- render 'price', product: product -%}
+      {%- else -%}
+        {%- render 'price', variant: variant -%}
+      {%- endif -%}
+    </div>
+    {%- if size_choice -%}
+      <div class="product-sticky__sizes">
+        {%- render 'variant-picker',
+          product: product,
+          block: picker_block,
+          section_id: section_id,
+          context: 'bar',
+          size_required: size_required
+        -%}
+      </div>
+    {%- endif -%}
+    <div class="product-sticky__actions" data-product-dynamic="sticky-buy">
+      {%- if size_choice -%}
+        {%- if size_required -%}
+          <button
+            type="button"
+            class="button button--primary product-sticky__button product-sticky__choose product-sticky__choose--sheet"
+            data-drawer-open="{{ sheet_id }}"
+            aria-haspopup="dialog"
+            aria-expanded="false"
+          >
+            {{- 'products.buy.select_size' | t -}}
+          </button>
+          <button
+            type="button"
+            class="button button--primary product-sticky__button product-sticky__choose product-sticky__choose--bar"
+            data-size-prompt
+          >
+            {{- 'products.buy.select_size' | t -}}
+          </button>
+        {%- endif -%}
+        <button
+          type="button"
+          id="{{ bar_id }}-size"
+          class="product-sticky__size"
+          data-drawer-open="{{ sheet_id }}"
+          aria-haspopup="dialog"
+          aria-expanded="false"
+        >
+          <span class="visually-hidden">{{ 'products.sticky.selected_size' | t }}</span>
+          <bdi dir="ltr" data-selected-size>
+            {%- unless size_required -%}{{ variant.title | escape }}{%- endunless -%}
+          </bdi>
+          {%- render 'icon', name: 'chevron-down', size: 16 -%}
+        </button>
+      {%- endif -%}
+      {%- if available -%}
+        <button
+          type="submit"
+          form="{{ form_id }}"
+          id="{{ bar_id }}-add"
+          class="button button--primary product-sticky__button product-sticky__add product-submit"
+          aria-describedby="{{ bar_error_id }}"
+        >
+          {%- render 'icon', name: 'bag', size: 18 -%}
+          <span>{{ 'products.buy.add_to_cart' | t }}</span>
+          <span class="spinner product-submit__spinner" aria-hidden="true"></span>
+        </button>
+      {%- else -%}
+        <button type="button" class="button button--primary product-sticky__button product-submit" disabled>
+          {%- if variant == blank -%}
+            {{- 'products.buy.unavailable' | t -}}
+          {%- else -%}
+            {{- 'products.buy.sold_out' | t -}}
+          {%- endif -%}
+        </button>
+      {%- endif -%}
+    </div>
+    <p id="{{ bar_error_id }}" class="product-sticky__error" role="alert" data-form-error></p>
+  </div>
+</sw-sticky-buy>
+
+{%- if size_choice -%}
+  <sw-drawer id="{{ sheet_id }}" class="size-sheet-host" data-size-sheet>
+    <dialog class="size-sheet color-{{ settings.drawer_color_scheme.id }}" aria-labelledby="{{ sheet_title_id }}">
+      <div class="size-sheet__header">
+        {%- if thumb != blank -%}
+          <span class="size-sheet__thumb media-tile">
+            {{- thumb | image_url: width: 160 | image_tag: loading: 'lazy', alt: '' -}}
+          </span>
+        {%- endif -%}
+        <div class="size-sheet__product">
+          <h2 id="{{ sheet_title_id }}" class="size-sheet__title">{{ product.title | escape }}</h2>
+          <div class="size-sheet__price" data-product-dynamic="sheet-price">
+            {%- if show_product_price -%}
+              {%- render 'price', product: product -%}
+            {%- else -%}
+              {%- render 'price', variant: variant -%}
+            {%- endif -%}
+          </div>
+        </div>
+        <button type="button" class="button button--icon size-sheet__close" data-drawer-close>
+          {%- render 'icon', name: 'close' -%}
+          <span class="visually-hidden">{{ 'general.close' | t }}</span>
+        </button>
+      </div>
+      <div class="size-sheet__body">
+        {%- render 'variant-picker',
+          product: product,
+          block: picker_block,
+          section_id: section_id,
+          context: 'sheet',
+          size_required: size_required
+        -%}
+      </div>
+      <div class="size-sheet__footer">
+        <div class="size-sheet__buy" data-product-dynamic="sheet-buy">
+          {%- if available -%}
+            <button
+              type="submit"
+              form="{{ form_id }}"
+              id="{{ sheet_id }}-add"
+              class="button button--primary button--large button--full product-submit"
+              aria-describedby="{{ sheet_error_id }}"
+              {% if size_required %}
+                disabled
+                data-size-pending
+              {% endif %}
+            >
+              {%- render 'icon', name: 'bag', size: 20 -%}
+              <span>{{ 'products.buy.add_to_cart' | t }}</span>
+              <span class="spinner product-submit__spinner" aria-hidden="true"></span>
+            </button>
+          {%- else -%}
+            <button type="button" class="button button--primary button--large button--full product-submit" disabled>
+              {{- 'products.buy.sold_out' | t -}}
+            </button>
+          {%- endif -%}
+        </div>
+        <p
+          id="{{ sheet_error_id }}"
+          class="size-sheet__error field__message field__message--error"
+          role="alert"
+          data-form-error
+        ></p>
+      </div>
+    </dialog>
+  </sw-drawer>
+{%- endif -%}
+
+{% stylesheet %}
+  /* ---------- Sticky buy bar ----------
+     A floating card on phones (small side margins, rounded, soft shadow); one slim row inside the page
+     width on desktop. The wrapper is transparent and lets taps through around the card. */
+  .product-sticky {
+    position: fixed;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 30;
+    padding-block: 0 calc(var(--space-2) + env(safe-area-inset-bottom, 0px));
+    padding-inline: var(--space-2);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(calc(100% + var(--space-4)));
+    transition:
+      transform 360ms var(--ease),
+      opacity 220ms var(--ease);
+
+    @media screen and (min-width: 990px) {
+      padding-block-end: calc(var(--space-4) + env(safe-area-inset-bottom, 0px));
+      padding-inline: var(--gutter);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  .product-sticky[data-visible] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Out of the way while a drawer or dialog is open (the size sheet, the cart, the menu, zoom). */
+  :root:has(dialog[open]) .product-sticky[data-visible] {
+    opacity: 0;
+    transform: translateY(calc(100% + var(--space-4)));
+  }
+
+  /* The page keeps room for the bar at its end, so it never covers the footer. The room is always
+     there (not only while the bar shows), so nothing on the page moves when the bar slides in. */
+  .js:has(.product-sticky) body {
+    padding-block-end: calc(80px + env(safe-area-inset-bottom, 0px));
+
+    @media screen and (min-width: 990px) {
+      padding-block-end: calc(96px + env(safe-area-inset-bottom, 0px));
+    }
+  }
+
+  .product-sticky__card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'thumb title actions'
+      'thumb price actions';
+    align-items: center;
+    column-gap: var(--space-3);
+    max-inline-size: 560px;
+    margin-inline: auto;
+    padding: var(--space-2);
+    border: 1px solid color-mix(in srgb, var(--color-text) 10%, transparent);
+    border-radius: calc(var(--radius-card) * 2);
+    box-shadow:
+      0 14px 34px -10px rgb(13 14 17 / 0.34),
+      0 2px 8px rgb(13 14 17 / 0.08);
+    pointer-events: auto;
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: auto minmax(0, 1fr) auto auto auto;
+      grid-template-areas: 'thumb title sizes price actions';
+      column-gap: var(--space-5);
+      max-inline-size: var(--page-width, 1440px);
+      padding-inline: var(--space-3) var(--space-2);
+    }
+  }
+
+  .product-sticky__thumb {
+    --media-ratio: 1;
+    --media-fit: cover;
+
+    grid-area: thumb;
+    inline-size: 44px;
+    border-radius: var(--radius-card);
+  }
+
+  .product-sticky__title {
+    grid-area: title;
+    align-self: end;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media screen and (min-width: 990px) {
+      align-self: center;
+      font-size: var(--text-md);
+    }
+  }
+
+  /* The price never wraps; when the column is too narrow for both prices (a size chip, a long
+     translation), the struck-through price steps aside and the sale price stays. */
+  .product-sticky__price {
+    container-type: inline-size;
+    grid-area: price;
+    align-self: start;
+    min-inline-size: 0;
+    transition: opacity var(--duration-fast) var(--ease);
+
+    & .price {
+      flex-wrap: nowrap;
+      gap: 6px;
+      font-size: var(--text-md);
+      line-height: 1.35;
+      white-space: nowrap;
+    }
+
+    @media screen and (min-width: 990px) {
+      align-self: center;
+      inline-size: max-content;
+      container-type: normal;
+
+      & .price {
+        font-size: var(--text-lg);
+      }
+    }
+  }
+
+  @container (max-width: 112px) {
+    .product-sticky__price :is(.price__compare, .visually-hidden:has(+ .price__compare)) {
+      display: none;
+    }
+  }
+
+  .product-sticky__sizes {
+    display: none;
+    grid-area: sizes;
+
+    @media screen and (min-width: 990px) {
+      display: block;
+    }
+  }
+
+  .product-sticky__actions {
+    grid-area: actions;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .product-sticky__button {
+    gap: var(--space-2);
+    min-block-size: 48px;
+    padding-inline: var(--space-4);
+    font-size: var(--text-md);
+    white-space: nowrap;
+
+    /* Phones keep the room for the title and price; the words say it all. */
+    & .icon {
+      display: none;
+    }
+
+    @media screen and (min-width: 990px) {
+      min-inline-size: 200px;
+      padding-inline: var(--space-6);
+      font-size: var(--text-base);
+
+      & .icon {
+        display: block;
+      }
+    }
+  }
+
+  /* The chosen size, next to "Add to cart" on phones; it reopens the size sheet. */
+  .product-sticky__size {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    min-block-size: 48px;
+    min-inline-size: 48px;
+    padding-inline: 10px 6px;
+    border: 1.5px solid color-mix(in srgb, var(--color-text) 22%, var(--color-background));
+    border-radius: var(--radius-chip);
+    background: var(--color-background);
+    color: var(--color-text);
+    font-size: var(--text-md);
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+
+    & .icon {
+      color: var(--color-muted);
+    }
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+  }
+
+  /* No size yet: "Choose a size" instead of the size chip and "Add to cart" (sheet on phones, the
+     bar's size buttons on desktop). */
+  .product-sticky__choose,
+  .product-info[data-size-required] :is(.product-sticky__size, .product-sticky__add) {
+    display: none;
+  }
+
+  .product-info[data-size-required] .product-sticky__choose--sheet {
+    display: inline-flex;
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-info[data-size-required] .product-sticky__choose--sheet {
+      display: none;
+    }
+
+    .product-info[data-size-required] .product-sticky__choose--bar {
+      display: inline-flex;
+    }
+  }
+
+  /* A cart error from the bar, as a bubble above it. Shopify's message keeps its own direction. */
+  .product-sticky__error {
+    position: absolute;
+    inset-block-end: calc(100% + var(--space-2));
+    inset-inline: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-button);
+    background: var(--color-background);
+    box-shadow: 0 8px 24px rgb(13 14 17 / 0.2);
+    color: var(--color-error);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    unicode-bidi: plaintext;
+
+    &:empty {
+      display: none;
+    }
+
+    @media screen and (min-width: 990px) {
+      inset-inline: auto var(--space-2);
+      max-inline-size: 420px;
+    }
+  }
+
+  .product-info[aria-busy='true'] :is(.product-sticky__price, .size-sheet__price) {
+    opacity: 0.6;
+  }
+
+  /* ---------- Size sheet (bottom sheet dialog) ---------- */
+  .size-sheet-host {
+    display: contents;
+  }
+
+  .size-sheet {
+    position: fixed;
+    inset-block: auto 0;
+    inset-inline: 0;
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    max-inline-size: 560px;
+    max-block-size: min(90dvh, 760px);
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    border-start-start-radius: calc(var(--radius-card) * 3);
+    border-start-end-radius: calc(var(--radius-card) * 3);
+    background: var(--color-background);
+    box-shadow: 0 -16px 48px rgb(8 9 11 / 0.3);
+    color: var(--color-text);
+    transform: translateY(100%);
+    transition:
+      transform var(--duration) var(--ease),
+      overlay var(--duration) allow-discrete,
+      display var(--duration) allow-discrete;
+
+    &:not([open]) {
+      display: none;
+    }
+
+    &[open] {
+      transform: none;
+
+      @starting-style {
+        transform: translateY(100%);
+      }
+    }
+
+    &::backdrop {
+      background: var(--color-overlay);
+      opacity: 0;
+      transition:
+        opacity var(--duration) var(--ease),
+        overlay var(--duration) allow-discrete,
+        display var(--duration) allow-discrete;
+    }
+
+    &[open]::backdrop {
+      opacity: 1;
+
+      @starting-style {
+        opacity: 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+
+      &::backdrop {
+        transition: none;
+      }
+    }
+  }
+
+  .size-sheet__header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding-block: var(--space-4);
+    padding-inline: var(--space-5) var(--space-2);
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .size-sheet__thumb {
+    --media-ratio: 1;
+    --media-fit: cover;
+
+    flex: none;
+    inline-size: 56px;
+    border-radius: var(--radius-card);
+  }
+
+  .size-sheet__product {
+    display: grid;
+    flex: 1;
+    gap: 2px;
+    min-inline-size: 0;
+  }
+
+  .size-sheet__title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: var(--text-base);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .size-sheet__price {
+    transition: opacity var(--duration-fast) var(--ease);
+
+    & .price {
+      font-size: var(--text-base);
+    }
+  }
+
+  .size-sheet__close {
+    align-self: flex-start;
+  }
+
+  .size-sheet__body {
+    flex: 1;
+    padding-block: var(--space-3) var(--space-2);
+    padding-inline: var(--space-5);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .size-sheet__footer {
+    padding-block: var(--space-3) calc(var(--space-5) + env(safe-area-inset-bottom, 0px));
+    padding-inline: var(--space-5);
+  }
+
+  .size-sheet__error {
+    display: block;
+    unicode-bidi: plaintext;
+  }
+
+  .size-sheet__error:not(:empty) {
+    margin-block-start: var(--space-3);
+  }
+{% endstylesheet %}

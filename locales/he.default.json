@@ -693,6 +693,9 @@
       "decrease": "הפחתת הכמות",
       "increase": "הגדלת הכמות",
       "choose_size": "בחרו מידה כדי להמשיך.",
+      "select_size": "בחירת מידה",
+      "added": "נוסף לסל: {{ title }}",
+      "added_with_size": "נוסף לסל: {{ title }}, מידה {{ size }}",
       "secure_checkout": "תשלום מאובטח"
     },
     "shipping_note": {
@@ -750,7 +753,8 @@
       "whatsapp_message_html": "היי, יש לי שאלה על {{ title }}"
     },
     "sticky": {
-      "label": "קנייה מהירה"
+      "label": "קנייה מהירה",
+      "selected_size": "המידה שנבחרה:"
     }
   }
 }

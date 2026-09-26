@@ -4,6 +4,7 @@
 
   assign has_title = false
   assign has_picker = false
+  assign picker_block = null
   assign has_size_guide = false
   assign has_buy_buttons = false
   for block in section.blocks
@@ -12,6 +13,7 @@
         assign has_title = true
       when 'variant_picker'
         assign has_picker = true
+        assign picker_block = block
         if block.settings.show_size_guide
           assign has_size_guide = true
         endif
@@ -34,6 +36,20 @@
   assign picker_submits_id = false
   if has_picker and product.has_only_default_variant == false and product.options.size == 1
     assign picker_submits_id = true
+  endif
+
+  # The size is a conscious choice: with more than one size in stock and no ?variant= in the URL, no
+  # size counts as chosen, the buttons read "Choose a size" and pressing them asks for one
+  # (assets/product-info.js). Without JavaScript the first available size stays preselected, so the
+  # form always works. size_choice: the sticky bar and its size sheet can choose the size too.
+  assign size_choice = false
+  assign size_required = false
+  if picker_submits_id and product.available
+    assign size_choice = true
+    assign sizes_in_stock = product.variants | where: 'available'
+    if product.selected_variant == blank and sizes_in_stock.size > 1
+      assign size_required = true
+    endif
   endif
 
   assign is_lcp = false
@@ -83,6 +99,13 @@
         data-variant-id="{{ current_variant.id }}"
         data-variant-available="{{ current_variant.available | default: false }}"
         data-variant-media-id="{{ current_variant.featured_media.id }}"
+        data-added-message="{{ 'products.buy.added' | t: title: product.title }}"
+        {% if picker_submits_id %}
+          data-added-size-message="{{ 'products.buy.added_with_size' | t: title: product.title, size: '[size]' }}"
+        {% endif %}
+        {% if size_required %}
+          data-size-required
+        {% endif %}
       >
         {%- for block in section.blocks -%}
           {%- case block.type -%}
@@ -125,14 +148,26 @@
               </h1>
 
             {%- when 'price' -%}
+              {%- liquid
+                # Before a size is chosen the product's price shows ("From ₪…" when sizes differ in price).
+                assign show_saving = false
+                if current_variant.compare_at_price > current_variant.price
+                  assign show_saving = true
+                  if size_required
+                    if product.price_varies or product.compare_at_price_varies
+                      assign show_saving = false
+                    endif
+                  endif
+                endif
+              -%}
               <div class="product-info__block product-info__block--price" {{ block.shopify_attributes }}>
                 <div class="product-price" data-product-dynamic="price">
-                  {%- if current_variant != blank -%}
+                  {%- if current_variant != blank and size_required == false -%}
                     {%- render 'price', variant: current_variant, class: 'product-price__amount' -%}
                   {%- else -%}
                     {%- render 'price', product: product, class: 'product-price__amount' -%}
                   {%- endif -%}
-                  {%- if current_variant.compare_at_price > current_variant.price -%}
+                  {%- if show_saving -%}
                     {%- liquid
                       assign saved_cents = current_variant.compare_at_price | minus: current_variant.price
                       # Unicode isolates keep the amount's direction inside the RTL sentence.
@@ -190,7 +225,8 @@
 
             {%- when 'variant_picker' -%}
               {%- capture inventory_note -%}
-                {%- if block.settings.show_inventory and current_variant != blank -%}
+                {%- comment -%} The stock note is about the chosen size, so it waits for one. {%- endcomment -%}
+                {%- if block.settings.show_inventory and current_variant != blank and size_required == false -%}
                   {%- if current_variant.available == false -%}
                     <p class="product-inventory__note product-inventory__note--out">
                       {{- 'products.variant_picker.unavailable' | t -}}
@@ -214,7 +250,8 @@
                       block: block,
                       section_id: section.id,
                       form_id: form_id,
-                      submits_id: picker_submits_id
+                      submits_id: picker_submits_id,
+                      size_required: size_required
                     -%}
                   {%- endunless -%}
                   {%- if block.settings.show_inventory -%}
@@ -232,7 +269,8 @@
                   variant: current_variant,
                   block: block,
                   form_id: form_id,
-                  id_disabled: picker_submits_id
+                  id_disabled: picker_submits_id,
+                  size_required: size_required
                 -%}
                 {%- if block.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
                   <div class="product-payments">
@@ -447,52 +485,16 @@
         {%- endfor -%}
 
         {%- if section.settings.show_sticky_buy and has_buy_buttons -%}
-          <sw-sticky-buy
-            class="product-sticky js-only color-{{ section.settings.color_scheme.id }}"
-            role="region"
-            aria-label="{{ 'products.sticky.label' | t }}"
-            inert
-          >
-            <div class="page-width product-sticky__inner">
-              <div class="product-sticky__product">
-                {%- if product.featured_media != blank -%}
-                  <span class="product-sticky__thumb media-tile">
-                    {{-
-                      product.featured_media.preview_image
-                      | image_url: width: 120
-                      | image_tag: loading: 'lazy', alt: ''
-                    -}}
-                  </span>
-                {%- endif -%}
-                <span class="product-sticky__text">
-                  <span class="product-sticky__title">{{ product.title | escape }}</span>
-                  <span class="product-sticky__variant" data-product-dynamic="sticky-variant">
-                    {%- unless product.has_only_default_variant -%}{{ current_variant.title | escape }}{%- endunless -%}
-                  </span>
-                </span>
-              </div>
-              <div class="product-sticky__buy" data-product-dynamic="sticky-buy">
-                {%- if current_variant != blank -%}
-                  {%- render 'price', variant: current_variant, class: 'product-sticky__price' -%}
-                {%- endif -%}
-                <button
-                  type="submit"
-                  form="{{ form_id }}"
-                  class="button button--primary product-sticky__button"
-                  {% unless current_variant.available %}
-                    disabled
-                  {% endunless %}
-                >
-                  {%- if current_variant.available -%}
-                    {%- render 'icon', name: 'bag', size: 18 -%}
-                    <span>{{ 'products.buy.add_to_cart' | t }}</span>
-                  {%- else -%}
-                    <span>{{ 'products.buy.sold_out' | t }}</span>
-                  {%- endif -%}
-                </button>
-              </div>
-            </div>
-          </sw-sticky-buy>
+          {%- render 'product-sticky-buy',
+            product: product,
+            variant: current_variant,
+            section_id: section.id,
+            form_id: form_id,
+            color_scheme: section.settings.color_scheme.id,
+            picker_block: picker_block,
+            size_choice: size_choice,
+            size_required: size_required
+          -%}
         {%- endif -%}
       </sw-product-info>
     </div>
@@ -646,12 +648,14 @@
     font-size: var(--text-sm);
   }
 
+  /* The sale color is dark on light schemes and light on dark ones: the scheme's background color reads
+     on it in all of them (white text on the light orange of the dark scheme would not). */
   .product-price__save {
     align-self: center;
     padding: 3px 10px;
     border-radius: var(--radius-badge);
     background: var(--color-sale);
-    color: #ffffff;
+    color: var(--color-background);
     font-size: var(--text-sm);
     font-weight: 800;
     line-height: 1.3;
@@ -845,112 +849,6 @@
 
     &:hover {
       border-color: var(--color-text);
-    }
-  }
-
-  /* Sticky buy bar: slides up from the bottom once the main buy button has scrolled out of view
-     (assets/product-info.js, <sw-sticky-buy>). Phones show the price and the button; wider screens add
-     the product. The page gets matching bottom room so the bar never hides the footer. */
-  .product-sticky {
-    position: fixed;
-    inset-inline: 0;
-    inset-block-end: 0;
-    z-index: 30;
-    padding-block: var(--space-3) calc(var(--space-3) + env(safe-area-inset-bottom, 0px));
-    border-block-start: 1px solid var(--color-border);
-    box-shadow: 0 -10px 30px rgb(13 14 17 / 0.1);
-    transform: translateY(110%);
-    transition: transform 240ms var(--ease);
-
-    &[data-visible] {
-      transform: none;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      transition: none;
-    }
-  }
-
-  html:has(.product-sticky[data-visible]) body {
-    padding-block-end: 84px;
-  }
-
-  .product-sticky__inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-  }
-
-  .product-sticky__product {
-    display: none;
-    align-items: center;
-    gap: var(--space-3);
-    min-inline-size: 0;
-
-    @media screen and (min-width: 750px) {
-      display: flex;
-    }
-  }
-
-  .product-sticky__thumb {
-    flex-shrink: 0;
-    inline-size: 52px;
-    block-size: 52px;
-    border-radius: var(--radius-card);
-    overflow: hidden;
-
-    & img {
-      inline-size: 100%;
-      block-size: 100%;
-      object-fit: contain;
-    }
-  }
-
-  .product-sticky__text {
-    display: grid;
-    min-inline-size: 0;
-  }
-
-  .product-sticky__title {
-    overflow: hidden;
-    font-size: var(--text-sm);
-    font-weight: 800;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .product-sticky__variant {
-    color: var(--color-muted);
-    font-size: var(--text-xs);
-    font-weight: 700;
-  }
-
-  .product-sticky__buy {
-    display: flex;
-    flex: 1 1 auto;
-    align-items: center;
-    justify-content: space-between;
-    gap: var(--space-4);
-
-    @media screen and (min-width: 750px) {
-      flex: none;
-    }
-  }
-
-  .product-sticky__price {
-    flex-shrink: 0;
-    font-size: var(--text-lg);
-    font-weight: 800;
-  }
-
-  .product-sticky__button {
-    flex: 1 1 auto;
-    gap: var(--space-2);
-
-    @media screen and (min-width: 750px) {
-      flex: none;
-      min-inline-size: 220px;
     }
   }
 
