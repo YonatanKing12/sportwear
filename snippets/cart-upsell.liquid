@@ -110,8 +110,16 @@
         {%- form 'product', complement, id: suggestion_id, class: 'cart-upsell__form', data-cart-upsell: 'true' -%}
           <input type="hidden" name="quantity" value="1">
           {%- if has_choice -%}
+            {%- liquid
+              # The option's name in the shopper's language, already escaped (as the title is): hence the
+              # _html key.
+              capture option_name
+                render 'option-name', name: complement.options.first
+              endcapture
+              assign complement_title = complement.title | escape
+            -%}
             <label class="visually-hidden" for="{{ select_id }}">
-              {{- 'cart.upsell.option_label' | t: option: complement.options.first, title: complement.title -}}
+              {{- 'cart.upsell.option_label_html' | t: option: option_name, title: complement_title -}}
             </label>
             <select
               class="field__select cart-upsell__select"

@@ -248,13 +248,17 @@
         "size": {
           "name": "Size",
           "settings": {
-            "title": {
+            "size_code": {
               "label": "Size",
-              "info": "As it appears on the kids products, for example 9-10. The word \"years\" is added automatically."
+              "info": "As the kids products name it, for example 16. The age and height below show under it."
             },
-            "height": {
+            "title": {
+              "label": "Age",
+              "info": "The ages this size fits, for example 2-3. Without a size, the age becomes the tile's main label and the word \"years\" is added."
+            },
+            "height_cm": {
               "label": "Height (cm)",
-              "info": "The child's approximate height for this size, numbers only. Leave empty to hide it."
+              "info": "The child's height for this size, a number or a range such as 95-105. Leave empty to hide it."
             }
           }
         }

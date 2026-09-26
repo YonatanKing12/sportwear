@@ -104,11 +104,16 @@
     {%- for option in product.options_with_values -%}
       {%- liquid
         assign option_index = forloop.index
-        assign option_label = option.name | downcase
+        # The option's name in the shopper's language (the size option is "מידה" in every language
+        # unless translated), already escaped: hence the _html key.
+        capture option_label
+          render 'option-name', name: option.name
+        endcapture
+        assign option_label = option_label | downcase
       -%}
       <fieldset class="variant-picker__option">
         <legend class="variant-picker__legend{% if context == 'bar' %} visually-hidden{% endif %}">
-          {{- 'products.variant_picker.choose' | t: option: option_label -}}
+          {{- 'products.variant_picker.choose_html' | t: option: option_label -}}
         </legend>
         {%- if forloop.first and context != 'bar' and block.settings.show_size_guide -%}
           <button

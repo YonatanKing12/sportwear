@@ -29,7 +29,7 @@
       "kids": "Kids"
     },
     "variant_picker": {
-      "choose": "Choose {{ option }}",
+      "choose_html": "Choose {{ option }}",
       "size_guide": "Size guide",
       "sold_out": "sold out",
       "kids_note": "Sizes are ages in years. The size guide shows the height for each size.",
@@ -59,6 +59,7 @@
     },
     "shipping_note": {
       "delivery": "Delivered within 10\u00a0business\u00a0days",
+      "delivery_short": "Up to 10\u00a0business\u00a0days",
       "free_from": "Free shipping from {{ amount }}",
       "free_all": "Free shipping on every order"
     },

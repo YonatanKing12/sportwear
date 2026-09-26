@@ -41,7 +41,7 @@
     "upsell": {
       "heading": "أكملوا الطقم",
       "add": "إضافة",
-      "option_label": "{{ option }}: {{ title }}",
+      "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "ويصبح التوصيل مجانيًا"
     },
     "note": {

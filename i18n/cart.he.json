@@ -39,7 +39,7 @@
     "upsell": {
       "heading": "השלימו את הסט",
       "add": "הוספה",
-      "option_label": "{{ option }}: {{ title }}",
+      "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "והמשלוח חינם"
     },
     "note": {

@@ -1,10 +1,11 @@
 {%- comment -%}
   Size guide with two parts, Adults and Kids, shown as accessible tabs (ARIA tabs pattern,
   assets/content-tabs.js). Without JavaScript both parts are stacked with their own headings.
-  Adults: the chosen "Size chart" metaobject entry (sw_size_chart) as a table, the same one the
-  product page shows (snippets/size-chart-table.liquid: size, age, height, weight, chest width or
-  chest, length, shorts length), with its fit note; without a chart, guidance on how to measure.
-  Kids: a chosen kids' chart, otherwise the standard table by height (approximate).
+  Each part shows its chosen "Size chart" metaobject entry (sw_size_chart) as a table, the same one
+  the product page shows (snippets/size-chart-table.liquid: size, age, height, weight, chest width or
+  chest, length, shorts length), with its fit note. Without a chart, a part says where the sizes are
+  instead (no numbers of its own, so nothing goes stale). Below the tabs, for both parts: how to
+  measure a garment to compare it with the charts (they measure the garment, not the body).
   Stable anchors: #size-guide-adults and #size-guide-kids open the matching tab.
 {%- endcomment -%}
 {%- liquid
@@ -12,12 +13,11 @@
   if heading == blank
     assign heading = 'size_guide.heading' | t
   endif
-  # Without the section heading, the part titles move up one level (no skipped heading level).
+  # Without the section heading, the part titles and the measuring guide move up one level (no
+  # skipped heading level).
   assign panel_tag = 'h3'
-  assign sub_tag = 'h4'
   unless section.settings.show_heading
     assign panel_tag = 'h2'
-    assign sub_tag = 'h3'
   endunless
 
   assign default_tab = section.settings.default_tab
@@ -102,33 +102,7 @@
               {{- adult_table -}}
             </div>
           {%- else -%}
-            <div class="size-guide__measure">
-              <{{ sub_tag }} class="title-m">{{ 'size_guide.measure.heading' | t }}</{{ sub_tag }}>
-              <p class="size-guide__note">{{ 'size_guide.measure.intro' | t }}</p>
-              <ol class="size-guide__steps" role="list">
-                <li class="size-guide__step">
-                  <span class="size-guide__step-number" aria-hidden="true">1</span>
-                  <div class="size-guide__step-body">
-                    <p class="size-guide__step-title">{{ 'size_guide.measure.chest.title' | t }}</p>
-                    <p>{{ 'size_guide.measure.chest.text' | t }}</p>
-                  </div>
-                </li>
-                <li class="size-guide__step">
-                  <span class="size-guide__step-number" aria-hidden="true">2</span>
-                  <div class="size-guide__step-body">
-                    <p class="size-guide__step-title">{{ 'size_guide.measure.length.title' | t }}</p>
-                    <p>{{ 'size_guide.measure.length.text' | t }}</p>
-                  </div>
-                </li>
-                <li class="size-guide__step">
-                  <span class="size-guide__step-number" aria-hidden="true">3</span>
-                  <div class="size-guide__step-body">
-                    <p class="size-guide__step-title">{{ 'size_guide.measure.compare.title' | t }}</p>
-                    <p>{{ 'size_guide.measure.compare.text' | t }}</p>
-                  </div>
-                </li>
-              </ol>
-            </div>
+            <p class="size-guide__note">{{ 'size_guide.adults_fallback' | t }}</p>
             {%- if request.design_mode -%}
               <p class="size-guide__editor-note">{{ 'size_guide.editor.no_chart' | t }}</p>
             {%- endif -%}
@@ -149,42 +123,42 @@
               {{- kids_table -}}
             </div>
           {%- else -%}
-            {%- liquid
-              assign kid_sizes = '5-6,7-8,9-10,11-12,13-14' | split: ','
-              assign kid_heights = '116,128,140,152,164' | split: ','
-            -%}
-            <div
-              class="size-guide__scroll table-scroll"
-              role="region"
-              tabindex="0"
-              aria-labelledby="size-guide-kids-caption"
-            >
-              <table class="size-guide__table">
-                <caption id="size-guide-kids-caption" class="size-guide__caption">
-                  {{- kids_caption -}}
-                </caption>
-                <thead>
-                  <tr>
-                    <th scope="col">{{ 'size_guide.table.age' | t }}</th>
-                    <th scope="col">{{ 'size_guide.table.approx_height' | t }}</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {%- for kid_size in kid_sizes -%}
-                    <tr>
-                      <th scope="row">
-                        <bdi>{{ kid_size }}</bdi>
-                      </th>
-                      <td>{{ kid_heights[forloop.index0] }}</td>
-                    </tr>
-                  {%- endfor -%}
-                </tbody>
-              </table>
-            </div>
             <p class="size-guide__note">{{ 'size_guide.kids_note' | t }}</p>
+            {%- if request.design_mode -%}
+              <p class="size-guide__editor-note">{{ 'size_guide.editor.no_kids_chart' | t }}</p>
+            {%- endif -%}
           {%- endif -%}
         </section>
       </sw-content-tabs>
+
+      {%- comment -%} How to measure: always shown, it applies to both charts. {%- endcomment -%}
+      <div class="size-guide__measure">
+        <{{ panel_tag }} class="title-m">{{ 'size_guide.measure.heading' | t }}</{{ panel_tag }}>
+        <p class="size-guide__note">{{ 'size_guide.measure.intro' | t }}</p>
+        <ol class="size-guide__steps" role="list">
+          <li class="size-guide__step">
+            <span class="size-guide__step-number" aria-hidden="true">1</span>
+            <div class="size-guide__step-body">
+              <p class="size-guide__step-title">{{ 'size_guide.measure.chest.title' | t }}</p>
+              <p>{{ 'size_guide.measure.chest.text' | t }}</p>
+            </div>
+          </li>
+          <li class="size-guide__step">
+            <span class="size-guide__step-number" aria-hidden="true">2</span>
+            <div class="size-guide__step-body">
+              <p class="size-guide__step-title">{{ 'size_guide.measure.length.title' | t }}</p>
+              <p>{{ 'size_guide.measure.length.text' | t }}</p>
+            </div>
+          </li>
+          <li class="size-guide__step">
+            <span class="size-guide__step-number" aria-hidden="true">3</span>
+            <div class="size-guide__step-body">
+              <p class="size-guide__step-title">{{ 'size_guide.measure.compare.title' | t }}</p>
+              <p>{{ 'size_guide.measure.compare.text' | t }}</p>
+            </div>
+          </li>
+        </ol>
+      </div>
 
       {%- if section.settings.show_help and whatsapp_digits != blank -%}
         <div class="size-guide__help">

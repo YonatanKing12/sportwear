@@ -417,11 +417,11 @@
         },
         "adult_chart": {
           "label": "Adult size chart",
-          "info": "A \"Size chart\" entry from Content > Metaobjects. Without one, measuring tips are shown."
+          "info": "A \"Size chart\" entry from Content > Metaobjects. Without one, the tab says that each product's chart is on its product page."
         },
         "kids_chart": {
           "label": "Kids' size chart",
-          "info": "Optional. Without one, the standard kids' table by height is shown."
+          "info": "A \"Size chart\" entry for kids. Without one, the tab shows a short note on kids' sizes. How to measure is shown below the tabs either way."
         },
         "show_help": {
           "label": "Show WhatsApp help",
@@ -851,13 +851,17 @@
         "size": {
           "name": "Size",
           "settings": {
-            "title": {
+            "size_code": {
               "label": "Size",
-              "info": "As it appears on the kids products, for example 9-10. The word \"years\" is added automatically."
+              "info": "As the kids products name it, for example 16. The age and height below show under it."
             },
-            "height": {
+            "title": {
+              "label": "Age",
+              "info": "The ages this size fits, for example 2-3. Without a size, the age becomes the tile's main label and the word \"years\" is added."
+            },
+            "height_cm": {
               "label": "Height (cm)",
-              "info": "The child's approximate height for this size, numbers only. Leave empty to hide it."
+              "info": "The child's height for this size, a number or a range such as 95-105. Leave empty to hide it."
             }
           }
         }

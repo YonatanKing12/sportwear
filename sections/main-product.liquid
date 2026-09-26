@@ -296,16 +296,22 @@
 
             {%- when 'shipping_note' -%}
               {%- liquid
-                assign delivery_text = block.settings.text | escape
-                if delivery_text == blank
-                  assign delivery_text = 'products.shipping_note.delivery' | t
-                endif
                 assign free_text = ''
                 if block.settings.show_free_shipping
                   if free_all
                     assign free_text = 'products.shipping_note.free_all' | t
                   elsif free_amount != blank
                     assign free_text = 'products.shipping_note.free_from' | t: amount: free_amount
+                  endif
+                endif
+                # Worded and ordered like the announcement bar: the free shipping, then the delivery time,
+                # which is shorter after it ("Up to 10 business days") than on its own.
+                assign delivery_text = block.settings.text | escape
+                if delivery_text == blank
+                  if free_text != blank
+                    assign delivery_text = 'products.shipping_note.delivery_short' | t
+                  else
+                    assign delivery_text = 'products.shipping_note.delivery' | t
                   endif
                 endif
               -%}
@@ -315,9 +321,9 @@
               >
                 {%- render 'icon', name: 'truck', size: 18 -%}
                 <span>
-                  {{- delivery_text -}}
                   {%- # The no-break space keeps the dot at the end of a line when the note wraps. -%}
-                  {%- if free_text != blank %}&nbsp;· {{ free_text }}{% endif -%}
+                  {%- if free_text != blank %}{{ free_text }}&nbsp;· {% endif -%}
+                  {{- delivery_text -}}
                 </span>
               </p>
 

@@ -85,7 +85,7 @@
       },
       "sizes": {
         "title": "Adult and kids' sizes",
-        "text": "Adult sizes and kids' sizes for ages 5 to 14, all in one order."
+        "text": "Adult sizes, and kids' sets in sizes 16\u00a0to\u00a028 (ages about 2\u00a0to\u00a013), all in one order."
       },
       "delivery": {
         "title": "Delivery within 10 business days",
@@ -126,11 +126,11 @@
       },
       "sizing": {
         "question": "How do I choose the right size?",
-        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' sizes go by age, from 5-6 to 13-14, and kids' items are sold as separate products.</p>"
+        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' items are sets of a jersey and shorts in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and the age is shown under each size. Kids' items are sold as separate products.</p>"
       },
       "payment": {
         "question": "How can I pay?",
-        "answer_html": "<p>You can pay by credit card, Apple Pay or Google Pay, on a secure checkout.</p>"
+        "answer_html": "<p>You can pay by credit card, Apple\u00a0Pay or Google\u00a0Pay, on a secure checkout.</p>"
       },
       "team_orders": {
         "question": "Do you take team orders?",
@@ -152,33 +152,31 @@
     "adults": "Adults",
     "kids": "Kids",
     "adults_caption": "Adult size chart",
-    "kids_caption": "Kids' sizes by height (approximate)",
-    "kids_note": "The size is the child's age in years, and heights are approximate. If your child is between two sizes, choose the larger one.",
-    "table": {
-      "age": "Size (age)",
-      "approx_height": "Approximate height (cm)"
-    },
+    "kids_caption": "Kids size chart",
+    "adults_fallback": "Each product's size chart is on its page, next to the size picker.",
+    "kids_note": "Kids' items are sets of a jersey and shorts, in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013. On each product page, the age is shown under each size. Choose by your child's height, and if they're between two sizes, choose the larger one.",
     "measure": {
       "heading": "How to measure",
-      "intro": "Use a soft tape measure, or measure a shirt that fits you well, and compare the results with the size chart on the product page.",
+      "intro": "The charts measure the garment itself, not the body. The easiest way is to measure a shirt that fits well and compare it with the chart.",
       "chest": {
-        "title": "Chest",
-        "text": "Measure around the fullest part of your chest, under your arms, keeping the tape level."
+        "title": "Chest width",
+        "text": "Lay the shirt flat and measure straight across, from armpit to armpit."
       },
       "length": {
         "title": "Length",
         "text": "Measure from the highest point of the shoulder, next to the collar, straight down to the hem."
       },
       "compare": {
-        "title": "Compare with a shirt that fits",
-        "text": "Lay the shirt flat. Measure straight across from armpit to armpit and double it, then measure the length. Compare with the size chart on the product page."
+        "title": "Compare with the chart",
+        "text": "Choose the size closest to your shirt's measurements. If you're between two sizes, choose the larger one."
       }
     },
     "help": "Still not sure? We're happy to help you choose.",
     "whatsapp": "Ask us on WhatsApp",
     "whatsapp_message": "Hi {{ shop }}, I need help choosing a size.",
     "editor": {
-      "no_chart": "Tip: choose an adult size chart in this section's settings to show its measurements here. This note is only shown in the theme editor."
+      "no_chart": "Tip: choose an adult size chart in this section's settings to show its measurements here. This note is only shown in the theme editor.",
+      "no_kids_chart": "Tip: choose a kids size chart in this section's settings to show its measurements here. This note is only shown in the theme editor."
     }
   },
   "not_found": {

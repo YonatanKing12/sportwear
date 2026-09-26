@@ -240,43 +240,64 @@
     "kids_sizes": {
       "type": "kids-sizes",
       "blocks": {
-        "size_5_6": {
+        "size_16": {
           "type": "size",
           "settings": {
+            "size_code": "16",
+            "title": "2-3",
+            "height_cm": "95-105"
+          }
+        },
+        "size_18": {
+          "type": "size",
+          "settings": {
+            "size_code": "18",
+            "title": "4-5",
+            "height_cm": "105-115"
+          }
+        },
+        "size_20": {
+          "type": "size",
+          "settings": {
+            "size_code": "20",
             "title": "5-6",
-            "height": 116
+            "height_cm": "115-125"
           }
         },
-        "size_7_8": {
+        "size_22": {
           "type": "size",
           "settings": {
+            "size_code": "22",
             "title": "7-8",
-            "height": 128
+            "height_cm": "125-135"
           }
         },
-        "size_9_10": {
+        "size_24": {
           "type": "size",
           "settings": {
-            "title": "9-10",
-            "height": 140
+            "size_code": "24",
+            "title": "8-9",
+            "height_cm": "135-145"
           }
         },
-        "size_11_12": {
+        "size_26": {
           "type": "size",
           "settings": {
-            "title": "11-12",
-            "height": 152
+            "size_code": "26",
+            "title": "10-11",
+            "height_cm": "145-155"
           }
         },
-        "size_13_14": {
+        "size_28": {
           "type": "size",
           "settings": {
-            "title": "13-14",
-            "height": 164
+            "size_code": "28",
+            "title": "12-13",
+            "height_cm": "155-165"
           }
         }
       },
-      "block_order": ["size_5_6", "size_7_8", "size_9_10", "size_11_12", "size_13_14"],
+      "block_order": ["size_16", "size_18", "size_20", "size_22", "size_24", "size_26", "size_28"],
       "settings": {
         "color_scheme": "scheme-soft",
         "padding_top": 24,
