@@ -537,6 +537,19 @@
       "text": "From age 5 to 14, with a size chart by height. No guesswork.",
       "button_label": "Shop the kids collection"
     },
+    "kids_sizes": {
+      "eyebrow": "Kids",
+      "heading": "Sizes by age",
+      "text": "Ages 5 to 14. Choose by your child's height.",
+      "years": {
+        "one": "year",
+        "other": "years"
+      },
+      "height_label": "Height",
+      "height_unit": "cm",
+      "button_label": "Shop the kids collection",
+      "secondary_label": "Size guide"
+    },
     "cta_band": {
       "heading": "Ordering for a team?",
       "text": "A quote based on quantity for amateur teams, schools and clubs. Send us a message and we'll get back to you with an offer.",

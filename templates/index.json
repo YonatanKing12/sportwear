@@ -112,12 +112,48 @@
         "padding_bottom": 24
       }
     },
-    "image_with_text": {
-      "type": "image-with-text",
+    "kids_sizes": {
+      "type": "kids-sizes",
+      "blocks": {
+        "size_5_6": {
+          "type": "size",
+          "settings": {
+            "label": "5-6",
+            "height": 116
+          }
+        },
+        "size_7_8": {
+          "type": "size",
+          "settings": {
+            "label": "7-8",
+            "height": 128
+          }
+        },
+        "size_9_10": {
+          "type": "size",
+          "settings": {
+            "label": "9-10",
+            "height": 140
+          }
+        },
+        "size_11_12": {
+          "type": "size",
+          "settings": {
+            "label": "11-12",
+            "height": 152
+          }
+        },
+        "size_13_14": {
+          "type": "size",
+          "settings": {
+            "label": "13-14",
+            "height": 164
+          }
+        }
+      },
+      "block_order": ["size_5_6", "size_7_8", "size_9_10", "size_11_12", "size_13_14"],
       "settings": {
-        "color_scheme": "scheme-day",
-        "bordered": true,
-        "button_link": "shopify://collections/kids",
+        "color_scheme": "scheme-soft",
         "padding_top": 24,
         "padding_bottom": 24
       }
@@ -201,7 +237,7 @@
     "featured_collection",
     "promo_banner",
     "nba",
-    "image_with_text",
+    "kids_sizes",
     "kids",
     "national_teams",
     "cta_band"
