@@ -26,6 +26,10 @@ the real theme preview looks before products reach the Online Store channel. Pro
 in that mode, so pass `--pages` without them, e.g.
 `SW_PREVIEW_EMPTY_STORE=1 node scripts/preview/render.mjs --out qa-output/preview-empty --pages index,collection,search`.
 
+`SW_PREVIEW_DESIGN_MODE=1` sets `request.design_mode` to true, so pages render the way the theme editor
+shows them (for example the header menu keeps links to empty collections that the storefront hides).
+Nothing else about the editor is emulated.
+
 `render.mjs` options: `--theme <dir>` (default: repo root), `--out <dir>`, `--locales he,en,ar`,
 `--pages index,product,…`, `--money-format "₪{{amount}}"`, `--no-editor-attributes`, `--quiet`.
 `serve-and-shoot.mjs` options: `--out`, `--shots`, `--pages`, `--locales`, `--viewports mobile,desktop`,
@@ -106,8 +110,9 @@ axe violations (WCAG 2.0/2.1/2.2 A+AA).
   striped "image not available" marker image (and a gap). Drop a file with the same name there to use it.
 - Not emulated (reported when used): `video`, `metaobject`, `font_picker`, `liquid` settings, app
   blocks, `font_*`, `media_tag` for video/3D, `shopify_asset_url`, customer accounts, the `app` and
-  `checkout` objects, the theme editor (`request.design_mode` is false, but `block.shopify_attributes`
-  is filled, which the live storefront leaves empty; `--no-editor-attributes` turns it off).
+  `checkout` objects, the theme editor (`request.design_mode` is false unless `SW_PREVIEW_DESIGN_MODE=1`, but
+  `block.shopify_attributes` is filled, which the live storefront leaves empty; `--no-editor-attributes`
+  turns it off).
 - Storefront filters: availability, price, size and product type only; option filter param names use
   the (translated) option name. Search is a substring match on titles and tags.
 - Shopify's own strings (sort names, filter labels, page titles such as "Your Shopping Cart") are

@@ -1,0 +1,586 @@
+{%- doc -%}
+  Mega panel of one top-level menu link (desktop, 990px and up), rendered inside its <details> by
+  snippets/header-menu. It overlays the page under the header bar, on a light shopping surface:
+  - start: the link's title, the collection's product count, a "Shop all" button and two sorted
+    shortcuts into the collection (newest first, lowest price first);
+  - middle: an image tile per sub-link (snippets/header-tile), third-level links listed under it;
+  - end: the header's "Mega menu promo" block for this collection, or the collection's first
+    3 products in its own sort order.
+  Every image is lazy, so nothing inside a closed panel is fetched.
+
+  @param {link} link - The top-level menu link
+  @param {number} link_index - Its position in the menu, 1-based (matches hidden_links, makes ids unique)
+  @param {string} [hidden_links] - Positions of links to leave out (see sections/header.liquid)
+  @param {string} [scheme] - Color scheme id of the panel (default 'scheme-day')
+  @param {boolean} [show_featured] - Show the collection's first products (default true)
+  @param {block} [promo] - The header's "mega_promo" block for this menu item
+
+  @example
+  {% render 'header-mega-panel', link: link, link_index: forloop.index, hidden_links: hidden_links, promo: promo %}
+{%- enddoc -%}
+{%- liquid
+  assign hidden = hidden_links | default: ','
+  assign panel_scheme = scheme | default: 'scheme-day'
+
+  assign parent = null
+  assign parent_count = 0
+  if link.type == 'collection_link' and link.object != blank
+    assign parent = link.object
+    assign parent_count = link.object.all_products_count
+  endif
+
+  assign has_url = false
+  if link.url != blank and link.url != '#'
+    assign has_url = true
+  endif
+
+  # Tiles per row: up to 4 in one row, then balanced rows (5-6 tiles: 3 + 3, 7 or more: rows of 4).
+  assign tile_count = 0
+  for child in link.links
+    assign child_key = ',' | append: link_index | append: '-' | append: forloop.index | append: ','
+    unless hidden contains child_key
+      assign tile_count = tile_count | plus: 1
+    endunless
+  endfor
+  assign tile_cols = tile_count
+  if tile_count > 6
+    assign tile_cols = 4
+  elsif tile_count > 4
+    assign tile_cols = 3
+  endif
+
+  assign aside = 'none'
+  if promo
+    assign aside = 'promo'
+  elsif show_featured != false and parent_count > 0
+    assign aside = 'products'
+  endif
+
+  assign tiles_label_id = 'HeaderMegaTiles-' | append: link_index
+  assign products_label_id = 'HeaderMegaProducts-' | append: link_index
+-%}
+<div class="header-mega color-{{ panel_scheme }}">
+  <div class="header-mega__inner page-width{% if aside == 'none' %} header-mega__inner--no-aside{% endif %}">
+    <div class="header-mega__intro">
+      {%- comment -%} The title repeats the toggle's name right before it, so screen readers skip it. {%- endcomment -%}
+      <p class="header-mega__title display-s" aria-hidden="true">{{ link.title | escape }}</p>
+      {%- if parent_count > 0 -%}
+        <p class="header-mega__count">{{ 'header.mega.product_count' | t: count: parent_count }}</p>
+      {%- endif -%}
+      {%- if has_url -%}
+        <a class="header-mega__cta button button--primary" href="{{ link.url }}">
+          <span>
+            {{- 'header.mega.shop_all' | t -}}
+            <span class="visually-hidden">: {{ link.title | escape }}</span>
+          </span>
+          {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+        </a>
+      {%- endif -%}
+      {%- if parent_count > 1 and has_url -%}
+        <ul class="header-mega__shortcuts" role="list">
+          <li>
+            <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=created-descending' }}">
+              <span>{{ 'header.mega.newest' | t }}</span>
+              {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+            </a>
+          </li>
+          <li>
+            <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=price-ascending' }}">
+              <span>{{ 'header.mega.price_ascending' | t }}</span>
+              {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+            </a>
+          </li>
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <div class="header-mega__main">
+      <div class="header-mega__group">
+        <p class="header-mega__label" id="{{ tiles_label_id }}">{{ 'header.mega.categories' | t }}</p>
+        <ul
+          class="header-mega__tiles"
+          role="list"
+          aria-labelledby="{{ tiles_label_id }}"
+          style="--header-tile-cols: {{ tile_cols }};"
+        >
+          {%- for child in link.links -%}
+            {%- liquid
+              assign child_index = forloop.index
+              assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+            -%}
+            {%- unless hidden contains child_key -%}
+              <li class="header-mega__tile">
+                {%- render 'header-tile', link: child, sizes: '(min-width: 1200px) 208px, 168px' -%}
+                {%- if child.links.size > 0 -%}
+                  <ul class="header-mega__sublinks" role="list">
+                    {%- for grandchild in child.links -%}
+                      {%- liquid
+                        assign grandchild_key = ',' | append: link_index | append: '-' | append: child_index
+                        assign grandchild_key = grandchild_key | append: '-' | append: forloop.index | append: ','
+                      -%}
+                      {%- unless hidden contains grandchild_key -%}
+                        <li>
+                          <a
+                            class="header-mega__sublink"
+                            href="{{ grandchild.url }}"
+                            {% if grandchild.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            {{- grandchild.title | escape -}}
+                          </a>
+                        </li>
+                      {%- endunless -%}
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+              </li>
+            {%- endunless -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </div>
+
+    {%- case aside -%}
+      {%- when 'promo' -%}
+        {%- liquid
+          assign promo_image = promo.settings.image
+          assign promo_label = promo.settings.button_label | escape
+          if promo_label == blank
+            assign promo_label = 'header.mega.promo_button' | t
+          endif
+          assign promo_scheme = 'scheme-accent'
+          if promo_image != blank
+            assign promo_scheme = 'scheme-night'
+          endif
+        -%}
+        <div class="header-mega__aside" {{ promo.shopify_attributes }}>
+          <div class="header-mega-promo color-{{ promo_scheme }}{% if promo_image != blank %} header-mega-promo--image{% endif %}">
+            {%- if promo_image != blank -%}
+              {%- render 'image',
+                image: promo_image,
+                sizes: '(min-width: 1200px) 300px, 220px',
+                widths: '220, 300, 440, 600, 900',
+                class: 'header-mega-promo__image'
+              -%}
+            {%- endif -%}
+            <div class="header-mega-promo__content">
+              {%- if promo.settings.eyebrow != blank -%}
+                <p class="header-mega-promo__eyebrow">{{ promo.settings.eyebrow | escape }}</p>
+              {%- endif -%}
+              {%- if promo.settings.heading != blank -%}
+                <p class="header-mega-promo__heading display-s">{{ promo.settings.heading | escape }}</p>
+              {%- endif -%}
+              {%- if promo.settings.text != blank -%}
+                <p class="header-mega-promo__text">{{ promo.settings.text | escape }}</p>
+              {%- endif -%}
+              {%- if promo.settings.link != blank -%}
+                <a class="header-mega-promo__link" href="{{ promo.settings.link }}">
+                  <span>{{ promo_label }}</span>
+                  {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+                </a>
+              {%- endif -%}
+            </div>
+          </div>
+        </div>
+      {%- when 'products' -%}
+        <div class="header-mega__aside">
+          <p class="header-mega__label" id="{{ products_label_id }}">{{ 'header.mega.featured' | t }}</p>
+          <ul class="header-mega__products" role="list" aria-labelledby="{{ products_label_id }}">
+            {%- comment -%} A for loop limit keeps the fetch to 3 products (no paginate here). {%- endcomment -%}
+            {%- for product in parent.products limit: 3 -%}
+              <li class="header-mega-product">
+                <div class="header-mega-product__media media-tile">
+                  {%- render 'image',
+                    image: product.featured_media.preview_image,
+                    sizes: '(min-width: 1200px) 64px, 56px',
+                    widths: '56, 64, 112, 128, 192',
+                    alt: '',
+                    class: 'header-mega-product__image'
+                  -%}
+                </div>
+                <div class="header-mega-product__info">
+                  <a class="header-mega-product__link" href="{{ product.url }}">{{ product.title | escape }}</a>
+                  {%- render 'price', product: product, class: 'header-mega-product__price' -%}
+                </div>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+    {%- endcase -%}
+  </div>
+</div>
+
+{% stylesheet %}
+  .header-mega {
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    z-index: 1;
+    max-block-size: calc(100dvh - var(--header-mega-top, 120px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-shadow: 0 32px 48px -28px rgb(8 9 11 / 0.5);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .header-mega {
+      transition:
+        opacity 180ms var(--ease),
+        translate 180ms var(--ease);
+
+      @starting-style {
+        opacity: 0;
+        translate: 0 -8px;
+      }
+    }
+
+    /* Moving from one open panel to the next swaps them without a fade. */
+    .header-root[data-menu-switch] .header-mega {
+      transition: none;
+    }
+  }
+
+  .header-mega__inner {
+    display: grid;
+    grid-template-columns: 168px minmax(0, 1fr) 200px;
+    gap: var(--space-8) var(--space-6);
+    padding-block: var(--space-8) var(--space-10);
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 220px minmax(0, 1fr) 264px;
+      column-gap: var(--space-10);
+    }
+
+    @media screen and (min-width: 1400px) {
+      grid-template-columns: 240px minmax(0, 1fr) 300px;
+      column-gap: var(--space-12);
+    }
+  }
+
+  .header-mega__inner--no-aside {
+    grid-template-columns: 168px minmax(0, 1fr);
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 220px minmax(0, 1fr);
+    }
+
+    @media screen and (min-width: 1400px) {
+      grid-template-columns: 240px minmax(0, 1fr);
+    }
+  }
+
+  /* Start column */
+  .header-mega__intro {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-inline-size: 0;
+  }
+
+  .header-mega__title {
+    overflow-wrap: anywhere;
+  }
+
+  .header-mega__count {
+    margin-block-start: var(--space-2);
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 600;
+  }
+
+  .header-mega__cta {
+    justify-content: space-between;
+    margin-block-start: var(--space-5);
+    padding-inline: var(--space-5);
+    text-align: start;
+  }
+
+  .header-mega__shortcuts {
+    display: grid;
+    margin: var(--space-4) 0 0;
+    padding: var(--space-1) 0 0;
+    border-block-start: 1px solid var(--color-border);
+    list-style: none;
+  }
+
+  .header-mega__shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    min-block-size: var(--touch-target);
+    color: var(--color-text);
+    font-size: var(--text-md);
+    font-weight: 600;
+    text-decoration: none;
+    text-underline-offset: 4px;
+
+    & .icon {
+      color: var(--color-muted);
+    }
+
+    &:hover {
+      text-decoration-line: underline;
+    }
+  }
+
+  /* Labels above the tiles and the products */
+  .header-mega__label {
+    margin-block-end: var(--space-4);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  :lang(en) .header-mega__label {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Middle column: tiles have a maximum width, so two or three categories never stretch across the
+     panel, and the group of tiles sits in the middle of the free space. The number of columns comes
+     from the number of tiles (see the markup). */
+  .header-mega__main {
+    display: flex;
+    justify-content: center;
+    min-inline-size: 0;
+  }
+
+  .header-mega__group {
+    inline-size: fit-content;
+    max-inline-size: 100%;
+  }
+
+  .header-mega__tiles {
+    display: grid;
+    grid-template-columns: repeat(var(--header-tile-cols, 4), minmax(0, 168px));
+    gap: var(--space-6) var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: repeat(var(--header-tile-cols, 4), minmax(0, 208px));
+      column-gap: var(--space-5);
+    }
+  }
+
+  .header-mega__tile {
+    display: flex;
+    flex-direction: column;
+    min-inline-size: 0;
+  }
+
+  .header-mega__sublinks {
+    display: grid;
+    margin: var(--space-2) 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header-mega__sublink {
+    display: flex;
+    align-items: center;
+    min-block-size: 36px;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    font-weight: 500;
+    text-decoration: none;
+    text-underline-offset: 4px;
+
+    &:hover,
+    &[aria-current='page'] {
+      color: var(--color-text);
+      text-decoration-line: underline;
+    }
+  }
+
+  /* End column */
+  .header-mega__aside {
+    min-inline-size: 0;
+    padding-inline-start: var(--space-6);
+    border-inline-start: 1px solid var(--color-border);
+
+    @media screen and (min-width: 1200px) {
+      padding-inline-start: var(--space-8);
+    }
+
+    @media screen and (min-width: 1400px) {
+      padding-inline-start: var(--space-10);
+    }
+  }
+
+  .header-mega__products {
+    display: grid;
+    gap: var(--space-4);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .header-mega-product {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-3);
+
+    @media screen and (min-width: 1200px) {
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: var(--space-4);
+    }
+  }
+
+  .header-mega-product__media {
+    --media-ratio: 4 / 5;
+  }
+
+  .header-mega-product__image {
+    transition: scale var(--duration) var(--ease);
+  }
+
+  .header-mega-product__info {
+    display: grid;
+    gap: var(--space-1);
+    min-inline-size: 0;
+  }
+
+  .header-mega-product__link {
+    display: -webkit-box;
+    overflow: hidden;
+    color: var(--color-text);
+    font-size: var(--text-md);
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+    text-underline-offset: 3px;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+
+    /* The whole row is the link's target. */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-card);
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::after {
+        outline: 2px solid var(--color-text);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  .header-mega-product__price {
+    font-size: var(--text-md);
+  }
+
+  @media (hover: hover) {
+    .header-mega-product:hover .header-mega-product__link {
+      text-decoration-line: underline;
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .header-mega-product:hover .header-mega-product__image {
+      scale: 1.05;
+    }
+  }
+
+  /* Promo card (a "Mega menu promo" block) */
+  .header-mega-promo {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--space-2);
+    min-block-size: 280px;
+    block-size: 100%;
+    max-block-size: 420px;
+    padding: var(--space-6);
+    overflow: hidden;
+    border-radius: var(--radius-card);
+  }
+
+  .header-mega-promo__image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+    transition: scale var(--duration) var(--ease);
+  }
+
+  .header-mega-promo--image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to top, rgb(8 9 11 / 0.92) 15%, rgb(8 9 11 / 0.25) 80%);
+  }
+
+  .header-mega-promo__content {
+    display: grid;
+    gap: var(--space-2);
+    justify-items: start;
+  }
+
+  .header-mega-promo__eyebrow {
+    color: var(--color-accent-text);
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+
+  .header-mega-promo__text {
+    color: var(--color-muted);
+    font-size: var(--text-md);
+  }
+
+  /* Over a photo, secondary text keeps full contrast. */
+  .header-mega-promo--image .header-mega-promo__text {
+    color: var(--color-text);
+  }
+
+  .header-mega-promo__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    min-block-size: var(--touch-target);
+    color: inherit;
+    font-weight: 800;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+
+    /* The whole card is the link's target. */
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus-visible {
+      outline: none;
+
+      &::before {
+        outline: 2px solid var(--color-text);
+        outline-offset: -4px;
+        border-radius: var(--radius-card);
+      }
+    }
+  }
+
+  @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+    .header-mega-promo:hover .header-mega-promo__image {
+      scale: 1.04;
+    }
+  }
+{% endstylesheet %}

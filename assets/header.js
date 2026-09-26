@@ -2,13 +2,22 @@
  * SportWear header components. ES module loaded by sections/header.liquid and, when it has more than
  * one message, sections/announcement-bar.liquid (the browser runs it once).
  *
- *   <sw-header>            sticky behaviour, --header-height, desktop dropdowns, menu drawer extras
+ *   <sw-header>            sticky behaviour, --header-height, the desktop mega menu and dropdowns
+ *   <sw-drill-menu>        drill-down category panels in the mobile menu drawer
  *   <sw-announcement-bar>  calm carousel for two to five announcements
  */
 import { EVENTS, closeDrawer, prefersReducedMotion, subscribe } from '@theme/core';
 
 /** Scroll distance (px) that counts as a deliberate scroll up or down. */
 const SCROLL_THRESHOLD = 8;
+/** Hover intent: how long the mouse rests on a menu item before its panel opens (ms). */
+const OPEN_DELAY = 140;
+/** Grace period after the mouse leaves an item and its panel, so a slip does not close it (ms). */
+const CLOSE_DELAY = 260;
+/** The mega menu exists from this width (sections/header.liquid shows the menu button below it). */
+const desktopQuery = window.matchMedia('(min-width: 990px)');
+/** Only a real mouse opens panels on hover; touch and pens open them with a tap. */
+const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
 
 /* ---------------------------------------------------------------------------------------------
  * <sw-header data-sticky="none|always|scroll-up">
@@ -19,11 +28,20 @@ const SCROLL_THRESHOLD = 8;
  * `top: var(--header-height, 0px)` (base.css already uses it for scroll-padding).
  *
  * "scroll-up": the header hides while the visitor scrolls down and comes back when they scroll up,
- * when focus moves into it, or near the top of the page. It never hides while a dropdown is open
- * or keyboard focus is inside it.
+ * when focus moves into it, or near the top of the page. It never hides while keyboard focus is
+ * inside it. Hiding closes any open panel or dropdown.
  *
- * Dropdowns (<details> in the header bar, including the language switcher): one open at a time,
- * Escape closes and returns focus to the toggle, a click outside or focus leaving closes.
+ * Mega menu (details[data-mega] in snippets/header-menu): the details/summary base works without
+ * JavaScript; this adds
+ * - hover intent for mouse users: a panel opens after the pointer rests on its item for OPEN_DELAY
+ *   and closes CLOSE_DELAY after the pointer leaves both the item and the panel (WCAG 1.4.13:
+ *   the panel can be hovered, stays until dismissed, and Escape dismisses it);
+ * - a click on an item that hover has just opened pins the panel open instead of closing it;
+ * - one panel at a time (the details share name="HeaderMenu"), Escape closes and returns focus to
+ *   the item, a click outside (on the dimmed page) closes, focus leaving the item closes;
+ * - panels close when the header hides, when a drawer or the search opens, and below 990px.
+ * Other dropdowns in the bar (the language switcher) share the outside click, focus and Escape
+ * handling.
  * ------------------------------------------------------------------------------------------- */
 class SwHeader extends HTMLElement {
   /** @type {AbortController | null} */
@@ -39,6 +57,14 @@ class SwHeader extends HTMLElement {
   #lastScrollY = 0;
   #naturalTop = 0;
   #frame = 0;
+  /** @type {HTMLDetailsElement[]} the mega menu disclosures */
+  #menus = [];
+  #openTimer = 0;
+  /** @type {HTMLDetailsElement | null} the panel waiting for its hover delay */
+  #openTarget = null;
+  #closeTimer = 0;
+  /** @type {HTMLDetailsElement | null} the panel waiting for its grace period */
+  #closeTarget = null;
 
   get #mode() {
     return this.dataset.sticky ?? 'none';
@@ -49,6 +75,9 @@ class SwHeader extends HTMLElement {
     const { signal } = this.#abort;
     this.#bar = this.querySelector('.header');
     this.#stickyElement = /** @type {HTMLElement} */ (this.closest('.header-section') ?? this);
+    this.#menus = [...this.querySelectorAll('details[data-mega]')].filter(
+      (details) => details instanceof HTMLDetailsElement,
+    );
 
     if (this.#bar) {
       this.#resizeObserver = new ResizeObserver(() => this.#measure());
@@ -59,12 +88,34 @@ class SwHeader extends HTMLElement {
       this.#bar.addEventListener('focusout', this.#onFocusOut, { signal });
     }
 
+    for (const details of this.#menus) {
+      details.parentElement?.addEventListener('pointerenter', this.#onItemEnter, { signal });
+      details.parentElement?.addEventListener('pointerleave', this.#onItemLeave, { signal });
+      details.querySelector(':scope > summary')?.addEventListener('click', this.#onSummaryClick, { signal });
+    }
+
+    this.#lastScrollY = window.scrollY;
+    this.#updateNaturalTop();
+    window.addEventListener('scroll', this.#onScroll, { passive: true, signal });
     if (this.#mode === 'scroll-up') {
-      this.#lastScrollY = window.scrollY;
-      this.#updateNaturalTop();
-      window.addEventListener('scroll', this.#onScroll, { passive: true, signal });
       this.addEventListener('focusin', () => this.#setHidden(false), { signal });
     }
+
+    desktopQuery.addEventListener(
+      'change',
+      () => {
+        if (!desktopQuery.matches) this.#closeMenus();
+      },
+      { signal },
+    );
+    // Back/forward cache: a page restored after a click in a panel comes back with the panel closed.
+    window.addEventListener(
+      'pageshow',
+      (event) => {
+        if (event.persisted) this.#closeDropdowns();
+      },
+      { signal },
+    );
 
     document.addEventListener('keydown', this.#onKeydown, { signal });
     document.addEventListener('click', this.#onDocumentClick, { signal });
@@ -78,11 +129,30 @@ class SwHeader extends HTMLElement {
     });
     signal.addEventListener('abort', unsubscribe);
 
-    // Theme editor: bring the header back into view when its section is selected.
+    // Theme editor: bring the header back into view when its section is selected, and show the
+    // panel of a selected "Mega menu promo" block.
     document.addEventListener(
       'shopify:section:select',
       (event) => {
         if (event.target instanceof Node && event.target.contains(this)) this.#setHidden(false);
+      },
+      { signal },
+    );
+    document.addEventListener(
+      'shopify:block:select',
+      (event) => {
+        const details = this.#menuContaining(event.target);
+        if (!details) return;
+        this.#setHidden(false);
+        this.#openMenu(details, 'editor');
+      },
+      { signal },
+    );
+    document.addEventListener(
+      'shopify:block:deselect',
+      (event) => {
+        const details = this.#menuContaining(event.target);
+        if (details) details.open = false;
       },
       { signal },
     );
@@ -93,6 +163,8 @@ class SwHeader extends HTMLElement {
     this.#resizeObserver?.disconnect();
     cancelAnimationFrame(this.#frame);
     this.#frame = 0;
+    this.#cancelOpen();
+    this.#cancelClose();
     this.#stickyElement.removeAttribute('data-header-hidden');
     document.documentElement.style.removeProperty('--header-height');
   }
@@ -117,6 +189,14 @@ class SwHeader extends HTMLElement {
   };
 
   #updateOnScroll() {
+    if (this.#mode !== 'scroll-up') {
+      // Sticky "none": once the bar has scrolled out of view, its panel would leave only a dimmed page.
+      if (this.#mode === 'none' && this.#openMenus().length && (this.#bar?.getBoundingClientRect().bottom ?? 0) <= 0) {
+        this.#closeMenus();
+      }
+      return;
+    }
+
     const scrollY = Math.max(window.scrollY, 0);
     if (!this.#hidden) this.#updateNaturalTop();
 
@@ -145,42 +225,162 @@ class SwHeader extends HTMLElement {
   }
 
   /**
-   * Keyboard focus inside the bar or an open dropdown keeps the header in place. Focus that only
-   * returned to a button after a tap (e.g. closing the menu drawer) does not.
+   * Keyboard focus inside the bar (a visitor tabbing through a panel or dropdown) keeps the header in
+   * place. Focus that only returned to a button after a tap or click does not, and neither does a
+   * panel opened with the mouse: it closes as the header hides.
    */
   #isBusy() {
-    return Boolean(this.#bar?.querySelector(':focus-visible') || this.#openDropdowns().length);
+    return Boolean(this.#bar?.querySelector(':focus-visible'));
   }
 
   /** @param {boolean} hidden */
   #setHidden(hidden) {
     if (this.#mode !== 'scroll-up' || hidden === this.#hidden) return;
     this.#hidden = hidden;
+    if (hidden) this.#closeDropdowns();
     this.#stickyElement.toggleAttribute('data-header-hidden', hidden);
     this.#publishHeight();
   }
 
-  /** @returns {HTMLDetailsElement[]} */
+  /** @returns {HTMLDetailsElement[]} every open dropdown in the bar (mega panels, language) */
   #openDropdowns() {
     return this.#bar ? [...this.#bar.querySelectorAll('details[open]')] : [];
   }
 
+  #openMenus() {
+    return this.#menus.filter((details) => details.open);
+  }
+
   #closeDropdowns() {
+    this.#cancelOpen();
+    this.#cancelClose();
     for (const details of this.#openDropdowns()) details.open = false;
   }
+
+  #closeMenus() {
+    this.#cancelOpen();
+    this.#cancelClose();
+    for (const details of this.#openMenus()) details.open = false;
+  }
+
+  /**
+   * @param {EventTarget | null} target
+   * @returns {HTMLDetailsElement | null} the mega menu disclosure that contains target
+   */
+  #menuContaining(target) {
+    if (!(target instanceof Element)) return null;
+    const details = target.closest('details[data-mega]');
+    return details instanceof HTMLDetailsElement && this.#menus.includes(details) ? details : null;
+  }
+
+  /**
+   * @param {HTMLDetailsElement} details
+   * @param {'hover' | 'click' | 'editor'} source - hover-opened panels close when the pointer leaves
+   */
+  #openMenu(details, source) {
+    // Moving from one open panel to another swaps them without replaying the fade-in.
+    if (this.#menus.some((other) => other !== details && other.open)) {
+      this.setAttribute('data-menu-switch', '');
+      requestAnimationFrame(() => requestAnimationFrame(() => this.removeAttribute('data-menu-switch')));
+    }
+    this.#setPanelTop();
+    details.dataset.openedBy = source;
+    details.open = true;
+  }
+
+  /** The panel may fill the viewport below the bar; beyond that it scrolls inside. */
+  #setPanelTop() {
+    const bottom = this.#bar?.getBoundingClientRect().bottom ?? 0;
+    this.style.setProperty('--header-mega-top', `${Math.max(Math.round(bottom), 0)}px`);
+  }
+
+  #cancelOpen() {
+    clearTimeout(this.#openTimer);
+    this.#openTarget = null;
+  }
+
+  #cancelClose() {
+    clearTimeout(this.#closeTimer);
+    this.#closeTarget = null;
+  }
+
+  /** @param {PointerEvent} event */
+  #hoverApplies(event) {
+    return event.pointerType === 'mouse' && hoverQuery.matches && desktopQuery.matches;
+  }
+
+  /** @param {PointerEvent} event */
+  #onItemEnter = (event) => {
+    if (!this.#hoverApplies(event)) return;
+    const details = this.#menuContaining(/** @type {Element} */ (event.currentTarget).firstElementChild);
+    if (!details) return;
+    if (this.#closeTarget === details) this.#cancelClose();
+    if (details.open || this.#openTarget === details) return;
+    this.#cancelOpen();
+    this.#openTarget = details;
+    this.#openTimer = window.setTimeout(() => {
+      this.#openTarget = null;
+      this.#openMenu(details, 'hover');
+    }, OPEN_DELAY);
+  };
+
+  /** @param {PointerEvent} event */
+  #onItemLeave = (event) => {
+    if (!this.#hoverApplies(event)) return;
+    const details = this.#menuContaining(/** @type {Element} */ (event.currentTarget).firstElementChild);
+    if (!details) return;
+    if (this.#openTarget === details) this.#cancelOpen();
+    if (!details.open || details.dataset.openedBy !== 'hover') return;
+    this.#cancelClose();
+    this.#closeTarget = details;
+    this.#closeTimer = window.setTimeout(() => {
+      this.#closeTarget = null;
+      if (details.dataset.openedBy === 'hover') details.open = false;
+    }, CLOSE_DELAY);
+  };
+
+  /**
+   * Toggles a panel on click, Enter or Space. A panel that hover opened a moment ago stays open
+   * (the click pins it) instead of closing under the pointer.
+   * @param {MouseEvent} event
+   */
+  #onSummaryClick = (event) => {
+    const details = /** @type {HTMLElement} */ (event.currentTarget).parentElement;
+    if (!(details instanceof HTMLDetailsElement)) return;
+    event.preventDefault();
+    this.#cancelOpen();
+    this.#cancelClose();
+    if (!details.open) {
+      this.#openMenu(details, 'click');
+    } else if (details.dataset.openedBy === 'hover') {
+      details.dataset.openedBy = 'click';
+    } else {
+      details.open = false;
+    }
+  };
 
   /** @param {Event} event */
   #onToggle = (event) => {
     const details = event.target;
-    if (!(details instanceof HTMLDetailsElement) || !details.open) return;
+    if (!(details instanceof HTMLDetailsElement)) return;
+    if (!details.open) {
+      delete details.dataset.openedBy;
+      return;
+    }
     for (const other of this.#openDropdowns()) {
       if (other !== details && !other.contains(details)) other.open = false;
+    }
+    if (this.#menus.includes(details) && !details.dataset.openedBy) {
+      // Opened some other way (e.g. before this script ran).
+      details.dataset.openedBy = 'click';
+      this.#setPanelTop();
     }
   };
 
   /** @param {KeyboardEvent} event */
   #onKeydown = (event) => {
     if (event.key !== 'Escape' || event.defaultPrevented) return;
+    this.#cancelOpen();
     const focused = document.activeElement;
     for (const details of this.#openDropdowns()) {
       details.open = false;
@@ -222,6 +422,98 @@ class SwHeader extends HTMLElement {
     const { pathname, search } = window.location;
     if (link.pathname === pathname && link.search === search) closeDrawer('MenuDrawer');
   };
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * <sw-drill-menu> (the menu drawer's body, snippets/menu-drawer)
+ *
+ * Turns the first-level disclosures (details[data-drill]) into drill-down panels: opening one
+ * slides its panel over the list (CSS in snippets/menu-drawer) and moves focus to the panel's back
+ * button; the back button or Escape closes the panel and returns focus to its row (a second Escape
+ * closes the drawer). The drawer starts on the first level every time it opens. Without JavaScript
+ * the same markup works as accordions.
+ * ------------------------------------------------------------------------------------------- */
+class SwDrillMenu extends HTMLElement {
+  /** @type {AbortController | null} */
+  #abort = null;
+  /** @type {HTMLDetailsElement | null} the open panel */
+  #current = null;
+
+  connectedCallback() {
+    this.#abort = new AbortController();
+    const { signal } = this.#abort;
+    this.addEventListener('toggle', this.#onToggle, { capture: true, signal });
+    this.addEventListener('click', this.#onClick, { signal });
+    const dialog = this.closest('dialog');
+    dialog?.addEventListener('keydown', this.#onKeydown, { signal });
+    dialog?.addEventListener('close', () => this.#reset(), { signal });
+
+    const open = this.querySelector('details[data-drill][open]');
+    if (open instanceof HTMLDetailsElement) this.#enter(open, false);
+  }
+
+  disconnectedCallback() {
+    this.#abort?.abort();
+  }
+
+  /** @param {Event} event */
+  #onToggle = (event) => {
+    const details = event.target;
+    if (!(details instanceof HTMLDetailsElement) || !details.hasAttribute('data-drill')) return;
+    if (details.open) this.#enter(details, true);
+    else if (details === this.#current) this.#leave();
+  };
+
+  /**
+   * @param {HTMLDetailsElement} details
+   * @param {boolean} moveFocus
+   */
+  #enter(details, moveFocus) {
+    for (const other of this.querySelectorAll('details[data-drill][open]')) {
+      if (other !== details && other instanceof HTMLDetailsElement) other.open = false;
+    }
+    this.#current = details;
+    this.setAttribute('data-drilled', '');
+    const panel = details.querySelector('.menu-drawer__panel');
+    if (panel) panel.scrollTop = 0;
+    if (moveFocus) {
+      /** @type {HTMLElement | null} */ (details.querySelector('[data-drill-back]'))?.focus({ preventScroll: true });
+    }
+  }
+
+  #leave() {
+    this.#current = null;
+    this.removeAttribute('data-drilled');
+  }
+
+  /** Closes the open panel and puts focus back on its row. */
+  #back() {
+    const details = this.#current;
+    if (!details) return;
+    details.open = false;
+    this.#leave();
+    /** @type {HTMLElement | null} */ (details.querySelector(':scope > summary'))?.focus();
+  }
+
+  /** @param {MouseEvent} event */
+  #onClick = (event) => {
+    if (event.target instanceof Element && event.target.closest('[data-drill-back]')) this.#back();
+  };
+
+  /** @param {KeyboardEvent} event */
+  #onKeydown = (event) => {
+    if (event.key !== 'Escape' || !this.#current) return;
+    // Escape steps back to the first level before it closes the drawer.
+    event.preventDefault();
+    this.#back();
+  };
+
+  #reset() {
+    for (const details of this.querySelectorAll('details[data-drill][open]')) {
+      if (details instanceof HTMLDetailsElement) details.open = false;
+    }
+    this.#leave();
+  }
 }
 
 /* ---------------------------------------------------------------------------------------------
@@ -383,4 +675,5 @@ class SwAnnouncementBar extends HTMLElement {
 }
 
 if (!customElements.get('sw-header')) customElements.define('sw-header', SwHeader);
+if (!customElements.get('sw-drill-menu')) customElements.define('sw-drill-menu', SwDrillMenu);
 if (!customElements.get('sw-announcement-bar')) customElements.define('sw-announcement-bar', SwAnnouncementBar);
