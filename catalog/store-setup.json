@@ -13,7 +13,9 @@
   "themes": {
     "live (MAIN, do not touch)": "gid://shopify/OnlineStoreTheme/188515483952 (Horizon placeholder)",
     "SportWear (dev), unpublished": "gid://shopify/OnlineStoreTheme/188519711024",
-    "_note": "Preview: Online Store → Themes → SportWear (dev) → Preview. Two stray test files (sections/zz-test-null.liquid, sections/zz-test-plain.liquid) are in the dev theme; the connector can't delete files, so remove them in the code editor or ignore them (they have no presets and never render)."
+    "_note": "Preview: Online Store → Themes → SportWear (dev) → Preview. Two stray test files (sections/zz-test-null.liquid, sections/zz-test-plain.liquid) are in the dev theme; the connector can't delete files, so remove them in the code editor or ignore them (they have no presets and never render).",
+    "deployed_commit": "d42d0ae",
+    "_deploy_note": "Files changed since deployed_commit need uploading: git diff --name-only <deployed_commit> HEAD -- layout templates sections blocks snippets assets config locales"
   },
   "metaobject_definitions": {
     "sw_league": "gid://shopify/MetaobjectDefinition/22150512944",
