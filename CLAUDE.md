@@ -34,12 +34,12 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | password-protected |
-| Catalog | The owner is importing products (about 1,100 by 2026-09-26, tag `source:yupoo`), 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision |
+| Catalog | The owner is importing products (about 1,100 by 2026-09-26, tag `source:yupoo`), 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Wave 1 from jerseyxie: 128 DRAFT products (tag `source:jerseyxie`, files in `catalog/published/`), waiting for the owner's review on https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af and an explicit "activate" |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 19 smart collections, 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
 | Shipping | Israel: free on every order, up to 10 business days (since 2026-09-26). An international zone (27 countries, ₪58) is still active, waiting on the owner |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |
