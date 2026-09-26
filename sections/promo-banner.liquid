@@ -1,3 +1,9 @@
+{%- comment -%}
+  Promo banner (home): a compact panel that pairs two products, e.g. a jersey and the shorts of the
+  same team, shown as regular product cards with a "+" between them, next to a short pitch and one
+  button. Without products it shows the text and the button only; in the theme editor, empty
+  product slots show placeholder cards.
+{%- endcomment -%}
 {%- liquid
   assign scheme_class = 'color-' | append: section.settings.color_scheme.id
   assign full_width = section.settings.full_width
@@ -23,27 +29,28 @@
   endif
   assign button_link = section.settings.button_link | default: routes.all_products_collection_url
 
-  assign figure_1 = section.settings.image_1
-  assign figure_2 = section.settings.image_2
-  if figure_1 == blank
-    assign figure_1 = section.settings.image_2
-    assign figure_2 = section.settings.image_1
+  assign product_1 = section.settings.product_1
+  assign product_2 = section.settings.product_2
+  assign set_count = 0
+  if product_1 != blank
+    assign set_count = set_count | plus: 1
   endif
-  assign figure_count = 0
-  if figure_1 != blank
-    assign figure_count = 1
-  endif
-  if figure_2 != blank
-    assign figure_count = 2
+  if product_2 != blank
+    assign set_count = set_count | plus: 1
   endif
 
-  # A product shot is 56% of the media column: about 32% of the panel's inner width on phones
-  # (100vw - 88px), and 27% of the two-column panel from 750px, capped by the 520px media box.
-  assign figure_sizes = '(min-width: 750px) calc(min(292px, (100vw - 208px) * 0.27)), calc((100vw - 88px) * 0.32)'
+  assign show_placeholders = false
+  if set_count == 0 and request.design_mode
+    assign show_placeholders = true
+  endif
 
-  assign figure_loading = 'lazy'
-  unless section.index > 1
-    assign figure_loading = 'eager'
+  # A card is 180px wide from 990px, 160px on tablets, and half the panel on phones
+  # (100vw less the page gutters, the panel padding and the gap that holds the "+").
+  assign card_sizes = '(min-width: 990px) 180px, (min-width: 750px) 160px, calc((100vw - 108px) / 2)'
+
+  assign card_loading = 'lazy'
+  unless section.index > 2
+    assign card_loading = 'eager'
   endunless
 -%}
 
@@ -52,56 +59,38 @@
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
-    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %} promo-banner__panel--media">
-      {%- if section.settings.show_eyebrow -%}
-        <p class="promo-banner__eyebrow eyebrow">{{ eyebrow }}</p>
-      {%- endif -%}
+    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %}{% if set_count > 0 or show_placeholders %} promo-banner__panel--set{% endif %}">
+      <div class="promo-banner__content">
+        {%- if section.settings.show_eyebrow -%}
+          <p class="promo-banner__eyebrow eyebrow">{{ eyebrow }}</p>
+        {%- endif -%}
+        <h2 class="promo-banner__heading display-l">{{ heading }}</h2>
+        <p class="promo-banner__text">{{ text }}</p>
+      </div>
 
-      <h2 class="promo-banner__heading display-xl">{{ heading }}</h2>
-
-      {%- if figure_count > 0 -%}
-        <div class="promo-banner__media{% if figure_count == 1 %} promo-banner__media--single{% endif %}">
-          <div class="promo-banner__figure">
-            {%- render 'image',
-              image: figure_1,
-              sizes: figure_sizes,
-              widths: '160, 240, 320, 480, 640, 800',
-              loading: figure_loading,
-              class: 'promo-banner__image'
-            -%}
-          </div>
-          {%- if figure_2 != blank -%}
-            <div class="promo-banner__figure promo-banner__figure--second">
-              {%- render 'image',
-                image: figure_2,
-                sizes: figure_sizes,
-                widths: '160, 240, 320, 480, 640, 800',
-                loading: figure_loading,
-                class: 'promo-banner__image'
-              -%}
-            </div>
+      {%- if set_count > 0 or show_placeholders -%}
+        <ul class="promo-banner__set{% if set_count == 1 %} promo-banner__set--single{% endif %}" role="list">
+          {%- if show_placeholders -%}
+            <li class="promo-banner__item">
+              {%- render 'product-card', product: blank, sizes: card_sizes -%}
+            </li>
+            <li class="promo-banner__item">
+              {%- render 'product-card', product: blank, sizes: card_sizes -%}
+            </li>
+          {%- else -%}
+            {%- if product_1 != blank -%}
+              <li class="promo-banner__item">
+                {%- render 'product-card', product: product_1, sizes: card_sizes, loading: card_loading -%}
+              </li>
+            {%- endif -%}
+            {%- if product_2 != blank -%}
+              <li class="promo-banner__item">
+                {%- render 'product-card', product: product_2, sizes: card_sizes, loading: card_loading -%}
+              </li>
+            {%- endif -%}
           {%- endif -%}
-        </div>
-      {%- else -%}
-        {%- comment -%} No product shots chosen yet: a drawn tank and shorts keep the set composition. {%- endcomment -%}
-        <div class="promo-banner__media promo-banner__media--art" aria-hidden="true">
-          <div class="promo-banner__figure">
-            <svg class="promo-banner__image" viewBox="0 0 200 200" focusable="false">
-              <path class="promo-banner__art-body" d="M64 22L82 22C86 46 114 46 118 22L136 22C140 56 150 72 160 78L156 178Q100 184 44 178L40 78C50 72 60 56 64 22Z"/>
-              <path class="promo-banner__art-trim" d="M40 80L49 82L52 179L44 178Z M160 80L151 82L148 179L156 178Z"/>
-              <path class="promo-banner__art-line" d="M82 22C86 46 114 46 118 22M64 22C60 56 50 72 40 78M136 22C140 56 150 72 160 78"/>
-            </svg>
-          </div>
-          <div class="promo-banner__figure promo-banner__figure--second">
-            <svg class="promo-banner__image" viewBox="0 0 200 200" focusable="false">
-              <path class="promo-banner__art-body" d="M40 30L160 30L160 44L172 168L108 176L100 112L92 176L28 168L40 44Z"/>
-              <path class="promo-banner__art-trim" d="M40 30H160V44H40Z M40 46L50 46L40 169L28 168Z M160 46L150 46L160 169L172 168Z"/>
-            </svg>
-          </div>
-        </div>
+        </ul>
       {%- endif -%}
-
-      <p class="promo-banner__text">{{ text }}</p>
 
       <a class="button button--primary promo-banner__button" href="{{ button_link }}">{{ button_label }}</a>
     </div>
@@ -109,20 +98,13 @@
 </div>
 
 {% stylesheet %}
-  /* Mobile follows the board: label, then the heading beside the product shots, then text and a full-width button. */
+  /* Phones: the pitch, the two cards side by side, then a full-width button. */
   .promo-banner__panel {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: 'eyebrow' 'heading' 'text' 'button';
-    align-items: center;
-    column-gap: var(--space-2);
+    grid-template-areas: 'content' 'set' 'button';
     padding: var(--space-6) var(--space-5);
     border-radius: var(--radius-card);
-  }
-
-  .promo-banner__panel--media {
-    grid-template-columns: minmax(min-content, 1fr) minmax(0, 1.3fr);
-    grid-template-areas: 'eyebrow eyebrow' 'heading media' 'text text' 'button button';
   }
 
   .promo-banner--full .promo-banner__panel {
@@ -130,99 +112,98 @@
     border-radius: 0;
   }
 
-  .promo-banner__eyebrow {
-    grid-area: eyebrow;
+  .promo-banner__content {
+    grid-area: content;
   }
 
   .promo-banner__heading {
-    grid-area: heading;
-    margin-block-start: var(--space-3);
+    margin-block-start: var(--space-2);
     overflow-wrap: break-word;
 
     @media screen and (max-width: 749px) {
-      font-size: calc(50px * var(--heading-scale, 1) * var(--display-lang-scale));
+      font-size: calc(40px * var(--heading-scale, 1) * var(--display-lang-scale));
     }
   }
 
-  .promo-banner__media {
-    grid-area: media;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-block-start: var(--space-3);
-  }
-
-  .promo-banner__figure {
-    flex: 0 0 56%;
-    aspect-ratio: 1;
-  }
-
-  .promo-banner__figure--second {
-    flex-basis: 50%;
-    margin-block-start: 12%;
-    margin-inline-start: -6%;
-  }
-
-  .promo-banner__media--single .promo-banner__figure {
-    flex-basis: 80%;
-  }
-
-  .promo-banner__image {
-    inline-size: 100%;
-    block-size: 100%;
-    object-fit: contain;
-  }
-
-  .promo-banner__art-body {
-    fill: #0d0e11;
-  }
-
-  .promo-banner__art-trim {
-    fill: #ffffff;
-  }
-
-  .promo-banner__art-line {
-    fill: none;
-    stroke: #ffffff;
-    stroke-width: 4.5;
-    stroke-linecap: round;
-  }
-
-  .promo-banner__media--art svg {
-    filter: drop-shadow(0 6px 10px rgb(0 0 0 / 0.18));
-  }
-
   .promo-banner__text {
-    grid-area: text;
-    max-inline-size: 36em;
-    margin-block-start: var(--space-4);
+    max-inline-size: 34em;
+    margin-block-start: var(--space-3);
     font-size: var(--text-md);
     font-weight: 600;
     line-height: 1.5;
   }
 
+  /* The two cards with a "+" in the gap between them. Square tiles keep the banner short (supplier
+     photos are square). */
+  .promo-banner__set {
+    --set-gap: 36px;
+    --card-ratio: 1 / 1;
+    grid-area: set;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--set-gap);
+    margin-block-start: var(--space-5);
+  }
+
+  .promo-banner__set--single {
+    grid-template-columns: minmax(0, 1fr);
+    max-inline-size: 240px;
+  }
+
+  .promo-banner__item {
+    position: relative;
+    min-inline-size: 0;
+  }
+
+  /* The "+" is centred in the gap and on the image tile: a percentage margin resolves against the
+     card's width, and the tile is that width divided by the card ratio (theme setting). */
+  .promo-banner__item + .promo-banner__item::before {
+    content: '+';
+    content: '+' / '';
+    position: absolute;
+    z-index: 2;
+    inset-block-start: 0;
+    inset-inline-start: calc(var(--set-gap) / -2 - 16px);
+    margin-block-start: calc(50% / (var(--card-ratio, 4 / 5)) - 16px);
+    display: grid;
+    place-items: center;
+    inline-size: 32px;
+    block-size: 32px;
+    border-radius: 50%;
+    background: var(--color-button);
+    color: var(--color-button-label);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
   .promo-banner__button {
     grid-area: button;
-    margin-block-start: var(--space-4);
+    margin-block-start: var(--space-5);
   }
 
   @media screen and (min-width: 750px) {
     .promo-banner__panel {
-      padding: var(--space-10) var(--space-12);
+      padding: var(--space-6) var(--space-10);
     }
 
-    /* Content on the start side, product shots on the end side, vertically centered. */
-    .promo-banner__panel--media {
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      grid-template-rows: 1fr auto auto auto auto 1fr;
-      grid-template-areas: '. media' 'eyebrow media' 'heading media' 'text media' 'button media' '. media';
-      column-gap: var(--space-12);
+    /* Pitch and button on the start side, the cards on the end side. */
+    .promo-banner__panel--set {
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-rows: 1fr auto auto 1fr;
+      grid-template-areas: '. set' 'content set' 'button set' '. set';
+      column-gap: var(--space-10);
     }
 
-    .promo-banner__media {
-      justify-self: center;
-      inline-size: min(100%, 520px);
+    .promo-banner__set {
+      --set-gap: 40px;
+      grid-template-columns: repeat(2, 160px);
+      align-self: center;
       margin-block-start: 0;
+    }
+
+    .promo-banner__set--single {
+      grid-template-columns: 160px;
     }
 
     .promo-banner__text {
@@ -231,8 +212,23 @@
 
     .promo-banner__button {
       justify-self: start;
-      min-inline-size: 240px;
+      min-inline-size: 220px;
       margin-block-start: var(--space-6);
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .promo-banner__panel {
+      padding: var(--space-6) var(--space-12);
+    }
+
+    .promo-banner__set {
+      --set-gap: 48px;
+      grid-template-columns: repeat(2, 180px);
+    }
+
+    .promo-banner__set--single {
+      grid-template-columns: 180px;
     }
   }
 {% endstylesheet %}
@@ -255,6 +251,24 @@
       "id": "full_width",
       "label": "t:settings.full_width",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.promo_banner.headers.products"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.promo_banner.settings.products_info.content"
+    },
+    {
+      "type": "product",
+      "id": "product_1",
+      "label": "t:sections.promo_banner.settings.product_1.label"
+    },
+    {
+      "type": "product",
+      "id": "product_2",
+      "label": "t:sections.promo_banner.settings.product_2.label"
     },
     {
       "type": "header",
@@ -296,22 +310,6 @@
       "id": "button_link",
       "label": "t:settings.button_link",
       "info": "t:sections.promo_banner.settings.button_link.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.promo_banner.headers.images"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "t:sections.promo_banner.settings.image_1.label",
-      "info": "t:sections.promo_banner.settings.image_1.info"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "t:sections.promo_banner.settings.image_2.label",
-      "info": "t:sections.promo_banner.settings.image_2.info"
     },
     {
       "type": "range",

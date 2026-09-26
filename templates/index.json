@@ -107,7 +107,9 @@
       "type": "promo-banner",
       "settings": {
         "color_scheme": "scheme-accent",
-        "button_link": "shopify://collections/basketball",
+        "product_1": "sw-jerseys-110672660",
+        "product_2": "sw-shorts-134500600",
+        "button_link": "shopify://collections/basketball-shorts",
         "padding_top": 24,
         "padding_bottom": 24
       }

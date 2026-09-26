@@ -728,23 +728,24 @@
     "promo_banner": {
       "name": "Promo banner",
       "headers": {
-        "content": "Text",
-        "images": "Images"
+        "products": "Products",
+        "content": "Text"
       },
       "settings": {
+        "products_info": {
+          "content": "Two products that go together, for example a jersey and shorts from the same team. They show as regular product cards. Without products, the banner shows the text and the button only."
+        },
+        "product_1": {
+          "label": "Product 1 (e.g. a jersey)"
+        },
+        "product_2": {
+          "label": "Product 2 (e.g. shorts)"
+        },
         "show_eyebrow": {
           "label": "Show small label"
         },
         "button_link": {
           "info": "Leave empty to link to all products."
-        },
-        "image_1": {
-          "label": "Image 1",
-          "info": "A product photo with a transparent background (PNG), such as the jersey."
-        },
-        "image_2": {
-          "label": "Image 2",
-          "info": "For example the matching shorts. Without images, the banner shows text only."
         }
       }
     },
