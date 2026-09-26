@@ -59,8 +59,8 @@
     "kit": { "enum": ["home", "away", "third", "fourth", "special", "training", null] },
     "season": {
       "type": ["string", "null"],
-      "pattern": "^\\d{2}/\\d{2}$",
-      "description": "e.g. 26/27"
+      "pattern": "^(\\d{2}/\\d{2}|\\d{4})$",
+      "description": "e.g. 26/27, or the year of a national team's kit (2026)"
     },
     "vendor": { "type": ["string", "null"], "description": "Manufacturer brand, e.g. Nike, adidas, Puma" },
     "title_he": { "type": "string" },
@@ -75,10 +75,8 @@
     },
     "tags": {
       "type": "array",
-      "items": {
-        "type": "string",
-        "pattern": "^(sport|league|team|kit|season|audience):[a-z0-9-]+$|^sale$|^new$"
-      }
+      "description": "Prefixed tags (sport:, league:, team:, kit:, season:, audience:, style:, player:, source:, album:, sale, new) plus the plain search-keyword tags from catalog/classification.json (scripts/catalog/classify.mjs).",
+      "items": { "type": "string", "minLength": 1 }
     },
     "variants": {
       "type": "array",

@@ -37,6 +37,10 @@
     "Hoodie": {
       "sport": "american-football",
       "keywords": ["קפוצון", "סווטשירט", "hoodie", "sweatshirt", "هودي"]
+    },
+    "Football Kit": {
+      "sport": "football",
+      "keywords": ["סט כדורגל", "סט ילדים", "kit", "football kit", "kids kit", "طقم", "طقم كرة قدم"]
     }
   },
   "audiences": {
@@ -1373,6 +1377,70 @@
       "ar": "واشنطن كوماندرز",
       "match": ["וושינגטון קומנדרס"],
       "keywords": ["washington commanders", "commanders", "واشنطن كوماندرز", "كوماندرز"]
+    },
+    "manchester-united": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "מנצ׳סטר יונייטד",
+      "en": "Manchester United",
+      "ar": "مانشستر يونايتد",
+      "match": ["מנצ׳סטר יונייטד"],
+      "keywords": ["manchester united", "man united", "مانشستر يونايتد"]
+    },
+    "tottenham-hotspur": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "טוטנהאם",
+      "en": "Tottenham Hotspur",
+      "ar": "توتنهام هوتسبير",
+      "match": ["טוטנהאם"],
+      "keywords": ["tottenham", "tottenham hotspur", "توتنهام"]
+    },
+    "borussia-dortmund": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "בורוסיה דורטמונד",
+      "en": "Borussia Dortmund",
+      "ar": "بوروسيا دورتموند",
+      "match": ["בורוסיה דורטמונד", "דורטמונד"],
+      "keywords": ["borussia dortmund", "dortmund", "bvb", "دورتموند"]
+    },
+    "israel": {
+      "sport": "football",
+      "league": "national-teams",
+      "kind": "national",
+      "he": "נבחרת ישראל",
+      "en": "Israel",
+      "ar": "منتخب إسرائيل",
+      "match": ["נבחרת ישראל"],
+      "keywords": ["israel", "إسرائيل"]
+    },
+    "maccabi-haifa": {
+      "sport": "football",
+      "league": "israeli-premier-league",
+      "he": "מכבי חיפה",
+      "en": "Maccabi Haifa",
+      "ar": "مكابي حيفا",
+      "match": ["מכבי חיפה"],
+      "keywords": ["maccabi haifa", "مكابي حيفا"]
+    },
+    "hapoel-petah-tikva": {
+      "sport": "football",
+      "league": "israeli-premier-league",
+      "he": "הפועל פתח תקווה",
+      "en": "Hapoel Petah Tikva",
+      "ar": "هبوعيل بيتاح تكفا",
+      "match": ["הפועל פתח תקווה"],
+      "keywords": ["hapoel petah tikva", "هبوعيل بيتاح تكفا"]
+    },
+    "hapoel-tel-aviv": {
+      "sport": "football",
+      "league": "israeli-premier-league",
+      "he": "הפועל תל אביב",
+      "en": "Hapoel Tel Aviv",
+      "ar": "هبوعيل تل أبيب",
+      "match": ["הפועל תל אביב"],
+      "keywords": ["hapoel tel aviv", "هبوعيل تل أبيب"]
     }
   },
   "players": {

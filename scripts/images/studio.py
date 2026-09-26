@@ -22,6 +22,7 @@ os.makedirs(os.path.join(out, 'raw'), exist_ok=True)
 KIND = {
     'Basketball Jersey': 'basketball jersey (tank top)',
     'Football Jersey': 'football shirt',
+    'Football Kit': 'kids football kit (a shirt and its matching shorts)',
     'Hoodie': 'hooded sweatshirt',
     'Basketball Shorts': 'pair of basketball shorts',
 }

@@ -1,0 +1,122 @@
+{
+  "handle": "israel-home-jersey-2026",
+  "status": "ready",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "israel",
+    "code": "ISR",
+    "he": "נבחרת ישראל",
+    "en": "Israel",
+    "ar": "منتخب إسرائيل"
+  },
+  "leagues": ["national-teams"],
+  "kit": "home",
+  "season": "2026",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית נבחרת ישראל 2026",
+  "description_html_he": "<p>חולצת הבית של נבחרת ישראל ל-2026, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית נבחרת ישראל 2026 | SportWear",
+    "description_he": "חולצת הבית של נבחרת ישראל ל-2026 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-ISR-H-2026-A-S",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-ISR-H-2026-A-M",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-ISR-H-2026-A-L",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-ISR-H-2026-A-XL",
+      "barcode": null,
+      "price": 120,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/israel-home-jersey-2026.png",
+      "alt_he": "חולצת בית נבחרת ישראל 2026 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/pilot/studio/norm/israel-home-jersey-2026__back.png",
+      "alt_he": "חולצת בית נבחרת ישראל 2026 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Israel Home Jersey 2026",
+      "description_html": "<p>The Israel home jersey for 2026, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Israel Home Jersey 2026 | SportWear",
+      "seo_description": "The Israel home jersey for 2026, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص منتخب إسرائيل الأساسي 2026",
+      "description_html": "<p>القميص الأساسي لمنتخب إسرائيل لعام 2026، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص منتخب إسرائيل الأساسي 2026 | SportWear",
+      "seo_description": "القميص الأساسي لمنتخب إسرائيل لعام 2026، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/217151023?uid=1",
+    "fetched_at": "2026-09-26T19:09:55Z",
+    "original_title": "2026 Israel Home Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:israel",
+    "league:national-teams",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:217151023",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "israel",
+    "إسرائيل",
+    "national team",
+    "منتخب"
+  ]
+}
