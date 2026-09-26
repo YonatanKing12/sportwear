@@ -1,7 +1,8 @@
 {%- comment -%}
   Announcement bar (header group). One to five short messages, each with an optional link and icon.
-  A blank message shows the translated default: free shipping from the theme setting
-  "free_shipping_threshold" plus the 3-business-day delivery promise.
+  A blank message shows the translated default, which follows the theme setting
+  "free_shipping_threshold" (see free-shipping-cents): free shipping on every order at 0, free
+  shipping from the amount above 0, each with the delivery time; the delivery time alone otherwise.
   With more than one message it becomes a calm carousel (assets/header.js, <sw-announcement-bar>):
   it rotates every few seconds, pauses on hover and focus, has previous / next / pause buttons and
   never starts on its own for visitors who prefer reduced motion. Without JavaScript the first
@@ -19,7 +20,9 @@
     render 'free-shipping-cents'
   endcapture
   assign threshold_cents = threshold_cents | plus: 0
-  if threshold_cents > 0
+  if threshold_cents < 0
+    assign default_message = 'header.announcement.free_shipping_all' | t
+  elsif threshold_cents > 0
     # Unicode isolates (U+2068/U+2069) keep the amount's direction inside RTL text.
     assign threshold_amount = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
     assign default_message = 'header.announcement.free_shipping' | t: amount: threshold_amount

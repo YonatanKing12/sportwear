@@ -85,7 +85,7 @@
     "cart_show_upsell": true,
     "cart_show_note": false,
     "predictive_search": true,
-    "free_shipping_threshold": 250,
+    "free_shipping_threshold": 0,
     "logo_style": "mark",
     "favicon": "shopify://shop_images/sw-favicon.png"
   }

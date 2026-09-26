@@ -16,7 +16,7 @@
           "name": "Message",
           "settings": {
             "default_text": {
-              "content": "The default message shows free shipping from the amount set in Theme settings > Cart. When no amount is set, it shows the 3-business-day delivery promise."
+              "content": "The default message follows \"Free shipping from\" in Theme settings > Cart: at 0 it says shipping is free on every order, above 0 it gives the amount, and when the field is empty it shows only the delivery time (within 10 business days)."
             },
             "icon": {
               "label": "Icon",

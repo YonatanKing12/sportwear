@@ -19,7 +19,8 @@
     },
     "free_shipping": {
       "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",
-      "unlocked": "You've got free shipping"
+      "unlocked": "You've got free shipping",
+      "all": "Free shipping on every order"
     },
     "item": {
       "remove": "Remove {{ title }}",

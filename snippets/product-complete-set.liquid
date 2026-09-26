@@ -4,8 +4,9 @@
   its title and price, a size select when it has several variants, and an "Add" button. Each row is
   a real product form (works without JavaScript); <sw-product-form data-source="quick-add">
   (assets/product-info.js) adds it through CartAPI instead. Sold-out products are left out.
-  The "together: free shipping" line shows only when this product alone is below the free shipping
-  amount (Theme settings > Cart) and the two together reach it; it is re-rendered with the variant.
+  The "together: free shipping" line shows only when there is a free shipping amount above 0 (Theme
+  settings > Cart), this product alone is below it and the two together reach it; it is re-rendered
+  with the variant. When every order ships free there is nothing to reach, so it never shows.
 
   @param {product} product - The product on the page
   @param {variant} [variant] - The selected variant of that product

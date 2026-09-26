@@ -175,19 +175,19 @@ export const PRODUCT_TYPES = {
 
 const DESCRIPTION = {
   adult: {
-    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>מידות מבוגרים: S עד XL</li><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
-    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Adult sizes: S to XL</li><li>Home delivery within 3 business days</li><li>Returns within 45 days</li></ul>',
-    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>مقاسات الكبار: من S إلى XL</li><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
+    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>מידות מבוגרים: S עד XL</li><li>משלוח חינם עד הבית תוך 10 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
+    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Adult sizes: S to XL</li><li>Free home delivery within 10 business days</li><li>Returns within 45 days</li></ul>',
+    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>مقاسات الكبار: من S إلى XL</li><li>توصيل مجاني إلى البيت خلال 10 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
   },
   kids: {
-    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>מידות ילדים: 5-6 עד 13-14 (גובה 116 עד 164 ס״מ)</li><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
-    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kids sizes: 5-6 to 13-14 (height 116 to 164 cm)</li><li>Home delivery within 3 business days</li><li>Returns within 45 days</li></ul>',
-    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>مقاسات الأطفال: من 5-6 إلى 13-14 (الطول من 116 إلى 164 سم)</li><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
+    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>מידות ילדים: 5-6 עד 13-14 (גובה 116 עד 164 ס״מ)</li><li>משלוח חינם עד הבית תוך 10 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
+    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kids sizes: 5-6 to 13-14 (height 116 to 164 cm)</li><li>Free home delivery within 10 business days</li><li>Returns within 45 days</li></ul>',
+    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>مقاسات الأطفال: من 5-6 إلى 13-14 (الطول من 116 إلى 164 سم)</li><li>توصيل مجاني إلى البيت خلال 10 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
   },
   'kids-set': {
-    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>סט: חולצה ומכנס</li><li>מידות 16 עד 28 (גילאי 2-3 עד 12-13, לפי טבלת המידות)</li><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
-    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kit: jersey and shorts</li><li>Sizes 16 to 28 (ages 2-3 to 12-13, see the size chart)</li><li>Home delivery within 3 business days</li><li>Returns within 45 days</li></ul>',
-    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>طقم: قميص وشورت</li><li>المقاسات من 16 إلى 28 (الأعمار من 2-3 إلى 12-13، حسب جدول المقاسات)</li><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
+    he: '<p>מוצר לדוגמה שנועד להציג את עיצוב האתר. הוא יוסר לפני ההשקה.</p><ul><li>סט: חולצה ומכנס</li><li>מידות 16 עד 28 (גילאי 2-3 עד 12-13, לפי טבלת המידות)</li><li>משלוח חינם עד הבית תוך 10 ימי עסקים</li><li>אפשר להחזיר עד 45 יום</li></ul>',
+    en: '<p>A sample product that shows the store design. It will be removed before launch.</p><ul><li>Kit: jersey and shorts</li><li>Sizes 16 to 28 (ages 2-3 to 12-13, see the size chart)</li><li>Free home delivery within 10 business days</li><li>Returns within 45 days</li></ul>',
+    ar: '<p>منتج تجريبي لعرض تصميم المتجر، وسيُزال قبل الإطلاق.</p><ul><li>طقم: قميص وشورت</li><li>المقاسات من 16 إلى 28 (الأعمار من 2-3 إلى 12-13، حسب جدول المقاسات)</li><li>توصيل مجاني إلى البيت خلال 10 أيام عمل</li><li>إرجاع حتى 45 يومًا</li></ul>',
   },
 };
 
@@ -491,9 +491,9 @@ export const COLLECTIONS = [
     handle: 'football',
     title: { he: 'חולצות כדורגל', en: 'Football Jerseys', ar: 'قمصان كرة القدم' },
     description: {
-      he: '<p>חולצות כדורגל של העונה, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>',
-      en: "<p>This season's football jerseys, for adults and kids. Home delivery within 3 business days.</p>",
-      ar: '<p>قمصان كرة القدم لهذا الموسم، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>',
+      he: '<p>חולצות כדורגל של העונה, למבוגרים ולילדים. משלוח חינם עד הבית תוך 10 ימי עסקים.</p>',
+      en: "<p>This season's football jerseys, for adults and kids. Free home delivery within 10 business days.</p>",
+      ar: '<p>قمصان كرة القدم لهذا الموسم، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>',
     },
     match: (p) => p.sport === 'football',
   },
@@ -501,9 +501,9 @@ export const COLLECTIONS = [
     handle: 'basketball',
     title: { he: 'כדורסל', en: 'Basketball', ar: 'كرة السلة' },
     description: {
-      he: '<p>גופיות ומכנסי כדורסל, למבוגרים ולילדים. משלוח עד הבית תוך 3 ימי עסקים.</p>',
-      en: '<p>Basketball jerseys and shorts, for adults and kids. Home delivery within 3 business days.</p>',
-      ar: '<p>قمصان وشورتات كرة السلة، للكبار والأطفال. توصيل إلى المنزل خلال 3 أيام عمل.</p>',
+      he: '<p>גופיות ומכנסי כדורסל, למבוגרים ולילדים. משלוח חינם עד הבית תוך 10 ימי עסקים.</p>',
+      en: '<p>Basketball jerseys and shorts, for adults and kids. Free home delivery within 10 business days.</p>',
+      ar: '<p>قمصان وشورتات كرة السلة، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>',
     },
     match: (p) => p.sport === 'basketball',
   },
@@ -570,9 +570,9 @@ export const PAGES = [
     handle: 'shipping-returns',
     title: { he: 'משלוחים והחזרות', en: 'Shipping and returns', ar: 'الشحن والإرجاع' },
     content: {
-      he: '<p>כל ההזמנות נשלחות מהמלאי שלנו בישראל.</p><h2>משלוחים</h2><ul><li>משלוח עד הבית תוך 3 ימי עסקים</li><li>דמי משלוח: 35 ₪</li></ul><h2>החזרות</h2><p>אפשר להחזיר מוצר עד 45 יום מקבלתו. הנוסח הסופי ממתין לבדיקה משפטית.</p><table><thead><tr><th>שירות</th><th>זמן</th><th>מחיר</th></tr></thead><tbody><tr><td>משלוח רגיל</td><td>עד 3 ימי עסקים</td><td>35 ₪</td></tr><tr><td>החזרה</td><td>עד 45 יום</td><td>ללא עלות</td></tr></tbody></table>',
-      en: '<p>Every order ships from our stock in Israel.</p><h2>Shipping</h2><ul><li>Home delivery within 3 business days</li><li>Shipping: ₪35</li></ul><h2>Returns</h2><p>You can return an item within 45 days of delivery. The final wording is pending legal review.</p><table><thead><tr><th>Service</th><th>Time</th><th>Price</th></tr></thead><tbody><tr><td>Standard shipping</td><td>Up to 3 business days</td><td>₪35</td></tr><tr><td>Returns</td><td>Up to 45 days</td><td>Free</td></tr></tbody></table>',
-      ar: '<p>تُشحن جميع الطلبات من مخزوننا في إسرائيل.</p><h2>الشحن</h2><ul><li>توصيل إلى البيت خلال 3 أيام عمل</li><li>رسوم الشحن: 35 ₪</li></ul><h2>الإرجاع</h2><p>يمكن إرجاع المنتج خلال 45 يومًا من استلامه. الصيغة النهائية قيد المراجعة القانونية.</p><table><thead><tr><th>الخدمة</th><th>المدة</th><th>السعر</th></tr></thead><tbody><tr><td>شحن عادي</td><td>حتى 3 أيام عمل</td><td>35 ₪</td></tr><tr><td>الإرجاع</td><td>حتى 45 يومًا</td><td>مجانًا</td></tr></tbody></table>',
+      he: '<p>כל ההזמנות נשלחות מהמלאי שלנו בישראל.</p><h2>משלוחים</h2><ul><li>משלוח עד הבית תוך 10 ימי עסקים</li><li>המשלוח חינם בכל הזמנה</li></ul><h2>החזרות</h2><p>אפשר להחזיר מוצר עד 45 יום מקבלתו. הנוסח הסופי ממתין לבדיקה משפטית.</p><table><thead><tr><th>שירות</th><th>זמן</th><th>מחיר</th></tr></thead><tbody><tr><td>משלוח עד הבית</td><td>עד 10 ימי עסקים</td><td>חינם</td></tr><tr><td>החזרה</td><td>עד 45 יום</td><td>ללא עלות</td></tr></tbody></table>',
+      en: '<p>Every order ships from our stock in Israel.</p><h2>Shipping</h2><ul><li>Home delivery within 10 business days</li><li>Shipping is free on every order</li></ul><h2>Returns</h2><p>You can return an item within 45 days of delivery. The final wording is pending legal review.</p><table><thead><tr><th>Service</th><th>Time</th><th>Price</th></tr></thead><tbody><tr><td>Home delivery</td><td>Up to 10 business days</td><td>Free</td></tr><tr><td>Returns</td><td>Up to 45 days</td><td>Free</td></tr></tbody></table>',
+      ar: '<p>تُشحن جميع الطلبات من مخزوننا في إسرائيل.</p><h2>الشحن</h2><ul><li>توصيل إلى البيت خلال 10 أيام عمل</li><li>الشحن مجاني على كل طلب</li></ul><h2>الإرجاع</h2><p>يمكن إرجاع المنتج خلال 45 يومًا من استلامه. الصيغة النهائية قيد المراجعة القانونية.</p><table><thead><tr><th>الخدمة</th><th>المدة</th><th>السعر</th></tr></thead><tbody><tr><td>توصيل إلى البيت</td><td>حتى 10 أيام عمل</td><td>مجانًا</td></tr><tr><td>الإرجاع</td><td>حتى 45 يومًا</td><td>مجانًا</td></tr></tbody></table>',
     },
   },
   {
@@ -597,9 +597,9 @@ export const PAGES = [
     handle: 'faq',
     title: { he: 'שאלות נפוצות', en: 'FAQ', ar: 'الأسئلة الشائعة' },
     content: {
-      he: '<h2>איך בוחרים מידה?</h2><p>בעמוד של כל מוצר יש טבלת מידות.</p><h2>כמה זמן לוקח משלוח?</h2><p>עד 3 ימי עסקים.</p>',
-      en: '<h2>How do I choose a size?</h2><p>Every product page has a size chart.</p><h2>How long does delivery take?</h2><p>Up to 3 business days.</p>',
-      ar: '<h2>كيف أختار المقاس؟</h2><p>في صفحة كل منتج جدول مقاسات.</p><h2>كم يستغرق التوصيل؟</h2><p>حتى 3 أيام عمل.</p>',
+      he: '<h2>איך בוחרים מידה?</h2><p>בעמוד של כל מוצר יש טבלת מידות.</p><h2>כמה זמן לוקח משלוח?</h2><p>עד 10 ימי עסקים, והמשלוח חינם בכל הזמנה.</p>',
+      en: '<h2>How do I choose a size?</h2><p>Every product page has a size chart.</p><h2>How long does delivery take?</h2><p>Up to 10 business days, and shipping is free on every order.</p>',
+      ar: '<h2>كيف أختار المقاس؟</h2><p>في صفحة كل منتج جدول مقاسات.</p><h2>كم يستغرق التوصيل؟</h2><p>حتى 10 أيام عمل، والشحن مجاني على كل طلب.</p>',
     },
   },
   {

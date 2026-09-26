@@ -11,6 +11,12 @@
   if item_count == 4
     assign mobile_columns = 2
   endif
+
+  # When every order ships free (see free-shipping-cents), the default delivery text says so.
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
 -%}
 
 {%- if item_count > 0 -%}
@@ -52,7 +58,11 @@
                   when 4
                     assign item_text = 'general.trust.secure_payment' | t
                   else
-                    assign item_text = 'general.trust.shipping' | t
+                    if threshold_cents < 0
+                      assign item_text = 'general.trust.shipping_free' | t
+                    else
+                      assign item_text = 'general.trust.shipping' | t
+                    endif
                 endcase
               endif
             -%}

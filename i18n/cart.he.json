@@ -21,7 +21,8 @@
     },
     "free_shipping": {
       "remaining_html": "עוד <strong>{{ amount }}</strong> ותקבלו משלוח חינם",
-      "unlocked": "יש לכם משלוח חינם"
+      "unlocked": "יש לכם משלוח חינם",
+      "all": "משלוח חינם בכל הזמנה"
     },
     "item": {
       "remove": "הסרת {{ title }} מהסל",

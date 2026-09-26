@@ -1,18 +1,26 @@
 {%- doc -%}
-  Prints the free-shipping threshold in cents, or 0 when no free-shipping promise applies:
-  the theme setting is empty, the visitor is outside Israel (the only zone with a free rate in
-  admin), or the cart is in another currency than the store's. Every free-shipping message
-  (announcement bar, product page, cart bar, set and upsell notes, empty cart) goes through here.
+  Prints the visitor's free-shipping state from the free_shipping_threshold theme setting (₪):
+  - -1: every order ships free (the setting is 0),
+  - a positive amount: orders ship free from that amount, in cents,
+  - 0: no free-shipping promise applies: the setting is empty, the visitor is outside Israel (the
+    only zone with a free rate in admin), or the cart is in another currency than the store's.
+  0 is also what an empty or failed render reads as, so an error never becomes a free-shipping claim.
+  Every free-shipping message (announcement bar, trust badges, product page, cart line or progress
+  bar, set and upsell notes, empty cart, FAQ) goes through here.
 
   @example
   {% capture threshold_cents %}{% render 'free-shipping-cents' %}{% endcapture %}
   {% assign threshold_cents = threshold_cents | plus: 0 %}
+  {% if threshold_cents < 0 %}(every order ships free){% elsif threshold_cents > 0 %}(free from that amount){% endif %}
 {%- enddoc -%}
 {%- liquid
   assign cents = 0
-  if settings.free_shipping_threshold != blank and settings.free_shipping_threshold > 0
+  if settings.free_shipping_threshold != blank and settings.free_shipping_threshold >= 0
     if localization.country.iso_code == 'IL' and cart.currency.iso_code == shop.currency
       assign cents = settings.free_shipping_threshold | times: 100 | round
+      if cents == 0
+        assign cents = -1
+      endif
     endif
   endif
   echo cents

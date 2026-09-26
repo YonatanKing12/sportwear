@@ -119,12 +119,22 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
   - Kids are **separate products**. The adults/kids toggle on the product page links to the
     counterpart product through the metafield `sportwear.counterpart`.
 - **"Complete the set"**: shorts ↔ tank via the metafield `sportwear.complements`.
-- **Free-shipping progress bar:** the threshold comes from the theme setting
-  `free_shipping_threshold` (ILS). Keep it in sync with the shipping rate in admin (the threshold is
-  not decided yet; ₪200 is the recommendation, and shipping is ₪35).
-- **Trust strip:** delivery in up to 3 business days · returns up to 45 days · stock held in
-  Israel · secure payment (credit card, Apple Pay, Google Pay). Never an originality claim ("100%
-  original", "authentic"): the owner ruled it out.
+- **Shipping terms** (owner, 2026-09-26): shipping is free on every order, and delivery takes up to
+  10 business days ("עד 10 ימי עסקים"). Stock is held in Israel. No other delivery promises (no
+  express, tracking or dates).
+- **Free shipping** comes from the theme setting `free_shipping_threshold` (ILS), kept in sync with
+  the shipping rates in admin:
+  - `0` = free on every order (the store's setting now): the cart shows the line "משלוח חינם בכל
+    הזמנה" instead of a progress bar, the summary shows "Shipping: Free", and the announcement bar,
+    trust badges, product page and FAQ say shipping is free.
+  - A positive amount = free from that amount: the progress bar, the "Shipping: Free" row once it is
+    reached, and the set and upsell notes.
+  - Empty = no free-shipping messages at all.
+  - Every free-shipping message reads the state through `snippets/free-shipping-cents.liquid` and shows
+    to visitors in Israel only (the only zone with a free rate); others see the delivery time alone.
+- **Trust strip:** free home delivery (or delivery within 10 business days where free shipping does
+  not apply) · returns up to 45 days · stock held in Israel · secure payment (credit card, Apple Pay,
+  Google Pay). Never an originality claim ("100% original", "authentic"): the owner ruled it out.
 - **Team orders page:** CTA to WhatsApp. The number is a theme setting.
 - No fake urgency, scarcity or ratings. Stock hints must read real inventory. Show ratings only
   when real reviews exist.

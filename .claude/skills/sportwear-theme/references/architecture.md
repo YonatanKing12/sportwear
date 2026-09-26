@@ -141,6 +141,12 @@ import {
 - **"Complete the set"**: product metafield `sportwear.complements` (list of products). Product page and cart
   upsell both read it.
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
+- **Free shipping**: every free-shipping message (announcement bar, trust badges, product page, cart, set and
+  upsell notes, empty cart, FAQ) reads `{% render 'free-shipping-cents' %}` (captured, then `| plus: 0`), never
+  the setting directly. It prints `-1` when every order ships free (setting 0), the threshold in cents (agorot) when
+  orders ship free from an amount, and `0` when no promise applies (setting empty, visitor outside Israel, other
+  currency); an empty or failed render also reads as `0`, so it never turns into a claim. Delivery time copy (up to
+  10 business days) is shown to everyone.
 
 ## 5. Section conventions
 
@@ -197,7 +203,8 @@ Schema must include (use the shared labels):
   5-6, 7-8, 9-10, 11-12, 13-14; kids football sets from the supplier jerseyxie: 16, 18, 20, 22, 24, 26, 28
   (owner, 2026-09-26; their chart gives the age of each).
 - Tags: `sport:*`, `league:*`, `team:*`, `kit:*`, `season:*`, `audience:*`, `sale`, `new`.
-- Theme settings you may read: `settings.cart_type`, `settings.free_shipping_threshold` (₪, may be blank),
+- Theme settings you may read: `settings.cart_type`, `settings.free_shipping_threshold` (₪: blank = no free
+  shipping, 0 = free on every order, above 0 = free from that amount; read it through `free-shipping-cents`),
   `settings.cart_show_upsell`, `settings.cart_show_note`, `settings.whatsapp_number`, `settings.business_*`,
   `settings.support_phone`, `settings.support_email`, `settings.predictive_search`, `settings.drawer_color_scheme`,
   `settings.card_*`, social links.
