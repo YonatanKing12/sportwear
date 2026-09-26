@@ -24,18 +24,32 @@ def normalize(path):
     spread = float(np.abs(border - bg).max(axis=1).mean())
     dist = np.abs(im - bg).max(axis=2)
 
-    # Product box: pixels clearly away from the background, specks removed.
-    mask = (dist > 6).astype(np.uint8)
-    mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
-    count, labels, stats, _ = cv2.connectedComponentsWithStats(mask, 8)
-    keep = [i for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] > 0.0015 * h * w]
-    if not keep:
+    # Product box. A white garment differs from the light background by only a few levels and is often
+    # held by a thin outline, so the fine mask (low threshold, no speck removal) finds its full extent;
+    # the coarse mask (specks removed) is the fallback when the fine one reaches frame edges the coarse
+    # one does not, which means background noise rather than garment.
+    boxes = []
+    for threshold, opening in ((4, False), (6, True)):
+        mask = (dist > threshold).astype(np.uint8)
+        if opening:
+            mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+        count, labels, stats, _ = cv2.connectedComponentsWithStats(mask, 8)
+        keep = [i for i in range(1, count) if stats[i, cv2.CC_STAT_AREA] > 0.0015 * h * w]
+        if not keep:
+            boxes.append(None)
+            continue
+        boxes.append((min(stats[i, cv2.CC_STAT_LEFT] for i in keep),
+                      min(stats[i, cv2.CC_STAT_TOP] for i in keep),
+                      max(stats[i, cv2.CC_STAT_LEFT] + stats[i, cv2.CC_STAT_WIDTH] for i in keep),
+                      max(stats[i, cv2.CC_STAT_TOP] + stats[i, cv2.CC_STAT_HEIGHT] for i in keep)))
+    edges = lambda b: {side for side, hit in (('top', b[1] <= 2), ('bottom', b[3] >= h - 2), ('left', b[0] <= 2),
+                                               ('right', b[2] >= w - 2)) if hit}
+    fine, coarse = boxes
+    if fine is None and coarse is None:
         return {'name': name, 'error': 'no product found'}
-    x0 = min(stats[i, cv2.CC_STAT_LEFT] for i in keep)
-    y0 = min(stats[i, cv2.CC_STAT_TOP] for i in keep)
-    x1 = max(stats[i, cv2.CC_STAT_LEFT] + stats[i, cv2.CC_STAT_WIDTH] for i in keep)
-    y1 = max(stats[i, cv2.CC_STAT_TOP] + stats[i, cv2.CC_STAT_HEIGHT] for i in keep)
-    touches = [side for side, hit in (('top', y0 <= 2), ('bottom', y1 >= h - 2), ('left', x0 <= 2), ('right', x1 >= w - 2)) if hit]
+    noisy = fine is not None and coarse is not None and not edges(fine) <= edges(coarse)
+    x0, y0, x1, y1 = coarse if (fine is None or noisy) else fine
+    touches = sorted(edges((x0, y0, x1, y1)))
 
     # Shift the background (and only the background) to the exact target colour.
     alpha = np.clip((dist - 3.0) / 15.0, 0.0, 1.0)[..., None]
@@ -59,7 +73,8 @@ def normalize(path):
     Image.fromarray(canvas).save(os.path.join(dst, name + '.png'), optimize=True)
     return {'name': name, 'bg': [round(float(c)) for c in bg], 'bg_spread': round(spread, 1),
             'box': [int(x0), int(y0), int(x1), int(y1)], 'size': [w, h],
-            'fill': [round(nw / CANVAS, 2), round(nh / CANVAS, 2)], 'touches': touches}
+            'fill': [round(nw / CANVAS, 2), round(nh / CANVAS, 2)], 'touches': touches,
+            'mask': 'coarse' if (fine is None or noisy) else 'fine'}
 
 
 for path in sorted(glob.glob(os.path.join(src, '*.png')) + glob.glob(os.path.join(src, '*.jpg'))):
