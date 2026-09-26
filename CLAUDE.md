@@ -34,7 +34,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
-| Storefront | password-protected |
+| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet, and the live theme still shows the old shipping texts (free above ₪250, 3 business days) |
 | Catalog | The owner is importing products (about 1,100 by 2026-09-26, tag `source:yupoo`), 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
@@ -153,11 +153,13 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך")
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
+- Store policies: only Shopify's English privacy policy exists. No terms of use (תקנון) and no refund
+  policy yet; both need Hebrew drafts and a lawyer
 - The legal pages: the accessibility contact (name, phone, email), who pays return shipping, whether to
   charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility)
   are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39. The site keeps its
   placeholders until the owner approves
 - Buying the domain
-- The storefront password, for QA screenshots
+- Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch
 - Connecting GitHub to Shopify, a one-time step for the development theme
 - The size chart of the products imported before (the owner will send it)
