@@ -38,7 +38,7 @@
       "ar": "طقم كرة قدم",
       "note": "Kids sets: jersey + shorts (owner, 2026-09-26). Titles add the kids suffix.",
       "title_templates": {
-        "he": "סט {kit.he} {team.he} {season}",
+        "he": "{kit.he_football} ומכנס {team.he} {season}",
         "en": "{team.en} {kit.en} Kit {season}",
         "ar": "طقم {team.ar} {kit.ar} {season}"
       }
@@ -920,6 +920,63 @@
       "ar": "منتخب الولايات المتحدة",
       "leagues": ["national-teams"],
       "kind": "national"
+    },
+    "football:manchester-united": {
+      "slug": "manchester-united",
+      "code": "MUN",
+      "he": "מנצ׳סטר יונייטד",
+      "en": "Manchester United",
+      "ar": "مانشستر يونايتد",
+      "leagues": ["premier-league"]
+    },
+    "football:tottenham-hotspur": {
+      "slug": "tottenham-hotspur",
+      "code": "TOT",
+      "he": "טוטנהאם",
+      "en": "Tottenham Hotspur",
+      "ar": "توتنهام هوتسبير",
+      "leagues": ["premier-league"]
+    },
+    "football:borussia-dortmund": {
+      "slug": "borussia-dortmund",
+      "code": "BVB",
+      "he": "בורוסיה דורטמונד",
+      "en": "Borussia Dortmund",
+      "ar": "بوروسيا دورتموند",
+      "leagues": ["bundesliga"]
+    },
+    "football:israel": {
+      "slug": "israel",
+      "code": "ISR",
+      "he": "נבחרת ישראל",
+      "en": "Israel",
+      "ar": "منتخب إسرائيل",
+      "leagues": ["national-teams"],
+      "kind": "national"
+    },
+    "football:maccabi-haifa": {
+      "slug": "maccabi-haifa",
+      "code": "MHA",
+      "he": "מכבי חיפה",
+      "en": "Maccabi Haifa",
+      "ar": "مكابي حيفا",
+      "leagues": ["israeli-premier-league"]
+    },
+    "football:hapoel-tel-aviv": {
+      "slug": "hapoel-tel-aviv",
+      "code": "HTA",
+      "he": "הפועל תל אביב",
+      "en": "Hapoel Tel Aviv",
+      "ar": "هبوعيل تل أبيب",
+      "leagues": ["israeli-premier-league"]
+    },
+    "football:hapoel-petah-tikva": {
+      "slug": "hapoel-petah-tikva",
+      "code": "HPT",
+      "he": "הפועל פתח תקווה",
+      "en": "Hapoel Petah Tikva",
+      "ar": "هبوعيل بيتاح تكفا",
+      "leagues": ["israeli-premier-league"]
     },
     "basketball:iowa": {
       "slug": "iowa",
