@@ -1,0 +1,184 @@
+{%- doc -%}
+  Breadcrumb trail for the product page: Home / league (or sport) / team, plus its BreadcrumbList
+  JSON-LD. The league comes from the metafield sportwear.leagues (first entry), the sport from the
+  team, the league or the sport:* tag. The league or sport crumb links to the collection whose handle
+  equals the league slug or sport key, when that collection exists; otherwise it is plain text.
+  The last crumb is the team (sportwear.team), falling back to the product type, then the title,
+  and carries aria-current="page". The JSON-LD lists only crumbs with a real URL, then the product.
+
+  @param {product} product - The product
+  @param {boolean} [show_nav] - Render the visible breadcrumb (default true). The JSON-LD is always output.
+
+  @example
+  {% render 'product-breadcrumbs', product: product, show_nav: section.settings.show_breadcrumbs %}
+{%- enddoc -%}
+{%- liquid
+  assign team = product.metafields.sportwear.team.value
+  assign league = product.metafields.sportwear.leagues.value | first
+
+  assign sport = team.sport.value
+  if sport == blank
+    assign sport = league.sport.value
+  endif
+  if sport == blank
+    for tag in product.tags
+      if tag == 'sport:football' or tag == 'sport:basketball'
+        assign sport = tag | remove_first: 'sport:'
+        break
+      endif
+    endfor
+  endif
+
+  assign middle_name = ''
+  assign middle_handle = ''
+  assign middle_url = ''
+  if league != blank
+    assign middle_name = league.name.value
+    assign middle_handle = league.slug.value
+  else
+    case sport
+      when 'football'
+        assign middle_name = 'products.sports.football' | t
+        assign middle_handle = sport
+      when 'basketball'
+        assign middle_name = 'products.sports.basketball' | t
+        assign middle_handle = sport
+    endcase
+  endif
+  if middle_name != blank and middle_handle != blank
+    assign middle_collection = collections[middle_handle]
+    if middle_collection != blank
+      assign middle_url = middle_collection.url
+    endif
+  endif
+
+  assign last_name = team.name.value
+  assign team_url = ''
+  if last_name != blank
+    assign team_handle = team.slug.value
+    if team_handle != blank
+      assign team_collection = collections[team_handle]
+      if team_collection != blank
+        assign team_url = team_collection.url
+      endif
+    endif
+  else
+    assign last_name = product.type
+  endif
+  if last_name == blank
+    assign last_name = product.title
+  endif
+
+  assign home_label = 'products.breadcrumbs.home' | t
+  assign position = 1
+-%}
+{%- unless show_nav == false -%}
+  <nav class="product-breadcrumbs" aria-label="{{ 'products.breadcrumbs.label' | t }}">
+    <ol class="product-breadcrumbs__list" role="list">
+      <li class="product-breadcrumbs__item">
+        <a class="product-breadcrumbs__link" href="{{ routes.root_url }}">{{ home_label }}</a>
+      </li>
+      {%- if middle_name != blank -%}
+        <li class="product-breadcrumbs__item">
+          <span class="product-breadcrumbs__separator" aria-hidden="true">/</span>
+          {%- if middle_url != blank -%}
+            <a class="product-breadcrumbs__link" href="{{ middle_url }}">{{ middle_name | escape }}</a>
+          {%- else -%}
+            <span class="product-breadcrumbs__text">{{ middle_name | escape }}</span>
+          {%- endif -%}
+        </li>
+      {%- endif -%}
+      <li class="product-breadcrumbs__item">
+        <span class="product-breadcrumbs__separator" aria-hidden="true">/</span>
+        <span class="product-breadcrumbs__current" aria-current="page">{{ last_name | escape }}</span>
+      </li>
+    </ol>
+  </nav>
+{%- endunless -%}
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": {{ home_label | json }},
+        "item": {{ request.origin | append: routes.root_url | json }}
+      },
+      {%- if middle_url != blank -%}
+        {%- assign position = position | plus: 1 -%}
+        {
+          "@type": "ListItem",
+          "position": {{ position }},
+          "name": {{ middle_name | json }},
+          "item": {{ request.origin | append: middle_url | json }}
+        },
+      {%- endif -%}
+      {%- if team_url != blank -%}
+        {%- assign position = position | plus: 1 -%}
+        {
+          "@type": "ListItem",
+          "position": {{ position }},
+          "name": {{ team.name.value | json }},
+          "item": {{ request.origin | append: team_url | json }}
+        },
+      {%- endif -%}
+      {%- assign position = position | plus: 1 -%}
+      {
+        "@type": "ListItem",
+        "position": {{ position }},
+        "name": {{ product.title | json }},
+        "item": {{ canonical_url | json }}
+      }
+    ]
+  }
+</script>
+
+{% stylesheet %}
+  .product-breadcrumbs {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .product-breadcrumbs__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .product-breadcrumbs__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-inline-size: 0;
+  }
+
+  .product-breadcrumbs__link,
+  .product-breadcrumbs__text,
+  .product-breadcrumbs__current {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    overflow-wrap: anywhere;
+  }
+
+  .product-breadcrumbs__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-text);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  .product-breadcrumbs__current {
+    color: var(--color-text);
+  }
+{% endstylesheet %}

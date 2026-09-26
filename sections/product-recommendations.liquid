@@ -1,0 +1,212 @@
+{%- comment -%}
+  Product recommendations ("You may also like" / complementary products) for the product template.
+  Rendered first as a skeleton that reserves the grid's space; assets/product-recommendations.js
+  loads the real products from routes.product_recommendations_url (Section Rendering API) when the
+  section nears the viewport, and hides the section when there is nothing to recommend.
+{%- endcomment -%}
+{%- liquid
+  assign columns = section.settings.columns_desktop
+  assign columns_tablet = columns | at_most: 3
+  assign limit = section.settings.products_to_show
+
+  assign heading = section.settings.heading
+  if heading == blank
+    if section.settings.intent == 'complementary'
+      assign heading = 'products.recommendations.heading_complementary' | t
+    else
+      assign heading = 'products.recommendations.heading' | t
+    endif
+  endif
+
+  assign gaps_desktop = columns | minus: 1 | times: 20 | plus: 64
+  assign card_sizes = '(min-width: 990px) calc((min(100vw, 1440px) - ' | append: gaps_desktop | append: 'px) / ' | append: columns | append: '), (min-width: 750px) calc((100vw - 104px) / ' | append: columns_tablet | append: '), calc((100vw - 52px) / 2)'
+-%}
+<sw-product-recommendations
+  class="section product-recommendations color-{{ section.settings.color_scheme.id }}"
+  style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  data-url="{{ routes.product_recommendations_url }}"
+  data-product-id="{{ product.id }}"
+  data-section-id="{{ section.id }}"
+  data-limit="{{ limit }}"
+  data-intent="{{ section.settings.intent }}"
+  {% unless recommendations.performed? %}
+    aria-busy="true"
+  {% endunless %}
+>
+  <div class="page-width">
+    {%- if recommendations.performed? -%}
+      {%- if recommendations.products_count > 0 -%}
+        <div class="section-header">
+          <h2 class="product-recommendations__heading display-m">{{ heading | escape }}</h2>
+        </div>
+        <ul
+          class="grid product-recommendations__grid"
+          role="list"
+          style="--grid-cols: 2; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns }};"
+        >
+          {%- for recommendation in recommendations.products -%}
+            <li class="product-recommendations__item" data-recommendation>
+              {%- render 'product-card', product: recommendation, sizes: card_sizes -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    {%- else -%}
+      <div class="product-recommendations__skeleton" aria-hidden="true">
+        <div class="section-header">
+          <span class="product-recommendations__bar product-recommendations__bar--heading"></span>
+        </div>
+        <div
+          class="grid"
+          style="--grid-cols: 2; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns }};"
+        >
+          {%- for i in (1..limit) -%}
+            <div class="product-recommendations__placeholder">
+              <span class="media-tile"></span>
+              <span class="product-recommendations__bar product-recommendations__bar--short"></span>
+              <span class="product-recommendations__bar"></span>
+              <span class="product-recommendations__bar product-recommendations__bar--price"></span>
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</sw-product-recommendations>
+
+<script type="module" src="{{ 'product-recommendations.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .product-recommendations {
+    display: block;
+  }
+
+  .product-recommendations__heading {
+    min-inline-size: 0;
+  }
+
+  .product-recommendations__placeholder {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .product-recommendations__bar {
+    display: block;
+    block-size: 14px;
+    inline-size: 80%;
+    border-radius: var(--radius-badge);
+    background: var(--color-surface);
+  }
+
+  .product-recommendations__bar--short {
+    block-size: 12px;
+    inline-size: 45%;
+  }
+
+  .product-recommendations__bar--price {
+    block-size: 17px;
+    inline-size: 30%;
+  }
+
+  .product-recommendations__bar--heading {
+    block-size: calc(var(--display-m) * 0.94);
+    inline-size: min(60%, 320px);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .product-recommendations__skeleton {
+      animation: product-recommendations-pulse 1.4s ease-in-out infinite;
+    }
+  }
+
+  @keyframes product-recommendations-pulse {
+    50% {
+      opacity: 0.55;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.product_recommendations.name",
+  "class": "product-recommendations-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "select",
+      "id": "intent",
+      "label": "t:sections.product_recommendations.settings.intent",
+      "info": "t:sections.product_recommendations.settings.intent_info",
+      "options": [
+        {
+          "value": "related",
+          "label": "t:sections.product_recommendations.options.related"
+        },
+        {
+          "value": "complementary",
+          "label": "t:sections.product_recommendations.options.complementary"
+        }
+      ],
+      "default": "related"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "label": "t:settings.products_to_show",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "label": "t:settings.columns_desktop",
+      "default": 4
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.product_recommendations.name"
+    }
+  ],
+  "enabled_on": {
+    "templates": ["product"]
+  }
+}
+{% endschema %}

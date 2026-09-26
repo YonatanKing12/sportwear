@@ -1,0 +1,437 @@
+{%- doc -%}
+  Product media gallery of the main product section.
+  - Mobile and tablet: a horizontal scroll-snap slider with dots, a "1 / 4" counter (announced
+    politely) and previous/next buttons for mouse users.
+  - Desktop (990px+): the first media large, the others in a 2-column grid.
+  Media sit on the light tile, contained. The selected variant's media (else the featured media) comes
+  first and is the LCP image. Images open a full-screen zoom dialog (sw-drawer + dialog.modal) that
+  lists every image large. Behaviour: assets/product-gallery.js (<sw-product-gallery>).
+
+  @param {product} product - The product
+  @param {variant} [variant] - The selected variant; its media is shown first
+  @param {string} section_id - The section id, used for unique element ids
+  @param {string} [ratio] - Tile shape: 'square' (default) or 'portrait'
+  @param {boolean} [lcp] - The gallery holds the page's LCP image (first section on the page)
+  @param {boolean} [zoom] - Enable the zoom dialog for images (default true)
+  @param {boolean} [show_badge] - Show the "100% original" badge
+  @param {string} [badge_text] - Badge text; empty uses the translated default
+
+  @example
+  {% render 'product-gallery', product: product, variant: product.selected_or_first_available_variant, section_id: section.id, lcp: true, show_badge: true %}
+{%- enddoc -%}
+{%- liquid
+  assign featured = variant.featured_media
+  if featured == blank
+    assign featured = product.featured_media
+  endif
+
+  assign media_count = product.media.size
+  assign image_count = product.media | where: 'media_type', 'image' | size
+  assign zoom_enabled = true
+  if zoom == false or image_count == 0
+    assign zoom_enabled = false
+  endif
+  assign zoom_id = 'ProductZoom-' | append: section_id
+  assign zoom_target = ''
+  if zoom_enabled
+    assign zoom_target = zoom_id
+  endif
+  assign list_id = 'ProductGallery-' | append: section_id
+
+  if ratio == 'portrait'
+    assign media_ratio = '4 / 5'
+  else
+    assign media_ratio = '1 / 1'
+  endif
+
+  assign badge_label = badge_text
+  if badge_label == blank
+    assign badge_label = 'general.trust.original' | t
+  endif
+
+  assign status_template = 'products.gallery.image_status' | t: index: '[index]', count: '[count]'
+
+  # The first media spans the media column on desktop; the others take half of it.
+  assign sizes_first = '(min-width: 990px) calc((min(100vw, 1440px) - 112px) * 0.58), (min-width: 750px) calc(100vw - 64px), 100vw'
+  assign sizes_rest = '(min-width: 990px) calc((min(100vw, 1440px) - 120px) * 0.29), (min-width: 750px) calc(100vw - 64px), 100vw'
+
+  assign position = 0
+  assign zoom_position = 0
+-%}
+<sw-product-gallery
+  class="product-gallery"
+  data-section-id="{{ section_id }}"
+  data-zoom-id="{{ zoom_id }}"
+  style="--media-ratio: {{ media_ratio }};"
+>
+  <div class="product-gallery__viewport">
+    <ul
+      id="{{ list_id }}"
+      class="product-gallery__list"
+      role="list"
+      aria-label="{{ 'products.gallery.label' | t }}"
+      data-gallery-list
+      data-first-sizes="{{ sizes_first }}"
+    >
+      {%- if featured != blank -%}
+        {%- assign position = position | plus: 1 -%}
+        <li class="product-gallery__item" data-gallery-item data-media-id="{{ featured.id }}">
+          {%- render 'product-media',
+            media: featured,
+            product: product,
+            position: position,
+            count: media_count,
+            sizes: sizes_first,
+            lcp: lcp,
+            zoom_id: zoom_target,
+            zoom_index: zoom_position
+          -%}
+        </li>
+        {%- if featured.media_type == 'image' -%}
+          {%- assign zoom_position = zoom_position | plus: 1 -%}
+        {%- endif -%}
+      {%- endif -%}
+      {%- for media in product.media -%}
+        {%- if media.id == featured.id -%}
+          {%- continue -%}
+        {%- endif -%}
+        {%- assign position = position | plus: 1 -%}
+        <li class="product-gallery__item" data-gallery-item data-media-id="{{ media.id }}">
+          {%- render 'product-media',
+            media: media,
+            product: product,
+            position: position,
+            count: media_count,
+            sizes: sizes_rest,
+            lcp: false,
+            zoom_id: zoom_target,
+            zoom_index: zoom_position
+          -%}
+        </li>
+        {%- if media.media_type == 'image' -%}
+          {%- assign zoom_position = zoom_position | plus: 1 -%}
+        {%- endif -%}
+      {%- endfor -%}
+      {%- if media_count == 0 -%}
+        <li class="product-gallery__item">
+          <div class="product-media media-tile">
+            {%- render 'image', image: product.featured_image, sizes: sizes_first, alt: '' -%}
+          </div>
+        </li>
+      {%- endif -%}
+    </ul>
+
+    {%- if show_badge -%}
+      <p class="product-gallery__badge">
+        {%- render 'icon', name: 'shield-check', size: 16 -%}
+        <span>{{ badge_label | escape }}</span>
+      </p>
+    {%- endif -%}
+
+    {%- if media_count > 1 -%}
+      <div class="product-gallery__arrows js-only">
+        <button
+          type="button"
+          class="product-gallery__arrow product-gallery__arrow--prev"
+          aria-controls="{{ list_id }}"
+          aria-disabled="true"
+          data-gallery-prev
+        >
+          {%- render 'icon', name: 'chevron-back', size: 22 -%}
+          <span class="visually-hidden">{{ 'products.gallery.previous' | t }}</span>
+        </button>
+        <button
+          type="button"
+          class="product-gallery__arrow product-gallery__arrow--next"
+          aria-controls="{{ list_id }}"
+          aria-disabled="false"
+          data-gallery-next
+        >
+          {%- render 'icon', name: 'chevron-forward', size: 22 -%}
+          <span class="visually-hidden">{{ 'products.gallery.next' | t }}</span>
+        </button>
+      </div>
+      <div class="product-gallery__dots" aria-hidden="true">
+        {%- for i in (1..media_count) -%}
+          <span class="product-gallery__dot{% if forloop.first %} is-active{% endif %}" data-gallery-dot></span>
+        {%- endfor -%}
+      </div>
+      <p class="product-gallery__counter" dir="ltr" aria-hidden="true">
+        <span data-gallery-current>1</span> / {{ media_count }}
+      </p>
+      <p
+        class="visually-hidden"
+        aria-live="polite"
+        aria-atomic="true"
+        data-gallery-status
+        data-template="{{ status_template | escape }}"
+      ></p>
+    {%- endif -%}
+  </div>
+
+  {%- if zoom_enabled -%}
+    <sw-drawer id="{{ zoom_id }}">
+      <dialog
+        class="modal product-zoom color-{{ settings.drawer_color_scheme.id }}"
+        aria-labelledby="{{ zoom_id }}-title"
+      >
+        <div class="product-modal__header">
+          <h2 id="{{ zoom_id }}-title" class="product-modal__title">{{ product.title | escape }}</h2>
+          <button type="button" class="button button--icon" data-drawer-close>
+            {%- render 'icon', name: 'close' -%}
+            <span class="visually-hidden">{{ 'general.close' | t }}</span>
+          </button>
+        </div>
+        <ul class="product-zoom__list" role="list">
+          {%- if featured.media_type == 'image' -%}
+            {%- assign zoom_alt = featured.alt | default: product.title -%}
+            <li class="product-zoom__item" data-zoom-item>
+              {%- render 'image',
+                image: featured.preview_image,
+                sizes: '(min-width: 1180px) 1100px, 100vw',
+                widths: '720, 1080, 1440, 1920',
+                alt: zoom_alt,
+                class: 'product-zoom__image'
+              -%}
+            </li>
+          {%- endif -%}
+          {%- for media in product.media -%}
+            {%- if media.id == featured.id or media.media_type != 'image' -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- assign zoom_alt = media.alt | default: product.title -%}
+            <li class="product-zoom__item" data-zoom-item>
+              {%- render 'image',
+                image: media.preview_image,
+                sizes: '(min-width: 1180px) 1100px, 100vw',
+                widths: '720, 1080, 1440, 1920',
+                alt: zoom_alt,
+                class: 'product-zoom__image'
+              -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </dialog>
+    </sw-drawer>
+  {%- endif -%}
+</sw-product-gallery>
+
+{% stylesheet %}
+  .product-gallery {
+    /* The image tile is light in every color scheme, so the controls on it use fixed dark ink. */
+    --gallery-ink: #0d0e11;
+    --gallery-dot: #a3a8b2;
+    --gallery-chip: rgb(255 255 255 / 0.92);
+    /* Always show the whole product, whatever the product card image fit is set to. */
+    --media-fit: contain;
+
+    position: relative;
+    display: block;
+  }
+
+  .product-gallery__viewport {
+    position: relative;
+
+    & :focus-visible {
+      outline-color: var(--gallery-ink);
+    }
+  }
+
+  .product-gallery__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 990px) {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-2);
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+  }
+
+  .product-gallery__item {
+    flex: 0 0 100%;
+    min-inline-size: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    @media screen and (min-width: 990px) {
+      &:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  .product-gallery .media-tile {
+    border-radius: 0;
+
+    @media screen and (min-width: 750px) {
+      border-radius: var(--radius-card);
+    }
+  }
+
+  .product-gallery__badge {
+    position: absolute;
+    inset-block-start: 14px;
+    inset-inline-start: 14px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-block-size: 30px;
+    padding-inline: 10px;
+    border-radius: var(--radius-badge);
+    background: var(--gallery-ink);
+    color: var(--color-accent);
+    font-size: var(--text-sm);
+    font-weight: 800;
+    line-height: 1.1;
+    pointer-events: none;
+  }
+
+  .product-gallery__dots {
+    position: absolute;
+    inset-block-end: 16px;
+    inset-inline: 0;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    pointer-events: none;
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+  }
+
+  .product-gallery__dot {
+    inline-size: 6px;
+    block-size: 6px;
+    border-radius: 3px;
+    background: var(--gallery-dot);
+    transition: background-color var(--duration-fast) var(--ease);
+
+    &.is-active {
+      inline-size: 22px;
+      background: var(--gallery-ink);
+    }
+  }
+
+  .product-gallery__counter {
+    position: absolute;
+    inset-block-end: 10px;
+    inset-inline-end: 12px;
+    padding: 2px 8px;
+    border-radius: var(--radius-chip);
+    background: var(--gallery-chip);
+    color: var(--gallery-ink);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    pointer-events: none;
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+  }
+
+  .product-gallery__arrows {
+    display: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .product-gallery__arrows {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .product-gallery__arrows {
+      display: none;
+    }
+  }
+
+  .product-gallery__arrow {
+    position: absolute;
+    inset-block-start: 50%;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gallery-chip);
+    color: var(--gallery-ink);
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.14);
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    &[aria-disabled='true'] {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  .product-gallery__arrow--prev {
+    inset-inline-start: 12px;
+  }
+
+  .product-gallery__arrow--next {
+    inset-inline-end: 12px;
+  }
+
+  .modal.product-zoom {
+    inline-size: 100%;
+    max-inline-size: 100%;
+    block-size: 100%;
+    max-block-size: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  .product-zoom .product-modal__title {
+    min-inline-size: 0;
+    overflow: hidden;
+    font-size: var(--text-base);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    @media screen and (min-width: 750px) {
+      font-size: var(--text-xl);
+    }
+  }
+
+  .product-zoom__list {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding: var(--space-2);
+    list-style: none;
+  }
+
+  .product-zoom__item {
+    inline-size: 100%;
+    max-inline-size: 1100px;
+    margin-inline: auto;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--color-tile);
+    scroll-margin-block-start: 72px;
+  }
+
+  .product-zoom__image {
+    inline-size: 100%;
+  }
+{% endstylesheet %}

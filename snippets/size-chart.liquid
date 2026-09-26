@@ -1,0 +1,232 @@
+{%- doc -%}
+  Size information for a product, shown inline (size chart accordion) and in the SizeChart dialog.
+  1. When the product has a size chart (metafield sportwear.size_chart, metaobject sw_size_chart),
+     its JSON table rows [{ size, height_cm, chest_cm, length_cm }] as an accessible table, plus its
+     fit note. Columns with no value in any row are left out.
+  2. Otherwise, for kids products (sportwear.audience = kids), the approximate height for each of our
+     kids sizes (5-6 ... 13-14 = 116 ... 164 cm), limited to the sizes this product has.
+  3. Otherwise, short guidance on how to measure. No measurement is ever made up.
+
+  @param {product} product - The product
+  @param {string} id - Unique id prefix for this instance
+  @param {string} [heading_tag] - Tag of the "how to measure" heading: 'h3' (default) or 'p'
+
+  @example
+  {% render 'size-chart', product: product, id: 'SizeChartDialog' %}
+{%- enddoc -%}
+{%- liquid
+  assign chart = product.metafields.sportwear.size_chart.value
+  assign audience = product.metafields.sportwear.audience.value
+  assign guide_tag = heading_tag | default: 'h3'
+  assign caption_id = id | append: '-caption'
+
+  # Row keys are read through a variable: "size" must be looked up as a key, never as the
+  # built-in .size (count) property.
+  assign size_key = 'size'
+
+  assign has_rows = false
+  if chart != blank
+    assign table_value = chart.table.value
+    if table_value.rows != blank
+      assign rows = table_value.rows
+      assign has_rows = true
+    elsif table_value != blank
+      assign rows = table_value
+      assign has_rows = true
+    endif
+  endif
+
+  assign has_height = false
+  assign has_chest = false
+  assign has_length = false
+  if has_rows
+    for row in rows
+      if row.height_cm != blank
+        assign has_height = true
+      endif
+      if row.chest_cm != blank
+        assign has_chest = true
+      endif
+      if row.length_cm != blank
+        assign has_length = true
+      endif
+    endfor
+  endif
+-%}
+{%- if has_rows -%}
+  {%- liquid
+    assign caption = chart.name.value
+    if caption == blank
+      assign caption = 'products.size_chart.caption' | t: title: product.title
+    endif
+    assign fit_note = chart.fit_note.value
+  -%}
+  <div class="size-chart">
+    <div class="size-chart__scroll table-scroll" role="region" aria-labelledby="{{ caption_id }}" tabindex="0">
+      <table class="size-chart__table">
+        <caption id="{{ caption_id }}" class="size-chart__caption">
+          {{ caption | escape }}
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ 'products.size_chart.size' | t }}</th>
+            {%- if has_height -%}
+              <th scope="col">{{ 'products.size_chart.height' | t }}</th>
+            {%- endif -%}
+            {%- if has_chest -%}
+              <th scope="col">{{ 'products.size_chart.chest' | t }}</th>
+            {%- endif -%}
+            {%- if has_length -%}
+              <th scope="col">{{ 'products.size_chart.length' | t }}</th>
+            {%- endif -%}
+          </tr>
+        </thead>
+        <tbody>
+          {%- for row in rows -%}
+            <tr>
+              <th scope="row">
+                <bdi dir="ltr">{{ row[size_key] | escape }}</bdi>
+              </th>
+              {%- if has_height -%}
+                <td>
+                  <bdi dir="ltr">{{ row.height_cm | escape }}</bdi>
+                </td>
+              {%- endif -%}
+              {%- if has_chest -%}
+                <td>
+                  <bdi dir="ltr">{{ row.chest_cm | escape }}</bdi>
+                </td>
+              {%- endif -%}
+              {%- if has_length -%}
+                <td>
+                  <bdi dir="ltr">{{ row.length_cm | escape }}</bdi>
+                </td>
+              {%- endif -%}
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    {%- if fit_note != blank -%}
+      <p class="size-chart__note">{{ fit_note | escape | newline_to_br }}</p>
+    {%- endif -%}
+  </div>
+{%- elsif audience == 'kids' -%}
+  {%- liquid
+    # Our kids size system (see catalog/taxonomy.json): age-based sizes and the matching height.
+    assign kid_sizes = '5-6,7-8,9-10,11-12,13-14' | split: ','
+    assign kid_heights = '116,128,140,152,164' | split: ','
+    assign product_option = product.options_with_values | first
+    assign product_sizes = product_option.values | map: 'name'
+    assign matched = 0
+    for kid_size in kid_sizes
+      if product_sizes contains kid_size
+        assign matched = matched | plus: 1
+      endif
+    endfor
+  -%}
+  <div class="size-chart">
+    <div class="size-chart__scroll table-scroll" role="region" aria-labelledby="{{ caption_id }}" tabindex="0">
+      <table class="size-chart__table">
+        <caption id="{{ caption_id }}" class="size-chart__caption">
+          {{- 'products.size_chart.kids_caption' | t -}}
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col">{{ 'products.size_chart.kids_size' | t }}</th>
+            <th scope="col">{{ 'products.size_chart.kids_height' | t }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {%- for kid_size in kid_sizes -%}
+            {%- if matched > 0 -%}
+              {%- unless product_sizes contains kid_size -%}
+                {%- continue -%}
+              {%- endunless -%}
+            {%- endif -%}
+            <tr>
+              <th scope="row">
+                <bdi dir="ltr">{{ kid_size }}</bdi>
+              </th>
+              <td>{{ kid_heights[forloop.index0] }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    </div>
+    <p class="size-chart__note">{{ 'products.size_chart.kids_tip' | t }}</p>
+  </div>
+{%- else -%}
+  <div class="size-chart size-chart--guide">
+    <{{ guide_tag }} class="size-chart__heading">{{ 'products.size_chart.measure_heading' | t }}</{{ guide_tag }}>
+    <ul class="size-chart__tips">
+      <li>{{ 'products.size_chart.measure_chest' | t }}</li>
+      <li>{{ 'products.size_chart.measure_length' | t }}</li>
+      <li>{{ 'products.size_chart.measure_tip' | t }}</li>
+    </ul>
+    <p class="size-chart__note">{{ 'products.size_chart.help' | t }}</p>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .size-chart {
+    display: grid;
+    gap: var(--space-3);
+  }
+
+  .size-chart__scroll {
+    max-inline-size: 100%;
+
+    &:focus-visible {
+      outline-offset: 2px;
+    }
+  }
+
+  .size-chart__table {
+    inline-size: 100%;
+    border-collapse: collapse;
+    font-size: var(--text-md);
+    font-variant-numeric: tabular-nums;
+
+    & :is(th, td) {
+      padding: 10px 12px;
+      border-block-end: 1px solid var(--color-border);
+      text-align: start;
+      white-space: nowrap;
+    }
+
+    & thead th {
+      background: var(--color-surface);
+      font-size: var(--text-sm);
+      font-weight: 800;
+    }
+
+    & tbody th {
+      font-weight: 800;
+    }
+  }
+
+  .size-chart__caption {
+    padding-block-end: var(--space-2);
+    font-weight: 700;
+    text-align: start;
+  }
+
+  .size-chart__note {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .size-chart__heading {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: var(--leading-tight);
+  }
+
+  .size-chart__tips {
+    display: grid;
+    gap: var(--space-2);
+    margin: 0;
+    padding-inline-start: 1.2em;
+  }
+{% endstylesheet %}

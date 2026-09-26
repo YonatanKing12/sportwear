@@ -245,6 +245,72 @@
     },
     "cart_drawer_stub": {
       "name": "Cart drawer"
+    },
+    "main_product": {
+      "name": "Product information",
+      "settings": {
+        "show_breadcrumbs": "Show breadcrumbs",
+        "sticky_info": "Keep product details in view while scrolling (desktop)",
+        "media_header": "Images and videos",
+        "media_ratio": "Image shape",
+        "enable_zoom": "Enlarge images on click",
+        "show_original_badge": "Show the \"100% original\" badge on the images",
+        "original_badge_text": "Badge text",
+        "eyebrow_info": "Shows the team and league from the product's custom data (metafields sportwear.team and sportwear.leagues). Hidden when both are empty.",
+        "show_tax_note": "Show \"Incl. VAT\"",
+        "audience_info": "Appears only when the product is linked to its adults or kids version (metafield sportwear.counterpart).",
+        "show_size_guide": "Show the size guide button",
+        "show_inventory": "Show stock status",
+        "low_stock_threshold": "Show \"only a few left\" from",
+        "low_stock_threshold_info": "Shown when the selected size has this many items or fewer in stock. Based on your real inventory.",
+        "show_quantity": "Show quantity selector",
+        "show_dynamic_checkout": "Show express checkout buttons",
+        "show_dynamic_checkout_info": "Apple Pay, Google Pay and other express options, as set up in your payment settings.",
+        "shipping_text": "Delivery text",
+        "show_free_shipping": "Show the free shipping amount",
+        "show_free_shipping_info": "Uses \"Free shipping from\" in Theme settings > Cart. Hidden when that field is empty.",
+        "trust_original": "Row 1: original product",
+        "trust_shipping": "Row 2: delivery",
+        "trust_returns": "Row 3: returns",
+        "trust_payment": "Row 4: secure payment",
+        "complete_set_info": "Shows the products linked in the product's metafield sportwear.complements. Hidden when there are none or they are sold out.",
+        "show_set_note": "Show \"free shipping together\" note",
+        "show_set_note_info": "Shown when the two items together reach the free shipping amount from Theme settings > Cart.",
+        "open": "Open by default",
+        "collapsible_info": "Leave the heading and content empty to show the default shipping and returns text.",
+        "content": "Content",
+        "page_info": "Shows the content of this page instead of the text above.",
+        "size_table_info": "Uses the product's size chart (metafield sportwear.size_chart). Without one, kids products show sizes by height and adult products show how to measure."
+      },
+      "options": {
+        "media_ratio_square": "Square",
+        "media_ratio_portrait": "Portrait (4:5)"
+      },
+      "blocks": {
+        "eyebrow": "Team and league",
+        "title": "Title",
+        "price": "Price",
+        "audience_toggle": "Adults / kids switch",
+        "variant_picker": "Size picker",
+        "buy_buttons": "Buy buttons",
+        "shipping_note": "Delivery note",
+        "trust": "Trust list",
+        "complete_set": "Complete the set",
+        "description": "Description",
+        "collapsible": "Collapsible tab",
+        "size_table": "Size chart"
+      }
+    },
+    "product_recommendations": {
+      "name": "Product recommendations",
+      "settings": {
+        "intent": "Recommendation type",
+        "intent_info": "Complementary products are chosen in the Search & Discovery app. The section stays hidden when there is nothing to recommend."
+      },
+      "options": {
+        "related": "Related products",
+        "complementary": "Complementary products"
+      }
     }
   },
   "settings": {

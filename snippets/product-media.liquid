@@ -1,0 +1,224 @@
+{%- doc -%}
+  One item of the product gallery, on the light image tile (always light, whatever the color scheme).
+  Images get a full-tile zoom button that opens the zoom dialog. Videos, external videos (YouTube,
+  Vimeo) and 3D models show their preview image with a play / 3D button; the player itself waits in a
+  <template> until the customer asks for it (assets/product-gallery.js), so no iframe, video or model
+  loads with the page.
+
+  @param {object} media - The product media
+  @param {product} product - The product (alt text falls back to its title)
+  @param {number} position - 1-based position of this media in the gallery
+  @param {number} count - Number of media in the gallery
+  @param {string} sizes - The sizes attribute for the image
+  @param {boolean} [lcp] - This is the page's LCP image: load it eagerly, with high priority, and preload it
+  @param {string} [zoom_id] - Id of the zoom dialog (sw-drawer); enables the zoom button on images
+  @param {number} [zoom_index] - 0-based index of this image inside the zoom dialog
+
+  @example
+  {% render 'product-media', media: media, product: product, position: 1, count: 4, sizes: '100vw', lcp: true %}
+{%- enddoc -%}
+{%- liquid
+  assign media_alt = media.alt | default: product.title
+  assign img_loading = 'lazy'
+  assign img_priority = 'auto'
+  assign img_preload = false
+  if lcp
+    assign img_loading = 'eager'
+    assign img_priority = 'high'
+    assign img_preload = true
+  endif
+-%}
+{%- if media.media_type == 'image' -%}
+  <div class="product-media media-tile">
+    {%- render 'image',
+      image: media.preview_image,
+      sizes: sizes,
+      loading: img_loading,
+      fetchpriority: img_priority,
+      preload: img_preload,
+      alt: media_alt,
+      class: 'product-media__image'
+    -%}
+    {%- if zoom_id != blank -%}
+      <button
+        type="button"
+        class="product-media__zoom js-only"
+        data-drawer-open="{{ zoom_id }}"
+        data-zoom-index="{{ zoom_index }}"
+        aria-haspopup="dialog"
+        aria-expanded="false"
+      >
+        <span class="product-media__zoom-icon">{%- render 'icon', name: 'zoom', size: 20 -%}</span>
+        <span class="visually-hidden">{{ 'products.gallery.zoom' | t: index: position, count: count }}</span>
+      </button>
+    {%- endif -%}
+  </div>
+{%- else -%}
+  {%- liquid
+    if media.media_type == 'model'
+      assign action_label = 'products.gallery.view_3d' | t
+    else
+      assign action_label = 'products.gallery.play_video' | t
+    endif
+  -%}
+  <div class="product-media product-media--deferred media-tile" data-deferred-media="{{ media.media_type }}">
+    <div class="product-media__poster">
+      {%- render 'image',
+        image: media.preview_image,
+        sizes: sizes,
+        loading: img_loading,
+        fetchpriority: img_priority,
+        preload: img_preload,
+        alt: '',
+        class: 'product-media__image'
+      -%}
+      <button type="button" class="product-media__play js-only" data-deferred-media-button>
+        <span class="product-media__play-icon">
+          {%- if media.media_type == 'model' -%}
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z"/><path d="M4 7.5l8 4.5 8-4.5M12 12v9"/>
+            </svg>
+          {%- else -%}
+            <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+              <path d="M8 5.5v13l10.5-6.5z"/>
+            </svg>
+          {%- endif -%}
+        </span>
+        <span class="visually-hidden">{{ action_label }}: {{ media_alt | escape }}</span>
+      </button>
+    </div>
+    <template>
+      {%- case media.media_type -%}
+        {%- when 'video' -%}
+          {{ media | video_tag: controls: true, autoplay: true }}
+        {%- when 'external_video' -%}
+          {{ media | external_video_url: autoplay: 1, playsinline: 1 | external_video_tag }}
+        {%- when 'model' -%}
+          {{ media | model_viewer_tag: interaction-prompt: 'none' }}
+        {%- else -%}
+          {{ media | media_tag }}
+      {%- endcase -%}
+    </template>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .product-media {
+    inline-size: 100%;
+  }
+
+  .product-media__zoom {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: zoom-in;
+
+    &:focus-visible {
+      outline: 2px solid var(--gallery-ink, #0d0e11);
+      outline-offset: -4px;
+    }
+  }
+
+  .product-media__zoom-icon {
+    position: absolute;
+    inset-block-start: 12px;
+    inset-inline-end: 12px;
+    display: grid;
+    place-items: center;
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: 50%;
+    background: var(--gallery-chip, #ffffff);
+    color: var(--gallery-ink, #0d0e11);
+    box-shadow: 0 1px 4px rgb(0 0 0 / 0.12);
+  }
+
+  @media (hover: hover) {
+    .product-media__zoom-icon {
+      opacity: 0;
+      transition: opacity var(--duration-fast) var(--ease);
+    }
+
+    .product-media__zoom:is(:hover, :focus-visible) .product-media__zoom-icon {
+      opacity: 1;
+    }
+  }
+
+  .product-media__poster {
+    position: absolute;
+    inset: 0;
+
+    & > img,
+    & > svg {
+      inline-size: 100%;
+      block-size: 100%;
+      object-fit: var(--media-fit, contain);
+    }
+  }
+
+  .product-media__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    &:focus-visible {
+      outline: 2px solid var(--gallery-ink, #0d0e11);
+      outline-offset: -4px;
+    }
+  }
+
+  .product-media__play-icon {
+    display: grid;
+    place-items: center;
+    inline-size: 64px;
+    block-size: 64px;
+    border-radius: 50%;
+    background: var(--gallery-ink, #0d0e11);
+    color: var(--color-accent);
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.2);
+    transition: transform var(--duration-fast) var(--ease);
+  }
+
+  .product-media__play:hover .product-media__play-icon {
+    transform: scale(1.06);
+  }
+
+  .product-media--deferred.is-active .product-media__poster {
+    display: none;
+  }
+
+  .product-media--deferred > :is(video, iframe, model-viewer) {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    border: 0;
+  }
+
+  .product-media--deferred > video {
+    object-fit: contain;
+    background: var(--color-tile);
+  }
+{% endstylesheet %}

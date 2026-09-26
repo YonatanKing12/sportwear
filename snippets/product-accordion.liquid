@@ -1,0 +1,79 @@
+{%- doc -%}
+  Collapsible panel of the main product section (description, custom tabs, size chart), built on
+  native <details>/<summary>: keyboard and screen reader support without JavaScript. In the theme
+  editor, selecting the block opens it (assets/product-info.js).
+
+  @param {object} block - The section block (for its editor attributes)
+  @param {string} heading - Visible heading
+  @param {string} content - Panel content (HTML)
+  @param {boolean} [open] - Open by default
+
+  @example
+  {% render 'product-accordion', block: block, heading: heading, content: content, open: block.settings.open %}
+{%- enddoc -%}
+<details
+  class="product-info__block product-info__block--accordion product-accordion"
+  data-product-accordion
+  {% if open %}
+    open
+  {% endif %}
+  {{ block.shopify_attributes }}
+>
+  <summary class="product-accordion__summary">
+    <span class="product-accordion__heading">{{ heading | escape }}</span>
+    <span class="product-accordion__icon">
+      {%- render 'icon', name: 'plus', size: 18, class: 'product-accordion__plus' -%}
+      {%- render 'icon', name: 'minus', size: 18, class: 'product-accordion__minus' -%}
+    </span>
+  </summary>
+  <div class="product-accordion__content">
+    {{- content -}}
+  </div>
+</details>
+
+{% stylesheet %}
+  .product-accordion {
+    border-block-end: 1px solid var(--color-border);
+  }
+
+  .product-accordion__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-block-size: 56px;
+    padding-block: var(--space-2);
+    font-size: calc(15px * var(--body-scale, 1));
+    font-weight: 700;
+    line-height: var(--leading-tight);
+    list-style: none;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .product-accordion__icon {
+    display: inline-grid;
+    place-items: center;
+    flex-shrink: 0;
+  }
+
+  .product-accordion__minus {
+    display: none;
+  }
+
+  .product-accordion[open] .product-accordion__plus {
+    display: none;
+  }
+
+  .product-accordion[open] .product-accordion__minus {
+    display: block;
+  }
+
+  .product-accordion__content {
+    padding-block: var(--space-1) var(--space-5);
+    font-size: var(--text-md);
+  }
+{% endstylesheet %}
