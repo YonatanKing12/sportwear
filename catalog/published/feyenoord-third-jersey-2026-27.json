@@ -1,0 +1,133 @@
+{
+  "handle": "feyenoord-third-jersey-2026-27",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "feyenoord",
+    "code": "FEY",
+    "he": "פיינורד",
+    "en": "Feyenoord",
+    "ar": "فينورد"
+  },
+  "leagues": ["eredivisie"],
+  "kit": "third",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצה שלישית פיינורד 26/27",
+  "description_html_he": "<p>החולצה השלישית של פיינורד לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצה שלישית פיינורד 26/27 | SportWear",
+    "description_he": "החולצה השלישית של פיינורד לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-FEY-T-2627-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-FEY-T-2627-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-FEY-T-2627-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-FEY-T-2627-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p4/studio/norm/feyenoord-third-jersey-2026-27.png",
+      "alt_he": "חולצה שלישית פיינורד 26/27 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p4/studio/norm/feyenoord-third-jersey-2026-27__back.png",
+      "alt_he": "חולצה שלישית פיינורד 26/27 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Feyenoord Third Jersey 26/27",
+      "description_html": "<p>The Feyenoord third jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Feyenoord Third Jersey 26/27 | SportWear",
+      "seo_description": "The Feyenoord third jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص فينورد الثالث 26/27",
+      "description_html": "<p>القميص الثالث لنادي فينورد لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص فينورد الثالث 26/27 | SportWear",
+      "seo_description": "القميص الثالث لنادي فينورد لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/241407664?uid=1",
+    "fetched_at": "2026-09-27T14:52:38Z",
+    "original_title": "26-27 Feyenoord Third Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:feyenoord",
+    "league:eredivisie",
+    "kit:third",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:241407664",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "feyenoord",
+    "فينورد",
+    "eredivisie",
+    "الدوري الهولندي"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310274101552",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67860215890224",
+      "M": "gid://shopify/ProductVariant/67860215922992",
+      "L": "gid://shopify/ProductVariant/67860215955760",
+      "XL": "gid://shopify/ProductVariant/67860215988528"
+    },
+    "created_at": "2026-09-27T14:59:08Z"
+  }
+}

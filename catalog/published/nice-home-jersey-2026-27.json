@@ -1,0 +1,134 @@
+{
+  "handle": "nice-home-jersey-2026-27",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "nice",
+    "code": "NIC",
+    "he": "ניס",
+    "en": "OGC Nice",
+    "ar": "نيس"
+  },
+  "leagues": ["ligue-1"],
+  "kit": "home",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית ניס 26/27",
+  "description_html_he": "<p>חולצת הבית של ניס לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית ניס 26/27 | SportWear",
+    "description_he": "חולצת הבית של ניס לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-NIC-H-2627-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-NIC-H-2627-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-NIC-H-2627-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-NIC-H-2627-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p4/studio/norm/nice-home-jersey-2026-27.png",
+      "alt_he": "חולצת בית ניס 26/27 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p4/studio/norm/nice-home-jersey-2026-27__back.png",
+      "alt_he": "חולצת בית ניס 26/27 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "OGC Nice Home Jersey 26/27",
+      "description_html": "<p>The OGC Nice home jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "OGC Nice Home Jersey 26/27 | SportWear",
+      "seo_description": "The OGC Nice home jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص نيس الأساسي 26/27",
+      "description_html": "<p>القميص الأساسي لنادي نيس لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص نيس الأساسي 26/27 | SportWear",
+      "seo_description": "القميص الأساسي لنادي نيس لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/253746206?uid=1",
+    "fetched_at": "2026-09-27T14:52:38Z",
+    "original_title": "26-27 Nice Home Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:nice",
+    "league:ligue-1",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:253746206",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "ogc nice",
+    "nice",
+    "نيس",
+    "ligue 1",
+    "الدوري الفرنسي"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310284128560",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67860294205744",
+      "M": "gid://shopify/ProductVariant/67860294238512",
+      "L": "gid://shopify/ProductVariant/67860294271280",
+      "XL": "gid://shopify/ProductVariant/67860294304048"
+    },
+    "created_at": "2026-09-27T15:07:29Z"
+  }
+}
