@@ -1,0 +1,153 @@
+{
+  "handle": "sw-shorts-98995595",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "brooklyn-nets",
+    "code": "BKN",
+    "he": "ברוקלין נטס",
+    "en": "Brooklyn Nets",
+    "ar": "بروكلين نتس"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2020",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020",
+  "description_html_he": "<p>מכנסי הכדורסל של ברוקלין נטס במהדורת העיר, בצבע שחור, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020 | SportWear",
+    "description_he": "מכנסי הכדורסל של ברוקלין נטס במהדורת העיר, בצבע שחור, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-BKN-S-2020-A-98995595-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-BKN-S-2020-A-98995595-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-BKN-S-2020-A-98995595-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-BKN-S-2020-A-98995595-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-98995595.png",
+      "alt_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-98995595__back.png",
+      "alt_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-98995595-1.jpg",
+      "alt_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-98995595-2.jpg",
+      "alt_he": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-123215727"]
+  },
+  "translations": {
+    "en": {
+      "title": "Brooklyn Nets Basketball Shorts – Black, City Edition 2020",
+      "description_html": "<p>Brooklyn Nets basketball shorts, City Edition, in black, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Brooklyn Nets Basketball Shorts – Black, City Edition 2020",
+      "seo_description": "Brooklyn Nets basketball shorts, City Edition, in black, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة بروكلين نتس أسود إصدار المدينة 2020",
+      "description_html": "<p>شورت كرة السلة لفريق بروكلين نتس من إصدار المدينة، باللون الأسود، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة بروكلين نتس أسود إصدار المدينة 2020 | SportWear",
+      "seo_description": "شورت كرة السلة لفريق بروكلين نتس من إصدار المدينة، باللون الأسود، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/98995595?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "20赛季篮网队城市版（迷彩）黑色短裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:brooklyn-nets",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:98995595",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "brooklyn nets",
+    "nets",
+    "بروكلين نتس",
+    "نتس",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310216003888",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859617087792",
+      "M": "gid://shopify/ProductVariant/67859617120560",
+      "L": "gid://shopify/ProductVariant/67859617153328",
+      "XL": "gid://shopify/ProductVariant/67859617186096"
+    },
+    "created_at": "2026-09-27T13:14:32Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:35:21Z",
+      "ar": "2026-09-27T13:35:21Z"
+    }
+  }
+}

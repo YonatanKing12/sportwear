@@ -1,0 +1,152 @@
+{
+  "handle": "sw-shorts-116518878",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "boston-celtics",
+    "code": "BOS",
+    "he": "בוסטון סלטיקס",
+    "en": "Boston Celtics",
+    "ar": "بوسطن سيلتيكس"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל בוסטון סלטיקס ירוק",
+  "description_html_he": "<p>מכנסי הכדורסל של בוסטון סלטיקס, בצבע ירוק, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל בוסטון סלטיקס ירוק | SportWear",
+    "description_he": "מכנסי הכדורסל של בוסטון סלטיקס, בצבע ירוק, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-BOS-A-0000-A-116518878-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-BOS-A-0000-A-116518878-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-BOS-A-0000-A-116518878-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-BOS-A-0000-A-116518878-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-116518878.png",
+      "alt_he": "מכנסי כדורסל בוסטון סלטיקס ירוק",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-116518878-1.jpg",
+      "alt_he": "מכנסי כדורסל בוסטון סלטיקס ירוק (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-116518878-2.jpg",
+      "alt_he": "מכנסי כדורסל בוסטון סלטיקס ירוק (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": [
+      "sw-jerseys-106680476",
+      "sw-jerseys-148097182",
+      "sw-jerseys-167569022",
+      "sw-jerseys-97381444",
+      "sw-jerseys-168444102"
+    ]
+  },
+  "translations": {
+    "en": {
+      "title": "Boston Celtics Basketball Shorts – Green",
+      "description_html": "<p>Boston Celtics basketball shorts, in green, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Boston Celtics Basketball Shorts – Green | SportWear",
+      "seo_description": "Boston Celtics basketball shorts, in green, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة بوسطن سيلتيكس أخضر",
+      "description_html": "<p>شورت كرة السلة لفريق بوسطن سيلتيكس، باللون الأخضر، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة بوسطن سيلتيكس أخضر | SportWear",
+      "seo_description": "شورت كرة السلة لفريق بوسطن سيلتيكس، باللون الأخضر، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/116518878?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "凯尔特人 绿色 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:boston-celtics",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:116518878",
+    "import:2026-09-27",
+    "set:shorts",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "boston celtics",
+    "celtics",
+    "بوسطن سيلتيكس",
+    "سيلتيكس",
+    "nba",
+    "الدوري الأمريكي لكرة السلة"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310205616432",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859435061552",
+      "M": "gid://shopify/ProductVariant/67859435094320",
+      "L": "gid://shopify/ProductVariant/67859435127088",
+      "XL": "gid://shopify/ProductVariant/67859435159856"
+    },
+    "created_at": "2026-09-27T13:04:08Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:28:19Z",
+      "ar": "2026-09-27T13:28:19Z"
+    }
+  }
+}

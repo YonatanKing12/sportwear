@@ -1,0 +1,147 @@
+{
+  "handle": "sw-shorts-118832839",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "oklahoma-city-thunder",
+    "code": "OKC",
+    "he": "אוקלהומה סיטי ת׳אנדר",
+    "en": "Oklahoma City Thunder",
+    "ar": "أوكلاهوما سيتي ثاندر"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול",
+  "description_html_he": "<p>מכנסי הכדורסל של אוקלהומה סיטי ת׳אנדר, בצבע כחול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול | SportWear",
+    "description_he": "מכנסי הכדורסל של אוקלהומה סיטי ת׳אנדר, בצבע כחול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-OKC-A-0000-A-118832839-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-OKC-A-0000-A-118832839-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-OKC-A-0000-A-118832839-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-OKC-A-0000-A-118832839-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-118832839.png",
+      "alt_he": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-118832839__back.png",
+      "alt_he": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-118832839-1.jpg",
+      "alt_he": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-162811063"]
+  },
+  "translations": {
+    "en": {
+      "title": "Oklahoma City Thunder Basketball Shorts – Blue",
+      "description_html": "<p>Oklahoma City Thunder basketball shorts, in blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Oklahoma City Thunder Basketball Shorts – Blue | SportWear",
+      "seo_description": "Oklahoma City Thunder basketball shorts, in blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة أوكلاهوما سيتي ثاندر أزرق",
+      "description_html": "<p>شورت كرة السلة لفريق أوكلاهوما سيتي ثاندر، باللون الأزرق، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة أوكلاهوما سيتي ثاندر أزرق | SportWear",
+      "seo_description": "شورت كرة السلة لفريق أوكلاهوما سيتي ثاندر، باللون الأزرق، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/118832839?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "雷霆队 蓝色 短裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:oklahoma-city-thunder",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:118832839",
+    "import:2026-09-27",
+    "set:shorts",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "oklahoma city thunder",
+    "okc",
+    "thunder",
+    "أوكلاهوما سيتي ثاندر",
+    "ثاندر",
+    "nba",
+    "الدوري الأمريكي لكرة السلة"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310207484208",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859470352688",
+      "M": "gid://shopify/ProductVariant/67859470385456",
+      "L": "gid://shopify/ProductVariant/67859470418224",
+      "XL": "gid://shopify/ProductVariant/67859470450992"
+    },
+    "created_at": "2026-09-27T13:06:10Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:30:48Z",
+      "ar": "2026-09-27T13:30:48Z"
+    }
+  }
+}

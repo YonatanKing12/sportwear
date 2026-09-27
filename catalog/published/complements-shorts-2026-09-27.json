@@ -1,0 +1,1898 @@
+{
+  "_note": "Sets of the 106 shorts imported from xingkong-sports on 2026-09-27 (catalog/published/shorts-xingkong-2026-09-27.json), on the owner's direction for this import (pair each shorts with the jerseys of the same design; the ₪229 set price). Every album was compared, photo by photo, with the store's adult jerseys of its team (numbered contact sheets): a jersey is paired only when the photos show the same kit design (colours, trim, wordmark, maker), never from team and colour words alone; other makers' versions of a design (Mitchell & Ness, adidas, the Nike swoosh against the Jordan logo) were left out. Metafield sportwear.complements (list.product_reference): each shorts product lists its jerseys (set at creation with productSet); each jersey lists its shorts (metafieldsSet, 9 calls, 0 userErrors; none of these jerseys had a value before). Tags: set:shorts on the 84 shorts, set:jersey on the 204 jerseys (tagsAdd), so the automatic discount 'מחיר סט: גופייה + מכנסיים' applies. productsCount(tag:set:jersey) = 226 after the writes (22 before). Undo: delete the metafield and the tag on the products below.",
+  "written": {
+    "shorts": 84,
+    "jerseys": 204,
+    "date": "2026-09-27"
+  },
+  "sets": [
+    {
+      "shorts": {
+        "handle": "sw-shorts-100267629",
+        "id": "gid://shopify/Product/15310203289904",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-106384395",
+          "id": "gid://shopify/Product/15308698059056",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול"
+        },
+        {
+          "handle": "sw-jerseys-188303737",
+          "id": "gid://shopify/Product/15308592185648",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 כחול 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-100267711",
+        "id": "gid://shopify/Product/15310202306864",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-116023843",
+          "id": "gid://shopify/Product/15308677382448",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 11 לבן"
+        },
+        {
+          "handle": "sw-jerseys-201617361",
+          "id": "gid://shopify/Product/15308559352112",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 0 לבן"
+        },
+        {
+          "handle": "sw-jerseys-188303373",
+          "id": "gid://shopify/Product/15308597035312",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-101891876",
+        "id": "gid://shopify/Product/15310202339632",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-121583069",
+          "id": "gid://shopify/Product/15308677218608",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-101891879",
+        "id": "gid://shopify/Product/15310202634544",
+        "title": "מכנסי כדורסל ברוקלין נטס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-106552772",
+          "id": "gid://shopify/Product/15308697895216",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-102248925",
+        "id": "gid://shopify/Product/15310202863920",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס לבן עם צדדים בכחול ובאדום"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-160789774",
+          "id": "gid://shopify/Product/15308614828336",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 לבן"
+        },
+        {
+          "handle": "sw-jerseys-149584549",
+          "id": "gid://shopify/Product/15308623872304",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 לבן 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-102248997",
+        "id": "gid://shopify/Product/15310202962224",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-168712116",
+          "id": "gid://shopify/Product/15308609487152",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 0 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-102715994",
+        "id": "gid://shopify/Product/15310204010800",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס צהוב"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-188305232",
+          "id": "gid://shopify/Product/15308596937008",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-101296495",
+          "id": "gid://shopify/Product/15308717130032",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-106014840",
+          "id": "gid://shopify/Product/15308694716720",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-137280224",
+          "id": "gid://shopify/Product/15308647989552",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 15 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-106048308",
+          "id": "gid://shopify/Product/15308696715568",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-87589344",
+          "id": "gid://shopify/Product/15308693209392",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-89419160",
+          "id": "gid://shopify/Product/15308634652976",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-170956437",
+          "id": "gid://shopify/Product/15308596183344",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 4 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-101483235",
+          "id": "gid://shopify/Product/15308672794928",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-168657361",
+          "id": "gid://shopify/Product/15308606013744",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 9 צהוב"
+        },
+        {
+          "handle": "sw-jerseys-137279996",
+          "id": "gid://shopify/Product/15308634489136",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 צהוב 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-103019469",
+        "id": "gid://shopify/Product/15310203126064",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול עם כיתוב WARRIORS בצד"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-95542347",
+          "id": "gid://shopify/Product/15308632949040",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-106626645",
+        "id": "gid://shopify/Product/15310203748656",
+        "title": "מכנסי כדורסל ברוקלין נטס כחול כהה מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-107722150",
+          "id": "gid://shopify/Product/15308640452912",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 13 כחול כהה מהדורת עיר"
+        },
+        {
+          "handle": "sw-jerseys-107722044",
+          "id": "gid://shopify/Product/15308678693168",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 כחול כהה מהדורת עיר"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-106737579",
+        "id": "gid://shopify/Product/15310203224368",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-132028207",
+          "id": "gid://shopify/Product/15308642746672",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול"
+        },
+        {
+          "handle": "sw-jerseys-125235085",
+          "id": "gid://shopify/Product/15308658540848",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 סגול 2022"
+        },
+        {
+          "handle": "sw-jerseys-105152935",
+          "id": "gid://shopify/Product/15308694978864",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 סגול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-107104761",
+        "id": "gid://shopify/Product/15310204535088",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-117745372",
+          "id": "gid://shopify/Product/15308680823088",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 22 שחור מהדורת עיר 2022"
+        },
+        {
+          "handle": "sw-jerseys-116965534",
+          "id": "gid://shopify/Product/15308677808432",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 95 שחור מהדורת עיר 2022"
+        },
+        {
+          "handle": "sw-jerseys-106849498",
+          "id": "gid://shopify/Product/15308655853872",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 11 שחור"
+        },
+        {
+          "handle": "sw-jerseys-106390553",
+          "id": "gid://shopify/Product/15308694585648",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור 2022"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-107105006",
+        "id": "gid://shopify/Product/15310203519280",
+        "title": "מכנסי כדורסל ברוקלין נטס שחור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-137279976",
+          "id": "gid://shopify/Product/15308648055088",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 1 שחור"
+        },
+        {
+          "handle": "sw-jerseys-106553077",
+          "id": "gid://shopify/Product/15308694454576",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 11 שחור"
+        },
+        {
+          "handle": "sw-jerseys-107311417",
+          "id": "gid://shopify/Product/15308694257968",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 13 שחור"
+        },
+        {
+          "handle": "sw-jerseys-106552848",
+          "id": "gid://shopify/Product/15308696486192",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-111582994",
+        "id": "gid://shopify/Product/15310204076336",
+        "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-115260069",
+          "id": "gid://shopify/Product/15308681118000",
+          "title": "גופיית כדורסל מיאמי היט מספר 14 שחור 2022"
+        },
+        {
+          "handle": "sw-jerseys-115260102",
+          "id": "gid://shopify/Product/15308677480752",
+          "title": "גופיית כדורסל מיאמי היט מספר 22 שחור 2022"
+        },
+        {
+          "handle": "sw-jerseys-115260002",
+          "id": "gid://shopify/Product/15308639895856",
+          "title": "גופיית כדורסל מיאמי היט מספר 3 שחור 2022"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-112616599",
+        "id": "gid://shopify/Product/15310204371248",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס תכלת מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-116023995",
+          "id": "gid://shopify/Product/15308677906736",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 תכלת 2022"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-112616724",
+        "id": "gid://shopify/Product/15310204928304",
+        "title": "מכנסי כדורסל שארלוט הורנטס כחול מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-107074855",
+          "id": "gid://shopify/Product/15308655788336",
+          "title": "גופיית כדורסל שארלוט הורנטס מספר 2 כחול מהדורת עיר"
+        },
+        {
+          "handle": "sw-jerseys-122604480",
+          "id": "gid://shopify/Product/15308660703536",
+          "title": "גופיית כדורסל שארלוט הורנטס מספר 1 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-114169258",
+        "id": "gid://shopify/Product/15310204698928",
+        "title": "מכנסי כדורסל שיקגו בולס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-105900531",
+          "id": "gid://shopify/Product/15308698321200",
+          "title": "גופיית כדורסל שיקגו בולס מספר 11 לבן"
+        },
+        {
+          "handle": "sw-jerseys-101297298",
+          "id": "gid://shopify/Product/15308717031728",
+          "title": "גופיית כדורסל שיקגו בולס מספר 2 לבן"
+        },
+        {
+          "handle": "sw-jerseys-105012518",
+          "id": "gid://shopify/Product/15308656410928",
+          "title": "גופיית כדורסל שיקגו בולס מספר 8 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-114169299",
+        "id": "gid://shopify/Product/15310204895536",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2022"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-182156398",
+          "id": "gid://shopify/Product/15308593791280",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 מהדורת עיר צבע מדורג"
+        },
+        {
+          "handle": "sw-jerseys-167567498",
+          "id": "gid://shopify/Product/15308614336816",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 11"
+        },
+        {
+          "handle": "sw-jerseys-165919738",
+          "id": "gid://shopify/Product/15308608864560",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-114463096",
+        "id": "gid://shopify/Product/15310204830000",
+        "title": "מכנסי כדורסל שיקגו בולס אדום"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-160789712",
+          "id": "gid://shopify/Product/15308610568496",
+          "title": "גופיית כדורסל שיקגו בולס מספר 1 אדום"
+        },
+        {
+          "handle": "sw-jerseys-103308176",
+          "id": "gid://shopify/Product/15308695503152",
+          "title": "גופיית כדורסל שיקגו בולס מספר 11 אדום"
+        },
+        {
+          "handle": "sw-jerseys-105225676",
+          "id": "gid://shopify/Product/15308656345392",
+          "title": "גופיית כדורסל שיקגו בולס מספר 2 אדום"
+        },
+        {
+          "handle": "sw-jerseys-96558847",
+          "id": "gid://shopify/Product/15308718113072",
+          "title": "גופיית כדורסל שיקגו בולס מספר 24 אדום"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-114463161",
+        "id": "gid://shopify/Product/15310205255984",
+        "title": "מכנסי כדורסל שיקגו בולס שחור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-105012782",
+          "id": "gid://shopify/Product/15308698517808",
+          "title": "גופיית כדורסל שיקגו בולס מספר 11 שחור"
+        },
+        {
+          "handle": "sw-jerseys-103160556",
+          "id": "gid://shopify/Product/15308697993520",
+          "title": "גופיית כדורסל שיקגו בולס מספר 23 שחור"
+        },
+        {
+          "handle": "sw-jerseys-105012325",
+          "id": "gid://shopify/Product/15308695044400",
+          "title": "גופיית כדורסל שיקגו בולס מספר 6 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-116518878",
+        "id": "gid://shopify/Product/15310205616432",
+        "title": "מכנסי כדורסל בוסטון סלטיקס ירוק"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-106680476",
+          "id": "gid://shopify/Product/15308697764144",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק"
+        },
+        {
+          "handle": "sw-jerseys-148097182",
+          "id": "gid://shopify/Product/15308632162608",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 4 ירוק"
+        },
+        {
+          "handle": "sw-jerseys-167569022",
+          "id": "gid://shopify/Product/15308614271280",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 42 ירוק"
+        },
+        {
+          "handle": "sw-jerseys-97381444",
+          "id": "gid://shopify/Product/15308724437296",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 7 ירוק"
+        },
+        {
+          "handle": "sw-jerseys-168444102",
+          "id": "gid://shopify/Product/15308601721136",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-116518978",
+        "id": "gid://shopify/Product/15310205059376",
+        "title": "מכנסי כדורסל בוסטון סלטיקס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-94399727",
+          "id": "gid://shopify/Product/15308725125424",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 11 לבן"
+        },
+        {
+          "handle": "sw-jerseys-168442142",
+          "id": "gid://shopify/Product/15308606144816",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 4 לבן"
+        },
+        {
+          "handle": "sw-jerseys-123472570",
+          "id": "gid://shopify/Product/15308697567536",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 6"
+        },
+        {
+          "handle": "sw-jerseys-168442532",
+          "id": "gid://shopify/Product/15308609716528",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 9 לבן"
+        },
+        {
+          "handle": "sw-jerseys-143753994",
+          "id": "gid://shopify/Product/15308624625968",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 36 לבן 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-117771209",
+        "id": "gid://shopify/Product/15310205681968",
+        "title": "מכנסי כדורסל ממפיס גריזליס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-114585756",
+          "id": "gid://shopify/Product/15308677579056",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן"
+        },
+        {
+          "handle": "sw-jerseys-117745194",
+          "id": "gid://shopify/Product/15308639568176",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-117771210",
+        "id": "gid://shopify/Product/15310206206256",
+        "title": "מכנסי כדורסל ממפיס גריזליס כחול כהה"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-113666492",
+          "id": "gid://shopify/Product/15308681216304",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 כחול כהה"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-117771220",
+        "id": "gid://shopify/Product/15310206075184",
+        "title": "מכנסי כדורסל דאלאס מאבריקס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-143011280",
+          "id": "gid://shopify/Product/15308672106800",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 2 לבן"
+        },
+        {
+          "handle": "sw-jerseys-209199939",
+          "id": "gid://shopify/Product/15308558336304",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 32 לבן"
+        },
+        {
+          "handle": "sw-jerseys-165920571",
+          "id": "gid://shopify/Product/15308601852208",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 לבן"
+        },
+        {
+          "handle": "sw-jerseys-193350893",
+          "id": "gid://shopify/Product/15308561023280",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 3 לבן 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-117771221",
+        "id": "gid://shopify/Product/15310205518128",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס כחול רטרו"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-102972721",
+          "id": "gid://shopify/Product/15308698091824",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 כחול"
+        },
+        {
+          "handle": "sw-jerseys-98170105",
+          "id": "gid://shopify/Product/15308713296176",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 כחול"
+        },
+        {
+          "handle": "sw-jerseys-188304969",
+          "id": "gid://shopify/Product/15308595462448",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 כחול"
+        },
+        {
+          "handle": "sw-jerseys-101483328",
+          "id": "gid://shopify/Product/15308702908720",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 כחול 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-117771224",
+        "id": "gid://shopify/Product/15310206730544",
+        "title": "מכנסי כדורסל בוסטון סלטיקס שחור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-181429961",
+          "id": "gid://shopify/Product/15308592578864",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 33 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-118413055",
+        "id": "gid://shopify/Product/15310207254832",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס שחור רטרו"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-164118532",
+          "id": "gid://shopify/Product/15308603261232",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-118413057",
+        "id": "gid://shopify/Product/15310206173488",
+        "title": "מכנסי כדורסל ניו יורק ניקס כחול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-138859651",
+          "id": "gid://shopify/Product/15308672270640",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-182546009",
+          "id": "gid://shopify/Product/15308592349488",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 32 כחול מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-164994561",
+          "id": "gid://shopify/Product/15308601917744",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 0 כחול"
+        },
+        {
+          "handle": "sw-jerseys-244981439",
+          "id": "gid://shopify/Product/15308552012080",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול"
+        },
+        {
+          "handle": "sw-jerseys-244980526",
+          "id": "gid://shopify/Product/15308553716016",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 3 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-118413059",
+        "id": "gid://shopify/Product/15310206828848",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן מהדורת עיר"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-106498722",
+          "id": "gid://shopify/Product/15308656017712",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 לבן מהדורת עיר 2022"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-118832839",
+        "id": "gid://shopify/Product/15310207484208",
+        "title": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-162811063",
+          "id": "gid://shopify/Product/15308610502960",
+          "title": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 7 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-121082816",
+        "id": "gid://shopify/Product/15310207549744",
+        "title": "מכנסי כדורסל פיניקס סאנס סגול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-129501644",
+          "id": "gid://shopify/Product/15308648579376",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 סגול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-121082872",
+        "id": "gid://shopify/Product/15310207222064",
+        "title": "מכנסי כדורסל פיניקס סאנס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-129397712",
+          "id": "gid://shopify/Product/15308673614128",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 לבן"
+        },
+        {
+          "handle": "sw-jerseys-99800704",
+          "id": "gid://shopify/Product/15308673450288",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 22 לבן 2021"
+        },
+        {
+          "handle": "sw-jerseys-99801376",
+          "id": "gid://shopify/Product/15308712870192",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 3 לבן 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-121082989",
+        "id": "gid://shopify/Product/15310206959920",
+        "title": "מכנסי כדורסל ניו יורק ניקס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-164994520",
+          "id": "gid://shopify/Product/15308603195696",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 0 לבן"
+        },
+        {
+          "handle": "sw-jerseys-244980369",
+          "id": "gid://shopify/Product/15308553781552",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 3 לבן"
+        },
+        {
+          "handle": "sw-jerseys-244981825",
+          "id": "gid://shopify/Product/15308551782704",
+          "title": "גופיית כדורסל ניו יורק ניקס מספר 32 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-125503564",
+        "id": "gid://shopify/Product/15310207582512",
+        "title": "מכנסי כדורסל ברוקלין נטס אפור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-97596191",
+          "id": "gid://shopify/Product/15308717916464",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 11 אפור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-127381396",
+        "id": "gid://shopify/Product/15310208074032",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-129397492",
+          "id": "gid://shopify/Product/15308642910512",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 3 מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-126131493",
+          "id": "gid://shopify/Product/15308658147632",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 מהדורת עיר 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-128674489",
+        "id": "gid://shopify/Product/15310207975728",
+        "title": "מכנסי כדורסל ברוקלין נטס לבן מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-128865212",
+          "id": "gid://shopify/Product/15308635504944",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 11 לבן מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-128865155",
+          "id": "gid://shopify/Product/15308648808752",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 לבן מהדורת עיר 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-129375399",
+        "id": "gid://shopify/Product/15310207680816",
+        "title": "מכנסי כדורסל ברוקלין נטס לבן רטרו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-121956579",
+          "id": "gid://shopify/Product/15308677022000",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 11 לבן"
+        },
+        {
+          "handle": "sw-jerseys-121956419",
+          "id": "gid://shopify/Product/15308680397104",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-129375470",
+        "id": "gid://shopify/Product/15310208270640",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-136506294",
+          "id": "gid://shopify/Product/15308648087856",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול"
+        },
+        {
+          "handle": "sw-jerseys-125238002",
+          "id": "gid://shopify/Product/15308658409776",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול"
+        },
+        {
+          "handle": "sw-jerseys-174168159",
+          "id": "gid://shopify/Product/15308596085040",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול"
+        },
+        {
+          "handle": "sw-jerseys-169088470",
+          "id": "gid://shopify/Product/15308609388848",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 9 סגול"
+        },
+        {
+          "handle": "sw-jerseys-134343704",
+          "id": "gid://shopify/Product/15308648251696",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 סגול 2023"
+        },
+        {
+          "handle": "sw-jerseys-132029421",
+          "id": "gid://shopify/Product/15308648382768",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול 2023"
+        },
+        {
+          "handle": "sw-jerseys-135856145",
+          "id": "gid://shopify/Product/15308642484528",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 סגול 2023"
+        },
+        {
+          "handle": "sw-jerseys-188306140",
+          "id": "gid://shopify/Product/15308561514800",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 סגול 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-129375705",
+        "id": "gid://shopify/Product/15310208565552",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן רטרו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-130839928",
+          "id": "gid://shopify/Product/15308635308336",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-130836692",
+        "id": "gid://shopify/Product/15310208467248",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-129499130",
+          "id": "gid://shopify/Product/15308635373872",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 3 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-131384069",
+        "id": "gid://shopify/Product/15310208139568",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-125774716",
+          "id": "gid://shopify/Product/15308658278704",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס לבן 22/23"
+        },
+        {
+          "handle": "sw-jerseys-125774963",
+          "id": "gid://shopify/Product/15308696781104",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-131384132",
+        "id": "gid://shopify/Product/15310208762160",
+        "title": "מכנסי כדורסל וושינגטון וויזארדס לבן רטרו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-125775363",
+          "id": "gid://shopify/Product/15308658213168",
+          "title": "גופיית כדורסל וושינגטון וויזארדס מספר 23 לבן"
+        },
+        {
+          "handle": "sw-jerseys-125774603",
+          "id": "gid://shopify/Product/15308663980336",
+          "title": "גופיית כדורסל וושינגטון וויזארדס מספר 3 לבן 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-132738732",
+        "id": "gid://shopify/Product/15310209024304",
+        "title": "מכנסי כדורסל בוסטון סלטיקס ירוק מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-127573632",
+          "id": "gid://shopify/Product/15308657819952",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק מהדורת עיר 22/23"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-133346216",
+        "id": "gid://shopify/Product/15310208958768",
+        "title": "מכנסי כדורסל דאלאס מאבריקס כחול מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-126415536",
+          "id": "gid://shopify/Product/15308658082096",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-134342815",
+          "id": "gid://shopify/Product/15308648317232",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 2 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-134004695",
+        "id": "gid://shopify/Product/15310209253680",
+        "title": "מכנסי כדורסל פיניקס סאנס שחור 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-126131292",
+          "id": "gid://shopify/Product/15308696682800",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 1 שחור 22/23"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-134500605",
+        "id": "gid://shopify/Product/15310208500016",
+        "title": "מכנסי כדורסל פילדלפיה 76׳ כחול"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-182545944",
+          "id": "gid://shopify/Product/15308593660208",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 20 כחול מהדורת עיר"
+        },
+        {
+          "handle": "sw-jerseys-225120784",
+          "id": "gid://shopify/Product/15308554109232",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 0 כחול"
+        },
+        {
+          "handle": "sw-jerseys-110672405",
+          "id": "gid://shopify/Product/15308678463792",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 1 כחול"
+        },
+        {
+          "handle": "sw-jerseys-95806572",
+          "id": "gid://shopify/Product/15308723093808",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 25 כחול 17/18"
+        },
+        {
+          "handle": "sw-jerseys-218038874",
+          "id": "gid://shopify/Product/15308556599600",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 77 כחול 25/26"
+        },
+        {
+          "handle": "sw-jerseys-169737053",
+          "id": "gid://shopify/Product/15308599263536",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 8 כחול"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-141803097",
+        "id": "gid://shopify/Product/15310208893232",
+        "title": "מכנסי כדורסל מיאמי היט שחור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-121582685",
+          "id": "gid://shopify/Product/15308676628784",
+          "title": "גופיית כדורסל מיאמי היט מספר 22 שחור"
+        },
+        {
+          "handle": "sw-jerseys-244982056",
+          "id": "gid://shopify/Product/15308551586096",
+          "title": "גופיית כדורסל מיאמי היט מספר 34 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-148159925",
+        "id": "gid://shopify/Product/15310209155376",
+        "title": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-127052881",
+          "id": "gid://shopify/Product/15308696322352",
+          "title": "גופיית כדורסל מיאמי היט מספר 13 לבן 2022"
+        },
+        {
+          "handle": "sw-jerseys-128866462",
+          "id": "gid://shopify/Product/15308648710448",
+          "title": "גופיית כדורסל מיאמי היט מספר 14 לבן 2022"
+        },
+        {
+          "handle": "sw-jerseys-122915621",
+          "id": "gid://shopify/Product/15308664602928",
+          "title": "גופיית כדורסל מיאמי היט מספר 22 לבן 2022"
+        },
+        {
+          "handle": "sw-jerseys-127052899",
+          "id": "gid://shopify/Product/15308663554352",
+          "title": "גופיית כדורסל מיאמי היט מספר 3 לבן 2022"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-150861551",
+        "id": "gid://shopify/Product/15310209351984",
+        "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-86512521",
+          "id": "gid://shopify/Product/15308670501168",
+          "title": "גופיית כדורסל מיאמי היט מספר 3 שחור מהדורת עיר"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152164029",
+        "id": "gid://shopify/Product/15310209941808",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-151244303",
+          "id": "gid://shopify/Product/15308615876912",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 15 שחור מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-151810105",
+          "id": "gid://shopify/Product/15308609945904",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 שחור מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-188305098",
+          "id": "gid://shopify/Product/15308598247728",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 שחור מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-146484515",
+          "id": "gid://shopify/Product/15308632457520",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור"
+        },
+        {
+          "handle": "sw-jerseys-148745501",
+          "id": "gid://shopify/Product/15308632031536",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152164269",
+        "id": "gid://shopify/Product/15310199226672",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-150931928",
+          "id": "gid://shopify/Product/15308705071408",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 23 שחור מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-150931898",
+          "id": "gid://shopify/Product/15308623315248",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 3 שחור מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-151489518",
+          "id": "gid://shopify/Product/15308610076976",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור מהדורת עיר 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152903221",
+        "id": "gid://shopify/Product/15310209745200",
+        "title": "מכנסי כדורסל פיניקס סאנס סגול מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-149880003",
+          "id": "gid://shopify/Product/15308623708464",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 3 סגול מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-149291809",
+          "id": "gid://shopify/Product/15308631834928",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 סגול 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152903253",
+        "id": "gid://shopify/Product/15310210040112",
+        "title": "מכנסי כדורסל פיניקס סאנס לבן 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-143991637",
+          "id": "gid://shopify/Product/15308650807600",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 לבן 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152903274",
+        "id": "gid://shopify/Product/15310210564400",
+        "title": "מכנסי כדורסל פיניקס סאנס סגול 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-143991246",
+          "id": "gid://shopify/Product/15308632850736",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 1 סגול 2024"
+        },
+        {
+          "handle": "sw-jerseys-143991325",
+          "id": "gid://shopify/Product/15308618268976",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 3 סגול 2024"
+        },
+        {
+          "handle": "sw-jerseys-143991683",
+          "id": "gid://shopify/Product/15308632719664",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 סגול 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-152903289",
+        "id": "gid://shopify/Product/15310210269488",
+        "title": "מכנסי כדורסל אורלנדו מג׳יק כחול רטרו 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-193351496",
+          "id": "gid://shopify/Product/15308560597296",
+          "title": "גופיית כדורסל אורלנדו מג׳יק מספר 5"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-154080354",
+        "id": "gid://shopify/Product/15310210662704",
+        "title": "מכנסי כדורסל סקרמנטו קינגס שחור 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-193351369",
+          "id": "gid://shopify/Product/15308560630064",
+          "title": "גופיית כדורסל סקרמנטו קינגס מספר 5 שחור"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-154517221",
+        "id": "gid://shopify/Product/15310211121456",
+        "title": "מכנסי כדורסל מיאמי היט לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-244982001",
+          "id": "gid://shopify/Product/15308551618864",
+          "title": "גופיית כדורסל מיאמי היט מספר 34 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-158850761",
+        "id": "gid://shopify/Product/15310210990384",
+        "title": "מכנסי כדורסל פיניקס סאנס סגול רטרו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-129501542",
+          "id": "gid://shopify/Product/15308673515824",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 סגול 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-158850914",
+        "id": "gid://shopify/Product/15310211219760",
+        "title": "מכנסי כדורסל דאלאס מאבריקס שחור מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-151489449",
+          "id": "gid://shopify/Product/15308623085872",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 11 שחור מהדורת עיר"
+        },
+        {
+          "handle": "sw-jerseys-149292072",
+          "id": "gid://shopify/Product/15308617679152",
+          "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-159256085",
+        "id": "gid://shopify/Product/15310212628784",
+        "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-149880278",
+          "id": "gid://shopify/Product/15308631507248",
+          "title": "גופיית כדורסל מיאמי היט מספר 14 שחור מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-149880333",
+          "id": "gid://shopify/Product/15308617449776",
+          "title": "גופיית כדורסל מיאמי היט מספר 22 שחור מהדורת עיר 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-159307062",
+        "id": "gid://shopify/Product/15310211416368",
+        "title": "מכנסי כדורסל בוסטון סלטיקס לבן מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-152407227",
+          "id": "gid://shopify/Product/15308610896176",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 בז׳ מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-152407559",
+          "id": "gid://shopify/Product/15308602507568",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 7 בז׳ מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-149290421",
+          "id": "gid://shopify/Product/15308617810224",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן 2024"
+        },
+        {
+          "handle": "sw-jerseys-149291152",
+          "id": "gid://shopify/Product/15308631900464",
+          "title": "גופיית כדורסל בוסטון סלטיקס מספר 7 לבן 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-159307083",
+        "id": "gid://shopify/Product/15310211907888",
+        "title": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-150931858",
+          "id": "gid://shopify/Product/15308615975216",
+          "title": "גופיית כדורסל אינדיאנה פייסרס מספר 0 שחור מהדורת עיר 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-160277296",
+        "id": "gid://shopify/Product/15310212333872",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-152007283",
+          "id": "gid://shopify/Product/15308603851056",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 כחול כהה מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-149584887",
+          "id": "gid://shopify/Product/15308617580848",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 כחול כהה מהדורת עיר 2024"
+        },
+        {
+          "handle": "sw-jerseys-149291561",
+          "id": "gid://shopify/Product/15308623937840",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-162704188",
+        "id": "gid://shopify/Product/15310213218608",
+        "title": "מכנסי כדורסל קליבלנד קאבלירס שחור 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-122604867",
+          "id": "gid://shopify/Product/15308658934064",
+          "title": "גופיית כדורסל קליבלנד קאבלירס מספר 45 שחור 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-162704294",
+        "id": "gid://shopify/Product/15310212694320",
+        "title": "מכנסי כדורסל קליבלנד קאבלירס בורדו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-122915434",
+          "id": "gid://shopify/Product/15308658835760",
+          "title": "גופיית כדורסל קליבלנד קאבלירס מספר 10 בורדו"
+        },
+        {
+          "handle": "sw-jerseys-122739296",
+          "id": "gid://shopify/Product/15308698026288",
+          "title": "גופיית כדורסל קליבלנד קאבלירס מספר 45 בורדו"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-166289982",
+        "id": "gid://shopify/Product/15310212989232",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-152407516",
+          "id": "gid://shopify/Product/15308603785520",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 מהדורת עיר צבע מדורג 2024"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-166290225",
+        "id": "gid://shopify/Product/15310213087536",
+        "title": "מכנסי כדורסל מיאמי היט בורדו 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-167567685",
+          "id": "gid://shopify/Product/15308603031856",
+          "title": "גופיית כדורסל מיאמי היט מספר 13 בורדו"
+        },
+        {
+          "handle": "sw-jerseys-137280095",
+          "id": "gid://shopify/Product/15308642353456",
+          "title": "גופיית כדורסל מיאמי היט מספר 14 בורדו"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-166290347",
+        "id": "gid://shopify/Product/15310213841200",
+        "title": "מכנסי כדורסל קליבלנד קאבלירס לבן 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-123212407",
+          "id": "gid://shopify/Product/15308658737456",
+          "title": "גופיית כדורסל קליבלנד קאבלירס מספר 45 לבן 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-166561952",
+        "id": "gid://shopify/Product/15310213284144",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-163399073",
+          "id": "gid://shopify/Product/15308606669104",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 לבן שילוב צבעים"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-167972915",
+        "id": "gid://shopify/Product/15310213546288",
+        "title": "מכנסי כדורסל דנבר נאגטס כחול 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-138860211",
+          "id": "gid://shopify/Product/15308642058544",
+          "title": "גופיית כדורסל דנבר נאגטס מספר 55 כחול"
+        },
+        {
+          "handle": "sw-jerseys-137504467",
+          "id": "gid://shopify/Product/15308642255152",
+          "title": "גופיית כדורסל דנבר נאגטס מספר 1 כחול 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-167973046",
+        "id": "gid://shopify/Product/15310213611824",
+        "title": "מכנסי כדורסל שיקגו בולס שחור 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-125234425",
+          "id": "gid://shopify/Product/15308664308016",
+          "title": "גופיית כדורסל שיקגו בולס מספר 23 שחור פסים"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-169876808",
+        "id": "gid://shopify/Product/15310214431024",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול כהה 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-163399313",
+          "id": "gid://shopify/Product/15308609126704",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 כחול כהה שילוב צבעים"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-175460355",
+        "id": "gid://shopify/Product/15310214201648",
+        "title": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-181428176",
+          "id": "gid://shopify/Product/15308598444336",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 11 לבן"
+        },
+        {
+          "handle": "sw-jerseys-164995491",
+          "id": "gid://shopify/Product/15308614435120",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 27 לבן"
+        },
+        {
+          "handle": "sw-jerseys-181434162",
+          "id": "gid://shopify/Product/15308593824048",
+          "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 3 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-182185751",
+        "id": "gid://shopify/Product/15310214824240",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-164339120",
+          "id": "gid://shopify/Product/15308606505264",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה"
+        },
+        {
+          "handle": "sw-jerseys-164994672",
+          "id": "gid://shopify/Product/15308606439728",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 כחול כהה"
+        },
+        {
+          "handle": "sw-jerseys-163398516",
+          "id": "gid://shopify/Product/15308603359536",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 0 כחול כהה 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-192208256",
+        "id": "gid://shopify/Product/15310214857008",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה מהדורת עיר 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-181429704",
+          "id": "gid://shopify/Product/15308598346032",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-193351654",
+          "id": "gid://shopify/Product/15308560531760",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 כחול כהה"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-192208415",
+        "id": "gid://shopify/Product/15310215610672",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן רטרו 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-188303519",
+          "id": "gid://shopify/Product/15308597920048",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-178550688",
+          "id": "gid://shopify/Product/15308596019504",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 לבן 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-193401022",
+        "id": "gid://shopify/Product/15310215119152",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-181429503",
+          "id": "gid://shopify/Product/15308598968624",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 מהדורת עיר צבע מדורג 2025"
+        },
+        {
+          "handle": "sw-jerseys-181429598",
+          "id": "gid://shopify/Product/15308597362992",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 מהדורת עיר צבע מדורג 2025"
+        },
+        {
+          "handle": "sw-jerseys-182545815",
+          "id": "gid://shopify/Product/15308598640944",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 4 מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-183134195",
+          "id": "gid://shopify/Product/15308593627440",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 9 מהדורת עיר 2025"
+        },
+        {
+          "handle": "sw-jerseys-188305333",
+          "id": "gid://shopify/Product/15308597821744",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צבע מדורג 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-193588866",
+        "id": "gid://shopify/Product/15310215414064",
+        "title": "מכנסי כדורסל ממפיס גריזליס לבן רטרו 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-105462130",
+          "id": "gid://shopify/Product/15308656279856",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן"
+        },
+        {
+          "handle": "sw-jerseys-178552312",
+          "id": "gid://shopify/Product/15308598542640",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן"
+        },
+        {
+          "handle": "sw-jerseys-193353588",
+          "id": "gid://shopify/Product/15308560335152",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 23 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-97018069",
+        "id": "gid://shopify/Product/15310215315760",
+        "title": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-93739741",
+          "id": "gid://shopify/Product/15308690882864",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 13 שחור מהדורת עיר 2021"
+        },
+        {
+          "handle": "sw-jerseys-93379115",
+          "id": "gid://shopify/Product/15308633735472",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 7 שחור מהדורת עיר 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-97018117",
+        "id": "gid://shopify/Product/15310216200496",
+        "title": "מכנסי כדורסל ממפיס גריזליס שחור מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-101778843",
+          "id": "gid://shopify/Product/15308672663856",
+          "title": "גופיית כדורסל ממפיס גריזליס מספר 12 מהדורת עיר 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-97018209",
+        "id": "gid://shopify/Product/15310215643440",
+        "title": "מכנסי כדורסל מיאמי היט צבע מדורג מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-92698729",
+          "id": "gid://shopify/Product/15308671254832",
+          "title": "גופיית כדורסל מיאמי היט מספר 13 מהדורת עיר צבע מדורג 2021"
+        },
+        {
+          "handle": "sw-jerseys-115261389",
+          "id": "gid://shopify/Product/15308639797552",
+          "title": "גופיית כדורסל מיאמי היט מספר 3 מהדורת עיר צבע מדורג 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-97018230",
+        "id": "gid://shopify/Product/15310215938352",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-87391747",
+          "id": "gid://shopify/Product/15308651266352",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור מהדורת עיר"
+        },
+        {
+          "handle": "sw-jerseys-86507461",
+          "id": "gid://shopify/Product/15308670533936",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור מהדורת עיר דוגמת נחש"
+        },
+        {
+          "handle": "sw-jerseys-98170299",
+          "id": "gid://shopify/Product/15308717687088",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 שחור דוגמת נחש"
+        },
+        {
+          "handle": "sw-jerseys-170956844",
+          "id": "gid://shopify/Product/15308598772016",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 9 דוגמת נחש"
+        },
+        {
+          "handle": "sw-jerseys-108435081",
+          "id": "gid://shopify/Product/15308678529328",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס שחור דוגמת נחש"
+        },
+        {
+          "handle": "sw-jerseys-188305667",
+          "id": "gid://shopify/Product/15308593430832",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 דוגמת נחש 2025"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-98995595",
+        "id": "gid://shopify/Product/15310216003888",
+        "title": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-123215727",
+          "id": "gid://shopify/Product/15308660408624",
+          "title": "גופיית כדורסל ברוקלין נטס מספר 11"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-98995665",
+        "id": "gid://shopify/Product/15310216790320",
+        "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-92772550",
+          "id": "gid://shopify/Product/15308633801008",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 11 כחול כהה מהדורת עיר 2021"
+        },
+        {
+          "handle": "sw-jerseys-89669153",
+          "id": "gid://shopify/Product/15308691439920",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021"
+        },
+        {
+          "handle": "sw-jerseys-90916654",
+          "id": "gid://shopify/Product/15308691145008",
+          "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021"
+        }
+      ]
+    }
+  ],
+  "not_paired": [
+    {
+      "handle": "sw-shorts-102038658",
+      "id": "gid://shopify/Product/15310203617584",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור"
+    },
+    {
+      "handle": "sw-shorts-102248990",
+      "id": "gid://shopify/Product/15310203093296",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס שחור"
+    },
+    {
+      "handle": "sw-shorts-103471716",
+      "id": "gid://shopify/Product/15310203388208",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן עם פסים צבעוניים"
+    },
+    {
+      "handle": "sw-shorts-107585192",
+      "id": "gid://shopify/Product/15310204272944",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו"
+    },
+    {
+      "handle": "sw-shorts-112290476",
+      "id": "gid://shopify/Product/15310203945264",
+      "title": "מכנסי כדורסל ממפיס גריזליס כחול כהה מהדורת עיר 2022"
+    },
+    {
+      "handle": "sw-shorts-112290479",
+      "id": "gid://shopify/Product/15310204436784",
+      "title": "מכנסי כדורסל ממפיס גריזליס תכלת"
+    },
+    {
+      "handle": "sw-shorts-117771213",
+      "id": "gid://shopify/Product/15310205223216",
+      "title": "מכנסי כדורסל ממפיס גריזליס טורקיז רטרו"
+    },
+    {
+      "handle": "sw-shorts-117771215",
+      "id": "gid://shopify/Product/15310205714736",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול כהה"
+    },
+    {
+      "handle": "sw-shorts-118413052",
+      "id": "gid://shopify/Product/15310206665008",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס צהוב"
+    },
+    {
+      "handle": "sw-shorts-118413053",
+      "id": "gid://shopify/Product/15310205976880",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן רטרו"
+    },
+    {
+      "handle": "sw-shorts-118832831",
+      "id": "gid://shopify/Product/15310207123760",
+      "title": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר לבן"
+    },
+    {
+      "handle": "sw-shorts-119174403",
+      "id": "gid://shopify/Product/15310206533936",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור 2020"
+    },
+    {
+      "handle": "sw-shorts-121082936",
+      "id": "gid://shopify/Product/15310207844656",
+      "title": "מכנסי כדורסל פיניקס סאנס כתום"
+    },
+    {
+      "handle": "sw-shorts-148159927",
+      "id": "gid://shopify/Product/15310209450288",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס בורדו 2021"
+    },
+    {
+      "handle": "sw-shorts-148160084",
+      "id": "gid://shopify/Product/15310209679664",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס שחור 2021"
+    },
+    {
+      "handle": "sw-shorts-151346347",
+      "id": "gid://shopify/Product/15310209581360",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה 2023"
+    },
+    {
+      "handle": "sw-shorts-154080335",
+      "id": "gid://shopify/Product/15310210367792",
+      "title": "מכנסי כדורסל סקרמנטו קינגס לבן 2024"
+    },
+    {
+      "handle": "sw-shorts-154517406",
+      "id": "gid://shopify/Product/15310210793776",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס לבן 2021"
+    },
+    {
+      "handle": "sw-shorts-174665977",
+      "id": "gid://shopify/Product/15310213873968",
+      "title": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024"
+    },
+    {
+      "handle": "sw-shorts-178875560",
+      "id": "gid://shopify/Product/15310214168880",
+      "title": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר"
+    },
+    {
+      "handle": "sw-shorts-179568568",
+      "id": "gid://shopify/Product/15310215020848",
+      "title": "מכנסי כדורסל שארלוט הורנטס לבן"
+    },
+    {
+      "handle": "sw-shorts-180726943",
+      "id": "gid://shopify/Product/15310214463792",
+      "title": "מכנסי כדורסל שארלוט הורנטס טורקיז"
+    }
+  ]
+}

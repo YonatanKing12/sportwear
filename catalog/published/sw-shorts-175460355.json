@@ -1,0 +1,156 @@
+{
+  "handle": "sw-shorts-175460355",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "minnesota-timberwolves",
+    "code": "MIN",
+    "he": "מינסוטה טימברוולבס",
+    "en": "Minnesota Timberwolves",
+    "ar": "مينيسوتا تمبروولفز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של מינסוטה טימברוולבס בעיצוב רטרו, בצבע לבן, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024 | SportWear",
+    "description_he": "מכנסי הכדורסל של מינסוטה טימברוולבס בעיצוב רטרו, בצבע לבן, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-MIN-S-2024-A-175460355-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-MIN-S-2024-A-175460355-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-MIN-S-2024-A-175460355-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-MIN-S-2024-A-175460355-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-175460355.png",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-175460355__back.png",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-175460355-1.jpg",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-175460355-2.jpg",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-181428176", "sw-jerseys-164995491", "sw-jerseys-181434162"]
+  },
+  "translations": {
+    "en": {
+      "title": "Minnesota Timberwolves Basketball Shorts – White, Retro, 2024",
+      "description_html": "<p>Minnesota Timberwolves basketball shorts, retro design, in white, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Minnesota Timberwolves Shorts – White, Retro, 2024",
+      "seo_description": "Minnesota Timberwolves basketball shorts, retro design, in white, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة مينيسوتا تمبروولفز أبيض ريترو 2024",
+      "description_html": "<p>شورت كرة السلة لفريق مينيسوتا تمبروولفز بتصميم ريترو، باللون الأبيض، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة مينيسوتا تمبروولفز أبيض ريترو 2024 | SportWear",
+      "seo_description": "شورت كرة السلة لفريق مينيسوتا تمبروولفز بتصميم ريترو، باللون الأبيض، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/175460355?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 森林狼 复古 短裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:minnesota-timberwolves",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:175460355",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:retro",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "minnesota timberwolves",
+    "timberwolves",
+    "مينيسوتا تمبروولفز",
+    "تمبروولفز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "retro",
+    "vintage",
+    "throwback",
+    "ريترو"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310214201648",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859582714160",
+      "M": "gid://shopify/ProductVariant/67859582746928",
+      "L": "gid://shopify/ProductVariant/67859582779696",
+      "XL": "gid://shopify/ProductVariant/67859582812464"
+    },
+    "created_at": "2026-09-27T13:12:43Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:54:19Z",
+      "ar": "2026-09-27T13:54:19Z"
+    }
+  }
+}

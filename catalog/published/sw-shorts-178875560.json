@@ -1,0 +1,152 @@
+{
+  "handle": "sw-shorts-178875560",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "miami-heat",
+    "code": "MIA",
+    "he": "מיאמי היט",
+    "en": "Miami Heat",
+    "ar": "ميامي هيت"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר",
+  "description_html_he": "<p>מכנסי הכדורסל של מיאמי היט במהדורת העיר, בצבע לבן, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר | SportWear",
+    "description_he": "מכנסי הכדורסל של מיאמי היט במהדורת העיר, בצבע לבן, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-MIA-S-0000-A-178875560-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-MIA-S-0000-A-178875560-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-MIA-S-0000-A-178875560-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-MIA-S-0000-A-178875560-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-178875560.png",
+      "alt_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-178875560__back.png",
+      "alt_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-178875560-1.jpg",
+      "alt_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-178875560-2.jpg",
+      "alt_he": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Miami Heat Basketball Shorts – White, City Edition",
+      "description_html": "<p>Miami Heat basketball shorts, City Edition, in white, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Miami Heat Basketball Shorts – White, City Edition",
+      "seo_description": "Miami Heat basketball shorts, City Edition, in white, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة ميامي هيت أبيض إصدار المدينة",
+      "description_html": "<p>شورت كرة السلة لفريق ميامي هيت من إصدار المدينة، باللون الأبيض، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة ميامي هيت أبيض إصدار المدينة | SportWear",
+      "seo_description": "شورت كرة السلة لفريق ميامي هيت من إصدار المدينة، باللون الأبيض، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/178875560?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "热火队 圆领白色 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:miami-heat",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:178875560",
+    "import:2026-09-27",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "miami heat",
+    "heat",
+    "ميامي هيت",
+    "هيت",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310214168880",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859582583088",
+      "M": "gid://shopify/ProductVariant/67859582615856",
+      "L": "gid://shopify/ProductVariant/67859582648624",
+      "XL": "gid://shopify/ProductVariant/67859582681392"
+    },
+    "created_at": "2026-09-27T13:12:40Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:35:20Z",
+      "ar": "2026-09-27T13:35:20Z"
+    }
+  }
+}

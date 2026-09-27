@@ -1,0 +1,153 @@
+{
+  "handle": "sw-shorts-159307083",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "indiana-pacers",
+    "code": "IND",
+    "he": "אינדיאנה פייסרס",
+    "en": "Indiana Pacers",
+    "ar": "إنديانا بيسرز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של אינדיאנה פייסרס במהדורת העיר, בצבע שחור, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024",
+    "description_he": "מכנסי הכדורסל של אינדיאנה פייסרס במהדורת העיר, בצבע שחור, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-IND-S-2024-A-159307083-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-IND-S-2024-A-159307083-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-IND-S-2024-A-159307083-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-IND-S-2024-A-159307083-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-159307083.png",
+      "alt_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-159307083__back.png",
+      "alt_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-159307083-1.jpg",
+      "alt_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-159307083-2.jpg",
+      "alt_he": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-150931858"]
+  },
+  "translations": {
+    "en": {
+      "title": "Indiana Pacers Basketball Shorts – Black, City Edition 2024",
+      "description_html": "<p>Indiana Pacers basketball shorts, City Edition, in black, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Indiana Pacers Basketball Shorts – Black, City Edition 2024",
+      "seo_description": "Indiana Pacers basketball shorts, City Edition, in black, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة إنديانا بيسرز أسود إصدار المدينة 2024",
+      "description_html": "<p>شورت كرة السلة لفريق إنديانا بيسرز من إصدار المدينة، باللون الأسود، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة إنديانا بيسرز أسود إصدار المدينة 2024",
+      "seo_description": "شورت كرة السلة لفريق إنديانا بيسرز من إصدار المدينة، باللون الأسود، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/159307083?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 步行者 城市版 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:indiana-pacers",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:159307083",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "indiana pacers",
+    "pacers",
+    "إنديانا بيسرز",
+    "بيسرز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310211907888",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859552895280",
+      "M": "gid://shopify/ProductVariant/67859552928048",
+      "L": "gid://shopify/ProductVariant/67859552960816",
+      "XL": "gid://shopify/ProductVariant/67859552993584"
+    },
+    "created_at": "2026-09-27T13:10:54Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:51:07Z",
+      "ar": "2026-09-27T13:51:08Z"
+    }
+  }
+}

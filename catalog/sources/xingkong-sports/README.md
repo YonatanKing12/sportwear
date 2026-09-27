@@ -35,6 +35,16 @@ and to activate them after our own check.
    ACTIVE and the Online Store (the owner's instruction for this import), English and Arabic
    translations, and the set pieces on the jerseys (`complements` plus the tag `set:jersey`).
 
-**Status (2026-09-27, in progress):** the photos of the 106 new albums are downloaded and under review. In
-Shopify so far: the size chart, also attached to the ten shorts from before. When the products are created,
-their log goes to `catalog/published/shorts-xingkong-2026-09-27.json`.
+**Status (2026-09-27, done):** all 106 new albums are in the store, ACTIVE and on the Online Store: 116 shorts in all
+with the ten from before. 84 of them are sets with 204 jerseys (₪229 with the set discount). 378 photos: a studio
+front and back for each, plus the supplier's own close-ups where the album had sharp ones. The log is
+`catalog/published/shorts-xingkong-2026-09-27.json`; the product files are `catalog/published/sw-shorts-<album>.json`.
+
+Lessons from this import:
+
+- Stage at most 40 images per `stagedUploadsCreate` call: a bigger result is too large to come back inline.
+- The connector refuses `bulkOperationRunMutation`, so products are created one `productSet` at a time (parallel
+  agents, one group each), ACTIVE with `bulk-update-product-status` (50 per call) and published with
+  `publicationUpdate` (`publishablesToAdd`, 50 per call).
+- Two titles came out alike (two white Clippers shorts, two blue Warriors shorts, two white Nets shorts): the review
+  adds a distinguishing `title_extra` from the photos.

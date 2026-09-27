@@ -1,0 +1,1034 @@
+{
+  "_note": "The 106 NBA shorts imported from the supplier xingkong-sports on 2026-09-27 (the owner: 'אתה יכול לשאוב מפה את כולם', ₪119 like the ten shorts before, and to activate them after our own check). Every album was reviewed from its photos (team, colour, City Edition or retro, matching jerseys), every studio photo was compared with the supplier's photo, and every product was read back after creation (media READY, 4 variants S-XL at ₪119, 5 units each, DENY, metafields). Created as DRAFT with productSet, then set ACTIVE and published to the Online Store on 2026-09-27. 84 of them are sets: the shorts list their jerseys in sportwear.complements and carry set:shorts; the jerseys list the shorts back and carry set:jersey (catalog/published/complements-shorts-2026-09-27.json). Product files: catalog/published/<handle>.json. Process: catalog/sources/xingkong-sports/README.md.",
+  "created": "2026-09-27",
+  "status": "ACTIVE, Online Store",
+  "price": 119,
+  "size_chart": "xingkong-nba-shorts-fan",
+  "counts": {
+    "products": 106,
+    "with_set": 84,
+    "set_jerseys": 204,
+    "photos": 378
+  },
+  "products": [
+    {
+      "handle": "sw-shorts-100267629",
+      "id": "gid://shopify/Product/15310203289904",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/100267629?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-106384395", "sw-jerseys-188303737"]
+    },
+    {
+      "handle": "sw-shorts-100267711",
+      "id": "gid://shopify/Product/15310202306864",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/100267711?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-116023843", "sw-jerseys-201617361", "sw-jerseys-188303373"]
+    },
+    {
+      "handle": "sw-shorts-101891876",
+      "id": "gid://shopify/Product/15310202339632",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול 2021",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/101891876?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-121583069"]
+    },
+    {
+      "handle": "sw-shorts-101891879",
+      "id": "gid://shopify/Product/15310202634544",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/101891879?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-106552772"]
+    },
+    {
+      "handle": "sw-shorts-102038658",
+      "id": "gid://shopify/Product/15310203617584",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/102038658?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-102248925",
+      "id": "gid://shopify/Product/15310202863920",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס לבן עם צדדים בכחול ובאדום",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/102248925?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-160789774", "sw-jerseys-149584549"]
+    },
+    {
+      "handle": "sw-shorts-102248990",
+      "id": "gid://shopify/Product/15310203093296",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס שחור",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/102248990?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-102248997",
+      "id": "gid://shopify/Product/15310202962224",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/102248997?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-168712116"]
+    },
+    {
+      "handle": "sw-shorts-102715994",
+      "id": "gid://shopify/Product/15310204010800",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס צהוב",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/102715994?uid=1",
+      "photos": 4,
+      "set_jerseys": [
+        "sw-jerseys-188305232",
+        "sw-jerseys-101296495",
+        "sw-jerseys-106014840",
+        "sw-jerseys-137280224",
+        "sw-jerseys-106048308",
+        "sw-jerseys-87589344",
+        "sw-jerseys-89419160",
+        "sw-jerseys-170956437",
+        "sw-jerseys-101483235",
+        "sw-jerseys-168657361",
+        "sw-jerseys-137279996"
+      ]
+    },
+    {
+      "handle": "sw-shorts-103019469",
+      "id": "gid://shopify/Product/15310203126064",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול עם כיתוב WARRIORS בצד",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/103019469?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-95542347"]
+    },
+    {
+      "handle": "sw-shorts-103471716",
+      "id": "gid://shopify/Product/15310203388208",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן עם פסים צבעוניים",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/103471716?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-106626645",
+      "id": "gid://shopify/Product/15310203748656",
+      "title": "מכנסי כדורסל ברוקלין נטס כחול כהה מהדורת עיר 2022",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/106626645?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-107722150", "sw-jerseys-107722044"]
+    },
+    {
+      "handle": "sw-shorts-106737579",
+      "id": "gid://shopify/Product/15310203224368",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/106737579?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-132028207", "sw-jerseys-125235085", "sw-jerseys-105152935"]
+    },
+    {
+      "handle": "sw-shorts-107104761",
+      "id": "gid://shopify/Product/15310204535088",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2022",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/107104761?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-117745372", "sw-jerseys-116965534", "sw-jerseys-106849498", "sw-jerseys-106390553"]
+    },
+    {
+      "handle": "sw-shorts-107105006",
+      "id": "gid://shopify/Product/15310203519280",
+      "title": "מכנסי כדורסל ברוקלין נטס שחור",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/107105006?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-137279976", "sw-jerseys-106553077", "sw-jerseys-107311417", "sw-jerseys-106552848"]
+    },
+    {
+      "handle": "sw-shorts-107585192",
+      "id": "gid://shopify/Product/15310204272944",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/107585192?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-111582994",
+      "id": "gid://shopify/Product/15310204076336",
+      "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר 2022",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/111582994?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-115260069", "sw-jerseys-115260102", "sw-jerseys-115260002"]
+    },
+    {
+      "handle": "sw-shorts-112290476",
+      "id": "gid://shopify/Product/15310203945264",
+      "title": "מכנסי כדורסל ממפיס גריזליס כחול כהה מהדורת עיר 2022",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/112290476?uid=1",
+      "photos": 2,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-112290479",
+      "id": "gid://shopify/Product/15310204436784",
+      "title": "מכנסי כדורסל ממפיס גריזליס תכלת",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/112290479?uid=1",
+      "photos": 3,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-112616599",
+      "id": "gid://shopify/Product/15310204371248",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס תכלת מהדורת עיר 2022",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/112616599?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-116023995"]
+    },
+    {
+      "handle": "sw-shorts-112616724",
+      "id": "gid://shopify/Product/15310204928304",
+      "title": "מכנסי כדורסל שארלוט הורנטס כחול מהדורת עיר 2022",
+      "team": "charlotte-hornets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/112616724?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-107074855", "sw-jerseys-122604480"]
+    },
+    {
+      "handle": "sw-shorts-114169258",
+      "id": "gid://shopify/Product/15310204698928",
+      "title": "מכנסי כדורסל שיקגו בולס לבן",
+      "team": "chicago-bulls",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/114169258?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-105900531", "sw-jerseys-101297298", "sw-jerseys-105012518"]
+    },
+    {
+      "handle": "sw-shorts-114169299",
+      "id": "gid://shopify/Product/15310204895536",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2022",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/114169299?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-182156398", "sw-jerseys-167567498", "sw-jerseys-165919738"]
+    },
+    {
+      "handle": "sw-shorts-114463096",
+      "id": "gid://shopify/Product/15310204830000",
+      "title": "מכנסי כדורסל שיקגו בולס אדום",
+      "team": "chicago-bulls",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/114463096?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-160789712", "sw-jerseys-103308176", "sw-jerseys-105225676", "sw-jerseys-96558847"]
+    },
+    {
+      "handle": "sw-shorts-114463161",
+      "id": "gid://shopify/Product/15310205255984",
+      "title": "מכנסי כדורסל שיקגו בולס שחור",
+      "team": "chicago-bulls",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/114463161?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-105012782", "sw-jerseys-103160556", "sw-jerseys-105012325"]
+    },
+    {
+      "handle": "sw-shorts-116518878",
+      "id": "gid://shopify/Product/15310205616432",
+      "title": "מכנסי כדורסל בוסטון סלטיקס ירוק",
+      "team": "boston-celtics",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/116518878?uid=1",
+      "photos": 3,
+      "set_jerseys": [
+        "sw-jerseys-106680476",
+        "sw-jerseys-148097182",
+        "sw-jerseys-167569022",
+        "sw-jerseys-97381444",
+        "sw-jerseys-168444102"
+      ]
+    },
+    {
+      "handle": "sw-shorts-116518978",
+      "id": "gid://shopify/Product/15310205059376",
+      "title": "מכנסי כדורסל בוסטון סלטיקס לבן",
+      "team": "boston-celtics",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/116518978?uid=1",
+      "photos": 3,
+      "set_jerseys": [
+        "sw-jerseys-94399727",
+        "sw-jerseys-168442142",
+        "sw-jerseys-123472570",
+        "sw-jerseys-168442532",
+        "sw-jerseys-143753994"
+      ]
+    },
+    {
+      "handle": "sw-shorts-117771209",
+      "id": "gid://shopify/Product/15310205681968",
+      "title": "מכנסי כדורסל ממפיס גריזליס לבן",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771209?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-114585756", "sw-jerseys-117745194"]
+    },
+    {
+      "handle": "sw-shorts-117771210",
+      "id": "gid://shopify/Product/15310206206256",
+      "title": "מכנסי כדורסל ממפיס גריזליס כחול כהה",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771210?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-113666492"]
+    },
+    {
+      "handle": "sw-shorts-117771213",
+      "id": "gid://shopify/Product/15310205223216",
+      "title": "מכנסי כדורסל ממפיס גריזליס טורקיז רטרו",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771213?uid=1",
+      "photos": 3,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-117771215",
+      "id": "gid://shopify/Product/15310205714736",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול כהה",
+      "team": "dallas-mavericks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771215?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-117771220",
+      "id": "gid://shopify/Product/15310206075184",
+      "title": "מכנסי כדורסל דאלאס מאבריקס לבן",
+      "team": "dallas-mavericks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771220?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-143011280", "sw-jerseys-209199939", "sw-jerseys-165920571", "sw-jerseys-193350893"]
+    },
+    {
+      "handle": "sw-shorts-117771221",
+      "id": "gid://shopify/Product/15310205518128",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס כחול רטרו",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771221?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-102972721", "sw-jerseys-98170105", "sw-jerseys-188304969", "sw-jerseys-101483328"]
+    },
+    {
+      "handle": "sw-shorts-117771224",
+      "id": "gid://shopify/Product/15310206730544",
+      "title": "מכנסי כדורסל בוסטון סלטיקס שחור",
+      "team": "boston-celtics",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/117771224?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-181429961"]
+    },
+    {
+      "handle": "sw-shorts-118413052",
+      "id": "gid://shopify/Product/15310206665008",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס צהוב",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118413052?uid=1",
+      "photos": 3,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-118413053",
+      "id": "gid://shopify/Product/15310205976880",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן רטרו",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118413053?uid=1",
+      "photos": 3,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-118413055",
+      "id": "gid://shopify/Product/15310207254832",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס שחור רטרו",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118413055?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-164118532"]
+    },
+    {
+      "handle": "sw-shorts-118413057",
+      "id": "gid://shopify/Product/15310206173488",
+      "title": "מכנסי כדורסל ניו יורק ניקס כחול",
+      "team": "new-york-knicks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118413057?uid=1",
+      "photos": 3,
+      "set_jerseys": [
+        "sw-jerseys-138859651",
+        "sw-jerseys-182546009",
+        "sw-jerseys-164994561",
+        "sw-jerseys-244981439",
+        "sw-jerseys-244980526"
+      ]
+    },
+    {
+      "handle": "sw-shorts-118413059",
+      "id": "gid://shopify/Product/15310206828848",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן מהדורת עיר",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118413059?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-106498722"]
+    },
+    {
+      "handle": "sw-shorts-118832831",
+      "id": "gid://shopify/Product/15310207123760",
+      "title": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר לבן",
+      "team": "oklahoma-city-thunder",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118832831?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-118832839",
+      "id": "gid://shopify/Product/15310207484208",
+      "title": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול",
+      "team": "oklahoma-city-thunder",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/118832839?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-162811063"]
+    },
+    {
+      "handle": "sw-shorts-119174403",
+      "id": "gid://shopify/Product/15310206533936",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור 2020",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/119174403?uid=1",
+      "photos": 2,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-121082816",
+      "id": "gid://shopify/Product/15310207549744",
+      "title": "מכנסי כדורסל פיניקס סאנס סגול",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/121082816?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-129501644"]
+    },
+    {
+      "handle": "sw-shorts-121082872",
+      "id": "gid://shopify/Product/15310207222064",
+      "title": "מכנסי כדורסל פיניקס סאנס לבן",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/121082872?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-129397712", "sw-jerseys-99800704", "sw-jerseys-99801376"]
+    },
+    {
+      "handle": "sw-shorts-121082936",
+      "id": "gid://shopify/Product/15310207844656",
+      "title": "מכנסי כדורסל פיניקס סאנס כתום",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/121082936?uid=1",
+      "photos": 2,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-121082989",
+      "id": "gid://shopify/Product/15310206959920",
+      "title": "מכנסי כדורסל ניו יורק ניקס לבן",
+      "team": "new-york-knicks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/121082989?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-164994520", "sw-jerseys-244980369", "sw-jerseys-244981825"]
+    },
+    {
+      "handle": "sw-shorts-125503564",
+      "id": "gid://shopify/Product/15310207582512",
+      "title": "מכנסי כדורסל ברוקלין נטס אפור",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/125503564?uid=1",
+      "photos": 3,
+      "set_jerseys": ["sw-jerseys-97596191"]
+    },
+    {
+      "handle": "sw-shorts-127381396",
+      "id": "gid://shopify/Product/15310208074032",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2023",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/127381396?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-129397492", "sw-jerseys-126131493"]
+    },
+    {
+      "handle": "sw-shorts-128674489",
+      "id": "gid://shopify/Product/15310207975728",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן מהדורת עיר 2023",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/128674489?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-128865212", "sw-jerseys-128865155"]
+    },
+    {
+      "handle": "sw-shorts-129375399",
+      "id": "gid://shopify/Product/15310207680816",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן רטרו 2023",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/129375399?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-121956579", "sw-jerseys-121956419"]
+    },
+    {
+      "handle": "sw-shorts-129375470",
+      "id": "gid://shopify/Product/15310208270640",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול 2023",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/129375470?uid=1",
+      "photos": 4,
+      "set_jerseys": [
+        "sw-jerseys-136506294",
+        "sw-jerseys-125238002",
+        "sw-jerseys-174168159",
+        "sw-jerseys-169088470",
+        "sw-jerseys-134343704",
+        "sw-jerseys-132029421",
+        "sw-jerseys-135856145",
+        "sw-jerseys-188306140"
+      ]
+    },
+    {
+      "handle": "sw-shorts-129375705",
+      "id": "gid://shopify/Product/15310208565552",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן רטרו 2023",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/129375705?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-130839928"]
+    },
+    {
+      "handle": "sw-shorts-130836692",
+      "id": "gid://shopify/Product/15310208467248",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו 2023",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/130836692?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-129499130"]
+    },
+    {
+      "handle": "sw-shorts-131384069",
+      "id": "gid://shopify/Product/15310208139568",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן מהדורת עיר 2023",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/131384069?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-125774716", "sw-jerseys-125774963"]
+    },
+    {
+      "handle": "sw-shorts-131384132",
+      "id": "gid://shopify/Product/15310208762160",
+      "title": "מכנסי כדורסל וושינגטון וויזארדס לבן רטרו 2023",
+      "team": "washington-wizards",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/131384132?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-125775363", "sw-jerseys-125774603"]
+    },
+    {
+      "handle": "sw-shorts-132738732",
+      "id": "gid://shopify/Product/15310209024304",
+      "title": "מכנסי כדורסל בוסטון סלטיקס ירוק מהדורת עיר 2023",
+      "team": "boston-celtics",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/132738732?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-127573632"]
+    },
+    {
+      "handle": "sw-shorts-133346216",
+      "id": "gid://shopify/Product/15310208958768",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול מהדורת עיר 2023",
+      "team": "dallas-mavericks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/133346216?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-126415536", "sw-jerseys-134342815"]
+    },
+    {
+      "handle": "sw-shorts-134004695",
+      "id": "gid://shopify/Product/15310209253680",
+      "title": "מכנסי כדורסל פיניקס סאנס שחור 2023",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/134004695?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-126131292"]
+    },
+    {
+      "handle": "sw-shorts-134500605",
+      "id": "gid://shopify/Product/15310208500016",
+      "title": "מכנסי כדורסל פילדלפיה 76׳ כחול",
+      "team": "philadelphia-76ers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/134500605?uid=1",
+      "photos": 2,
+      "set_jerseys": [
+        "sw-jerseys-182545944",
+        "sw-jerseys-225120784",
+        "sw-jerseys-110672405",
+        "sw-jerseys-95806572",
+        "sw-jerseys-218038874",
+        "sw-jerseys-169737053"
+      ]
+    },
+    {
+      "handle": "sw-shorts-141803097",
+      "id": "gid://shopify/Product/15310208893232",
+      "title": "מכנסי כדורסל מיאמי היט שחור",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/141803097?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-121582685", "sw-jerseys-244982056"]
+    },
+    {
+      "handle": "sw-shorts-148159925",
+      "id": "gid://shopify/Product/15310209155376",
+      "title": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר 2023",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/148159925?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-127052881", "sw-jerseys-128866462", "sw-jerseys-122915621", "sw-jerseys-127052899"]
+    },
+    {
+      "handle": "sw-shorts-148159927",
+      "id": "gid://shopify/Product/15310209450288",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס בורדו 2021",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/148159927?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-148160084",
+      "id": "gid://shopify/Product/15310209679664",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס שחור 2021",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/148160084?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-150861551",
+      "id": "gid://shopify/Product/15310209351984",
+      "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/150861551?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-86512521"]
+    },
+    {
+      "handle": "sw-shorts-151346347",
+      "id": "gid://shopify/Product/15310209581360",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה 2023",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/151346347?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-152164029",
+      "id": "gid://shopify/Product/15310209941808",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור מהדורת עיר 2024",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152164029?uid=1",
+      "photos": 4,
+      "set_jerseys": [
+        "sw-jerseys-151244303",
+        "sw-jerseys-151810105",
+        "sw-jerseys-188305098",
+        "sw-jerseys-146484515",
+        "sw-jerseys-148745501"
+      ]
+    },
+    {
+      "handle": "sw-shorts-152164269",
+      "id": "gid://shopify/Product/15310199226672",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2024",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152164269?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-150931928", "sw-jerseys-150931898", "sw-jerseys-151489518"]
+    },
+    {
+      "handle": "sw-shorts-152903221",
+      "id": "gid://shopify/Product/15310209745200",
+      "title": "מכנסי כדורסל פיניקס סאנס סגול מהדורת עיר 2024",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152903221?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-149880003", "sw-jerseys-149291809"]
+    },
+    {
+      "handle": "sw-shorts-152903253",
+      "id": "gid://shopify/Product/15310210040112",
+      "title": "מכנסי כדורסל פיניקס סאנס לבן 2024",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152903253?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-143991637"]
+    },
+    {
+      "handle": "sw-shorts-152903274",
+      "id": "gid://shopify/Product/15310210564400",
+      "title": "מכנסי כדורסל פיניקס סאנס סגול 2024",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152903274?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-143991246", "sw-jerseys-143991325", "sw-jerseys-143991683"]
+    },
+    {
+      "handle": "sw-shorts-152903289",
+      "id": "gid://shopify/Product/15310210269488",
+      "title": "מכנסי כדורסל אורלנדו מג׳יק כחול רטרו 2024",
+      "team": "orlando-magic",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/152903289?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-193351496"]
+    },
+    {
+      "handle": "sw-shorts-154080335",
+      "id": "gid://shopify/Product/15310210367792",
+      "title": "מכנסי כדורסל סקרמנטו קינגס לבן 2024",
+      "team": "sacramento-kings",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/154080335?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-154080354",
+      "id": "gid://shopify/Product/15310210662704",
+      "title": "מכנסי כדורסל סקרמנטו קינגס שחור 2024",
+      "team": "sacramento-kings",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/154080354?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-193351369"]
+    },
+    {
+      "handle": "sw-shorts-154517221",
+      "id": "gid://shopify/Product/15310211121456",
+      "title": "מכנסי כדורסל מיאמי היט לבן",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/154517221?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-244982001"]
+    },
+    {
+      "handle": "sw-shorts-154517406",
+      "id": "gid://shopify/Product/15310210793776",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס לבן 2021",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/154517406?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-158850761",
+      "id": "gid://shopify/Product/15310210990384",
+      "title": "מכנסי כדורסל פיניקס סאנס סגול רטרו 2023",
+      "team": "phoenix-suns",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/158850761?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-129501542"]
+    },
+    {
+      "handle": "sw-shorts-158850914",
+      "id": "gid://shopify/Product/15310211219760",
+      "title": "מכנסי כדורסל דאלאס מאבריקס שחור מהדורת עיר 2024",
+      "team": "dallas-mavericks",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/158850914?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-151489449", "sw-jerseys-149292072"]
+    },
+    {
+      "handle": "sw-shorts-159256085",
+      "id": "gid://shopify/Product/15310212628784",
+      "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר 2024",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/159256085?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-149880278", "sw-jerseys-149880333"]
+    },
+    {
+      "handle": "sw-shorts-159307062",
+      "id": "gid://shopify/Product/15310211416368",
+      "title": "מכנסי כדורסל בוסטון סלטיקס לבן מהדורת עיר 2024",
+      "team": "boston-celtics",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/159307062?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-152407227", "sw-jerseys-152407559", "sw-jerseys-149290421", "sw-jerseys-149291152"]
+    },
+    {
+      "handle": "sw-shorts-159307083",
+      "id": "gid://shopify/Product/15310211907888",
+      "title": "מכנסי כדורסל אינדיאנה פייסרס שחור מהדורת עיר 2024",
+      "team": "indiana-pacers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/159307083?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-150931858"]
+    },
+    {
+      "handle": "sw-shorts-160277296",
+      "id": "gid://shopify/Product/15310212333872",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/160277296?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-152007283", "sw-jerseys-149584887", "sw-jerseys-149291561"]
+    },
+    {
+      "handle": "sw-shorts-162704188",
+      "id": "gid://shopify/Product/15310213218608",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס שחור 2023",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/162704188?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-122604867"]
+    },
+    {
+      "handle": "sw-shorts-162704294",
+      "id": "gid://shopify/Product/15310212694320",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס בורדו 2023",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/162704294?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-122915434", "sw-jerseys-122739296"]
+    },
+    {
+      "handle": "sw-shorts-166289982",
+      "id": "gid://shopify/Product/15310212989232",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/166289982?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-152407516"]
+    },
+    {
+      "handle": "sw-shorts-166290225",
+      "id": "gid://shopify/Product/15310213087536",
+      "title": "מכנסי כדורסל מיאמי היט בורדו 2023",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/166290225?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-167567685", "sw-jerseys-137280095"]
+    },
+    {
+      "handle": "sw-shorts-166290347",
+      "id": "gid://shopify/Product/15310213841200",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס לבן 2023",
+      "team": "cleveland-cavaliers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/166290347?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-123212407"]
+    },
+    {
+      "handle": "sw-shorts-166561952",
+      "id": "gid://shopify/Product/15310213284144",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס לבן",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/166561952?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-163399073"]
+    },
+    {
+      "handle": "sw-shorts-167972915",
+      "id": "gid://shopify/Product/15310213546288",
+      "title": "מכנסי כדורסל דנבר נאגטס כחול 2023",
+      "team": "denver-nuggets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/167972915?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-138860211", "sw-jerseys-137504467"]
+    },
+    {
+      "handle": "sw-shorts-167973046",
+      "id": "gid://shopify/Product/15310213611824",
+      "title": "מכנסי כדורסל שיקגו בולס שחור 2023",
+      "team": "chicago-bulls",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/167973046?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-125234425"]
+    },
+    {
+      "handle": "sw-shorts-169876808",
+      "id": "gid://shopify/Product/15310214431024",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול כהה 2023",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/169876808?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-163399313"]
+    },
+    {
+      "handle": "sw-shorts-174665977",
+      "id": "gid://shopify/Product/15310213873968",
+      "title": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024",
+      "team": "utah-jazz",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/174665977?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-175460355",
+      "id": "gid://shopify/Product/15310214201648",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס לבן רטרו 2024",
+      "team": "minnesota-timberwolves",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/175460355?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-181428176", "sw-jerseys-164995491", "sw-jerseys-181434162"]
+    },
+    {
+      "handle": "sw-shorts-178875560",
+      "id": "gid://shopify/Product/15310214168880",
+      "title": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/178875560?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-179568568",
+      "id": "gid://shopify/Product/15310215020848",
+      "title": "מכנסי כדורסל שארלוט הורנטס לבן",
+      "team": "charlotte-hornets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/179568568?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-180726943",
+      "id": "gid://shopify/Product/15310214463792",
+      "title": "מכנסי כדורסל שארלוט הורנטס טורקיז",
+      "team": "charlotte-hornets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/180726943?uid=1",
+      "photos": 4,
+      "set_jerseys": []
+    },
+    {
+      "handle": "sw-shorts-182185751",
+      "id": "gid://shopify/Product/15310214824240",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה 2025",
+      "team": "los-angeles-clippers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/182185751?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-164339120", "sw-jerseys-164994672", "sw-jerseys-163398516"]
+    },
+    {
+      "handle": "sw-shorts-192208256",
+      "id": "gid://shopify/Product/15310214857008",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה מהדורת עיר 2025",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/192208256?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-181429704", "sw-jerseys-193351654"]
+    },
+    {
+      "handle": "sw-shorts-192208415",
+      "id": "gid://shopify/Product/15310215610672",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן רטרו 2025",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/192208415?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-188303519", "sw-jerseys-178550688"]
+    },
+    {
+      "handle": "sw-shorts-193401022",
+      "id": "gid://shopify/Product/15310215119152",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2025",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/193401022?uid=1",
+      "photos": 4,
+      "set_jerseys": [
+        "sw-jerseys-181429503",
+        "sw-jerseys-181429598",
+        "sw-jerseys-182545815",
+        "sw-jerseys-183134195",
+        "sw-jerseys-188305333"
+      ]
+    },
+    {
+      "handle": "sw-shorts-193588866",
+      "id": "gid://shopify/Product/15310215414064",
+      "title": "מכנסי כדורסל ממפיס גריזליס לבן רטרו 2025",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/193588866?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-105462130", "sw-jerseys-178552312", "sw-jerseys-193353588"]
+    },
+    {
+      "handle": "sw-shorts-97018069",
+      "id": "gid://shopify/Product/15310215315760",
+      "title": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2021",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/97018069?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-93739741", "sw-jerseys-93379115"]
+    },
+    {
+      "handle": "sw-shorts-97018117",
+      "id": "gid://shopify/Product/15310216200496",
+      "title": "מכנסי כדורסל ממפיס גריזליס שחור מהדורת עיר 2021",
+      "team": "memphis-grizzlies",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/97018117?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-101778843"]
+    },
+    {
+      "handle": "sw-shorts-97018209",
+      "id": "gid://shopify/Product/15310215643440",
+      "title": "מכנסי כדורסל מיאמי היט צבע מדורג מהדורת עיר 2021",
+      "team": "miami-heat",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/97018209?uid=1",
+      "photos": 2,
+      "set_jerseys": ["sw-jerseys-92698729", "sw-jerseys-115261389"]
+    },
+    {
+      "handle": "sw-shorts-97018230",
+      "id": "gid://shopify/Product/15310215938352",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור",
+      "team": "los-angeles-lakers",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/97018230?uid=1",
+      "photos": 2,
+      "set_jerseys": [
+        "sw-jerseys-87391747",
+        "sw-jerseys-86507461",
+        "sw-jerseys-98170299",
+        "sw-jerseys-170956844",
+        "sw-jerseys-108435081",
+        "sw-jerseys-188305667"
+      ]
+    },
+    {
+      "handle": "sw-shorts-98995595",
+      "id": "gid://shopify/Product/15310216003888",
+      "title": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2020",
+      "team": "brooklyn-nets",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/98995595?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-123215727"]
+    },
+    {
+      "handle": "sw-shorts-98995665",
+      "id": "gid://shopify/Product/15310216790320",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה מהדורת עיר 2021",
+      "team": "golden-state-warriors",
+      "album": "https://xingkong-sports.x.yupoo.com/albums/98995665?uid=1",
+      "photos": 4,
+      "set_jerseys": ["sw-jerseys-92772550", "sw-jerseys-89669153", "sw-jerseys-90916654"]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "handle": "sw-shorts-166289982",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "minnesota-timberwolves",
+    "code": "MIN",
+    "he": "מינסוטה טימברוולבס",
+    "en": "Minnesota Timberwolves",
+    "ar": "مينيسوتا تمبروولفز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של מינסוטה טימברוולבס במהדורת העיר, בצבע כחול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024",
+    "description_he": "מכנסי הכדורסל של מינסוטה טימברוולבס במהדורת העיר, בצבע כחול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-MIN-S-2024-A-166289982-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-MIN-S-2024-A-166289982-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-MIN-S-2024-A-166289982-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-MIN-S-2024-A-166289982-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-166289982.png",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-166289982__back.png",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-166289982-1.jpg",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-166289982-2.jpg",
+      "alt_he": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-152407516"]
+  },
+  "translations": {
+    "en": {
+      "title": "Minnesota Timberwolves Basketball Shorts – Blue, City Edition 2024",
+      "description_html": "<p>Minnesota Timberwolves basketball shorts, City Edition, in blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Minnesota Timberwolves Shorts – Blue, City Edition 2024",
+      "seo_description": "Minnesota Timberwolves basketball shorts, City Edition, in blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة مينيسوتا تمبروولفز أزرق إصدار المدينة 2024",
+      "description_html": "<p>شورت كرة السلة لفريق مينيسوتا تمبروولفز من إصدار المدينة، باللون الأزرق، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة مينيسوتا تمبروولفز أزرق إصدار المدينة 2024",
+      "seo_description": "شورت كرة السلة لفريق مينيسوتا تمبروولفز من إصدار المدينة، باللون الأزرق، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/166289982?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 森林狼 城市版 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:minnesota-timberwolves",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:166289982",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "minnesota timberwolves",
+    "timberwolves",
+    "مينيسوتا تمبروولفز",
+    "تمبروولفز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310212989232",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859564036400",
+      "M": "gid://shopify/ProductVariant/67859564069168",
+      "L": "gid://shopify/ProductVariant/67859564101936",
+      "XL": "gid://shopify/ProductVariant/67859564134704"
+    },
+    "created_at": "2026-09-27T13:11:33Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:54:18Z",
+      "ar": "2026-09-27T13:54:19Z"
+    }
+  }
+}

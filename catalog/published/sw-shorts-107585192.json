@@ -1,0 +1,155 @@
+{
+  "handle": "sw-shorts-107585192",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "golden-state-warriors",
+    "code": "GSW",
+    "he": "גולדן סטייט ווריורס",
+    "en": "Golden State Warriors",
+    "ar": "غولدن ستايت ووريرز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו",
+  "description_html_he": "<p>מכנסי הכדורסל של גולדן סטייט ווריורס בעיצוב רטרו, בצבע כחול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו | SportWear",
+    "description_he": "מכנסי הכדורסל של גולדן סטייט ווריורס בעיצוב רטרו, בצבע כחול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-GSW-S-0000-A-107585192-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-GSW-S-0000-A-107585192-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-GSW-S-0000-A-107585192-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-GSW-S-0000-A-107585192-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-107585192.png",
+      "alt_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-107585192__back.png",
+      "alt_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-107585192-1.jpg",
+      "alt_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-107585192-2.jpg",
+      "alt_he": "מכנסי כדורסל גולדן סטייט ווריורס כחול רטרו (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Golden State Warriors Basketball Shorts – Blue, Retro",
+      "description_html": "<p>Golden State Warriors basketball shorts, retro design, in blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Golden State Warriors Basketball Shorts – Blue, Retro",
+      "seo_description": "Golden State Warriors basketball shorts, retro design, in blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة غولدن ستايت ووريرز أزرق ريترو",
+      "description_html": "<p>شورت كرة السلة لفريق غولدن ستايت ووريرز بتصميم ريترو، باللون الأزرق، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة غولدن ستايت ووريرز أزرق ريترو | SportWear",
+      "seo_description": "شورت كرة السلة لفريق غولدن ستايت ووريرز بتصميم ريترو، باللون الأزرق، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/107585192?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "75周年勇士队 复古短裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:golden-state-warriors",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:107585192",
+    "import:2026-09-27",
+    "style:retro",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "golden state warriors",
+    "warriors",
+    "غولدن ستايت ووريرز",
+    "ووريرز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "retro",
+    "vintage",
+    "throwback",
+    "ريترو"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310204272944",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859400786224",
+      "M": "gid://shopify/ProductVariant/67859400818992",
+      "L": "gid://shopify/ProductVariant/67859400851760",
+      "XL": "gid://shopify/ProductVariant/67859400884528"
+    },
+    "created_at": "2026-09-27T13:02:28Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:38:04Z",
+      "ar": "2026-09-27T13:38:04Z"
+    }
+  }
+}

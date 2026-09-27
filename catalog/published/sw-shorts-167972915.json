@@ -1,0 +1,151 @@
+{
+  "handle": "sw-shorts-167972915",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "denver-nuggets",
+    "code": "DEN",
+    "he": "דנבר נאגטס",
+    "en": "Denver Nuggets",
+    "ar": "دنفر ناغتس"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2023",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל דנבר נאגטס כחול 2023",
+  "description_html_he": "<p>מכנסי הכדורסל של דנבר נאגטס, בצבע כחול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל דנבר נאגטס כחול 2023 | SportWear",
+    "description_he": "מכנסי הכדורסל של דנבר נאגטס, בצבע כחול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-DEN-A-2023-A-167972915-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-DEN-A-2023-A-167972915-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-DEN-A-2023-A-167972915-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-DEN-A-2023-A-167972915-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-167972915.png",
+      "alt_he": "מכנסי כדורסל דנבר נאגטס כחול 2023",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-167972915__back.png",
+      "alt_he": "מכנסי כדורסל דנבר נאגטס כחול 2023 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-167972915-1.jpg",
+      "alt_he": "מכנסי כדורסל דנבר נאגטס כחול 2023 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-167972915-2.jpg",
+      "alt_he": "מכנסי כדורסל דנבר נאגטס כחול 2023 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-138860211", "sw-jerseys-137504467"]
+  },
+  "translations": {
+    "en": {
+      "title": "Denver Nuggets Basketball Shorts – Blue, 2023",
+      "description_html": "<p>Denver Nuggets basketball shorts, in blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Denver Nuggets Basketball Shorts – Blue, 2023 | SportWear",
+      "seo_description": "Denver Nuggets basketball shorts, in blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة دنفر ناغتس أزرق 2023",
+      "description_html": "<p>شورت كرة السلة لفريق دنفر ناغتس، باللون الأزرق، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة دنفر ناغتس أزرق 2023 | SportWear",
+      "seo_description": "شورت كرة السلة لفريق دنفر ناغتس، باللون الأزرق، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/167972915?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "23赛季 掘金队 飞人限定 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:denver-nuggets",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:167972915",
+    "import:2026-09-27",
+    "set:shorts",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "denver nuggets",
+    "nuggets",
+    "دنفر ناغتس",
+    "ناغتس",
+    "nba",
+    "الدوري الأمريكي لكرة السلة"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310213546288",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859573440816",
+      "M": "gid://shopify/ProductVariant/67859573473584",
+      "L": "gid://shopify/ProductVariant/67859573506352",
+      "XL": "gid://shopify/ProductVariant/67859573539120"
+    },
+    "created_at": "2026-09-27T13:12:06Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:54:19Z",
+      "ar": "2026-09-27T13:54:19Z"
+    }
+  }
+}

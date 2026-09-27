@@ -1,0 +1,149 @@
+{
+  "handle": "sw-shorts-134500605",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "philadelphia-76ers",
+    "code": "PHI",
+    "he": "פילדלפיה 76׳",
+    "en": "Philadelphia 76ers",
+    "ar": "فيلادلفيا سفنتي سيكسرز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל פילדלפיה 76׳ כחול",
+  "description_html_he": "<p>מכנסי הכדורסל של פילדלפיה 76׳, בצבע כחול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל פילדלפיה 76׳ כחול | SportWear",
+    "description_he": "מכנסי הכדורסל של פילדלפיה 76׳, בצבע כחול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-PHI-A-0000-A-134500605-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-PHI-A-0000-A-134500605-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-PHI-A-0000-A-134500605-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-PHI-A-0000-A-134500605-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-134500605.png",
+      "alt_he": "מכנסי כדורסל פילדלפיה 76׳ כחול",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-134500605__back.png",
+      "alt_he": "מכנסי כדורסל פילדלפיה 76׳ כחול (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": [
+      "sw-jerseys-182545944",
+      "sw-jerseys-225120784",
+      "sw-jerseys-110672405",
+      "sw-jerseys-95806572",
+      "sw-jerseys-218038874",
+      "sw-jerseys-169737053"
+    ]
+  },
+  "translations": {
+    "en": {
+      "title": "Philadelphia 76ers Basketball Shorts – Blue",
+      "description_html": "<p>Philadelphia 76ers basketball shorts, in blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Philadelphia 76ers Basketball Shorts – Blue | SportWear",
+      "seo_description": "Philadelphia 76ers basketball shorts, in blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة فيلادلفيا سفنتي سيكسرز أزرق",
+      "description_html": "<p>شورت كرة السلة لفريق فيلادلفيا سفنتي سيكسرز، باللون الأزرق، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة فيلادلفيا سفنتي سيكسرز أزرق | SportWear",
+      "seo_description": "شورت كرة السلة لفريق فيلادلفيا سفنتي سيكسرز، باللون الأزرق، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/134500605?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "76人队 蓝色 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:philadelphia-76ers",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:134500605",
+    "import:2026-09-27",
+    "set:shorts",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "philadelphia 76ers",
+    "76ers",
+    "sixers",
+    "فيلادلفيا سفنتي سيكسرز",
+    "سيكسرز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310208500016",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859491946800",
+      "M": "gid://shopify/ProductVariant/67859491979568",
+      "L": "gid://shopify/ProductVariant/67859492012336",
+      "XL": "gid://shopify/ProductVariant/67859492045104"
+    },
+    "created_at": "2026-09-27T13:07:28Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:48:04Z",
+      "ar": "2026-09-27T13:48:04Z"
+    }
+  }
+}

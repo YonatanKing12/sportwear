@@ -45,6 +45,7 @@ COLOURS = {
     'grey': ('אפור', 'Grey', 'رمادي'), 'orange': ('כתום', 'Orange', 'برتقالي'), 'beige': ('בז׳', 'Beige', 'بيج'),
     'gold': ('זהב', 'Gold', 'ذهبي'), 'teal': ('טורקיז', 'Turquoise', 'فيروزي'),
     'burgundy': ('בורדו', 'Burgundy', 'عنابي'), 'light-blue': ('תכלת', 'Light Blue', 'سماوي'),
+    'gradient': ('צבע מדורג', 'Gradient', 'بلون متدرج'),
 }
 EDITION = {'city': ('מהדורת עיר', 'City Edition', 'إصدار المدينة'), 'retro': ('רטרו', 'Retro', 'ريترو')}
 SIZES = ['S', 'M', 'L', 'XL']
@@ -86,31 +87,46 @@ def texts(team, colour, edition, year, extra):
         'city': (' במהדורת העיר', ', City Edition', ' من إصدار المدينة'),
         'retro': (' בעיצוב רטרו', ', retro design', ' بتصميم ريترو'),
     }.get(edition, ('', '', ''))
-    colour_en = en_c.lower()
-    # Arabic with the article: "الأبيض", and "الأزرق الداكن" for the two-word colour.
-    ar_def = ' '.join('ال' + w for w in ar_c.split())
+    # "in white" / "בצבע לבן" / "باللون الأبيض" (with the article, "الأزرق الداكن" for the two-word colour);
+    # a gradient design reads "in a colour gradient".
+    if colour == 'gradient':
+        in_colour = ('בצבע מדורג', 'in a colour gradient', 'بلون متدرج')
+    else:
+        in_colour = (f'בצבע {he_c}', f'in {en_c.lower()}', 'باللون ' + ' '.join('ال' + w for w in ar_c.split()))
     desc = {
-        'he': f"<p>מכנסי הכדורסל של {team['he']}{ed_phrase[0]}, בצבע {he_c}, בגרסת אוהד.</p>"
+        'he': f"<p>מכנסי הכדורסל של {team['he']}{ed_phrase[0]}, {in_colour[0]}, בגרסת אוהד.</p>"
               '<ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>',
-        'en': f"<p>{team['en']} basketball shorts{ed_phrase[1]}, in {colour_en}, fan version.</p>"
+        'en': f"<p>{team['en']} basketball shorts{ed_phrase[1]}, {in_colour[1]}, fan version.</p>"
               '<ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>',
-        'ar': f"<p>شورت كرة السلة لفريق {team['ar']}{ed_phrase[2]}، باللون {ar_def}، نسخة المشجعين.</p>"
+        'ar': f"<p>شورت كرة السلة لفريق {team['ar']}{ed_phrase[2]}، {in_colour[2]}، نسخة المشجعين.</p>"
               '<ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>',
     }
     seo = {
-        'he': f"מכנסי הכדורסל של {team['he']}{ed_phrase[0]}, בצבע {he_c}, בגרסת אוהד, במידות S עד XL.",
-        'en': f"{team['en']} basketball shorts{ed_phrase[1]}, in {colour_en}, fan version, sizes S to XL.",
-        'ar': f"شورت كرة السلة لفريق {team['ar']}{ed_phrase[2]}، باللون {ar_def}، نسخة المشجعين، بمقاسات من S إلى XL.",
+        'he': f"מכנסי הכדורסל של {team['he']}{ed_phrase[0]}, {in_colour[0]}, בגרסת אוהד, במידות S עד XL.",
+        'en': f"{team['en']} basketball shorts{ed_phrase[1]}, {in_colour[1]}, fan version, sizes S to XL.",
+        'ar': f"شورت كرة السلة لفريق {team['ar']}{ed_phrase[2]}، {in_colour[2]}، نسخة المشجعين، بمقاسات من S إلى XL.",
     }
-    seo_title = {}
-    for lang, t in title.items():
-        if len(t) <= 49:
-            seo_title[lang] = f'{t} | SportWear'
-        elif len(t) <= 60:
-            seo_title[lang] = t
-        else:
-            seo_title[lang] = t[:60].rsplit(' ', 1)[0]
-    return title, desc, seo_title, seo
+    return title, desc, {lang: seo_title(t, lang) for lang, t in title.items()}, seo
+
+
+# Search titles stay within 60 characters. A long title first drops "basketball" ("Warriors Shorts – Black, City
+# Edition 2024"); only then is it cut at a word, never ending on a dangling word or mark.
+SHORTER = {'he': ('מכנסי כדורסל', 'מכנסי'), 'en': ('Basketball Shorts', 'Shorts'), 'ar': ('شورت كرة سلة', 'شورت')}
+DANGLING = {'עם', 'של', 'על', 'with', 'on', 'of', 'and', 'على', 'مع', 'في', 'من', '–', '-', ','}
+
+
+def seo_title(t, lang):
+    if len(t) + len(' | SportWear') <= 60:
+        return f'{t} | SportWear'
+    if len(t) <= 60:
+        return t
+    shorter = t.replace(*SHORTER[lang], 1)
+    if len(shorter) <= 60:
+        return shorter
+    words = shorter[:61].rsplit(' ', 1)[0].split(' ')
+    while words and words[-1] in DANGLING:
+        words.pop()
+    return ' '.join(words).rstrip(',–- ')
 
 
 def classify_tags(records):

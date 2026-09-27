@@ -1,0 +1,152 @@
+{
+  "handle": "sw-shorts-174665977",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "utah-jazz",
+    "code": "UTA",
+    "he": "יוטה ג׳אז",
+    "en": "Utah Jazz",
+    "ar": "يوتا جاز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של יוטה ג׳אז במהדורת העיר, בצבע סגול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024 | SportWear",
+    "description_he": "מכנסי הכדורסל של יוטה ג׳אז במהדורת העיר, בצבע סגול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-UTA-S-2024-A-174665977-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-UTA-S-2024-A-174665977-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-UTA-S-2024-A-174665977-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-UTA-S-2024-A-174665977-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-174665977.png",
+      "alt_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-174665977__back.png",
+      "alt_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-174665977-1.jpg",
+      "alt_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-174665977-2.jpg",
+      "alt_he": "מכנסי כדורסל יוטה ג׳אז סגול מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Utah Jazz Basketball Shorts – Purple, City Edition 2024",
+      "description_html": "<p>Utah Jazz basketball shorts, City Edition, in purple, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Utah Jazz Basketball Shorts – Purple, City Edition 2024",
+      "seo_description": "Utah Jazz basketball shorts, City Edition, in purple, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة يوتا جاز بنفسجي إصدار المدينة 2024",
+      "description_html": "<p>شورت كرة السلة لفريق يوتا جاز من إصدار المدينة، باللون البنفسجي، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة يوتا جاز بنفسجي إصدار المدينة 2024 | SportWear",
+      "seo_description": "شورت كرة السلة لفريق يوتا جاز من إصدار المدينة، باللون البنفسجي، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/174665977?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 爵士队 城市版  球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:utah-jazz",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:174665977",
+    "import:2026-09-27",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "utah jazz",
+    "jazz",
+    "يوتا جاز",
+    "جاز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310213873968",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859577143600",
+      "M": "gid://shopify/ProductVariant/67859577176368",
+      "L": "gid://shopify/ProductVariant/67859577209136",
+      "XL": "gid://shopify/ProductVariant/67859577241904"
+    },
+    "created_at": "2026-09-27T13:12:23Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:38:39Z",
+      "ar": "2026-09-27T13:38:39Z"
+    }
+  }
+}

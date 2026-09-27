@@ -1,0 +1,151 @@
+{
+  "handle": "sw-shorts-152903253",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "phoenix-suns",
+    "code": "PHX",
+    "he": "פיניקס סאנס",
+    "en": "Phoenix Suns",
+    "ar": "فينيكس صنز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל פיניקס סאנס לבן 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של פיניקס סאנס, בצבע לבן, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל פיניקס סאנס לבן 2024 | SportWear",
+    "description_he": "מכנסי הכדורסל של פיניקס סאנס, בצבע לבן, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-PHX-H-2024-A-152903253-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-PHX-H-2024-A-152903253-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-PHX-H-2024-A-152903253-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-PHX-H-2024-A-152903253-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-152903253.png",
+      "alt_he": "מכנסי כדורסל פיניקס סאנס לבן 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-152903253__back.png",
+      "alt_he": "מכנסי כדורסל פיניקס סאנס לבן 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-152903253-1.jpg",
+      "alt_he": "מכנסי כדורסל פיניקס סאנס לבן 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-152903253-2.jpg",
+      "alt_he": "מכנסי כדורסל פיניקס סאנס לבן 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-143991637"]
+  },
+  "translations": {
+    "en": {
+      "title": "Phoenix Suns Basketball Shorts – White, 2024",
+      "description_html": "<p>Phoenix Suns basketball shorts, in white, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Phoenix Suns Basketball Shorts – White, 2024 | SportWear",
+      "seo_description": "Phoenix Suns basketball shorts, in white, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة فينيكس صنز أبيض 2024",
+      "description_html": "<p>شورت كرة السلة لفريق فينيكس صنز، باللون الأبيض، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة فينيكس صنز أبيض 2024 | SportWear",
+      "seo_description": "شورت كرة السلة لفريق فينيكس صنز، باللون الأبيض، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/152903253?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 太阳队 主场 白色 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:phoenix-suns",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:152903253",
+    "import:2026-09-27",
+    "set:shorts",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "phoenix suns",
+    "suns",
+    "فينيكس صنز",
+    "صنز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310210040112",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859525206320",
+      "M": "gid://shopify/ProductVariant/67859525239088",
+      "L": "gid://shopify/ProductVariant/67859525271856",
+      "XL": "gid://shopify/ProductVariant/67859525304624"
+    },
+    "created_at": "2026-09-27T13:09:22Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:32:58Z",
+      "ar": "2026-09-27T13:32:58Z"
+    }
+  }
+}

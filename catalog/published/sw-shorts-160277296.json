@@ -1,0 +1,153 @@
+{
+  "handle": "sw-shorts-160277296",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "los-angeles-clippers",
+    "code": "LAC",
+    "he": "לוס אנג׳לס קליפרס",
+    "en": "Los Angeles Clippers",
+    "ar": "لوس أنجلوس كليبرز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2024",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024",
+  "description_html_he": "<p>מכנסי הכדורסל של לוס אנג׳לס קליפרס במהדורת העיר, בצבע כחול כהה, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024",
+    "description_he": "מכנסי הכדורסל של לוס אנג׳לס קליפרס במהדורת העיר, בצבע כחול כהה, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-LAC-S-2024-A-160277296-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-LAC-S-2024-A-160277296-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-LAC-S-2024-A-160277296-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-LAC-S-2024-A-160277296-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-160277296.png",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-160277296__back.png",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-160277296-1.jpg",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-160277296-2.jpg",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-152007283", "sw-jerseys-149584887", "sw-jerseys-149291561"]
+  },
+  "translations": {
+    "en": {
+      "title": "Los Angeles Clippers Basketball Shorts – Dark Blue, City Edition 2024",
+      "description_html": "<p>Los Angeles Clippers basketball shorts, City Edition, in dark blue, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Los Angeles Clippers Shorts – Dark Blue, City Edition 2024",
+      "seo_description": "Los Angeles Clippers basketball shorts, City Edition, in dark blue, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة لوس أنجلوس كليبرز أزرق داكن إصدار المدينة 2024",
+      "description_html": "<p>شورت كرة السلة لفريق لوس أنجلوس كليبرز من إصدار المدينة، باللون الأزرق الداكن، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة لوس أنجلوس كليبرز أزرق داكن إصدار المدينة 2024",
+      "seo_description": "شورت كرة السلة لفريق لوس أنجلوس كليبرز من إصدار المدينة، باللون الأزرق الداكن، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/160277296?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "24赛季 快船队 城市版 球裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:los-angeles-clippers",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:160277296",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "los angeles clippers",
+    "clippers",
+    "لوس أنجلوس كليبرز",
+    "كليبرز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310212333872",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859555483952",
+      "M": "gid://shopify/ProductVariant/67859555516720",
+      "L": "gid://shopify/ProductVariant/67859555549488",
+      "XL": "gid://shopify/ProductVariant/67859555582256"
+    },
+    "created_at": "2026-09-27T13:11:05Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:32:59Z",
+      "ar": "2026-09-27T13:32:59Z"
+    }
+  }
+}

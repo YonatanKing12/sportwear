@@ -1,0 +1,153 @@
+{
+  "handle": "sw-shorts-106737579",
+  "status": "published_draft",
+  "sport": "basketball",
+  "product_type": "Basketball Shorts",
+  "audience": "adult",
+  "size_chart": "xingkong-nba-shorts-fan",
+  "team": {
+    "slug": "los-angeles-lakers",
+    "code": "LAL",
+    "he": "לוס אנג׳לס לייקרס",
+    "en": "Los Angeles Lakers",
+    "ar": "لوس أنجلوس ليكرز"
+  },
+  "leagues": ["nba"],
+  "kit": null,
+  "season": "2022",
+  "vendor": "SportWear",
+  "title_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022",
+  "description_html_he": "<p>מכנסי הכדורסל של לוס אנג׳לס לייקרס במהדורת העיר, בצבע סגול, בגרסת אוהד.</p><ul><li>גרסת אוהד</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022",
+    "description_he": "מכנסי הכדורסל של לוס אנג׳לס לייקרס במהדורת העיר, בצבע סגול, בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-BS-LAL-S-2022-A-106737579-S",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-BS-LAL-S-2022-A-106737579-M",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-BS-LAL-S-2022-A-106737579-L",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-BS-LAL-S-2022-A-106737579-XL",
+      "barcode": null,
+      "price": 119,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-106737579.png",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/studio/norm/sw-shorts-106737579__back.png",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022 (גב)",
+      "view": "back"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-106737579-1.jpg",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/xk/details/sw-detail-shorts-106737579-2.jpg",
+      "alt_he": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2022 (תקריב של הבד וההדפס)",
+      "view": "detail"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": ["sw-jerseys-132028207", "sw-jerseys-125235085", "sw-jerseys-105152935"]
+  },
+  "translations": {
+    "en": {
+      "title": "Los Angeles Lakers Basketball Shorts – Purple, City Edition 2022",
+      "description_html": "<p>Los Angeles Lakers basketball shorts, City Edition, in purple, fan version.</p><ul><li>Fan version</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Los Angeles Lakers Shorts – Purple, City Edition 2022",
+      "seo_description": "Los Angeles Lakers basketball shorts, City Edition, in purple, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "شورت كرة سلة لوس أنجلوس ليكرز بنفسجي إصدار المدينة 2022",
+      "description_html": "<p>شورت كرة السلة لفريق لوس أنجلوس ليكرز من إصدار المدينة، باللون البنفسجي، نسخة المشجعين.</p><ul><li>نسخة المشجعين</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "شورت كرة سلة لوس أنجلوس ليكرز بنفسجي إصدار المدينة 2022",
+      "seo_description": "شورت كرة السلة لفريق لوس أنجلوس ليكرز من إصدار المدينة، باللون البنفسجي، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://xingkong-sports.x.yupoo.com/albums/106737579?uid=1",
+    "fetched_at": "2026-09-27T12:48:51Z",
+    "original_title": "22赛季湖人队城市版 短裤",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos and close-ups made from the supplier's own album photos; the owner asked to import this supplier's shorts on 2026-09-27."
+  },
+  "questions": [],
+  "tags": [
+    "sport:basketball",
+    "team:los-angeles-lakers",
+    "league:nba",
+    "audience:adult",
+    "new",
+    "source:xingkong-sports",
+    "album:106737579",
+    "import:2026-09-27",
+    "set:shorts",
+    "style:city-edition",
+    "מכנס",
+    "מכנסיים",
+    "shorts",
+    "شورت",
+    "los angeles lakers",
+    "lakers",
+    "لوس أنجلوس ليكرز",
+    "ليكرز",
+    "nba",
+    "الدوري الأمريكي لكرة السلة",
+    "city edition"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310203224368",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859380568368",
+      "M": "gid://shopify/ProductVariant/67859380601136",
+      "L": "gid://shopify/ProductVariant/67859380633904",
+      "XL": "gid://shopify/ProductVariant/67859380666672"
+    },
+    "created_at": "2026-09-27T13:01:08Z",
+    "translations_registered": {
+      "en": "2026-09-27T13:41:46Z",
+      "ar": "2026-09-27T13:41:46Z"
+    }
+  }
+}
