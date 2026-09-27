@@ -135,5 +135,9 @@
       "en": "2026-09-27T15:33:14Z",
       "ar": "2026-09-27T15:33:14Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "west-ham-united-away-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

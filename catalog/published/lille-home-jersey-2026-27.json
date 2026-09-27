@@ -134,5 +134,9 @@
       "en": "2026-09-27T15:44:30Z",
       "ar": "2026-09-27T15:44:30Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "lille-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

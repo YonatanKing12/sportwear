@@ -173,5 +173,9 @@
       "en": "2026-09-27T15:38:22Z",
       "ar": "2026-09-27T15:38:23Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "valencia-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

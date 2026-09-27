@@ -135,5 +135,9 @@
       "en": "2026-09-27T14:51:10Z",
       "ar": "2026-09-27T14:51:10Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "hamburger-sv-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

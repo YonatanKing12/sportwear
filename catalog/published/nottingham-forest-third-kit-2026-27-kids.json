@@ -174,5 +174,9 @@
       "en": "2026-09-27T15:31:42Z",
       "ar": "2026-09-27T15:31:42Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "nottingham-forest-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

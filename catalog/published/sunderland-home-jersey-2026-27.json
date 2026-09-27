@@ -133,5 +133,9 @@
       "en": "2026-09-27T15:33:12Z",
       "ar": "2026-09-27T15:33:12Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "sunderland-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

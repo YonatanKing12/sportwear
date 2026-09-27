@@ -175,5 +175,9 @@
       "en": "2026-09-27T15:31:59Z",
       "ar": "2026-09-27T15:32:00Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "real-betis-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

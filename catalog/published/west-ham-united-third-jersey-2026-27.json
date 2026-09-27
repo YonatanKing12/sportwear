@@ -135,5 +135,9 @@
       "en": "2026-09-27T15:35:15Z",
       "ar": "2026-09-27T15:35:15Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "west-ham-united-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

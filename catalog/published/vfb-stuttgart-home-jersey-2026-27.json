@@ -134,5 +134,9 @@
       "en": "2026-09-27T14:51:12Z",
       "ar": "2026-09-27T14:51:12Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "vfb-stuttgart-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

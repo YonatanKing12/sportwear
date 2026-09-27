@@ -173,5 +173,9 @@
       "en": "2026-09-27T15:33:13Z",
       "ar": "2026-09-27T15:33:13Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "sunderland-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

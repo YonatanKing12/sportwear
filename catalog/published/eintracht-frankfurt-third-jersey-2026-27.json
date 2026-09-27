@@ -135,5 +135,9 @@
       "en": "2026-09-27T14:48:09Z",
       "ar": "2026-09-27T14:48:09Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "eintracht-frankfurt-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

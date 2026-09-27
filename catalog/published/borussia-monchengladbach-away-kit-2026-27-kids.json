@@ -176,5 +176,9 @@
       "en": "2026-09-27T14:45:02Z",
       "ar": "2026-09-27T14:45:02Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "borussia-monchengladbach-away-jersey-2026-27",
+    "complements_handles": []
   }
 }

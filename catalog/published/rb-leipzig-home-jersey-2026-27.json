@@ -135,5 +135,9 @@
       "en": "2026-09-27T14:51:11Z",
       "ar": "2026-09-27T14:51:11Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "rb-leipzig-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

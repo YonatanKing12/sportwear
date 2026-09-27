@@ -135,5 +135,9 @@
       "en": "2026-09-27T15:47:24Z",
       "ar": "2026-09-27T15:47:24Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "olympique-marseille-away-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

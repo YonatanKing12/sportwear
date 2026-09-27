@@ -175,5 +175,9 @@
       "en": "2026-09-27T14:51:12Z",
       "ar": "2026-09-27T14:51:12Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "rb-leipzig-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

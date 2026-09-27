@@ -135,5 +135,9 @@
       "en": "2026-09-27T15:26:02Z",
       "ar": "2026-09-27T15:26:02Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "leeds-united-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

@@ -177,5 +177,9 @@
       "en": "2026-09-26T20:56:20Z",
       "ar": "2026-09-26T20:56:20Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "sw-football-250582309",
+    "complements_handles": []
   }
 }

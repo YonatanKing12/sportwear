@@ -175,5 +175,9 @@
       "en": "2026-09-27T15:35:14Z",
       "ar": "2026-09-27T15:35:14Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "west-ham-united-away-jersey-2026-27",
+    "complements_handles": []
   }
 }

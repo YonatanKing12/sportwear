@@ -135,5 +135,9 @@
       "en": "2026-09-27T15:31:58Z",
       "ar": "2026-09-27T15:31:58Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "real-betis-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

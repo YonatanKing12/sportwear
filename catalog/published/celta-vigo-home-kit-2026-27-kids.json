@@ -175,5 +175,9 @@
       "en": "2026-09-27T15:27:50Z",
       "ar": "2026-09-27T15:27:51Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "celta-vigo-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

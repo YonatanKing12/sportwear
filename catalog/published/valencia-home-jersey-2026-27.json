@@ -133,5 +133,9 @@
       "en": "2026-09-27T15:38:21Z",
       "ar": "2026-09-27T15:38:21Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "valencia-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

@@ -174,5 +174,9 @@
       "en": "2026-09-27T15:19:28Z",
       "ar": "2026-09-27T15:19:28Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "bournemouth-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

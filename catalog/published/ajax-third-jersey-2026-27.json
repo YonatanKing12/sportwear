@@ -144,5 +144,9 @@
       "en": "2026-09-27T15:41:11Z",
       "ar": "2026-09-27T15:41:11Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "ajax-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

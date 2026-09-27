@@ -174,5 +174,9 @@
       "en": "2026-09-27T14:54:07Z",
       "ar": "2026-09-27T14:54:07Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "vfb-stuttgart-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

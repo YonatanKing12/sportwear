@@ -139,5 +139,9 @@
       "en": "2026-09-27T15:17:01Z",
       "ar": "2026-09-27T15:17:01Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "aston-villa-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

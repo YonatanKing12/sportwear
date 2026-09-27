@@ -175,5 +175,9 @@
       "en": "2026-09-27T14:51:11Z",
       "ar": "2026-09-27T14:51:11Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "hamburger-sv-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

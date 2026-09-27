@@ -133,5 +133,9 @@
       "en": "2026-09-27T14:42:13Z",
       "ar": "2026-09-27T14:42:13Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "palmeiras-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

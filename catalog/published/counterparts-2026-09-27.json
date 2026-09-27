@@ -1,0 +1,766 @@
+{
+  "date": "2026-09-27",
+  "what": "Adult jersey <-> kids set of the same team, kit and season 26/27, linked both ways through the metafield sportwear.counterpart (the adults/kids toggle on the product page). Only a team and kit with exactly one adult product and one kids product is linked.",
+  "how": "metafieldsSet, 25 per call; the store was read first so no existing link was overwritten.",
+  "pairs_total": 117,
+  "already_linked_before": 29,
+  "new_pairs": 88,
+  "metafields_written": 176,
+  "older_store_products_linked": [
+    {
+      "team": "arsenal",
+      "kit": "home",
+      "adult": "sw-football-228361436",
+      "kids": "arsenal-home-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    },
+    {
+      "team": "as-roma",
+      "kit": "away",
+      "adult": "sw-football-252374837",
+      "kids": "as-roma-away-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    },
+    {
+      "team": "atletico-madrid",
+      "kit": "away",
+      "adult": "sw-football-242180581",
+      "kids": "atletico-madrid-away-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    },
+    {
+      "team": "barcelona",
+      "kit": "away",
+      "adult": "sw-football-240291494",
+      "kids": "barcelona-away-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    },
+    {
+      "team": "napoli",
+      "kit": "home",
+      "adult": "sw-football-250582309",
+      "kids": "napoli-home-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    },
+    {
+      "team": "newcastle-united",
+      "kit": "third",
+      "adult": "sw-football-253986162",
+      "kids": "newcastle-united-third-kit-2026-27-kids",
+      "check": "photos compared side by side: same design (kids kits may lack the front sponsor)"
+    }
+  ],
+  "not_linked": [
+    {
+      "team": "real-madrid",
+      "kit": "third",
+      "adult": ["real-madrid-third-jersey-2026-27", "sw-football-236063085"],
+      "kids": ["real-madrid-third-kit-2026-27-kids"],
+      "reason": "two adult products of this kit (the owner decides which pink third shirt stays)"
+    }
+  ],
+  "pairs": [
+    {
+      "team": "ac-milan",
+      "kit": "away",
+      "adult": "ac-milan-away-jersey-2026-27",
+      "kids": "ac-milan-away-kit-2026-27-kids"
+    },
+    {
+      "team": "ac-milan",
+      "kit": "home",
+      "adult": "ac-milan-home-jersey-2026-27",
+      "kids": "ac-milan-home-kit-2026-27-kids"
+    },
+    {
+      "team": "ajax",
+      "kit": "third",
+      "adult": "ajax-third-jersey-2026-27",
+      "kids": "ajax-third-kit-2026-27-kids"
+    },
+    {
+      "team": "al-nassr",
+      "kit": "away",
+      "adult": "al-nassr-away-jersey-2026-27",
+      "kids": "al-nassr-away-kit-2026-27-kids"
+    },
+    {
+      "team": "al-nassr",
+      "kit": "home",
+      "adult": "al-nassr-home-jersey-2026-27",
+      "kids": "al-nassr-home-kit-2026-27-kids"
+    },
+    {
+      "team": "arsenal",
+      "kit": "away",
+      "adult": "arsenal-away-jersey-2026-27",
+      "kids": "arsenal-away-kit-2026-27-kids"
+    },
+    {
+      "team": "arsenal",
+      "kit": "home",
+      "adult": "sw-football-228361436",
+      "kids": "arsenal-home-kit-2026-27-kids"
+    },
+    {
+      "team": "arsenal",
+      "kit": "third",
+      "adult": "arsenal-third-jersey-2026-27",
+      "kids": "arsenal-third-kit-2026-27-kids"
+    },
+    {
+      "team": "as-roma",
+      "kit": "away",
+      "adult": "sw-football-252374837",
+      "kids": "as-roma-away-kit-2026-27-kids"
+    },
+    {
+      "team": "as-roma",
+      "kit": "home",
+      "adult": "as-roma-home-jersey-2026-27",
+      "kids": "as-roma-home-kit-2026-27-kids"
+    },
+    {
+      "team": "as-roma",
+      "kit": "third",
+      "adult": "as-roma-third-jersey-2026-27",
+      "kids": "as-roma-third-kit-2026-27-kids"
+    },
+    {
+      "team": "aston-villa",
+      "kit": "away",
+      "adult": "aston-villa-away-jersey-2026-27",
+      "kids": "aston-villa-away-kit-2026-27-kids"
+    },
+    {
+      "team": "aston-villa",
+      "kit": "home",
+      "adult": "aston-villa-home-jersey-2026-27",
+      "kids": "aston-villa-home-kit-2026-27-kids"
+    },
+    {
+      "team": "aston-villa",
+      "kit": "third",
+      "adult": "aston-villa-third-jersey-2026-27",
+      "kids": "aston-villa-third-kit-2026-27-kids"
+    },
+    {
+      "team": "athletic-bilbao",
+      "kit": "away",
+      "adult": "athletic-bilbao-away-jersey-2026-27",
+      "kids": "athletic-bilbao-away-kit-2026-27-kids"
+    },
+    {
+      "team": "athletic-bilbao",
+      "kit": "home",
+      "adult": "athletic-bilbao-home-jersey-2026-27",
+      "kids": "athletic-bilbao-home-kit-2026-27-kids"
+    },
+    {
+      "team": "atletico-madrid",
+      "kit": "away",
+      "adult": "sw-football-242180581",
+      "kids": "atletico-madrid-away-kit-2026-27-kids"
+    },
+    {
+      "team": "atletico-madrid",
+      "kit": "third",
+      "adult": "atletico-madrid-third-jersey-2026-27",
+      "kids": "atletico-madrid-third-kit-2026-27-kids"
+    },
+    {
+      "team": "barcelona",
+      "kit": "away",
+      "adult": "sw-football-240291494",
+      "kids": "barcelona-away-kit-2026-27-kids"
+    },
+    {
+      "team": "barcelona",
+      "kit": "home",
+      "adult": "barcelona-home-jersey-2026-27",
+      "kids": "barcelona-home-kit-2026-27-kids"
+    },
+    {
+      "team": "barcelona",
+      "kit": "third",
+      "adult": "barcelona-third-jersey-2026-27",
+      "kids": "barcelona-third-kit-2026-27-kids"
+    },
+    {
+      "team": "bayern-munich",
+      "kit": "away",
+      "adult": "bayern-munich-away-jersey-2026-27",
+      "kids": "bayern-munich-away-kit-2026-27-kids"
+    },
+    {
+      "team": "bayern-munich",
+      "kit": "home",
+      "adult": "bayern-munich-home-jersey-2026-27",
+      "kids": "bayern-munich-home-kit-2026-27-kids"
+    },
+    {
+      "team": "bayern-munich",
+      "kit": "third",
+      "adult": "bayern-munich-third-jersey-2026-27",
+      "kids": "bayern-munich-third-kit-2026-27-kids"
+    },
+    {
+      "team": "benfica",
+      "kit": "away",
+      "adult": "benfica-away-jersey-2026-27",
+      "kids": "benfica-away-kit-2026-27-kids"
+    },
+    {
+      "team": "benfica",
+      "kit": "home",
+      "adult": "benfica-home-jersey-2026-27",
+      "kids": "benfica-home-kit-2026-27-kids"
+    },
+    {
+      "team": "besiktas",
+      "kit": "away",
+      "adult": "besiktas-away-jersey-2026-27",
+      "kids": "besiktas-away-kit-2026-27-kids"
+    },
+    {
+      "team": "besiktas",
+      "kit": "home",
+      "adult": "besiktas-home-jersey-2026-27",
+      "kids": "besiktas-home-kit-2026-27-kids"
+    },
+    {
+      "team": "besiktas",
+      "kit": "third",
+      "adult": "besiktas-third-jersey-2026-27",
+      "kids": "besiktas-third-kit-2026-27-kids"
+    },
+    {
+      "team": "bologna",
+      "kit": "home",
+      "adult": "bologna-home-jersey-2026-27",
+      "kids": "bologna-home-kit-2026-27-kids"
+    },
+    {
+      "team": "borussia-dortmund",
+      "kit": "home",
+      "adult": "borussia-dortmund-home-jersey-2026-27",
+      "kids": "borussia-dortmund-home-kit-2026-27-kids"
+    },
+    {
+      "team": "borussia-monchengladbach",
+      "kit": "away",
+      "adult": "borussia-monchengladbach-away-jersey-2026-27",
+      "kids": "borussia-monchengladbach-away-kit-2026-27-kids"
+    },
+    {
+      "team": "borussia-monchengladbach",
+      "kit": "home",
+      "adult": "borussia-monchengladbach-home-jersey-2026-27",
+      "kids": "borussia-monchengladbach-home-kit-2026-27-kids"
+    },
+    {
+      "team": "bournemouth",
+      "kit": "home",
+      "adult": "bournemouth-home-jersey-2026-27",
+      "kids": "bournemouth-home-kit-2026-27-kids"
+    },
+    {
+      "team": "brighton",
+      "kit": "away",
+      "adult": "brighton-away-jersey-2026-27",
+      "kids": "brighton-away-kit-2026-27-kids"
+    },
+    {
+      "team": "celta-vigo",
+      "kit": "away",
+      "adult": "celta-vigo-away-jersey-2026-27",
+      "kids": "celta-vigo-away-kit-2026-27-kids"
+    },
+    {
+      "team": "celta-vigo",
+      "kit": "home",
+      "adult": "celta-vigo-home-jersey-2026-27",
+      "kids": "celta-vigo-home-kit-2026-27-kids"
+    },
+    {
+      "team": "celtic",
+      "kit": "away",
+      "adult": "celtic-away-jersey-2026-27",
+      "kids": "celtic-away-kit-2026-27-kids"
+    },
+    {
+      "team": "celtic",
+      "kit": "home",
+      "adult": "celtic-home-jersey-2026-27",
+      "kids": "celtic-home-kit-2026-27-kids"
+    },
+    {
+      "team": "celtic",
+      "kit": "third",
+      "adult": "celtic-third-jersey-2026-27",
+      "kids": "celtic-third-kit-2026-27-kids"
+    },
+    {
+      "team": "chelsea",
+      "kit": "away",
+      "adult": "chelsea-away-jersey-2026-27",
+      "kids": "chelsea-away-kit-2026-27-kids"
+    },
+    {
+      "team": "chelsea",
+      "kit": "home",
+      "adult": "chelsea-home-jersey-2026-27",
+      "kids": "chelsea-home-kit-2026-27-kids"
+    },
+    {
+      "team": "eintracht-frankfurt",
+      "kit": "home",
+      "adult": "eintracht-frankfurt-home-jersey-2026-27",
+      "kids": "eintracht-frankfurt-home-kit-2026-27-kids"
+    },
+    {
+      "team": "eintracht-frankfurt",
+      "kit": "third",
+      "adult": "eintracht-frankfurt-third-jersey-2026-27",
+      "kids": "eintracht-frankfurt-third-kit-2026-27-kids"
+    },
+    {
+      "team": "espanyol",
+      "kit": "home",
+      "adult": "espanyol-home-jersey-2026-27",
+      "kids": "espanyol-home-kit-2026-27-kids"
+    },
+    {
+      "team": "everton",
+      "kit": "away",
+      "adult": "everton-away-jersey-2026-27",
+      "kids": "everton-away-kit-2026-27-kids"
+    },
+    {
+      "team": "fenerbahce",
+      "kit": "away",
+      "adult": "fenerbahce-away-jersey-2026-27",
+      "kids": "fenerbahce-away-kit-2026-27-kids"
+    },
+    {
+      "team": "fenerbahce",
+      "kit": "home",
+      "adult": "fenerbahce-home-jersey-2026-27",
+      "kids": "fenerbahce-home-kit-2026-27-kids"
+    },
+    {
+      "team": "fenerbahce",
+      "kit": "third",
+      "adult": "fenerbahce-third-jersey-2026-27",
+      "kids": "fenerbahce-third-kit-2026-27-kids"
+    },
+    {
+      "team": "feyenoord",
+      "kit": "third",
+      "adult": "feyenoord-third-jersey-2026-27",
+      "kids": "feyenoord-third-kit-2026-27-kids"
+    },
+    {
+      "team": "flamengo",
+      "kit": "home",
+      "adult": "flamengo-home-jersey-2026-27",
+      "kids": "flamengo-home-kit-2026-27-kids"
+    },
+    {
+      "team": "flamengo",
+      "kit": "third",
+      "adult": "flamengo-third-jersey-2026-27",
+      "kids": "flamengo-third-kit-2026-27-kids"
+    },
+    {
+      "team": "fulham",
+      "kit": "away",
+      "adult": "fulham-away-jersey-2026-27",
+      "kids": "fulham-away-kit-2026-27-kids"
+    },
+    {
+      "team": "fulham",
+      "kit": "home",
+      "adult": "fulham-home-jersey-2026-27",
+      "kids": "fulham-home-kit-2026-27-kids"
+    },
+    {
+      "team": "fulham",
+      "kit": "third",
+      "adult": "fulham-third-jersey-2026-27",
+      "kids": "fulham-third-kit-2026-27-kids"
+    },
+    {
+      "team": "girona",
+      "kit": "home",
+      "adult": "girona-home-jersey-2026-27",
+      "kids": "girona-home-kit-2026-27-kids"
+    },
+    {
+      "team": "hamburger-sv",
+      "kit": "third",
+      "adult": "hamburger-sv-third-jersey-2026-27",
+      "kids": "hamburger-sv-third-kit-2026-27-kids"
+    },
+    {
+      "team": "inter-miami",
+      "kit": "away",
+      "adult": "inter-miami-away-jersey-2026-27",
+      "kids": "inter-miami-away-kit-2026-27-kids"
+    },
+    {
+      "team": "inter-milan",
+      "kit": "away",
+      "adult": "inter-milan-away-jersey-2026-27",
+      "kids": "inter-milan-away-kit-2026-27-kids"
+    },
+    {
+      "team": "leeds-united",
+      "kit": "away",
+      "adult": "leeds-united-away-jersey-2026-27",
+      "kids": "leeds-united-away-kit-2026-27-kids"
+    },
+    {
+      "team": "leeds-united",
+      "kit": "home",
+      "adult": "leeds-united-home-jersey-2026-27",
+      "kids": "leeds-united-home-kit-2026-27-kids"
+    },
+    {
+      "team": "leeds-united",
+      "kit": "third",
+      "adult": "leeds-united-third-jersey-2026-27",
+      "kids": "leeds-united-third-kit-2026-27-kids"
+    },
+    {
+      "team": "lens",
+      "kit": "away",
+      "adult": "lens-away-jersey-2026-27",
+      "kids": "lens-away-kit-2026-27-kids"
+    },
+    {
+      "team": "lens",
+      "kit": "home",
+      "adult": "lens-home-jersey-2026-27",
+      "kids": "lens-home-kit-2026-27-kids"
+    },
+    {
+      "team": "lens",
+      "kit": "third",
+      "adult": "lens-third-jersey-2026-27",
+      "kids": "lens-third-kit-2026-27-kids"
+    },
+    {
+      "team": "lille",
+      "kit": "home",
+      "adult": "lille-home-jersey-2026-27",
+      "kids": "lille-home-kit-2026-27-kids"
+    },
+    {
+      "team": "lyon",
+      "kit": "home",
+      "adult": "lyon-home-jersey-2026-27",
+      "kids": "lyon-home-kit-2026-27-kids"
+    },
+    {
+      "team": "manchester-city",
+      "kit": "home",
+      "adult": "manchester-city-home-jersey-2026-27",
+      "kids": "manchester-city-home-kit-2026-27-kids"
+    },
+    {
+      "team": "manchester-city",
+      "kit": "third",
+      "adult": "manchester-city-third-jersey-2026-27",
+      "kids": "manchester-city-third-kit-2026-27-kids"
+    },
+    {
+      "team": "manchester-united",
+      "kit": "away",
+      "adult": "manchester-united-away-jersey-2026-27",
+      "kids": "manchester-united-away-kit-2026-27-kids"
+    },
+    {
+      "team": "manchester-united",
+      "kit": "home",
+      "adult": "manchester-united-home-jersey-2026-27",
+      "kids": "manchester-united-home-kit-2026-27-kids"
+    },
+    {
+      "team": "manchester-united",
+      "kit": "third",
+      "adult": "manchester-united-third-jersey-2026-27",
+      "kids": "manchester-united-third-kit-2026-27-kids"
+    },
+    {
+      "team": "napoli",
+      "kit": "home",
+      "adult": "sw-football-250582309",
+      "kids": "napoli-home-kit-2026-27-kids"
+    },
+    {
+      "team": "newcastle-united",
+      "kit": "away",
+      "adult": "newcastle-united-away-jersey-2026-27",
+      "kids": "newcastle-united-away-kit-2026-27-kids"
+    },
+    {
+      "team": "newcastle-united",
+      "kit": "home",
+      "adult": "newcastle-united-home-jersey-2026-27",
+      "kids": "newcastle-united-home-kit-2026-27-kids"
+    },
+    {
+      "team": "newcastle-united",
+      "kit": "third",
+      "adult": "sw-football-253986162",
+      "kids": "newcastle-united-third-kit-2026-27-kids"
+    },
+    {
+      "team": "nottingham-forest",
+      "kit": "away",
+      "adult": "nottingham-forest-away-jersey-2026-27",
+      "kids": "nottingham-forest-away-kit-2026-27-kids"
+    },
+    {
+      "team": "nottingham-forest",
+      "kit": "home",
+      "adult": "nottingham-forest-home-jersey-2026-27",
+      "kids": "nottingham-forest-home-kit-2026-27-kids"
+    },
+    {
+      "team": "nottingham-forest",
+      "kit": "third",
+      "adult": "nottingham-forest-third-jersey-2026-27",
+      "kids": "nottingham-forest-third-kit-2026-27-kids"
+    },
+    {
+      "team": "olympique-marseille",
+      "kit": "away",
+      "adult": "olympique-marseille-away-jersey-2026-27",
+      "kids": "olympique-marseille-away-kit-2026-27-kids"
+    },
+    {
+      "team": "olympique-marseille",
+      "kit": "home",
+      "adult": "olympique-marseille-home-jersey-2026-27",
+      "kids": "olympique-marseille-home-kit-2026-27-kids"
+    },
+    {
+      "team": "palmeiras",
+      "kit": "away",
+      "adult": "palmeiras-away-jersey-2026-27",
+      "kids": "palmeiras-away-kit-2026-27-kids"
+    },
+    {
+      "team": "palmeiras",
+      "kit": "home",
+      "adult": "palmeiras-home-jersey-2026-27",
+      "kids": "palmeiras-home-kit-2026-27-kids"
+    },
+    {
+      "team": "palmeiras",
+      "kit": "third",
+      "adult": "palmeiras-third-jersey-2026-27",
+      "kids": "palmeiras-third-kit-2026-27-kids"
+    },
+    {
+      "team": "paris-saint-germain",
+      "kit": "away",
+      "adult": "paris-saint-germain-away-jersey-2026-27",
+      "kids": "paris-saint-germain-away-kit-2026-27-kids"
+    },
+    {
+      "team": "paris-saint-germain",
+      "kit": "home",
+      "adult": "paris-saint-germain-home-jersey-2026-27",
+      "kids": "paris-saint-germain-home-kit-2026-27-kids"
+    },
+    {
+      "team": "porto",
+      "kit": "home",
+      "adult": "porto-home-jersey-2026-27",
+      "kids": "porto-home-kit-2026-27-kids"
+    },
+    {
+      "team": "porto",
+      "kit": "third",
+      "adult": "porto-third-jersey-2026-27",
+      "kids": "porto-third-kit-2026-27-kids"
+    },
+    {
+      "team": "rangers",
+      "kit": "away",
+      "adult": "rangers-away-jersey-2026-27",
+      "kids": "rangers-away-kit-2026-27-kids"
+    },
+    {
+      "team": "rangers",
+      "kit": "home",
+      "adult": "rangers-home-jersey-2026-27",
+      "kids": "rangers-home-kit-2026-27-kids"
+    },
+    {
+      "team": "rangers",
+      "kit": "third",
+      "adult": "rangers-third-jersey-2026-27",
+      "kids": "rangers-third-kit-2026-27-kids"
+    },
+    {
+      "team": "rb-leipzig",
+      "kit": "home",
+      "adult": "rb-leipzig-home-jersey-2026-27",
+      "kids": "rb-leipzig-home-kit-2026-27-kids"
+    },
+    {
+      "team": "real-betis",
+      "kit": "home",
+      "adult": "real-betis-home-jersey-2026-27",
+      "kids": "real-betis-home-kit-2026-27-kids"
+    },
+    {
+      "team": "real-betis",
+      "kit": "third",
+      "adult": "real-betis-third-jersey-2026-27",
+      "kids": "real-betis-third-kit-2026-27-kids"
+    },
+    {
+      "team": "real-madrid",
+      "kit": "home",
+      "adult": "real-madrid-home-jersey-2026-27",
+      "kids": "real-madrid-home-kit-2026-27-kids"
+    },
+    {
+      "team": "real-sociedad",
+      "kit": "away",
+      "adult": "real-sociedad-away-jersey-2026-27",
+      "kids": "real-sociedad-away-kit-2026-27-kids"
+    },
+    {
+      "team": "real-sociedad",
+      "kit": "home",
+      "adult": "real-sociedad-home-jersey-2026-27",
+      "kids": "real-sociedad-home-kit-2026-27-kids"
+    },
+    {
+      "team": "sevilla",
+      "kit": "home",
+      "adult": "sevilla-home-jersey-2026-27",
+      "kids": "sevilla-home-kit-2026-27-kids"
+    },
+    {
+      "team": "sporting-cp",
+      "kit": "home",
+      "adult": "sporting-cp-home-jersey-2026-27",
+      "kids": "sporting-cp-home-kit-2026-27-kids"
+    },
+    {
+      "team": "sunderland",
+      "kit": "away",
+      "adult": "sunderland-away-jersey-2026-27",
+      "kids": "sunderland-away-kit-2026-27-kids"
+    },
+    {
+      "team": "sunderland",
+      "kit": "home",
+      "adult": "sunderland-home-jersey-2026-27",
+      "kids": "sunderland-home-kit-2026-27-kids"
+    },
+    {
+      "team": "sunderland",
+      "kit": "third",
+      "adult": "sunderland-third-jersey-2026-27",
+      "kids": "sunderland-third-kit-2026-27-kids"
+    },
+    {
+      "team": "tottenham-hotspur",
+      "kit": "away",
+      "adult": "tottenham-hotspur-away-jersey-2026-27",
+      "kids": "tottenham-hotspur-away-kit-2026-27-kids"
+    },
+    {
+      "team": "tottenham-hotspur",
+      "kit": "home",
+      "adult": "tottenham-hotspur-home-jersey-2026-27",
+      "kids": "tottenham-hotspur-home-kit-2026-27-kids"
+    },
+    {
+      "team": "valencia",
+      "kit": "away",
+      "adult": "valencia-away-jersey-2026-27",
+      "kids": "valencia-away-kit-2026-27-kids"
+    },
+    {
+      "team": "valencia",
+      "kit": "home",
+      "adult": "valencia-home-jersey-2026-27",
+      "kids": "valencia-home-kit-2026-27-kids"
+    },
+    {
+      "team": "valencia",
+      "kit": "third",
+      "adult": "valencia-third-jersey-2026-27",
+      "kids": "valencia-third-kit-2026-27-kids"
+    },
+    {
+      "team": "vfb-stuttgart",
+      "kit": "home",
+      "adult": "vfb-stuttgart-home-jersey-2026-27",
+      "kids": "vfb-stuttgart-home-kit-2026-27-kids"
+    },
+    {
+      "team": "villarreal",
+      "kit": "home",
+      "adult": "villarreal-home-jersey-2026-27",
+      "kids": "villarreal-home-kit-2026-27-kids"
+    },
+    {
+      "team": "werder-bremen",
+      "kit": "away",
+      "adult": "werder-bremen-away-jersey-2026-27",
+      "kids": "werder-bremen-away-kit-2026-27-kids"
+    },
+    {
+      "team": "werder-bremen",
+      "kit": "home",
+      "adult": "werder-bremen-home-jersey-2026-27",
+      "kids": "werder-bremen-home-kit-2026-27-kids"
+    },
+    {
+      "team": "werder-bremen",
+      "kit": "third",
+      "adult": "werder-bremen-third-jersey-2026-27",
+      "kids": "werder-bremen-third-kit-2026-27-kids"
+    },
+    {
+      "team": "west-ham-united",
+      "kit": "away",
+      "adult": "west-ham-united-away-jersey-2026-27",
+      "kids": "west-ham-united-away-kit-2026-27-kids"
+    },
+    {
+      "team": "west-ham-united",
+      "kit": "home",
+      "adult": "west-ham-united-home-jersey-2026-27",
+      "kids": "west-ham-united-home-kit-2026-27-kids"
+    },
+    {
+      "team": "west-ham-united",
+      "kit": "third",
+      "adult": "west-ham-united-third-jersey-2026-27",
+      "kids": "west-ham-united-third-kit-2026-27-kids"
+    },
+    {
+      "team": "wolverhampton-wanderers",
+      "kit": "away",
+      "adult": "wolverhampton-wanderers-away-jersey-2026-27",
+      "kids": "wolverhampton-wanderers-away-kit-2026-27-kids"
+    },
+    {
+      "team": "wolverhampton-wanderers",
+      "kit": "home",
+      "adult": "wolverhampton-wanderers-home-jersey-2026-27",
+      "kids": "wolverhampton-wanderers-home-kit-2026-27-kids"
+    }
+  ]
+}

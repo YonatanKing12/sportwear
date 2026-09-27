@@ -134,5 +134,9 @@
       "en": "2026-09-27T15:21:08Z",
       "ar": "2026-09-27T15:21:08Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "brighton-away-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

@@ -128,6 +128,10 @@
       "L": "gid://shopify/ProductVariant/67860408172848",
       "XL": "gid://shopify/ProductVariant/67860408205616"
     },
-    "created_at": "2026-09-27T15:20:26Z"
+    "created_at": "2026-09-27T15:20:26Z",
+    "translations_registered": {
+      "en": "2026-09-27T15:58:52Z",
+      "ar": "2026-09-27T15:58:52Z"
+    }
   }
 }

@@ -136,5 +136,9 @@
       "en": "2026-09-27T15:24:41Z",
       "ar": "2026-09-27T15:24:41Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "athletic-bilbao-away-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

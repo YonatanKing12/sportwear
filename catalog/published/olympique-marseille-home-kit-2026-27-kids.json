@@ -175,5 +175,9 @@
       "en": "2026-09-27T15:48:45Z",
       "ar": "2026-09-27T15:48:45Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "olympique-marseille-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

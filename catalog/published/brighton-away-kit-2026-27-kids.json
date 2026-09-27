@@ -174,5 +174,9 @@
       "en": "2026-09-27T15:21:09Z",
       "ar": "2026-09-27T15:21:09Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "brighton-away-jersey-2026-27",
+    "complements_handles": []
   }
 }

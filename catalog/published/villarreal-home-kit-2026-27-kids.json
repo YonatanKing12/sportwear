@@ -173,5 +173,9 @@
       "en": "2026-09-27T15:38:24Z",
       "ar": "2026-09-27T15:38:24Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "villarreal-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

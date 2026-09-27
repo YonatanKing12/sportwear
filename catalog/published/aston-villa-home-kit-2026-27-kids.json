@@ -174,5 +174,9 @@
       "en": "2026-09-27T15:17:01Z",
       "ar": "2026-09-27T15:17:01Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "aston-villa-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

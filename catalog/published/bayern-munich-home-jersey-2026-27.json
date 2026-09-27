@@ -139,5 +139,9 @@
       "en": "2026-09-26T19:44:16Z",
       "ar": "2026-09-26T19:44:16Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "bayern-munich-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

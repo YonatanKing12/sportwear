@@ -174,5 +174,9 @@
       "en": "2026-09-27T15:47:22Z",
       "ar": "2026-09-27T15:47:22Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "lyon-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

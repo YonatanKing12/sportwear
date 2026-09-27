@@ -134,5 +134,9 @@
       "en": "2026-09-27T15:17:02Z",
       "ar": "2026-09-27T15:17:02Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "aston-villa-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }
