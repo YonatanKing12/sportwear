@@ -117,7 +117,10 @@
     "shows": "A man with a ball by a court fence in a white New York 8 jersey (wide)",
     "width": 1942,
     "height": 809,
-    "used_on": ["product gallery of sw-jerseys-244984876 (square crop, centre 0.29)"]
+    "used_on": [
+      "product gallery of sw-jerseys-244984876 (square crop, centre 0.29)",
+      "home hero slideshow, slide \"street\" (phones; 4:5 crop, centre 0.29): sw-look-hero-street-mobile.jpg"
+    ]
   },
   {
     "file": "knicks-napoli-court-gate.png",
@@ -258,7 +261,9 @@
     "shows": "Two friends walking along a stone wall in Roma and New York 8 shirts (wide)",
     "width": 1942,
     "height": 809,
-    "used_on": []
+    "used_on": [
+      "home hero slideshow, slide \"street\" (desktop, all languages; 3:1 crop from the top, text on the right): sw-look-hero-street.jpg"
+    ]
   },
   {
     "file": "roma-knicks-kiosk.png",

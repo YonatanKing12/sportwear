@@ -14,6 +14,17 @@
             "secondary_button_link": "shopify://collections/basketball"
           }
         },
+        "street": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-hero-street.jpg",
+            "image_mobile": "shopify://shop_images/sw-look-hero-street-mobile.jpg",
+            "text_side": "right",
+            "copy": "street",
+            "button_link": "shopify://collections/all",
+            "secondary_button_link": "shopify://collections/new"
+          }
+        },
         "nba": {
           "type": "slide",
           "settings": {
@@ -37,7 +48,7 @@
           }
         }
       },
-      "block_order": ["football", "nba", "national"],
+      "block_order": ["football", "street", "nba", "national"],
       "settings": {
         "color_scheme": "scheme-night",
         "autoplay": true,

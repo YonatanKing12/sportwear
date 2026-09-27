@@ -137,6 +137,12 @@
           "text": "Brazil, France, Japan, Germany and more",
           "button_label": "Shop national teams",
           "secondary_button_label": "Football jerseys"
+        },
+        "street": {
+          "heading": "From the court to the street",
+          "text": "Football shirts and basketball jerseys to wear every day, not just on match day",
+          "button_label": "Shop all jerseys",
+          "secondary_button_label": "New in"
         }
       }
     },

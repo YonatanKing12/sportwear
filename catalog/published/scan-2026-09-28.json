@@ -1,0 +1,56 @@
+{
+  "_note": "Scan of the 335 newer products (night of 27 to 28 September 2026, Israel time), asked for by the owner ('עברת על כל המוצרים וראית שהשמות תואמים למוצר עצמו'): the 229 wave-2 products (137 adult jerseys, 92 kids sets) and the 106 NBA shorts from xingkong-sports, every photo against the title and description. Four batches: adult jerseys A-G (69), adult jerseys G-W (68), kids sets (92), shorts (106). The 128 wave-1 products and the 1,098 older products were scanned on 2026-09-27 (scan-fixes-2026-09-27.json). Price, stock, status, handles and channels are unchanged.",
+  "summary": {
+    "checked": 335,
+    "titles_fixed": 2,
+    "photos_rotated": 2,
+    "for_the_owner": 8
+  },
+  "titles": [
+    {
+      "id": "gid://shopify/Product/15310215119152",
+      "handle": "sw-shorts-193401022",
+      "before": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול מהדורת עיר 2025",
+      "after": "מכנסי כדורסל לוס אנג׳לס לייקרס צבע מדורג מהדורת עיר 2025",
+      "why": "Purple at the waist fading to black from mid-thigh: a gradient, as its three paired LakeShow City Edition 2025 jerseys are titled (צבע מדורג). Description and SEO description now say 'בצבע מדורג מסגול לשחור'.",
+      "en": "Los Angeles Lakers Basketball Shorts – Gradient, City Edition 2025",
+      "ar": "شورت كرة سلة لوس أنجلوس ليكرز بلون متدرج إصدار المدينة 2025",
+      "alt_texts_updated": 4,
+      "note": "The Hebrew SEO title equalled the title, so Shopify keeps none; the old en/ar SEO titles were removed so /en and /ar use the translated title."
+    },
+    {
+      "id": "gid://shopify/Product/15310215938352",
+      "handle": "sw-shorts-97018230",
+      "before": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור",
+      "after": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור דוגמת נחש",
+      "why": "The 'Black Mamba' snakeskin shorts (embossed snakeskin texture, gold 24 tab): the six paired jerseys are titled 'שחור דוגמת נחש'. Description, SEO title and description updated.",
+      "en": "Los Angeles Lakers Basketball Shorts – Black, Snakeskin",
+      "ar": "شورت كرة سلة لوس أنجلوس ليكرز أسود بنقشة جلد الثعبان",
+      "alt_texts_updated": 2
+    }
+  ],
+  "photos": [
+    {
+      "handle": "sw-shorts-106737579",
+      "media_image": "gid://shopify/MediaImage/45302460547376",
+      "file": "sw-detail-shorts-106737579-1.jpg",
+      "fix": "The first fabric close-up was upside down ('LOS ANGELES LAKERS' read upside down): rotated 180° and replaced in place (fileUpdate originalSource), same media ID, alt and position."
+    },
+    {
+      "handle": "sw-shorts-98995595",
+      "media_image": "gid://shopify/MediaImage/45302585131312",
+      "file": "sw-detail-shorts-98995595-2.jpg",
+      "fix": "The second fabric close-up was upside down (the Brooklyn roundel): rotated 180° and replaced in place."
+    }
+  ],
+  "for_the_owner": [
+    {
+      "handles": ["sw-shorts-112616724", "sw-jerseys-107074855", "sw-jerseys-122604480"],
+      "note": "Charlotte Hornets City Edition 2022 set: teal at the top fading to royal blue. All three are titled 'כחול'; the store calls such designs 'צבע מדורג' elsewhere. Left as is so the set stays consistent; change all three together if wanted."
+    },
+    {
+      "handles": ["burnley-home-kit-2026-27-kids", "west-ham-united-*", "wolverhampton-wanderers-*", "girona-*"],
+      "note": "Burnley, West Ham and Wolves were relegated from the Premier League at the end of 2025-26 and play the 2026-27 Championship; Girona (with Mallorca and Oviedo) went down from LaLiga to the Segunda (checked on 2026-09-28: premierleague.com 'Everything that's been decided in 2025/26', Wikipedia '2026-27 EFL Championship' and '2025-26 La Liga'). Their 26/27 products are still tagged league:premier-league / league:la-liga, so they show in those collections, filters and menus. Not changed: the owner decides whether to move them (for example to 'ליגות נוספות')."
+    }
+  ]
+}

@@ -464,7 +464,8 @@
                 "football": "Football jerseys",
                 "basketball": "NBA jerseys",
                 "national": "National teams",
-                "custom": "My own text"
+                "custom": "My own text",
+                "street": "Street style"
               }
             },
             "highlight": {
@@ -475,6 +476,15 @@
             },
             "secondary_button_link": {
               "label": "Second button link"
+            },
+            "text_side": {
+              "label": "Text side",
+              "info": "Automatic puts the text at the start of the reading direction (right in Hebrew and Arabic, left in English). Choose a side when the photo's people stand on the other side and the photo can't be mirrored.",
+              "options": {
+                "auto": "Automatic (reading direction)",
+                "right": "Right, in every language",
+                "left": "Left, in every language"
+              }
             }
           }
         }

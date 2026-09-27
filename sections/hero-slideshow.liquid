@@ -5,8 +5,10 @@
   headline is the page's h1. Behaviour: assets/hero-slideshow.js (<sw-slideshow>).
 
   Each slide has a desktop photo, an optional photo for left-to-right languages (English: the text
-  sits on the left, so the people go on the right) and an optional mobile photo. Texts come from a
-  ready-made, translated set (football, basketball, national teams) unless the merchant types them.
+  sits on the left, so the people go on the right) and an optional mobile photo. A slide can instead
+  fix the text to one side in every language ("Text side"), for a photo whose people stand on the other
+  side and that cannot be mirrored (lettering on the shirts). Texts come from a ready-made, translated
+  set (football, basketball, national teams, street style) unless the merchant types them.
 {%- endcomment -%}
 {%- liquid
   assign scheme = section.settings.color_scheme
@@ -86,7 +88,7 @@
             endif
           -%}
           <div
-            class="hero-slideshow__slide"
+            class="hero-slideshow__slide{% if block.settings.text_side == 'right' or block.settings.text_side == 'left' %} hero-slideshow__slide--text-{{ block.settings.text_side }}{% endif %}"
             role="group"
             aria-roledescription="{{ 'home.hero_slideshow.slide' | t }}"
             aria-label="{{ 'home.hero_slideshow.slide_label' | t: index: forloop.index, count: slide_count }}"
@@ -351,6 +353,35 @@
     }
   }
 
+  /* A slide with its text fixed to one side (photo with its people on the other side): the gradient,
+     the text and the photo's crop follow that side in every language. */
+  @media screen and (min-width: 750px) {
+    .hero-slideshow__slide--text-right .hero-slideshow__media {
+      --hero-gradient-direction: to left;
+    }
+
+    .hero-slideshow__slide--text-left .hero-slideshow__media {
+      --hero-gradient-direction: to right;
+    }
+
+    .hero-slideshow__slide--text-right .hero-slideshow__image {
+      object-position: 20% 12%;
+    }
+
+    .hero-slideshow__slide--text-left .hero-slideshow__image {
+      object-position: 80% 12%;
+    }
+
+    :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__text {
+      max-inline-size: min(34rem, 44%);
+    }
+
+    [dir='ltr'] .hero-slideshow__slide--text-right .hero-slideshow__text,
+    [dir='rtl'] .hero-slideshow__slide--text-left .hero-slideshow__text {
+      margin-inline-start: auto;
+    }
+  }
+
   .hero-slideshow__content {
     inline-size: 100%;
     padding-block: var(--space-6) var(--space-12);
@@ -582,6 +613,27 @@
         },
         {
           "type": "select",
+          "id": "text_side",
+          "label": "t:sections.hero_slideshow.blocks.slide.settings.text_side.label",
+          "info": "t:sections.hero_slideshow.blocks.slide.settings.text_side.info",
+          "options": [
+            {
+              "value": "auto",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.text_side.options.auto"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.text_side.options.right"
+            },
+            {
+              "value": "left",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.text_side.options.left"
+            }
+          ],
+          "default": "auto"
+        },
+        {
+          "type": "select",
           "id": "copy",
           "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.label",
           "info": "t:sections.hero_slideshow.blocks.slide.settings.copy.info",
@@ -597,6 +649,10 @@
             {
               "value": "national",
               "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.national"
+            },
+            {
+              "value": "street",
+              "label": "t:sections.hero_slideshow.blocks.slide.settings.copy.options.street"
             },
             {
               "value": "custom",
