@@ -70,7 +70,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 async function isBlocked(page, status) {
   if (status === 429) return true;
   const text = await page.evaluate(() => document.body?.innerText?.slice(0, 500) ?? '').catch(() => '');
-  return /needs to be verified|verify you are human|just a moment/i.test(text);
+  return /needs to be verified|verify you are human|just a moment|there was a problem loading this website/i.test(text);
 }
 
 // Opens a page and waits until it is visually settled (network quiet, web fonts loaded).
@@ -117,6 +117,8 @@ export async function loadLazyContent(page) {
     window.scrollTo(0, 0);
   });
   await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+  // Let bars that react to scrolling (the sticky buy bar) finish sliding away.
+  await page.waitForTimeout(800);
 }
 
 export function outputDir(kind) {
