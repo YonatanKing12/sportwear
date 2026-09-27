@@ -163,8 +163,11 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
 - Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
   `real-madrid-third-jersey-2026-27`): keep both or hide one
-- Collection filters (size, league, team, adults/kids) are set in the Search & Discovery app, which only
-  the owner can open
+- Collection filters are set in the Search & Discovery app, which only the owner can open. Today the
+  collection pages offer only availability and price; the size filter (the product option "מידה") is the
+  one to add. League, team and adults/kids filters would first need the `sportwear` metafields on every
+  product: the 1,098 imported products have none (they work through tags), and the only `sw_team` entries
+  are the three demo teams
 - Buying the domain
 - Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch
 - Connecting GitHub to Shopify, a one-time step for the development theme
