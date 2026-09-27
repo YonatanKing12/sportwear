@@ -1,0 +1,1176 @@
+<title>מסמכי המדיניות של SportWear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Karantina:wght@700&display=swap">
+<style>
+  :root {
+    --bg: #f3f4f6;
+    --paper: #ffffff;
+    --ink: #0d0e11;
+    --muted: #5b616e;
+    --line: #e1e4e8;
+    --field: #ffffff;
+    --field-line: #b9bec7;
+    --frame-bar: #0d0e11;
+    --frame-bar-text: #f4f5f7;
+    --lime: #c6ff3d;
+    --on-lime: #0d0e11;
+    --btn-bg: #0d0e11;
+    --btn-text: #c6ff3d;
+    --note-bg: #eceef1;
+    --warn-bg: #fdf0da;
+    --warn-ink: #4a3000;
+    --warn-line: #e7c587;
+    --ok: #1d6b3a;
+    --focus: #0d0e11;
+    --display: 'Karantina', 'Heebo', 'Arial Hebrew', sans-serif;
+    --body: 'Heebo', 'Arial Hebrew', 'Noto Sans Hebrew', system-ui, sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+      color-scheme: dark;
+      --bg: #0d0e11;
+      --paper: #16181d;
+      --ink: #f4f5f7;
+      --muted: #a7adb8;
+      --line: #2a2e37;
+      --field: #0d0e11;
+      --field-line: #4a505c;
+      --frame-bar: #000000;
+      --btn-bg: #c6ff3d;
+      --btn-text: #0d0e11;
+      --note-bg: #1f2229;
+      --warn-bg: #2a2111;
+      --warn-ink: #f6dfb4;
+      --warn-line: #5c4720;
+      --ok: #8fe3a8;
+      --focus: #c6ff3d;
+    }
+  }
+
+  :root[data-theme='dark'] {
+    color-scheme: dark;
+    --bg: #0d0e11;
+    --paper: #16181d;
+    --ink: #f4f5f7;
+    --muted: #a7adb8;
+    --line: #2a2e37;
+    --field: #0d0e11;
+    --field-line: #4a505c;
+    --frame-bar: #000000;
+    --btn-bg: #c6ff3d;
+    --btn-text: #0d0e11;
+    --note-bg: #1f2229;
+    --warn-bg: #2a2111;
+    --warn-ink: #f6dfb4;
+    --warn-line: #5c4720;
+    --ok: #8fe3a8;
+    --focus: #c6ff3d;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.7;
+    font-synthesis: none;
+  }
+
+  .doc {
+    max-inline-size: 46rem;
+    margin-inline: auto;
+    padding-inline: 20px;
+    padding-block: 40px 72px;
+    display: grid;
+    gap: 40px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  p,
+  ol,
+  ul {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-underline-offset: 3px;
+  }
+
+  :is(a, button, input, summary):focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  bdi.ui {
+    font-weight: 700;
+  }
+
+  [hidden] {
+    display: none !important;
+  }
+
+  .doc > *,
+  .step > *,
+  .step-body > * {
+    min-inline-size: 0;
+  }
+
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .intro {
+    display: grid;
+    gap: 12px;
+  }
+
+  .intro h1 {
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 8vw, 3.8rem);
+    line-height: 1.05;
+    font-weight: 700;
+  }
+
+  .intro p {
+    max-inline-size: 38rem;
+  }
+
+  .why {
+    display: grid;
+    gap: 8px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    background: var(--warn-bg);
+    color: var(--warn-ink);
+    border: 1px solid var(--warn-line);
+  }
+
+  .why strong {
+    font-weight: 800;
+  }
+
+  .order {
+    display: grid;
+    gap: 10px;
+  }
+
+  .order h2 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .order ol {
+    padding: 0;
+    list-style: none;
+    columns: 2 15rem;
+    column-gap: 28px;
+  }
+
+  .order li {
+    break-inside: avoid;
+    padding-block: 2px;
+  }
+
+  .order .num {
+    display: inline-block;
+    min-inline-size: 1.6em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .order .is-done a {
+    text-decoration: line-through;
+    color: var(--muted);
+  }
+
+  .step {
+    display: grid;
+    gap: 16px;
+    scroll-margin-block-start: 16px;
+  }
+
+  .step-head {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 4px 14px;
+    align-items: start;
+  }
+
+  .badge {
+    grid-row: span 2;
+    display: grid;
+    place-items: center;
+    inline-size: 40px;
+    block-size: 40px;
+    border-radius: 50%;
+    background: var(--lime);
+    color: var(--on-lime);
+    font-weight: 800;
+    font-size: 1.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .step.is-done .badge {
+    background: var(--ok);
+    color: var(--paper);
+  }
+
+  .step-head h2 {
+    font-family: var(--display);
+    font-size: 2.1rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .step-head .where {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .step-body {
+    display: grid;
+    gap: 14px;
+  }
+
+  .steps-list {
+    padding-inline-start: 1.3em;
+    display: grid;
+    gap: 6px;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+  }
+
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .btn {
+    min-block-size: 44px;
+    padding-inline: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--btn-bg);
+    background: var(--btn-bg);
+    color: var(--btn-text);
+    font-weight: 800;
+  }
+
+  .btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.45;
+  }
+
+  .btn-quiet {
+    min-block-size: 44px;
+    padding-inline: 16px;
+    border-radius: 4px;
+    border: 1px solid var(--field-line);
+    background: transparent;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .copied {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--ok);
+  }
+
+  .done {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-block-size: 44px;
+    margin-inline-start: auto;
+    font-size: 0.95rem;
+    cursor: pointer;
+  }
+
+  .done input {
+    inline-size: 20px;
+    block-size: 20px;
+    accent-color: var(--ok);
+    margin: 0;
+  }
+
+  .manual {
+    display: grid;
+    gap: 8px;
+    padding: 14px 16px;
+    border-radius: 4px;
+    background: var(--note-bg);
+    font-size: 0.95rem;
+  }
+
+  .manual textarea {
+    inline-size: 100%;
+    min-block-size: 9rem;
+    box-sizing: border-box;
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+    font-size: 0.8rem;
+    direction: ltr;
+    background: var(--field);
+    color: var(--ink);
+    border: 1px solid var(--field-line);
+    border-radius: 4px;
+    padding: 8px;
+  }
+
+  .note {
+    background: var(--note-bg);
+    border-radius: 4px;
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    display: grid;
+    gap: 8px;
+  }
+
+  .note strong {
+    font-weight: 700;
+  }
+
+  /* Details form */
+  .fields {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 14px 18px;
+  }
+
+  .field {
+    display: grid;
+    gap: 4px;
+    align-content: start;
+  }
+
+  .field label {
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+
+  .field .hint {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  .field input {
+    min-block-size: 44px;
+    box-sizing: border-box;
+    inline-size: 100%;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--field-line);
+    background: var(--field);
+    color: var(--ink);
+    font: inherit;
+  }
+
+  .field input[dir='ltr'] {
+    text-align: end;
+  }
+
+  .field--wide {
+    grid-column: 1 / -1;
+  }
+
+  .check {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .check input {
+    inline-size: 20px;
+    block-size: 20px;
+    margin: 4px 0 0;
+    accent-color: var(--ink);
+    flex: none;
+  }
+
+  .status {
+    font-size: 0.95rem;
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: var(--note-bg);
+  }
+
+  .status strong {
+    font-weight: 800;
+  }
+
+  /* Policy preview */
+  .frame {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--frame-bar);
+    color: var(--frame-bar-text);
+    font-size: 0.85rem;
+  }
+
+  .frame-bar .dot {
+    inline-size: 8px;
+    block-size: 8px;
+    border-radius: 50%;
+    background: var(--lime);
+    flex: none;
+  }
+
+  .frame-bar .brand {
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+
+  .frame-bar .path {
+    margin-inline-start: auto;
+    opacity: 0.75;
+  }
+
+  .policy {
+    padding: 22px 20px 26px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .policy h1 {
+    font-family: var(--display);
+    font-size: 2.3rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+
+  .policy h2 {
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-block-start: 10px;
+  }
+
+  .policy :is(ul, ol) {
+    padding-inline-start: 1.3em;
+    display: grid;
+    gap: 4px;
+  }
+
+  .policy a {
+    font-weight: 700;
+  }
+
+  .policy [data-preview] > * + * {
+    margin-block-start: 10px;
+  }
+
+  .policy [data-preview] > h2 {
+    margin-block-start: 22px;
+  }
+
+  .policy .empty {
+    color: var(--muted);
+  }
+
+  /* Merchant Center */
+  .issue {
+    display: grid;
+    gap: 10px;
+    padding-block: 18px;
+    border-block-start: 1px solid var(--line);
+  }
+
+  .issue:last-of-type {
+    border-block-end: 1px solid var(--line);
+  }
+
+  .issue h3 {
+    font-size: 1.15rem;
+    font-weight: 800;
+  }
+
+  .issue .label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--muted);
+  }
+
+  .issue ul,
+  .issue ol {
+    padding-inline-start: 1.3em;
+    display: grid;
+    gap: 6px;
+  }
+
+  .warn {
+    display: grid;
+    gap: 8px;
+    padding: 16px 20px;
+    border-radius: 6px;
+    background: var(--warn-bg);
+    color: var(--warn-ink);
+    border: 1px solid var(--warn-line);
+  }
+
+  .warn h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  .url {
+    direction: ltr;
+    unicode-bidi: isolate;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    inline-size: 1px;
+    block-size: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+
+  @media (min-width: 700px) {
+    .policy {
+      padding: 30px 40px 36px;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+</style>
+
+<main class="doc" dir="rtl" lang="he">
+  <header class="intro">
+    <p class="eyebrow">SportWear · מוכן להדבקה</p>
+    <h1>מסמכי המדיניות של SportWear</h1>
+    <p>
+      Shopify לא נותנת לנו הרשאה לערוך את מסמכי המדיניות של החנות, אז כל הטקסטים מחכים כאן מוכנים: לוחצים ״העתקה״,
+      מדביקים באדמין ושומרים. בערך עשר דקות.
+    </p>
+  </header>
+
+  <section class="why" aria-labelledby="why-title">
+    <h2 id="why-title"><strong>למה עכשיו</strong></h2>
+    <p>
+      מדיניות ההחזרים שמופיעה היום בעמודי המוצר ובקופה היא תבנית של Shopify, ויש בה 30 יום להחזרה במקום 45, את השורה
+      ״<bdi>[INSERT RETURN ADDRESS]</bdi>״ ואת המייל האישי שלכם. בראש תנאי השימוש נשאר המשפט ״<bdi>הנה טיוטת Terms of
+      Service לחנות SportWear</bdi>״. בימים האלה Google בודקים את האתר, וטקסט של תבנית הוא סיבה מוכרת לדחייה.
+    </p>
+    <p>
+      הנוסחים עוד לא עברו עורך דין. עדיף שהם יהיו באתר עכשיו במקום התבניות. אחרי שעורך הדין יעבור עליהם, פשוט מדביקים
+      שוב.
+    </p>
+  </section>
+
+  <nav class="order" aria-labelledby="order-title">
+    <h2 id="order-title">הסדר</h2>
+    <ol>
+      <li data-step-link="details"><a href="#details"><span class="num">1.</span>פרטי העסק (לא חובה)</a></li>
+      <li data-step-link="rules"><a href="#rules"><span class="num">2.</span>כללי ההחזרה ב-Shopify</a></li>
+      <li data-step-link="refund"><a href="#refund"><span class="num">3.</span>מדיניות החזרים</a></li>
+      <li data-step-link="terms"><a href="#terms"><span class="num">4.</span>תנאי שימוש</a></li>
+      <li data-step-link="privacy"><a href="#privacy"><span class="num">5.</span>מדיניות פרטיות</a></li>
+      <li data-step-link="shipping"><a href="#shipping"><span class="num">6.</span>מדיניות משלוחים</a></li>
+      <li data-step-link="contact"><a href="#contact"><span class="num">7.</span>פרטי התקשרות</a></li>
+      <li data-step-link="google"><a href="#google"><span class="num">8.</span><bdi>Google Merchant Center</bdi></a></li>
+    </ol>
+  </nav>
+
+  <section class="step" id="details" aria-labelledby="details-title">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">1</span>
+      <h2 id="details-title">פרטי העסק</h2>
+      <p class="where">לא חובה. כל פרט שתמלאו נכנס לטקסטים שלמטה, ושדה ריק פשוט לא מופיע בהם.</p>
+    </div>
+    <div class="step-body">
+      <form class="fields" id="details-form" autocomplete="off">
+        <div class="field">
+          <label for="d-name">שם העסק</label>
+          <input id="d-name" name="name" type="text">
+          <span class="hint">כמו שהוא רשום ברשויות</span>
+        </div>
+        <div class="field">
+          <label for="d-id">מספר עוסק או ח״פ</label>
+          <input id="d-id" name="id" type="text" inputmode="numeric" dir="ltr">
+        </div>
+        <div class="field field--wide">
+          <label for="d-address">כתובת העסק</label>
+          <input id="d-address" name="address" type="text">
+        </div>
+        <div class="field">
+          <label for="d-phone">טלפון</label>
+          <input id="d-phone" name="phone" type="tel" dir="ltr">
+        </div>
+        <div class="field">
+          <label for="d-whatsapp">וואטסאפ</label>
+          <input id="d-whatsapp" name="whatsapp" type="tel" dir="ltr">
+        </div>
+        <div class="field">
+          <label for="d-email">מייל לפניות לקוחות</label>
+          <input id="d-email" name="email" type="email" dir="ltr">
+        </div>
+        <div class="field">
+          <label for="d-hours">שעות מענה</label>
+          <input id="d-hours" name="hours" type="text">
+          <span class="hint">למשל: א׳–ה׳, 9:00–17:00</span>
+        </div>
+        <div class="field field--wide">
+          <label class="check" for="d-vat">
+            <input id="d-vat" name="vatExempt" type="checkbox">
+            <span>העסק הוא עוסק פטור (לא גובה מע״מ). אם כן, ספרו לי, ואוריד מהאתר את ״כולל מע״מ״.</span>
+          </label>
+        </div>
+      </form>
+      <p class="status" id="details-status" aria-live="polite"></p>
+      <p class="note">
+        הפרטים נשמרים רק בדפדפן הזה, כדי שלא תצטרכו להקליד שוב, ולא נשלחים לשום מקום. אם תשלחו לי אותם גם בצ׳אט, אוסיף
+        אותם להצהרת הנגישות ולעמוד ״צור קשר״.
+      </p>
+    </div>
+  </section>
+
+  <section class="step" id="rules" aria-labelledby="rules-title" data-step="rules">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">2</span>
+      <h2 id="rules-title">כללי ההחזרה ב-Shopify</h2>
+      <p class="where">
+        הגדרות ← מדיניות ← <bdi class="ui">Return and cancellation rules</bdi>
+      </p>
+    </div>
+    <div class="step-body">
+      <p>אלה ההגדרות ש-Shopify מציגה ללקוחות, ו-Google מבקשים שיהיו מוגדרות גם כאן. מכוונים אותן כך ושומרים:</p>
+      <ul class="steps-list">
+        <li>
+          חלון ההחזרה (<bdi class="ui">Return window</bdi>): <bdi class="ui">Custom days</bdi>, 45 יום, מיום המסירה
+          (<bdi class="ui">Item's delivery</bdi>).
+        </li>
+        <li>
+          משלוח ההחזרה (<bdi class="ui">Return shipping cost</bdi>): הלקוח שולח על חשבונו
+          (<bdi class="ui">Have your customers buy their own return shipping label</bdi>).
+        </li>
+        <li>דמי טיפול (<bdi class="ui">Restocking fee</bdi>): כבוי.</li>
+        <li>מוצרים בלי החזרה (<bdi class="ui">Final sale</bdi>): בלי.</li>
+      </ul>
+      <div class="actions">
+        <label class="done" for="done-rules">
+          <input id="done-rules" type="checkbox" data-done="rules">
+          <span>נשמר</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section class="step" id="refund" aria-labelledby="refund-title" data-step="refund" data-policy="refund">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">3</span>
+      <h2 id="refund-title">מדיניות החזרים</h2>
+      <p class="where">
+        הגדרות ← מדיניות ← <bdi class="ui">Return and refund policy</bdi>. מוחקים את כל מה שכתוב בשדה, מדביקים ושומרים.
+      </p>
+    </div>
+    <div class="step-body">
+      <div class="actions">
+        <button class="btn" type="button" data-copy="refund">העתקת הטקסט</button>
+        <button class="btn-quiet" type="button" data-copy-html="refund">העתקת קוד HTML</button>
+        <span class="copied" data-copied="refund" role="status" aria-live="polite"></span>
+        <label class="done" for="done-refund">
+          <input id="done-refund" type="checkbox" data-done="refund">
+          <span>הודבק ונשמר</span>
+        </label>
+      </div>
+      <div class="manual" data-manual="refund" hidden></div>
+      <article class="frame" aria-label="תצוגה: מדיניות החזרים">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand">SportWear</span>
+          <span class="path" dir="ltr">/policies/refund-policy</span>
+        </div>
+        <div class="policy">
+          <h1>מדיניות החזרים כספיים</h1>
+          <div data-preview="refund"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="terms" aria-labelledby="terms-title" data-step="terms" data-policy="terms">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">4</span>
+      <h2 id="terms-title">תנאי שימוש</h2>
+      <p class="where">
+        הגדרות ← מדיניות ← <bdi class="ui">Terms of service</bdi>. מחליף את הטקסט שמתחיל ב״<bdi>הנה טיוטת Terms of
+        Service</bdi>״.
+      </p>
+    </div>
+    <div class="step-body">
+      <div class="actions">
+        <button class="btn" type="button" data-copy="terms">העתקת הטקסט</button>
+        <button class="btn-quiet" type="button" data-copy-html="terms">העתקת קוד HTML</button>
+        <span class="copied" data-copied="terms" role="status" aria-live="polite"></span>
+        <label class="done" for="done-terms">
+          <input id="done-terms" type="checkbox" data-done="terms">
+          <span>הודבק ונשמר</span>
+        </label>
+      </div>
+      <div class="manual" data-manual="terms" hidden></div>
+      <article class="frame" aria-label="תצוגה: תנאי שימוש">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand">SportWear</span>
+          <span class="path" dir="ltr">/policies/terms-of-service</span>
+        </div>
+        <div class="policy">
+          <h1>תנאי שימוש</h1>
+          <div data-preview="terms"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="privacy" aria-labelledby="privacy-title" data-step="privacy" data-policy="privacy">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">5</span>
+      <h2 id="privacy-title">מדיניות פרטיות</h2>
+      <p class="where">
+        הגדרות ← מדיניות ← <bdi class="ui">Privacy policy</bdi>. מחליף את התבנית באנגלית, שמופיעים בה הטלפון, המייל
+        והכתובת האישיים שלכם.
+      </p>
+    </div>
+    <div class="step-body">
+      <div class="actions">
+        <button class="btn" type="button" data-copy="privacy">העתקת הטקסט</button>
+        <button class="btn-quiet" type="button" data-copy-html="privacy">העתקת קוד HTML</button>
+        <span class="copied" data-copied="privacy" role="status" aria-live="polite"></span>
+        <label class="done" for="done-privacy">
+          <input id="done-privacy" type="checkbox" data-done="privacy">
+          <span>הודבק ונשמר</span>
+        </label>
+      </div>
+      <div class="manual" data-manual="privacy" hidden></div>
+      <article class="frame" aria-label="תצוגה: מדיניות פרטיות">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand">SportWear</span>
+          <span class="path" dir="ltr">/policies/privacy-policy</span>
+        </div>
+        <div class="policy">
+          <h1>מדיניות הפרטיות</h1>
+          <div data-preview="privacy"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="shipping" aria-labelledby="shipping-title" data-step="shipping" data-policy="shipping">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">6</span>
+      <h2 id="shipping-title">מדיניות משלוחים</h2>
+      <p class="where">הגדרות ← מדיניות ← <bdi class="ui">Shipping policy</bdi>. היום השדה ריק.</p>
+    </div>
+    <div class="step-body">
+      <div class="actions">
+        <button class="btn" type="button" data-copy="shipping">העתקת הטקסט</button>
+        <button class="btn-quiet" type="button" data-copy-html="shipping">העתקת קוד HTML</button>
+        <span class="copied" data-copied="shipping" role="status" aria-live="polite"></span>
+        <label class="done" for="done-shipping">
+          <input id="done-shipping" type="checkbox" data-done="shipping">
+          <span>הודבק ונשמר</span>
+        </label>
+      </div>
+      <div class="manual" data-manual="shipping" hidden></div>
+      <article class="frame" aria-label="תצוגה: מדיניות משלוחים">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand">SportWear</span>
+          <span class="path" dir="ltr">/policies/shipping-policy</span>
+        </div>
+        <div class="policy">
+          <h1>מדיניות משלוח</h1>
+          <div data-preview="shipping"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="contact" aria-labelledby="contact-title" data-step="contact" data-policy="contact">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">7</span>
+      <h2 id="contact-title">פרטי התקשרות</h2>
+      <p class="where">
+        הגדרות ← מדיניות ← <bdi class="ui">Contact information</bdi>. נבנה מהפרטים בשלב 1, אז הוא מחכה להם.
+      </p>
+    </div>
+    <div class="step-body">
+      <div class="actions">
+        <button class="btn" type="button" data-copy="contact">העתקת הטקסט</button>
+        <button class="btn-quiet" type="button" data-copy-html="contact">העתקת קוד HTML</button>
+        <span class="copied" data-copied="contact" role="status" aria-live="polite"></span>
+        <label class="done" for="done-contact">
+          <input id="done-contact" type="checkbox" data-done="contact">
+          <span>הודבק ונשמר</span>
+        </label>
+      </div>
+      <div class="manual" data-manual="contact" hidden></div>
+      <article class="frame" aria-label="תצוגה: פרטי התקשרות">
+        <div class="frame-bar">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="brand">SportWear</span>
+          <span class="path" dir="ltr">/policies/contact-information</span>
+        </div>
+        <div class="policy">
+          <h1>פרטי התקשרות</h1>
+          <div data-preview="contact"></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="step" id="google" aria-labelledby="google-title" data-step="google">
+    <div class="step-head">
+      <span class="badge" aria-hidden="true">8</span>
+      <h2 id="google-title"><bdi>Google Merchant Center</bdi></h2>
+      <p class="where">ההודעות שקיבלתם מ-Google, ומה עושים עם כל אחת.</p>
+    </div>
+    <div class="step-body">
+      <div class="issue">
+        <h3><span class="label">Limits visibility in Israel</span><bdi>Missing local inventory data</bdi></h3>
+        <p>Google חושבים שיש לכם חנות פיזית, ומחכים לנתוני מלאי ממנה. אין חנות, אז מכבים את זה:</p>
+        <ol>
+          <li>
+            ב-Merchant Center: <bdi class="ui">Settings</bdi> ← <bdi class="ui">Add-ons</bdi> ← הלשונית
+            <bdi class="ui">Your add-ons</bdi>.
+          </li>
+          <li>
+            ליד <bdi class="ui">Free local listings</bdi> לוחצים <bdi class="ui">Remove</bdi>, ואותו דבר ליד
+            <bdi class="ui">Local inventory ads</bdi>.
+          </li>
+          <li>
+            ב-Shopify, באפליקציה <bdi class="ui">Google &amp; YouTube</bdi> ← <bdi class="ui">Settings</bdi> ←
+            <bdi class="ui">Product sync</bdi>: אם מופעל שם מלאי מקומי (<bdi class="ui">Local inventory</bdi>), מכבים.
+          </li>
+        </ol>
+        <p>ההודעה יורדת בדרך כלל תוך יום.</p>
+      </div>
+
+      <div class="issue">
+        <h3><span class="label">Setup and policy issue</span><bdi>Pending initial review</bdi> (פעמיים)</h3>
+        <p>
+          Google בודקים את החנות, עד 3 ימי עסקים. שם לא צריך לעשות כלום, אבל הם בודקים את האתר עצמו, אז כדאי שעד הבדיקה
+          הוא יהיה מוכן:
+        </p>
+        <ul>
+          <li>
+            <strong>לפרסם את ״SportWear (next)״.</strong> בערכה שבאוויר עדיין כתוב ״100% מקורי״ בכל עמוד מוצר ובתפריט,
+            ומשלוח ״חינם מעל ₪250, עד 3 ימי עסקים״, בזמן ש-Google מקבלים מ-Shopify משלוח חינם בכל הזמנה. חנות מקוונת ←
+            ערכות נושא ← <bdi class="ui">SportWear (next)</bdi> ← פרסום.
+          </li>
+          <li><strong>להדביק את המסמכים מהעמוד הזה</strong>, קודם כול את מדיניות ההחזרים.</li>
+          <li>
+            <strong>תשלום בכרטיס.</strong> Google דורשים שאפשר יהיה להשלים קנייה באתר. כל עוד לא מחובר ספק סליקה, הקופה
+            לא מקבלת תשלום, וזו סיבה לדחייה.
+          </li>
+          <li>
+            <strong>פרטי העסק ב-Google:</strong> <bdi class="ui">Settings</bdi> ← <bdi class="ui">Business info</bdi>:
+            טלפון מאומת וכתובת. בלי פרטי קשר, Google עלולים לסמן את החנות כהטעיה.
+          </li>
+          <li>
+            <strong>מדיניות ההחזרה ב-Google.</strong> האפליקציה של Shopify לא מעבירה אותה לבד:
+            <bdi class="ui">Shipping and returns</bdi> ← <bdi class="ui">Return policies</bdi> ←
+            <bdi class="ui">Add return policy</bdi>. ישראל, 45 יום מהמסירה, החזרה בדואר, בלי דמי טיפול
+            (<bdi class="ui">Restocking fee: No cost</bdi>), משלוח ההחזרה על הלקוח, והקישור
+            <span class="url">https://sportwear.co.il/pages/shipping-returns</span>
+          </li>
+          <li>
+            <strong>זמן המשלוח.</strong> באותו מסך, בלשונית המשלוחים, ודאו שזמן המשלוח לישראל הוא עד 10 ימי עסקים, כמו
+            באתר.
+          </li>
+        </ul>
+      </div>
+
+      <div class="issue">
+        <h3>
+          <span class="label">Limits visibility in Israel</span><bdi>Personalized advertising: personal hardships</bdi>
+        </h3>
+        <p>
+          Google לא מאפשרים לפרסם בפרסום מותאם אישית (רימרקטינג, רשימות לקוחות) מוצרים שנראים קשורים לבריאות או
+          למצוקה. המוצרים עצמם ממשיכים להופיע ב-Google כרגיל.
+        </p>
+        <p>
+          מה כנראה הפעיל את זה: 8 הגופיות של אינדיאנה פיבר, קבוצה מליגת הנשים בכדורסל. באנגלית קוראים לה
+          <bdi>Indiana Fever</bdi>, והמילה <bdi>Fever</bdi> פירושה חום, מונח רפואי. אין מה לתקן: זה שם הקבוצה.
+        </p>
+        <p>
+          לבדיקה: <bdi class="ui">Products</bdi> ← <bdi class="ui">Needs attention</bdi> ← לוחצים על ההודעה ←
+          <bdi class="ui">View products</bdi>. אם מופיעים שם מוצרים אחרים, שלחו לי את הרשימה.
+        </p>
+      </div>
+
+      <aside class="warn" aria-labelledby="warn-title">
+        <h3 id="warn-title">סיכון שכדאי להכיר לפני Google</h3>
+        <p>
+          לפי המדיניות של Google, מוצר שנושא לוגו של מותג או של קבוצה בלי רישיון מבעל הסימן נחשב זיוף, גם אם לא כתוב
+          עליו ״מקורי״. זו הפרה שבגללה Google חוסמים את החשבון מיד ולצמיתות, בלי אזהרה, ושינוי ניסוח לא עוזר. אם
+          החולצות לא מגיעות מספק מורשה, כדאי לשקול את זה לפני שמציגים אותן ב-Google. אם הן מגיעות מספק מורשה, שמרו את
+          החשבוניות שלו: זה מה שמבקשים בערעור.
+        </p>
+      </aside>
+
+      <div class="actions">
+        <label class="done" for="done-google">
+          <input id="done-google" type="checkbox" data-done="google">
+          <span>טופל</span>
+        </label>
+      </div>
+    </div>
+  </section>
+
+  <section class="note" aria-labelledby="after-title">
+    <h2 id="after-title"><strong>אחרי ההדבקה</strong></h2>
+    <p>
+      כתבו לי ״הדבקתי״. אוסיף לכל המסמכים אנגלית וערבית, ואבדוק שהם מופיעים נכון באתר, בעמודי המוצר ובקופה.
+    </p>
+  </section>
+
+  <footer>הוכן ב-27 בספטמבר 2026. התאריך ״עודכן לאחרונה״ בכל מסמך הוא היום שבו מעתיקים אותו.</footer>
+</main>
+
+<script>
+/*POLICIES_JS*/
+</script>
+<script>
+  (function () {
+    'use strict';
+
+    var DETAILS_KEY = 'sw-policy-details';
+    var DONE_KEY = 'sw-policy-done';
+    var form = document.getElementById('details-form');
+    var status = document.getElementById('details-status');
+    var current = {};
+
+    function load(key) {
+      try {
+        return JSON.parse(window.localStorage.getItem(key) || '{}') || {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function save(key, value) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify(value));
+      } catch (error) {
+        /* Private window or blocked storage: the page works without it. */
+      }
+    }
+
+    function readForm() {
+      var details = {};
+      Array.prototype.forEach.call(form.elements, function (field) {
+        if (!field.name) return;
+        details[field.name] = field.type === 'checkbox' ? field.checked : field.value;
+      });
+      return details;
+    }
+
+    function fillForm(details) {
+      Array.prototype.forEach.call(form.elements, function (field) {
+        if (!field.name || !(field.name in details)) return;
+        if (field.type === 'checkbox') field.checked = Boolean(details[field.name]);
+        else field.value = details[field.name];
+      });
+    }
+
+    function render() {
+      var details = readForm();
+      current = window.SWPolicies.build(details, new Date());
+      Object.keys(current).forEach(function (key) {
+        var preview = document.querySelector('[data-preview="' + key + '"]');
+        if (!preview) return;
+        if (current[key]) {
+          preview.innerHTML = current[key];
+        } else {
+          preview.innerHTML = '<p class="empty">מלאו את פרטי העסק בשלב 1, והטקסט ייבנה כאן.</p>';
+        }
+        document.querySelectorAll('[data-copy="' + key + '"], [data-copy-html="' + key + '"]').forEach(function (button) {
+          button.disabled = !current[key];
+        });
+      });
+
+      var missing = window.SWPolicies.missing(details);
+      status.innerHTML = missing.length
+        ? '<strong>חסרים עוד:</strong> ' + missing.join(', ') + '. החוק מחייב להציג אותם באתר לפני קנייה, אז כדאי להשלים לפני ההשקה. אפשר להדביק כבר עכשיו, ולהדביק שוב אחרי שתמלאו.'
+        : '<strong>כל הפרטים שהחוק מחייב נמצאים בטקסטים.</strong> אם הדבקתם לפני שמילאתם, הדביקו שוב את תנאי השימוש.';
+      save(DETAILS_KEY, details);
+    }
+
+    // Plain text for editors that take no formatting.
+    function toPlain(html) {
+      var text = html.replace(/>\s+</g, '><').replace(/<ol>([\s\S]*?)<\/ol>/g, function (match, inner) {
+        var n = 0;
+        return inner.replace(/<li>/g, function () {
+          n += 1;
+          return n + '. ';
+        });
+      });
+      text = text
+        .replace(/<li>/g, '• ')
+        .replace(/<\/li>/g, '\n')
+        .replace(/<\/(p|h2)>/g, '\n\n')
+        .replace(/<\/(ul|ol)>/g, '\n')
+        .replace(/<[^>]+>/g, '');
+      var decoder = document.createElement('textarea');
+      decoder.innerHTML = text;
+      return decoder.value.replace(/\n{3,}/g, '\n\n').trim();
+    }
+
+    function copy(html, plain) {
+      var copied = false;
+      function onCopy(event) {
+        if (html) event.clipboardData.setData('text/html', html);
+        event.clipboardData.setData('text/plain', plain);
+        event.preventDefault();
+        copied = true;
+      }
+      var helper = document.createElement('textarea');
+      helper.value = plain;
+      helper.setAttribute('readonly', '');
+      helper.style.position = 'fixed';
+      helper.style.insetBlockStart = '0';
+      helper.style.opacity = '0';
+      document.body.appendChild(helper);
+      helper.select();
+      document.addEventListener('copy', onCopy);
+      try {
+        document.execCommand('copy');
+      } catch (error) {
+        copied = false;
+      }
+      document.removeEventListener('copy', onCopy);
+      helper.remove();
+      if (copied) return Promise.resolve(true);
+
+      if (navigator.clipboard && window.ClipboardItem) {
+        var item = {};
+        if (html) item['text/html'] = new Blob([html], { type: 'text/html' });
+        item['text/plain'] = new Blob([plain], { type: 'text/plain' });
+        return navigator.clipboard.write([new ClipboardItem(item)]).then(
+          function () {
+            return true;
+          },
+          function () {
+            return false;
+          }
+        );
+      }
+      return Promise.resolve(false);
+    }
+
+    function showCopied(key, message) {
+      var note = document.querySelector('[data-copied="' + key + '"]');
+      note.textContent = message;
+      window.clearTimeout(note._timer);
+      note._timer = window.setTimeout(function () {
+        note.textContent = '';
+      }, 6000);
+    }
+
+    // When the browser blocks copying: the HTML code, selected, for the editor's HTML view.
+    function showManual(key, html) {
+      var box = document.querySelector('[data-manual="' + key + '"]');
+      box.innerHTML =
+        '<p>הדפדפן לא איפשר להעתיק אוטומטית. הקוד כאן מסומן: העתיקו אותו (Ctrl+C, במק ⌘+C), ובעורך של Shopify לחצו על כפתור ה-HTML <bdi>(&lt;&gt;)</bdi> והדביקו שם.</p>' +
+        '<label class="visually-hidden" for="manual-' + key + '">קוד HTML</label>' +
+        '<textarea id="manual-' + key + '" readonly></textarea>';
+      var area = box.querySelector('textarea');
+      area.value = html;
+      box.hidden = false;
+      area.focus();
+      area.select();
+    }
+
+    document.addEventListener('click', function (event) {
+      var button = event.target.closest('[data-copy], [data-copy-html]');
+      if (!button) return;
+      var key = button.getAttribute('data-copy') || button.getAttribute('data-copy-html');
+      var asCode = button.hasAttribute('data-copy-html');
+      render();
+      var html = current[key];
+      if (!html) return;
+      var promise = asCode ? copy('', html) : copy(html, toPlain(html));
+      promise.then(function (ok) {
+        if (ok) {
+          document.querySelector('[data-manual="' + key + '"]').hidden = true;
+          showCopied(key, asCode ? 'הקוד הועתק. מדביקים בתצוגת ה-HTML של העורך.' : 'הועתק. עכשיו מדביקים בשדה ב-Shopify.');
+        } else {
+          showManual(key, html);
+        }
+      });
+    });
+
+    function paintDone(done) {
+      document.querySelectorAll('[data-done]').forEach(function (box) {
+        var key = box.getAttribute('data-done');
+        box.checked = Boolean(done[key]);
+        var step = document.querySelector('[data-step="' + key + '"]');
+        if (step) step.classList.toggle('is-done', box.checked);
+        var link = document.querySelector('[data-step-link="' + key + '"]');
+        if (link) link.classList.toggle('is-done', box.checked);
+      });
+    }
+
+    var done = load(DONE_KEY);
+    document.addEventListener('change', function (event) {
+      var box = event.target.closest('[data-done]');
+      if (!box) return;
+      done[box.getAttribute('data-done')] = box.checked;
+      save(DONE_KEY, done);
+      paintDone(done);
+    });
+
+    form.addEventListener('input', render);
+    form.addEventListener('change', render);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+    });
+
+    fillForm(load(DETAILS_KEY));
+    render();
+    paintDone(done);
+  })();
+</script>

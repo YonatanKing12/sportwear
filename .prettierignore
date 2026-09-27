@@ -13,3 +13,5 @@ design/canvas/
 # Generated supplier inventories and gap reports: one compact JSON line per album (scripts/catalog/yupoo-*.mjs).
 catalog/sources/*/albums.json
 catalog/sources/*/gap-report.json
+# Legal texts kept exactly as they are in Shopify (page bodies, policies) and the paste page source.
+legal/

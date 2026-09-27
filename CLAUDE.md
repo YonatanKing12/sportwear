@@ -27,8 +27,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 - **Payments:** an Israeli card gateway (which one is not decided yet) plus Apple Pay and Google Pay.
   Invoices and receipts come from the gateway.
 - **Languages:** Hebrew (default, RTL), English and Arabic (RTL).
-- **Domain:** `sportwear.co.il`, not bought yet (it looked free on 2026-09-25). No existing sales
-  channels; this starts from zero.
+- **Domain:** `sportwear.co.il`, the store's primary domain (the owner connected it; SSL on, checked
+  2026-09-27). No existing sales channels; this starts from zero.
 - **Launch target:** early October 2026 (≈ Oct 8, right after Sukkot).
 
 ## The store (facts as of 2026-09-27)
@@ -45,8 +45,10 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
+| Legal texts | `legal/` (see its README). Live in he/en/ar since 2026-09-27: `/pages/shipping-returns` (a friendly returns and shipping text, 45 days; the URL to give as the return policy) and `/pages/accessibility`. The store policies (`/policies/*`) wait for the owner to paste them from https://claude.ai/code/artifact/9e4da37c-1a78-4630-9b76-3cb5c20d8455 |
+| Google | The owner connected the Google & YouTube channel and Merchant Center on 2026-09-27. Initial review pending; what to do about each notice is on the paste page above |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
-| Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself. It also refuses `bulkOperationRunMutation`: create products with one `productSet` per call (parallel agents, one group each), then `bulk-update-product-status` and `publicationUpdate`, 50 per call. Stage at most 40 images per `stagedUploadsCreate` call (a bigger result is too large to come back inline) |
+| Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself. It also refuses `bulkOperationRunMutation`: create products with one `productSet` per call (parallel agents, one group each), then `bulk-update-product-status` and `publicationUpdate`, 50 per call. Stage at most 40 images per `stagedUploadsCreate` call (a bigger result is too large to come back inline). It has no `write_legal_policies` scope, so `shopPolicyUpdate` is refused: the owner pastes policies, and we register their translations (`translationsRegister` works on `ShopPolicy`) |
 
 ## The catalog (as of 2026-09-27)
 
@@ -180,7 +182,8 @@ node scripts/catalog/fetch-page.mjs "<url>"   # render a product page and dump i
 .claude/hooks/      session-start.sh (cloud sessions: installs deps, telemetry opt-out, browser trust for the proxy)
 catalog/            product pipeline: schema, taxonomy, pricing, metafield plan, incoming/ready/published
 design/             approved design tokens + notes
-scripts/            QA (screenshots, a11y) and catalog helpers
+legal/              the store's legal texts as they are in Shopify (pages live, policies to paste; see its README)
+scripts/            QA (screenshots, a11y), catalog helpers, legal/build-policies.mjs
 i18n/               translation parts per area, built into locales/ by npm run i18n
 (theme folders)     layout/ templates/ sections/ blocks/ snippets/ assets/ config/ locales/
 ```
@@ -191,18 +194,40 @@ i18n/               translation parts per area, built into locales/ by npm run i
   Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
   `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
-  (the owner: "יטופל בהמשך")
+  (the owner: "יטופל בהמשך"). The law asks for them before a purchase, and Google checks for contact details. The
+  paste page's form puts them into the terms and builds the contact information policy; we add them to the
+  accessibility statement and the contact page once the owner sends them
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
-- Store policies: only Shopify's English privacy policy exists. Hebrew drafts of all five (terms, refunds,
-  shipping, privacy, contact details) are on the legal drafts page below; they need the business details and a
-  lawyer before they go into Settings → Policies. The owner asked for the terms of service on 2026-09-27: the full
-  version (16 sections, with six decisions and notes for the lawyer) is on its own page,
-  https://claude.ai/code/artifact/dce0b2bd-e3ab-491d-881e-74eebf55ea14 (the legal drafts page links to it). Once
-  approved: `shopPolicyUpdate` (TERMS_OF_SERVICE), then en/ar translations
-- The legal pages: the accessibility contact (name, phone, email), who pays return shipping, whether to
-  charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility,
-  and the five store policies) are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39.
-  The site keeps its placeholders until the owner approves
+- **Urgent: pasting the store policies.** The ones live now are the owner's own (checked 2026-09-27 21:00 UTC):
+  - the refund policy, which the product pages and the checkout link to: Shopify's template translated to Hebrew, with
+    30 days instead of 45, "[INSERT RETURN ADDRESS]" and the owner's personal email;
+  - the terms of service, which start with a pasted chat preamble ("הנה טיוטת Terms of Service לחנות SportWear:");
+  - the privacy policy: Shopify's English template, with the owner's personal details;
+  - no shipping policy.
+
+  The texts to replace them (refund, terms, privacy, shipping, and contact information from the owner's details) are
+  on the paste page, https://claude.ai/code/artifact/9e4da37c-1a78-4630-9b76-3cb5c20d8455, with the Shopify return
+  rules to set. The connector cannot write policies. After the owner pastes: en/ar translations and a check
+  (`legal/README.md`). A lawyer should still review them; the full terms draft with notes for the lawyer:
+  https://claude.ai/code/artifact/dce0b2bd-e3ab-491d-881e-74eebf55ea14
+- The legal pages are live (2026-09-27, he/en/ar): the shipping-returns page in a friendly tone and the accessibility
+  statement. The owner asked us to handle the whole legal side, so we took the pending decisions as recommended
+  (no cancellation fee, the customer pays return shipping, damaged parcels reported within 7 days, business days
+  Sunday to Thursday; `legal/README.md`). Still open: an accessibility contact (name, phone, email; until then
+  requests go through the contact page) and a lawyer's review. The notes for the lawyer are on
+  https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39
+- Google Merchant Center (connected by the owner on 2026-09-27). Steps are on the paste page:
+  - "Missing local inventory data": remove the Free local listings and Local inventory ads add-ons (no physical
+    store).
+  - The return policy has to be added in Merchant Center too, because the Google app doesn't sync it: 45 days, with
+    the shipping-returns URL.
+  - Verify a phone number and address in Business info.
+  - The initial review expects a checkout that can take a payment (no card gateway yet) and a site without the
+    originality claim (publish "SportWear (next)").
+  - "Personal hardships" most likely comes from the 8 Indiana Fever jerseys (Fever is a health term). It only limits
+    personalized ads.
+  - We told the owner that Google treats unlicensed products bearing brand or club logos as counterfeit (the account
+    is suspended at once and for good), and that no wording change helps
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
 - Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
   `real-madrid-third-jersey-2026-27`): keep both or hide one. The kids third links to the second one
@@ -210,9 +235,9 @@ i18n/               translation parts per area, built into locales/ by npm run i
   added that day with wave 2 and the shorts, all created with 5. If that is not the real stock, a size sells
   out on the site after 5 orders and a size filter has nothing to narrow; only the owner knows the real
   quantities
-- Buying the domain
 - **Urgent: publishing "SportWear (next)".** The live theme still shows the originality claim the owner ruled out
-  ("100% מקורי" on every product page and in the mobile menu). It also still has the old shipping texts and
+  ("100% מקורי" on every product page and in the mobile menu), now while Google reviews the store. It also still has
+  the old shipping texts (free above ₪250, 3 business days), which contradict the free shipping Google gets, and
   shares links with no picture and the bare title "SportWear". The publish fixes all of these and brings the new
   share image (`design/share/README.md`), the titles and the 2026-09-27 home page changes. Also open: whether the
   site stays open until launch
