@@ -12,6 +12,23 @@
         "upsell_color_scheme": {
           "label": "\"Complete the set\" color scheme"
         },
+        "recs_header": {
+          "content": "You may also like"
+        },
+        "show_recs": {
+          "label": "Show product suggestions",
+          "info": "Picked from the cart: the same kit for kids or adults, then more of the same team, then the collection below. Products already in the cart, sold out, or offered in \"Complete the set\" are left out."
+        },
+        "recs_collection": {
+          "label": "Collection that fills the row",
+          "info": "Used when the cart gives fewer suggestions than the number below. Empty: \"Our picks\". A cart with only kids items uses the kids collection."
+        },
+        "recs_limit": {
+          "label": "Most products"
+        },
+        "empty_header": {
+          "content": "Empty cart"
+        },
         "empty_collection": {
           "label": "Empty cart button link",
           "info": "Pick a collection. Leave empty to link to all products."
@@ -30,6 +47,23 @@
         },
         "upsell_color_scheme": {
           "label": "\"Complete the set\" color scheme"
+        },
+        "recs_header": {
+          "content": "You may also like"
+        },
+        "show_recs": {
+          "label": "Show product suggestions",
+          "info": "Picked from the cart: the same kit for kids or adults, then more of the same team, then the collection below. Products already in the cart, sold out, or offered in \"Complete the set\" are left out."
+        },
+        "recs_collection": {
+          "label": "Collection that fills the row",
+          "info": "Used when the cart gives fewer suggestions than the number below. Empty: \"Our picks\". A cart with only kids items uses the kids collection."
+        },
+        "recs_limit": {
+          "label": "Most products"
+        },
+        "empty_header": {
+          "content": "Empty cart"
         },
         "empty_collection": {
           "label": "Empty cart and \"Continue shopping\" link",

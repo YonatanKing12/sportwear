@@ -82,6 +82,16 @@
                 color_scheme: section.settings.upsell_color_scheme.id
               -%}
             {%- endif -%}
+            {%- if section.settings.show_recs -%}
+              {%- render 'cart-recs',
+                cart: cart,
+                id_prefix: 'MainCart',
+                fill_collection: section.settings.recs_collection,
+                limit: section.settings.recs_limit,
+                heading_tag: 'h2',
+                sizes: '(min-width: 990px) 180px, (min-width: 750px) 24vw, 38vw'
+              -%}
+            {%- endif -%}
 
             {%- comment -%}
               Phones: the total and the checkout button stay at the bottom of the screen while the lines
@@ -140,6 +150,9 @@
   </sw-cart>
 </div>
 <script type="module" src="{{ 'cart.js' | asset_url }}"></script>
+{%- if section.settings.show_recs -%}
+  <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
+{%- endif -%}
 
 {% stylesheet %}
   .main-cart__cart {
@@ -282,6 +295,36 @@
       "id": "upsell_color_scheme",
       "label": "t:sections.main_cart.settings.upsell_color_scheme.label",
       "default": "scheme-day"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_cart.settings.recs_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_recs",
+      "label": "t:sections.main_cart.settings.show_recs.label",
+      "info": "t:sections.main_cart.settings.show_recs.info",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "recs_collection",
+      "label": "t:sections.main_cart.settings.recs_collection.label",
+      "info": "t:sections.main_cart.settings.recs_collection.info"
+    },
+    {
+      "type": "range",
+      "id": "recs_limit",
+      "label": "t:sections.main_cart.settings.recs_limit.label",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main_cart.settings.empty_header.content"
     },
     {
       "type": "collection",

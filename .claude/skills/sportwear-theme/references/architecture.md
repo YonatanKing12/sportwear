@@ -170,6 +170,15 @@ import {
   that discount from the theme's translations (`cart.item.set_discount`, matched on `discount_title`) and hides
   the 0 allocation a Buy X get Y leaves on the jersey line (`snippets/cart-items.liquid`).
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
+- **"You may also like"** in the cart drawer and on the cart page (`snippets/cart-recs.liquid`, one card per
+  product in `snippets/cart-recs-card.liquid`; section settings `show_recs`, `recs_collection`, `recs_limit`):
+  for the cart's first three lines, the counterpart (badge "Also for kids / adults"), then up to three more of
+  the team (its `team:` tag; kids basketball jerseys and kids hoodies from their kids collection), then a
+  collection fills the row (the kids collection of the line's kind for a kids-only cart, else the setting or
+  `our-picks`). It skips what is in the cart, sold out, or offered in "Complete the set". Each size of a card is a
+  submit button posting its own `id`; `assets/cart.js` opens the sizes over the card and adds through CartAPI
+  (`[data-cart-upsell]`, with the submitter's value). The drawer skips its row on the cart page. Keep the
+  collection scans small (paginate): the drawer renders on every page.
 - **Free shipping**: every free-shipping message (announcement bar, trust badges, product page, cart, set and
   upsell notes, empty cart, FAQ) reads `{% render 'free-shipping-cents' %}` (captured, then `| plus: 0`), never
   the setting directly. It prints `-1` when every order ships free (setting 0), the threshold in cents (agorot) when

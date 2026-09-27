@@ -42,6 +42,12 @@
       "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "unlocks free shipping"
     },
+    "recs": {
+      "heading": "You may also like",
+      "choose_size": "Choose a size",
+      "badge_kids": "Also for kids",
+      "badge_adults": "Also for adults"
+    },
     "note": {
       "summary": "Add a note to your order",
       "label": "Order note",

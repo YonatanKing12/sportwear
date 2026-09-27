@@ -46,6 +46,12 @@
       "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "ويصبح التوصيل مجانيًا"
     },
+    "recs": {
+      "heading": "قد يعجبكم أيضًا",
+      "choose_size": "اختاروا المقاس",
+      "badge_kids": "للأطفال أيضًا",
+      "badge_adults": "للكبار أيضًا"
+    },
     "note": {
       "summary": "إضافة ملاحظة إلى الطلب",
       "label": "ملاحظة الطلب",

@@ -452,6 +452,341 @@
   }
 }
 
+/* ---------- snippets/cart-recs.liquid, snippets/cart-recs-card.liquid ---------- */
+/* "You may also like": a row of cards that scrolls sideways under the cart lines. Two cards and a peek
+   of the next in the drawer, more on the cart page. In the drawer the row runs to the drawer's edges
+   (--recs-bleed, the body's side padding) while the cards keep the text's alignment. */
+.cart-recs {
+  --recs-bleed: 0px;
+
+  container: cart-recs / inline-size;
+  margin-block-start: var(--space-6);
+}
+
+.cart-drawer__body .cart-recs {
+  --recs-bleed: var(--space-5);
+}
+
+.cart-recs__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-block-end: var(--space-3);
+}
+
+.cart-recs__heading {
+  font-family: var(--font-display);
+  font-size: calc(26px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.cart-recs__arrows {
+  display: none;
+  gap: var(--space-2);
+}
+
+@media screen and (min-width: 750px) {
+  sw-carousel[data-scrollable] .cart-recs__arrows {
+    display: flex;
+  }
+}
+
+.cart-recs__arrow {
+  display: inline-grid;
+  place-items: center;
+  inline-size: var(--touch-target);
+  block-size: var(--touch-target);
+  padding: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-background);
+  color: var(--color-text);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+
+  &:hover:not([aria-disabled='true']) {
+    border-color: var(--color-text);
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  &[aria-disabled='true'] {
+    opacity: 0.35;
+    cursor: default;
+  }
+}
+
+.cart-recs__track {
+  --recs-cols: 2.3;
+
+  display: grid;
+  grid-auto-columns: calc((100% - (var(--recs-cols) - 1) * var(--space-3)) / var(--recs-cols));
+  grid-auto-flow: column;
+  gap: var(--space-3);
+  margin-block: 0;
+  margin-inline: calc(-1 * var(--recs-bleed));
+  padding-block: 2px var(--space-1);
+  padding-inline: var(--recs-bleed);
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-padding-inline: var(--recs-bleed);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@container cart-recs (min-width: 540px) {
+  .cart-recs__track {
+    --recs-cols: 3.3;
+  }
+}
+
+@container cart-recs (min-width: 720px) {
+  .cart-recs__track {
+    --recs-cols: 4.3;
+  }
+}
+
+.cart-recs__item {
+  display: flex;
+  flex-direction: column;
+  min-inline-size: 0;
+  scroll-snap-align: start;
+}
+
+/* The card is the product form; its sizes open over it (position: relative). */
+.cart-recs__card {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cart-recs__media {
+  position: relative;
+}
+
+.cart-recs__image {
+  --media-ratio: 1 / 1;
+}
+
+.cart-recs__badge {
+  position: absolute;
+  inset-block-start: var(--space-2);
+  inset-inline-start: var(--space-2);
+}
+
+.cart-recs__title {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow-wrap: anywhere;
+}
+
+.cart-recs__link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+.cart-recs__price {
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+/* The buttons line up at the bottom of the row whatever the length of the titles. */
+.cart-recs__add {
+  position: relative;
+  inline-size: 100%;
+  margin-block-start: auto;
+  font-size: 14px;
+}
+
+.cart-recs__add-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Sizes. Without JavaScript they sit under the price, each a submit button. With it, "Add" opens them
+   over the whole card (assets/cart.js: [data-open]). */
+.cart-recs__sizes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.js .cart-recs__sizes {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: none;
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-background);
+  box-shadow: 0 10px 28px rgb(13 14 17 / 0.16);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.js .cart-recs__sizes[data-open] {
+  display: flex;
+  animation: cart-recs-open var(--duration-fast) var(--ease);
+}
+
+@keyframes cart-recs-open {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .cart-recs__sizes[data-open] {
+    animation: none;
+  }
+}
+
+.cart-recs__sizes-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  min-block-size: 28px;
+}
+
+.cart-recs__sizes-label {
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+/* A full touch target that doesn't push the panel's first row down. */
+.cart-recs__close {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  inline-size: var(--touch-target);
+  block-size: var(--touch-target);
+  margin-block: -8px;
+  margin-inline-end: -8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--color-surface);
+  }
+}
+
+.cart-recs__size-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 6px;
+}
+
+.cart-recs__size {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: var(--touch-target);
+  padding: 4px 2px;
+  border: 1.5px solid color-mix(in srgb, var(--color-text) 18%, var(--color-background));
+  border-radius: var(--radius-button);
+  background: var(--color-background);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.1;
+  cursor: pointer;
+  transition:
+    border-color var(--duration-fast) var(--ease),
+    background-color var(--duration-fast) var(--ease),
+    color var(--duration-fast) var(--ease);
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-text);
+    background: var(--color-text);
+    color: var(--color-background);
+  }
+
+  &:disabled {
+    border-style: dashed;
+    background: color-mix(in srgb, var(--color-surface) 55%, var(--color-background));
+    color: var(--color-muted);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+    cursor: not-allowed;
+  }
+}
+
+.cart-recs__size-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* A softer shade of the button's own text color, so it reads on every state (hover, sold out). */
+.cart-recs__size-age {
+  color: color-mix(in srgb, currentColor 72%, transparent);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.cart-recs__spinner {
+  position: absolute;
+  inset: 0;
+  display: none;
+  inline-size: 18px;
+  block-size: 18px;
+  margin: auto;
+}
+
+.cart-recs__size[aria-busy='true'],
+.cart-recs__add[aria-busy='true'] {
+  .cart-recs__size-text,
+  .cart-recs__add-label {
+    visibility: hidden;
+  }
+
+  .cart-recs__spinner {
+    display: block;
+  }
+}
+
+.cart-recs__error {
+  margin-block-start: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
 /* ---------- snippets/cart-summary.liquid ---------- */
 .cart-summary {
   display: flex;

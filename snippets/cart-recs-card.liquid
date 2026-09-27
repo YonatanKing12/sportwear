@@ -1,0 +1,154 @@
+{%- doc -%}
+  One card of "You may also like" in the cart (snippets/cart-recs.liquid): the product's photo, title and
+  price, and a real product form that adds it without leaving the cart.
+  - A product with sizes: "Add" shows its sizes over the card (assets/cart.js), each size a submit button
+    that posts its own variant id (name="id"), so one more tap adds it. Without JavaScript the sizes
+    show below the price and the form posts to /cart/add. Sold-out sizes stay visible but disabled.
+    A size with an age in the product's size chart (kids sets) shows it under the size.
+  - A product with one variant: "Add" adds it at once.
+  assets/cart.js sends the form through CartAPI ([data-cart-upsell]) and re-renders the cart.
+
+  @param {product} product - The product to suggest
+  @param {string} id_prefix - Unique prefix for element ids, e.g. 'CartDrawer'
+  @param {string} [badge] - Short label over the photo (e.g. "Also for kids")
+  @param {string} [sizes] - sizes attribute of the photo (default '180px')
+
+  @example
+  {% render 'cart-recs-card', product: rec, id_prefix: 'CartDrawer', badge: badge, sizes: '180px' %}
+{%- enddoc -%}
+{%- liquid
+  assign card_id = id_prefix | append: '-Rec-' | append: product.id
+  assign title_id = card_id | append: '-Title'
+  assign sizes_id = card_id | append: '-Sizes'
+  assign sizes_label_id = card_id | append: '-SizesLabel'
+  assign image_sizes = sizes | default: '180px'
+
+  assign has_choice = false
+  if product.variants.size > 1
+    assign has_choice = true
+  endif
+
+  # Ages from the product's size chart ({ size, age, … } rows of kids charts). Row keys are read through
+  # a variable: "size" must be looked up as a key, never as the built-in .size (count).
+  assign size_key = 'size'
+  assign chart = product.metafields.sportwear.size_chart.value
+  assign chart_rows = chart.table.value.rows
+  if chart_rows == blank
+    assign chart_rows = chart.table.value
+  endif
+-%}
+<li class="cart-recs__item">
+  {%- form 'product', product, id: card_id, class: 'cart-recs__card', data-cart-upsell: 'true' -%}
+    <input type="hidden" name="quantity" value="1">
+    <div class="cart-recs__media">
+      <a class="cart-recs__image media-tile" href="{{ product.url }}" tabindex="-1" aria-hidden="true">
+        {%- render 'image',
+          image: product.featured_media.preview_image,
+          sizes: image_sizes,
+          widths: '180, 270, 360, 450',
+          alt: ''
+        -%}
+      </a>
+      {%- if badge != blank -%}
+        <span class="badge badge--highlight cart-recs__badge">{{ badge }}</span>
+      {%- endif -%}
+    </div>
+
+    <p class="cart-recs__title" id="{{ title_id }}">
+      <a class="cart-recs__link" href="{{ product.url }}">
+        {{- product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+      </a>
+    </p>
+    {%- render 'price', product: product, class: 'cart-recs__price' -%}
+
+    {%- if has_choice -%}
+      <button
+        type="button"
+        class="button button--secondary button--small cart-recs__add js-only"
+        aria-expanded="false"
+        aria-controls="{{ sizes_id }}"
+        aria-describedby="{{ title_id }}"
+        data-cart-recs-toggle
+        data-cart-focus="recs-{{ product.id }}:add"
+      >
+        <span class="cart-recs__add-label">
+          {%- render 'icon', name: 'plus', size: 16 -%}
+          {{- 'cart.upsell.add' | t -}}
+        </span>
+      </button>
+
+      <div
+        class="cart-recs__sizes"
+        id="{{ sizes_id }}"
+        role="group"
+        aria-labelledby="{{ sizes_label_id }} {{ title_id }}"
+        data-cart-recs-sizes
+      >
+        <div class="cart-recs__sizes-head">
+          <p class="cart-recs__sizes-label" id="{{ sizes_label_id }}">{{ 'cart.recs.choose_size' | t }}</p>
+          <button type="button" class="cart-recs__close js-only" data-cart-recs-close>
+            {%- render 'icon', name: 'close', size: 16 -%}
+            <span class="visually-hidden">{{ 'general.close' | t }}</span>
+          </button>
+        </div>
+        <div class="cart-recs__size-grid">
+          {%- for variant in product.variants -%}
+            {%- liquid
+              assign variant_age = ''
+              if chart_rows != blank
+                assign value_key = variant.title | strip | downcase
+                for row in chart_rows
+                  assign row_key = row[size_key] | append: '' | strip | downcase
+                  if row_key == value_key
+                    assign variant_age = row.age | append: '' | strip
+                    break
+                  endif
+                endfor
+              endif
+            -%}
+            <button
+              type="submit"
+              class="cart-recs__size"
+              name="id"
+              value="{{ variant.id }}"
+              {% unless variant.available %}
+                disabled
+              {% endunless %}
+              data-cart-focus="recs-{{ product.id }}:{{ variant.id }}"
+            >
+              <span class="cart-recs__size-text">
+                <bdi dir="ltr">{{ variant.title | escape }}</bdi>
+                {%- if variant_age != blank -%}
+                  {%- capture age_html -%}<bdi dir="ltr">{{ variant_age | escape }}</bdi>{%- endcapture -%}
+                  <span class="cart-recs__size-age">
+                    <span class="visually-hidden">, </span>
+                    {{- 'products.variant_picker.age_html' | t: age: age_html -}}
+                  </span>
+                {%- endif -%}
+                {%- unless variant.available -%}
+                  <span class="visually-hidden">, {{ 'products.variant_picker.sold_out' | t }}</span>
+                {%- endunless -%}
+              </span>
+              <span class="spinner cart-recs__spinner" aria-hidden="true"></span>
+            </button>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+      <button
+        type="submit"
+        class="button button--secondary button--small cart-recs__add"
+        aria-describedby="{{ title_id }}"
+        data-cart-focus="recs-{{ product.id }}:add"
+      >
+        <span class="cart-recs__add-label">
+          {%- render 'icon', name: 'plus', size: 16 -%}
+          {{- 'cart.upsell.add' | t -}}
+        </span>
+        <span class="spinner cart-recs__spinner" aria-hidden="true"></span>
+      </button>
+    {%- endif -%}
+  {%- endform -%}
+  <p class="cart-recs__error" data-cart-upsell-error hidden></p>
+</li>

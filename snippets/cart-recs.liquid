@@ -1,0 +1,220 @@
+{%- doc -%}
+  "You may also like" in the cart drawer and on the cart page: a row of products picked from what is in
+  the cart, each one added without leaving the cart (snippets/cart-recs-card.liquid). For each of the
+  cart's first three lines, in the cart's order:
+  1. the same kit for the other age group (sportwear.counterpart: the kids set of an adult shirt, or the
+     adult shirt of a kids set), with an "Also for kids" / "Also for adults" badge;
+  2. up to three more products of its team (its team: tag) of the same type and for the same audience
+     (another kit of the club, another jersey of the NBA team). They come from the team's collection
+     (sportwear.team_handle), or for kids basketball jerseys and kids hoodies from their kids
+     collection, where the few kids items of a big NBA team are not buried under its adult jerseys.
+  Then a collection fills the row: when the cart holds only kids items, the kids collection of the
+  first line's kind (basketball, football, hoodies); otherwise the given one ("Our picks" when none is
+  given).
+  Products already in the cart, sold out, or offered in "Complete the set" (the sportwear.complements
+  of the cart's products) are left out, and none shows twice. Collections are read one page at a time
+  (paginate: the newest 24 of a team, all of a kids collection), and the cheap checks come first, so
+  the row costs little render time on every page the drawer is on. Kids items are told apart by their
+  audience:kids tag.
+  The row scrolls sideways (<sw-carousel>, assets/product-carousel.js, which the calling section loads).
+
+  @param {object} cart - The cart object
+  @param {string} id_prefix - Unique prefix for element ids, e.g. 'CartDrawer' or 'MainCart'
+  @param {collection} [fill_collection] - Collection that fills the row (default: collections['our-picks'])
+  @param {number} [limit] - The most products (default 8)
+  @param {string} [heading_tag] - Heading element of the row: 'h2' or 'h3' (default 'h3')
+  @param {string} [sizes] - sizes attribute of the photos (default '180px')
+
+  @example
+  {% render 'cart-recs', cart: cart, id_prefix: 'CartDrawer', fill_collection: section.settings.recs_collection, limit: 8 %}
+{%- enddoc -%}
+{%- liquid
+  assign recs_limit = limit | default: 8
+  assign recs_heading = heading_tag | default: 'h3'
+  assign list_id = id_prefix | append: '-RecsList'
+  assign heading_id = id_prefix | append: '-RecsHeading'
+  assign team_limit = 3
+
+  # Left out: what is in the cart, and the set pieces "Complete the set" offers.
+  assign skip_ids = cart.items | map: 'product_id' | join: ','
+  assign skip_ids = ',' | append: skip_ids | append: ','
+  assign kids_only = true
+  for item in cart.items
+    unless item.product.tags contains 'audience:kids'
+      assign kids_only = false
+    endunless
+    for complement in item.product.metafields.sportwear.complements.value
+      assign skip_ids = skip_ids | append: complement.id | append: ','
+    endfor
+  endfor
+
+  assign fill = fill_collection
+  if kids_only
+    case cart.items.first.product.type
+      when 'Basketball Jersey'
+        assign fill = collections['kids-basketball']
+      when 'Hoodie'
+        assign fill = collections['nfl-hoodies-kids']
+      when 'Football Kit'
+        assign fill = collections['kids-football']
+      else
+        assign fill = collections.kids
+    endcase
+  endif
+  if fill == blank
+    assign fill = collections['our-picks']
+  endif
+
+  assign shown = 0
+  assign picked_ids = ','
+  assign badge_kids = 'cart.recs.badge_kids' | t
+  assign badge_adults = 'cart.recs.badge_adults' | t
+-%}
+{%- capture cards -%}
+  {%- for item in cart.items limit: 3 -%}
+    {%- if shown >= recs_limit -%}
+      {%- break -%}
+    {%- endif -%}
+    {%- liquid
+      assign item_product = item.product
+      assign item_kids = false
+      if item_product.tags contains 'audience:kids'
+        assign item_kids = true
+      endif
+
+      # 1. The same kit for the other age group.
+      assign counterpart = item_product.metafields.sportwear.counterpart.value
+      assign show_counterpart = false
+      if counterpart != blank and counterpart.available
+        assign needle = ',' | append: counterpart.id | append: ','
+        unless skip_ids contains needle or picked_ids contains needle
+          assign show_counterpart = true
+          assign picked_ids = picked_ids | append: counterpart.id | append: ','
+          assign shown = shown | plus: 1
+          assign badge = badge_adults
+          if counterpart.tags contains 'audience:kids'
+            assign badge = badge_kids
+          endif
+        endunless
+      endif
+    -%}
+    {%- if show_counterpart -%}
+      {%- render 'cart-recs-card', product: counterpart, id_prefix: id_prefix, badge: badge, sizes: sizes -%}
+    {%- endif -%}
+
+    {%- comment -%} 2. More of the team: the same type, for the same audience. {%- endcomment -%}
+    {%- liquid
+      assign team_handle = item_product.metafields.sportwear.team_handle.value | append: ''
+      assign team_tag = 'team:' | append: team_handle
+      assign team = collections[team_handle]
+      assign team_scan = 24
+      if item_kids
+        case item_product.type
+          when 'Basketball Jersey'
+            assign team = collections['kids-basketball']
+            assign team_scan = 100
+          when 'Hoodie'
+            assign team = collections['nfl-hoodies-kids']
+        endcase
+      endif
+    -%}
+    {%- if team_handle != blank and team != blank and shown < recs_limit -%}
+      {%- assign team_shown = 0 -%}
+      {%- paginate team.products by team_scan -%}
+        {%- for candidate in team.products -%}
+          {%- if team_shown >= team_limit or shown >= recs_limit -%}
+            {%- break -%}
+          {%- endif -%}
+          {%- liquid
+            # Cheapest checks first: availability reads the product's variants.
+            assign take = false
+            assign needle = ',' | append: candidate.id | append: ','
+            unless skip_ids contains needle or picked_ids contains needle
+              if candidate.type == item_product.type and candidate.tags contains team_tag
+                assign candidate_kids = false
+                if candidate.tags contains 'audience:kids'
+                  assign candidate_kids = true
+                endif
+                if candidate_kids == item_kids and candidate.available
+                  assign take = true
+                endif
+              endif
+            endunless
+            if take
+              assign picked_ids = picked_ids | append: candidate.id | append: ','
+              assign shown = shown | plus: 1
+              assign team_shown = team_shown | plus: 1
+            endif
+          -%}
+          {%- if take -%}
+            {%- render 'cart-recs-card', product: candidate, id_prefix: id_prefix, sizes: sizes -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endpaginate -%}
+    {%- endif -%}
+  {%- endfor -%}
+
+  {%- comment -%} 3. The collection that fills the row. {%- endcomment -%}
+  {%- if fill != blank and shown < recs_limit -%}
+    {%- paginate fill.products by 24 -%}
+      {%- for candidate in fill.products -%}
+        {%- if shown >= recs_limit -%}
+          {%- break -%}
+        {%- endif -%}
+        {%- liquid
+          assign take = false
+          assign needle = ',' | append: candidate.id | append: ','
+          unless skip_ids contains needle or picked_ids contains needle
+            if candidate.available
+              assign take = true
+            endif
+          endunless
+          if take
+            assign picked_ids = picked_ids | append: candidate.id | append: ','
+            assign shown = shown | plus: 1
+          endif
+        -%}
+        {%- if take -%}
+          {%- render 'cart-recs-card', product: candidate, id_prefix: id_prefix, sizes: sizes -%}
+        {%- endif -%}
+      {%- endfor -%}
+    {%- endpaginate -%}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- if shown > 0 -%}
+  <section class="cart-recs" aria-labelledby="{{ heading_id }}">
+    <sw-carousel class="cart-recs__carousel">
+      <div class="cart-recs__header">
+        <{{ recs_heading }} class="cart-recs__heading" id="{{ heading_id }}">
+          {{- 'cart.recs.heading' | t -}}
+        </{{ recs_heading }}>
+        <div class="cart-recs__arrows js-only">
+          <button
+            type="button"
+            class="cart-recs__arrow"
+            aria-controls="{{ list_id }}"
+            aria-disabled="true"
+            data-carousel-prev
+          >
+            {%- render 'icon', name: 'chevron-back', size: 18 -%}
+            <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+          </button>
+          <button
+            type="button"
+            class="cart-recs__arrow"
+            aria-controls="{{ list_id }}"
+            aria-disabled="false"
+            data-carousel-next
+          >
+            {%- render 'icon', name: 'chevron-forward', size: 18 -%}
+            <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+          </button>
+        </div>
+      </div>
+      <ul class="cart-recs__track" id="{{ list_id }}" role="list" data-carousel-track>
+        {{- cards -}}
+      </ul>
+    </sw-carousel>
+  </section>
+{%- endif -%}

@@ -1,5 +1,6 @@
 {%- comment -%}
-  Cart drawer: static section rendered by layout/theme.liquid on every page.
+  Cart drawer: static section rendered by layout/theme.liquid on every page. Under the lines: "Complete
+  the set" (snippets/cart-upsell.liquid) and "You may also like" (snippets/cart-recs.liquid).
   <sw-drawer id="CartDrawer"> keeps its <dialog> in place; everything inside [data-cart-content] is
   re-rendered by assets/cart.js through the Section Rendering API, so updates never close the
   drawer. When Theme settings > Cart > Cart type is "Page", only an empty hidden container renders.
@@ -73,6 +74,19 @@
                   color_scheme: section.settings.upsell_color_scheme.id
                 -%}
               {%- endif -%}
+              {%- comment -%}
+                Not on the cart page, which shows its own row (sections/main-cart.liquid).
+              {%- endcomment -%}
+              {%- if section.settings.show_recs and request.page_type != 'cart' -%}
+                {%- render 'cart-recs',
+                  cart: cart,
+                  id_prefix: 'CartDrawer',
+                  fill_collection: section.settings.recs_collection,
+                  limit: section.settings.recs_limit,
+                  heading_tag: 'h3',
+                  sizes: '(min-width: 440px) 170px, 38vw'
+                -%}
+              {%- endif -%}
               {%- if settings.cart_show_note -%}
                 {%- render 'cart-note', cart: cart, id_prefix: 'CartDrawer', form_id: 'CartDrawerForm' -%}
               {%- endif -%}
@@ -100,6 +114,13 @@
     </dialog>
   </sw-drawer>
   <script type="module" src="{{ 'cart.js' | asset_url }}"></script>
+  {%- if section.settings.show_recs -%}
+    {%- comment -%}
+      The suggestions row scrolls sideways (<sw-carousel>); loaded with the page, as the row
+      can appear with any re-render.
+    {%- endcomment -%}
+    <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
+  {%- endif -%}
 {%- endif -%}
 
 {% stylesheet %}
@@ -196,6 +217,36 @@
       "id": "upsell_color_scheme",
       "label": "t:sections.cart_drawer.settings.upsell_color_scheme.label",
       "default": "scheme-day"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.cart_drawer.settings.recs_header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_recs",
+      "label": "t:sections.cart_drawer.settings.show_recs.label",
+      "info": "t:sections.cart_drawer.settings.show_recs.info",
+      "default": true
+    },
+    {
+      "type": "collection",
+      "id": "recs_collection",
+      "label": "t:sections.cart_drawer.settings.recs_collection.label",
+      "info": "t:sections.cart_drawer.settings.recs_collection.info"
+    },
+    {
+      "type": "range",
+      "id": "recs_limit",
+      "label": "t:sections.cart_drawer.settings.recs_limit.label",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "t:sections.cart_drawer.settings.empty_header.content"
     },
     {
       "type": "collection",

@@ -44,6 +44,12 @@
       "option_label_html": "{{ option }}: {{ title }}",
       "unlocks_free_shipping": "והמשלוח חינם"
     },
+    "recs": {
+      "heading": "אולי תאהבו גם",
+      "choose_size": "בחרו מידה",
+      "badge_kids": "גם לילדים",
+      "badge_adults": "גם למבוגרים"
+    },
     "note": {
       "summary": "הוספת הערה להזמנה",
       "label": "הערה להזמנה",

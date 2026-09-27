@@ -13,6 +13,9 @@
  * - Changes made elsewhere (product form, quick add) re-render the cart, and open the drawer when
  *   they add a product. The line just added gets a short accent mark, so it is clear what changed.
  * - The checkout button shows a spinner while the checkout loads (a second press does nothing).
+ * - Suggestions ("Complete the set", "You may also like") add through CartAPI. A suggestion with sizes
+ *   opens them over its card; each size is a submit button that posts its own variant id. Escape, the
+ *   close button, a click elsewhere or focus leaving the sizes closes them.
  */
 import {
   EVENTS,
@@ -278,15 +281,62 @@ function markAdded(added) {
 }
 
 /* ------------------------------------------------------------------------------------------------
+ * "You may also like": the sizes of a card (snippets/cart-recs-card.liquid)
+ * ---------------------------------------------------------------------------------------------- */
+
+/**
+ * Opens or closes the sizes of a card. One card shows its sizes at a time.
+ * @param {SwCart} view
+ * @param {HTMLElement} toggle - the card's "Add" button (aria-controls names its sizes)
+ * @param {boolean} open
+ * @param {boolean} [moveFocus] - into the sizes when opening, back to the button when closing
+ */
+function setSizesOpen(view, toggle, open, moveFocus = false) {
+  const panel = document.getElementById(toggle.getAttribute('aria-controls') ?? '');
+  if (!(panel instanceof HTMLElement)) return;
+  if (open) closeSizes(view, toggle);
+  toggle.setAttribute('aria-expanded', String(open));
+  panel.toggleAttribute('data-open', open);
+  if (!moveFocus) return;
+  const target = open ? panel.querySelector('button[name="id"]:not(:disabled)') : toggle;
+  if (target instanceof HTMLElement) target.focus();
+}
+
+/**
+ * Closes every open card's sizes but one.
+ * @param {SwCart} view
+ * @param {Element | null} [except] - a toggle to leave as it is
+ */
+function closeSizes(view, except = null) {
+  for (const toggle of view.querySelectorAll('[data-cart-recs-toggle][aria-expanded="true"]')) {
+    if (toggle !== except && toggle instanceof HTMLElement) setSizesOpen(view, toggle, false);
+  }
+}
+
+/**
+ * The "Add" button of the sizes an element is in.
+ * @param {SwCart} view
+ * @param {Element} element
+ */
+function sizesToggle(view, element) {
+  const panel = element.closest('[data-cart-recs-sizes]');
+  if (!panel) return null;
+  const toggle = view.querySelector(`[data-cart-recs-toggle][aria-controls="${CSS.escape(panel.id)}"]`);
+  return toggle instanceof HTMLElement ? toggle : null;
+}
+
+/* ------------------------------------------------------------------------------------------------
  * Set suggestions and order note
  * ---------------------------------------------------------------------------------------------- */
 
 /**
  * @param {SwCart} view
  * @param {HTMLFormElement} form
+ * @param {HTMLButtonElement | null} [submitter] - a size button posts its variant id as its name and value
  */
-async function addSuggestion(view, form) {
+async function addSuggestion(view, form, submitter = null) {
   const formData = new FormData(form);
+  if (submitter?.name) formData.set(submitter.name, submitter.value);
   const variantId = String(formData.get('id') ?? '');
   try {
     const { sections, added } = await CartAPI.add(formData, { sections: sectionIds(), source: SOURCE });
@@ -302,7 +352,7 @@ async function addSuggestion(view, form) {
       slot.textContent = message;
       slot.hidden = false;
     }
-    current.querySelector('[type="submit"]')?.removeAttribute('aria-busy');
+    for (const button of current.querySelectorAll('[aria-busy="true"]')) button.removeAttribute('aria-busy');
     say(view, message);
   }
 }
@@ -356,6 +406,7 @@ class SwCart extends HTMLElement {
     this.addEventListener('keydown', this.#onKeydown, options);
     this.addEventListener('input', this.#onInput, options);
     this.addEventListener('submit', this.#onSubmit, options);
+    this.addEventListener('focusout', this.#onFocusOut, options);
     views.add(this);
   }
 
@@ -450,6 +501,17 @@ class SwCart extends HTMLElement {
   /** @param {MouseEvent} event */
   #onClick = (event) => {
     const target = /** @type {Element} */ (event.target);
+    const toggle = target.closest('[data-cart-recs-toggle]');
+    if (toggle instanceof HTMLElement) {
+      setSizesOpen(this, toggle, toggle.getAttribute('aria-expanded') !== 'true', true);
+      return;
+    }
+    if (target.closest('[data-cart-recs-close]')) {
+      const owner = sizesToggle(this, target);
+      if (owner) setSizesOpen(this, owner, false, true);
+      return;
+    }
+    if (!target.closest('[data-cart-recs-sizes]')) closeSizes(this);
     const step = target.closest('[data-cart-step]');
     if (step instanceof HTMLElement) {
       const line = step.closest('[data-cart-line]');
@@ -498,6 +560,15 @@ class SwCart extends HTMLElement {
    */
   #onKeydown = (event) => {
     const field = event.target;
+    // Escape closes a card's open sizes first; the drawer stays open (its dialog would close).
+    if (event.key === 'Escape') {
+      const open = this.querySelector('[data-cart-recs-toggle][aria-expanded="true"]');
+      if (!(open instanceof HTMLElement)) return;
+      event.preventDefault();
+      event.stopPropagation();
+      setSizesOpen(this, open, false, field instanceof Element && this.contains(field));
+      return;
+    }
     if (event.key !== 'Enter' || !(field instanceof HTMLInputElement) || !field.matches('[data-cart-quantity]')) {
       return;
     }
@@ -512,7 +583,23 @@ class SwCart extends HTMLElement {
   };
 
   /**
-   * Set suggestions are added through CartAPI instead of leaving the page. The checkout button shows
+   * Open sizes close when focus moves out of them (Tab past the last size), so they never cover the
+   * control that has focus.
+   * @param {FocusEvent} event
+   */
+  #onFocusOut = (event) => {
+    const target = /** @type {Element} */ (event.target);
+    const panel = target.closest?.('[data-cart-recs-sizes][data-open]');
+    const next = event.relatedTarget;
+    if (!panel || (next instanceof Node && panel.contains(next))) return;
+    const owner = sizesToggle(this, panel);
+    // Focus left the page (another window) or the cart was re-rendered: leave it.
+    if (!owner || !(next instanceof Node)) return;
+    setSizesOpen(this, owner, false);
+  };
+
+  /**
+   * Suggestions are added through CartAPI instead of leaving the page. The checkout button shows
    * that the checkout is loading, and ignores a second press meanwhile.
    * @param {SubmitEvent} event
    */
@@ -531,11 +618,14 @@ class SwCart extends HTMLElement {
     }
     if (!form.matches('[data-cart-upsell]')) return;
     event.preventDefault();
-    const button = form.querySelector('[type="submit"]');
-    if (button?.getAttribute('aria-busy') === 'true') return;
+    if (form.querySelector('[aria-busy="true"]')) return;
+    const button =
+      submitter instanceof HTMLButtonElement && form.contains(submitter)
+        ? submitter
+        : form.querySelector('button[type="submit"]');
     button?.setAttribute('aria-busy', 'true');
     clearError(form.parentElement?.querySelector('[data-cart-upsell-error]'));
-    enqueue(() => addSuggestion(this, form));
+    enqueue(() => addSuggestion(this, form, button instanceof HTMLButtonElement ? button : null));
   };
 
   /**
