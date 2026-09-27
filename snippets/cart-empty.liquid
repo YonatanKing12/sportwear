@@ -1,34 +1,125 @@
 {%- doc -%}
-  Empty-cart message for the drawer and the cart page: a friendly line, a primary button back to
-  the shop, the top links of a menu as chips (a way straight into a category, owner-editable in
-  Online Store > Navigation) and, when free shipping applies (see free-shipping-cents), a reminder of
-  it: free shipping on every order, or the amount it starts from.
+  The empty cart, in the drawer and on the cart page. A dark brand card on top: the picture from Theme
+  settings > Cart (settings.cart_empty_image), a playful heading ("Your cart's still on the bench"), the
+  shopping button and the store's promises (free shipping when it applies, see free-shipping-cents;
+  45-day returns; secure payment). Under it, category tiles: the collections of settings.cart_empty_collections,
+  each with its banner (metafield sportwear.banner), else its own image or its first product's, and its
+  translated name; with none set, the top links of a menu as chips. The drawer can add a row of products with one-tap add (picks_url), which assets/cart.js
+  loads only when the drawer first shows it ([data-cart-lazy], sections/cart-empty-picks.liquid).
+  On the page, from 750px the card puts the text over the picture on the start side.
 
   @param {string} url - Where the shopping button goes (a collection URL or routes.all_products_collection_url)
-  @param {object} [menu] - A link list whose top links become chips (default: none)
-  @param {string} [id_prefix] - Unique prefix for the chips heading id (default 'CartEmpty')
+  @param {object} [menu] - A link list whose top links become chips when no category tiles are set
+  @param {string} [id_prefix] - Unique prefix for element ids (default 'CartEmpty')
+  @param {string} [layout] - 'drawer' (default) or 'page'
+  @param {string} [heading_tag] - Heading element: 'h2' or 'h3' (default 'h3')
+  @param {string} [picks_url] - Section Rendering URL of the product row (drawer only)
   @param {string} [class] - Extra classes on the wrapper
 
   @example
-  {% render 'cart-empty', url: routes.all_products_collection_url, menu: section.settings.empty_menu, id_prefix: 'CartDrawer' %}
+  {% render 'cart-empty', url: shop_url, menu: section.settings.empty_menu, id_prefix: 'CartDrawer', picks_url: picks_url %}
 {%- enddoc -%}
 {%- liquid
+  assign prefix = id_prefix | default: 'CartEmpty'
+  assign empty_layout = layout | default: 'drawer'
+  assign title_tag = heading_tag | default: 'h3'
+
   capture threshold_cents
     render 'free-shipping-cents'
   endcapture
   assign threshold_cents = threshold_cents | plus: 0
+
+  if empty_layout == 'page'
+    assign hero_sizes = '(min-width: 1440px) 1360px, calc(100vw - 32px)'
+    assign hero_widths = '600, 900, 1200, 1600, 2000, 2400'
+    assign tile_sizes = '(min-width: 750px) 25vw, 50vw'
+  else
+    assign hero_sizes = '(min-width: 440px) 400px, calc(100vw - 40px)'
+    assign hero_widths = '400, 600, 800, 1000'
+    assign tile_sizes = '(min-width: 440px) 196px, 50vw'
+  endif
 -%}
-<div class="cart-empty{% if class != blank %} {{ class }}{% endif %}">
-  <span class="cart-empty__icon">{% render 'icon', name: 'bag', size: 28 %}</span>
-  <p class="cart-empty__title title-m">{{ 'cart.empty.title' | t }}</p>
-  <p class="cart-empty__text">{{ 'cart.empty.text' | t }}</p>
-  <a class="button button--primary button--large cart-empty__button" href="{{ url }}">
-    {{- 'cart.empty.button' | t -}}
-  </a>
-  {%- if menu != blank and menu.links.size > 0 -%}
-    {%- assign chips_id = id_prefix | default: 'CartEmpty' | append: '-EmptyLinks' -%}
-    <nav class="cart-empty__links" aria-labelledby="{{ chips_id }}">
-      <p class="cart-empty__links-title" id="{{ chips_id }}">{{ 'cart.empty.categories' | t }}</p>
+<div class="cart-empty cart-empty--{{ empty_layout }}{% if class != blank %} {{ class }}{% endif %}">
+  <div class="cart-empty__hero color-scheme-night">
+    {%- if settings.cart_empty_image != blank -%}
+      <div class="cart-empty__media">
+        {%- render 'image',
+          image: settings.cart_empty_image,
+          sizes: hero_sizes,
+          widths: hero_widths,
+          alt: '',
+          class: 'cart-empty__image'
+        -%}
+      </div>
+    {%- endif -%}
+    <div class="cart-empty__body">
+      <{{ title_tag }} class="cart-empty__title">{{ 'cart.empty.title' | t }}</{{ title_tag }}>
+      <p class="cart-empty__text">{{ 'cart.empty.text' | t }}</p>
+      <a class="button button--primary button--large cart-empty__button" href="{{ url }}">
+        {{- 'cart.empty.button' | t -}}
+      </a>
+      <ul class="cart-empty__perks" role="list">
+        {%- if threshold_cents < 0 -%}
+          <li class="cart-empty__perk">
+            {%- render 'icon', name: 'truck', size: 18 -%}
+            {{ 'cart.free_shipping.all' | t }}
+          </li>
+        {%- elsif threshold_cents > 0 -%}
+          {%- assign threshold_money = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩' -%}
+          <li class="cart-empty__perk">
+            {%- render 'icon', name: 'truck', size: 18 -%}
+            {{ 'cart.empty.free_shipping' | t: amount: threshold_money }}
+          </li>
+        {%- endif -%}
+        <li class="cart-empty__perk">
+          {%- render 'icon', name: 'return', size: 18 -%}
+          {{ 'general.trust.returns' | t }}
+        </li>
+        <li class="cart-empty__perk">
+          {%- render 'icon', name: 'shield-check', size: 18 -%}
+          {{ 'general.trust.secure_payment' | t }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  {%- assign links_id = prefix | append: '-EmptyLinks' -%}
+  {%- if settings.cart_empty_collections.size > 0 -%}
+    <nav class="cart-empty__categories" aria-labelledby="{{ links_id }}">
+      <p class="cart-empty__label" id="{{ links_id }}">{{ 'cart.empty.categories' | t }}</p>
+      <ul class="cart-empty__tiles" role="list">
+        {%- for tile in settings.cart_empty_collections limit: 4 -%}
+          {%- liquid
+            assign tile_image = tile.metafields.sportwear.banner.value | default: tile.image
+            if tile_image == blank
+              assign tile_image = tile.featured_image
+            endif
+          -%}
+          <li>
+            <a class="cart-empty__tile color-scheme-night" href="{{ tile.url }}">
+              {%- if tile_image != blank -%}
+                <span class="cart-empty__tile-media">
+                  {%- render 'image',
+                    image: tile_image,
+                    sizes: tile_sizes,
+                    widths: '240, 360, 480, 720',
+                    alt: '',
+                    class: 'cart-empty__tile-image'
+                  -%}
+                </span>
+              {%- endif -%}
+              <span class="cart-empty__tile-name">
+                {{- tile.title | escape -}}
+                {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+              </span>
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- elsif menu != blank and menu.links.size > 0 -%}
+    <nav class="cart-empty__categories" aria-labelledby="{{ links_id }}">
+      <p class="cart-empty__label" id="{{ links_id }}">{{ 'cart.empty.categories' | t }}</p>
       <ul class="cart-empty__chips" role="list">
         {%- for link in menu.links limit: 6 -%}
           <li>
@@ -38,16 +129,8 @@
       </ul>
     </nav>
   {%- endif -%}
-  {%- if threshold_cents < 0 -%}
-    <p class="cart-empty__perk">
-      {%- render 'icon', name: 'truck', size: 18 -%}
-      {{ 'cart.free_shipping.all' | t }}
-    </p>
-  {%- elsif threshold_cents > 0 -%}
-    {%- assign threshold_money = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩' -%}
-    <p class="cart-empty__perk">
-      {%- render 'icon', name: 'truck', size: 18 -%}
-      {{ 'cart.empty.free_shipping' | t: amount: threshold_money }}
-    </p>
+
+  {%- if picks_url != blank -%}
+    <div class="cart-empty__picks" data-cart-lazy="{{ picks_url }}"></div>
   {%- endif -%}
 </div>

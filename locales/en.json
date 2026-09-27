@@ -12,11 +12,12 @@
     "secure_payment": "Secure payment",
     "payment_methods": "Payment methods",
     "empty": {
-      "title": "Your cart is empty",
-      "text": "You haven't added anything yet",
+      "title": "Your cart's still on the bench",
+      "text": "Pick a team, find your size, and your jersey is on its way.",
       "button": "Start shopping",
       "free_shipping": "Free shipping on orders over {{ amount }}",
-      "categories": "Or pick a category"
+      "categories": "Or pick a category",
+      "picks": "Our picks"
     },
     "free_shipping": {
       "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",
@@ -350,13 +351,14 @@
   },
   "not_found": {
     "code": "404",
-    "heading": "Page not found",
-    "text": "The page you're looking for doesn't exist or has moved. Try a search, or head back to the store.",
+    "heading": "Offside!",
+    "text": "The page you're looking for isn't in play: it doesn't exist, or it has moved. Try a search, or head back to the store.",
     "search_label": "Search the store",
     "search_placeholder": "Team, league or product",
     "search_submit": "Search",
     "home": "Back to the home page",
-    "all_products": "Shop all products"
+    "all_products": "Shop all products",
+    "eyebrow": "404 · Page not found"
   },
   "blogs": {
     "all": "All",

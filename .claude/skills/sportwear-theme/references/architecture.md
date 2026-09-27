@@ -135,7 +135,7 @@ import {
   spinner and ignores a second press, and gives the button back on a back/forward-cache restore), a trust row
   (returns, stock in Israel, secure payment) and the payment logos. On phones the cart page also keeps the total
   and a checkout button in a sticky bar (`.main-cart__bar`, CSS only). A line just added gets a short accent
-  mark (`cart-item--added`). The empty cart shows the top links of a menu as chips (`empty_menu` setting).
+  mark (`cart-item--added`). The empty cart (`snippets/cart-empty.liquid`, drawer and cart page) is a dark brand card (Theme settings > Cart > Empty cart: `cart_empty_image`, the heading "Your cart's still on the bench", the shopping button and the store's promises), then category tiles (`cart_empty_collections`, up to 4: each collection's banner, else its image or first product, and its translated title; none set: the `empty_menu` links as chips). The drawer adds a row of products with one-tap add (`cart_empty_picks`, default Our picks) that it loads only when it first shows it: `[data-cart-lazy]` in `assets/cart.js` fetches `sections/cart-empty-picks.liquid` through the Section Rendering API and keeps the markup for later re-renders.
 - **Payment logos**: only Shopify's own artwork, through `snippets/payment-icons.liquid`
   (`payment_type_svg_tag`, title ids prefixed per list). It lists `settings.payment_icons` (comma-separated
   names, Theme settings > Cart), or Settings > Payments when that is empty, and skips names Shopify has no
@@ -169,6 +169,8 @@ import {
   `discount_amount` in shekels); an automatic Buy X get Y discount gives that price at checkout. The cart names
   that discount from the theme's translations (`cart.item.set_discount`, matched on `discount_title`) and hides
   the 0 allocation a Buy X get Y leaves on the jersey line (`snippets/cart-items.liquid`).
+- **Collection banners**: collection metafield `sportwear.banner` (file reference, a wide picture), shown by `sections/main-collection.liquid` ("Show banner") with the title over it; else the collection image; a team's or player's page without one uses its league's (first product's `sportwear.league_handle`, `other-leagues` for football). Keep the collection image itself for product-like pictures: the mega menu tiles (`snippets/header-tile.liquid`) show it. The empty cart tiles use the banner too.
+- **404**: `sections/main-404.liquid` shows its "Picture" setting (wide) above "Offside!", or a big outlined "404" without one.
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
 - **"You may also like"** in the cart drawer and on the cart page (`snippets/cart-recs.liquid`, one card per
   product in `snippets/cart-recs-card.liquid`; section settings `show_recs`, `recs_collection`, `recs_limit`):

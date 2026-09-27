@@ -93,3 +93,28 @@ Rules for new atmosphere photos: fictional people only (no recognisable real peo
 as they are sold (no added names, numbers or text), and never present them as customers. Team names and
 crests appear as they do on the products; the lawyer question about branded jerseys covers these photos
 too.
+
+## Brand graphics: banners, the empty cart and the 404 page
+
+On 2026-09-27 the owner asked for "lots of special graphics" to brand the site. Twenty wide pictures
+(3072 × 1024), made with `gpt-image-2` from text alone (no reference photos), in the look of the home
+page: real-looking editorial sports photography, golden hour or floodlit nights, never text, logos,
+crests, sponsor boards, real people, players or stadiums. Prompts, file names and media IDs:
+`design/imagery/brand-prompts.json`; regenerate with
+`python3 scripts/images/brand.py design/imagery/brand-prompts.json <out_dir> [names]` (key from
+`OPENAI_API_KEY`). Every picture was checked at full size for stray text and brand marks before upload.
+
+- **Collection banners** (`sw-col-*.jpg`): 18 league and category pictures (a rainy English ground, a
+  Spanish sunset, an Italian bowl at dusk, a German standing terrace, an NBA arena, a rooftop court for
+  City Edition, a 90s gym for retro, kids' boots on the grass, a foggy football field for the hoodies…).
+  They sit in the collection metafield `sportwear.banner` (file reference, "באנר" in admin, pinned), set
+  on 32 collections (`collection_banners` in the JSON). The collection image itself stays empty on
+  purpose: the mega menu shows collection images as small product tiles. `sections/main-collection.liquid`
+  (setting "Show banner") puts the banner under the page title with a dark gradient; a team's or a
+  player's page without its own banner uses its league's (the first product's `sportwear.league_handle`,
+  or `other-leagues` for football). To give a collection a banner: Products → Collections → the collection
+  → Metafields → באנר (a wide picture, 3:1; the middle stays visible on phones).
+- **Empty cart** (`sw-empty-cart.jpg`): a locker-room bench with a folded shirt, a football and a
+  basketball; Theme settings → Cart → Empty cart → Picture. It goes with the heading "הסל עוד על הספסל".
+- **404** (`sw-not-found.jpg`): an assistant referee's flag on the touchline; the 404 template's
+  "Picture" setting, with the heading "נבדל!".

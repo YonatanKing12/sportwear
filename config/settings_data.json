@@ -87,6 +87,14 @@
     "predictive_search": true,
     "free_shipping_threshold": 0,
     "logo_style": "mark",
-    "favicon": "shopify://shop_images/sw-favicon.png"
+    "favicon": "shopify://shop_images/sw-favicon.png",
+    "cart_empty_image": "shopify://shop_images/sw-empty-cart.jpg",
+    "cart_empty_collections": [
+      "football",
+      "basketball",
+      "kids",
+      "nfl-hoodies"
+    ],
+    "cart_empty_picks": "our-picks"
   }
 }

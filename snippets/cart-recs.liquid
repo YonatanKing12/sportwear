@@ -23,6 +23,7 @@
   @param {collection} [fill_collection] - Collection that fills the row (default: collections['our-picks'])
   @param {number} [limit] - The most products (default 8)
   @param {string} [heading_tag] - Heading element of the row: 'h2' or 'h3' (default 'h3')
+  @param {string} [heading] - The row's heading (default "You may also like")
   @param {string} [sizes] - sizes attribute of the photos (default '180px')
 
   @example
@@ -31,6 +32,10 @@
 {%- liquid
   assign recs_limit = limit | default: 8
   assign recs_heading = heading_tag | default: 'h3'
+  assign recs_heading_text = heading
+  if recs_heading_text == blank
+    assign recs_heading_text = 'cart.recs.heading' | t
+  endif
   assign list_id = id_prefix | append: '-RecsList'
   assign heading_id = id_prefix | append: '-RecsHeading'
   assign team_limit = 3
@@ -187,7 +192,7 @@
     <sw-carousel class="cart-recs__carousel">
       <div class="cart-recs__header">
         <{{ recs_heading }} class="cart-recs__heading" id="{{ heading_id }}">
-          {{- 'cart.recs.heading' | t -}}
+          {{- recs_heading_text -}}
         </{{ recs_heading }}>
         <div class="cart-recs__arrows js-only">
           <button

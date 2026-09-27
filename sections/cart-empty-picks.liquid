@@ -1,0 +1,28 @@
+{%- comment -%}
+  The empty cart's row of products, with one-tap add (snippets/cart-recs.liquid with an empty cart: the
+  collection alone fills it). Not placed in any template: the cart drawer's empty state asks for it
+  through the Section Rendering API (?section_id=cart-empty-picks) when the drawer first shows it
+  (assets/cart.js, [data-cart-lazy]), so pages don't pay for it on every load. The collection is
+  Theme settings > Cart > "Products in the empty cart" (Our picks when empty).
+{%- endcomment -%}
+{%- assign picks_heading = 'cart.empty.picks' | t -%}
+<div class="cart-empty-picks" data-cart-lazy-content>
+  {%- render 'cart-recs',
+    cart: cart,
+    id_prefix: 'CartEmpty',
+    fill_collection: settings.cart_empty_picks,
+    limit: 8,
+    heading_tag: 'h3',
+    heading: picks_heading,
+    sizes: '(min-width: 440px) 170px, 38vw'
+  -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.cart_empty_picks.name",
+  "tag": "div",
+  "class": "cart-empty-picks-section",
+  "settings": []
+}
+{% endschema %}

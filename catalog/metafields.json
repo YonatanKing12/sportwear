@@ -7,9 +7,21 @@
       "translatable": true,
       "storefront_access": "PUBLIC_READ",
       "fields": [
-        { "key": "name", "type": "single_line_text_field", "required": true },
-        { "key": "slug", "type": "single_line_text_field", "required": true },
-        { "key": "sport", "type": "single_line_text_field", "choices": ["football", "basketball"] }
+        {
+          "key": "name",
+          "type": "single_line_text_field",
+          "required": true
+        },
+        {
+          "key": "slug",
+          "type": "single_line_text_field",
+          "required": true
+        },
+        {
+          "key": "sport",
+          "type": "single_line_text_field",
+          "choices": ["football", "basketball"]
+        }
       ]
     },
     {
@@ -18,12 +30,34 @@
       "translatable": true,
       "storefront_access": "PUBLIC_READ",
       "fields": [
-        { "key": "name", "type": "single_line_text_field", "required": true },
-        { "key": "short_name", "type": "single_line_text_field" },
-        { "key": "slug", "type": "single_line_text_field", "required": true },
-        { "key": "sport", "type": "single_line_text_field", "choices": ["football", "basketball"] },
-        { "key": "leagues", "type": "list.metaobject_reference", "metaobject": "sw_league" },
-        { "key": "primary_color", "type": "color" }
+        {
+          "key": "name",
+          "type": "single_line_text_field",
+          "required": true
+        },
+        {
+          "key": "short_name",
+          "type": "single_line_text_field"
+        },
+        {
+          "key": "slug",
+          "type": "single_line_text_field",
+          "required": true
+        },
+        {
+          "key": "sport",
+          "type": "single_line_text_field",
+          "choices": ["football", "basketball"]
+        },
+        {
+          "key": "leagues",
+          "type": "list.metaobject_reference",
+          "metaobject": "sw_league"
+        },
+        {
+          "key": "primary_color",
+          "type": "color"
+        }
       ]
     },
     {
@@ -32,14 +66,25 @@
       "translatable": true,
       "storefront_access": "PUBLIC_READ",
       "fields": [
-        { "key": "name", "type": "single_line_text_field", "required": true },
-        { "key": "audience", "type": "single_line_text_field", "choices": ["adult", "kids"] },
+        {
+          "key": "name",
+          "type": "single_line_text_field",
+          "required": true
+        },
+        {
+          "key": "audience",
+          "type": "single_line_text_field",
+          "choices": ["adult", "kids"]
+        },
         {
           "key": "table",
           "type": "json",
           "note": "{\"rows\": [...]} (or a bare array). Row keys, all optional but size: size, age, height_cm, weight_kg, chest_width_cm (flat, armpit to armpit), chest_cm (circumference), length_cm, shorts_length_cm. Values are numbers or ranges such as \"160-170\". Other keys are kept but not shown."
         },
-        { "key": "fit_note", "type": "multi_line_text_field" }
+        {
+          "key": "fit_note",
+          "type": "multi_line_text_field"
+        }
       ]
     }
   ],
@@ -58,7 +103,12 @@
       "metaobject": "sw_league",
       "storefront_access": "PUBLIC_READ"
     },
-    { "namespace": "sportwear", "key": "season", "type": "single_line_text_field", "storefront_access": "PUBLIC_READ" },
+    {
+      "namespace": "sportwear",
+      "key": "season",
+      "type": "single_line_text_field",
+      "storefront_access": "PUBLIC_READ"
+    },
     {
       "namespace": "sportwear",
       "key": "kit",
@@ -147,5 +197,14 @@
       "storefront_access": "PUBLIC_READ",
       "note": "the set price the theme shows: { discount_amount (₪ off the shorts), discount_title, jersey_tag, shorts_tag }; must match the automatic discount 'מחיר סט: גופייה + מכנסיים' (catalog/pricing.json, sets); read by snippets/set-price.liquid and snippets/cart-items.liquid"
     }
-  ]
+  ],
+  "collection_metafields": {
+    "_note": "Collection metafields (namespace sportwear). Created 2026-09-27.",
+    "banner": {
+      "definition": "gid://shopify/MetafieldDefinition/278240952624",
+      "type": "file_reference (images only), pinned, storefront PUBLIC_READ",
+      "name": "באנר",
+      "use": "The wide picture at the top of the collection page and in the empty cart's category tiles (design/imagery/README.md, 'Brand graphics'). Set on 32 collections on 2026-09-27; which picture where: design/imagery/brand-prompts.json, collection_banners."
+    }
+  }
 }

@@ -74,6 +74,9 @@
           "info": "Its top links show as chips in the empty cart, straight into a category. Leave empty to show none."
         }
       }
+    },
+    "cart_empty_picks": {
+      "name": "Empty cart products"
     }
   }
 }

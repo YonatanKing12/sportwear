@@ -85,7 +85,7 @@
       },
       "sizes": {
         "title": "Adult and kids' sizes",
-        "text": "Adult and kids' sizes in one order. In football, kids' sets come in sizes 16\u00a0to\u00a028 (ages about 2\u00a0to\u00a013)."
+        "text": "Adult and kids' sizes in one order. In football, kids' sets come in sizes 16 to 28 (ages about 2 to 13)."
       },
       "delivery": {
         "title": "Delivery within 10 business days",
@@ -126,7 +126,7 @@
       },
       "sizing": {
         "question": "How do I choose the right size?",
-        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' football items are sets of a jersey and shorts in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and the age is shown under each size. Kids' basketball jerseys and hoodies come in kids' sizes S\u00a0to\u00a0XL. Kids' items are sold as separate products.</p>"
+        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' football items are sets of a jersey and shorts in sizes 16 to 28, for ages about 2 to 13, and the age is shown under each size. Kids' basketball jerseys and hoodies come in kids' sizes S to XL. Kids' items are sold as separate products.</p>"
       },
       "payment": {
         "question": "How can I pay?",
@@ -155,7 +155,7 @@
     "adults_caption": "Adult size chart",
     "kids_caption": "Kids size chart",
     "adults_fallback": "Each product's size chart is on its page, next to the size picker.",
-    "kids_note": "Kids' football sets (jersey and shorts) come in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and each set's page shows the age under each size. Kids' basketball jerseys and hoodies come in kids' sizes S\u00a0to\u00a0XL. If your child is between two sizes, choose the larger one.",
+    "kids_note": "Kids' football sets (jersey and shorts) come in sizes 16 to 28, for ages about 2 to 13, and each set's page shows the age under each size. Kids' basketball jerseys and hoodies come in kids' sizes S to XL. If your child is between two sizes, choose the larger one.",
     "measure": {
       "heading": "How to measure",
       "intro": "The charts measure the garment itself, not the body. The easiest way is to measure a shirt that fits well and compare it with the chart.",
@@ -182,13 +182,14 @@
   },
   "not_found": {
     "code": "404",
-    "heading": "Page not found",
-    "text": "The page you're looking for doesn't exist or has moved. Try a search, or head back to the store.",
+    "heading": "Offside!",
+    "text": "The page you're looking for isn't in play: it doesn't exist, or it has moved. Try a search, or head back to the store.",
     "search_label": "Search the store",
     "search_placeholder": "Team, league or product",
     "search_submit": "Search",
     "home": "Back to the home page",
-    "all_products": "Shop all products"
+    "all_products": "Shop all products",
+    "eyebrow": "404 · Page not found"
   },
   "blogs": {
     "all": "All",

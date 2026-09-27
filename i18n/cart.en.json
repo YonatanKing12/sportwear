@@ -12,11 +12,12 @@
     "secure_payment": "Secure payment",
     "payment_methods": "Payment methods",
     "empty": {
-      "title": "Your cart is empty",
-      "text": "You haven't added anything yet",
+      "title": "Your cart's still on the bench",
+      "text": "Pick a team, find your size, and your jersey is on its way.",
       "button": "Start shopping",
       "free_shipping": "Free shipping on orders over {{ amount }}",
-      "categories": "Or pick a category"
+      "categories": "Or pick a category",
+      "picks": "Our picks"
     },
     "free_shipping": {
       "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",

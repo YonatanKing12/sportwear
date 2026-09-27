@@ -58,6 +58,30 @@
     assign card_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - ' | append: desktop_space | append: 'px) / ' | append: cols_desktop | append: '), (min-width: 750px) calc((100vw - 104px) / 3), ' | append: mobile_size
     assign banner_sizes = '(min-width: 750px) min(100vw - 64px, ' | append: settings.page_width | append: 'px), calc(100vw - 40px)'
 
+    # The banner: the collection's metafield sportwear.banner (a wide picture, kept apart from the
+    # collection image, which the menus show as a product tile), else its own image; for a team's or a
+    # player's page, the banner of their league (the league of the first product, as in
+    # featured-collection's "collection_league"; football leagues without a collection of their own
+    # are in other-leagues).
+    assign banner = blank
+    if section.settings.show_image
+      assign banner = collection.metafields.sportwear.banner.value | default: collection.image
+      if banner == blank and collection.products_count > 0
+        assign first_product = collection.products.first
+        assign own_team_tag = 'team:' | append: collection.handle
+        assign own_player_tag = 'player:' | append: collection.handle
+        if first_product.tags contains own_team_tag or first_product.tags contains own_player_tag
+          assign banner_league = first_product.metafields.sportwear.league_handle.value
+          if banner_league != blank
+            assign banner = collections[banner_league].metafields.sportwear.banner.value
+          endif
+          if banner == blank and first_product.tags contains 'sport:football'
+            assign banner = collections['other-leagues'].metafields.sportwear.banner.value
+          endif
+        endif
+      endif
+    endif
+
     assign banner_loading = 'lazy'
     assign banner_priority = 'auto'
     assign banner_preload = false
@@ -165,27 +189,38 @@
   >
     <div class="page-width">
       <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
-        <header class="collection-header">
-          {%- if section.settings.show_image and collection.image != blank -%}
-            <div class="collection-header__media media-tile">
-              {%- render 'image',
-                image: collection.image,
-                sizes: banner_sizes,
-                widths: '540, 720, 960, 1280, 1600, 1920',
-                loading: banner_loading,
-                fetchpriority: banner_priority,
-                preload: banner_preload,
-                class: 'collection-header__image'
-              -%}
+        <header class="collection-header{% if banner != blank %} collection-header--banner{% endif %}">
+          {%- if banner != blank -%}
+            <div class="collection-banner color-scheme-night">
+              <div class="collection-banner__media">
+                {%- render 'image',
+                  image: banner,
+                  sizes: banner_sizes,
+                  widths: '540, 720, 960, 1280, 1600, 1920, 2400',
+                  loading: banner_loading,
+                  fetchpriority: banner_priority,
+                  preload: banner_preload,
+                  alt: '',
+                  class: 'collection-banner__image'
+                -%}
+              </div>
+              <div class="collection-banner__content">
+                <h1 class="collection-banner__title display-l">{{ collection.title | escape }}</h1>
+                {%- if section.settings.show_count and has_products -%}
+                  <p class="collection-banner__count">
+                    {{- 'collections.product_count' | t: count: collection.all_products_count -}}
+                  </p>
+                {%- endif -%}
+              </div>
             </div>
-          {%- endif -%}
+          {%- else -%}
+            <h1 class="collection-header__title display-l">{{ collection.title | escape }}</h1>
 
-          <h1 class="collection-header__title display-l">{{ collection.title | escape }}</h1>
-
-          {%- if section.settings.show_count and has_products -%}
-            <p class="collection-header__count">
-              {{- 'collections.product_count' | t: count: collection.all_products_count -}}
-            </p>
+            {%- if section.settings.show_count and has_products -%}
+              <p class="collection-header__count">
+                {{- 'collections.product_count' | t: count: collection.all_products_count -}}
+              </p>
+            {%- endif -%}
           {%- endif -%}
 
           {%- if section.settings.show_description and collection.description != blank -%}
@@ -408,14 +443,71 @@
     margin-block-end: var(--space-6);
   }
 
-  .collection-header__media {
-    --media-ratio: 2 / 1;
-    --media-fit: cover;
-    margin-block-end: var(--space-3);
+  /* Banner: the picture under a dark gradient, the title and count at its foot (scheme-night text). */
+  .collection-banner {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: flex-end;
+    min-block-size: 150px;
+    aspect-ratio: 12 / 5;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: var(--color-background);
+    color: var(--color-text);
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        to top,
+        color-mix(in srgb, var(--color-background) 88%, transparent),
+        color-mix(in srgb, var(--color-background) 30%, transparent) 55%,
+        transparent 85%
+      );
+    }
 
     @media screen and (min-width: 750px) {
-      --media-ratio: 4 / 1;
+      min-block-size: 240px;
+      aspect-ratio: 5 / 1;
     }
+  }
+
+  .collection-banner__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+  }
+
+  .collection-banner__image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .collection-banner__content {
+    display: grid;
+    gap: var(--space-1);
+    padding: var(--space-4) var(--space-5);
+
+    @media screen and (min-width: 750px) {
+      padding: var(--space-8) var(--space-10);
+    }
+  }
+
+  .collection-banner__title {
+    overflow-wrap: anywhere;
+    text-shadow: 0 2px 18px rgb(0 0 0 / 0.35);
+  }
+
+  .collection-banner__count {
+    color: color-mix(in srgb, var(--color-text) 82%, transparent);
+    font-size: var(--text-md);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
   }
 
   .collection-header__title {

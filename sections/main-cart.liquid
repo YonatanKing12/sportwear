@@ -55,6 +55,8 @@
           url: shop_url,
           menu: section.settings.empty_menu,
           id_prefix: 'MainCart',
+          layout: 'page',
+          heading_tag: 'h2',
           class: 'main-cart__empty'
         -%}
       {%- else -%}
@@ -269,8 +271,7 @@
   }
 
   .main-cart__empty {
-    max-inline-size: 560px;
-    margin-inline: auto;
+    margin-block-end: var(--space-4);
   }
 {% endstylesheet %}
 

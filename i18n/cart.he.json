@@ -14,11 +14,12 @@
     "secure_payment": "תשלום מאובטח",
     "payment_methods": "אמצעי תשלום",
     "empty": {
-      "title": "הסל שלכם ריק",
-      "text": "עוד לא הוספתם מוצרים לסל",
+      "title": "הסל עוד על הספסל",
+      "text": "בחרו קבוצה, מצאו מידה, והחולצה כבר בדרך אליכם.",
       "button": "התחילו לקנות",
       "free_shipping": "משלוח חינם בהזמנה מעל {{ amount }}",
-      "categories": "או בחרו קטגוריה"
+      "categories": "או בחרו קטגוריה",
+      "picks": "הבחירות שלנו"
     },
     "free_shipping": {
       "remaining_html": "עוד <strong>{{ amount }}</strong> ותקבלו משלוח חינם",

@@ -1,6 +1,8 @@
 {%- comment -%}
   Cart drawer: static section rendered by layout/theme.liquid on every page. Under the lines: "Complete
-  the set" (snippets/cart-upsell.liquid) and "You may also like" (snippets/cart-recs.liquid).
+  the set" (snippets/cart-upsell.liquid) and "You may also like" (snippets/cart-recs.liquid). Empty:
+  snippets/cart-empty.liquid, whose product row (sections/cart-empty-picks.liquid) loads only when the
+  drawer first shows it, so pages don't render it on every load.
   <sw-drawer id="CartDrawer"> keeps its <dialog> in place; everything inside [data-cart-content] is
   re-rendered by assets/cart.js through the Section Rendering API, so updates never close the
   drawer. When Theme settings > Cart > Cart type is "Page", only an empty hidden container renders.
@@ -59,7 +61,19 @@
 
           {%- if cart.empty? -%}
             <div class="cart-drawer__body cart-drawer__body--empty">
-              {%- render 'cart-empty', url: shop_url, menu: section.settings.empty_menu, id_prefix: 'CartDrawer' -%}
+              {%- liquid
+                assign picks_url = ''
+                if section.settings.show_recs
+                  assign picks_url = routes.root_url | append: '?section_id=cart-empty-picks'
+                endif
+              -%}
+              {%- render 'cart-empty',
+                url: shop_url,
+                menu: section.settings.empty_menu,
+                id_prefix: 'CartDrawer',
+                heading_tag: 'h3',
+                picks_url: picks_url
+              -%}
             </div>
           {%- else -%}
             {%- render 'free-shipping-bar', cart: cart, class: 'cart-drawer__shipping' -%}
@@ -182,9 +196,7 @@
   }
 
   .cart-drawer__body--empty {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-block-start: var(--space-1);
   }
 
   .cart-drawer__footer {

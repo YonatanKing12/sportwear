@@ -192,6 +192,21 @@
         "payment_icons": {
           "label": "Payment logos",
           "info": "Shopify's official logos, shown in this order in the cart, on the product page and in the footer. Names separated by commas: visa, master, american_express, diners_club, apple_pay, google_pay, bit, paypal. List only the methods your payment provider takes. Empty = the methods turned on in Settings > Payments."
+        },
+        "empty_header": {
+          "content": "Empty cart"
+        },
+        "cart_empty_image": {
+          "label": "Picture",
+          "info": "At the top of the empty cart, in the drawer and on the cart page. A wide picture works best (3:1); the middle stays visible in the drawer."
+        },
+        "cart_empty_collections": {
+          "label": "Category tiles",
+          "info": "Up to 4. Each tile shows the collection's banner (metafield \"Banner\"), else its image or its first product's, and its name. None: the links of the section's menu."
+        },
+        "cart_empty_picks": {
+          "label": "Products in the empty drawer",
+          "info": "A row of products with one-tap add, loaded when the drawer opens. Empty: Our picks."
         }
       }
     },

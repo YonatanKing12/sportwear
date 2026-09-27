@@ -10,8 +10,8 @@
       },
       "settings": {
         "show_image": {
-          "label": "Show collection image",
-          "info": "Uses the image of the collection (Products > Collections). A wide image works best."
+          "label": "Show banner",
+          "info": "Shows a wide picture at the top with the title on it: the collection's banner (metafield \"Banner\", Products > Collections), else its own image. Team and player pages use their league's banner."
         },
         "show_description": {
           "label": "Show collection description",

@@ -3,7 +3,7 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "show_image": false,
+        "show_image": true,
         "show_description": true,
         "show_count": true,
         "enable_filtering": true,

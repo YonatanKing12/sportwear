@@ -1,0 +1,161 @@
+{
+  "_note": "Brand graphics of 2026-09-27 (owner: 'lots of special graphics'). Generated with scripts/images/brand.py (gpt-image-2, text to image, 3072x1024, quality high); each prompt gets the script's STYLE suffix (no text, logos, crests, real people or real stadiums). Files live in Content > Files under the names below. Where they are used: design/imagery/README.md, 'Brand graphics'.",
+  "jobs": [
+    {
+      "name": "empty-cart",
+      "prompt": "Ultra-wide banner photo of a stylish, dimly lit sports locker room: an empty wooden bench runs across the frame, on it a neatly folded plain white football shirt with no print at all, a football and a basketball resting side by side, a pair of boots on the floor underneath. One warm spotlight falls on the bench from above; the back wall of dark lockers catches a soft acid-lime (#C6FF3D) accent glow. The objects sit in the centre of the frame; the left and right thirds are calm dark lockers. Quiet, inviting, waiting-for-the-game mood.",
+      "file": "sw-empty-cart.jpg"
+    },
+    {
+      "name": "not-found",
+      "prompt": "Ultra-wide banner photo at pitch level in an empty football stadium at dusk: a plain assistant referee's flag in bright yellow and red chequers lies on the grass right next to the white touchline, in sharp focus in the centre of the frame; behind it the pitch and the empty stands blur softly under just-switched-on floodlights and a deep blue evening sky. Playful, a little lonely.",
+      "file": "sw-not-found.jpg"
+    },
+    {
+      "name": "col-football",
+      "prompt": "Ultra-wide banner photo of a packed football stadium at night seen from high in the upper stands: floodlights blazing, the bright green pitch glowing in the centre, a sea of fans in many different club colours with raised scarves, light haze in the floodlights, electric big-match atmosphere.",
+      "file": "sw-col-football.jpg"
+    },
+    {
+      "name": "col-premier-league",
+      "prompt": "Ultra-wide banner photo of a compact, classic English football ground on a rainy winter night: steep stands close to the pitch, floodlights glowing through fine drizzle, the wet grass sparkling, breath and steam rising from the crowd in rain jackets and scarves, moody and atmospheric.",
+      "file": "sw-col-premier-league.jpg"
+    },
+    {
+      "name": "col-la-liga",
+      "prompt": "Ultra-wide banner photo of a large Spanish football stadium at golden hour on a warm evening: steep tiers of seats, low orange sunlight raking across the pitch, palm trees silhouetted beyond the stands against a warm sky, relaxed summer crowd.",
+      "file": "sw-col-la-liga.jpg"
+    },
+    {
+      "name": "col-serie-a",
+      "prompt": "Ultra-wide banner photo of a grand Italian football stadium at dusk: sweeping concrete curves of the old stands, a deep blue and apricot sky, the crowd holding up coloured scarves, a light haze of smoke drifting in the floodlights, elegant old-world football atmosphere.",
+      "file": "sw-col-serie-a.jpg"
+    },
+    {
+      "name": "col-bundesliga",
+      "prompt": "Ultra-wide banner photo looking up from pitch level at a huge, steep German standing terrace packed with thousands of fans at night, scarves raised high, dramatic floodlight rim light and haze over the wall of people, raw and loud.",
+      "file": "sw-col-bundesliga.jpg"
+    },
+    {
+      "name": "col-ligue-1",
+      "prompt": "Ultra-wide banner photo of a modern French football stadium at night with a sleek illuminated roof, the lights of a big French city glowing beyond it, a blue-violet evening sky, fans streaming in along the promenade.",
+      "file": "sw-col-ligue-1.jpg"
+    },
+    {
+      "name": "col-primeira-liga",
+      "prompt": "Ultra-wide banner photo of a Portuguese football stadium near the Atlantic coast at sunset: warm pastel sky, terracotta rooftops and a distant river bridge beyond the stands, the pitch in soft golden light.",
+      "file": "sw-col-primeira-liga.jpg"
+    },
+    {
+      "name": "col-israeli-league",
+      "prompt": "Ultra-wide banner photo of a compact football stadium in a Mediterranean coastal city on a warm summer night: a lively crowd in the stands, palm trees and white city buildings beyond, the sea horizon still glowing after sunset, floodlights on.",
+      "file": "sw-col-israeli-league.jpg"
+    },
+    {
+      "name": "col-other-leagues",
+      "prompt": "Ultra-wide banner photo of a packed South American style football stadium at night as confetti and paper streamers rain down from the stands through the floodlights, festive and passionate atmosphere, fans jumping.",
+      "file": "sw-col-other-leagues.jpg"
+    },
+    {
+      "name": "col-national-teams",
+      "prompt": "Ultra-wide banner photo of a big international tournament night: a packed national stadium, fans waving many plain colourful flags of stripes and colour blocks only (no symbols), confetti glittering in the floodlights, a joyful summer-tournament mood.",
+      "file": "sw-col-national-teams.jpg"
+    },
+    {
+      "name": "col-basketball",
+      "prompt": "Ultra-wide banner photo of an indoor basketball arena at night seen from courtside: the polished hardwood court glowing under bright lights, a hoop and glass backboard in sharp focus, the crowd blurred in the dark stands, anticipation before tip-off.",
+      "file": "sw-col-basketball.jpg"
+    },
+    {
+      "name": "col-nba",
+      "prompt": "Ultra-wide banner photo of a huge professional basketball arena moments before tip-off: a big centre-hung video board glowing with abstract coloured light only, spotlights sweeping across the court, packed dark stands, haze in the beams, showtime energy.",
+      "file": "sw-col-nba.jpg"
+    },
+    {
+      "name": "col-city-edition",
+      "prompt": "Ultra-wide banner photo of a rooftop basketball court at night high above a big city, skyscraper lights all around, the court painted in bold colours, a basketball resting under the hoop, neon reflections on the surface.",
+      "file": "sw-col-city-edition.jpg"
+    },
+    {
+      "name": "col-retro",
+      "prompt": "Ultra-wide banner photo of a vintage 1990s basketball gym with warm tungsten light: wooden bleachers, a classic wooden court, an old scoreboard switched off, analogue film look with grain and slightly faded colours, nostalgic.",
+      "file": "sw-col-retro.jpg"
+    },
+    {
+      "name": "col-shorts",
+      "prompt": "Ultra-wide banner photo of an outdoor streetball court in a city at golden hour: chain-link fence, a basketball rolling across the painted asphalt, long warm shadows, summer evening freedom.",
+      "file": "sw-col-shorts.jpg"
+    },
+    {
+      "name": "col-kids",
+      "prompt": "Ultra-wide banner photo of a small pair of children's football boots and a football on fresh green grass in a park at sunset, a small practice goal behind them out of focus, warm family-weekend feeling, no people.",
+      "file": "sw-col-kids.jpg"
+    },
+    {
+      "name": "col-kids-basketball",
+      "prompt": "Ultra-wide banner photo of an outdoor school basketball court on a sunny afternoon: a low hoop, colourful painted lines, a small basketball on the ground, cheerful and bright, no people.",
+      "file": "sw-col-kids-basketball.jpg"
+    },
+    {
+      "name": "col-hoodies",
+      "prompt": "Ultra-wide banner photo of an American football field at night in autumn fog: tall floodlights, empty metal bleachers, fallen leaves along the sideline, crisp cold air, cosy hoodie weather.",
+      "file": "sw-col-hoodies.jpg"
+    }
+  ],
+  "collection_banners": {
+    "football": "football",
+    "season-2026-27": "football",
+    "premier-league": "premier-league",
+    "la-liga": "la-liga",
+    "serie-a": "serie-a",
+    "bundesliga": "bundesliga",
+    "ligue-1": "ligue-1",
+    "primeira-liga": "primeira-liga",
+    "israeli-premier-league": "israeli-league",
+    "other-leagues": "other-leagues",
+    "national-teams": "national-teams",
+    "basketball": "basketball",
+    "basketball-jerseys": "basketball",
+    "nba": "nba",
+    "players": "nba",
+    "all-star": "nba",
+    "euroleague": "basketball",
+    "israeli-basketball-league": "basketball",
+    "usa-basketball": "basketball",
+    "college-and-wnba": "basketball",
+    "basketball-shorts": "shorts",
+    "basketball-sets": "shorts",
+    "city-edition": "city-edition",
+    "special-editions": "city-edition",
+    "retro": "retro",
+    "kids": "kids",
+    "kids-football": "kids",
+    "kids-basketball": "kids-basketball",
+    "nfl-hoodies": "hoodies",
+    "nfl-hoodies-men": "hoodies",
+    "nfl-hoodies-women": "hoodies",
+    "nfl-hoodies-kids": "hoodies"
+  },
+  "media_ids": {
+    "sw-col-basketball.jpg": "gid://shopify/MediaImage/45306712064304",
+    "sw-col-bundesliga.jpg": "gid://shopify/MediaImage/45306712097072",
+    "sw-col-city-edition.jpg": "gid://shopify/MediaImage/45306712129840",
+    "sw-col-football.jpg": "gid://shopify/MediaImage/45306712162608",
+    "sw-col-hoodies.jpg": "gid://shopify/MediaImage/45306712195376",
+    "sw-col-israeli-league.jpg": "gid://shopify/MediaImage/45306712228144",
+    "sw-col-kids-basketball.jpg": "gid://shopify/MediaImage/45306712260912",
+    "sw-col-kids.jpg": "gid://shopify/MediaImage/45306712293680",
+    "sw-col-la-liga.jpg": "gid://shopify/MediaImage/45306712326448",
+    "sw-col-ligue-1.jpg": "gid://shopify/MediaImage/45306712359216",
+    "sw-col-national-teams.jpg": "gid://shopify/MediaImage/45306712391984",
+    "sw-col-nba.jpg": "gid://shopify/MediaImage/45306712424752",
+    "sw-col-other-leagues.jpg": "gid://shopify/MediaImage/45306712457520",
+    "sw-col-premier-league.jpg": "gid://shopify/MediaImage/45306712490288",
+    "sw-col-primeira-liga.jpg": "gid://shopify/MediaImage/45306712523056",
+    "sw-col-retro.jpg": "gid://shopify/MediaImage/45306712555824",
+    "sw-col-serie-a.jpg": "gid://shopify/MediaImage/45306712588592",
+    "sw-col-shorts.jpg": "gid://shopify/MediaImage/45306712621360",
+    "sw-empty-cart.jpg": "gid://shopify/MediaImage/45306712654128",
+    "sw-not-found.jpg": "gid://shopify/MediaImage/45306712686896"
+  }
+}

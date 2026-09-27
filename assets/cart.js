@@ -16,6 +16,8 @@
  * - Suggestions ("Complete the set", "You may also like") add through CartAPI. A suggestion with sizes
  *   opens them over its card; each size is a submit button that posts its own variant id. Escape, the
  *   close button, a click elsewhere or focus leaving the sizes closes them.
+ * - Parts marked [data-cart-lazy="<section url>"] (the empty drawer's product row) load when they first
+ *   come into view, from the [data-cart-lazy-content] of that section, and are reused after re-renders.
  */
 import {
   EVENTS,
@@ -43,6 +45,8 @@ const NOTE_DELAY = 600;
 const ADDED_MARK_TIME = 2600;
 /** A checkout that has not left the page by then (offline, blocked) gets its button back. */
 const CHECKOUT_BUSY_TIME = 10000;
+/** Markup of the lazy parts already loaded, by URL, so a re-render puts them back without a request. */
+const lazyMarkup = new Map();
 
 /**
  * @typedef {object} PendingQuantity
@@ -394,6 +398,9 @@ class SwCart extends HTMLElement {
   /** @type {AbortController | null} */
   #listeners = null;
 
+  /** @type {IntersectionObserver | null} */
+  #lazyObserver = null;
+
   get sectionId() {
     return this.dataset.sectionId ?? '';
   }
@@ -408,10 +415,12 @@ class SwCart extends HTMLElement {
     this.addEventListener('submit', this.#onSubmit, options);
     this.addEventListener('focusout', this.#onFocusOut, options);
     views.add(this);
+    this.#watchLazy();
   }
 
   disconnectedCallback() {
     this.#listeners?.abort();
+    this.#lazyObserver?.disconnect();
     views.delete(this);
   }
 
@@ -427,6 +436,64 @@ class SwCart extends HTMLElement {
     const state = this.#captureState();
     content.replaceChildren(...next.childNodes);
     this.#restoreState(state);
+    this.#watchLazy();
+  }
+
+  /**
+   * Loads the [data-cart-lazy] parts when the cart first comes into view (the drawer's dialog opening
+   * shows it; the part itself may still be below the drawer's scroll), or at once when they were loaded
+   * before. A part that comes back empty or fails is removed.
+   */
+  #watchLazy() {
+    this.#lazyObserver?.disconnect();
+    this.#lazyObserver = null;
+    const slots = [...this.querySelectorAll('[data-cart-lazy]')].filter((el) => el instanceof HTMLElement);
+    if (!slots.length) return;
+
+    /** @param {HTMLElement} slot */
+    const load = async (slot) => {
+      const url = slot.dataset.cartLazy ?? '';
+      slot.removeAttribute('data-cart-lazy');
+      let markup = lazyMarkup.get(url);
+      if (markup === undefined) {
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error(`HTTP ${response.status}`);
+          markup =
+            parseHTML(await response.text())
+              .querySelector('[data-cart-lazy-content]')
+              ?.innerHTML.trim() ?? '';
+        } catch (error) {
+          console.warn('A cart part could not be loaded', error);
+          markup = '';
+        }
+        if (markup) lazyMarkup.set(url, markup);
+      }
+      if (!slot.isConnected) return;
+      if (markup) slot.innerHTML = markup;
+      else slot.remove();
+    };
+
+    const waiting = slots.filter((slot) => {
+      if (!lazyMarkup.has(slot.dataset.cartLazy ?? '')) return true;
+      load(slot);
+      return false;
+    });
+    if (!waiting.length) return;
+    if (!('IntersectionObserver' in window)) {
+      waiting.forEach(load);
+      return;
+    }
+    this.#lazyObserver = new IntersectionObserver(
+      (entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        this.#lazyObserver?.disconnect();
+        this.#lazyObserver = null;
+        waiting.forEach(load);
+      },
+      { rootMargin: '400px 0px' },
+    );
+    this.#lazyObserver.observe(this.querySelector('[data-cart-content]') ?? this);
   }
 
   /**

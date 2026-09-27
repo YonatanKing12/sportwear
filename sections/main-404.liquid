@@ -1,6 +1,7 @@
 {%- comment -%}
-  404 page: the template's <h1>, a short explanation, a store search form and links back to the
-  home page and to all products. The big outlined "404" is decorative.
+  404 page: a picture (setting "image"; without one, a big outlined "404"), the template's <h1>
+  ("Offside!"), a short explanation, a store search form and links back to the home page and to all
+  products. The "404" line and the picture are decorative.
 {%- endcomment -%}
 {%- liquid
   assign heading = section.settings.heading
@@ -18,8 +19,25 @@
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
+    {%- if section.settings.image != blank -%}
+      <div class="not-found__media">
+        {%- render 'image',
+          image: section.settings.image,
+          sizes: '(min-width: 1180px) 1100px, calc(100vw - 32px)',
+          widths: '480, 720, 960, 1100, 1500, 2200',
+          loading: 'eager',
+          fetchpriority: 'high',
+          alt: '',
+          class: 'not-found__image'
+        -%}
+      </div>
+    {%- endif -%}
     <div class="not-found__inner">
-      <p class="not-found__code" aria-hidden="true">{{ 'not_found.code' | t }}</p>
+      {%- if section.settings.image != blank -%}
+        <p class="not-found__eyebrow" aria-hidden="true">{{ 'not_found.eyebrow' | t }}</p>
+      {%- else -%}
+        <p class="not-found__code" aria-hidden="true">{{ 'not_found.code' | t }}</p>
+      {%- endif -%}
       <h1 class="display-l not-found__heading">{{ heading }}</h1>
       <p class="not-found__text">{{ intro }}</p>
 
@@ -67,6 +85,34 @@
 </div>
 
 {% stylesheet %}
+  .not-found__media {
+    max-inline-size: 1100px;
+    margin-inline: auto;
+    margin-block-end: var(--space-8);
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface);
+
+    @media screen and (min-width: 750px) {
+      aspect-ratio: 3 / 1;
+    }
+  }
+
+  .not-found__image {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+  }
+
+  .not-found__eyebrow {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+
   .not-found__inner {
     display: grid;
     justify-items: center;
@@ -143,6 +189,12 @@
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-day"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.main_404.settings.image.label",
+      "info": "t:sections.main_404.settings.image.info"
     },
     {
       "type": "text",
