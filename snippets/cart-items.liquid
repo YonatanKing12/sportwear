@@ -18,6 +18,7 @@
 {%- liquid
   assign image_sizes = sizes | default: '88px'
   assign eager_count = eager | default: 0
+  assign set_offer_title = shop.metafields.sportwear.set_offer.value.discount_title
 -%}
 <ul class="cart-items" role="list" data-cart-items>
   {%- for item in cart.items -%}
@@ -133,16 +134,33 @@
           </dl>
         {%- endif -%}
 
-        {%- if item.line_level_discount_allocations.size > 0 -%}
+        {%- comment -%}
+          A "buy X get Y" discount (the set price) also lists the jersey with a 0 amount: only real
+          savings show. The set discount's title is Hebrew in the admin; its name comes from the theme's
+          translations instead (shop metafield sportwear.set_offer names it).
+        {%- endcomment -%}
+        {%- capture line_discounts -%}
+          {%- for allocation in item.line_level_discount_allocations -%}
+            {%- if allocation.amount <= 0 -%}
+              {%- continue -%}
+            {%- endif -%}
+            {%- liquid
+              assign discount_title = allocation.discount_application.title | escape
+              if set_offer_title != blank and allocation.discount_application.title == set_offer_title
+                assign discount_title = 'cart.item.set_discount' | t
+              endif
+            -%}
+            <li class="cart-item__discount">
+              {%- render 'icon', name: 'tag', size: 16 -%}
+              <span class="visually-hidden">{{ 'cart.item.discount' | t }}</span>
+              <span>{{ discount_title }}</span>
+              <bdi class="cart-item__saving" dir="ltr">−{{ allocation.amount | money_without_trailing_zeros }}</bdi>
+            </li>
+          {%- endfor -%}
+        {%- endcapture -%}
+        {%- if line_discounts != blank -%}
           <ul class="cart-item__discounts" role="list">
-            {%- for allocation in item.line_level_discount_allocations -%}
-              <li class="cart-item__discount">
-                {%- render 'icon', name: 'tag', size: 16 -%}
-                <span class="visually-hidden">{{ 'cart.item.discount' | t }}</span>
-                <span>{{ allocation.discount_application.title | escape }}</span>
-                <bdi class="cart-item__saving" dir="ltr">−{{ allocation.amount | money_without_trailing_zeros }}</bdi>
-              </li>
-            {%- endfor -%}
+            {{- line_discounts -}}
           </ul>
         {%- endif -%}
       </div>

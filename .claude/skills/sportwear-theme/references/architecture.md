@@ -153,6 +153,11 @@ import {
   (`snippets/cart-upsell.liquid`) both read it. Both are quiet bordered cards in the page's own colors with an
   outlined "+ Add" button, so the main buttons stay the loudest. On the product page, choosing a size also picks
   it in the card's select (`select[data-set-size]`, `assets/product-info.js`) until the customer picks one there.
+- **Set price**: `snippets/set-price.liquid` prints "Save ₪39 · Both for ₪229 instead of ₪268" in both cards when
+  the pair carries the tags of the shop metafield `sportwear.set_offer` (`jersey_tag`, `shorts_tag`, with
+  `discount_amount` in shekels); an automatic Buy X get Y discount gives that price at checkout. The cart names
+  that discount from the theme's translations (`cart.item.set_discount`, matched on `discount_title`) and hides
+  the 0 allocation a Buy X get Y leaves on the jersey line (`snippets/cart-items.liquid`).
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
 - **Free shipping**: every free-shipping message (announcement bar, trust badges, product page, cart, set and
   upsell notes, empty cart, FAQ) reads `{% render 'free-shipping-cents' %}` (captured, then `| plus: 0`), never

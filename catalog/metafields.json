@@ -139,6 +139,13 @@
       "type": "json",
       "storefront_access": "PUBLIC_READ",
       "note": "he/en/ar names of the filter values, written by scripts/catalog/filter-data.mjs from catalog/taxonomy.json; read by snippets/facet-label.liquid"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "set_offer",
+      "type": "json",
+      "storefront_access": "PUBLIC_READ",
+      "note": "the set price the theme shows: { discount_amount (₪ off the shorts), discount_title, jersey_tag, shorts_tag }; must match the automatic discount 'מחיר סט: גופייה + מכנסיים' (catalog/pricing.json, sets); read by snippets/set-price.liquid and snippets/cart-items.liquid"
     }
   ]
 }

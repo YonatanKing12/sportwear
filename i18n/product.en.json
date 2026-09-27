@@ -74,6 +74,10 @@
       "option_sold_out": "{{ size }} (sold out)",
       "free_shipping_together": "Together with this item: free shipping"
     },
+    "set_price": {
+      "save": "Save {{ amount }}",
+      "together_html": "Both for <strong>{{ set_price }}</strong> instead of {{ price }}"
+    },
     "description": {
       "heading": "Product details"
     },

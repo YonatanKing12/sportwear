@@ -1,0 +1,72 @@
+{%- doc -%}
+  The set price of a "complete the set" suggestion: a "Save ₪39" badge and "Both for ₪229 instead of ₪268".
+  It shows only when the two products make a set that the store's automatic set discount covers: one
+  carries the offer's jersey tag and the other its shorts tag (shop metafield sportwear.set_offer:
+  discount_amount in shekels, jersey_tag, shorts_tag; catalog/README.md, "השלימו את הסט"). Otherwise it
+  prints nothing, so the page never promises a price that checkout would not give.
+
+  @param {product} product - One product of the pair (the page's product, or the cart line's)
+  @param {number} price - Its price in cents (the chosen variant's)
+  @param {product} item - The suggested product
+  @param {number} item_price - Its price in cents
+  @param {string} [class] - Extra class for the line
+
+  @example
+  {% render 'set-price', product: product, price: main_price, item: item, item_price: item_variant.price, class: 'product-set__deal' %}
+{%- enddoc -%}
+{%- liquid
+  assign offer = shop.metafields.sportwear.set_offer.value
+  assign is_set = false
+  if offer != blank and offer.discount_amount > 0 and offer.jersey_tag != blank and offer.shorts_tag != blank
+    if product.tags contains offer.jersey_tag and item.tags contains offer.shorts_tag
+      assign is_set = true
+    elsif product.tags contains offer.shorts_tag and item.tags contains offer.jersey_tag
+      assign is_set = true
+    endif
+  endif
+
+  if is_set
+    assign saving = offer.discount_amount | times: 100
+    assign regular = price | plus: item_price
+    assign set_total = regular | minus: saving
+    if set_total <= 0
+      assign is_set = false
+    endif
+  endif
+-%}
+{%- if is_set -%}
+  {%- liquid
+    # Isolated (U+2068…U+2069) so "₪229" keeps its order inside Hebrew and Arabic sentences.
+    assign saving_money = saving | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+    assign set_money = set_total | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+    assign regular_money = regular | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+  -%}
+  <p class="set-price{% if class != blank %} {{ class }}{% endif %}">
+    <span class="badge badge--highlight set-price__badge">
+      {{- 'products.set_price.save' | t: amount: saving_money -}}
+    </span>
+    <span class="set-price__text">
+      {{- 'products.set_price.together_html' | t: set_price: set_money, price: regular_money -}}
+    </span>
+  </p>
+{%- endif -%}
+
+{% stylesheet %}
+  .set-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px var(--space-2);
+    font-size: var(--text-sm);
+    line-height: 1.35;
+  }
+
+  /* The accent stays in this small badge (the theme's own .badge--highlight); the card around it is quiet. */
+  .set-price__badge {
+    flex: none;
+  }
+
+  .set-price__text strong {
+    font-weight: 800;
+  }
+{% endstylesheet %}

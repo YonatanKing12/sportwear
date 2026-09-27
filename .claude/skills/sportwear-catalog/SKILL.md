@@ -84,7 +84,10 @@ Each product is one team × one kit × one season × one audience.
   - `complements`: set pieces: a basketball jersey ↔ the shorts of the same kit, in both directions
     (the jersey lists its shorts; the shorts list their jerseys, stars first). Pair only when the
     photos show the same design (colors, trim, wordmark), never on team and color words alone. The
-    product page ("השלימו את הסט") and the cart read it. Log: `catalog/published/complements-2026-09-27.json`
+    product page ("השלימו את הסט") and the cart read it. Log: `catalog/published/complements-2026-09-27.json`.
+    Paired products also get the tags `set:jersey` / `set:shorts`: they put the pair under the automatic set
+    discount (₪229 for both, ₪39 off the shorts; `catalog/pricing.json`, `sets`) and let the theme show the set
+    price. A new pair needs complements both ways plus the two tags
   - `source_url`: internal, no storefront access
   - **Storefront filters** (the Search & Discovery app builds its filters on these): `audience`
     (`adult|kids|women`), `team_handle` (team slug), `league_handle` (league slug), `styles` and

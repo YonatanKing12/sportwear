@@ -33,6 +33,7 @@
       "quantity": "كمية {{ title }}",
       "each": "{{ price }} للقطعة",
       "discount": "خصم",
+      "set_discount": "سعر الطقم: قميص + شورت",
       "audience": {
         "adult": "الكبار",
         "kids": "الأطفال"

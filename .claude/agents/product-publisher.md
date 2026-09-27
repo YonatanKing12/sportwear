@@ -54,7 +54,8 @@ Read `.claude/skills/sportwear-catalog/SKILL.md` and `catalog/product.schema.jso
   - Set `counterpart` and `complements` only when the referenced product already exists. If it
     does not yet, leave it and note it. `complements` pairs a jersey with the shorts of the same kit
     (both directions), and only when the photos show the same design: never from team and color
-    words alone.
+    words alone. A paired jersey also gets the tag `set:jersey` and its shorts `set:shorts`, which put
+    the pair under the automatic set price (₪229; `catalog/pricing.json`, `sets`).
 - Publish products **one at a time**. On the first error, stop, write the error into the file's
   `questions`, and report.
 

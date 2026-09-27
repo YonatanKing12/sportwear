@@ -18,7 +18,9 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 - **Shipping:** free on every order, Israel only (owner decisions, 2026-09-26). Admin's only zone is
   Israel, with one method, "משלוח חינם עד הבית" at ₪0, described "עד 10 ימי עסקים".
 - **Prices:** adult football shirts ₪139, kids sets (shirt + shorts) ₪99, basketball jerseys imported
-  before ₪149. Lots of promotions are planned.
+  before ₪149. A basketball jersey with the shorts of the same kit costs ₪229 instead of ₪268 (owner
+  decision 2026-09-27: an automatic discount takes ₪39 off the shorts; `catalog/pricing.json`, `sets`).
+  Lots of promotions are planned.
 - **Returns:** up to 45 days. The owner said "unopened"; we recommended "unworn, unwashed, tags on"
   instead, pending a lawyer's review of the wording.
 - **Payments:** an Israeli card gateway (which one is not decided yet) plus Apple Pay and Google Pay.
@@ -40,7 +42,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes (`deployed_commit` in `catalog/store-setup.json`). Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |

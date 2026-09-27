@@ -29,6 +29,7 @@
       "quantity": "Quantity for {{ title }}",
       "each": "{{ price }} each",
       "discount": "Discount",
+      "set_discount": "Set price: jersey + shorts",
       "audience": {
         "adult": "Adults",
         "kids": "Kids"
@@ -729,6 +730,10 @@
       "choose_size": "Choose size",
       "option_sold_out": "{{ size }} (sold out)",
       "free_shipping_together": "Together with this item: free shipping"
+    },
+    "set_price": {
+      "save": "Save {{ amount }}",
+      "together_html": "Both for <strong>{{ set_price }}</strong> instead of {{ price }}"
     },
     "description": {
       "heading": "Product details"

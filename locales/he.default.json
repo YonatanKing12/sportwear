@@ -31,6 +31,7 @@
       "quantity": "הכמות של {{ title }}",
       "each": "{{ price }} ליחידה",
       "discount": "הנחה",
+      "set_discount": "מחיר סט: גופייה + מכנסיים",
       "audience": {
         "adult": "מבוגרים",
         "kids": "ילדים"
@@ -753,6 +754,10 @@
       "choose_size": "בחרו מידה",
       "option_sold_out": "{{ size }} (אזל)",
       "free_shipping_together": "יחד עם הפריט הזה: משלוח חינם"
+    },
+    "set_price": {
+      "save": "חוסכים {{ amount }}",
+      "together_html": "יחד ב-<strong>{{ set_price }}</strong> במקום {{ price }}"
     },
     "description": {
       "heading": "פרטי המוצר"

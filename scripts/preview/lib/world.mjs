@@ -976,8 +976,18 @@ export class World {
         sportwear: new MetafieldNamespaceDrop(
           'shop',
           'sportwear',
-          { filter_names: this.#field('json', this.#filterNames()) },
-          ['filter_names'],
+          {
+            filter_names: this.#field('json', this.#filterNames()),
+            // The store's set offer (catalog/published/set-offer-2026-09-27.json): the demo Stars jersey and
+            // shorts carry its tags, so their "complete the set" rows show the set price.
+            set_offer: this.#field('json', {
+              discount_amount: 39,
+              discount_title: 'מחיר סט: גופייה + מכנסיים',
+              jersey_tag: 'set:jersey',
+              shorts_tag: 'set:shorts',
+            }),
+          },
+          ['filter_names', 'set_offer'],
         ),
       }),
     });

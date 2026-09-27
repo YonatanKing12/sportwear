@@ -22,6 +22,11 @@
     { "product_type": "Basketball Shorts", "audience": "adult", "price": null, "source": "TBD" },
     { "product_type": "Basketball Shorts", "audience": "kids", "price": null, "source": "TBD" }
   ],
+  "sets": {
+    "_note": "Owner decision, 2026-09-27 ('אפשר לעשות מחיר לסט ב229'; confirmed ₪229, saving ₪39): a basketball jersey and the shorts of the same kit bought together cost ₪229 instead of ₪149 + ₪119 = ₪268. An automatic Buy X get Y discount takes ₪39 off the shorts when the matching jersey is in the cart (every pair in the order). Which products: tags set:jersey and set:shorts. Log and IDs: catalog/published/set-offer-2026-09-27.json. If the amount changes, change the discount and the shop metafield sportwear.set_offer together.",
+    "set_price": 229,
+    "discount_off_shorts": 39
+  },
   "overrides": {
     "_note": "Per-handle prices or sale prices decided by the owner, e.g. { \"barcelona-home-jersey-2026-27\": { \"price\": 99, \"compare_at_price\": 120 } }"
   },

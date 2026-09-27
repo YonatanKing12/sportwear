@@ -2,7 +2,8 @@
   "Complete the set" panel of the main product section: the products from the metafield
   sportwear.complements (the shorts of the same kit on a jersey's page, the jerseys on the shorts'
   page), in a quiet bordered card under the buy buttons. Each row has a 72px image tile, the title
-  and price, a size select and an "Add" button. Each row is a real product form (works without
+  and price, the set price when the store's set discount covers the pair (snippets/set-price.liquid),
+  a size select and an "Add" button. Each row is a real product form (works without
   JavaScript); <sw-product-form data-source="quick-add"> (assets/product-info.js) adds it through
   CartAPI instead. Sold-out products are left out.
   The size chosen for this product is also picked in a row whose size the customer has not chosen
@@ -71,6 +72,14 @@
             <div class="product-set__info">
               <a class="product-set__title" href="{{ item.url }}">{{ item.title | escape }}</a>
               {%- render 'price', product: item, class: 'product-set__price' -%}
+              <div class="product-set__deal" data-product-dynamic="set-price-{{ item.id }}">
+                {%- render 'set-price',
+                  product: product,
+                  price: main_price,
+                  item: item,
+                  item_price: item_variant.price
+                -%}
+              </div>
               {%- if threshold_cents > 0 -%}
                 <p class="product-set__note" data-product-dynamic="set-note-{{ item.id }}">
                   {%- if main_price < threshold_cents and together >= threshold_cents -%}
@@ -250,6 +259,14 @@
     flex: 0 0 auto;
     font-size: var(--text-sm);
     font-weight: 700;
+  }
+
+  .product-set__deal {
+    flex-basis: 100%;
+
+    &:empty {
+      display: none;
+    }
   }
 
   .product-set__note {

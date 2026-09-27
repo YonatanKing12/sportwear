@@ -33,6 +33,7 @@
       "quantity": "كمية {{ title }}",
       "each": "{{ price }} للقطعة",
       "discount": "خصم",
+      "set_discount": "سعر الطقم: قميص + شورت",
       "audience": {
         "adult": "الكبار",
         "kids": "الأطفال"
@@ -777,6 +778,10 @@
       "choose_size": "اختاروا المقاس",
       "option_sold_out": "{{ size }} (نفد)",
       "free_shipping_together": "مع هذا المنتج: شحن مجاني"
+    },
+    "set_price": {
+      "save": "وفّروا {{ amount }}",
+      "together_html": "معًا بـ<strong>{{ set_price }}</strong> بدلًا من {{ price }}"
     },
     "description": {
       "heading": "تفاصيل المنتج"

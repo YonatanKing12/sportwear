@@ -29,6 +29,7 @@
       "quantity": "Quantity for {{ title }}",
       "each": "{{ price }} each",
       "discount": "Discount",
+      "set_discount": "Set price: jersey + shorts",
       "audience": {
         "adult": "Adults",
         "kids": "Kids"

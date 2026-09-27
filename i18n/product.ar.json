@@ -78,6 +78,10 @@
       "option_sold_out": "{{ size }} (نفد)",
       "free_shipping_together": "مع هذا المنتج: شحن مجاني"
     },
+    "set_price": {
+      "save": "وفّروا {{ amount }}",
+      "together_html": "معًا بـ<strong>{{ set_price }}</strong> بدلًا من {{ price }}"
+    },
     "description": {
       "heading": "تفاصيل المنتج"
     },

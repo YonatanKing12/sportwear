@@ -1,0 +1,63 @@
+{
+  "_note": "The set price, set up on 2026-09-27 on the owner's decision ('אפשר לעשות מחיר לסט ב229', then confirmed ₪229, saving ₪39): a basketball jersey and the shorts of the same kit cost ₪229 together instead of ₪149 + ₪119 = ₪268. The pairs are the ones in complements-2026-09-27.json. Undo: deactivate or delete the discount (Discounts in admin); the theme then still shows the set price until the shop metafield sportwear.set_offer is deleted, so remove both.",
+  "decision": {
+    "set_price": 229,
+    "regular": 268,
+    "saving": 39,
+    "by": "owner, 2026-09-27"
+  },
+  "tags_added": {
+    "set:jersey": 22,
+    "set:shorts": 6,
+    "request": "one aliased tagsAdd mutation, 0 userErrors"
+  },
+  "collections": {
+    "set-offer-jerseys": {
+      "id": "gid://shopify/Collection/512889127216",
+      "title": "הנחת סט – גופיות",
+      "rule": "tag equals set:jersey",
+      "products": 22,
+      "published": false
+    },
+    "set-offer-shorts": {
+      "id": "gid://shopify/Collection/512889159984",
+      "title": "הנחת סט – מכנסיים",
+      "rule": "tag equals set:shorts",
+      "products": 6,
+      "published": false
+    }
+  },
+  "discount": {
+    "id": "gid://shopify/DiscountAutomaticNode/1625436356912",
+    "type": "automatic Buy X get Y",
+    "title": "מחיר סט: גופייה + מכנסיים",
+    "buys": "1 product of set-offer-jerseys",
+    "gets": "1 product of set-offer-shorts, ₪39 off",
+    "uses_per_order": "no limit (every jersey + shorts pair)",
+    "combines_with": {
+      "product_discounts": false,
+      "order_discounts": false,
+      "shipping_discounts": true
+    },
+    "starts_at": "2026-09-27T10:18:00Z",
+    "ends_at": null,
+    "status": "ACTIVE"
+  },
+  "shop_metafield": {
+    "definition": "gid://shopify/MetafieldDefinition/278061613360",
+    "metafield": "gid://shopify/Metafield/189564507128112",
+    "value": {
+      "discount_amount": 39,
+      "discount_title": "מחיר סט: גופייה + מכנסיים",
+      "discount_id": "gid://shopify/DiscountAutomaticNode/1625436356912",
+      "jersey_tag": "set:jersey",
+      "shorts_tag": "set:shorts"
+    }
+  },
+  "verified": {
+    "storefront_cart_api": "Lakers jersey M + Lakers shorts M: total ₪229 (was ₪268), −₪39 on the shorts. Adding a Suns jersey: no extra discount. Adding the Suns shorts too: ₪458 for the two sets, −₪78",
+    "cart_page_sportwear_next": "he/en/ar: the shorts line shows ₪80 with ₪119 struck and the translated discount name (מחיר סט: גופייה + מכנסיים / Set price: jersey + shorts / سعر الطقم: قميص + شورت) −₪39, the jersey line shows no discount, subtotal ₪229",
+    "product_pages_sportwear_next": "the 'השלימו את הסט' card shows 'חוסכים ₪39' and 'יחד ב-₪229 במקום ₪268' (Save ₪39, Both for ₪229 instead of ₪268 / وفّروا ₪39، معًا بـ₪229 بدلًا من ₪268) on the jersey and shorts pages"
+  },
+  "live_theme_note": "The live theme (SportWear (dev), commit 71be9d5) does not show the set price on product pages, and its cart lists the jersey with a −₪0 line; publishing SportWear (next) fixes both. The discount itself applies on either theme."
+}
