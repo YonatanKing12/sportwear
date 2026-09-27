@@ -8,7 +8,11 @@
 - 4 pages
 - the 10 league metaobjects (`sw_league`), `name` field only
 
-Product translations live in the product files, not here.
+Product translations live in the product files (`catalog/published/*.json`), not here. The 1,098 products
+imported before (tag `source:yupoo`) have no product files: their English and Arabic titles are in
+`older-products.json`, made by `scripts/catalog/translate-titles.py` and registered on 2026-09-27 (title and
+description in en and ar, 4,392 translations, read back with a bulk export: all match, none outdated). The demo
+product is the only product without translations.
 
 Each translated field has four keys:
 
