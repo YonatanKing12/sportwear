@@ -1,0 +1,2135 @@
+{
+  "_note": "Wave 2 of the jerseyxie import, 2026-09-27 (catalog/sources/jerseyxie/wave2.json). The owner gave full approval to import more products at the same prices and confirmed this wave in the conversation. Each row's albums were checked photo by photo against the club's released 26/27 kits; the studio photos were compared with the supplier's (logos, sponsors, crests, colours; re-rendered where the renderer changed a detail). Products were created as DRAFT with productSet, read back, then set ACTIVE and published to the Online Store. English and Arabic texts registered; adult and kids versions linked with sportwear.counterpart.",
+  "counts": {
+    "rows": 244,
+    "created": 229,
+    "left_out": 15,
+    "adult": 137,
+    "kids": 92
+  },
+  "products": [
+    {
+      "id": "ajax-away-2026-27-adult",
+      "handle": "ajax-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310271152432",
+      "title": "חולצת חוץ אייאקס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141601?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "ajax-third-2026-27-adult",
+      "handle": "ajax-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310271906096",
+      "title": "חולצה שלישית אייאקס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238506533?uid=1",
+      "photos": 4,
+      "price": 139
+    },
+    {
+      "id": "ajax-third-2026-27-kids",
+      "handle": "ajax-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310272397616",
+      "title": "חולצה שלישית ומכנס אייאקס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/240325921?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "al-hilal-away-2026-27-adult",
+      "handle": "al-hilal-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310295400752",
+      "title": "חולצת חוץ אל הילאל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708922?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "al-hilal-home-2026-27-adult",
+      "handle": "al-hilal-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310295728432",
+      "title": "חולצת בית אל הילאל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708966?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "aston-villa-away-2026-27-adult",
+      "handle": "aston-villa-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310273544496",
+      "title": "חולצת חוץ אסטון וילה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236597?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "aston-villa-away-2026-27-kids",
+      "handle": "aston-villa-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310274003248",
+      "title": "חולצת חוץ ומכנס אסטון וילה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049500?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "aston-villa-home-2026-27-adult",
+      "handle": "aston-villa-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310274920752",
+      "title": "חולצת בית אסטון וילה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/226141187?uid=1",
+      "photos": 3,
+      "price": 139
+    },
+    {
+      "id": "aston-villa-home-2026-27-kids",
+      "handle": "aston-villa-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310275346736",
+      "title": "חולצת בית ומכנס אסטון וילה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/243111183?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "aston-villa-third-2026-27-adult",
+      "handle": "aston-villa-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310275871024",
+      "title": "חולצה שלישית אסטון וילה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141568?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "aston-villa-third-2026-27-kids",
+      "handle": "aston-villa-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310276460848",
+      "title": "חולצה שלישית ומכנס אסטון וילה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251735232?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "atalanta-away-2026-27-adult",
+      "handle": "atalanta-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310296154416",
+      "title": "חולצת חוץ אטאלנטה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227128?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "atalanta-home-2026-27-adult",
+      "handle": "atalanta-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310296613168",
+      "title": "חולצת בית אטאלנטה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709126?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "athletic-bilbao-away-2026-27-adult",
+      "handle": "athletic-bilbao-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310268858672",
+      "title": "חולצת חוץ אתלטיק בילבאו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242831692?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "athletic-bilbao-away-2026-27-kids",
+      "handle": "athletic-bilbao-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310269415728",
+      "title": "חולצת חוץ ומכנס אתלטיק בילבאו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244062147?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "athletic-bilbao-home-2026-27-adult",
+      "handle": "athletic-bilbao-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310270234928",
+      "title": "חולצת בית אתלטיק בילבאו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/239970520?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "athletic-bilbao-home-2026-27-kids",
+      "handle": "athletic-bilbao-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310270726448",
+      "title": "חולצת בית ומכנס אתלטיק בילבאו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244061955?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "athletic-bilbao-third-2026-27-adult",
+      "handle": "athletic-bilbao-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310271480112",
+      "title": "חולצה שלישית אתלטיק בילבאו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580394?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bayer-leverkusen-away-2026-27-adult",
+      "handle": "bayer-leverkusen-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310237565232",
+      "title": "חולצת חוץ באייר לברקוזן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141381?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bayer-leverkusen-home-2026-27-adult",
+      "handle": "bayer-leverkusen-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310237729072",
+      "title": "חולצת בית באייר לברקוזן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141550?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "benfica-away-2026-27-adult",
+      "handle": "benfica-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310297071920",
+      "title": "חולצת חוץ בנפיקה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667882?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "benfica-away-2026-27-kids",
+      "handle": "benfica-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310297432368",
+      "title": "חולצת חוץ ומכנס בנפיקה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141416?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "benfica-home-2026-27-adult",
+      "handle": "benfica-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310297858352",
+      "title": "חולצת בית בנפיקה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/235644530?uid=1",
+      "photos": 3,
+      "price": 139
+    },
+    {
+      "id": "benfica-home-2026-27-kids",
+      "handle": "benfica-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310298382640",
+      "title": "חולצת בית ומכנס בנפיקה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176243?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "benfica-third-2026-27-adult",
+      "handle": "benfica-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310298677552",
+      "title": "חולצה שלישית בנפיקה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148554?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "besiktas-away-2026-27-adult",
+      "handle": "besiktas-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310299070768",
+      "title": "חולצת חוץ בשיקטאש 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708953?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "besiktas-away-2026-27-kids",
+      "handle": "besiktas-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310300086576",
+      "title": "חולצת חוץ ומכנס בשיקטאש 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049744?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "besiktas-home-2026-27-adult",
+      "handle": "besiktas-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310300348720",
+      "title": "חולצת בית בשיקטאש 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141440?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "besiktas-home-2026-27-kids",
+      "handle": "besiktas-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310300807472",
+      "title": "חולצת בית ומכנס בשיקטאש 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251735231?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "besiktas-third-2026-27-adult",
+      "handle": "besiktas-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310301200688",
+      "title": "חולצה שלישית בשיקטאש 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708957?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "besiktas-third-2026-27-kids",
+      "handle": "besiktas-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310301528368",
+      "title": "חולצה שלישית ומכנס בשיקטאש 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049496?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "boca-juniors-away-2026-27-adult",
+      "handle": "boca-juniors-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240383280",
+      "title": "חולצת חוץ בוקה ג׳וניורס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580523?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "boca-juniors-home-2026-27-adult",
+      "handle": "boca-juniors-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240579888",
+      "title": "חולצת בית בוקה ג׳וניורס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141564?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bologna-home-2026-27-adult",
+      "handle": "bologna-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310301921584",
+      "title": "חולצת בית בולוניה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242831789?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bologna-home-2026-27-kids",
+      "handle": "bologna-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310302445872",
+      "title": "חולצת בית ומכנס בולוניה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/243111442?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "borussia-monchengladbach-away-2026-27-adult",
+      "handle": "borussia-monchengladbach-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310237892912",
+      "title": "חולצת חוץ בורוסיה מנשנגלדבאך 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238506412?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "borussia-monchengladbach-away-2026-27-kids",
+      "handle": "borussia-monchengladbach-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310238023984",
+      "title": "חולצת חוץ ומכנס בורוסיה מנשנגלדבאך 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/239270719?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "borussia-monchengladbach-home-2026-27-adult",
+      "handle": "borussia-monchengladbach-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310238089520",
+      "title": "חולצת בית בורוסיה מנשנגלדבאך 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241408382?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "borussia-monchengladbach-home-2026-27-kids",
+      "handle": "borussia-monchengladbach-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310238220592",
+      "title": "חולצת בית ומכנס בורוסיה מנשנגלדבאך 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242831772?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "borussia-monchengladbach-third-2026-27-adult",
+      "handle": "borussia-monchengladbach-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310238384432",
+      "title": "חולצה שלישית בורוסיה מנשנגלדבאך 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236218?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bournemouth-home-2026-27-adult",
+      "handle": "bournemouth-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310277083440",
+      "title": "חולצת בית בורנמות׳ 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141683?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "bournemouth-home-2026-27-kids",
+      "handle": "bournemouth-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310277673264",
+      "title": "חולצת בית ומכנס בורנמות׳ 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252219028?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "bournemouth-third-2026-27-adult",
+      "handle": "bournemouth-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310278197552",
+      "title": "חולצה שלישית בורנמות׳ 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049526?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "braga-away-2026-27-adult",
+      "handle": "braga-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310302806320",
+      "title": "חולצת חוץ בראגה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236472?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "braga-home-2026-27-adult",
+      "handle": "braga-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310303232304",
+      "title": "חולצת בית בראגה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141681?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "brentford-home-2026-27-adult",
+      "handle": "brentford-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310278689072",
+      "title": "חולצת בית ברנטפורד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247970239?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "brighton-away-2026-27-adult",
+      "handle": "brighton-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310279049520",
+      "title": "חולצת חוץ ברייטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709123?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "brighton-away-2026-27-kids",
+      "handle": "brighton-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310279606576",
+      "title": "חולצת חוץ ומכנס ברייטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148490?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "brighton-home-2026-27-kids",
+      "handle": "brighton-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310280130864",
+      "title": "חולצת בית ומכנס ברייטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708659?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "brighton-third-2026-27-kids",
+      "handle": "brighton-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310280655152",
+      "title": "חולצה שלישית ומכנס ברייטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236435?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "burnley-home-2026-27-kids",
+      "handle": "burnley-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310281343280",
+      "title": "חולצת בית ומכנס ברנלי 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148530?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "celta-vigo-away-2026-27-adult",
+      "handle": "celta-vigo-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310271971632",
+      "title": "חולצת חוץ סלטה ויגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245639704?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celta-vigo-away-2026-27-kids",
+      "handle": "celta-vigo-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310272528688",
+      "title": "חולצת חוץ ומכנס סלטה ויגו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247970237?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "celta-vigo-home-2026-27-adult",
+      "handle": "celta-vigo-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310272856368",
+      "title": "חולצת בית סלטה ויגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899460?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celta-vigo-home-2026-27-kids",
+      "handle": "celta-vigo-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310273446192",
+      "title": "חולצת בית ומכנס סלטה ויגו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251458337?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "celta-vigo-third-2026-27-adult",
+      "handle": "celta-vigo-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310273937712",
+      "title": "חולצה שלישית סלטה ויגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709119?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celtic-away-2026-27-adult",
+      "handle": "celtic-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310303592752",
+      "title": "חולצת חוץ סלטיק 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238094564?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celtic-away-2026-27-kids",
+      "handle": "celtic-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310304084272",
+      "title": "חולצת חוץ ומכנס סלטיק 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141484?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "celtic-home-2026-27-adult",
+      "handle": "celtic-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310304444720",
+      "title": "חולצת בית סלטיק 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/229464256?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celtic-home-2026-27-kids",
+      "handle": "celtic-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310305001776",
+      "title": "חולצת בית ומכנס סלטיק 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238962308?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "celtic-third-2026-27-adult",
+      "handle": "celtic-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310305493296",
+      "title": "חולצה שלישית סלטיק 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245639700?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "celtic-third-2026-27-kids",
+      "handle": "celtic-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310305952048",
+      "title": "חולצה שלישית ומכנס סלטיק 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245639917?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "como-away-2026-27-adult",
+      "handle": "como-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310306509104",
+      "title": "חולצת חוץ קומו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141501?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "como-home-2026-27-adult",
+      "handle": "como-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310307033392",
+      "title": "חולצת בית קומו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148497?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "corinthians-away-2026-27-adult",
+      "handle": "corinthians-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240710960",
+      "title": "חולצת חוץ קורינתיאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238094557?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "corinthians-home-2026-27-adult",
+      "handle": "corinthians-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240907568",
+      "title": "חולצת בית קורינתיאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/235024155?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "corinthians-third-2026-27-adult",
+      "handle": "corinthians-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241038640",
+      "title": "חולצה שלישית קורינתיאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/256403098?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "crystal-palace-away-2026-27-adult",
+      "handle": "crystal-palace-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310282096944",
+      "title": "חולצת חוץ קריסטל פאלאס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227118?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "eintracht-frankfurt-away-2026-27-adult",
+      "handle": "eintracht-frankfurt-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310238548272",
+      "title": "חולצת חוץ איינטרכט פרנקפורט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148533?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "eintracht-frankfurt-home-2026-27-adult",
+      "handle": "eintracht-frankfurt-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310238613808",
+      "title": "חולצת בית איינטרכט פרנקפורט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/238094547?uid=1",
+      "photos": 1,
+      "price": 139
+    },
+    {
+      "id": "eintracht-frankfurt-home-2026-27-kids",
+      "handle": "eintracht-frankfurt-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310238810416",
+      "title": "חולצת בית ומכנס איינטרכט פרנקפורט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176371?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "eintracht-frankfurt-third-2026-27-adult",
+      "handle": "eintracht-frankfurt-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310238908720",
+      "title": "חולצה שלישית איינטרכט פרנקפורט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236442?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "eintracht-frankfurt-third-2026-27-kids",
+      "handle": "eintracht-frankfurt-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310239007024",
+      "title": "חולצה שלישית ומכנס איינטרכט פרנקפורט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227096?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "espanyol-away-2026-27-adult",
+      "handle": "espanyol-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310274462000",
+      "title": "חולצת חוץ אספניול 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708927?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "espanyol-home-2026-27-adult",
+      "handle": "espanyol-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310274789680",
+      "title": "חולצת בית אספניול 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965287?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "espanyol-home-2026-27-kids",
+      "handle": "espanyol-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310275379504",
+      "title": "חולצת בית ומכנס אספניול 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709003?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "espanyol-third-2026-27-adult",
+      "handle": "espanyol-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310275936560",
+      "title": "חולצה שלישית אספניול 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141516?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "everton-away-2026-27-adult",
+      "handle": "everton-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310282948912",
+      "title": "חולצת חוץ אברטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709027?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "everton-away-2026-27-kids",
+      "handle": "everton-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310283866416",
+      "title": "חולצת חוץ ומכנס אברטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709015?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "everton-home-2026-27-adult",
+      "handle": "everton-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310284685616",
+      "title": "חולצת בית אברטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965319?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "everton-third-2026-27-adult",
+      "handle": "everton-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310285406512",
+      "title": "חולצה שלישית אברטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227110?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fenerbahce-away-2026-27-adult",
+      "handle": "fenerbahce-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310307590448",
+      "title": "חולצת חוץ פנרבחצ׳ה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242008812?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fenerbahce-away-2026-27-kids",
+      "handle": "fenerbahce-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310308147504",
+      "title": "חולצת חוץ ומכנס פנרבחצ׳ה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141413?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fenerbahce-home-2026-27-adult",
+      "handle": "fenerbahce-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310308606256",
+      "title": "חולצת בית פנרבחצ׳ה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241407072?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fenerbahce-home-2026-27-kids",
+      "handle": "fenerbahce-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310309097776",
+      "title": "חולצת בית ומכנס פנרבחצ׳ה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218989?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fenerbahce-third-2026-27-adult",
+      "handle": "fenerbahce-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310309654832",
+      "title": "חולצה שלישית פנרבחצ׳ה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/243111477?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fenerbahce-third-2026-27-kids",
+      "handle": "fenerbahce-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310310310192",
+      "title": "חולצה שלישית ומכנס פנרבחצ׳ה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251458333?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "feyenoord-away-2026-27-adult",
+      "handle": "feyenoord-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310273741104",
+      "title": "חולצת חוץ פיינורד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227131?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "feyenoord-third-2026-27-adult",
+      "handle": "feyenoord-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310274101552",
+      "title": "חולצה שלישית פיינורד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241407664?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "feyenoord-third-2026-27-kids",
+      "handle": "feyenoord-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310274658608",
+      "title": "חולצה שלישית ומכנס פיינורד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/240325917?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fiorentina-home-2026-27-adult",
+      "handle": "fiorentina-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310310703408",
+      "title": "חולצת בית פיורנטינה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148536?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "flamengo-away-2026-27-adult",
+      "handle": "flamengo-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241530160",
+      "title": "חולצת חוץ פלמנגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/234242163?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "flamengo-home-2026-27-adult",
+      "handle": "flamengo-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241694000",
+      "title": "חולצת בית פלמנגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/226140267?uid=1",
+      "photos": 4,
+      "price": 139
+    },
+    {
+      "id": "flamengo-home-2026-27-kids",
+      "handle": "flamengo-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310241923376",
+      "title": "חולצת בית ומכנס פלמנגו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/226140573?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "flamengo-third-2026-27-adult",
+      "handle": "flamengo-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310242119984",
+      "title": "חולצה שלישית פלמנגו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141429?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "flamengo-third-2026-27-kids",
+      "handle": "flamengo-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310242382128",
+      "title": "חולצה שלישית ומכנס פלמנגו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252219019?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fulham-away-2026-27-adult",
+      "handle": "fulham-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310249984304",
+      "title": "חולצת חוץ פולהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251458342?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fulham-away-2026-27-kids",
+      "handle": "fulham-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310250869040",
+      "title": "חולצת חוץ ומכנס פולהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218986?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fulham-home-2026-27-adult",
+      "handle": "fulham-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310251163952",
+      "title": "חולצת בית פולהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709025?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fulham-home-2026-27-kids",
+      "handle": "fulham-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310251753776",
+      "title": "חולצת בית ומכנס פולהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141481?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "fulham-third-2026-27-adult",
+      "handle": "fulham-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310252376368",
+      "title": "חולצה שלישית פולהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236256?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "fulham-third-2026-27-kids",
+      "handle": "fulham-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310253359408",
+      "title": "חולצה שלישית ומכנס פולהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390403?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "galatasaray-away-2026-27-adult",
+      "handle": "galatasaray-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310311194928",
+      "title": "חולצת חוץ גלאטסראיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148496?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "galatasaray-home-2026-27-adult",
+      "handle": "galatasaray-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310311686448",
+      "title": "חולצת בית גלאטסראיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709107?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "galatasaray-third-2026-27-adult",
+      "handle": "galatasaray-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310312112432",
+      "title": "חולצה שלישית גלאטסראיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236438?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "girona-away-2026-27-adult",
+      "handle": "girona-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310276559152",
+      "title": "חולצת חוץ ג׳ירונה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708867?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "girona-home-2026-27-adult",
+      "handle": "girona-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310277116208",
+      "title": "חולצת בית ג׳ירונה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708863?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "girona-home-2026-27-kids",
+      "handle": "girona-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310277509424",
+      "title": "חולצת בית ומכנס ג׳ירונה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965217?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "hamburger-sv-away-2026-27-kids",
+      "handle": "hamburger-sv-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310239203632",
+      "title": "חולצת חוץ ומכנס המבורג 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254498323?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "hamburger-sv-home-2026-27-kids",
+      "handle": "hamburger-sv-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310239400240",
+      "title": "חולצת בית ומכנס המבורג 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141663?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "hamburger-sv-third-2026-27-adult",
+      "handle": "hamburger-sv-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310239564080",
+      "title": "חולצה שלישית המבורג 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236244?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "hamburger-sv-third-2026-27-kids",
+      "handle": "hamburger-sv-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310239793456",
+      "title": "חולצה שלישית ומכנס המבורג 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227091?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lazio-third-2026-27-adult",
+      "handle": "lazio-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310312636720",
+      "title": "חולצה שלישית לאציו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/256403040?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "leeds-united-away-2026-27-adult",
+      "handle": "leeds-united-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310254342448",
+      "title": "חולצת חוץ לידס יונייטד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241408480?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "leeds-united-away-2026-27-kids",
+      "handle": "leeds-united-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310255817008",
+      "title": "חולצת חוץ ומכנס לידס יונייטד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/243111430?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "leeds-united-home-2026-27-adult",
+      "handle": "leeds-united-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310256767280",
+      "title": "חולצת בית לידס יונייטד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708997?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "leeds-united-home-2026-27-kids",
+      "handle": "leeds-united-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310257291568",
+      "title": "חולצת בית ומכנס לידס יונייטד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148523?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "leeds-united-third-2026-27-adult",
+      "handle": "leeds-united-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310257783088",
+      "title": "חולצה שלישית לידס יונייטד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390373?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "leeds-united-third-2026-27-kids",
+      "handle": "leeds-united-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310258274608",
+      "title": "חולצה שלישית ומכנס לידס יונייטד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253746221?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lens-away-2026-27-adult",
+      "handle": "lens-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310275019056",
+      "title": "חולצת חוץ לאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176249?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lens-away-2026-27-kids",
+      "handle": "lens-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310275576112",
+      "title": "חולצת חוץ ומכנס לאנס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176239?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lens-home-2026-27-adult",
+      "handle": "lens-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310276165936",
+      "title": "חולצת בית לאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176226?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lens-home-2026-27-kids",
+      "handle": "lens-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310276722992",
+      "title": "חולצת בית ומכנס לאנס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242831525?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lens-third-2026-27-adult",
+      "handle": "lens-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310277214512",
+      "title": "חולצה שלישית לאנס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251735203?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lens-third-2026-27-kids",
+      "handle": "lens-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310277706032",
+      "title": "חולצה שלישית ומכנס לאנס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236422?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lille-away-2026-27-kids",
+      "handle": "lille-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310278328624",
+      "title": "חולצת חוץ ומכנס ליל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/256403143?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lille-home-2026-27-adult",
+      "handle": "lille-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310278754608",
+      "title": "חולצת בית ליל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965234?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lille-home-2026-27-kids",
+      "handle": "lille-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310279246128",
+      "title": "חולצת בית ומכנס ליל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708840?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lille-third-2026-27-adult",
+      "handle": "lille-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310279704880",
+      "title": "חולצה שלישית ליל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254498315?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lyon-home-2026-27-adult",
+      "handle": "lyon-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310280163632",
+      "title": "חולצת בית ליון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244061776?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "lyon-home-2026-27-kids",
+      "handle": "lyon-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310280589616",
+      "title": "חולצת בית ומכנס ליון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667834?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "lyon-third-2026-27-adult",
+      "handle": "lyon-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310281113904",
+      "title": "חולצה שלישית ליון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248708943?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "monaco-home-2026-27-adult",
+      "handle": "monaco-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310281900336",
+      "title": "חולצת בית מונאקו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580366?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "newcastle-united-away-2026-27-adult",
+      "handle": "newcastle-united-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310258700592",
+      "title": "חולצת חוץ ניוקאסל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249963901?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "newcastle-united-away-2026-27-kids",
+      "handle": "newcastle-united-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310259093808",
+      "title": "חולצת חוץ ומכנס ניוקאסל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249963907?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "newcastle-united-home-2026-27-adult",
+      "handle": "newcastle-united-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310259519792",
+      "title": "חולצת בית ניוקאסל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176349?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "newcastle-united-home-2026-27-kids",
+      "handle": "newcastle-united-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310260011312",
+      "title": "חולצת בית ומכנס ניוקאסל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245639620?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "newcastle-united-third-2026-27-kids",
+      "handle": "newcastle-united-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310260535600",
+      "title": "חולצה שלישית ומכנס ניוקאסל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251735223?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "nice-away-2026-27-adult",
+      "handle": "nice-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310283407664",
+      "title": "חולצת חוץ ניס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253746210?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "nice-home-2026-27-adult",
+      "handle": "nice-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310284128560",
+      "title": "חולצת בית ניס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253746206?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "nottingham-forest-away-2026-27-adult",
+      "handle": "nottingham-forest-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310260896048",
+      "title": "חולצת חוץ נוטינגהאם פורסט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218851?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "nottingham-forest-away-2026-27-kids",
+      "handle": "nottingham-forest-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310261387568",
+      "title": "חולצת חוץ ומכנס נוטינגהאם פורסט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218980?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "nottingham-forest-home-2026-27-adult",
+      "handle": "nottingham-forest-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310261911856",
+      "title": "חולצת בית נוטינגהאם פורסט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227275?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "nottingham-forest-home-2026-27-kids",
+      "handle": "nottingham-forest-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310262370608",
+      "title": "חולצת בית ומכנס נוטינגהאם פורסט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709093?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "nottingham-forest-third-2026-27-adult",
+      "handle": "nottingham-forest-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310262763824",
+      "title": "חולצה שלישית נוטינגהאם פורסט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049465?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "nottingham-forest-third-2026-27-kids",
+      "handle": "nottingham-forest-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310263189808",
+      "title": "חולצה שלישית ומכנס נוטינגהאם פורסט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/256403142?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "olympique-marseille-away-2026-27-adult",
+      "handle": "olympique-marseille-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310284882224",
+      "title": "חולצת חוץ מארסיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899436?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "olympique-marseille-away-2026-27-kids",
+      "handle": "olympique-marseille-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310285766960",
+      "title": "חולצת חוץ ומכנס מארסיי 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390399?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "olympique-marseille-home-2026-27-adult",
+      "handle": "olympique-marseille-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310286487856",
+      "title": "חולצת בית מארסיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241407744?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "olympique-marseille-home-2026-27-kids",
+      "handle": "olympique-marseille-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310287405360",
+      "title": "חולצת בית ומכנס מארסיי 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218890?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "olympique-marseille-third-2026-27-adult",
+      "handle": "olympique-marseille-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310288027952",
+      "title": "חולצה שלישית מארסיי 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236502?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "palmeiras-away-2026-27-adult",
+      "handle": "palmeiras-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310242480432",
+      "title": "חולצת חוץ פלמייראס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/223680041?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "palmeiras-away-2026-27-kids",
+      "handle": "palmeiras-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310242677040",
+      "title": "חולצת חוץ ומכנס פלמייראס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/226140198?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "palmeiras-home-2026-27-adult",
+      "handle": "palmeiras-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310242775344",
+      "title": "חולצת בית פלמייראס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/223680039?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "palmeiras-home-2026-27-kids",
+      "handle": "palmeiras-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310242873648",
+      "title": "חולצת בית ומכנס פלמייראס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/224580091?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "palmeiras-third-2026-27-adult",
+      "handle": "palmeiras-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310242906416",
+      "title": "חולצה שלישית פלמייראס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390364?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "palmeiras-third-2026-27-kids",
+      "handle": "palmeiras-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310242971952",
+      "title": "חולצה שלישית ומכנס פלמייראס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227290?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "porto-home-2026-27-adult",
+      "handle": "porto-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310313226544",
+      "title": "חולצת בית פורטו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/240325698?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "porto-home-2026-27-kids",
+      "handle": "porto-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310313750832",
+      "title": "חולצת בית ומכנס פורטו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/241408401?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "porto-third-2026-27-adult",
+      "handle": "porto-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310314275120",
+      "title": "חולצה שלישית פורטו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708770?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "porto-third-2026-27-kids",
+      "handle": "porto-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310314963248",
+      "title": "חולצה שלישית ומכנס פורטו 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236228?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "psv-away-2026-27-adult",
+      "handle": "psv-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310288781616",
+      "title": "חולצת חוץ פ.ס.וו איינדהובן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245639635?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "psv-third-2026-27-adult",
+      "handle": "psv-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310289568048",
+      "title": "חולצה שלישית פ.ס.וו איינדהובן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965236?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "rangers-away-2026-27-adult",
+      "handle": "rangers-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310316273968",
+      "title": "חולצת חוץ ריינג׳רס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/242008794?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "rangers-away-2026-27-kids",
+      "handle": "rangers-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310316929328",
+      "title": "חולצת חוץ ומכנס ריינג׳רס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244061883?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "rangers-home-2026-27-adult",
+      "handle": "rangers-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310317420848",
+      "title": "חולצת בית ריינג׳רס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899364?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "rangers-home-2026-27-kids",
+      "handle": "rangers-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310317945136",
+      "title": "חולצת בית ומכנס ריינג׳רס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246189530?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "rangers-third-2026-27-adult",
+      "handle": "rangers-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310318534960",
+      "title": "חולצה שלישית ריינג׳רס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708759?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "rangers-third-2026-27-kids",
+      "handle": "rangers-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310319124784",
+      "title": "חולצה שלישית ומכנס ריינג׳רס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965313?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "rb-leipzig-away-2026-27-adult",
+      "handle": "rb-leipzig-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310239990064",
+      "title": "חולצת חוץ ר.ב. לייפציג 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253746216?uid=1",
+      "photos": 1,
+      "price": 139
+    },
+    {
+      "id": "rb-leipzig-home-2026-27-adult",
+      "handle": "rb-leipzig-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240121136",
+      "title": "חולצת בית ר.ב. לייפציג 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/226140307?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "rb-leipzig-home-2026-27-kids",
+      "handle": "rb-leipzig-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310240284976",
+      "title": "חולצת בית ומכנס ר.ב. לייפציג 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176254?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "real-betis-away-2026-27-adult",
+      "handle": "real-betis-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310278000944",
+      "title": "חולצת חוץ ריאל בטיס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236345?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "real-betis-home-2026-27-adult",
+      "handle": "real-betis-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310278525232",
+      "title": "חולצת בית ריאל בטיס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/240059772?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "real-betis-home-2026-27-kids",
+      "handle": "real-betis-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310278983984",
+      "title": "חולצת בית ומכנס ריאל בטיס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244061874?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "real-betis-third-2026-27-adult",
+      "handle": "real-betis-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310279508272",
+      "title": "חולצה שלישית ריאל בטיס 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709060?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "real-betis-third-2026-27-kids",
+      "handle": "real-betis-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310280032560",
+      "title": "חולצה שלישית ומכנס ריאל בטיס 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218880?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "real-sociedad-away-2026-27-adult",
+      "handle": "real-sociedad-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310280491312",
+      "title": "חולצת חוץ ריאל סוסיאדד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/255227059?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "real-sociedad-away-2026-27-kids",
+      "handle": "real-sociedad-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310281212208",
+      "title": "חולצת חוץ ומכנס ריאל סוסיאדד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709011?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "real-sociedad-home-2026-27-adult",
+      "handle": "real-sociedad-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310281965872",
+      "title": "חולצת בית ריאל סוסיאדד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899431?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "real-sociedad-home-2026-27-kids",
+      "handle": "real-sociedad-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310283178288",
+      "title": "חולצת בית ומכנס ריאל סוסיאדד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709088?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "real-sociedad-third-2026-27-adult",
+      "handle": "real-sociedad-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310284095792",
+      "title": "חולצה שלישית ריאל סוסיאדד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667843?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "river-plate-away-2026-27-adult",
+      "handle": "river-plate-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310243004720",
+      "title": "חולצת חוץ ריבר פלייט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141527?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "river-plate-home-2026-27-kids",
+      "handle": "river-plate-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310243070256",
+      "title": "חולצת בית ומכנס ריבר פלייט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245176253?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "river-plate-third-2026-27-adult",
+      "handle": "river-plate-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310243266864",
+      "title": "חולצה שלישית ריבר פלייט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/239708882?uid=1",
+      "photos": 4,
+      "price": 139
+    },
+    {
+      "id": "sevilla-home-2026-27-adult",
+      "handle": "sevilla-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310284914992",
+      "title": "חולצת בית סביליה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708739?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sevilla-home-2026-27-kids",
+      "handle": "sevilla-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310285832496",
+      "title": "חולצת בית ומכנס סביליה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247970177?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "sevilla-third-2026-27-adult",
+      "handle": "sevilla-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310286553392",
+      "title": "חולצה שלישית סביליה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667764?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sporting-cp-home-2026-27-adult",
+      "handle": "sporting-cp-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310319649072",
+      "title": "חולצת בית ספורטינג ליסבון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246708645?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sporting-cp-home-2026-27-kids",
+      "handle": "sporting-cp-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310320271664",
+      "title": "חולצת בית ומכנס ספורטינג ליסבון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580500?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "sporting-cp-third-2026-27-adult",
+      "handle": "sporting-cp-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310320730416",
+      "title": "חולצה שלישית ספורטינג ליסבון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218865?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sunderland-away-2026-27-adult",
+      "handle": "sunderland-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310264729904",
+      "title": "חולצת חוץ סנדרלנד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148450?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sunderland-away-2026-27-kids",
+      "handle": "sunderland-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310265286960",
+      "title": "חולצת חוץ ומכנס סנדרלנד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249148520?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "sunderland-home-2026-27-adult",
+      "handle": "sunderland-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310265680176",
+      "title": "חולצת בית סנדרלנד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580548?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sunderland-home-2026-27-kids",
+      "handle": "sunderland-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310266204464",
+      "title": "חולצת בית ומכנס סנדרלנד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251458329?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "sunderland-third-2026-27-adult",
+      "handle": "sunderland-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310266499376",
+      "title": "חולצה שלישית סנדרלנד 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141512?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "sunderland-third-2026-27-kids",
+      "handle": "sunderland-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310267056432",
+      "title": "חולצה שלישית ומכנס סנדרלנד 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236222?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "torino-away-2026-27-adult",
+      "handle": "torino-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310321451312",
+      "title": "חולצת חוץ טורינו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254049614?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "torino-home-2026-27-adult",
+      "handle": "torino-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310321975600",
+      "title": "חולצת בית טורינו 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218770?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "valencia-away-2026-27-adult",
+      "handle": "valencia-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310287241520",
+      "title": "חולצת חוץ ולנסיה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236514?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "valencia-away-2026-27-kids",
+      "handle": "valencia-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310288093488",
+      "title": "חולצת חוץ ומכנס ולנסיה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390388?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "valencia-home-2026-27-adult",
+      "handle": "valencia-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310288847152",
+      "title": "חולצת בית ולנסיה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/237578776?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "valencia-home-2026-27-kids",
+      "handle": "valencia-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310289764656",
+      "title": "חולצת בית ומכנס ולנסיה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667736?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "valencia-third-2026-27-adult",
+      "handle": "valencia-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310290452784",
+      "title": "חולצה שלישית ולנסיה 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247667719?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "valencia-third-2026-27-kids",
+      "handle": "valencia-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310291108144",
+      "title": "חולצה שלישית ומכנס ולנסיה 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218873?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "vfb-stuttgart-away-2026-27-adult",
+      "handle": "vfb-stuttgart-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240448816",
+      "title": "חולצת חוץ שטוטגרט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/254498252?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "vfb-stuttgart-home-2026-27-adult",
+      "handle": "vfb-stuttgart-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310240612656",
+      "title": "חולצת בית שטוטגרט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965182?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "vfb-stuttgart-home-2026-27-kids",
+      "handle": "vfb-stuttgart-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310240776496",
+      "title": "חולצת בית ומכנס שטוטגרט 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/249580488?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "vfb-stuttgart-third-2026-27-adult",
+      "handle": "vfb-stuttgart-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241005872",
+      "title": "חולצה שלישית שטוטגרט 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236320?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "villarreal-away-2026-27-kids",
+      "handle": "villarreal-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310291730736",
+      "title": "חולצת חוץ ומכנס ויאריאל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218808?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "villarreal-home-2026-27-adult",
+      "handle": "villarreal-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310292156720",
+      "title": "חולצת בית ויאריאל 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965285?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "villarreal-home-2026-27-kids",
+      "handle": "villarreal-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310292582704",
+      "title": "חולצת בית ומכנס ויאריאל 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246189556?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "werder-bremen-away-2026-27-adult",
+      "handle": "werder-bremen-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241136944",
+      "title": "חולצת חוץ ורדר ברמן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252535950?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "werder-bremen-away-2026-27-kids",
+      "handle": "werder-bremen-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310241399088",
+      "title": "חולצת חוץ ומכנס ורדר ברמן 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218869?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "werder-bremen-home-2026-27-adult",
+      "handle": "werder-bremen-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241595696",
+      "title": "חולצת בית ורדר ברמן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141587?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "werder-bremen-home-2026-27-kids",
+      "handle": "werder-bremen-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310241792304",
+      "title": "חולצת בית ומכנס ורדר ברמן 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/248709083?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "werder-bremen-third-2026-27-adult",
+      "handle": "werder-bremen-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310241988912",
+      "title": "חולצה שלישית ורדר ברמן 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/246965180?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "werder-bremen-third-2026-27-kids",
+      "handle": "werder-bremen-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310242251056",
+      "title": "חולצה שלישית ומכנס ורדר ברמן 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141461?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "west-ham-united-away-2026-27-adult",
+      "handle": "west-ham-united-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310267547952",
+      "title": "חולצת חוץ ווסטהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/251141719?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "west-ham-united-away-2026-27-kids",
+      "handle": "west-ham-united-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310268072240",
+      "title": "חולצת חוץ ומכנס ווסטהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/247970171?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "west-ham-united-home-2026-27-adult",
+      "handle": "west-ham-united-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310268596528",
+      "title": "חולצת בית ווסטהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899424?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "west-ham-united-home-2026-27-kids",
+      "handle": "west-ham-united-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310269153584",
+      "title": "חולצת בית ומכנס ווסטהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/245899454?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "west-ham-united-third-2026-27-adult",
+      "handle": "west-ham-united-third-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310269546800",
+      "title": "חולצה שלישית ווסטהאם 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236296?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "west-ham-united-third-2026-27-kids",
+      "handle": "west-ham-united-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310270267696",
+      "title": "חולצה שלישית ומכנס ווסטהאם 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253390383?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "wolverhampton-wanderers-away-2026-27-adult",
+      "handle": "wolverhampton-wanderers-away-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310270759216",
+      "title": "חולצת חוץ וולברהמפטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236289?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "wolverhampton-wanderers-away-2026-27-kids",
+      "handle": "wolverhampton-wanderers-away-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310271316272",
+      "title": "חולצת חוץ ומכנס וולברהמפטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/253236558?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "wolverhampton-wanderers-home-2026-27-adult",
+      "handle": "wolverhampton-wanderers-home-jersey-2026-27",
+      "product_id": "gid://shopify/Product/15310271775024",
+      "title": "חולצת בית וולברהמפטון 26/27",
+      "album": "https://jerseyxie.x.yupoo.com/albums/252218839?uid=1",
+      "photos": 2,
+      "price": 139
+    },
+    {
+      "id": "wolverhampton-wanderers-home-2026-27-kids",
+      "handle": "wolverhampton-wanderers-home-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310272430384",
+      "title": "חולצת בית ומכנס וולברהמפטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/244061783?uid=1",
+      "photos": 2,
+      "price": 99
+    },
+    {
+      "id": "wolverhampton-wanderers-third-2026-27-kids",
+      "handle": "wolverhampton-wanderers-third-kit-2026-27-kids",
+      "product_id": "gid://shopify/Product/15310272954672",
+      "title": "חולצה שלישית ומכנס וולברהמפטון 26/27 – ילדים",
+      "album": "https://jerseyxie.x.yupoo.com/albums/256403141?uid=1",
+      "photos": 2,
+      "price": 99
+    }
+  ],
+  "left_out": [
+    {
+      "id": "bayer-leverkusen-third-2026-27-adult",
+      "reason": "the albums show a leaked navy design that was not released"
+    },
+    {
+      "id": "hamburger-sv-home-2026-27-adult",
+      "reason": "the album is plain white, without the 26/27 print and trim"
+    },
+    {
+      "id": "hamburger-sv-away-2026-27-adult",
+      "reason": "the albums show an older red HSV shirt"
+    },
+    {
+      "id": "vfb-stuttgart-away-2026-27-kids",
+      "reason": "the album shows another shirt (dark red floral)"
+    },
+    {
+      "id": "feyenoord-home-2026-27-adult",
+      "reason": "the only album is a kids set"
+    },
+    {
+      "id": "psv-home-2026-27-adult",
+      "reason": "the only album shows the third design as a kids set"
+    },
+    {
+      "id": "espanyol-third-2026-27-kids",
+      "reason": "the album shows the away kit"
+    },
+    {
+      "id": "sevilla-away-2026-27-adult",
+      "reason": "left out: the same shirt is filed as a special edition, so it may not be the away kit"
+    },
+    {
+      "id": "sevilla-away-2026-27-kids",
+      "reason": "the album shows the home kids kit"
+    },
+    {
+      "id": "lyon-away-2026-27-adult",
+      "reason": "the adult albums show a pre-release design; the released one is only a kids set"
+    },
+    {
+      "id": "brentford-away-2026-27-adult",
+      "reason": "left out: two different designs are filed as the away kit"
+    },
+    {
+      "id": "brentford-third-2026-27-adult",
+      "reason": "the album is the 2025/26 third kit"
+    },
+    {
+      "id": "burnley-home-2026-27-adult",
+      "reason": "the album shows the design in raspberry pink, not claret"
+    },
+    {
+      "id": "crystal-palace-home-2026-27-adult",
+      "reason": "the albums show a white heritage shirt, not the home kit"
+    },
+    {
+      "id": "lazio-away-2026-27-adult",
+      "reason": "the only album shows a set that looks like kids size"
+    }
+  ]
+}

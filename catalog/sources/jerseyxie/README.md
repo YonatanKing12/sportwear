@@ -202,3 +202,41 @@ Supplier traps seen in wave 1 (check every product's photos):
 - Baby onesies in adult albums (Barcelona, Spain), kids sets in adult albums (Manchester United).
 - Long-sleeve versions under short-sleeve titles (Argentina kids), and angled or partial photos.
 - The same kids product posted several times (merged in `wave1.json`).
+
+## Wave 2 (2026-09-27)
+
+The owner gave full approval to bring in more products at the same prices ("יש לך אישור מלא ואותו מחיר עד
+היום") and confirmed this wave in the conversation: `wave2.json`, 244 rows of 26/27 kits of 60 clubs, adults
+₪139 and kids sets ₪99, ACTIVE and on the Online Store after our own check.
+
+- **Result:** 229 products, 137 adult jerseys and 92 kids sets. The log `catalog/published/wave2-2026-09-27.json`
+  lists every product and the 15 rows left out, each with its reason. The albums showed another season's kit, a
+  leaked or pre-release design, a kids set in an adult album, or two designs under one name.
+- **Store:** each product was created as DRAFT with its own `productSet` call, by parallel agents in seven
+  groups, because the connector refuses `bulkOperationRunMutation`. Every product was read back, then set ACTIVE
+  (`bulk-update-product-status`) and published (`publicationUpdate`), 50 per call. Stage at most 40 images per
+  `stagedUploadsCreate` call: a bigger result is too large to come back inline.
+- **Around the products:**
+  - English and Arabic are registered for every product.
+  - Adult and kids versions are linked, also to older store shirts of the same kit
+    (`catalog/published/counterparts-2026-09-27.json`).
+  - 59 new team collections, each linked in the menu under its league.
+  - New filter names.
+  - The "other leagues" collection now also takes the Dutch, Scottish, Turkish and Argentine leagues
+    (`catalog/store-setup.json`).
+- **Taxonomy:** 52 clubs and 4 leagues were added (`taxonomy.json`, `classification.json`). SKU team codes are
+  three capital letters (Leverkusen is `LEV`).
+
+Supplier traps seen in wave 2:
+
+- Albums filed under one kit that show another: Espanyol third kids shows the away kit, Sevilla away kids the home
+  kit, Stuttgart away kids another shirt.
+- Other seasons and unreleased designs under 26/27 titles:
+  - Brentford third is the 2025/26 kit; the HSV away albums show an older shirt.
+  - Leverkusen third is a leaked design; Lyon away adult is a pre-release one.
+  - Burnley home comes in pink instead of claret.
+- Kids sets often carry another front sponsor than the adult shirt, or none, so check a kids product against its
+  own album.
+- The studio renderer sometimes invents or misspells sponsor text or moves the stripes on shorts. Compare every
+  studio photo with the supplier's and re-render with `note_front` / `note_back`.
+- Shopify merges tags that differ only by accents into one handle ("besiktas" / "beşiktaş"), so keep one spelling.
