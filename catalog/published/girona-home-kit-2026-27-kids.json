@@ -1,0 +1,173 @@
+{
+  "handle": "girona-home-kit-2026-27-kids",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Kit",
+  "audience": "kids",
+  "size_chart": "jerseyxie-football-kids-set",
+  "team": {
+    "slug": "girona",
+    "code": "GIR",
+    "he": "ג׳ירונה",
+    "en": "Girona",
+    "ar": "جيرونا"
+  },
+  "leagues": ["la-liga"],
+  "kit": "home",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית ומכנס ג׳ירונה 26/27 – ילדים",
+  "description_html_he": "<p>חולצת הבית של ג׳ירונה לילדים לעונת 26/27, בסט עם המכנס התואם.</p><ul><li>סט של חולצה ומכנס, גרסת אוהד</li><li>מידות 16 עד 28 (גיל 2 עד 13). טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית ומכנס ג׳ירונה 26/27 – ילדים | SportWear",
+    "description_he": "חולצת הבית והמכנס של ג׳ירונה לילדים לעונת 26/27, במידות 16 עד 28."
+  },
+  "variants": [
+    {
+      "size": "16",
+      "source_size_label": "16",
+      "sku": "SW-FK-GIR-H-2627-K-16",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "18",
+      "source_size_label": "18",
+      "sku": "SW-FK-GIR-H-2627-K-18",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "20",
+      "source_size_label": "20",
+      "sku": "SW-FK-GIR-H-2627-K-20",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "22",
+      "source_size_label": "22",
+      "sku": "SW-FK-GIR-H-2627-K-22",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "24",
+      "source_size_label": "24",
+      "sku": "SW-FK-GIR-H-2627-K-24",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "26",
+      "source_size_label": "26",
+      "sku": "SW-FK-GIR-H-2627-K-26",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "28",
+      "source_size_label": "28",
+      "sku": "SW-FK-GIR-H-2627-K-28",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p3/studio/norm/girona-home-kit-2026-27-kids.png",
+      "alt_he": "חולצת בית ומכנס ג׳ירונה 26/27 – ילדים – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p3/studio/norm/girona-home-kit-2026-27-kids__back.png",
+      "alt_he": "חולצת בית ומכנס ג׳ירונה 26/27 – ילדים – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Girona Home Kit 26/27 – Kids",
+      "description_html": "<p>The Girona home kit for kids (26/27 season): the jersey with its matching shorts.</p><ul><li>A set of a jersey and shorts, fan version</li><li>Sizes 16 to 28 (ages 2 to 13); the size chart is on this page</li></ul>",
+      "seo_title": "Girona Home Kit 26/27 – Kids | SportWear",
+      "seo_description": "The Girona home kit for kids (26/27 season): jersey and shorts, sizes 16 to 28."
+    },
+    "ar": {
+      "title": "طقم جيرونا الأساسي 26/27 – أطفال",
+      "description_html": "<p>الطقم الأساسي لنادي جيرونا للأطفال لموسم 26/27: القميص مع الشورت المطابق.</p><ul><li>طقم من قميص وشورت، نسخة المشجعين</li><li>المقاسات من 16 إلى 28 (من عمر 2 إلى 13 سنة)، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "طقم جيرونا الأساسي 26/27 – أطفال | SportWear",
+      "seo_description": "الطقم الأساسي لنادي جيرونا للأطفال لموسم 26/27: قميص وشورت، بمقاسات من 16 إلى 28."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/246965217?uid=1",
+    "fetched_at": "2026-09-27T14:50:23Z",
+    "original_title": "26-27 Gerona Home Kids Cheap Soccer Jerseys and shorts Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:girona",
+    "league:la-liga",
+    "kit:home",
+    "audience:kids",
+    "new",
+    "source:jerseyxie",
+    "album:246965217",
+    "season:2026-27",
+    "סט כדורגל",
+    "סט ילדים",
+    "kit",
+    "football kit",
+    "kids kit",
+    "طقم",
+    "طقم كرة قدم",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "girona",
+    "جيرونا",
+    "la liga",
+    "الدوري الإسباني"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310277509424",
+    "variant_ids": {
+      "16": "gid://shopify/ProductVariant/67860247970096",
+      "18": "gid://shopify/ProductVariant/67860248002864",
+      "20": "gid://shopify/ProductVariant/67860248035632",
+      "22": "gid://shopify/ProductVariant/67860248068400",
+      "24": "gid://shopify/ProductVariant/67860248101168",
+      "26": "gid://shopify/ProductVariant/67860248133936",
+      "28": "gid://shopify/ProductVariant/67860248166704"
+    },
+    "created_at": "2026-09-27T15:02:25Z"
+  }
+}
