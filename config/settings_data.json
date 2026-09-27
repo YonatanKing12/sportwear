@@ -88,7 +88,7 @@
     "free_shipping_threshold": 0,
     "logo_style": "mark",
     "favicon": "shopify://shop_images/sw-favicon.png",
-    "cart_empty_image": "shopify://shop_images/sw-empty-cart.jpg",
+    "cart_empty_image": "shopify://shop_images/sw-look-napoli-bench-by-the-court.jpg",
     "cart_empty_collections": [
       "football",
       "basketball",

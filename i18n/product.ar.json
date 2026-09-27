@@ -20,7 +20,8 @@
       "show_image": "عرض الصورة {{ index }} من {{ count }}",
       "alt_fabric": "(صورة مقرّبة للقماش والطباعة)",
       "alt_closeup": "(صورة مقرّبة)",
-      "alt_back": "(من الخلف)"
+      "alt_back": "(من الخلف)",
+      "alt_lifestyle": "(صورة من الحياة اليومية)"
     },
     "price": {
       "tax_included": "شامل ضريبة القيمة المضافة",
@@ -66,8 +67,8 @@
       "secure_checkout": "دفع آمن"
     },
     "shipping_note": {
-      "delivery": "توصيل إلى البيت خلال 10\u00a0أيام\u00a0عمل",
-      "delivery_short": "توصيل خلال 10\u00a0أيام\u00a0عمل",
+      "delivery": "توصيل إلى البيت خلال 10 أيام عمل",
+      "delivery_short": "توصيل خلال 10 أيام عمل",
       "free_from": "شحن مجاني من {{ amount }}",
       "free_all": "شحن مجاني على كل طلب"
     },

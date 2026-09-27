@@ -1061,7 +1061,7 @@
       }
     },
     "lifestyle": {
-      "name": "Lifestyle gallery",
+      "name": "Shop the look",
       "settings": {
         "show_eyebrow": {
           "label": "Show small label"
@@ -1079,6 +1079,13 @@
           "settings": {
             "caption": {
               "label": "Caption (optional)"
+            },
+            "product": {
+              "label": "Product in the photo",
+              "info": "Shows a tag with the product, its price and a link, and the whole photo leads to it."
+            },
+            "link": {
+              "info": "Where the photo leads when no product is chosen."
             }
           }
         }

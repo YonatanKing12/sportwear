@@ -20,7 +20,8 @@
       "show_image": "הצגת תמונה {{ index }} מתוך {{ count }}",
       "alt_fabric": "(תקריב של הבד וההדפס)",
       "alt_closeup": "(תקריב)",
-      "alt_back": "(גב)"
+      "alt_back": "(גב)",
+      "alt_lifestyle": "(צילום אווירה)"
     },
     "price": {
       "tax_included": "כולל מע״מ",
@@ -64,8 +65,8 @@
       "secure_checkout": "תשלום מאובטח"
     },
     "shipping_note": {
-      "delivery": "משלוח עד הבית תוך 10\u00a0ימי\u00a0עסקים",
-      "delivery_short": "עד 10\u00a0ימי\u00a0עסקים",
+      "delivery": "משלוח עד הבית תוך 10 ימי עסקים",
+      "delivery_short": "עד 10 ימי עסקים",
       "free_from": "משלוח חינם מ-{{ amount }}",
       "free_all": "משלוח חינם בכל הזמנה"
     },

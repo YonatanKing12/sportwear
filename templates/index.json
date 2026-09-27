@@ -252,32 +252,81 @@
     "lifestyle": {
       "type": "lifestyle-gallery",
       "blocks": {
-        "duo": {
+        "look_sporting": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-life-duo.jpg"
+            "image": "shopify://shop_images/sw-look-sporting-herzliya-promenade-45.jpg",
+            "product": "sporting-cp-home-jersey-2026-27"
           }
         },
-        "streetball": {
+        "look_bulls": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-life-streetball.jpg"
+            "image": "shopify://shop_images/sw-look-bulls-court-kfar-saba-45.jpg",
+            "product": "sw-jerseys-96896163"
           }
         },
-        "japan": {
+        "look_napoli": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-life-japan.jpg"
+            "image": "shopify://shop_images/sw-look-napoli-seaside-45.jpg",
+            "product": "sw-football-250582309"
           }
         },
-        "family": {
+        "look_roma": {
           "type": "photo",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-life-family.jpg"
+            "image": "shopify://shop_images/sw-look-roma-bakery-coffee-45.jpg",
+            "product": "sw-football-252374837"
+          }
+        },
+        "look_hornets": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-hornets-shorts-skatepark-45.jpg",
+            "product": "sw-shorts-162704069"
+          }
+        },
+        "look_knicks": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-knicks-court-smile-45.jpg",
+            "product": "sw-jerseys-244984876"
+          }
+        },
+        "look_torino": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-torino-yarkon-park-45.jpg",
+            "product": "torino-home-jersey-2026-27"
+          }
+        },
+        "look_celtics": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-celtics-ramat-gan-45.jpg",
+            "product": "sw-jerseys-97381444"
+          }
+        },
+        "look_porto": {
+          "type": "photo",
+          "settings": {
+            "image": "shopify://shop_images/sw-look-porto-haifa-terrace-45.jpg",
+            "product": "porto-home-jersey-2026-27"
           }
         }
       },
-      "block_order": ["duo", "streetball", "japan", "family"],
+      "block_order": [
+        "look_sporting",
+        "look_bulls",
+        "look_napoli",
+        "look_roma",
+        "look_hornets",
+        "look_knicks",
+        "look_torino",
+        "look_celtics",
+        "look_porto"
+      ],
       "settings": {
         "color_scheme": "scheme-soft",
         "show_eyebrow": true,

@@ -667,7 +667,7 @@
     "lifestyle": {
       "eyebrow": "Lookbook",
       "heading": "Fan style",
-      "text": "Jerseys that work on the pitch and on the street",
+      "text": "This is how our shirts look out there: on the street, at the beach, on the neighbourhood court. Like a look? Tap the shirt in the photo.",
       "button_label": "Shop all jerseys"
     },
     "hero_slideshow": {
@@ -754,7 +754,8 @@
       "show_image": "Show image {{ index }} of {{ count }}",
       "alt_fabric": "(close-up of the fabric and print)",
       "alt_closeup": "(close-up)",
-      "alt_back": "(back)"
+      "alt_back": "(back)",
+      "alt_lifestyle": "(lifestyle photo)"
     },
     "price": {
       "tax_included": "Incl. VAT",

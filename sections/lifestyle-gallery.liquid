@@ -1,7 +1,11 @@
 {%- comment -%}
-  Lifestyle gallery (home): a brand moment with a short pitch and up to four atmosphere photos, a
-  2 × 2 grid on phones and one staggered row from 750px. The photos are decorative (empty alt): they
-  set the mood and do not describe products for sale.
+  Lifestyle gallery ("Fan style" on the home page): photos of the shirts worn out there, each one
+  shoppable. A row of tall photos that scrolls sideways (arrows from tablets up, <sw-carousel> in
+  assets/product-carousel.js). A photo block can name the product it shows: a tag on the photo then
+  shows that product's thumbnail, title and price and links to it, and the whole photo leads there
+  too (the photo link is hidden from screen readers and the keyboard, so each photo has one link).
+  Without a product the photo is only a picture, with its optional caption. The photos themselves
+  are decorative (empty alt): the tag names what is for sale.
 {%- endcomment -%}
 {%- liquid
   assign scheme = section.settings.color_scheme
@@ -34,45 +38,109 @@
     endif
   endfor
 
-  # Half the page on phones, a quarter of it from 750px.
-  assign photo_sizes = '(min-width: 990px) calc((min(100vw, 1440px) - 136px) / 4), (min-width: 750px) calc((100vw - 112px) / 4), calc((100vw - 44px) / 2)'
+  assign list_id = 'LifestyleTrack-' | append: section.id
 -%}
 
 <div
   class="section lifestyle color-{{ scheme.id }}"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
-    <div class="lifestyle__header">
-      <div class="lifestyle__intro">
-        {%- if section.settings.show_eyebrow -%}
-          <p class="lifestyle__eyebrow eyebrow">{{ eyebrow }}</p>
-        {%- endif -%}
-        <h2 class="lifestyle__heading display-m">{{ heading }}</h2>
-        <p class="lifestyle__text">{{ text }}</p>
+  <sw-carousel class="lifestyle__carousel">
+    <div class="page-width">
+      <div class="lifestyle__header">
+        <div class="lifestyle__intro">
+          {%- if section.settings.show_eyebrow -%}
+            <p class="lifestyle__eyebrow eyebrow">{{ eyebrow }}</p>
+          {%- endif -%}
+          <h2 class="lifestyle__heading display-m">{{ heading }}</h2>
+          <p class="lifestyle__text">{{ text }}</p>
+        </div>
+        <div class="lifestyle__tools">
+          {%- if section.settings.show_button -%}
+            <a class="button button--primary lifestyle__button" href="{{ button_link }}">{{ button_label }}</a>
+          {%- endif -%}
+          {%- if photo_count > 1 -%}
+            <div class="lifestyle__arrows js-only">
+              <button
+                type="button"
+                class="lifestyle__arrow"
+                aria-controls="{{ list_id }}"
+                aria-disabled="true"
+                data-carousel-prev
+              >
+                {%- render 'icon', name: 'chevron-back', size: 20 -%}
+                <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+              </button>
+              <button
+                type="button"
+                class="lifestyle__arrow"
+                aria-controls="{{ list_id }}"
+                aria-disabled="false"
+                data-carousel-next
+              >
+                {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+                <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+              </button>
+            </div>
+          {%- endif -%}
+        </div>
       </div>
-      {%- if section.settings.show_button -%}
-        <a class="button button--primary lifestyle__button" href="{{ button_link }}">{{ button_label }}</a>
-      {%- endif -%}
     </div>
 
     {%- if photo_count > 0 -%}
-      <ul class="lifestyle__list" role="list" style="--photos: {{ photo_count | at_most: 4 }};">
-        {%- for block in section.blocks limit: 4 -%}
+      <ul id="{{ list_id }}" class="lifestyle__track" role="list" data-carousel-track>
+        {%- for block in section.blocks -%}
           {%- if block.settings.image != blank or request.design_mode -%}
+            {%- liquid
+              assign look_product = block.settings.product
+              assign look_url = block.settings.link
+              if look_product != blank
+                assign look_url = look_product.url
+              endif
+            -%}
             <li class="lifestyle__item" {{ block.shopify_attributes }}>
-              <figure class="lifestyle__figure">
+              <figure class="lifestyle__card">
                 <div class="lifestyle__media">
-                  {%- if block.settings.image != blank -%}
-                    {%- render 'image',
-                      image: block.settings.image,
-                      sizes: photo_sizes,
-                      widths: '360, 540, 720, 900',
-                      alt: '',
-                      class: 'lifestyle__image'
-                    -%}
+                  {%- capture look_picture -%}
+                    {%- if block.settings.image != blank -%}
+                      {%- render 'image',
+                        image: block.settings.image,
+                        sizes: '(min-width: 1200px) 300px, (min-width: 750px) 280px, 74vw',
+                        widths: '300, 450, 600, 800, 960',
+                        alt: '',
+                        class: 'lifestyle__image'
+                      -%}
+                    {%- else -%}
+                      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg lifestyle__image' }}
+                    {%- endif -%}
+                  {%- endcapture -%}
+                  {%- if look_url != blank -%}
+                    <a class="lifestyle__photo-link" href="{{ look_url }}" tabindex="-1" aria-hidden="true">
+                      {{- look_picture -}}
+                    </a>
                   {%- else -%}
-                    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg lifestyle__image' }}
+                    {{ look_picture }}
+                  {%- endif -%}
+
+                  {%- if look_product != blank -%}
+                    <a class="lifestyle__tag" href="{{ look_product.url }}">
+                      <span class="lifestyle__tag-media media-tile">
+                        {%- render 'image',
+                          image: look_product.featured_media.preview_image,
+                          sizes: '56px',
+                          widths: '56, 112, 168',
+                          alt: '',
+                          class: 'lifestyle__tag-image'
+                        -%}
+                      </span>
+                      <span class="lifestyle__tag-body">
+                        <span class="lifestyle__tag-title">{{ look_product.title | escape }}</span>
+                        {%- render 'price', product: look_product, class: 'lifestyle__tag-price' -%}
+                      </span>
+                      <span class="lifestyle__tag-arrow" aria-hidden="true">
+                        {%- render 'icon', name: 'arrow-forward', size: 16 -%}
+                      </span>
+                    </a>
                   {%- endif -%}
                 </div>
                 {%- if block.settings.caption != blank -%}
@@ -84,10 +152,15 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
-  </div>
+  </sw-carousel>
 </div>
+<script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
 
 {% stylesheet %}
+  .lifestyle__carousel {
+    display: block;
+  }
+
   .lifestyle__header {
     display: flex;
     flex-wrap: wrap;
@@ -112,47 +185,161 @@
     line-height: 1.5;
   }
 
+  .lifestyle__tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-4);
+  }
+
   .lifestyle__button {
     flex: none;
   }
 
-  .lifestyle__list {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--grid-gap, 12px);
+  /* The row starts where the page content starts and runs to the screen's end edge, like the product
+     rows; on phones the next photo peeks in. */
+  .lifestyle__track {
+    --look-inline: min(74vw, 300px);
+    --looks-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+    display: flex;
+    gap: var(--space-3);
+    margin: 0;
+    padding-block: var(--space-1) var(--space-2);
+    padding-inline: var(--looks-start) var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--looks-start);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     @media screen and (min-width: 750px) {
-      grid-template-columns: repeat(var(--photos, 4), minmax(0, 1fr));
+      --look-inline: 280px;
+      gap: var(--space-4);
+    }
+
+    @media screen and (min-width: 1200px) {
+      --look-inline: 300px;
       gap: var(--space-5);
     }
   }
 
-  /* From 990px every other photo drops a little, for an editorial rhythm. */
-  @media screen and (min-width: 990px) {
-    .lifestyle__list {
-      padding-block-end: var(--space-10);
-    }
-
-    .lifestyle__item:nth-child(even) {
-      translate: 0 var(--space-10);
-    }
+  .lifestyle__item {
+    flex: 0 0 var(--look-inline);
+    scroll-snap-align: start;
   }
 
-  .lifestyle__figure {
+  .lifestyle__card {
     margin: 0;
   }
 
   .lifestyle__media {
+    position: relative;
     overflow: hidden;
     aspect-ratio: 4 / 5;
     border-radius: var(--radius-card);
     background: #16181d;
   }
 
+  .lifestyle__photo-link {
+    display: block;
+    block-size: 100%;
+  }
+
   .lifestyle__image {
+    display: block;
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    transition: scale 600ms var(--ease);
+  }
+
+  .lifestyle__card:hover .lifestyle__image {
+    scale: 1.04;
+  }
+
+  /* The product tag: a light card on the photo with the product, its price and an arrow. */
+  .lifestyle__tag {
+    position: absolute;
+    inset-inline: var(--space-3);
+    inset-block-end: var(--space-3);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2);
+    padding-inline-end: var(--space-3);
+    border-radius: var(--radius-card);
+    background: rgb(255 255 255 / 0.94);
+    color: #0d0e11;
+    text-decoration: none;
+    box-shadow: 0 10px 24px -12px rgb(8 9 11 / 0.6);
+    backdrop-filter: blur(6px);
+    transition:
+      translate var(--duration) var(--ease),
+      box-shadow var(--duration) var(--ease);
+
+    &:hover {
+      translate: 0 -2px;
+      box-shadow: 0 16px 28px -14px rgb(8 9 11 / 0.7);
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+  }
+
+  .lifestyle__tag-media {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    inline-size: 56px;
+    block-size: 56px;
+    overflow: hidden;
+    border-radius: max(2px, calc(var(--radius-card) - 1px));
+  }
+
+  .lifestyle__tag-image {
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: contain;
+  }
+
+  .lifestyle__tag-body {
+    display: grid;
+    flex: 1 1 auto;
+    gap: 2px;
+    min-inline-size: 0;
+  }
+
+  .lifestyle__tag-title {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.3;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .lifestyle__tag-price {
+    font-size: var(--text-sm);
+    font-weight: 700;
+  }
+
+  .lifestyle__tag-arrow {
+    display: inline-grid;
+    flex: 0 0 auto;
+    place-items: center;
+    inline-size: 32px;
+    block-size: 32px;
+    border-radius: 50%;
+    background: #0d0e11;
+    color: var(--color-accent);
   }
 
   .lifestyle__caption {
@@ -160,6 +347,57 @@
     color: var(--color-muted);
     font-size: var(--text-sm);
     font-weight: 600;
+  }
+
+  .lifestyle__arrows {
+    display: none;
+    gap: var(--space-2);
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+
+  .lifestyle__arrow {
+    display: inline-grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-background);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover:not([aria-disabled='true']) {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-background);
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  sw-carousel:not([data-scrollable]) .lifestyle__arrows {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .lifestyle__image,
+    .lifestyle__tag {
+      transition: none;
+    }
+
+    .lifestyle__card:hover .lifestyle__image {
+      scale: none;
+    }
   }
 {% endstylesheet %}
 
@@ -169,7 +407,7 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
-  "max_blocks": 4,
+  "max_blocks": 12,
   "settings": [
     {
       "type": "color_scheme",
@@ -252,6 +490,18 @@
           "type": "image_picker",
           "id": "image",
           "label": "t:settings.image"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.lifestyle.blocks.photo.settings.product.label",
+          "info": "t:sections.lifestyle.blocks.photo.settings.product.info"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:settings.link",
+          "info": "t:sections.lifestyle.blocks.photo.settings.link.info"
         },
         {
           "type": "text",

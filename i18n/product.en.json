@@ -20,7 +20,8 @@
       "show_image": "Show image {{ index }} of {{ count }}",
       "alt_fabric": "(close-up of the fabric and print)",
       "alt_closeup": "(close-up)",
-      "alt_back": "(back)"
+      "alt_back": "(back)",
+      "alt_lifestyle": "(lifestyle photo)"
     },
     "price": {
       "tax_included": "Incl. VAT",
@@ -62,8 +63,8 @@
       "secure_checkout": "Secure checkout"
     },
     "shipping_note": {
-      "delivery": "Delivered within 10\u00a0business\u00a0days",
-      "delivery_short": "Up to 10\u00a0business\u00a0days",
+      "delivery": "Delivered within 10 business days",
+      "delivery_short": "Up to 10 business days",
       "free_from": "Free shipping from {{ amount }}",
       "free_all": "Free shipping on every order"
     },
