@@ -17,6 +17,7 @@
   @param {number} active_count - Number of active filter values (a price range counts once)
   @param {string} clear_url - URL that clears every filter and keeps the sort order
   @param {string} [results_label] - Results count text shown with the active filters (collection page)
+  @param {number} [results_count] - Products in the results, so filters that cannot narrow them hide
   @param {string} [option_style] - 'buttons' (default) or 'checkboxes' for product option filters
   @param {string} [search_terms] - Search terms, kept in the filter form (search page)
   @param {string} [search_types] - Search types, kept in the filter form (search page)
@@ -44,6 +45,7 @@
     action: action,
     filters: filters,
     show_filters: show_filters,
+    results_count: results_count,
     option_style: option_style,
     search_terms: search_terms,
     search_types: search_types

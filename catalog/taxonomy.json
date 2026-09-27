@@ -66,6 +66,14 @@
         "en": "{team.en} Basketball Shorts {season}{kit_suffix.en}",
         "ar": "شورت كرة سلة {team.ar} {season}{kit_suffix.ar}"
       }
+    },
+    "Hoodie": {
+      "code": "HD",
+      "sport": "american-football",
+      "he": "קפוצ׳ון",
+      "en": "Hoodie",
+      "ar": "هودي",
+      "note": "The NFL hoodies imported by the owner (titles such as 'סווטשירט קפוצ׳ון אטלנטה פאלקונס לגברים ירוק זית 2025'). New hoodies need owner approval."
     }
   },
   "title_rules": {

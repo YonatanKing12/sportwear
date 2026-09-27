@@ -7,23 +7,32 @@
     Values without results are disabled unless selected. Long lists show 10 values and a
     "Show more" toggle.
   - price_range filters: two labelled number inputs in the store currency.
-  assets/facets.js submits it on change and moves it into the filter drawer on small screens.
+  Names come from snippets/facet-label.liquid (SportWear's own filters in the shopper's language).
+  SportWear's filters list their values by name, or in the catalog's order for short lists (kit,
+  audience, style, product type); other filters keep Shopify's order. A list filter that cannot narrow
+  the results is left out while nothing in it is selected: no value has products, or every value has
+  all of them (the team filter on a team's page, availability while everything is in stock).
+  The first three groups shown start open. assets/facets.js submits the form on change and moves it
+  into the filter drawer on small screens.
 
   @param {string} section_id - The section id, for unique element ids
   @param {string} form_id - Id of the form element (the sort select points to it)
   @param {string} action - The form action: collection.url or routes.search_url
   @param {filter[]} filters - collection.filters or search.filters
   @param {boolean} show_filters - Render the filter groups (false keeps only the hidden inputs)
+  @param {number} [results_count] - Products in the current results; without it only filters with no products at all are left out
   @param {string} [option_style] - 'buttons' (default) or 'checkboxes' for product option filters
   @param {string} [search_terms] - Search terms, kept as a hidden input (search page)
   @param {string} [search_types] - Comma-separated search types (search page)
 
   @example
-  {% render 'facets-form', section_id: section.id, form_id: form_id, action: collection.url, filters: collection.filters, show_filters: true %}
+  {% render 'facets-form', section_id: section.id, form_id: form_id, action: collection.url, filters: collection.filters, show_filters: true, results_count: collection.products_count %}
 {%- enddoc -%}
 {%- liquid
   assign visible_limit = 10
   assign currency_symbol = cart.currency.symbol
+  assign names = shop.metafields.sportwear.filter_names.value
+  assign shown_groups = 0
 -%}
 <form
   id="{{ form_id }}"
@@ -55,20 +64,43 @@
           assign selected = filter.active_values.size
         endif
 
-        # An option filter is named after the product option ("מידה" in every language unless
-        # translated), so it is shown in the shopper's language (snippets/option-name.liquid).
-        if filter.param_name contains 'filter.v.option.'
-          capture filter_label
-            render 'option-name', name: filter.label
-          endcapture
-        else
-          assign filter_label = filter.label | escape
+        # A list filter earns its place only when choosing one of its values changes the results.
+        assign show_group = true
+        if filter.type != 'price_range' and selected == 0
+          assign narrows = false
+          for value in filter.values
+            if value.count > 0
+              if results_count == blank or value.count < results_count
+                assign narrows = true
+                break
+              endif
+            endif
+          endfor
+          assign show_group = narrows
         endif
+      -%}
+      {%- unless show_group -%}
+        {%- continue -%}
+      {%- endunless -%}
+      {%- liquid
+        assign shown_groups = shown_groups | plus: 1
+
+        # The key of SportWear's own filters in the names dictionary (see snippets/facet-label.liquid).
+        assign filter_key = blank
+        if filter.param_name contains 'filter.p.m.sportwear.'
+          assign filter_key = filter.param_name | remove_first: 'filter.p.m.sportwear.'
+        elsif filter.param_name == 'filter.p.product_type'
+          assign filter_key = 'product_type'
+        endif
+
+        capture filter_label
+          render 'facet-label', filter: filter
+        endcapture
       -%}
       <details
         id="{{ group_id }}"
         class="facets-group"
-        {% if selected > 0 or group_index <= 3 %}
+        {% if selected > 0 or shown_groups <= 3 %}
           open
         {% endif %}
       >
@@ -145,13 +177,38 @@
               assign as_buttons = false
             endif
 
+            # Display order, as "sort key§value index§name" entries: SportWear's filters sort by the
+            # catalog's order when their names have one ("order"), else by name; others keep Shopify's.
+            assign entries = ''
+            for value in filter.values
+              capture value_label
+                render 'facet-label', filter: filter, value: value, names: names
+              endcapture
+              assign sort_key = ''
+              if filter_key != blank
+                assign rank = names[filter_key][value.value].order
+                if rank != blank
+                  assign sort_key = rank | plus: 1000 | append: ''
+                else
+                  assign sort_key = value_label | strip
+                endif
+              endif
+              assign entries = entries | append: sort_key | append: '§' | append: forloop.index0 | append: '§' | append: value_label | append: '¶'
+            endfor
+            assign entries = entries | split: '¶'
+            if filter_key != blank
+              assign entries = entries | sort_natural
+            endif
+
             assign list_id = 'FacetValues-' | append: section_id | append: '-' | append: group_index
             assign collapsible = false
             assign extra_selected = false
-            if as_buttons == false and filter.values.size > visible_limit
+            if as_buttons == false and entries.size > visible_limit
               assign collapsible = true
-              for value in filter.values offset: visible_limit
-                if value.active
+              for entry in entries offset: visible_limit
+                assign parts = entry | split: '§'
+                assign value_index = parts[1] | plus: 0
+                if filter.values[value_index].active
                   assign extra_selected = true
                   break
                 endif
@@ -165,8 +222,12 @@
               class="facets-values{% if as_buttons %} facets-values--buttons{% endif %}{% if collapsible and extra_selected == false %} facets-values--collapsed{% endif %}"
               role="list"
             >
-              {%- for value in filter.values -%}
+              {%- for entry in entries -%}
                 {%- liquid
+                  assign parts = entry | split: '§'
+                  assign value_index = parts[1] | plus: 0
+                  assign value = filter.values[value_index]
+                  assign value_label = parts[2]
                   assign input_id = 'Filter-' | append: section_id | append: '-' | append: group_index | append: '-' | append: forloop.index
                   assign value_disabled = false
                   if value.count == 0 and value.active == false
@@ -218,7 +279,7 @@
                         </span>
                       {%- endif -%}
                     {%- endunless -%}
-                    <bdi class="facets-value__label">{{ value.label | escape }}</bdi>
+                    <bdi class="facets-value__label">{{ value_label }}</bdi>
                     {%- unless as_buttons -%}
                       <span class="facets-value__count" aria-hidden="true">{{ value.count }}</span>
                     {%- endunless -%}

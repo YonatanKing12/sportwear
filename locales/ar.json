@@ -95,6 +95,15 @@
     "list_empty": "لا توجد فئات لعرضها بعد."
   },
   "facets": {
+    "groups": {
+      "audience": "لمن",
+      "player": "اللاعب",
+      "styles": "الطراز",
+      "product_type": "نوع المنتج",
+      "team_handle": "الفريق",
+      "league_handle": "الدوري",
+      "kit": "القميص"
+    },
     "heading": "التصفية",
     "filter_button": "تصفية",
     "active_count": "عوامل التصفية المفعّلة: {{ count }}",

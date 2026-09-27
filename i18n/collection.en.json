@@ -16,6 +16,15 @@
     "list_empty": "There are no collections to show yet."
   },
   "facets": {
+    "groups": {
+      "audience": "Shop for",
+      "player": "Player",
+      "styles": "Style",
+      "product_type": "Product type",
+      "team_handle": "Team",
+      "league_handle": "League",
+      "kit": "Kit"
+    },
     "heading": "Filters",
     "filter_button": "Filter",
     "active_count": "Active filters: {{ count }}",

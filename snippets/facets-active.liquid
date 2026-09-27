@@ -12,6 +12,7 @@
   {% render 'facets-active', filters: collection.filters, active_count: active_count, clear_url: clear_url %}
 {%- enddoc -%}
 {%- if active_count > 0 -%}
+  {%- assign names = shop.metafields.sportwear.filter_names.value -%}
   <div class="facets-active">
     {%- if results_label != blank -%}
       <p class="facets-active__count" tabindex="-1" data-facets-focus>{{ results_label }}</p>
@@ -34,22 +35,20 @@
           {%- endif -%}
         {%- else -%}
           {%- liquid
-            # An option filter is named after the product option ("מידה" in every language unless
-            # translated), so it is shown in the shopper's language (snippets/option-name.liquid).
-            if filter.param_name contains 'filter.v.option.'
-              capture filter_label
-                render 'option-name', name: filter.label
-              endcapture
-            else
-              assign filter_label = filter.label | escape
-            endif
+            # Names in the shopper's language (snippets/facet-label.liquid).
+            capture filter_label
+              render 'facet-label', filter: filter
+            endcapture
           -%}
           {%- for value in filter.active_values -%}
+            {%- capture value_label -%}
+              {%- render 'facet-label', filter: filter, value: value, names: names -%}
+            {%- endcapture -%}
             <li>
               <a class="chip facets-active__chip" href="{{ value.url_to_remove }}" data-facets-link>
                 <span class="visually-hidden">{{ 'facets.remove_filter' | t }}</span>
                 <span>
-                  {{- filter_label }}: <bdi>{{ value.label | escape }}</bdi></span
+                  {{- filter_label }}: <bdi>{{ value_label }}</bdi></span
                 >
                 {%- render 'icon', name: 'close', size: 16, class: 'facets-active__icon' -%}
               </a>

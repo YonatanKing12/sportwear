@@ -35,7 +35,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet, and the live theme still shows the old shipping texts (free above ₪250, 3 business days) |
-| Catalog | 1,098 products imported by the owner (tag `source:yupoo`), 0 orders. A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles fixed, 4 photo fixes, 4 back photos added (`catalog/published/scan-fixes-2026-09-27.json`). 532 products also show the supplier's real close-ups of the fabric and print after their studio photos: 979 photos (`catalog/published/fabric-closeups-2026-09-27.json`, `design/imagery/README.md`). One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
+| Catalog | 1,098 products imported by the owner (tag `source:yupoo`), 0 orders. A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles fixed, 4 photo fixes, 4 back photos added (`catalog/published/scan-fixes-2026-09-27.json`). 532 products also show the supplier's real close-ups of the fabric and print after their studio photos: 979 photos (`catalog/published/fabric-closeups-2026-09-27.json`, `design/imagery/README.md`). One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Every Online Store product carries the storefront-filter metafields (2026-09-27, `catalog/published/filters-2026-09-27.json`). Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes (`deployed_commit` in `catalog/store-setup.json`). Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
@@ -163,13 +163,18 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
 - Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
   `real-madrid-third-jersey-2026-27`): keep both or hide one
-- Collection filters are set in the Search & Discovery app, which only the owner can open. Today the
-  collection pages offer only availability and price; the size filter (the product option "מידה") is the
-  one to add. League, team and adults/kids filters would first need the `sportwear` metafields on every
-  product: the 1,098 imported products have none (they work through tags), and the only `sw_team` entries
-  are the three demo teams
+- Collection filters: only the owner can add them, in the Search & Discovery app. The data is ready
+  (2026-09-27): every Online Store product has the filter metafields (for you, player, style, team,
+  league, kit; `catalog/README.md`, "מסננים באתר"), and "SportWear (next)" shows them by name in he/en/ar
+  and hides a filter that cannot narrow the results. Until the owner adds them, the pages offer only
+  price (availability hides itself while everything is in stock)
+- Stock: every one of the 5,088 variants shows exactly 5 units (checked 2026-09-27). If that is not the
+  real stock, a size sells out on the site after 5 orders and a size filter has nothing to narrow; only
+  the owner knows the real quantities
 - Buying the domain
-- Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch
+- Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch.
+  The live theme still shares links with no picture and the bare title "SportWear"; the new share image
+  (`design/share/README.md`) and titles come with the publish
 - Connecting GitHub to Shopify, a one-time step for the development theme
 - The size chart of the products imported before (the owner will send it). Until then their 106 kids
   products are sold in S–XL with no chart (the size guide shows how to measure), so a parent cannot tell

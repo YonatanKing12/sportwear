@@ -219,7 +219,8 @@ const BASKETBALL_SHORTS_KEYWORDS = ['מכנס', 'מכנסיים', 'shorts', 'ش�
 
 /**
  * The 8 demo products of the store, then 2 preview-only ones with the supplier's size charts. Optional
- * fields: sizes (default by audience), sizeChart (SIZE_CHARTS handle, default demo-adult / demo-kids),
+ * fields: styles and players (slugs, for the storefront filters), sizes (default by audience),
+ * sizeChart (SIZE_CHARTS handle, default demo-adult / demo-kids),
  * soldOut, price (agorot, like Shopify's cents; default PRICE), description (DESCRIPTION key),
  * untranslatedOption (the size option keeps its Hebrew name "מידה" in every language, as the store's
  * supplier products do: e.g. real-madrid-home-jersey-2026-27 has no en/ar translation of it, read on
@@ -331,6 +332,8 @@ const DEMO_PRODUCTS = [
     league: 'nba',
     kit: 'home',
     audience: 'adult',
+    styles: ['city-edition'],
+    players: ['lebron-james'],
     image: 'demo-stars-home',
     extraTags: ['set'],
     keywords: BASKETBALL_JERSEY_KEYWORDS,
@@ -371,6 +374,8 @@ const DEMO_PRODUCTS = [
     league: 'nba',
     kit: 'away',
     audience: 'adult',
+    styles: ['retro'],
+    players: ['stephen-curry'],
     image: 'demo-stars-away',
     extraTags: [],
     keywords: BASKETBALL_JERSEY_KEYWORDS,

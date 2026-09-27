@@ -83,6 +83,14 @@ Each product is one team × one kit × one season × one audience.
   - `counterpart`: the adult ↔ kids product
   - `complements`: set pieces, such as tank ↔ shorts
   - `source_url`: internal, no storefront access
+  - **Storefront filters** (the Search & Discovery app builds its filters on these): `audience`
+    (`adult|kids|women`), `team_handle` (team slug), `league_handle` (league slug), `styles` and
+    `player` (lists of slugs), `kit`. They mirror the tags, and `scripts/catalog/filter-data.mjs`
+    computes them for a products export (plus `kit:` tags from the Hebrew title for football shirts
+    that lack one). The theme shows their values by name from the shop metafield
+    `sportwear.filter_names` (he/en/ar, built from `catalog/taxonomy.json` by
+    `scripts/lib/filter-names.mjs`): a new team, league or player needs its names in `taxonomy.json`
+    first, then the dictionary is written again. Details: `catalog/README.md`, "מסננים באתר".
 - **Option:** a single `מידה` (Size) option. Values come from the size system (below).
 - **Variants:** one per size.
   - SKU: `SW-{TYPE}-{TEAM}-{KIT}-{SEASON}-{A|K}-{SIZE}`, for example `SW-BJ-MTA-H-2627-A-M`.

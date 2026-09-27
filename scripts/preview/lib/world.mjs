@@ -39,6 +39,21 @@ import {
   windowed,
 } from './drops.mjs';
 import { escapeHtml, handleize, numericId, shortHash, stripHtml } from './util.mjs';
+import { buildFilterNames } from '../../lib/filter-names.mjs';
+
+/**
+ * The storefront filters planned in the Search & Discovery app on SportWear's metafields, in their
+ * planned order (catalog/README.md, "Storefront filters"), with the definitions' names as labels.
+ */
+const METAFIELD_FILTER_LABELS = {
+  audience: 'למי (Audience)',
+  player: 'שחקן (Player)',
+  styles: 'סגנון (Style)',
+  team_handle: 'קבוצה (Team, for filters)',
+  league_handle: 'ליגה (League, for filters)',
+  kit: 'סוג חולצה (Kit)',
+};
+const FOOTBALL_KIT_TYPES = new Set(['Football Jersey', 'Football Kit']);
 
 export const CONTENT_FOR_HEADER_PLACEHOLDER = '<!--sw-preview:content_for_header-->';
 
@@ -47,6 +62,10 @@ const UNMOCKED_GLOBALS = new Set(['app', 'checkout', 'order', 'customer_address'
 
 const PRODUCT_METAFIELD_KEYS = [
   'team',
+  'team_handle',
+  'league_handle',
+  'styles',
+  'player',
   'leagues',
   'season',
   'kit',
@@ -178,6 +197,13 @@ export class World {
 
   #field(type, value, display) {
     return new MetafieldDrop(type, value, display);
+  }
+
+  /** shop.metafields.sportwear.filter_names: the store's dictionary plus the demo teams. */
+  #filterNames() {
+    const names = buildFilterNames();
+    for (const [slug, team] of Object.entries(TEAMS)) names.team_handle[slug] ??= { ...team.name };
+    return names;
   }
 
   #buildMetaobjects() {
@@ -408,6 +434,15 @@ export class World {
         season: this.#field('single_line_text_field', '26/27'),
         kit: this.#field('single_line_text_field', def.kit),
         audience: this.#field('single_line_text_field', def.audience),
+        // The storefront-filter mirrors of the tags (scripts/catalog/filter-data.mjs).
+        team_handle: this.#field('single_line_text_field', def.team),
+        league_handle: this.#field('single_line_text_field', def.league),
+        styles: def.styles?.length
+          ? this.#field('list.single_line_text_field', listOf(def.styles), JSON.stringify(def.styles))
+          : null,
+        player: def.players?.length
+          ? this.#field('list.single_line_text_field', listOf(def.players), JSON.stringify(def.players))
+          : null,
         size_chart: chart ? this.#field('metaobject_reference', chart, chart.system.id) : null,
         counterpart: null,
         complements: null,
@@ -659,12 +694,42 @@ export class World {
       url_to_remove: urlWith(flatParams.filter(([k]) => !k.startsWith('filter.v.price'))),
     });
 
+    // SportWear's metafield filters, labelled the way the Search & Discovery app does by default (the
+    // metafield definition's name, raw values): the theme renders its own names (facet-label).
+    const metafieldValues = (p, key) => {
+      const def = p.__def;
+      const raw = {
+        audience: def.audience,
+        player: def.players,
+        styles: def.styles,
+        team_handle: def.team,
+        league_handle: def.league,
+        kit: FOOTBALL_KIT_TYPES.has(def.type) ? def.kit : null,
+      }[key];
+      return (Array.isArray(raw) ? raw : [raw]).filter(Boolean);
+    };
+    const metafieldFilter = (key, label) => {
+      const values = [...new Set(products.flatMap((p) => metafieldValues(p, key)))].sort();
+      return listFilter(
+        label,
+        `filter.p.m.sportwear.${key}`,
+        values.map((value) => [value, value, products.filter((p) => metafieldValues(p, key).includes(value)).length]),
+      );
+    };
+    const metafieldFilters = Object.entries(METAFIELD_FILTER_LABELS).map(([key, label]) => metafieldFilter(key, label));
+
     const filters = [
-      listFilter(t(SYSTEM_STRINGS.filters.availability, locale), availabilityParam, [
-        ['1', t(SYSTEM_STRINGS.filters.in_stock, locale), products.filter((p) => p.available).length],
-        ['0', t(SYSTEM_STRINGS.filters.out_of_stock, locale), products.filter((p) => !p.available).length],
-      ]),
-      priceFilter,
+      ...metafieldFilters.slice(0, 3),
+      listFilter(
+        t(SYSTEM_STRINGS.filters.product_type, locale),
+        typeParam,
+        [...new Set(products.map((p) => p.type))].map((type) => [
+          type,
+          type,
+          products.filter((p) => p.type === type).length,
+        ]),
+      ),
+      ...metafieldFilters.slice(3),
       listFilter(
         optionName,
         optionParam,
@@ -674,15 +739,11 @@ export class World {
           products.filter((p) => p.variants.some((v) => v.option1 === size && v.available)).length,
         ]),
       ),
-      listFilter(
-        t(SYSTEM_STRINGS.filters.product_type, locale),
-        typeParam,
-        [...new Set(products.map((p) => p.type))].map((type) => [
-          type,
-          t(PRODUCT_TYPES[type], locale) ?? type,
-          products.filter((p) => p.type === type).length,
-        ]),
-      ),
+      priceFilter,
+      listFilter(t(SYSTEM_STRINGS.filters.availability, locale), availabilityParam, [
+        ['1', t(SYSTEM_STRINGS.filters.in_stock, locale), products.filter((p) => p.available).length],
+        ['0', t(SYSTEM_STRINGS.filters.out_of_stock, locale), products.filter((p) => !p.available).length],
+      ]),
     ];
 
     let filtered = products;
@@ -694,6 +755,10 @@ export class World {
     if (types.length) filtered = filtered.filter((p) => types.includes(p.type));
     if (Number.isFinite(gte)) filtered = filtered.filter((p) => p.price_max >= gte * 100);
     if (Number.isFinite(lte)) filtered = filtered.filter((p) => p.price_min <= lte * 100);
+    for (const key of Object.keys(METAFIELD_FILTER_LABELS)) {
+      const chosen = activeValues(`filter.p.m.sportwear.${key}`);
+      if (chosen.length) filtered = filtered.filter((p) => metafieldValues(p, key).some((v) => chosen.includes(v)));
+    }
     return { filters, filtered };
   }
 
@@ -907,7 +972,14 @@ export class World {
       collections_count: this.collectionsByHandle.size - 1,
       types: [...new Set([...this.products.values()].map((p) => p.type))],
       vendors: [VENDOR],
-      metafields: emptyMetafields('shop'),
+      metafields: new MetafieldsDrop('shop', {
+        sportwear: new MetafieldNamespaceDrop(
+          'shop',
+          'sportwear',
+          { filter_names: this.#field('json', this.#filterNames()) },
+          ['filter_names'],
+        ),
+      }),
     });
   }
 

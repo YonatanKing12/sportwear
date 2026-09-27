@@ -1,0 +1,68 @@
+{%- doc -%}
+  Prints the name of a storefront filter, or of one of its values, in the shopper's language
+  (HTML-escaped). Used by the filter form and the active-filter chips.
+
+  SportWear's own filters (catalog/README.md, "Storefront filters") are built on product metafields in
+  the sportwear namespace (audience, team_handle, league_handle, styles, player, kit) and on the
+  product type. Their values are language-neutral ("kids", "los-angeles-lakers", "Basketball Jersey"),
+  so:
+  - the filter's name comes from the theme's translations (facets.groups.<key>), whatever it is called
+    in the Search & Discovery app;
+  - a value's name comes from the shop metafield sportwear.filter_names (he/en/ar names written by
+    scripts/catalog/filter-data.mjs from catalog/taxonomy.json), then Shopify's label.
+  Option filters (size) print the theme's word for the option (snippets/option-name.liquid). Any other
+  filter or value prints Shopify's label.
+
+  @param {filter} filter - The filter (collection.filters or search.filters item)
+  @param {filter_value} [value] - One of the filter's values: prints the value's name instead
+  @param {object} [names] - shop.metafields.sportwear.filter_names.value, when the caller has it
+
+  @example
+  {% render 'facet-label', filter: filter %}
+  {% render 'facet-label', filter: filter, value: value, names: names %}
+{%- enddoc -%}
+{%- liquid
+  assign key = blank
+  if filter.param_name contains 'filter.p.m.sportwear.'
+    assign key = filter.param_name | remove_first: 'filter.p.m.sportwear.'
+  elsif filter.param_name == 'filter.p.product_type'
+    assign key = 'product_type'
+  endif
+
+  if value == blank
+    case key
+      when 'audience'
+        echo 'facets.groups.audience' | t
+      when 'player'
+        echo 'facets.groups.player' | t
+      when 'styles'
+        echo 'facets.groups.styles' | t
+      when 'product_type'
+        echo 'facets.groups.product_type' | t
+      when 'team_handle'
+        echo 'facets.groups.team_handle' | t
+      when 'league_handle'
+        echo 'facets.groups.league_handle' | t
+      when 'kit'
+        echo 'facets.groups.kit' | t
+      else
+        if filter.param_name contains 'filter.v.option.'
+          render 'option-name', name: filter.label
+        else
+          echo filter.label | escape
+        endif
+    endcase
+  else
+    assign label = blank
+    if key != blank
+      if names == blank
+        assign names = shop.metafields.sportwear.filter_names.value
+      endif
+      assign entry = names[key][value.value]
+      if entry != blank
+        assign label = entry[request.locale.iso_code] | default: entry.he
+      endif
+    endif
+    echo label | default: value.label | escape
+  endif
+-%}

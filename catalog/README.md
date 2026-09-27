@@ -59,6 +59,31 @@
 - **היומן:** `published/classification-2026-09-26.json` מתעד לכל מוצר את התגיות שהיו לו, ומה נוסף ומה הוסר,
   כך שאפשר לבטל כל שינוי.
 
+## מסננים באתר
+
+את המסננים בדפי הקטגוריות והחיפוש מגדירים באפליקציית Search & Discovery, ורק אתם יכולים להיכנס אליה. הם
+בנויים על שדות מותאמים של המוצרים (metafields), שמשקפים את התגיות:
+
+| מסנן באתר | השדה | הערכים |
+| --- | --- | --- |
+| למי | `sportwear.audience` | `adult`, `kids`, `women` |
+| שחקן | `sportwear.player` | שמות השחקנים (`lebron-james`…) |
+| סגנון | `sportwear.styles` | `retro`, `city-edition`, `special` |
+| סוג מוצר | סוג המוצר של Shopify (Product type) | `Basketball Jersey`, `Football Jersey`… |
+| קבוצה | `sportwear.team_handle` | הכתובת של דף הקבוצה (`los-angeles-lakers`…) |
+| ליגה | `sportwear.league_handle` | `nba`, `premier-league`… |
+| סוג חולצה | `sportwear.kit` | `home`, `away`, `third`, `fourth`, `special`, `training` (כדורגל) |
+
+- **הערכים באנגלית, והאתר מציג אותם בשפת הגולש:** השמות בעברית, באנגלית ובערבית נמצאים במילון
+  `sportwear.filter_names` בחנות. הסקריפט `scripts/lib/filter-names.mjs` בונה אותו מ-`taxonomy.json`.
+  גם שם המסנן עצמו מגיע מהתבנית, בלי קשר לשם שלו באפליקציה.
+- **מסנן שלא מצמצם כלום לא מוצג:** למשל "קבוצה" בדף של קבוצה, או "זמינות" כשכל המידות במלאי.
+- **מוצר חדש:** אחרי היצירה מריצים `node scripts/catalog/filter-data.mjs <products.json> --out <dir>`. אחר כך
+  מחילים את `requests/*.json` עם `metafieldsSet` ואת `kit-tags.json` עם `tagsAdd`. בדיקה: `productsCount` עם
+  `metafields.sportwear.<key>:<value>` מול `expected-counts.json`. קבוצה, ליגה או שחקן חדשים נכנסים קודם
+  ל-`taxonomy.json` עם שמות בשלוש השפות, ואז כותבים מחדש את המילון בחנות.
+- **היומן:** `published/filters-2026-09-27.json`.
+
 ## ייבוא מהספק jerseyxie
 
 המוצרים החדשים מהספק jerseyxie (Yupoo) עוברים מסלול משלהם: בוחרים לכל מוצר את התמונות הנכונות מתוך האלבומים

@@ -44,6 +44,11 @@ Read `.claude/skills/sportwear-catalog/SKILL.md` and `catalog/product.schema.jso
     product, per `design/imagery/README.md`, once the owner has seen the batch)
   - `sportwear.*` metafields, including `size_chart` (a metaobject reference) when the file names one:
     the IDs of the size charts are in `catalog/store-setup.json` (`metaobjects.sw_size_chart`)
+  - the storefront-filter metafields, mirrored from the tags: `audience`, `team_handle` (the team
+    slug), `league_handle`, `styles` and `player` (lists of slugs, JSON strings), `kit` (catalog
+    README, "מסננים באתר"; `scripts/catalog/filter-data.mjs` computes them from a products export).
+    A slug with no he/en/ar name in `catalog/taxonomy.json` is a question for the main session, which
+    adds the name and updates the shop's `sportwear.filter_names` dictionary
 - **References:**
   - Set team and leagues as metaobject references once those metaobjects exist.
   - Set `counterpart` and `complements` only when the referenced product already exists. If it

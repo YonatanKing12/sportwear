@@ -128,6 +128,14 @@ import {
   Its `sw-drawer` id is **`CartDrawer`**. The header cart link opens it with `data-drawer-open="CartDrawer"` (drawer
   mode) and is a normal link to `routes.cart_url` otherwise; it must work without JS (link to the cart page).
 - **Header cart link** contains `<span data-cart-bubble>{% render 'cart-bubble' %}</span>`.
+- **Storefront filters** (`snippets/facets-form.liquid`, `facets-active`, `facet-label`): SportWear's
+  filters are product metafields in the `sportwear` namespace (`audience`, `player`, `styles`,
+  `team_handle`, `league_handle`, `kit`) and the product type, with language-neutral values. Their
+  names come from the theme (`facets.groups.<key>`) and the shop metafield `sportwear.filter_names`
+  (he/en/ar), never from the Search & Discovery labels. Pass `results_count` so a list filter that
+  cannot narrow the results hides (catalog/README.md, "מסננים באתר").
+- **Link previews** (`snippets/meta-tags.liquid`): the page's own image, then `settings.share_image`,
+  then `sw-share-<locale>.jpg` from Content → Files (`design/share/README.md`).
 - **Menu drawer** id `MenuDrawer`, **filters drawer** id `FacetsDrawer`, **size chart** id `SizeChart`.
   Keep ids unique per page. There is no search dialog: the header's search field (`#HeaderSearchInput`,
   `snippets/header-search`) is the only header search; to send a visitor to it, focus that input or link

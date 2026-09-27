@@ -1,5 +1,5 @@
 {
-  "_status": "CREATED in Shopify on 2026-09-25. IDs are in catalog/store-setup.json. Change definitions only via the Shopify MCP GraphQL workflow.",
+  "_status": "CREATED in Shopify on 2026-09-25. IDs are in catalog/store-setup.json. Change definitions only via the Shopify MCP GraphQL workflow. On 2026-09-27: the storefront-filter definitions (team_handle, league_handle, styles, player; admin-filterable, like audience and kit), the audience choice \"women\" and the shop metafield filter_names (catalog/README.md, \"מסננים באתר\").",
   "metaobjects": [
     {
       "type": "sw_league",
@@ -70,8 +70,9 @@
       "namespace": "sportwear",
       "key": "audience",
       "type": "single_line_text_field",
-      "choices": ["adult", "kids"],
-      "storefront_access": "PUBLIC_READ"
+      "choices": ["adult", "kids", "women"],
+      "storefront_access": "PUBLIC_READ",
+      "note": "storefront filter 'למי'"
     },
     {
       "namespace": "sportwear",
@@ -100,6 +101,44 @@
       "type": "url",
       "storefront_access": "NONE",
       "note": "internal only"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "team_handle",
+      "type": "single_line_text_field",
+      "storefront_access": "PUBLIC_READ",
+      "note": "storefront filter 'קבוצה': the team slug (= its collection handle), mirrored from the team: tag"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "league_handle",
+      "type": "single_line_text_field",
+      "storefront_access": "PUBLIC_READ",
+      "note": "storefront filter 'ליגה': the league slug, mirrored from the league: tag"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "styles",
+      "type": "list.single_line_text_field",
+      "choices": ["retro", "city-edition", "special"],
+      "storefront_access": "PUBLIC_READ",
+      "note": "storefront filter 'סגנון', mirrored from the style: tags"
+    },
+    {
+      "namespace": "sportwear",
+      "key": "player",
+      "type": "list.single_line_text_field",
+      "storefront_access": "PUBLIC_READ",
+      "note": "storefront filter 'שחקן': player slugs, mirrored from the player: tags"
+    }
+  ],
+  "shop_metafields": [
+    {
+      "namespace": "sportwear",
+      "key": "filter_names",
+      "type": "json",
+      "storefront_access": "PUBLIC_READ",
+      "note": "he/en/ar names of the filter values, written by scripts/catalog/filter-data.mjs from catalog/taxonomy.json; read by snippets/facet-label.liquid"
     }
   ]
 }

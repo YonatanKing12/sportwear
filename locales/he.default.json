@@ -89,6 +89,15 @@
     "list_empty": "עדיין אין קטגוריות להצגה."
   },
   "facets": {
+    "groups": {
+      "audience": "למי",
+      "player": "שחקן",
+      "styles": "סגנון",
+      "product_type": "סוג מוצר",
+      "team_handle": "קבוצה",
+      "league_handle": "ליגה",
+      "kit": "סוג חולצה"
+    },
     "heading": "סינון",
     "filter_button": "סינון",
     "active_count": "מסננים פעילים: {{ count }}",
