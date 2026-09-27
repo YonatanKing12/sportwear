@@ -1,12 +1,15 @@
 {%- comment -%}
-  Promo banner (home): a compact panel that pairs two products, e.g. a jersey and the shorts of the
-  same team, shown as regular product cards with a "+" between them, next to a short pitch and one
-  button. Without products it shows the text and the button only; in the theme editor, empty
-  product slots show placeholder cards.
+  "Complete the set" (home): a jersey and the shorts of the same team, bought together. Each set is a
+  block (a jersey and shorts product). With more than one set, team tabs switch between them; a tab is
+  named after the jersey's team category (its team: tag), in every language. A set shows both products
+  on one photo tile, a size choice for each, the total, and one button that adds both to the cart and
+  opens the cart drawer (assets/set-builder.js, <sw-set-builder>). Choosing the jersey's size also picks
+  it for the shorts while they have none.
+  Without JavaScript every set is a plain cart form (items[0], items[1]) and all sets show, one under the
+  other. Sets whose jersey or shorts is missing or sold out are left out.
 {%- endcomment -%}
 {%- liquid
   assign scheme_class = 'color-' | append: section.settings.color_scheme.id
-  assign full_width = section.settings.full_width
 
   assign eyebrow = section.settings.eyebrow | escape
   if eyebrow == blank
@@ -23,100 +26,201 @@
     assign text = 'home.promo_banner.text' | t
   endif
 
-  assign button_label = section.settings.button_label | escape
-  if button_label == blank
-    assign button_label = 'home.promo_banner.button_label' | t
+  assign link_label = section.settings.button_label | escape
+  if link_label == blank
+    assign link_label = 'home.promo_banner.button_label' | t
   endif
-  assign button_link = section.settings.button_link | default: routes.all_products_collection_url
+  assign link_url = section.settings.button_link | default: routes.all_products_collection_url
 
-  assign product_1 = section.settings.product_1
-  assign product_2 = section.settings.product_2
+  # The sets that can be sold: both products chosen and in stock.
+  assign set_ids = ','
   assign set_count = 0
-  if product_1 != blank
-    assign set_count = set_count | plus: 1
-  endif
-  if product_2 != blank
-    assign set_count = set_count | plus: 1
-  endif
+  for block in section.blocks
+    assign jersey = block.settings.jersey
+    assign shorts = block.settings.shorts
+    if jersey != blank and shorts != blank and jersey.available and shorts.available
+      assign set_ids = set_ids | append: block.id | append: ','
+      assign set_count = set_count | plus: 1
+    endif
+  endfor
 
-  assign show_placeholders = false
-  if set_count == 0 and request.design_mode
-    assign show_placeholders = true
-  endif
+  assign jersey_label = 'home.promo_banner.jersey' | t
+  assign shorts_label = 'home.promo_banner.shorts' | t
+  assign jersey_legend = 'home.promo_banner.jersey_size' | t
+  assign shorts_legend = 'home.promo_banner.shorts_size' | t
+  assign note_template = 'home.promo_banner.matched' | t: size: '[size]'
 
-  # A card is 180px wide from 990px, 160px on tablets, and half the panel on phones
-  # (100vw less the page gutters, the panel padding and the gap that holds the "+").
-  assign card_sizes = '(min-width: 990px) 180px, (min-width: 750px) 160px, calc((100vw - 108px) / 2)'
-
-  assign card_loading = 'lazy'
-  unless section.index > 2
-    assign card_loading = 'eager'
-  endunless
+  # The kit tile is the full panel width on phones (100vw less the gutters and the panel padding) and
+  # about half of it from 750px; the jersey takes 56% of the tile, the shorts 42%.
+  assign jersey_sizes = '(min-width: 1440px) 380px, (min-width: 750px) 27vw, calc((100vw - 72px) * 0.56)'
+  assign shorts_sizes = '(min-width: 1440px) 280px, (min-width: 750px) 20vw, calc((100vw - 72px) * 0.42)'
 -%}
 
 <div
-  class="section promo-banner{% if full_width %} promo-banner--full {{ scheme_class }}{% endif %}"
+  class="section set-builder"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
   <div class="page-width">
-    <div class="promo-banner__panel{% unless full_width %} {{ scheme_class }}{% endunless %}{% if set_count > 0 or show_placeholders %} promo-banner__panel--set{% endif %}">
-      <div class="promo-banner__content">
-        {%- if section.settings.show_eyebrow -%}
-          <p class="promo-banner__eyebrow eyebrow">{{ eyebrow }}</p>
+    <sw-set-builder class="set-builder__panel {{ scheme_class }}">
+      <div class="set-builder__top">
+        <div class="set-builder__intro">
+          {%- if section.settings.show_eyebrow -%}
+            <p class="set-builder__eyebrow eyebrow">{{ eyebrow }}</p>
+          {%- endif -%}
+          <h2 class="set-builder__heading display-l">{{ heading }}</h2>
+          <p class="set-builder__text">{{ text }}</p>
+        </div>
+
+        {%- if set_count > 1 -%}
+          <div class="set-builder__tabs js-only" role="tablist" aria-label="{{ 'home.promo_banner.tabs_label' | t }}">
+            {%- assign first_tab = true -%}
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign block_key = ',' | append: block.id | append: ','
+                unless set_ids contains block_key
+                  continue
+                endunless
+                capture team_name
+                  render 'set-team-name', jersey: block.settings.jersey
+                endcapture
+              -%}
+              <button
+                type="button"
+                role="tab"
+                class="chip set-builder__tab"
+                id="SetTab-{{ block.id }}"
+                aria-controls="SetPanel-{{ block.id }}"
+                aria-selected="{{ first_tab }}"
+                tabindex="{% if first_tab %}0{% else %}-1{% endif %}"
+                data-set-tab
+              >
+                {{- team_name -}}
+              </button>
+              {%- assign first_tab = false -%}
+            {%- endfor -%}
+          </div>
         {%- endif -%}
-        <h2 class="promo-banner__heading display-l">{{ heading }}</h2>
-        <p class="promo-banner__text">{{ text }}</p>
       </div>
 
-      {%- if set_count > 0 or show_placeholders -%}
-        <ul class="promo-banner__set{% if set_count == 1 %} promo-banner__set--single{% endif %}" role="list">
-          {%- if show_placeholders -%}
-            <li class="promo-banner__item">
-              {%- render 'product-card', product: blank, sizes: card_sizes -%}
-            </li>
-            <li class="promo-banner__item">
-              {%- render 'product-card', product: blank, sizes: card_sizes -%}
-            </li>
-          {%- else -%}
-            {%- if product_1 != blank -%}
-              <li class="promo-banner__item">
-                {%- render 'product-card', product: product_1, sizes: card_sizes, loading: card_loading -%}
-              </li>
-            {%- endif -%}
-            {%- if product_2 != blank -%}
-              <li class="promo-banner__item">
-                {%- render 'product-card', product: product_2, sizes: card_sizes, loading: card_loading -%}
-              </li>
-            {%- endif -%}
+      {%- assign first_set = true -%}
+      {%- for block in section.blocks -%}
+        {%- liquid
+          assign block_key = ',' | append: block.id | append: ','
+          unless set_ids contains block_key
+            continue
+          endunless
+          assign jersey = block.settings.jersey
+          assign shorts = block.settings.shorts
+          assign total = jersey.price | plus: shorts.price
+          assign jersey_prefix = 'Set-' | append: block.id | append: '-0'
+          assign shorts_prefix = 'Set-' | append: block.id | append: '-1'
+        -%}
+        <form
+          class="set-builder__set"
+          id="SetPanel-{{ block.id }}"
+          action="{{ routes.cart_add_url }}"
+          method="post"
+          {% if set_count > 1 %}
+            role="tabpanel"
+            aria-labelledby="SetTab-{{ block.id }}"
+          {% endif %}
+          {% unless first_set %}
+            data-set-hidden
+          {% endunless %}
+          data-set-panel
+          data-added-message="{{ 'home.promo_banner.added' | t | escape }}"
+          {{ block.shopify_attributes }}
+        >
+          {%- if set_count > 1 -%}
+            <h3 class="set-builder__set-title no-js-only">
+              {%- render 'set-team-name', jersey: jersey -%}
+            </h3>
           {%- endif -%}
-        </ul>
+
+          <div class="set-builder__kit">
+            <a class="set-builder__kit-jersey" href="{{ jersey.url }}" tabindex="-1" aria-hidden="true">
+              {%- render 'image',
+                image: jersey.featured_media.preview_image,
+                sizes: jersey_sizes,
+                widths: '240, 360, 480, 640, 800',
+                alt: ''
+              -%}
+            </a>
+            <a class="set-builder__kit-shorts" href="{{ shorts.url }}" tabindex="-1" aria-hidden="true">
+              {%- render 'image',
+                image: shorts.featured_media.preview_image,
+                sizes: shorts_sizes,
+                widths: '180, 280, 360, 480, 640',
+                alt: ''
+              -%}
+            </a>
+          </div>
+
+          <div class="set-builder__buy color-scheme-day">
+            {%- render 'set-item',
+              product: jersey,
+              index: 0,
+              role: jersey_label,
+              legend: jersey_legend,
+              id_prefix: jersey_prefix
+            -%}
+            {%- render 'set-item',
+              product: shorts,
+              index: 1,
+              role: shorts_label,
+              legend: shorts_legend,
+              id_prefix: shorts_prefix,
+              note_template: note_template
+            -%}
+            <p class="set-builder__total">
+              <span>{{ 'home.promo_banner.total' | t }}</span>
+              <span class="set-builder__total-price">{{ total | money_without_trailing_zeros }}</span>
+            </p>
+            <p
+              class="set-builder__error"
+              role="alert"
+              data-set-error
+              data-both-message="{{ 'home.promo_banner.choose_both' | t | escape }}"
+              data-jersey-message="{{ 'home.promo_banner.choose_jersey' | t | escape }}"
+              data-shorts-message="{{ 'home.promo_banner.choose_shorts' | t | escape }}"
+            ></p>
+            <button type="submit" class="button button--primary button--full set-builder__add" data-set-add>
+              {{- 'home.promo_banner.add' | t -}}
+            </button>
+          </div>
+        </form>
+        {%- assign first_set = false -%}
+      {%- endfor -%}
+
+      {%- if set_count == 0 and request.design_mode -%}
+        <p class="set-builder__editor-note">{{ 'home.promo_banner.editor_note' | t }}</p>
       {%- endif -%}
 
-      <a class="button button--primary promo-banner__button" href="{{ button_link }}">{{ button_label }}</a>
-    </div>
+      <a class="set-builder__link link link-arrow" href="{{ link_url }}">
+        <span>{{ link_label }}</span>
+        {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+      </a>
+    </sw-set-builder>
   </div>
 </div>
 
+<script type="module" src="{{ 'set-builder.js' | asset_url }}"></script>
+
 {% stylesheet %}
-  /* Phones: the pitch, the two cards side by side, then a full-width button. */
-  .promo-banner__panel {
+  /* Phones: the pitch, the team tabs, the photo tile, then the white card with the sizes and the button. */
+  .set-builder__panel {
     display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: 'content' 'set' 'button';
+    gap: var(--space-5);
     padding: var(--space-6) var(--space-5);
     border-radius: var(--radius-card);
   }
 
-  .promo-banner--full .promo-banner__panel {
-    padding-inline: 0;
-    border-radius: 0;
+  .set-builder__top {
+    display: grid;
+    gap: var(--space-4);
   }
 
-  .promo-banner__content {
-    grid-area: content;
-  }
-
-  .promo-banner__heading {
+  .set-builder__heading {
     margin-block-start: var(--space-2);
     overflow-wrap: break-word;
 
@@ -125,7 +229,7 @@
     }
   }
 
-  .promo-banner__text {
+  .set-builder__text {
     max-inline-size: 34em;
     margin-block-start: var(--space-3);
     font-size: var(--text-md);
@@ -133,102 +237,175 @@
     line-height: 1.5;
   }
 
-  /* The two cards with a "+" in the gap between them. Square tiles keep the banner short (supplier
-     photos are square). */
-  .promo-banner__set {
-    --set-gap: 36px;
-    --card-ratio: 1 / 1;
-    grid-area: set;
+  /* Team tabs: one row of chips that scrolls sideways on narrow screens, out to the panel's edges. */
+  .set-builder__tabs {
+    display: flex;
+    gap: var(--space-2);
+    margin-inline: calc(var(--space-5) * -1);
+    padding-inline: var(--space-5);
+    overflow-x: auto;
+    scroll-padding-inline: var(--space-5);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .set-builder__tab {
+    flex: none;
+    cursor: pointer;
+
+    &[aria-selected='true'] {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-background);
+      font-weight: 700;
+    }
+  }
+
+  /* With JavaScript only the chosen set shows; without it, every set shows under its team's name. */
+  .js .set-builder__set[data-set-hidden] {
+    display: none;
+  }
+
+  .set-builder__set {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: var(--set-gap);
-    margin-block-start: var(--space-5);
+    gap: var(--space-4);
+    align-items: start;
   }
 
-  .promo-banner__set--single {
-    grid-template-columns: minmax(0, 1fr);
-    max-inline-size: 240px;
+  .set-builder__set-title {
+    font-size: var(--text-lg);
+    font-weight: 800;
   }
 
-  .promo-banner__item {
+  /* One tile for the set, like a flat lay: the jersey at the top start, the shorts at the bottom end,
+     side by side (never overlapping, so neither photo's background can cover the other garment). The
+     tile is the studio photos' background as the CDN serves it (#f4f4f4 comes back as #f5f5f5 in WebP),
+     so the two photos read as one picture. */
+  .set-builder__kit {
     position: relative;
-    min-inline-size: 0;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    background: #f5f5f5;
   }
 
-  /* The "+" is centred in the gap and on the image tile: a percentage margin resolves against the
-     card's width, and the tile is that width divided by the card ratio (theme setting). */
-  .promo-banner__item + .promo-banner__item::before {
-    content: '+';
-    content: '+' / '';
+  /* Each photo fades out over its outer 2.5%, so a photo whose background is a shade lighter than the
+     tile (photos made before the studio line) shows no edge. */
+  .set-builder__kit-jersey,
+  .set-builder__kit-shorts {
     position: absolute;
-    z-index: 2;
-    inset-block-start: 0;
-    inset-inline-start: calc(var(--set-gap) / -2 - 16px);
-    margin-block-start: calc(50% / (var(--card-ratio, 4 / 5)) - 16px);
+    display: block;
+    mask-image:
+      linear-gradient(to right, transparent, #000 2.5%, #000 97.5%, transparent),
+      linear-gradient(to bottom, transparent, #000 2.5%, #000 97.5%, transparent);
+    mask-composite: intersect;
+
+    & img {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+    }
+  }
+
+  .set-builder__kit-jersey {
+    inset-block-start: 1%;
+    inset-inline-start: 1%;
+    inline-size: 56%;
+  }
+
+  .set-builder__kit-shorts {
+    inset-block-end: 1%;
+    inset-inline-end: 1%;
+    inline-size: 42%;
+  }
+
+  .set-builder__buy {
     display: grid;
-    place-items: center;
-    inline-size: 32px;
-    block-size: 32px;
-    border-radius: 50%;
-    background: var(--color-button);
-    color: var(--color-button-label);
-    font-size: 22px;
+    gap: var(--space-4);
+    padding: var(--space-5) var(--space-4);
+    border-radius: var(--radius-card);
+    background: var(--color-background);
+    color: var(--color-text);
+  }
+
+  .set-builder__total {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding-block-start: var(--space-3);
+    border-block-start: 1px solid var(--color-border);
+    font-size: var(--text-md);
+    font-weight: 800;
+  }
+
+  .set-builder__total-price {
+    font-size: var(--text-xl);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .set-builder__error {
+    color: var(--color-error);
+    font-size: var(--text-md);
     font-weight: 700;
-    line-height: 1;
+
+    &:empty {
+      margin-block-start: calc(var(--space-4) * -1);
+    }
   }
 
-  .promo-banner__button {
-    grid-area: button;
-    margin-block-start: var(--space-5);
+  .set-builder__link {
+    justify-self: start;
   }
 
+  .set-builder__editor-note {
+    font-weight: 700;
+  }
+
+  /* From 750px: the photo tile and the card side by side. */
   @media screen and (min-width: 750px) {
-    .promo-banner__panel {
-      padding: var(--space-6) var(--space-10);
+    .set-builder__panel {
+      padding: var(--space-8) var(--space-8);
     }
 
-    /* Pitch and button on the start side, the cards on the end side. */
-    .promo-banner__panel--set {
-      grid-template-columns: minmax(0, 1fr) auto;
-      grid-template-rows: 1fr auto auto 1fr;
-      grid-template-areas: '. set' 'content set' 'button set' '. set';
-      column-gap: var(--space-10);
+    .set-builder__set {
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      align-items: center;
+      gap: var(--space-6);
     }
 
-    .promo-banner__set {
-      --set-gap: 40px;
-      grid-template-columns: repeat(2, 160px);
-      align-self: center;
-      margin-block-start: 0;
+    .set-builder__buy {
+      padding: var(--space-6);
     }
 
-    .promo-banner__set--single {
-      grid-template-columns: 160px;
-    }
-
-    .promo-banner__text {
+    .set-builder__text {
       font-size: var(--text-lg);
     }
-
-    .promo-banner__button {
-      justify-self: start;
-      min-inline-size: 220px;
-      margin-block-start: var(--space-6);
-    }
   }
 
+  /* From 990px: the pitch and the team tabs share the top row. */
   @media screen and (min-width: 990px) {
-    .promo-banner__panel {
-      padding: var(--space-6) var(--space-12);
+    .set-builder__panel {
+      gap: var(--space-6);
+      padding: var(--space-10) var(--space-12);
     }
 
-    .promo-banner__set {
-      --set-gap: 48px;
-      grid-template-columns: repeat(2, 180px);
+    .set-builder__top {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: end;
+      column-gap: var(--space-8);
     }
 
-    .promo-banner__set--single {
-      grid-template-columns: 180px;
+    .set-builder__tabs {
+      margin-inline: 0;
+      padding-inline: 0;
+    }
+
+    .set-builder__set {
+      gap: var(--space-10);
     }
   }
 {% endstylesheet %}
@@ -239,36 +416,13 @@
   "disabled_on": {
     "groups": ["header", "footer"]
   },
+  "max_blocks": 4,
   "settings": [
     {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
       "default": "scheme-accent"
-    },
-    {
-      "type": "checkbox",
-      "id": "full_width",
-      "label": "t:settings.full_width",
-      "default": false
-    },
-    {
-      "type": "header",
-      "content": "t:sections.promo_banner.headers.products"
-    },
-    {
-      "type": "paragraph",
-      "content": "t:sections.promo_banner.settings.products_info.content"
-    },
-    {
-      "type": "product",
-      "id": "product_1",
-      "label": "t:sections.promo_banner.settings.product_1.label"
-    },
-    {
-      "type": "product",
-      "id": "product_2",
-      "label": "t:sections.promo_banner.settings.product_2.label"
     },
     {
       "type": "header",
@@ -302,7 +456,7 @@
     {
       "type": "text",
       "id": "button_label",
-      "label": "t:settings.button_label",
+      "label": "t:sections.promo_banner.settings.button_label.label",
       "info": "t:settings.default_text_info"
     },
     {
@@ -332,9 +486,36 @@
       "default": 24
     }
   ],
+  "blocks": [
+    {
+      "type": "set",
+      "name": "t:sections.promo_banner.blocks.set.name",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.promo_banner.blocks.set.settings.info.content"
+        },
+        {
+          "type": "product",
+          "id": "jersey",
+          "label": "t:sections.promo_banner.blocks.set.settings.jersey.label"
+        },
+        {
+          "type": "product",
+          "id": "shorts",
+          "label": "t:sections.promo_banner.blocks.set.settings.shorts.label"
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "t:sections.promo_banner.name"
+      "name": "t:sections.promo_banner.name",
+      "blocks": [
+        {
+          "type": "set"
+        }
+      ]
     }
   ]
 }

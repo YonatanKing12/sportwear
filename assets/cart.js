@@ -32,7 +32,7 @@ const DRAWER_SECTION = 'cart-drawer';
 /** Source of every change made from inside the cart; the cart views re-render those themselves. */
 const SOURCE = 'cart';
 /** Changes from other components that open the drawer. */
-const OPENING_SOURCES = new Set(['product-form', 'quick-add']);
+const OPENING_SOURCES = new Set(['product-form', 'quick-add', 'set']);
 const QUANTITY_DELAY = 300;
 const NOTE_DELAY = 600;
 

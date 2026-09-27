@@ -172,26 +172,35 @@
       }
     },
     "promo_banner": {
-      "name": "Promo banner",
+      "name": "Complete the set",
       "headers": {
-        "products": "Products",
         "content": "Text"
       },
       "settings": {
-        "products_info": {
-          "content": "Two products that go together, for example a jersey and shorts from the same team. They show as regular product cards. Without products, the banner shows the text and the button only."
-        },
-        "product_1": {
-          "label": "Product 1 (e.g. a jersey)"
-        },
-        "product_2": {
-          "label": "Product 2 (e.g. shorts)"
-        },
         "show_eyebrow": {
           "label": "Show small label"
         },
+        "button_label": {
+          "label": "Link text"
+        },
         "button_link": {
-          "info": "Leave empty to link to all products."
+          "info": "The link under the sets. Leave empty to link to all products."
+        }
+      },
+      "blocks": {
+        "set": {
+          "name": "Set",
+          "settings": {
+            "info": {
+              "content": "A jersey and the shorts of the same team, bought together. With more than one set, team tabs switch between them; a tab takes the name of the jersey's team category. A set whose jersey or shorts is sold out is hidden."
+            },
+            "jersey": {
+              "label": "Jersey"
+            },
+            "shorts": {
+              "label": "Shorts"
+            }
+          }
         }
       }
     },

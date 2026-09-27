@@ -123,7 +123,8 @@ import {
 - **Add to cart** (product form, quick add): `CartAPI.add(formData, { sections: ['cart-drawer'], source })`. If
   `window.theme.cartType === 'page'`, then navigate to `window.theme.routes.cart_url` after success.
 - **Cart drawer** (cart area) subscribes to `EVENTS.cartUpdated`, replaces its content from
-  `sections['cart-drawer']` when present, and opens itself when `source` is `'product-form'` or `'quick-add'`.
+  `sections['cart-drawer']` when present, and opens itself when `source` is `'product-form'`, `'quick-add'`
+  or `'set'` (the home page's "complete the set", `assets/set-builder.js`).
   Its `sw-drawer` id is **`CartDrawer`**. The header cart link opens it with `data-drawer-open="CartDrawer"` (drawer
   mode) and is a normal link to `routes.cart_url` otherwise; it must work without JS (link to the cart page).
 - **Header cart link** contains `<span data-cart-bubble>{% render 'cart-bubble' %}</span>`.

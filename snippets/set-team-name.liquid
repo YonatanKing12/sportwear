@@ -1,0 +1,28 @@
+{%- doc -%}
+  The team name of a "complete the set" block (sections/promo-banner.liquid), for its tab: the title of
+  the category of the jersey's team (its team: tag), which is translated into every storefront language.
+  Falls back to the jersey's title when the team has no category.
+
+  @param {product} jersey - The set's jersey
+
+  @example
+  {%- capture team_name -%}{% render 'set-team-name', jersey: jersey %}{%- endcapture -%}
+{%- enddoc -%}
+{%- liquid
+  assign team_title = ''
+  for tag in jersey.tags
+    assign tag_prefix = tag | slice: 0, 5
+    if tag_prefix == 'team:'
+      assign team_handle = tag | remove_first: 'team:'
+      assign team_collection = collections[team_handle]
+      if team_collection != blank
+        assign team_title = team_collection.title
+      endif
+      break
+    endif
+  endfor
+  if team_title == blank
+    assign team_title = jersey.title
+  endif
+  echo team_title | escape
+-%}

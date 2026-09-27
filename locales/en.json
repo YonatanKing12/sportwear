@@ -555,8 +555,21 @@
     "promo_banner": {
       "eyebrow": "Complete the set",
       "heading": "Jersey + shorts",
-      "text": "Add the matching shorts from the same team",
-      "button_label": "Shop basketball shorts"
+      "text": "Pick a team and your sizes, and the jersey and shorts go into your cart together.",
+      "button_label": "Shop all basketball shorts",
+      "tabs_label": "Choose a team",
+      "jersey": "Jersey",
+      "shorts": "Shorts",
+      "jersey_size": "Jersey size",
+      "shorts_size": "Shorts size",
+      "total": "Set total",
+      "add": "Add the set to cart",
+      "added": "Jersey and shorts added to your cart",
+      "choose_both": "Choose a size for the jersey and the shorts",
+      "choose_jersey": "Choose a jersey size",
+      "choose_shorts": "Choose a shorts size",
+      "matched": "We picked size {{ size }} for the shorts too. You can change it.",
+      "editor_note": "Choose a jersey and shorts in the set block."
     },
     "image_with_text": {
       "badge": "Ages 2–13",
