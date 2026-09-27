@@ -1,0 +1,134 @@
+{
+  "handle": "boca-juniors-home-jersey-2026-27",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "boca-juniors",
+    "code": "BOC",
+    "he": "בוקה ג׳וניורס",
+    "en": "Boca Juniors",
+    "ar": "بوكا جونيورز"
+  },
+  "leagues": ["argentine-primera"],
+  "kit": "home",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת בית בוקה ג׳וניורס 26/27",
+  "description_html_he": "<p>חולצת הבית של בוקה ג׳וניורס לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת בית בוקה ג׳וניורס 26/27 | SportWear",
+    "description_he": "חולצת הבית של בוקה ג׳וניורס לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-BOC-H-2627-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-BOC-H-2627-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-BOC-H-2627-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-BOC-H-2627-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p1/studio/norm/boca-juniors-home-jersey-2026-27.png",
+      "alt_he": "חולצת בית בוקה ג׳וניורס 26/27 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p1/studio/norm/boca-juniors-home-jersey-2026-27__back.png",
+      "alt_he": "חולצת בית בוקה ג׳וניורס 26/27 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Boca Juniors Home Jersey 26/27",
+      "description_html": "<p>The Boca Juniors home jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Boca Juniors Home Jersey 26/27 | SportWear",
+      "seo_description": "The Boca Juniors home jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص بوكا جونيورز الأساسي 26/27",
+      "description_html": "<p>القميص الأساسي لنادي بوكا جونيورز لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص بوكا جونيورز الأساسي 26/27 | SportWear",
+      "seo_description": "القميص الأساسي لنادي بوكا جونيورز لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/251141564?uid=1",
+    "fetched_at": "2026-09-27T14:13:20Z",
+    "original_title": "26-27 Boca Juniors Home Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:boca-juniors",
+    "league:argentine-primera",
+    "kit:home",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:251141564",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "boca juniors",
+    "boca",
+    "بوكا جونيورز",
+    "argentine primera",
+    "الدوري الأرجنتيني"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310240579888",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859971866928",
+      "M": "gid://shopify/ProductVariant/67859971899696",
+      "L": "gid://shopify/ProductVariant/67859971932464",
+      "XL": "gid://shopify/ProductVariant/67859971965232"
+    },
+    "created_at": "2026-09-27T14:17:48Z"
+  }
+}
