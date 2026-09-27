@@ -1,0 +1,249 @@
+{%- doc -%}
+  The product cards of a row of products (featured collection, collection tabs): up to `limit` of the
+  collection's products in its own order, each in an <li>. It can keep only adults or only kids (kids
+  carry the tag audience:kids), only the first product of each team (its team:<slug> tag, so a row
+  sorted by date doesn't fill up with the team imported last), only one product type (a row of City
+  Edition jerseys whose collection also holds the newer shorts), and leave out one team or one product
+  (a product page's own product and team). It looks through the collection's first `scan` products
+  (40 unless set; up to 250, for a row that keeps few of them), a page of the collection's own order:
+  on a page opened with ?page=2 a row reads its collection's second page. Every product it reads
+  costs render time, and a home page with many rows has to stay within Shopify's limits, so keep
+  `scan` as small as the row allows.
+
+  @param {collection} row_collection - The collection whose products the row shows
+  @param {number} limit - The most cards to render
+  @param {string} sizes - sizes attribute for the card images
+  @param {string} item_class - Classes of each <li>
+  @param {string} [audience] - 'all' (default), 'adult' or 'kids'
+  @param {boolean} [one_per_team] - Only the first product of each team
+  @param {string} [product_type] - Only products of this type (e.g. Basketball Jersey)
+  @param {string} [exclude_tag] - Leave out products with this tag (e.g. team:real-madrid)
+  @param {number} [exclude_id] - Leave out the product with this id
+  @param {number} [eager] - How many of the first cards load their image eagerly (default 0)
+  @param {number} [scan] - How many of the collection's products to look through (default 40, at most 250)
+
+  @example
+  {% render 'home-row-cards', row_collection: collection, limit: 10, sizes: card_sizes, item_class: 'featured-collection__item', one_per_team: true %}
+{%- enddoc -%}
+{%- liquid
+  assign row_audience = audience | default: 'all'
+  assign eager_count = eager | default: 0
+  assign shown = 0
+  assign seen_teams = ''
+  assign scan_size = scan | default: 40 | at_most: 250
+-%}
+{%- paginate row_collection.products by scan_size -%}
+  {%- for item in row_collection.products -%}
+    {%- if shown >= limit -%}
+      {%- break -%}
+    {%- endif -%}
+    {%- liquid
+      assign skip = false
+      if exclude_id != blank and item.id == exclude_id
+        assign skip = true
+      endif
+      if exclude_tag != blank and item.tags contains exclude_tag
+        assign skip = true
+      endif
+      if product_type != blank and item.type != product_type
+        assign skip = true
+      endif
+
+      assign is_kids = false
+      if item.tags contains 'audience:kids'
+        assign is_kids = true
+      endif
+      if row_audience == 'adult' and is_kids
+        assign skip = true
+      elsif row_audience == 'kids' and is_kids == false
+        assign skip = true
+      endif
+
+      if one_per_team and skip == false
+        assign team_key = ''
+        for tag in item.tags
+          assign tag_prefix = tag | slice: 0, 5
+          if tag_prefix == 'team:'
+            assign team_key = '|' | append: tag | append: '|'
+            break
+          endif
+        endfor
+        if team_key != blank
+          if seen_teams contains team_key
+            assign skip = true
+          else
+            assign seen_teams = seen_teams | append: team_key
+          endif
+        endif
+      endif
+    -%}
+    {%- unless skip -%}
+      {%- liquid
+        assign shown = shown | plus: 1
+        assign card_loading = 'lazy'
+        if shown <= eager_count
+          assign card_loading = 'eager'
+        endif
+      -%}
+      <li class="{{ item_class }}" data-row-card>
+        {%- render 'product-card', product: item, sizes: sizes, loading: card_loading -%}
+      </li>
+    {%- endunless -%}
+  {%- endfor -%}
+{%- endpaginate -%}
+
+{%- comment -%}
+  The scrolling row's styles live here, in the snippet every row of products renders (the featured
+  collection's carousel layout and the collection tabs), so both use the same track, cards, "view
+  all" tile, arrows and progress bar (assets/product-carousel.js drives them).
+{%- endcomment -%}
+{% stylesheet %}
+  /* Carousel: the header and progress bar keep the page width; the row itself spans the screen. It
+     starts where the page content starts and runs past the end edge, where the next card peeks in
+     (the visible columns plus 0.3 of a card; on phones --carousel-peek, half a card for one column). */
+  .featured-collection__carousel {
+    display: block;
+  }
+
+  .featured-collection__track {
+    --carousel-cols: calc(var(--grid-cols) + var(--carousel-peek, 0.3));
+    --carousel-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+    display: grid;
+    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
+    grid-auto-flow: column;
+    gap: var(--grid-gap);
+    margin: 0;
+    padding-block: var(--space-1);
+    padding-inline: var(--carousel-start) var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--carousel-start);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 750px) {
+      --carousel-cols: calc(var(--grid-cols-tablet) + 0.3);
+    }
+
+    @media screen and (min-width: 990px) {
+      --carousel-cols: calc(var(--grid-cols-desktop) + 0.3);
+    }
+  }
+
+  /* Positioned, so absolutely positioned content (visually hidden labels) stays clipped by the row
+     instead of widening the page. */
+  .featured-collection__track > .featured-collection__item {
+    position: relative;
+    min-inline-size: 0;
+    scroll-snap-align: start;
+  }
+
+  /* The row ends with a "view all" tile in the scheme's inverse colors. */
+  .featured-collection__more {
+    display: flex;
+  }
+
+  .featured-collection__more-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    inline-size: 100%;
+    min-block-size: 240px;
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-card);
+    background: var(--color-text);
+    color: var(--color-background);
+    text-align: center;
+    text-decoration: none;
+    transition: transform var(--duration-fast) var(--ease);
+
+    &:hover .featured-collection__more-icon {
+      transform: translateX(calc(4px * var(--dir-sign, 1)));
+    }
+  }
+
+  [dir='rtl'] .featured-collection__more-link {
+    --dir-sign: -1;
+  }
+
+  .featured-collection__more-icon {
+    display: grid;
+    place-items: center;
+    inline-size: 56px;
+    block-size: 56px;
+    border-radius: 50%;
+    background: var(--color-highlight);
+    color: var(--color-on-highlight);
+    transition: transform var(--duration-fast) var(--ease);
+  }
+
+  .featured-collection__more-label {
+    font-family: var(--font-display);
+    font-size: calc(26px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .featured-collection__more-count {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    opacity: 0.75;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .featured-collection__arrow {
+    display: inline-grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-background);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover:not([aria-disabled='true']) {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-background);
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  /* Progress: the thumb's size is the visible share of the row, its offset the scroll position
+     (set by assets/product-carousel.js; logical margins keep it right-to-left in Hebrew and Arabic). */
+  .featured-collection__progress-wrap {
+    margin-block-start: var(--space-5);
+  }
+
+  .featured-collection__progress {
+    block-size: 3px;
+    border-radius: 3px;
+    background: var(--color-border);
+    overflow: hidden;
+  }
+
+  .featured-collection__progress-thumb {
+    display: block;
+    inline-size: calc(var(--carousel-visible, 0.25) * 100%);
+    block-size: 100%;
+    margin-inline-start: calc(var(--carousel-progress, 0) * (100% - var(--carousel-visible, 0.25) * 100%));
+    border-radius: inherit;
+    background: var(--color-text);
+  }
+{% endstylesheet %}

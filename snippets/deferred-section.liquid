@@ -1,0 +1,105 @@
+{%- doc -%}
+  Stands in for a section further down a page until the visitor scrolls near it: a quiet outline of
+  a row (a heading bar and a few tiles) at about the section's height, in the section's colors.
+  assets/deferred-section.js (<sw-deferred-section>) then renders the section alone through the
+  Section Rendering API, where section.index is nil, so the section renders in full, and puts it in
+  place. Long pages (a home page with many rows of products) stay within Shopify's render time this
+  way. Without JavaScript the section doesn't show.
+
+  @param {string} section_id - The section's id (section.id)
+  @param {string} [color_scheme] - The section's color scheme id, for the outline's background
+  @param {number} [min_height] - The outline's height in px on phones (default 560)
+  @param {number} [min_height_desktop] - Its height in px from 750px (default: min_height)
+  @param {string} [shape] - 'row' (default: a heading and product tiles) or 'circles'
+
+  @example
+  {% render 'deferred-section', section_id: section.id, color_scheme: section.settings.color_scheme.id, min_height: 560 %}
+{%- enddoc -%}
+{%- liquid
+  assign height = min_height | default: 560
+  assign height_desktop = min_height_desktop | default: height
+  assign outline = shape | default: 'row'
+-%}
+<sw-deferred-section
+  class="deferred-section color-{{ color_scheme | default: 'scheme-day' }}"
+  data-section-id="{{ section_id }}"
+  style="--deferred-height: {{ height }}px; --deferred-height-desktop: {{ height_desktop }}px;"
+>
+  <div class="page-width deferred-section__outline" aria-hidden="true">
+    <span class="deferred-section__bar"></span>
+    <span class="deferred-section__tiles deferred-section__tiles--{{ outline }}">
+      <span class="deferred-section__tile"></span>
+      <span class="deferred-section__tile"></span>
+      <span class="deferred-section__tile"></span>
+      <span class="deferred-section__tile"></span>
+      <span class="deferred-section__tile"></span>
+    </span>
+  </div>
+</sw-deferred-section>
+<script type="module" src="{{ 'deferred-section.js' | asset_url }}"></script>
+
+{% stylesheet %}
+  .deferred-section {
+    display: block;
+    min-block-size: var(--deferred-height, 560px);
+    padding-block: var(--space-10, 40px);
+    background: var(--color-background);
+    overflow: hidden;
+
+    @media screen and (min-width: 750px) {
+      min-block-size: var(--deferred-height-desktop, 560px);
+    }
+  }
+
+  .deferred-section__outline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+  }
+
+  .deferred-section__bar {
+    display: block;
+    inline-size: min(280px, 60%);
+    block-size: 36px;
+    border-radius: var(--radius-card);
+    background: var(--color-surface);
+  }
+
+  .deferred-section__tiles {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% - var(--grid-gap)) / 1.5);
+    gap: var(--grid-gap);
+    overflow: hidden;
+
+    @media screen and (min-width: 750px) {
+      grid-auto-columns: calc((100% - 2 * var(--grid-gap)) / 3.3);
+    }
+
+    @media screen and (min-width: 990px) {
+      grid-auto-columns: calc((100% - 3 * var(--grid-gap)) / 4.3);
+    }
+  }
+
+  .deferred-section__tile {
+    display: block;
+    aspect-ratio: 1;
+    border-radius: var(--radius-card);
+    background: var(--color-tile);
+    opacity: 0.6;
+  }
+
+  .deferred-section__tiles--circles {
+    grid-auto-columns: 96px;
+    gap: var(--space-4);
+
+    @media screen and (min-width: 990px) {
+      grid-auto-columns: 128px;
+      gap: var(--space-6);
+    }
+
+    .deferred-section__tile {
+      border-radius: 50%;
+    }
+  }
+{% endstylesheet %}

@@ -8,7 +8,98 @@
         "padding_top": 64,
         "padding_bottom": 80
       }
+    },
+    "new_arrivals": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
+        "source": "collection",
+        "collection": "new",
+        "copy": "new",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "stars": {
+      "type": "collection-circles",
+      "blocks": {
+        "kobe_bryant": {
+          "type": "collection",
+          "settings": {
+            "collection": "kobe-bryant"
+          }
+        },
+        "michael_jordan": {
+          "type": "collection",
+          "settings": {
+            "collection": "michael-jordan"
+          }
+        },
+        "lebron_james": {
+          "type": "collection",
+          "settings": {
+            "collection": "lebron-james"
+          }
+        },
+        "stephen_curry": {
+          "type": "collection",
+          "settings": {
+            "collection": "stephen-curry"
+          }
+        },
+        "luka_doncic": {
+          "type": "collection",
+          "settings": {
+            "collection": "luka-doncic"
+          }
+        },
+        "kevin_durant": {
+          "type": "collection",
+          "settings": {
+            "collection": "kevin-durant"
+          }
+        },
+        "allen_iverson": {
+          "type": "collection",
+          "settings": {
+            "collection": "allen-iverson"
+          }
+        },
+        "giannis_antetokounmpo": {
+          "type": "collection",
+          "settings": {
+            "collection": "giannis-antetokounmpo"
+          }
+        }
+      },
+      "block_order": [
+        "kobe_bryant",
+        "michael_jordan",
+        "lebron_james",
+        "stephen_curry",
+        "luka_doncic",
+        "kevin_durant",
+        "allen_iverson",
+        "giannis_antetokounmpo"
+      ],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "copy": "players",
+        "show_count": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
     }
   },
-  "order": ["main"]
+  "order": ["main", "new_arrivals", "stars"]
 }

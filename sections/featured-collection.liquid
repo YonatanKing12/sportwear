@@ -1,120 +1,251 @@
 {%- liquid
-  assign featured = section.settings.collection
-  assign product_limit = section.settings.products_to_show
-  assign columns_desktop = section.settings.columns_desktop
-  assign columns_tablet = columns_desktop | at_most: 3
-  assign columns_mobile = section.settings.columns_mobile | plus: 0
-  assign use_scroller = section.settings.mobile_scroller
-  # Carousel: one row that runs to the screen's edge at every width, with previous/next buttons, a
-  # progress bar and a "view all" tile at its end. The next card peeks in: 0.3 of a card, or half a
-  # card on a phone showing one column, so a large card still reads as a row to swipe.
-  assign is_carousel = false
-  if section.settings.layout == 'carousel'
-    assign is_carousel = true
+  # Further down a page (after its third section) this section can wait until the visitor scrolls near
+  # it: it renders as an outline (snippets/deferred-section.liquid) and assets/deferred-section.js loads
+  # it through the Section Rendering API, where section.index is nil, as in the theme editor, so both
+  # render it in full. A long page stays within Shopify's render time this way.
+  assign defer_render = false
+  if section.settings.lazy_render and section.index > 3
+    assign defer_render = true
   endif
-  assign mobile_peek = 0.3
-  if columns_mobile == 1
-    assign mobile_peek = 0.5
-  endif
-  assign mobile_visible = columns_mobile | plus: mobile_peek
-  assign list_id = 'FeaturedCollection-' | append: section.id
-  # Which of the collection's products the row shows: all, adults only or kids only (kids carry the
-  # tag audience:kids), and optionally only the first product of each team (its team:<slug> tag), so
-  # a row sorted by date doesn't fill up with the team imported last.
-  assign audience_filter = section.settings.audience | default: 'all'
-  assign one_per_team = section.settings.one_per_team
-
-  assign has_products = false
-  if featured != blank and featured.products_count > 0
-    assign has_products = true
-  endif
-  assign has_more = false
-  if has_products and featured.products_count > product_limit
-    assign has_more = true
-  endif
-  assign show_count = false
-  if section.settings.show_count and has_products
-    assign show_count = true
-    assign count_label = 'home.featured_collection.count' | t: count: featured.products_count
-  endif
-
-  # Heading: the owner's text, else the collection's (translated) name, else the translated default ("This season's jerseys").
-  assign heading = section.settings.heading | escape
-  if heading == blank and featured != blank
-    assign heading = featured.title | escape
-  endif
-  if heading == blank
-    assign heading = 'home.featured_collection.heading' | t
-  endif
-
-  assign view_all_url = routes.all_products_collection_url
-  if featured != blank
-    assign view_all_url = featured.url
-  endif
-
-  # Image sizes follow the layout: grid cells inside the page width, or carousel cards (the visible
-  # columns plus a peek) across the screen.
-  if is_carousel
-    capture card_sizes
-      echo '(min-width: 990px) calc((min(100vw, '
-      echo settings.page_width
-      echo 'px) - 64px) / '
-      echo columns_desktop
-      echo '), (min-width: 750px) calc((100vw - 64px) / '
-      echo columns_tablet
-      echo '), calc((100vw - 40px) / '
-      echo mobile_visible
-      echo ')'
-    endcapture
-  else
-    # 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
-    assign gaps_desktop = columns_desktop | minus: 1 | times: 20
-    assign gaps_tablet = columns_tablet | minus: 1 | times: 20
+-%}
+{%- if defer_render -%}
+  {%- render 'deferred-section',
+    section_id: section.id,
+    color_scheme: section.settings.color_scheme.id,
+    min_height: 600,
+    min_height_desktop: 660,
+    shape: 'row'
+  -%}
+{%- else -%}
+  {%- liquid
+    assign featured = section.settings.collection
+    assign product_limit = section.settings.products_to_show
+    assign columns_desktop = section.settings.columns_desktop
+    assign columns_tablet = columns_desktop | at_most: 3
+    assign columns_mobile = section.settings.columns_mobile | plus: 0
+    assign use_scroller = section.settings.mobile_scroller
+    # Carousel: one row that runs to the screen's edge at every width, with previous/next buttons, a
+    # progress bar and a "view all" tile at its end. The next card peeks in: 0.3 of a card, or half a
+    # card on a phone showing one column, so a large card still reads as a row to swipe.
+    assign is_carousel = false
+    if section.settings.layout == 'carousel'
+      assign is_carousel = true
+    endif
+    assign mobile_peek = 0.3
     if columns_mobile == 1
-      assign mobile_size = 'calc(100vw - 40px)'
-      if use_scroller
-        assign mobile_size = 'calc((100vw - 40px) / 1.25)'
-      endif
+      assign mobile_peek = 0.5
+    endif
+    assign mobile_visible = columns_mobile | plus: mobile_peek
+    assign list_id = 'FeaturedCollection-' | append: section.id
+    # Which of the collection's products the row shows: all, adults only or kids only (kids carry the
+    # tag audience:kids), and optionally only the first product of each team (its team:<slug> tag), so
+    # a row sorted by date doesn't fill up with the team imported last.
+    assign audience_filter = section.settings.audience | default: 'all'
+    assign one_per_team = section.settings.one_per_team
+    # Optionally only one product type, e.g. only the jerseys of a collection that also holds shorts;
+    # such a row looks through more of the collection (its first 80 products instead of 40).
+    assign row_type = section.settings.product_type
+    assign row_scan = 40
+    if row_type == 'all'
+      assign row_type = blank
     else
-      assign mobile_size = 'calc((100vw - 52px) / 2)'
-      if use_scroller
-        assign mobile_size = 'calc((100vw - 52px) / 2.25)'
+      assign row_scan = 80
+    endif
+
+    # Where the products come from: the chosen collection, or "more from the same league" on a product
+    # page (the league of the product's sportwear.league_handle, in the product's audience, without its
+    # own team, which the recommendations above already show) or on a team's collection page (the
+    # league of the team's products, without the team). Football leagues without a collection of their
+    # own are in "other-leagues". A row never repeats the collection of the page it sits on.
+    assign source = section.settings.source | default: 'collection'
+    assign exclude_tag = ''
+    assign exclude_id = blank
+    assign league_handle = ''
+    if source == 'product_league'
+      assign featured = blank
+      if product != blank
+        assign league_handle = product.metafields.sportwear.league_handle.value
+        assign team_handle = product.metafields.sportwear.team_handle.value
+        if team_handle != blank
+          assign exclude_tag = 'team:' | append: team_handle
+        endif
+        assign exclude_id = product.id
+        assign audience_filter = 'adult'
+        if product.tags contains 'audience:kids'
+          assign audience_filter = 'kids'
+        endif
+        # Of the same kind: a jersey's page shows jerseys, a pair of shorts' page shows shorts. The NBA's
+        # newest products are its shorts, so the row looks further into the league's collection.
+        if row_type == blank
+          assign row_type = product.type
+        endif
+        assign row_scan = 250
+        assign row_sport_football = false
+        if product.tags contains 'sport:football'
+          assign row_sport_football = true
+        endif
+      endif
+    elsif source == 'collection_league'
+      assign featured = blank
+      if collection != blank and collection.products_count > 0
+        assign first_product = collection.products.first
+        assign own_team_tag = 'team:' | append: collection.handle
+        if first_product.tags contains own_team_tag
+          assign league_handle = first_product.metafields.sportwear.league_handle.value
+          assign exclude_tag = own_team_tag
+          # A basketball team's league row shows jerseys (the NBA's newest products are its shorts).
+          if row_type == blank and first_product.tags contains 'sport:basketball'
+            assign row_type = 'Basketball Jersey'
+            assign row_scan = 250
+          endif
+          assign row_sport_football = false
+          if first_product.tags contains 'sport:football'
+            assign row_sport_football = true
+          endif
+        endif
       endif
     endif
-    capture card_sizes
-      echo '(min-width: 990px) calc((min(100vw - 64px, '
-      echo settings.page_width
-      echo 'px) - '
-      echo gaps_desktop
-      echo 'px) / '
-      echo columns_desktop
-      echo '), (min-width: 750px) calc((100vw - 64px - '
-      echo gaps_tablet
-      echo 'px) / '
-      echo columns_tablet
-      echo '), '
-      echo mobile_size
-    endcapture
-  endif
+    if league_handle != blank
+      assign featured = collections[league_handle]
+      if featured == blank and row_sport_football
+        assign featured = collections['other-leagues']
+        assign league_fallback = true
+      endif
+    endif
+    if collection != blank and featured != blank and featured.handle == collection.handle
+      assign featured = blank
+    endif
 
-  # Only the first two sections of a page (the hero is short) may load images eagerly: their first row of cards.
-  assign eager_cards = 0
-  unless section.index > 2
-    assign eager_cards = columns_desktop
-  endunless
--%}
+    assign has_products = false
+    if featured != blank and featured.products_count > 0
+      assign has_products = true
+    endif
+    assign has_more = false
+    if has_products and featured.products_count > product_limit
+      assign has_more = true
+    endif
+    assign count_label = ''
+    if has_products
+      assign count_label = 'home.featured_collection.count' | t: count: featured.products_count
+    endif
+    assign show_count = false
+    if section.settings.show_count and has_products
+      assign show_count = true
+    endif
 
-{%- capture section_header -%}
-  <div class="section-header featured-collection__header">
-    <div class="featured-collection__title">
-      <h2 class="featured-collection__heading display-m">{{ heading }}</h2>
-      {%- if show_count -%}
-        <span class="featured-collection__count">{{ count_label }}</span>
-      {%- endif -%}
-    </div>
+    # Texts: the owner's own, else a translated copy set chosen in the editor (an eyebrow and a line of
+    # text for rows such as new arrivals or retro jerseys). The heading is the owner's, else the
+    # collection's (translated) name, else the translated default ("This season's jerseys"). "More from
+    # the same league" rows say so in their eyebrow (not when their league has no collection of its own and
+    # the row shows "other leagues" instead).
+    assign copy = section.settings.copy | default: 'none'
+    assign eyebrow = section.settings.eyebrow | escape
+    assign heading = section.settings.heading | escape
+    assign text = section.settings.text | escape
+    if copy != 'none'
+      assign copy_key = 'home.featured_collection.copy.' | append: copy
+      if eyebrow == blank
+        assign eyebrow = copy_key | append: '.eyebrow' | t
+      endif
+      if text == blank
+        assign text = copy_key | append: '.text' | t
+      endif
+    endif
+    if eyebrow == blank and source != 'collection' and league_fallback != true
+      assign eyebrow = 'home.featured_collection.same_league' | t
+    endif
+    if heading == blank and featured != blank
+      assign heading = featured.title | escape
+    endif
+    if heading == blank
+      assign heading = 'home.featured_collection.heading' | t
+    endif
+
+    # An opening card, in the accent color, can lead a scrolling row: it carries the eyebrow, the
+    # heading, the text and the "view all" button, so the header above keeps only the arrows.
+    assign intro_card = false
+    if is_carousel and section.settings.intro_card
+      assign intro_card = true
+    endif
+
+    assign view_all_url = routes.all_products_collection_url
+    if featured != blank
+      assign view_all_url = featured.url
+    endif
+
+    # Image sizes follow the layout: grid cells inside the page width, or carousel cards (the visible
+    # columns plus a peek) across the screen.
+    if is_carousel
+      capture card_sizes
+        echo '(min-width: 990px) calc((min(100vw, '
+        echo settings.page_width
+        echo 'px) - 64px) / '
+        echo columns_desktop
+        echo '), (min-width: 750px) calc((100vw - 64px) / '
+        echo columns_tablet
+        echo '), calc((100vw - 40px) / '
+        echo mobile_visible
+        echo ')'
+      endcapture
+    else
+      # 64px of gutters and 20px gaps from 750px, 40px and 12px below it.
+      assign gaps_desktop = columns_desktop | minus: 1 | times: 20
+      assign gaps_tablet = columns_tablet | minus: 1 | times: 20
+      if columns_mobile == 1
+        assign mobile_size = 'calc(100vw - 40px)'
+        if use_scroller
+          assign mobile_size = 'calc((100vw - 40px) / 1.25)'
+        endif
+      else
+        assign mobile_size = 'calc((100vw - 52px) / 2)'
+        if use_scroller
+          assign mobile_size = 'calc((100vw - 52px) / 2.25)'
+        endif
+      endif
+      capture card_sizes
+        echo '(min-width: 990px) calc((min(100vw - 64px, '
+        echo settings.page_width
+        echo 'px) - '
+        echo gaps_desktop
+        echo 'px) / '
+        echo columns_desktop
+        echo '), (min-width: 750px) calc((100vw - 64px - '
+        echo gaps_tablet
+        echo 'px) / '
+        echo columns_tablet
+        echo '), '
+        echo mobile_size
+      endcapture
+    endif
+
+    # Only the first two sections of a page (the hero is short) may load images eagerly: their first row of cards.
+    assign eager_cards = 0
+    unless section.index > 2
+      assign eager_cards = columns_desktop
+    endunless
+  -%}
+
+  {%- capture section_header -%}
+  <div class="section-header featured-collection__header{% if intro_card %} featured-collection__header--intro{% endif %}">
+    {%- unless intro_card -%}
+      <div class="featured-collection__title">
+        {%- if eyebrow != blank -%}
+          <p class="eyebrow featured-collection__eyebrow">{{ eyebrow }}</p>
+        {%- endif -%}
+        <div class="featured-collection__title-row">
+          <h2 class="featured-collection__heading display-m">{{ heading }}</h2>
+          {%- if show_count -%}
+            <span class="featured-collection__count">{{ count_label }}</span>
+          {%- endif -%}
+        </div>
+        {%- if text != blank -%}
+          <p class="featured-collection__text">{{ text }}</p>
+        {%- endif -%}
+      </div>
+    {%- endunless -%}
     {%- if section.settings.show_view_all or is_carousel -%}
       <div class="featured-collection__header-end">
-        {%- if section.settings.show_view_all -%}
+        {%- if section.settings.show_view_all and intro_card == false -%}
           <a class="link-arrow featured-collection__view-all" href="{{ view_all_url }}">
             {{- 'home.featured_collection.view_all' | t -}}
             <span class="visually-hidden"> ({{ heading }})</span>
@@ -150,56 +281,50 @@
   </div>
 {%- endcapture -%}
 
-{%- assign shown = 0 -%}
-{%- capture cards -%}
+  {%- assign shown = 0 -%}
+  {%- capture cards -%}
   {%- if has_products -%}
-    {%- assign seen_teams = '' -%}
-    {%- for product in featured.products -%}
-      {%- if shown >= product_limit -%}
-        {%- break -%}
-      {%- endif -%}
-      {%- liquid
-        assign skip = false
-        assign is_kids = false
-        if product.tags contains 'audience:kids'
-          assign is_kids = true
-        endif
-        if audience_filter == 'adult' and is_kids
-          assign skip = true
-        elsif audience_filter == 'kids' and is_kids == false
-          assign skip = true
-        endif
-        if one_per_team and skip == false
-          assign team_key = ''
-          for tag in product.tags
-            assign tag_prefix = tag | slice: 0, 5
-            if tag_prefix == 'team:'
-              assign team_key = '|' | append: tag | append: '|'
-              break
-            endif
-          endfor
-          if team_key != blank
-            if seen_teams contains team_key
-              assign skip = true
-            else
-              assign seen_teams = seen_teams | append: team_key
-            endif
-          endif
-        endif
+    {%- capture product_cards -%}
+      {%- render 'home-row-cards',
+        row_collection: featured,
+        limit: product_limit,
+        sizes: card_sizes,
+        item_class: 'featured-collection__item',
+        audience: audience_filter,
+        product_type: row_type,
+        scan: row_scan,
+        one_per_team: one_per_team,
+        exclude_tag: exclude_tag,
+        exclude_id: exclude_id,
+        eager: eager_cards
       -%}
-      {%- unless skip -%}
-        {%- liquid
-          assign shown = shown | plus: 1
-          assign card_loading = 'lazy'
-          if shown <= eager_cards
-            assign card_loading = 'eager'
-          endif
-        -%}
-        <li class="featured-collection__item">
-          {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
-        </li>
-      {%- endunless -%}
-    {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign shown = product_cards | split: 'data-row-card' | size | minus: 1 -%}
+    {%- if intro_card -%}
+      <li class="featured-collection__item featured-collection__intro">
+        <div class="featured-collection__intro-card">
+          <div class="featured-collection__intro-top">
+            {%- if eyebrow != blank -%}
+              <p class="eyebrow featured-collection__intro-eyebrow">{{ eyebrow }}</p>
+            {%- endif -%}
+            <h2 class="featured-collection__intro-heading display-l">{{ heading }}</h2>
+            {%- if text != blank -%}
+              <p class="featured-collection__intro-text">{{ text }}</p>
+            {%- endif -%}
+          </div>
+          <div class="featured-collection__intro-bottom">
+            {%- if show_count -%}
+              <p class="featured-collection__intro-count">{{ count_label }}</p>
+            {%- endif -%}
+            <a class="button featured-collection__intro-button" href="{{ view_all_url }}">
+              {{- 'home.featured_collection.view_all' | t -}}
+              <span class="visually-hidden"> ({{ heading }})</span>
+            </a>
+          </div>
+        </div>
+      </li>
+    {%- endif -%}
+    {{- product_cards -}}
     {%- if is_carousel and has_more -%}
       <li class="featured-collection__item featured-collection__more">
         <a class="featured-collection__more-link" href="{{ view_all_url }}">
@@ -223,65 +348,163 @@
   {%- endif -%}
 {%- endcapture -%}
 
-{%- liquid
-  # A collection whose products the audience or team options filter out entirely shows nothing.
-  assign show_section = false
-  if has_products and shown > 0
-    assign show_section = true
-  endif
-  if request.design_mode
-    assign show_section = true
-  endif
--%}
-{%- if show_section -%}
-  <div
-    class="section featured-collection color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
-    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
-  >
-    {%- if is_carousel -%}
-      <sw-carousel class="featured-collection__carousel">
-        <div class="page-width">{{ section_header }}</div>
-        <ul
-          id="{{ list_id }}"
-          class="featured-collection__track"
-          role="list"
-          data-carousel-track
-          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }}; --carousel-peek: {{ mobile_peek }};"
-        >
-          {{- cards -}}
-        </ul>
-        <div class="page-width featured-collection__progress-wrap js-only" aria-hidden="true">
-          <div class="featured-collection__progress">
-            <span class="featured-collection__progress-thumb"></span>
+  {%- liquid
+    # A collection whose products the audience or team options filter out entirely shows nothing.
+    assign show_section = false
+    if has_products and shown > 0
+      assign show_section = true
+    endif
+    if request.design_mode
+      assign show_section = true
+    endif
+  -%}
+  {%- if show_section -%}
+    <div
+      class="section featured-collection color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
+      style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+    >
+      {%- if is_carousel -%}
+        <sw-carousel class="featured-collection__carousel">
+          <div class="page-width">{{ section_header }}</div>
+          <ul
+            id="{{ list_id }}"
+            class="featured-collection__track"
+            role="list"
+            data-carousel-track
+            style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }}; --carousel-peek: {{ mobile_peek }};"
+          >
+            {{- cards -}}
+          </ul>
+          <div class="page-width featured-collection__progress-wrap js-only" aria-hidden="true">
+            <div class="featured-collection__progress">
+              <span class="featured-collection__progress-thumb"></span>
+            </div>
           </div>
+        </sw-carousel>
+      {%- else -%}
+        <div class="page-width">
+          {{ section_header }}
+          <ul
+            id="{{ list_id }}"
+            class="grid featured-collection__grid{% if use_scroller %} featured-collection__grid--scroll{% endif %}"
+            role="list"
+            style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
+          >
+            {{- cards -}}
+          </ul>
         </div>
-      </sw-carousel>
-    {%- else -%}
-      <div class="page-width">
-        {{ section_header }}
-        <ul
-          id="{{ list_id }}"
-          class="grid featured-collection__grid{% if use_scroller %} featured-collection__grid--scroll{% endif %}"
-          role="list"
-          style="--grid-cols: {{ columns_mobile }}; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns_desktop }};"
-        >
-          {{- cards -}}
-        </ul>
-      </div>
+      {%- endif -%}
+    </div>
+    {%- if is_carousel -%}
+      <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
     {%- endif -%}
-  </div>
-  {%- if is_carousel -%}
-    <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
   {%- endif -%}
 {%- endif -%}
 
 {% stylesheet %}
   .featured-collection__title {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    min-inline-size: 0;
+  }
+
+  .featured-collection__title-row {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: var(--space-2) var(--space-3);
     min-inline-size: 0;
+  }
+
+  .featured-collection__eyebrow {
+    margin: 0;
+    color: var(--color-accent-text);
+  }
+
+  .featured-collection__text {
+    max-inline-size: 60ch;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    line-height: var(--leading-body, 1.5);
+  }
+
+  /* With an opening card the header only holds the arrows (tablets and up); phones swipe. */
+  .featured-collection__header--intro {
+    display: none;
+    justify-content: flex-end;
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+
+  /* The opening card: an accent-colored tile as tall as the product cards, with the row's eyebrow,
+     heading and text at its top and the count and the "view all" button at its bottom. */
+  .featured-collection__intro {
+    display: flex;
+  }
+
+  .featured-collection__intro-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--space-6);
+    inline-size: 100%;
+    min-block-size: 280px;
+    padding: var(--space-6) var(--space-5);
+    border-radius: var(--radius-card);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+
+    @media screen and (min-width: 990px) {
+      padding: var(--space-8) var(--space-6);
+    }
+  }
+
+  .featured-collection__intro-top,
+  .featured-collection__intro-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+  .featured-collection__intro-eyebrow,
+  .featured-collection__intro-text,
+  .featured-collection__intro-count {
+    margin: 0;
+  }
+
+  .featured-collection__intro-heading {
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  .featured-collection__intro-text {
+    font-size: var(--text-md);
+    font-weight: 600;
+    line-height: var(--leading-body, 1.5);
+  }
+
+  .featured-collection__intro-count {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .featured-collection__intro-button {
+    border-color: var(--color-on-accent);
+    background: var(--color-on-accent);
+    color: var(--color-accent);
+
+    &:hover {
+      background: var(--color-on-accent);
+      color: var(--color-accent);
+      opacity: 0.9;
+    }
   }
 
   .featured-collection__heading {
@@ -345,106 +568,6 @@
     scroll-snap-align: start;
   }
 
-  /* Carousel: the header and progress bar keep the page width; the row itself spans the screen. It
-     starts where the page content starts and runs past the end edge, where the next card peeks in
-     (the visible columns plus 0.3 of a card; on phones --carousel-peek, half a card for one column). */
-  .featured-collection__carousel {
-    display: block;
-  }
-
-  .featured-collection__track {
-    --carousel-cols: calc(var(--grid-cols) + var(--carousel-peek, 0.3));
-    --carousel-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
-    display: grid;
-    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
-    grid-auto-flow: column;
-    gap: var(--grid-gap);
-    margin: 0;
-    padding-block: var(--space-1);
-    padding-inline: var(--carousel-start) var(--gutter);
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
-    scroll-padding-inline: var(--carousel-start);
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    list-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
-    @media screen and (min-width: 750px) {
-      --carousel-cols: calc(var(--grid-cols-tablet) + 0.3);
-    }
-
-    @media screen and (min-width: 990px) {
-      --carousel-cols: calc(var(--grid-cols-desktop) + 0.3);
-    }
-  }
-
-  /* Positioned, so absolutely positioned content (visually hidden labels) stays clipped by the row
-     instead of widening the page. */
-  .featured-collection__track > .featured-collection__item {
-    position: relative;
-    min-inline-size: 0;
-    scroll-snap-align: start;
-  }
-
-  /* The row ends with a "view all" tile in the scheme's inverse colors. */
-  .featured-collection__more {
-    display: flex;
-  }
-
-  .featured-collection__more-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-3);
-    inline-size: 100%;
-    min-block-size: 240px;
-    padding: var(--space-6) var(--space-4);
-    border-radius: var(--radius-card);
-    background: var(--color-text);
-    color: var(--color-background);
-    text-align: center;
-    text-decoration: none;
-    transition: transform var(--duration-fast) var(--ease);
-
-    &:hover .featured-collection__more-icon {
-      transform: translateX(calc(4px * var(--dir-sign, 1)));
-    }
-  }
-
-  [dir='rtl'] .featured-collection__more-link {
-    --dir-sign: -1;
-  }
-
-  .featured-collection__more-icon {
-    display: grid;
-    place-items: center;
-    inline-size: 56px;
-    block-size: 56px;
-    border-radius: 50%;
-    background: var(--color-highlight);
-    color: var(--color-on-highlight);
-    transition: transform var(--duration-fast) var(--ease);
-  }
-
-  .featured-collection__more-label {
-    font-family: var(--font-display);
-    font-size: calc(26px * var(--heading-scale, 1) * var(--display-lang-scale, 1));
-    font-weight: 700;
-    line-height: 1;
-  }
-
-  .featured-collection__more-count {
-    font-size: var(--text-sm);
-    font-weight: 700;
-    opacity: 0.75;
-    font-variant-numeric: tabular-nums;
-  }
-
   .featured-collection__arrows {
     display: none;
     gap: var(--space-2);
@@ -452,55 +575,6 @@
     @media screen and (min-width: 750px) {
       display: flex;
     }
-  }
-
-  .featured-collection__arrow {
-    display: inline-grid;
-    place-items: center;
-    inline-size: var(--touch-target);
-    block-size: var(--touch-target);
-    padding: 0;
-    border: 1px solid var(--color-border);
-    border-radius: 50%;
-    background: var(--color-background);
-    color: var(--color-text);
-    cursor: pointer;
-    transition:
-      background-color var(--duration-fast) var(--ease),
-      color var(--duration-fast) var(--ease);
-
-    &:hover:not([aria-disabled='true']) {
-      border-color: var(--color-text);
-      background: var(--color-text);
-      color: var(--color-background);
-    }
-
-    &[aria-disabled='true'] {
-      opacity: 0.35;
-      cursor: default;
-    }
-  }
-
-  /* Progress: the thumb's size is the visible share of the row, its offset the scroll position
-     (set by assets/product-carousel.js; logical margins keep it right-to-left in Hebrew and Arabic). */
-  .featured-collection__progress-wrap {
-    margin-block-start: var(--space-5);
-  }
-
-  .featured-collection__progress {
-    block-size: 3px;
-    border-radius: 3px;
-    background: var(--color-border);
-    overflow: hidden;
-  }
-
-  .featured-collection__progress-thumb {
-    display: block;
-    inline-size: calc(var(--carousel-visible, 0.25) * 100%);
-    block-size: 100%;
-    margin-inline-start: calc(var(--carousel-progress, 0) * (100% - var(--carousel-visible, 0.25) * 100%));
-    border-radius: inherit;
-    background: var(--color-text);
   }
 
   /* Nothing to scroll (fewer products than columns): no buttons, no progress bar. */
@@ -523,15 +597,68 @@
       "default": "scheme-day"
     },
     {
+      "type": "checkbox",
+      "id": "lazy_render",
+      "label": "t:sections.featured_collection.settings.lazy_render.label",
+      "info": "t:sections.featured_collection.settings.lazy_render.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "source",
+      "label": "t:sections.featured_collection.settings.source.label",
+      "info": "t:sections.featured_collection.settings.source.info",
+      "options": [
+        { "value": "collection", "label": "t:sections.featured_collection.settings.source.options.collection" },
+        { "value": "product_league", "label": "t:sections.featured_collection.settings.source.options.product_league" },
+        {
+          "value": "collection_league",
+          "label": "t:sections.featured_collection.settings.source.options.collection_league"
+        }
+      ],
+      "default": "collection"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "t:settings.collection"
+    },
+    {
+      "type": "select",
+      "id": "copy",
+      "label": "t:sections.featured_collection.settings.copy.label",
+      "info": "t:sections.featured_collection.settings.copy.info",
+      "options": [
+        { "value": "none", "label": "t:sections.featured_collection.settings.copy.options.none" },
+        { "value": "new", "label": "t:sections.featured_collection.settings.copy.options.new" },
+        { "value": "retro", "label": "t:sections.featured_collection.settings.copy.options.retro" },
+        { "value": "city_edition", "label": "t:sections.featured_collection.settings.copy.options.city_edition" },
+        {
+          "value": "special_editions",
+          "label": "t:sections.featured_collection.settings.copy.options.special_editions"
+        },
+        { "value": "shorts", "label": "t:sections.featured_collection.settings.copy.options.shorts" },
+        { "value": "hoodies", "label": "t:sections.featured_collection.settings.copy.options.hoodies" }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info"
+    },
+    {
       "type": "text",
       "id": "heading",
       "label": "t:settings.heading",
       "info": "t:sections.featured_collection.settings.heading.info"
     },
     {
-      "type": "collection",
-      "id": "collection",
-      "label": "t:settings.collection"
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
     },
     {
       "type": "select",
@@ -542,6 +669,33 @@
         { "value": "all", "label": "t:sections.featured_collection.settings.audience.options.all" },
         { "value": "adult", "label": "t:sections.featured_collection.settings.audience.options.adult" },
         { "value": "kids", "label": "t:sections.featured_collection.settings.audience.options.kids" }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "select",
+      "id": "product_type",
+      "label": "t:sections.featured_collection.settings.product_type.label",
+      "info": "t:sections.featured_collection.settings.product_type.info",
+      "options": [
+        { "value": "all", "label": "t:sections.featured_collection.settings.product_type.options.all" },
+        {
+          "value": "Basketball Jersey",
+          "label": "t:sections.featured_collection.settings.product_type.options.basketball_jersey"
+        },
+        {
+          "value": "Basketball Shorts",
+          "label": "t:sections.featured_collection.settings.product_type.options.basketball_shorts"
+        },
+        {
+          "value": "Football Jersey",
+          "label": "t:sections.featured_collection.settings.product_type.options.football_jersey"
+        },
+        {
+          "value": "Football Kit",
+          "label": "t:sections.featured_collection.settings.product_type.options.football_kit"
+        },
+        { "value": "Hoodie", "label": "t:sections.featured_collection.settings.product_type.options.hoodie" }
       ],
       "default": "all"
     },
@@ -562,6 +716,14 @@
         { "value": "carousel", "label": "t:sections.featured_collection.settings.layout.options.carousel" }
       ],
       "default": "grid"
+    },
+    {
+      "type": "checkbox",
+      "id": "intro_card",
+      "label": "t:sections.featured_collection.settings.intro_card.label",
+      "info": "t:sections.featured_collection.settings.intro_card.info",
+      "default": false,
+      "visible_if": "{{ section.settings.layout == 'carousel' }}"
     },
     {
       "type": "range",

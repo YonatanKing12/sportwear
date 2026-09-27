@@ -1,0 +1,458 @@
+{%- comment -%}
+  Collection circles: a row of round pictures that link to collections, such as players or teams.
+  Each block is a collection; its picture is the collection's own image, or else the photo of the first
+  adult jersey among its first 6 products (a team's newest product may be its shorts or a kids set),
+  or else its first product's (collection.featured_image), shown whole on the light product tile. The name
+  under it is the collection's own (translated) title, with the product count under that. The row
+  scrolls sideways at every width (arrows from tablets up, through <sw-carousel> in
+  assets/product-carousel.js). A collection with no products is skipped outside the theme editor.
+  The heading, eyebrow and text come from a translated copy set (players, teams) unless the owner
+  writes their own.
+{%- endcomment -%}
+{%- liquid
+  # Further down a page (after its third section) this section can wait until the visitor scrolls near
+  # it: it renders as an outline (snippets/deferred-section.liquid) and assets/deferred-section.js loads
+  # it through the Section Rendering API, where section.index is nil, as in the theme editor, so both
+  # render it in full. A long page stays within Shopify's render time this way.
+  assign defer_render = false
+  if section.settings.lazy_render and section.index > 3
+    assign defer_render = true
+  endif
+-%}
+{%- if defer_render -%}
+  {%- render 'deferred-section',
+    section_id: section.id,
+    color_scheme: section.settings.color_scheme.id,
+    min_height: 360,
+    min_height_desktop: 420,
+    shape: 'circles'
+  -%}
+{%- else -%}
+  {%- liquid
+    assign copy = section.settings.copy | default: 'none'
+    assign eyebrow = section.settings.eyebrow | escape
+    assign heading = section.settings.heading | escape
+    assign text = section.settings.text | escape
+    if copy != 'none'
+      assign copy_key = 'home.collection_circles.copy.' | append: copy
+      if eyebrow == blank
+        assign eyebrow = copy_key | append: '.eyebrow' | t
+      endif
+      if heading == blank
+        assign heading = copy_key | append: '.heading' | t
+      endif
+      if text == blank
+        assign text = copy_key | append: '.text' | t
+      endif
+    endif
+    if heading == blank
+      assign heading = 'home.collection_circles.heading' | t
+    endif
+
+    assign list_id = 'CollectionCircles-' | append: section.id
+    assign visible_count = 0
+    for block in section.blocks
+      if block.settings.collection.all_products_count > 0 or request.design_mode
+        assign visible_count = visible_count | plus: 1
+      endif
+    endfor
+  -%}
+  {%- if visible_count > 0 -%}
+    <div
+      class="section collection-circles color-{{ section.settings.color_scheme.id }}"
+      style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+    >
+      <sw-carousel class="collection-circles__carousel">
+        <div class="page-width">
+          <div class="section-header collection-circles__header">
+            <div class="collection-circles__title">
+              {%- if eyebrow != blank -%}
+                <p class="eyebrow collection-circles__eyebrow">{{ eyebrow }}</p>
+              {%- endif -%}
+              <h2 class="collection-circles__heading display-m">{{ heading }}</h2>
+              {%- if text != blank -%}
+                <p class="collection-circles__text">{{ text }}</p>
+              {%- endif -%}
+            </div>
+            <div class="collection-circles__arrows js-only">
+              <button
+                type="button"
+                class="collection-circles__arrow"
+                aria-controls="{{ list_id }}"
+                aria-disabled="true"
+                data-carousel-prev
+              >
+                {%- render 'icon', name: 'chevron-back', size: 20 -%}
+                <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+              </button>
+              <button
+                type="button"
+                class="collection-circles__arrow"
+                aria-controls="{{ list_id }}"
+                aria-disabled="false"
+                data-carousel-next
+              >
+                {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+                <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <ul id="{{ list_id }}" class="collection-circles__track" role="list" data-carousel-track>
+          {%- for block in section.blocks -%}
+            {%- liquid
+              assign circle_collection = block.settings.collection
+              if circle_collection == blank or circle_collection.all_products_count == 0
+                unless request.design_mode
+                  continue
+                endunless
+              endif
+
+              assign circle_image = blank
+              if circle_collection != blank
+                assign circle_image = circle_collection.image
+                if circle_image == blank
+                  assign kids_image = blank
+                  for circle_product in circle_collection.products limit: 6
+                    if circle_product.type contains 'Jersey'
+                      if circle_product.tags contains 'audience:kids'
+                        if kids_image == blank
+                          assign kids_image = circle_product.featured_media.preview_image
+                        endif
+                      else
+                        assign circle_image = circle_product.featured_media.preview_image
+                        break
+                      endif
+                    endif
+                  endfor
+                  if circle_image == blank
+                    assign circle_image = kids_image
+                  endif
+                  if circle_image == blank
+                    assign circle_image = circle_collection.featured_image
+                  endif
+                endif
+              endif
+            -%}
+            <li class="collection-circles__item" {{ block.shopify_attributes }}>
+              {%- if circle_collection != blank -%}
+                <a class="collection-circles__link" href="{{ circle_collection.url }}">
+                  <span class="collection-circles__media">
+                    {%- if circle_image != blank -%}
+                      {%- render 'image',
+                        image: circle_image,
+                        sizes: '(min-width: 990px) 128px, 96px',
+                        widths: '120, 180, 240, 300, 400',
+                        alt: '',
+                        class: 'collection-circles__image'
+                      -%}
+                    {%- else -%}
+                      {%- render 'icon', name: 'shirt', size: 36 -%}
+                    {%- endif -%}
+                  </span>
+                  <span class="collection-circles__name">{{ circle_collection.title | escape }}</span>
+                  {%- if section.settings.show_count -%}
+                    <span class="collection-circles__count">
+                      {{- 'home.featured_collection.count' | t: count: circle_collection.all_products_count -}}
+                    </span>
+                  {%- endif -%}
+                </a>
+              {%- else -%}
+                <span class="collection-circles__link">
+                  <span class="collection-circles__media">{%- render 'icon', name: 'shirt', size: 36 -%}</span>
+                  <span class="collection-circles__name">{{ 'home.collection_circles.placeholder' | t }}</span>
+                </span>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </sw-carousel>
+    </div>
+    <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
+  {%- endif -%}
+{%- endif -%}
+
+{% stylesheet %}
+  .collection-circles__carousel {
+    display: block;
+  }
+
+  .collection-circles__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+    min-inline-size: 0;
+  }
+
+  .collection-circles__eyebrow {
+    margin: 0;
+    color: var(--color-accent-text);
+  }
+
+  .collection-circles__heading {
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  .collection-circles__text {
+    max-inline-size: 60ch;
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-md);
+    line-height: var(--leading-body);
+  }
+
+  /* The row starts where the page content starts and runs to the screen's end edge, like the product
+     rows; each circle snaps to the start. */
+  .collection-circles__track {
+    --circle-size: 96px;
+    --circles-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+    display: flex;
+    gap: var(--space-4);
+    margin: 0;
+    padding-block: var(--space-1);
+    padding-inline: var(--circles-start) var(--gutter);
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: var(--circles-start);
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (min-width: 990px) {
+      --circle-size: 128px;
+      gap: var(--space-6);
+    }
+  }
+
+  .collection-circles__item {
+    position: relative;
+    flex: 0 0 auto;
+    inline-size: var(--circle-size);
+    scroll-snap-align: start;
+  }
+
+  .collection-circles__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover .collection-circles__media,
+    &:focus-visible .collection-circles__media {
+      box-shadow:
+        0 0 0 2px var(--color-background),
+        0 0 0 4px var(--color-text);
+    }
+
+    &:hover .collection-circles__image {
+      transform: scale(1.06);
+    }
+  }
+
+  .collection-circles__media {
+    display: grid;
+    place-items: center;
+    inline-size: var(--circle-size);
+    block-size: var(--circle-size);
+    border-radius: 50%;
+    background: var(--color-tile);
+    color: var(--color-muted);
+    overflow: hidden;
+    transition: box-shadow var(--duration-fast) var(--ease);
+  }
+
+  .collection-circles__image {
+    inline-size: 82%;
+    block-size: 82%;
+    object-fit: contain;
+    transition: transform var(--duration) var(--ease);
+  }
+
+  .collection-circles__name {
+    display: -webkit-box;
+    max-inline-size: 100%;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    line-height: 1.25;
+    overflow-wrap: break-word;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .collection-circles__count {
+    margin-block-start: calc(var(--space-1) * -1);
+    color: var(--color-muted);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .collection-circles__arrows {
+    display: none;
+    flex-shrink: 0;
+    gap: var(--space-2);
+
+    @media screen and (min-width: 750px) {
+      display: flex;
+    }
+  }
+
+  .collection-circles__arrow {
+    display: inline-grid;
+    place-items: center;
+    inline-size: var(--touch-target);
+    block-size: var(--touch-target);
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    background: var(--color-background);
+    color: var(--color-text);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease),
+      color var(--duration-fast) var(--ease);
+
+    &:hover:not([aria-disabled='true']) {
+      border-color: var(--color-text);
+      background: var(--color-text);
+      color: var(--color-background);
+    }
+
+    &[aria-disabled='true'] {
+      opacity: 0.35;
+      cursor: default;
+    }
+  }
+
+  /* Everything fits: no arrows. */
+  sw-carousel:not([data-scrollable]) .collection-circles__arrows {
+    display: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .collection-circles__image {
+      transition: none;
+    }
+
+    .collection-circles__link:hover .collection-circles__image {
+      transform: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.collection_circles.name",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-day"
+    },
+    {
+      "type": "checkbox",
+      "id": "lazy_render",
+      "label": "t:sections.featured_collection.settings.lazy_render.label",
+      "info": "t:sections.featured_collection.settings.lazy_render.info",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "copy",
+      "label": "t:sections.collection_circles.settings.copy.label",
+      "info": "t:sections.collection_circles.settings.copy.info",
+      "options": [
+        { "value": "none", "label": "t:sections.collection_circles.settings.copy.options.none" },
+        { "value": "players", "label": "t:sections.collection_circles.settings.copy.options.players" },
+        { "value": "teams", "label": "t:sections.collection_circles.settings.copy.options.teams" }
+      ],
+      "default": "players"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "t:settings.text",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_count",
+      "label": "t:sections.collection_circles.settings.show_count.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.collection_circles.blocks.collection.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:settings.collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 24,
+  "presets": [
+    {
+      "name": "t:sections.collection_circles.presets.name",
+      "blocks": [
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" },
+        { "type": "collection" }
+      ]
+    }
+  ]
+}
+{% endschema %}

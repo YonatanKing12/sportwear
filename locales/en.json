@@ -567,6 +567,33 @@
       "count": {
         "one": "{{ count }} product",
         "other": "{{ count }} products"
+      },
+      "same_league": "More from the league",
+      "copy": {
+        "new": {
+          "eyebrow": "Just landed",
+          "text": "The latest jerseys we've added to the store"
+        },
+        "retro": {
+          "eyebrow": "Basketball",
+          "text": "Classic designs of the great teams and players"
+        },
+        "city_edition": {
+          "eyebrow": "NBA",
+          "text": "The special designs each team dedicates to its city"
+        },
+        "special_editions": {
+          "eyebrow": "Basketball",
+          "text": "Jerseys in special designs, beyond the regular kits"
+        },
+        "shorts": {
+          "eyebrow": "Basketball",
+          "text": "NBA team shorts, sizes S to XL"
+        },
+        "hoodies": {
+          "eyebrow": "American football",
+          "text": "NFL team hoodies for men, women and kids"
+        }
       }
     },
     "promo_banner": {
@@ -659,6 +686,37 @@
           "text": "Brazil, France, Japan, Germany and more",
           "button_label": "Shop national teams",
           "secondary_button_label": "Football jerseys"
+        }
+      }
+    },
+    "collection_circles": {
+      "heading": "Shop by collection",
+      "placeholder": "Pick a collection",
+      "copy": {
+        "players": {
+          "eyebrow": "NBA",
+          "heading": "The stars",
+          "text": "Every jersey, by player"
+        },
+        "teams": {
+          "eyebrow": "Teams",
+          "heading": "Pick your team",
+          "text": "All your team's jerseys in one place"
+        }
+      }
+    },
+    "collection_tabs": {
+      "heading": "Shop by collection",
+      "copy": {
+        "leagues": {
+          "eyebrow": "Football",
+          "heading": "The big leagues",
+          "text": "Pick a league and browse its teams"
+        },
+        "nba_teams": {
+          "eyebrow": "NBA",
+          "heading": "NBA teams",
+          "text": "Pick a team and browse its jerseys"
         }
       }
     }

@@ -289,7 +289,7 @@
     "national_teams": {
       "type": "featured-collection",
       "settings": {
-        "color_scheme": "scheme-day",
+        "color_scheme": "scheme-soft",
         "collection": "national-teams",
         "audience": "adult",
         "one_per_team": true,
@@ -312,6 +312,471 @@
         "padding_top": 24,
         "padding_bottom": 48
       }
+    },
+    "new_arrivals": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
+        "source": "collection",
+        "collection": "new",
+        "copy": "new",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "stars": {
+      "type": "collection-circles",
+      "blocks": {
+        "kobe_bryant": {
+          "type": "collection",
+          "settings": {
+            "collection": "kobe-bryant"
+          }
+        },
+        "michael_jordan": {
+          "type": "collection",
+          "settings": {
+            "collection": "michael-jordan"
+          }
+        },
+        "lebron_james": {
+          "type": "collection",
+          "settings": {
+            "collection": "lebron-james"
+          }
+        },
+        "stephen_curry": {
+          "type": "collection",
+          "settings": {
+            "collection": "stephen-curry"
+          }
+        },
+        "luka_doncic": {
+          "type": "collection",
+          "settings": {
+            "collection": "luka-doncic"
+          }
+        },
+        "kevin_durant": {
+          "type": "collection",
+          "settings": {
+            "collection": "kevin-durant"
+          }
+        },
+        "allen_iverson": {
+          "type": "collection",
+          "settings": {
+            "collection": "allen-iverson"
+          }
+        },
+        "giannis_antetokounmpo": {
+          "type": "collection",
+          "settings": {
+            "collection": "giannis-antetokounmpo"
+          }
+        },
+        "victor_wembanyama": {
+          "type": "collection",
+          "settings": {
+            "collection": "victor-wembanyama"
+          }
+        },
+        "kyrie_irving": {
+          "type": "collection",
+          "settings": {
+            "collection": "kyrie-irving"
+          }
+        },
+        "ja_morant": {
+          "type": "collection",
+          "settings": {
+            "collection": "ja-morant"
+          }
+        },
+        "anthony_edwards": {
+          "type": "collection",
+          "settings": {
+            "collection": "anthony-edwards"
+          }
+        },
+        "jayson_tatum": {
+          "type": "collection",
+          "settings": {
+            "collection": "jayson-tatum"
+          }
+        },
+        "nikola_jokic": {
+          "type": "collection",
+          "settings": {
+            "collection": "nikola-jokic"
+          }
+        },
+        "shaquille_oneal": {
+          "type": "collection",
+          "settings": {
+            "collection": "shaquille-oneal"
+          }
+        },
+        "larry_bird": {
+          "type": "collection",
+          "settings": {
+            "collection": "larry-bird"
+          }
+        }
+      },
+      "block_order": [
+        "kobe_bryant",
+        "michael_jordan",
+        "lebron_james",
+        "stephen_curry",
+        "luka_doncic",
+        "kevin_durant",
+        "allen_iverson",
+        "giannis_antetokounmpo",
+        "victor_wembanyama",
+        "kyrie_irving",
+        "ja_morant",
+        "anthony_edwards",
+        "jayson_tatum",
+        "nikola_jokic",
+        "shaquille_oneal",
+        "larry_bird"
+      ],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "copy": "players",
+        "show_count": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "city_edition": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "city-edition",
+        "copy": "city_edition",
+        "audience": "all",
+        "product_type": "Basketball Jersey",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": true,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "leagues": {
+      "type": "collection-tabs",
+      "blocks": {
+        "premier_league": {
+          "type": "tab",
+          "settings": {
+            "collection": "premier-league"
+          }
+        },
+        "la_liga": {
+          "type": "tab",
+          "settings": {
+            "collection": "la-liga"
+          }
+        },
+        "serie_a": {
+          "type": "tab",
+          "settings": {
+            "collection": "serie-a"
+          }
+        },
+        "bundesliga": {
+          "type": "tab",
+          "settings": {
+            "collection": "bundesliga"
+          }
+        },
+        "ligue_1": {
+          "type": "tab",
+          "settings": {
+            "collection": "ligue-1"
+          }
+        },
+        "primeira_liga": {
+          "type": "tab",
+          "settings": {
+            "collection": "primeira-liga"
+          }
+        },
+        "israeli_premier_league": {
+          "type": "tab",
+          "settings": {
+            "collection": "israeli-premier-league"
+          }
+        },
+        "other_leagues": {
+          "type": "tab",
+          "settings": {
+            "collection": "other-leagues"
+          }
+        }
+      },
+      "block_order": [
+        "premier_league",
+        "la_liga",
+        "serie_a",
+        "bundesliga",
+        "ligue_1",
+        "primeira_liga",
+        "israeli_premier_league",
+        "other_leagues"
+      ],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "copy": "leagues",
+        "audience": "adult",
+        "one_per_team": true,
+        "products_per_tab": 10,
+        "columns_desktop": 4,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "retro": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "source": "collection",
+        "collection": "retro",
+        "copy": "retro",
+        "audience": "all",
+        "product_type": "Basketball Jersey",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": true,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "shorts": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "basketball-shorts",
+        "copy": "shorts",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "special_editions": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "source": "collection",
+        "collection": "special-editions",
+        "copy": "special_editions",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "teams": {
+      "type": "collection-circles",
+      "blocks": {
+        "real_madrid": {
+          "type": "collection",
+          "settings": {
+            "collection": "real-madrid"
+          }
+        },
+        "barcelona": {
+          "type": "collection",
+          "settings": {
+            "collection": "barcelona"
+          }
+        },
+        "manchester_united": {
+          "type": "collection",
+          "settings": {
+            "collection": "manchester-united"
+          }
+        },
+        "manchester_city": {
+          "type": "collection",
+          "settings": {
+            "collection": "manchester-city"
+          }
+        },
+        "arsenal": {
+          "type": "collection",
+          "settings": {
+            "collection": "arsenal"
+          }
+        },
+        "chelsea": {
+          "type": "collection",
+          "settings": {
+            "collection": "chelsea"
+          }
+        },
+        "paris_saint_germain": {
+          "type": "collection",
+          "settings": {
+            "collection": "paris-saint-germain"
+          }
+        },
+        "bayern_munich": {
+          "type": "collection",
+          "settings": {
+            "collection": "bayern-munich"
+          }
+        },
+        "ac_milan": {
+          "type": "collection",
+          "settings": {
+            "collection": "ac-milan"
+          }
+        },
+        "inter_milan": {
+          "type": "collection",
+          "settings": {
+            "collection": "inter-milan"
+          }
+        },
+        "juventus": {
+          "type": "collection",
+          "settings": {
+            "collection": "juventus"
+          }
+        },
+        "maccabi_haifa": {
+          "type": "collection",
+          "settings": {
+            "collection": "maccabi-haifa"
+          }
+        },
+        "hapoel_tel_aviv": {
+          "type": "collection",
+          "settings": {
+            "collection": "hapoel-tel-aviv"
+          }
+        },
+        "los_angeles_lakers": {
+          "type": "collection",
+          "settings": {
+            "collection": "los-angeles-lakers"
+          }
+        },
+        "chicago_bulls": {
+          "type": "collection",
+          "settings": {
+            "collection": "chicago-bulls"
+          }
+        },
+        "golden_state_warriors": {
+          "type": "collection",
+          "settings": {
+            "collection": "golden-state-warriors"
+          }
+        },
+        "boston_celtics": {
+          "type": "collection",
+          "settings": {
+            "collection": "boston-celtics"
+          }
+        },
+        "miami_heat": {
+          "type": "collection",
+          "settings": {
+            "collection": "miami-heat"
+          }
+        }
+      },
+      "block_order": [
+        "real_madrid",
+        "barcelona",
+        "manchester_united",
+        "manchester_city",
+        "arsenal",
+        "chelsea",
+        "paris_saint_germain",
+        "bayern_munich",
+        "ac_milan",
+        "inter_milan",
+        "juventus",
+        "maccabi_haifa",
+        "hapoel_tel_aviv",
+        "los_angeles_lakers",
+        "chicago_bulls",
+        "golden_state_warriors",
+        "boston_celtics",
+        "miami_heat"
+      ],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "copy": "teams",
+        "show_count": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "hoodies": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
+        "source": "collection",
+        "collection": "nfl-hoodies",
+        "copy": "hoodies",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
     }
   },
   "order": [
@@ -321,11 +786,20 @@
     "trust_strip",
     "category_tiles",
     "collection_links",
-    "featured_collection",
+    "new_arrivals",
+    "stars",
     "nba",
+    "city_edition",
+    "featured_collection",
+    "leagues",
+    "retro",
     "kids",
     "lifestyle",
+    "shorts",
     "national_teams",
+    "special_editions",
+    "teams",
+    "hoodies",
     "cta_band"
   ]
 }

@@ -168,6 +168,48 @@
         },
         "show_count": {
           "label": "Show product count"
+        },
+        "source": {
+          "label": "Products from",
+          "info": "A product page can show more of the product's league (without its own team, in the product's audience); a team's collection page can show more of the team's league.",
+          "options": {
+            "collection": "The collection below",
+            "product_league": "The product's league (product pages)",
+            "collection_league": "The team's league (team pages)"
+          }
+        },
+        "copy": {
+          "label": "Eyebrow and text",
+          "info": "Ready-made texts, already translated into every store language. Your own texts below replace them.",
+          "options": {
+            "none": "None",
+            "new": "New arrivals",
+            "retro": "Retro jerseys",
+            "city_edition": "City Edition",
+            "special_editions": "Special editions",
+            "shorts": "Basketball shorts",
+            "hoodies": "NFL hoodies"
+          }
+        },
+        "intro_card": {
+          "label": "Opening card",
+          "info": "An accent-colored card before the products, with the eyebrow, heading, text and a \"view all\" button."
+        },
+        "product_type": {
+          "label": "Product type",
+          "info": "Shows only products of this type, for example only the jerseys of a collection that also holds shorts.",
+          "options": {
+            "all": "All types",
+            "basketball_jersey": "Basketball jerseys",
+            "basketball_shorts": "Basketball shorts",
+            "football_jersey": "Football shirts",
+            "football_kit": "Kids football kits",
+            "hoodie": "Hoodies"
+          }
+        },
+        "lazy_render": {
+          "label": "Load when the visitor scrolls near it",
+          "info": "From the fourth section of a page on, the section loads when the visitor gets close to it, so long pages open fast. It always shows in the theme editor."
         }
       }
     },
@@ -428,6 +470,56 @@
               "label": "Second button link"
             }
           }
+        }
+      }
+    },
+    "collection_circles": {
+      "name": "Collection circles",
+      "presets": {
+        "name": "Collection circles"
+      },
+      "settings": {
+        "copy": {
+          "label": "Texts",
+          "info": "Ready-made eyebrow, heading and text, already translated into every store language. Your own texts below replace them.",
+          "options": {
+            "none": "None",
+            "players": "Players",
+            "teams": "Teams"
+          }
+        },
+        "show_count": {
+          "label": "Show product count"
+        }
+      },
+      "blocks": {
+        "collection": {
+          "name": "Collection"
+        }
+      }
+    },
+    "collection_tabs": {
+      "name": "Collection tabs",
+      "presets": {
+        "name": "Collection tabs"
+      },
+      "settings": {
+        "copy": {
+          "label": "Texts",
+          "info": "Ready-made eyebrow, heading and text, already translated into every store language. Your own texts below replace them.",
+          "options": {
+            "none": "None",
+            "leagues": "Football leagues",
+            "nba_teams": "NBA teams"
+          }
+        },
+        "products_per_tab": {
+          "label": "Products per tab"
+        }
+      },
+      "blocks": {
+        "tab": {
+          "name": "Tab"
         }
       }
     }
