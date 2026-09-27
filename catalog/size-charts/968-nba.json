@@ -12,5 +12,6 @@
     "sizes": ["S", "M", "L", "XL"]
   },
   "requested": "2026-09-27: the owner got a message in Chinese for the supplier asking, for each kids size S-XL of the jerseys and the hoodies, the age, the height (cm), and the garment's length and chest width (cm).",
+  "audit": "2026-09-27, whole catalog (1,562 products): 258 are kids (tag audience:kids, metafield sportwear.audience = kids on all of them). 152 are jerseyxie football kits, all in 16-28 with the kids chart. The other 106 are these S-XL products, the only kids items without an age for each size. No kids item is hidden among the adult products. Supplier album titles: of the 1,098 products imported before, only these 106 come from kids (童装) albums. The lingshang88 football albums are adult S-4XL, and the 10 older shorts and the 106 new shorts have no kids album. No product has kids words in its tags, and no Football Kit, without being marked kids. The 31 hoodies titled for women (213102577) are women's, not kids.",
   "charts": {}
 }
