@@ -39,9 +39,14 @@
       assign is_new = true
     endif
 
+    # The hover photo is the second studio view (the back). The supplier's fabric close-ups (files
+    # sw-detail-*) stay on the product page, so a grid keeps one look.
     assign secondary_image = null
     if settings.card_secondary_image and product.media.size > 1
-      assign secondary_image = product.media[1].preview_image
+      assign second_media = product.media[1]
+      unless second_media.preview_image.src contains 'sw-detail-'
+        assign secondary_image = second_media.preview_image
+      endunless
     endif
   endif
 -%}

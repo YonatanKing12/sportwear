@@ -1,0 +1,34 @@
+{%- doc -%}
+  Alt text of a product photo in the shopper's language, as plain text (image_tag escapes it).
+  The alt texts stored in Shopify are Hebrew: the product title, plus a suffix for a back view (" (גב)",
+  " – גב", " — מבט אחורי") or a close-up (" (תקריב של הבד וההדפס)"). The primary locale (Hebrew) uses the
+  stored alt. Other languages rebuild it from the translated product title and the kind of photo, so a
+  screen reader on /en or /ar never reads Hebrew.
+
+  @param {object} media - The product media
+  @param {product} product - The product
+
+  @example
+  {%- capture media_alt -%}{% render 'media-alt', media: media, product: product %}{%- endcapture -%}
+{%- enddoc -%}
+{%- liquid
+  if request.locale.primary
+    echo media.alt | default: product.title
+  else
+    assign stored_alt = media.alt | default: ''
+    assign tail_three = stored_alt | slice: -3, 3
+    assign tail_four = stored_alt | slice: -4, 4
+    assign alt_suffix = ''
+    if stored_alt contains 'תקריב של הבד'
+      assign alt_suffix = 'products.gallery.alt_fabric' | t
+    elsif stored_alt contains 'תקריב'
+      assign alt_suffix = 'products.gallery.alt_closeup' | t
+    elsif tail_four == '(גב)' or tail_three == ' גב' or stored_alt contains 'מבט אחורי'
+      assign alt_suffix = 'products.gallery.alt_back' | t
+    endif
+    echo product.title
+    if alt_suffix != blank
+      echo ' ' | append: alt_suffix
+    endif
+  endif
+-%}

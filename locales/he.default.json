@@ -673,7 +673,10 @@
       "play_video": "הפעלת הסרטון",
       "view_3d": "צפייה בתלת־ממד",
       "thumbnails_label": "תמונות ממוזערות",
-      "show_image": "הצגת תמונה {{ index }} מתוך {{ count }}"
+      "show_image": "הצגת תמונה {{ index }} מתוך {{ count }}",
+      "alt_fabric": "(תקריב של הבד וההדפס)",
+      "alt_closeup": "(תקריב)",
+      "alt_back": "(גב)"
     },
     "price": {
       "tax_included": "כולל מע״מ",

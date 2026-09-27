@@ -17,7 +17,10 @@
       "play_video": "Play video",
       "view_3d": "View in 3D",
       "thumbnails_label": "Thumbnails",
-      "show_image": "Show image {{ index }} of {{ count }}"
+      "show_image": "Show image {{ index }} of {{ count }}",
+      "alt_fabric": "(close-up of the fabric and print)",
+      "alt_closeup": "(close-up)",
+      "alt_back": "(back)"
     },
     "price": {
       "tax_included": "Incl. VAT",

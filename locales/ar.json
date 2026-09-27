@@ -695,7 +695,10 @@
       "play_video": "تشغيل الفيديو",
       "view_3d": "عرض ثلاثي الأبعاد",
       "thumbnails_label": "الصور المصغرة",
-      "show_image": "عرض الصورة {{ index }} من {{ count }}"
+      "show_image": "عرض الصورة {{ index }} من {{ count }}",
+      "alt_fabric": "(صورة مقرّبة للقماش والطباعة)",
+      "alt_closeup": "(صورة مقرّبة)",
+      "alt_back": "(من الخلف)"
     },
     "price": {
       "tax_included": "شامل ضريبة القيمة المضافة",
