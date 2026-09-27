@@ -1,0 +1,55 @@
+{
+  "_note": "Menu audit of 2026-09-27, after the owner asked whether the header and mobile menus cover every category. Every product was already reachable from a second-level menu category except one (the Red Bull Salzburg shirt, league:austrian-bundesliga). Changes made in the store (they are shared by every theme, so they are live): the football sub-menu order, so that on a 1440x900 screen the first two rows of the mega panel show the eight main categories (national teams and the Israeli league were in a third row below the fold); a collection image for 12 menu tiles (distinct adult shirts from each category, instead of the first product: two tiles showed the same Tottenham shirt, four showed kids sets, and the special-editions tile showed a football shirt with a religious print); other-leagues also takes league:austrian-bundesliga; special-editions is basketball only (it sits under basketball in the menu; its 8 football shirts stay in their team and league collections). Menu items kept their IDs, so their English and Arabic translations are unchanged (read back: outdated false). To undo the order, run menuUpdate with the before order and the same item IDs. Collection images were null before; the rules before are listed below.",
+  "menu": {
+    "id": "gid://shopify/Menu/316216410416",
+    "football_order_before": [
+      "עונת 26/27",
+      "פרמייר ליג",
+      "לה ליגה",
+      "סרייה A",
+      "בונדסליגה",
+      "ליג 1",
+      "ליגה פורטוגלית",
+      "ליגות נוספות",
+      "נבחרות",
+      "ליגת העל"
+    ],
+    "football_order_after": [
+      "עונת 26/27",
+      "פרמייר ליג",
+      "לה ליגה",
+      "ליגת העל",
+      "נבחרות",
+      "סרייה A",
+      "בונדסליגה",
+      "ליג 1",
+      "ליגה פורטוגלית",
+      "ליגות נוספות"
+    ]
+  },
+  "collection_images": {
+    "season-2026-27": "manchester-united-home-jersey-2026-27.png",
+    "premier-league": "manchester-city-home-jersey-2026-27.png",
+    "la-liga": "barcelona-home-jersey-2026-27.png",
+    "serie-a": "inter-milan-home-jersey-2026-27.png",
+    "bundesliga": "borussia-dortmund-home-jersey-2026-27.png",
+    "ligue-1": "paris-saint-germain-home-jersey-2026-27.png",
+    "primeira-liga": "sw-studio-football-185464301.png (Benfica third 24/25)",
+    "other-leagues": "al-nassr-home-jersey-2026-27.png",
+    "national-teams": "argentina-home-jersey-2026.png",
+    "israeli-premier-league": "maccabi-haifa-home-jersey-2026-27.png",
+    "nba": "sw-studio-jerseys-89419160.png (Lakers 23 yellow)",
+    "special-editions": "sw-studio-jerseys-96835282.png (Space Jam 2 white)"
+  },
+  "collection_rules": {
+    "other-leagues": {
+      "before": "TAG league:saudi-pro-league OR TAG league:mls OR TAG league:liga-mx OR TAG league:brasileirao (17 products)",
+      "after": "... OR TAG league:austrian-bundesliga (18 products)"
+    },
+    "special-editions": {
+      "before": "TAG style:special (65 products)",
+      "after": "TAG style:special AND TAG sport:basketball (57 products)"
+    }
+  },
+  "theme": "snippets/header-mega-panel.liquid: the panel's featured products are one per team (the football panel showed three Tottenham shirts)."
+}
