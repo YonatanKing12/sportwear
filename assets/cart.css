@@ -251,12 +251,16 @@
 }
 
 /* ---------- snippets/cart-upsell.liquid ---------- */
-/* Panel colors come from its color scheme class (accent by default, like the approved board). */
+/* A quiet bordered card in its color scheme (the page's own by default), like "complete the set" on the
+   product page: the checkout button stays the loudest thing in the cart. */
 .cart-upsell {
   container: cart-upsell / inline-size;
   margin-block-start: var(--space-4);
   padding: 14px;
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-card);
+  background: var(--color-background);
+  color: var(--color-text);
 }
 
 .cart-upsell__heading {
@@ -353,7 +357,6 @@
   max-inline-size: 220px;
   min-block-size: var(--touch-target);
   padding-block: 0;
-  background-color: var(--color-surface);
   font-weight: 700;
 }
 
@@ -369,6 +372,12 @@
   flex: 0 0 auto;
   min-inline-size: 80px;
   font-size: 14px;
+}
+
+.cart-upsell__add-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .cart-upsell__spinner {

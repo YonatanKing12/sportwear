@@ -93,7 +93,7 @@
       "key": "complements",
       "type": "list.product_reference",
       "storefront_access": "PUBLIC_READ",
-      "note": "set pieces, e.g. tank <-> shorts"
+      "note": "set pieces: a basketball jersey <-> the shorts of the same kit (same design on the photos), both directions; product page and cart 'complete the set'"
     },
     {
       "namespace": "sportwear",

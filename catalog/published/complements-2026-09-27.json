@@ -1,0 +1,199 @@
+{
+  "_note": "Sets on the product page and in the cart (\"השלימו את הסט\"), written on 2026-09-27 on the owner's direction: show the set option on the product page when one exists, instead of the home page's set block. Each basketball shorts product was compared, photo by photo, with every adult jersey of its team; a jersey is paired only when it is the same kit design (colors, trim, wordmark), so the two look like one uniform on the page. Metafield sportwear.complements (list.product_reference): each jersey lists its shorts; each shorts product lists its jerseys, stars first (the product page shows the first two). Undo: delete the metafield on the 28 products below.",
+  "metafield": "sportwear.complements (gid://shopify/MetafieldDefinition/277608726832, storefront PUBLIC_READ)",
+  "written": {
+    "products": 28,
+    "shorts": 6,
+    "jerseys": 22,
+    "request": "one metafieldsSet mutation with two aliases (14 + 14), 0 userErrors",
+    "before": "no product had a value"
+  },
+  "sets": [
+    {
+      "shorts": {
+        "handle": "sw-shorts-102715980",
+        "id": "gid://shopify/Product/15308705530160",
+        "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-92980294",
+          "id": "gid://shopify/Product/15308691013936",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן רטרו"
+        },
+        {
+          "handle": "sw-jerseys-188304855",
+          "id": "gid://shopify/Product/15308592152880",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 לבן"
+        },
+        {
+          "handle": "sw-jerseys-86652506",
+          "id": "gid://shopify/Product/15308670239024",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן"
+        },
+        {
+          "handle": "sw-jerseys-101296888",
+          "id": "gid://shopify/Product/15308703007024",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 לבן"
+        },
+        {
+          "handle": "sw-jerseys-137279952",
+          "id": "gid://shopify/Product/15308672532784",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023"
+        },
+        {
+          "handle": "sw-jerseys-138859708",
+          "id": "gid://shopify/Product/15308647858480",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 15 לבן מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-89334506",
+          "id": "gid://shopify/Product/15308691669296",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 לבן רטרו"
+        },
+        {
+          "handle": "sw-jerseys-104886637",
+          "id": "gid://shopify/Product/15308656607536",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 לבן"
+        },
+        {
+          "handle": "sw-jerseys-169087919",
+          "id": "gid://shopify/Product/15308599329072",
+          "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 9 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-134500600",
+        "id": "gid://shopify/Product/15308705235248",
+        "title": "מכנסי כדורסל פילדלפיה 76׳ לבן"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-110672660",
+          "id": "gid://shopify/Product/15308640125232",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן"
+        },
+        {
+          "handle": "sw-jerseys-110523943",
+          "id": "gid://shopify/Product/15308677939504",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 1 לבן"
+        },
+        {
+          "handle": "sw-jerseys-199488026",
+          "id": "gid://shopify/Product/15308559810864",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 20 לבן"
+        },
+        {
+          "handle": "sw-jerseys-170956715",
+          "id": "gid://shopify/Product/15308597625136",
+          "title": "גופיית כדורסל פילדלפיה 76׳ מספר 8 לבן"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-121082769",
+        "id": "gid://shopify/Product/15308705399088",
+        "title": "מכנסי כדורסל פיניקס סאנס מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-134344038",
+          "id": "gid://shopify/Product/15308648218928",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 35 שחור"
+        },
+        {
+          "handle": "sw-jerseys-103764522",
+          "id": "gid://shopify/Product/15308656804144",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 3 שחור"
+        },
+        {
+          "handle": "sw-jerseys-105900794",
+          "id": "gid://shopify/Product/15308696813872",
+          "title": "גופיית כדורסל פיניקס סאנס מספר 22 שחור 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-97018163",
+        "id": "gid://shopify/Product/15308705661232",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס שחור מהדורת עיר 2021"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-90453326",
+          "id": "gid://shopify/Product/15308634128688",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 שחור מהדורת עיר 2021"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-130836699",
+        "id": "gid://shopify/Product/15308705300784",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס מהדורת עיר 2023"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-126131352",
+          "id": "gid://shopify/Product/15308663783728",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 שחור מהדורת עיר 2023"
+        },
+        {
+          "handle": "sw-jerseys-135857559",
+          "id": "gid://shopify/Product/15308634685744",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 שחור 2023"
+        }
+      ]
+    },
+    {
+      "shorts": {
+        "handle": "sw-shorts-182185968",
+        "id": "gid://shopify/Product/15308705136944",
+        "title": "מכנסי כדורסל לוס אנג׳לס קליפרס לבן 2025"
+      },
+      "jerseys": [
+        {
+          "handle": "sw-jerseys-163398756",
+          "id": "gid://shopify/Product/15308602114352",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 לבן 2025"
+        },
+        {
+          "handle": "sw-jerseys-163398400",
+          "id": "gid://shopify/Product/15308614697264",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 0 לבן 2025"
+        },
+        {
+          "handle": "sw-jerseys-163399706",
+          "id": "gid://shopify/Product/15308610404656",
+          "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 לבן"
+        }
+      ]
+    }
+  ],
+  "not_paired": [
+    {
+      "handle": "sw-shorts-117771218",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול",
+      "reason": "The Mavericks blue jerseys have the same design, but their photos show a much lighter blue than the shorts' royal blue, so on the page they would not look like one set"
+    },
+    {
+      "handle": "sw-shorts-127671587",
+      "title": "מכנסי כדורסל ממפיס גריזליס 2023",
+      "reason": "No light-blue Grizzlies jersey of this design in the store"
+    },
+    {
+      "handle": "sw-shorts-162704069",
+      "title": "מכנסי כדורסל שארלוט הורנטס רטרו 2024",
+      "reason": "No Hornets jersey of this teal pinstripe design in the store"
+    },
+    {
+      "handle": "sw-shorts-166561732",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס לבן",
+      "reason": "Black waistband with the gothic LA and black side stripes: none of the white Clippers jerseys in the store has this design"
+    }
+  ]
+}

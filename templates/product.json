@@ -50,7 +50,7 @@
           "type": "complete_set",
           "settings": {
             "products_to_show": 2,
-            "color_scheme": "scheme-accent",
+            "color_scheme": "scheme-day",
             "show_free_shipping_note": true
           }
         },
@@ -81,8 +81,8 @@
         "variant_picker",
         "buy_buttons",
         "shipping_note",
-        "trust",
         "complete_set",
+        "trust",
         "description",
         "shipping_returns",
         "size_table"

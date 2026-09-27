@@ -9,14 +9,14 @@
   @param {object} cart - The cart object
   @param {string} id_prefix - Unique prefix for element ids, e.g. 'CartDrawer' or 'MainCart'
   @param {string} [heading_tag] - Heading element for the panel title: 'h2' or 'h3' (default 'h3')
-  @param {string} [color_scheme] - Color scheme id for the panel (default 'scheme-accent')
+  @param {string} [color_scheme] - Color scheme id for the panel (default 'scheme-day', a quiet bordered card)
 
   @example
   {% render 'cart-upsell', cart: cart, id_prefix: 'CartDrawer', color_scheme: section.settings.upsell_color_scheme.id %}
 {%- enddoc -%}
 {%- liquid
   assign upsell_heading = heading_tag | default: 'h3'
-  assign upsell_scheme = color_scheme | default: 'scheme-accent'
+  assign upsell_scheme = color_scheme | default: 'scheme-day'
   assign max_suggestions = 2
   assign suggestion_count = 0
   assign in_cart_ids = cart.items | map: 'product_id' | join: ','
@@ -147,11 +147,14 @@
           {%- endif -%}
           <button
             type="submit"
-            class="button button--primary button--small cart-upsell__add"
+            class="button button--secondary button--small cart-upsell__add"
             aria-describedby="{{ name_id }}"
             data-cart-focus="upsell-{{ complement.id }}:add"
           >
-            <span class="cart-upsell__add-label">{{ 'cart.upsell.add' | t }}</span>
+            <span class="cart-upsell__add-label">
+              {%- render 'icon', name: 'plus', size: 16 -%}
+              {{- 'cart.upsell.add' | t -}}
+            </span>
             <span class="spinner cart-upsell__spinner" aria-hidden="true"></span>
           </button>
         {%- endform -%}

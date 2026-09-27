@@ -29,6 +29,11 @@
 //   expected-counts.json  products per filter value, to check the store after applying (productsCount
 //                       with metafields.sportwear.<key>:<value>, which needs the definitions to be
 //                       admin-filterable)
+//   reindex/add-NN.graphql, reindex/remove-NN.graphql
+//                       run after the metafields, in pairs (add-01, remove-01, add-02…): the storefront's
+//                       filter index does not see values written with metafieldsSet until the product
+//                       itself changes, so each product gets a temporary tag (sw-reindex) and loses it
+//                       again. Check with productsCount(query: "tag:sw-reindex") = 0 afterwards.
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { buildFilterNames } from '../lib/filter-names.mjs';
@@ -183,6 +188,27 @@ for (let i = 0; i < batches.length; i += args.perRequest) {
   requests.push({ file: path.relative(outDir, file), metafields: group.reduce((n, b) => n + b.length, 0) });
 }
 
+// The storefront filter index updates when a product changes, not when only its metafields do.
+const REINDEX_TAG = 'sw-reindex';
+const REINDEX_BATCH = 50;
+mkdirSync(path.join(outDir, 'reindex'), { recursive: true });
+const productIds = plan.map((p) => p.id);
+let reindexFiles = 0;
+for (let i = 0; i < productIds.length; i += REINDEX_BATCH) {
+  const ids = productIds.slice(i, i + REINDEX_BATCH);
+  const nn = String(++reindexFiles).padStart(2, '0');
+  for (const [op, name] of [
+    ['tagsAdd', 'ReindexAdd'],
+    ['tagsRemove', 'ReindexRemove'],
+  ]) {
+    const calls = ids.map(
+      (id, j) => `  t${j}: ${op}(id: "${id}", tags: ["${REINDEX_TAG}"]) { userErrors { message } }`,
+    );
+    const file = path.join(outDir, 'reindex', `${op === 'tagsAdd' ? 'add' : 'remove'}-${nn}.graphql`);
+    writeFileSync(file, `mutation ${name} {\n${calls.join('\n')}\n}\n`);
+  }
+}
+
 const counts = {};
 for (const { values } of plan) {
   for (const [key, value] of Object.entries(values)) {
@@ -204,6 +230,7 @@ writeFileSync(
       products: plan.length,
       metafields: metafields.length,
       requests,
+      reindex_files: reindexFiles,
       per_key: Object.fromEntries(
         Object.entries(counts).map(([key, values]) => [key, plan.filter((p) => p.values[key] !== undefined).length]),
       ),
@@ -218,6 +245,7 @@ writeFileSync(
 );
 
 console.log(`${plan.length} products, ${metafields.length} metafields in ${requests.length} requests → ${outDir}`);
+console.log(`  then reindex/: ${reindexFiles} add/remove pairs of the temporary tag ${REINDEX_TAG}`);
 for (const [key, values] of Object.entries(counts)) {
   const products_with = plan.filter((p) => p.values[key] !== undefined).length;
   console.log(

@@ -572,5 +572,19 @@
       "kevin-garnett": 1,
       "penny-hardaway": 1
     }
+  },
+  "storefront_reindex": {
+    "why": "After the owner added the filters in Search & Discovery (2026-09-27), the storefront showed the metafield filters for only the 192 products with a kit value: metafieldsSet does not re-index products for storefront filters (a product change does; the kit definition update had re-indexed those 192).",
+    "fix": "Every other Online Store product got the temporary tag sw-reindex and lost it again (tagsAdd, then tagsRemove, 50 aliases per request, 21 pairs)",
+    "products": 1034,
+    "user_errors": 0,
+    "after": "productsCount(query: 'tag:sw-reindex') = 0",
+    "checked_on_storefront": {
+      "collections/all": "למי: adults 1,029, kids 166, women 31; שחקן 60 values; סגנון 3; סוג מוצר 5; קבוצה 100; ליגה 17; סוג חולצה 6; plus the owner's size filter and price",
+      "collections/nba": "למי (805 / 73), שחקן (58), סגנון (3), סוג מוצר (2), קבוצה (32), מחיר. ליגה, סוג חולצה and מידה hide themselves (they cannot narrow the page)",
+      "collections/los-angeles-lakers": "למי, שחקן (8), סגנון, סוג מוצר, מחיר; קבוצה and ליגה hidden",
+      "en and ar": "the same groups and values, named in English and Arabic"
+    },
+    "next_time": "scripts/catalog/filter-data.mjs writes reindex/add-NN.graphql and remove-NN.graphql for this step"
   }
 }

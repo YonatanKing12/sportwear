@@ -215,39 +215,6 @@
         "padding_bottom": 44
       }
     },
-    "promo_banner": {
-      "type": "promo-banner",
-      "blocks": {
-        "set_lakers": {
-          "type": "set",
-          "settings": {
-            "jersey": "sw-jerseys-188304855",
-            "shorts": "sw-shorts-102715980"
-          }
-        },
-        "set_sixers": {
-          "type": "set",
-          "settings": {
-            "jersey": "sw-jerseys-110672660",
-            "shorts": "sw-shorts-134500600"
-          }
-        },
-        "set_suns": {
-          "type": "set",
-          "settings": {
-            "jersey": "sw-jerseys-134344038",
-            "shorts": "sw-shorts-121082769"
-          }
-        }
-      },
-      "block_order": ["set_lakers", "set_sixers", "set_suns"],
-      "settings": {
-        "color_scheme": "scheme-accent",
-        "button_link": "shopify://collections/basketball-shorts",
-        "padding_top": 24,
-        "padding_bottom": 24
-      }
-    },
     "nba": {
       "type": "featured-collection",
       "settings": {
@@ -422,7 +389,6 @@
     "category_tiles",
     "collection_links",
     "featured_collection",
-    "promo_banner",
     "nba",
     "kids_sizes",
     "kids",

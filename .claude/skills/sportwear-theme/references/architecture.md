@@ -124,7 +124,8 @@ import {
   `window.theme.cartType === 'page'`, then navigate to `window.theme.routes.cart_url` after success.
 - **Cart drawer** (cart area) subscribes to `EVENTS.cartUpdated`, replaces its content from
   `sections['cart-drawer']` when present, and opens itself when `source` is `'product-form'`, `'quick-add'`
-  or `'set'` (the home page's "complete the set", `assets/set-builder.js`).
+  or `'set'` (the "complete the set" section, `sections/promo-banner.liquid` with `assets/set-builder.js`; it has
+  not been on the home page since 2026-09-27, when the owner found the big block out of place there).
   Its `sw-drawer` id is **`CartDrawer`**. The header cart link opens it with `data-drawer-open="CartDrawer"` (drawer
   mode) and is a normal link to `routes.cart_url` otherwise; it must work without JS (link to the cart page).
 - **Header cart link** contains `<span data-cart-bubble>{% render 'cart-bubble' %}</span>`.
@@ -147,8 +148,11 @@ import {
   and reads `search.results`, with category chips matched from the main menu's link titles.
 - **Search forms** elsewhere (search page, 404) sit in `<sw-search-form>` (`assets/predictive-search.js`),
   which sends the query normalized like the header's (Hebrew geresh/gershayim, spaces).
-- **"Complete the set"**: product metafield `sportwear.complements` (list of products). Product page and cart
-  upsell both read it.
+- **"Complete the set"**: product metafield `sportwear.complements` (list of products). Product page
+  (`snippets/product-complete-set.liquid`, right under the buy buttons) and cart upsell
+  (`snippets/cart-upsell.liquid`) both read it. Both are quiet bordered cards in the page's own colors with an
+  outlined "+ Add" button, so the main buttons stay the loudest. On the product page, choosing a size also picks
+  it in the card's select (`select[data-set-size]`, `assets/product-info.js`) until the customer picks one there.
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
 - **Free shipping**: every free-shipping message (announcement bar, trust badges, product page, cart, set and
   upsell notes, empty cart, FAQ) reads `{% render 'free-shipping-cents' %}` (captured, then `| plus: 0`), never

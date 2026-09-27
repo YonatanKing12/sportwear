@@ -52,7 +52,9 @@ Read `.claude/skills/sportwear-catalog/SKILL.md` and `catalog/product.schema.jso
 - **References:**
   - Set team and leagues as metaobject references once those metaobjects exist.
   - Set `counterpart` and `complements` only when the referenced product already exists. If it
-    does not yet, leave it and note it.
+    does not yet, leave it and note it. `complements` pairs a jersey with the shorts of the same kit
+    (both directions), and only when the photos show the same design: never from team and color
+    words alone.
 - Publish products **one at a time**. On the first error, stop, write the error into the file's
   `questions`, and report.
 

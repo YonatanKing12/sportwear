@@ -81,7 +81,10 @@ Each product is one team × one kit × one season × one audience.
   - `season`, `kit`, `audience`
   - `size_chart`: metaobject reference (`sw_size_chart`)
   - `counterpart`: the adult ↔ kids product
-  - `complements`: set pieces, such as tank ↔ shorts
+  - `complements`: set pieces: a basketball jersey ↔ the shorts of the same kit, in both directions
+    (the jersey lists its shorts; the shorts list their jerseys, stars first). Pair only when the
+    photos show the same design (colors, trim, wordmark), never on team and color words alone. The
+    product page ("השלימו את הסט") and the cart read it. Log: `catalog/published/complements-2026-09-27.json`
   - `source_url`: internal, no storefront access
   - **Storefront filters** (the Search & Discovery app builds its filters on these): `audience`
     (`adult|kids|women`), `team_handle` (team slug), `league_handle` (league slug), `styles` and
@@ -90,7 +93,9 @@ Each product is one team × one kit × one season × one audience.
     that lack one). The theme shows their values by name from the shop metafield
     `sportwear.filter_names` (he/en/ar, built from `catalog/taxonomy.json` by
     `scripts/lib/filter-names.mjs`): a new team, league or player needs its names in `taxonomy.json`
-    first, then the dictionary is written again. Details: `catalog/README.md`, "מסננים באתר".
+    first, then the dictionary is written again. The storefront filters see new values only after the
+    product itself changes: after `metafieldsSet`, run the script's `reindex/` add/remove pairs (a
+    temporary `sw-reindex` tag). Details: `catalog/README.md`, "מסננים באתר".
 - **Option:** a single `מידה` (Size) option. Values come from the size system (below).
 - **Variants:** one per size.
   - SKU: `SW-{TYPE}-{TEAM}-{KIT}-{SEASON}-{A|K}-{SIZE}`, for example `SW-BJ-MTA-H-2627-A-M`.

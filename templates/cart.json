@@ -4,7 +4,7 @@
       "type": "main-cart",
       "settings": {
         "color_scheme": "scheme-day",
-        "upsell_color_scheme": "scheme-accent",
+        "upsell_color_scheme": "scheme-day",
         "padding_top": 36,
         "padding_bottom": 48
       }

@@ -1,20 +1,24 @@
 {%- doc -%}
   "Complete the set" panel of the main product section: the products from the metafield
-  sportwear.complements (for example the shorts that go with a tank), each with an 88px image tile,
-  its title and price, a size select when it has several variants, and an "Add" button. Each row is
-  a real product form (works without JavaScript); <sw-product-form data-source="quick-add">
-  (assets/product-info.js) adds it through CartAPI instead. Sold-out products are left out.
+  sportwear.complements (the shorts of the same kit on a jersey's page, the jerseys on the shorts'
+  page), in a quiet bordered card under the buy buttons. Each row has a 72px image tile, the title
+  and price, a size select and an "Add" button. Each row is a real product form (works without
+  JavaScript); <sw-product-form data-source="quick-add"> (assets/product-info.js) adds it through
+  CartAPI instead. Sold-out products are left out.
+  The size chosen for this product is also picked in a row whose size the customer has not chosen
+  (assets/product-info.js, select[data-set-size]); with ?variant= in the URL, Liquid picks it already.
   The "together: free shipping" line shows only when there is a free shipping amount above 0 (Theme
   settings > Cart), this product alone is below it and the two together reach it; it is re-rendered
   with the variant. When every order ships free there is nothing to reach, so it never shows.
 
   @param {product} product - The product on the page
   @param {variant} [variant] - The selected variant of that product
+  @param {boolean} [size_required] - No size is chosen yet (see sections/main-product.liquid)
   @param {product[]} complements - The products of the metafield sportwear.complements
   @param {object} block - The complete_set block (settings: heading, products_to_show, color_scheme, show_free_shipping_note)
 
   @example
-  {% render 'product-complete-set', product: product, variant: current_variant, complements: complements, block: block %}
+  {% render 'product-complete-set', product: product, variant: current_variant, size_required: size_required, complements: complements, block: block %}
 {%- enddoc -%}
 {%- liquid
   assign items = complements | where: 'available'
@@ -33,14 +37,18 @@
   endif
 
   assign main_price = product.price
+  assign chosen_size = ''
   if variant != blank
     assign main_price = variant.price
+    if size_required != true and product.selected_variant != blank
+      assign chosen_size = variant.option1
+    endif
   endif
   assign heading_id = 'CompleteSet-' | append: block.id
 -%}
 {%- if items.size > 0 -%}
   <div class="product-set color-{{ block.settings.color_scheme.id }}">
-    <h2 id="{{ heading_id }}" class="product-set__heading display-s">{{ heading }}</h2>
+    <h2 id="{{ heading_id }}" class="product-set__heading">{{ heading }}</h2>
     <ul class="product-set__list" role="list" aria-labelledby="{{ heading_id }}">
       {%- for item in items limit: block.settings.products_to_show -%}
         {%- liquid
@@ -55,8 +63,8 @@
             <a class="product-set__media" href="{{ item.url }}" tabindex="-1" aria-hidden="true">
               {%- render 'image',
                 image: item.featured_media.preview_image,
-                sizes: '88px',
-                widths: '88, 176, 264',
+                sizes: '72px',
+                widths: '72, 144, 216',
                 alt: ''
               -%}
             </a>
@@ -75,6 +83,17 @@
               {%- if item.has_only_default_variant -%}
                 <input type="hidden" name="id" value="{{ item_variant.id }}">
               {%- else -%}
+                {%- liquid
+                  assign preselect_id = 0
+                  if chosen_size != blank
+                    for option_variant in item.variants
+                      if option_variant.available and option_variant.option1 == chosen_size
+                        assign preselect_id = option_variant.id
+                        break
+                      endif
+                    endfor
+                  endif
+                -%}
                 <label class="visually-hidden" for="{{ select_id }}">
                   {{- 'products.complete_set.size_label' | t: title: item.title -}}
                 </label>
@@ -84,11 +103,24 @@
                   name="id"
                   required
                   aria-describedby="{{ error_id }}"
+                  data-set-size
                 >
-                  <option value="" selected disabled>{{ 'products.complete_set.choose_size' | t }}</option>
+                  <option
+                    value=""
+                    {% if preselect_id == 0 %}
+                      selected
+                    {% endif %}
+                    disabled
+                  >
+                    {{- 'products.complete_set.choose_size' | t -}}
+                  </option>
                   {%- for option_variant in item.variants -%}
                     <option
                       value="{{ option_variant.id }}"
+                      data-size="{{ option_variant.option1 | escape }}"
+                      {% if option_variant.id == preselect_id %}
+                        selected
+                      {% endif %}
                       {% unless option_variant.available %}
                         disabled
                       {% endunless %}
@@ -103,8 +135,11 @@
                 </select>
               {%- endif -%}
               <input type="hidden" name="quantity" value="1">
-              <button type="submit" class="button button--primary button--small product-set__add product-submit">
-                <span>{{ 'products.complete_set.add' | t }}</span>
+              <button type="submit" class="button button--secondary product-set__add product-submit">
+                <span class="product-set__add-label">
+                  {%- render 'icon', name: 'plus', size: 16 -%}
+                  {{- 'products.complete_set.add' | t -}}
+                </span>
                 <span class="visually-hidden">: {{ item.title | escape }}</span>
                 <span class="spinner product-submit__spinner" aria-hidden="true"></span>
               </button>
@@ -124,28 +159,40 @@
 {%- endif -%}
 
 {% stylesheet %}
+  /* A quiet card in the page's own colors, like the trust grid above it: a hairline border, a small
+     heading and compact rows, so it reads as part of the buy box rather than a banner. */
   .product-set {
     display: grid;
     gap: var(--space-3);
     padding: var(--space-4);
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-card);
+    background: var(--color-background);
+    color: var(--color-text);
   }
 
   .product-set__heading {
-    line-height: 1;
+    font-size: var(--text-md);
+    font-weight: 800;
+    line-height: var(--leading-tight);
   }
 
   .product-set__list {
     display: grid;
-    gap: var(--space-4);
     margin: 0;
     padding: 0;
     list-style: none;
   }
 
+  .product-set__item + .product-set__item {
+    margin-block-start: var(--space-3);
+    padding-block-start: var(--space-3);
+    border-block-start: 1px solid var(--color-border);
+  }
+
   .product-set__product {
     display: grid;
-    grid-template-columns: 88px minmax(0, 1fr);
+    grid-template-columns: 72px minmax(0, 1fr);
     grid-template-areas:
       'media info'
       'media form';
@@ -156,8 +203,8 @@
   .product-set__media {
     grid-area: media;
     display: block;
-    inline-size: 88px;
-    block-size: 88px;
+    inline-size: 72px;
+    block-size: 72px;
     overflow: hidden;
     border-radius: var(--radius-card);
     background: var(--color-tile);
@@ -172,14 +219,22 @@
 
   .product-set__info {
     grid-area: info;
-    display: grid;
-    gap: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px var(--space-3);
     min-inline-size: 0;
   }
 
   .product-set__title {
+    flex: 1 1 12em;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     color: inherit;
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
     font-weight: 600;
     line-height: 1.35;
     text-decoration: none;
@@ -192,10 +247,13 @@
   }
 
   .product-set__price {
-    font-size: var(--text-base);
+    flex: 0 0 auto;
+    font-size: var(--text-sm);
+    font-weight: 700;
   }
 
   .product-set__note {
+    flex-basis: 100%;
     font-size: var(--text-xs);
     font-weight: 700;
 
@@ -214,18 +272,25 @@
   }
 
   .product-set .product-set__select {
-    flex: 1 1 120px;
+    flex: 1 1 110px;
     inline-size: auto;
     min-inline-size: 0;
     min-block-size: var(--touch-target);
     padding-block: 6px;
-    background-color: var(--color-surface);
-    font-size: var(--text-md);
+    font-size: var(--text-sm);
   }
 
   .product-set__add {
     flex: 0 0 auto;
-    min-inline-size: 66px;
+    min-block-size: var(--touch-target);
+    padding-inline: var(--space-4);
+    font-size: var(--text-sm);
+  }
+
+  .product-set__add-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
   }
 
   .product-set__error {

@@ -72,7 +72,7 @@
     },
     "complete_set": {
       "heading": "أكملوا الطقم",
-      "add": "أضيفوا",
+      "add": "إضافة",
       "size_label": "مقاس {{ title }}",
       "choose_size": "اختاروا المقاس",
       "option_sold_out": "{{ size }} (نفد)",

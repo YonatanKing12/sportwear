@@ -421,6 +421,7 @@
                     {%- render 'product-complete-set',
                       product: product,
                       variant: current_variant,
+                      size_required: size_required,
                       complements: complements,
                       block: block
                     -%}
@@ -1202,7 +1203,7 @@
           "type": "color_scheme",
           "id": "color_scheme",
           "label": "t:settings.color_scheme",
-          "default": "scheme-accent"
+          "default": "scheme-day"
         },
         {
           "type": "checkbox",

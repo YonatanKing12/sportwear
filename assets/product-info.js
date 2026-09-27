@@ -109,6 +109,11 @@ class SwProductInfo extends HTMLElement {
   /** @param {Event} event */
   #onChange = (event) => {
     const input = event.target;
+    if (input instanceof HTMLSelectElement && input.hasAttribute('data-set-size')) {
+      // A size the customer chose in a "complete the set" row is theirs: the main size no longer moves it.
+      input.dataset.setSize = 'chosen';
+      return;
+    }
     if (!(input instanceof HTMLInputElement) || !input.hasAttribute('data-variant-option')) return;
     const variantId = input.dataset.variantId ?? '';
     if (input.hasAttribute('data-size-input')) this.#chooseSize(input);
@@ -131,6 +136,7 @@ class SwProductInfo extends HTMLElement {
       if (radio !== input) radio.checked = radio.dataset.variantId === variantId;
     }
     for (const label of this.querySelectorAll('[data-selected-size]')) label.textContent = input.dataset.sizeName ?? '';
+    this.#matchSetSizes(input.dataset.sizeName ?? '');
     this.clearSizePrompt();
     if (!this.#sizeRequired) return;
     this.removeAttribute('data-size-required');
@@ -139,6 +145,24 @@ class SwProductInfo extends HTMLElement {
     )) {
       button.disabled = false;
       button.removeAttribute('data-size-pending');
+    }
+  }
+
+  /**
+   * The size chosen for this product is picked in the "complete the set" rows too (a jersey and its
+   * shorts are mostly bought in the same size), unless the customer chose that row's size themselves.
+   * A row that does not sell the size in stock goes back to "Choose a size".
+   * @param {string} size
+   */
+  #matchSetSizes(size) {
+    for (const select of /** @type {NodeListOf<HTMLSelectElement>} */ (
+      this.querySelectorAll('select[data-set-size]')
+    )) {
+      if (select.dataset.setSize === 'chosen') continue;
+      const match = [...select.options].find(
+        (option) => !option.disabled && option.value && option.dataset.size === size,
+      );
+      select.value = match?.value ?? '';
     }
   }
 
