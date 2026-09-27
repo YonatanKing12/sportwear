@@ -91,6 +91,20 @@
       assign banner_preload = true
     endunless
 
+    # A team's or a player's page that has a collector card on the home page (the collection's metafields
+    # sportwear.card_image, card_color and card_mark; sections/collection-circles.liquid): the banner adds the
+    # card's colour, its big number and the cut-out jersey at the end side.
+    assign team_cutout = blank
+    assign team_color = blank
+    assign team_mark = blank
+    if banner != blank
+      assign team_cutout = collection.metafields.sportwear.card_image.value
+      if team_cutout != blank
+        assign team_color = collection.metafields.sportwear.card_color.value
+        assign team_mark = collection.metafields.sportwear.card_mark.value | strip
+      endif
+    endif
+
     assign load_more = false
     if section.settings.pagination_style == 'load_more'
       assign load_more = true
@@ -191,7 +205,12 @@
       <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
         <header class="collection-header{% if banner != blank %} collection-header--banner{% endif %}">
           {%- if banner != blank -%}
-            <div class="collection-banner color-scheme-night">
+            <div
+              class="collection-banner color-scheme-night{% if team_cutout != blank %} collection-banner--team{% endif %}"
+              {% if team_color != blank %}
+                style="--team-color: {{ team_color }};"
+              {% endif %}
+            >
               <div class="collection-banner__media">
                 {%- render 'image',
                   image: banner,
@@ -204,6 +223,23 @@
                   class: 'collection-banner__image'
                 -%}
               </div>
+              {%- if team_cutout != blank -%}
+                <div class="collection-banner__team" aria-hidden="true">
+                  {%- if team_mark != blank -%}
+                    <span class="collection-banner__mark">{{ team_mark | escape }}</span>
+                  {%- endif -%}
+                  <span class="collection-banner__figure">
+                    {%- render 'image',
+                      image: team_cutout,
+                      sizes: '(min-width: 750px) 200px, 30vw',
+                      widths: '120, 180, 240, 320, 400',
+                      loading: banner_loading,
+                      alt: '',
+                      class: 'collection-banner__jersey'
+                    -%}
+                  </span>
+                </div>
+              {%- endif -%}
               <div class="collection-banner__content">
                 <h1 class="collection-banner__title display-l">{{ collection.title | escape }}</h1>
                 {%- if section.settings.show_count and has_products -%}
@@ -508,6 +544,104 @@
     font-size: var(--text-md);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
+  }
+
+  /*
+    A team's or a player's page: the collector card's jersey on a glow of the team's colour at the end side, and
+    from 990px its big number (or short code) outlined beside it, as on the home page's cards.
+  */
+  .collection-banner--team {
+    --team-color: var(--color-accent);
+    --team-space: 40%;
+    --team-tilt: -4deg;
+
+    @media screen and (max-width: 749px) {
+      aspect-ratio: 2 / 1;
+    }
+
+    @media screen and (min-width: 990px) {
+      --team-space: min(46%, 560px);
+    }
+
+    .collection-banner__content {
+      position: relative;
+      z-index: 1;
+      padding-inline-end: calc(var(--team-space) + var(--space-2));
+    }
+  }
+
+  [dir='rtl'] .collection-banner--team {
+    --team-tilt: 4deg;
+  }
+
+  .collection-banner__team {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    inline-size: var(--team-space);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-inline-end: 3%;
+    container-type: size;
+    pointer-events: none;
+  }
+
+  .collection-banner__figure {
+    position: relative;
+    flex: none;
+    display: grid;
+    place-items: center;
+    block-size: 100cqb;
+    aspect-ratio: 4 / 5;
+    background: radial-gradient(
+      closest-side,
+      color-mix(in oklab, var(--team-color) 62%, transparent),
+      color-mix(in oklab, var(--team-color) 20%, transparent) 64%,
+      transparent
+    );
+  }
+
+  .collection-banner__jersey {
+    display: block;
+    block-size: 84%;
+    inline-size: auto;
+    max-inline-size: 104%;
+    object-fit: contain;
+    rotate: var(--team-tilt);
+    filter: drop-shadow(0 14px 20px rgb(0 0 0 / 0.5));
+  }
+
+  .collection-banner__mark {
+    display: none;
+    flex: none;
+    margin-inline-end: -12cqb;
+    color: color-mix(in oklab, var(--team-color) 20%, transparent);
+    font-family: var(--font-display);
+    font-size: 70cqb;
+    line-height: 0.8;
+    -webkit-text-stroke: 1.5px color-mix(in oklab, var(--team-color) 72%, white);
+    direction: ltr;
+    white-space: nowrap;
+    user-select: none;
+
+    @media screen and (min-width: 990px) {
+      display: block;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .collection-banner__jersey {
+      animation: collection-jersey-in 700ms var(--ease) both;
+    }
+  }
+
+  @keyframes collection-jersey-in {
+    from {
+      opacity: 0;
+      translate: 0 14px;
+      rotate: calc(var(--team-tilt) * 2.5);
+    }
   }
 
   .collection-header__title {
