@@ -1,0 +1,73 @@
+{
+  "_note": "The size chart of the supplier xingkong-sports (Yupoo) for its fan-version NBA shorts, transcribed from its album \"NBA 热压球迷版球裤尺码表\" on 2026-09-27. The shorts in the store come from this supplier (catalog/sources/xingkong-sports/shorts.json), so they all use it. Measurements are of the garment in cm; the supplier's weights are in jin (斤, half a kilogram) and are converted here to kg. The supplier says the data is for reference and hand measuring can differ by 1-2 cm. We sell S-XL; XXL is listed for reference only. The waist is the relaxed elastic waist and is kept for reference, not shown (the theme's table has no waist column).",
+  "source": {
+    "album": "https://xingkong-sports.x.yupoo.com/albums/111953700?uid=1",
+    "title": "NBA 热压球迷版球裤尺码表",
+    "fetched": "2026-09-27"
+  },
+  "keys": {
+    "size": "the size as the supplier labels it (and as our variant is named)",
+    "height_cm": "suggested height of the wearer",
+    "weight_kg": "suggested weight of the wearer (the supplier's jin divided by 2)",
+    "shorts_length_cm": "length of the shorts (裤长)",
+    "waist_cm": "waist (腰围), relaxed elastic; kept for reference, not shown"
+  },
+  "charts": {
+    "nba-shorts-fan": {
+      "used_for": "NBA basketball shorts, adults, fan version. We sell S-XL.",
+      "metaobject_handle": "xingkong-nba-shorts-fan",
+      "rows": [
+        {
+          "size": "S",
+          "height_cm": "160-170",
+          "weight_kg": "45-57.5",
+          "shorts_length_cm": 47,
+          "waist_cm": 62
+        },
+        {
+          "size": "M",
+          "height_cm": "170-175",
+          "weight_kg": "57.5-67.5",
+          "shorts_length_cm": 48,
+          "waist_cm": 64
+        },
+        {
+          "size": "L",
+          "height_cm": "175-180",
+          "weight_kg": "67.5-80",
+          "shorts_length_cm": 49,
+          "waist_cm": 66
+        },
+        {
+          "size": "XL",
+          "height_cm": "180-190",
+          "weight_kg": "80-90",
+          "shorts_length_cm": 51,
+          "waist_cm": 69
+        }
+      ],
+      "reference_only": [
+        {
+          "size": "XXL",
+          "height_cm": "190-200",
+          "weight_kg": "90-100",
+          "shorts_length_cm": 53,
+          "waist_cm": 72
+        }
+      ],
+      "name": {
+        "he": "מידות מכנסי כדורסל למבוגרים",
+        "en": "Adult basketball shorts sizes",
+        "ar": "مقاسات شورت كرة السلة للكبار"
+      },
+      "fit_note": {
+        "he": "המידות של הספק, בס״מ. הגובה והמשקל הם המלצה בלבד. ייתכן הבדל של 1–2 ס״מ.",
+        "en": "The supplier's measurements, in cm. Height and weight are only a suggestion. Allow 1–2 cm of difference.",
+        "ar": "قياسات المورّد بالسنتيمتر. طول القامة والوزن للإرشاد فقط. قد يختلف القياس بمقدار 1–2 سم."
+      },
+      "metaobject_id": "gid://shopify/Metaobject/283181383984",
+      "created": "2026-09-27: metaobjectCreate, name and fit_note translated (en, ar) with translationsRegister",
+      "attached": "2026-09-27: sportwear.size_chart set (metafieldsSet) on the ten shorts imported before, which come from this supplier: sw-shorts-97018163, sw-shorts-102715980, sw-shorts-117771218, sw-shorts-121082769, sw-shorts-127671587, sw-shorts-130836699, sw-shorts-134500600, sw-shorts-162704069, sw-shorts-166561732, sw-shorts-182185968. New shorts from this supplier get it at creation."
+    }
+  }
+}

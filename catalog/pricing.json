@@ -19,7 +19,12 @@
     },
     { "product_type": "Basketball Jersey", "audience": "adult", "price": null, "source": "TBD" },
     { "product_type": "Basketball Jersey", "audience": "kids", "price": null, "source": "TBD" },
-    { "product_type": "Basketball Shorts", "audience": "adult", "price": null, "source": "TBD" },
+    {
+      "product_type": "Basketball Shorts",
+      "audience": "adult",
+      "price": 119,
+      "source": "owner, 2026-09-27: the shorts imported from xingkong-sports sell at ₪119, like the ten shorts imported before (a ₪149 jersey with its matching shorts stays ₪229 as a set)"
+    },
     { "product_type": "Basketball Shorts", "audience": "kids", "price": null, "source": "TBD" }
   ],
   "sets": {
