@@ -1,0 +1,173 @@
+{
+  "handle": "fenerbahce-away-kit-2026-27-kids",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Kit",
+  "audience": "kids",
+  "size_chart": "jerseyxie-football-kids-set",
+  "team": {
+    "slug": "fenerbahce",
+    "code": "FEN",
+    "he": "פנרבחצ׳ה",
+    "en": "Fenerbahçe",
+    "ar": "فنربخشة"
+  },
+  "leagues": ["super-lig"],
+  "kit": "away",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת חוץ ומכנס פנרבחצ׳ה 26/27 – ילדים",
+  "description_html_he": "<p>חולצת החוץ של פנרבחצ׳ה לילדים לעונת 26/27, בסט עם המכנס התואם.</p><ul><li>סט של חולצה ומכנס, גרסת אוהד</li><li>מידות 16 עד 28 (גיל 2 עד 13). טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת חוץ ומכנס פנרבחצ׳ה 26/27 – ילדים | SportWear",
+    "description_he": "חולצת החוץ והמכנס של פנרבחצ׳ה לילדים לעונת 26/27, במידות 16 עד 28."
+  },
+  "variants": [
+    {
+      "size": "16",
+      "source_size_label": "16",
+      "sku": "SW-FK-FEN-A-2627-K-16",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "18",
+      "source_size_label": "18",
+      "sku": "SW-FK-FEN-A-2627-K-18",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "20",
+      "source_size_label": "20",
+      "sku": "SW-FK-FEN-A-2627-K-20",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "22",
+      "source_size_label": "22",
+      "sku": "SW-FK-FEN-A-2627-K-22",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "24",
+      "source_size_label": "24",
+      "sku": "SW-FK-FEN-A-2627-K-24",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "26",
+      "source_size_label": "26",
+      "sku": "SW-FK-FEN-A-2627-K-26",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "28",
+      "source_size_label": "28",
+      "sku": "SW-FK-FEN-A-2627-K-28",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p7/studio/norm/fenerbahce-away-kit-2026-27-kids.png",
+      "alt_he": "חולצת חוץ ומכנס פנרבחצ׳ה 26/27 – ילדים – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p7/studio/norm/fenerbahce-away-kit-2026-27-kids__back.png",
+      "alt_he": "חולצת חוץ ומכנס פנרבחצ׳ה 26/27 – ילדים – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Fenerbahçe Away Kit 26/27 – Kids",
+      "description_html": "<p>The Fenerbahçe away kit for kids (26/27 season): the jersey with its matching shorts.</p><ul><li>A set of a jersey and shorts, fan version</li><li>Sizes 16 to 28 (ages 2 to 13); the size chart is on this page</li></ul>",
+      "seo_title": "Fenerbahçe Away Kit 26/27 – Kids | SportWear",
+      "seo_description": "The Fenerbahçe away kit for kids (26/27 season): jersey and shorts, sizes 16 to 28."
+    },
+    "ar": {
+      "title": "طقم فنربخشة الاحتياطي 26/27 – أطفال",
+      "description_html": "<p>الطقم الاحتياطي لنادي فنربخشة للأطفال لموسم 26/27: القميص مع الشورت المطابق.</p><ul><li>طقم من قميص وشورت، نسخة المشجعين</li><li>المقاسات من 16 إلى 28 (من عمر 2 إلى 13 سنة)، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "طقم فنربخشة الاحتياطي 26/27 – أطفال | SportWear",
+      "seo_description": "الطقم الاحتياطي لنادي فنربخشة للأطفال لموسم 26/27: قميص وشورت، بمقاسات من 16 إلى 28."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/251141413?uid=1",
+    "fetched_at": "2026-09-27T15:11:16Z",
+    "original_title": "26-27 Fenerbahce Away Kids Cheap Soccer Jerseys and shorts Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:fenerbahce",
+    "league:super-lig",
+    "kit:away",
+    "audience:kids",
+    "new",
+    "source:jerseyxie",
+    "album:251141413",
+    "season:2026-27",
+    "סט כדורגל",
+    "סט ילדים",
+    "kit",
+    "football kit",
+    "kids kit",
+    "طقم",
+    "طقم كرة قدم",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "fenerbahçe",
+    "فنربخشة",
+    "super lig",
+    "الدوري التركي"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310308147504",
+    "variant_ids": {
+      "16": "gid://shopify/ProductVariant/67860497465648",
+      "18": "gid://shopify/ProductVariant/67860497498416",
+      "20": "gid://shopify/ProductVariant/67860497531184",
+      "22": "gid://shopify/ProductVariant/67860497563952",
+      "24": "gid://shopify/ProductVariant/67860497596720",
+      "26": "gid://shopify/ProductVariant/67860497629488",
+      "28": "gid://shopify/ProductVariant/67860497662256"
+    },
+    "created_at": "2026-09-27T15:30:16Z"
+  }
+}

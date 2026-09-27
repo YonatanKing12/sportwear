@@ -1925,7 +1925,7 @@
       "en": "Fenerbahçe",
       "ar": "فنربخشة",
       "match": ["פנרבחצ׳ה", "פנרבחצ'ה"],
-      "keywords": ["fenerbahçe", "fenerbahce", "فنربخشة"]
+      "keywords": ["fenerbahçe", "فنربخشة"]
     },
     "besiktas": {
       "sport": "football",
@@ -1934,7 +1934,7 @@
       "en": "Beşiktaş",
       "ar": "بشكتاش",
       "match": ["בשיקטאש"],
-      "keywords": ["beşiktaş", "besiktas", "بشكتاش"]
+      "keywords": ["beşiktaş", "بشكتاش"]
     },
     "al-hilal": {
       "sport": "football",
