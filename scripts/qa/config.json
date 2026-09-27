@@ -1,20 +1,114 @@
 {
-  "_note": "Pages checked by qa:shots and qa:a11y. Add the product page once products exist, e.g. { \"name\": \"product\", \"path\": \"/products/<handle>\" }. Locale prefixes assume Hebrew is the store's primary language (root = Hebrew). Filter a run with SW_QA_PAGES, SW_QA_LOCALES, SW_QA_VIEWPORTS (comma-separated names).",
+  "_note": "Pages checked by qa:shots and qa:a11y: the home page, real collections, one product page per kind, search in Hebrew and English, the content pages, the cart and a 404. Locale prefixes assume Hebrew is the store's primary language (root = Hebrew). Filter a run with SW_QA_PAGES, SW_QA_LOCALES, SW_QA_VIEWPORTS (comma-separated names).",
   "store_url": "https://sfgzdp-1m.myshopify.com",
   "locales": [
-    { "code": "he", "path_prefix": "" },
-    { "code": "en", "path_prefix": "/en" },
-    { "code": "ar", "path_prefix": "/ar" }
+    {
+      "code": "he",
+      "path_prefix": ""
+    },
+    {
+      "code": "en",
+      "path_prefix": "/en"
+    },
+    {
+      "code": "ar",
+      "path_prefix": "/ar"
+    }
   ],
   "viewports": [
-    { "name": "mobile", "width": 390, "height": 844, "deviceScaleFactor": 2, "isMobile": true, "hasTouch": true },
-    { "name": "desktop", "width": 1440, "height": 900, "deviceScaleFactor": 1, "isMobile": false, "hasTouch": false }
+    {
+      "name": "mobile",
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 2,
+      "isMobile": true,
+      "hasTouch": true
+    },
+    {
+      "name": "desktop",
+      "width": 1440,
+      "height": 900,
+      "deviceScaleFactor": 1,
+      "isMobile": false,
+      "hasTouch": false
+    }
   ],
   "pages": [
-    { "name": "home", "path": "/" },
-    { "name": "collection", "path": "/collections/all" },
-    { "name": "search", "path": "/search?q=jersey" },
-    { "name": "cart", "path": "/cart" },
-    { "name": "not-found", "path": "/pages/qa-page-that-does-not-exist" }
+    {
+      "name": "home",
+      "path": "/"
+    },
+    {
+      "name": "coll-football",
+      "path": "/collections/football"
+    },
+    {
+      "name": "coll-nba",
+      "path": "/collections/nba"
+    },
+    {
+      "name": "coll-kids",
+      "path": "/collections/kids"
+    },
+    {
+      "name": "pdp-adult",
+      "path": "/products/real-madrid-home-jersey-2026-27"
+    },
+    {
+      "name": "pdp-kids",
+      "path": "/products/real-madrid-home-kit-2026-27-kids"
+    },
+    {
+      "name": "pdp-bball",
+      "path": "/products/sw-jerseys-218038482"
+    },
+    {
+      "name": "pdp-shorts",
+      "path": "/products/sw-shorts-102715980"
+    },
+    {
+      "name": "pdp-hoodie",
+      "path": "/products/sw-hoodies-213101663-17"
+    },
+    {
+      "name": "search-he",
+      "path": "/search?q=%D7%A8%D7%99%D7%90%D7%9C"
+    },
+    {
+      "name": "search-en",
+      "path": "/search?q=lakers"
+    },
+    {
+      "name": "page-faq",
+      "path": "/pages/faq"
+    },
+    {
+      "name": "page-size-guide",
+      "path": "/pages/size-guide"
+    },
+    {
+      "name": "page-shipping-returns",
+      "path": "/pages/shipping-returns"
+    },
+    {
+      "name": "page-accessibility",
+      "path": "/pages/accessibility"
+    },
+    {
+      "name": "page-contact",
+      "path": "/pages/contact"
+    },
+    {
+      "name": "page-team-orders",
+      "path": "/pages/team-orders"
+    },
+    {
+      "name": "cart",
+      "path": "/cart"
+    },
+    {
+      "name": "not-found",
+      "path": "/pages/qa-page-that-does-not-exist"
+    }
   ]
 }

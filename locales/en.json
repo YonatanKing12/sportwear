@@ -103,6 +103,17 @@
     "price_max": "Max",
     "sort_by": "Sort by",
     "sort_apply": "Sort",
+    "sort_options": {
+      "manual": "Featured",
+      "best_selling": "Best selling",
+      "title_ascending": "Name, A–Z",
+      "title_descending": "Name, Z–A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "created_ascending": "Oldest first",
+      "created_descending": "Newest first",
+      "relevance": "Most relevant"
+    },
     "no_results_heading": "No products match these filters",
     "no_results_text": "Try removing a filter or two, or clear them all and start again."
   },
@@ -264,11 +275,12 @@
       },
       "payment": {
         "question": "How can I pay?",
-        "answer_html": "<p>You can pay by credit card, Apple Pay or Google Pay, on a secure checkout.</p>"
+        "answer_html": "<p>You can pay with any payment method shown at checkout. The checkout is secure.</p>"
       },
       "team_orders": {
         "question": "Do you take team orders?",
-        "answer_html": "<p>Sure. Amateur teams, schools and clubs can order together, in adult and kids' sizes. Send us the quantities and sizes on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>"
+        "answer_html": "<p>Sure. Amateur teams, schools and clubs can order together, in adult and kids' sizes. Send us the quantities and sizes on the team orders page or on WhatsApp, and we'll get back to you with a quote.</p>",
+        "answer_no_whatsapp_html": "<p>Sure. Amateur teams, schools and clubs can order together, in adult and kids' sizes. Send us the quantities and sizes on the team orders page, and we'll get back to you with a quote.</p>"
       },
       "printing": {
         "question": "Can you print names and numbers?",
@@ -376,7 +388,7 @@
     "how_to_use": "To use it, enter the code at checkout.",
     "value_label": "Gift card value",
     "balance_label": "Remaining balance",
-    "initial_value": "Original value: {{ value }}",
+    "initial_value": "Initial value: {{ value }}",
     "code_label": "Gift card code",
     "copy": "Copy code",
     "copied": "Code copied",
@@ -419,7 +431,9 @@
     },
     "meta": {
       "tagged": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
+      "page": "Page {{ page }}",
+      "home_title": "{{ shop }} | Football and Basketball Jerseys",
+      "home_description": "Football jerseys, basketball jerseys and shorts of your favorite clubs and national teams, for adults and kids. Free home delivery on every order within 10 business days, and returns within 45 days."
     },
     "placeholders": {
       "product_title": "Product name"
@@ -429,7 +443,7 @@
       "shipping_free": "Free home delivery",
       "returns": "Returns within 45 days",
       "stock": "Stock held in Israel",
-      "secure_payment": "Secure payment: credit card, Apple Pay and Google Pay"
+      "secure_payment": "Secure payment"
     },
     "js": {
       "cart_error_html": "We couldn't update your cart. Please try again.",

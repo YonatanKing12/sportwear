@@ -249,6 +249,15 @@
     justify-content: center;
     min-inline-size: 0;
 
+    /* The logo link is a 44px target even though the mark is narrower. */
+    & > a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-inline-size: var(--touch-target);
+      min-block-size: var(--touch-target);
+    }
+
     @media screen and (min-width: 1200px) {
       --logo-mark-size: 36px;
     }

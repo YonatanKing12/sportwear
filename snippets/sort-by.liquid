@@ -2,6 +2,8 @@
   Sort control for collection and search results. A native select, visibly labelled, that belongs to
   the filter form through the form attribute: changing it re-renders the results with JavaScript
   (assets/facets.js), and a "Sort" button submits the form when JavaScript is off.
+  Shopify translates the names of search sort options but not collection ones, so every known sort
+  value prints the theme's own label (facets.sort_options.*); an unknown value prints its own name.
 
   @param {string} id - Unique id for the select, e.g. 'SortBy-' | append: section.id
   @param {string} form_id - Id of the filter form the select belongs to
@@ -16,13 +18,37 @@
     <label class="facets-sort__label" for="{{ id }}">{{ 'facets.sort_by' | t }}</label>
     <select id="{{ id }}" class="facets-sort__select" name="sort_by" form="{{ form_id }}" data-facets-sort>
       {%- for option in sort_options -%}
+        {%- liquid
+          case option.value
+            when 'manual'
+              assign option_label = 'facets.sort_options.manual' | t
+            when 'best-selling'
+              assign option_label = 'facets.sort_options.best_selling' | t
+            when 'title-ascending'
+              assign option_label = 'facets.sort_options.title_ascending' | t
+            when 'title-descending'
+              assign option_label = 'facets.sort_options.title_descending' | t
+            when 'price-ascending'
+              assign option_label = 'facets.sort_options.price_ascending' | t
+            when 'price-descending'
+              assign option_label = 'facets.sort_options.price_descending' | t
+            when 'created-ascending'
+              assign option_label = 'facets.sort_options.created_ascending' | t
+            when 'created-descending'
+              assign option_label = 'facets.sort_options.created_descending' | t
+            when 'relevance', 'most-relevant'
+              assign option_label = 'facets.sort_options.relevance' | t
+            else
+              assign option_label = option.name
+          endcase
+        -%}
         <option
           value="{{ option.value | escape }}"
           {% if option.value == sort_by %}
             selected
           {% endif %}
         >
-          {{- option.name | escape -}}
+          {{- option_label | escape -}}
         </option>
       {%- endfor -%}
     </select>

@@ -156,7 +156,16 @@
       border-radius: calc(var(--radius-button) + 4px);
     }
 
+    /* Tighter from 1200px, where the bar first shows the menu beside the centered logo. */
     @media screen and (min-width: 1200px) {
+      padding-inline: 8px;
+
+      &::after {
+        inset-inline: 8px;
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
       padding-inline: 12px;
 
       &::after {

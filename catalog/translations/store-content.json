@@ -4790,10 +4790,10 @@
           "digest": "fbc8dbd3846bddb2f0c1bde5eda66e8c94837ee5746deac44dc87f0f24777af0"
         },
         "body_html": {
-          "he": "<p>יש לכם שאלה על מידה, הזמנה או משלוח? כתבו לנו כאן או בוואטסאפ, ונחזור אליכם בהקדם.</p>",
-          "en": "<p>Have a question about sizing, an order or delivery? Write to us here or on WhatsApp, and we'll get back to you as soon as we can.</p>",
-          "ar": "<p>لديكم سؤال عن المقاس أو الطلب أو التوصيل؟ اكتبوا لنا هنا أو عبر واتساب، وسنرد عليكم في أقرب وقت.</p>",
-          "digest": "46971681a7329abdfd00b54ac0de3bb4ce576bb7831aaea69904276a46ee7f3a"
+          "he": "<p>יש לכם שאלה על מידה, הזמנה או משלוח? כתבו לנו כאן, ונחזור אליכם בהקדם.</p>",
+          "en": "<p>Have a question about sizing, an order or delivery? Write to us here, and we'll get back to you as soon as we can.</p>",
+          "ar": "<p>لديكم سؤال عن المقاس أو الطلب أو التوصيل؟ اكتبوا لنا هنا، وسنرد عليكم في أقرب وقت.</p>",
+          "digest": "19dc3312e26e3e57a6242f6b4d420c3afd4c40e774be9ac0cf32ae853b079e6d"
         }
       }
     },

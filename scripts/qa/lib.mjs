@@ -97,6 +97,28 @@ export async function openPage(page, url) {
   };
 }
 
+// Shopify's preview bar (shown on unpublished themes) is not part of the theme: hidden before screenshots
+// and left out of the accessibility scan.
+export const PREVIEW_BAR = '#PBarNextFrameWrapper';
+
+export async function hidePreviewBar(page) {
+  await page.addStyleTag({ content: `${PREVIEW_BAR}{display:none!important}` }).catch(() => {});
+}
+
+// Scrolls through the whole page so lazy images load, then back to the top, so full-page screenshots
+// show real images instead of empty tiles.
+export async function loadLazyContent(page) {
+  await page.evaluate(async () => {
+    const step = Math.max(window.innerHeight * 0.8, 400);
+    for (let y = 0; y < document.documentElement.scrollHeight; y += step) {
+      window.scrollTo(0, y);
+      await new Promise((resolve) => setTimeout(resolve, 150));
+    }
+    window.scrollTo(0, 0);
+  });
+  await page.waitForLoadState('networkidle', { timeout: 15000 }).catch(() => {});
+}
+
 export function outputDir(kind) {
   const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
   const dir = path.join(repoRoot, 'qa-output', `${stamp}-${kind}`);

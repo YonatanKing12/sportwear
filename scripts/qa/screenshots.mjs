@@ -6,7 +6,18 @@
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { launchBrowser } from '../lib/browser.mjs';
-import { loadConfig, newContext, openPage, outputDir, pageUrl, repoRoot, unlock, warnAboutMissingEnv } from './lib.mjs';
+import {
+  hidePreviewBar,
+  loadConfig,
+  loadLazyContent,
+  newContext,
+  openPage,
+  outputDir,
+  pageUrl,
+  repoRoot,
+  unlock,
+  warnAboutMissingEnv,
+} from './lib.mjs';
 
 const cfg = loadConfig();
 warnAboutMissingEnv(cfg);
@@ -32,7 +43,9 @@ try {
         const row = { viewport: viewport.name, locale: locale.code, page: target.name, url };
         try {
           Object.assign(row, await openPage(page, url));
-          await page.screenshot({ path: file, fullPage: true });
+          await hidePreviewBar(page);
+          await loadLazyContent(page);
+          await page.screenshot({ path: file, fullPage: true, timeout: 60000 });
           row.file = path.relative(repoRoot, file);
         } catch (error) {
           row.error = error.message.split('\n')[0];

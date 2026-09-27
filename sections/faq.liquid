@@ -52,6 +52,9 @@
               if preset == 'delivery' and threshold_cents < 0
                 assign answer_key = 'faq.presets.delivery.answer_free_html'
               endif
+              if preset == 'team_orders' and settings.whatsapp_number == blank
+                assign answer_key = 'faq.presets.team_orders.answer_no_whatsapp_html'
+              endif
               assign answer = answer_key | t
               case preset
                 when 'delivery'
@@ -62,6 +65,10 @@
                 when 'returns'
                   if shop.refund_policy.body != blank
                     assign policy_url = shop.refund_policy.url
+                  elsif pages['shipping-returns'] != blank
+                    assign policy_url = pages['shipping-returns'].url
+                  endif
+                  if policy_url != blank
                     assign policy_label = 'faq.presets.returns.link' | t
                   endif
               endcase

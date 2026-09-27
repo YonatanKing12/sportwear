@@ -40,6 +40,17 @@
     "price_max": "מקסימום",
     "sort_by": "מיון לפי",
     "sort_apply": "מיון",
+    "sort_options": {
+      "manual": "מומלצים",
+      "best_selling": "הנמכרים ביותר",
+      "title_ascending": "שם: א–ת",
+      "title_descending": "שם: ת–א",
+      "price_ascending": "מחיר: מהנמוך לגבוה",
+      "price_descending": "מחיר: מהגבוה לנמוך",
+      "created_ascending": "מהישן לחדש",
+      "created_descending": "מהחדש לישן",
+      "relevance": "הכי רלוונטיים"
+    },
     "no_results_heading": "אין מוצרים שמתאימים לסינון הזה",
     "no_results_text": "נסו להסיר מסנן או שניים, או לנקות את כל הסינון ולהתחיל מחדש."
   },

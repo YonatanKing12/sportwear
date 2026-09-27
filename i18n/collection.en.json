@@ -36,6 +36,17 @@
     "price_max": "Max",
     "sort_by": "Sort by",
     "sort_apply": "Sort",
+    "sort_options": {
+      "manual": "Featured",
+      "best_selling": "Best selling",
+      "title_ascending": "Name, A–Z",
+      "title_descending": "Name, Z–A",
+      "price_ascending": "Price, low to high",
+      "price_descending": "Price, high to low",
+      "created_ascending": "Oldest first",
+      "created_descending": "Newest first",
+      "relevance": "Most relevant"
+    },
     "no_results_heading": "No products match these filters",
     "no_results_text": "Try removing a filter or two, or clear them all and start again."
   },

@@ -960,6 +960,13 @@ html:has(dialog[open]:modal) {
   opacity: 0;
 }
 
+/* Touch screens never hover: hidden, the lazy hover image is never downloaded. */
+@media (hover: none) {
+  .product-card__image--secondary {
+    display: none;
+  }
+}
+
 @media (hover: hover) {
   .product-card:hover .product-card__image--secondary {
     opacity: 1;

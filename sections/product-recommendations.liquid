@@ -3,6 +3,10 @@
   Rendered first as a skeleton that reserves the grid's space; assets/product-recommendations.js
   loads the real products from routes.product_recommendations_url (Section Rendering API) when the
   section nears the viewport, and hides the section when there is nothing to recommend.
+  "You may also like" first tries the product's own team: when it has a team:<slug> tag whose
+  collection holds at least two other products in stock, those are shown right away (the same
+  audience first), since Shopify's recommendations have no sales to learn from yet and often suggest
+  another sport.
 {%- endcomment -%}
 {%- liquid
   assign columns = section.settings.columns_desktop
@@ -18,8 +22,54 @@
     endif
   endif
 
+  assign team_collection = blank
+  if recommendations.performed? != true and section.settings.intent != 'complementary' and product != blank
+    for tag in product.tags
+      assign team_prefix = tag | slice: 0, 5
+      if team_prefix == 'team:'
+        assign team_handle = tag | remove_first: 'team:'
+        assign team_collection = collections[team_handle]
+        break
+      endif
+    endfor
+  endif
+  assign is_kids = false
+  if product.tags contains 'audience:kids'
+    assign is_kids = true
+  endif
+
   assign gaps_desktop = columns | minus: 1 | times: 20 | plus: 64
   assign card_sizes = '(min-width: 990px) calc((min(100vw, 1440px) - ' | append: gaps_desktop | append: 'px) / ' | append: columns | append: '), (min-width: 750px) calc((100vw - 104px) / ' | append: columns_tablet | append: '), calc((100vw - 52px) / 2)'
+
+  assign team_count = 0
+  if team_collection != blank
+    capture team_cards
+      for pass in (1..2)
+        for item in team_collection.products
+          if team_count >= limit
+            break
+          endif
+          if item.id == product.id or item.available == false
+            continue
+          endif
+          assign item_kids = false
+          if item.tags contains 'audience:kids'
+            assign item_kids = true
+          endif
+          if pass == 1 and item_kids != is_kids
+            continue
+          endif
+          if pass == 2 and item_kids == is_kids
+            continue
+          endif
+          echo '<li class="product-recommendations__item" data-recommendation>'
+          render 'product-card', product: item, sizes: card_sizes
+          echo '</li>'
+          assign team_count = team_count | plus: 1
+        endfor
+      endfor
+    endcapture
+  endif
 -%}
 <sw-product-recommendations
   class="section product-recommendations color-{{ section.settings.color_scheme.id }}"
@@ -29,12 +79,23 @@
   data-section-id="{{ section.id }}"
   data-limit="{{ limit }}"
   data-intent="{{ section.settings.intent }}"
-  {% unless recommendations.performed? %}
+  {% unless recommendations.performed? or team_count >= 2 %}
     aria-busy="true"
   {% endunless %}
 >
   <div class="page-width">
-    {%- if recommendations.performed? -%}
+    {%- if team_count >= 2 -%}
+      <div class="section-header">
+        <h2 class="product-recommendations__heading display-m">{{ heading }}</h2>
+      </div>
+      <ul
+        class="grid product-recommendations__grid"
+        role="list"
+        style="--grid-cols: 2; --grid-cols-tablet: {{ columns_tablet }}; --grid-cols-desktop: {{ columns }};"
+      >
+        {{- team_cards -}}
+      </ul>
+    {%- elsif recommendations.performed? -%}
       {%- if recommendations.products_count > 0 -%}
         <div class="section-header">
           <h2 class="product-recommendations__heading display-m">{{ heading }}</h2>

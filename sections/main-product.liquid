@@ -149,7 +149,13 @@
                 class="product-info__block product-info__block--title product-info__title display-l"
                 {{ block.shopify_attributes }}
               >
-                {{- product.title | escape -}}
+                {%- # The ending after a dash stays together, as on product cards (snippets/product-card.liquid). -%}
+                {{-
+                  product.title
+                  | escape
+                  | replace: ' – ', '&nbsp;–&#8288;&nbsp;'
+                  | replace: ' - ', '&nbsp;-&#8288;&nbsp;'
+                -}}
               </h1>
 
             {%- when 'price' -%}

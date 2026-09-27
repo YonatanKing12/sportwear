@@ -266,12 +266,15 @@
   }
 
   /* The page keeps room for the bar at its end, so it never covers the footer. The room is always
-     there (not only while the bar shows), so nothing on the page moves when the bar slides in. */
-  .js:has(.product-sticky) body {
-    padding-block-end: calc(80px + env(safe-area-inset-bottom, 0px));
+     there (not only while the bar shows), so nothing on the page moves when the bar slides in. It sits
+     inside the footer, so it takes the footer's color instead of showing a light strip under it. */
+  .js:has(.product-sticky) .footer::after {
+    content: '';
+    display: block;
+    block-size: calc(80px + env(safe-area-inset-bottom, 0px));
 
     @media screen and (min-width: 990px) {
-      padding-block-end: calc(96px + env(safe-area-inset-bottom, 0px));
+      block-size: calc(96px + env(safe-area-inset-bottom, 0px));
     }
   }
 

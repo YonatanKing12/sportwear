@@ -7,6 +7,9 @@
  * visitor prefers reduced motion (WCAG 2.2.2). Dots jump to a slide. Slides out of view are inert, so
  * keyboard and screen-reader users only meet the visible slide. Right-to-left pages scroll from 0 to
  * negative values; the direction sign comes from the track's computed direction.
+ * Only the first slide's photo is in the page; the others wait in <template data-slide-media> and are
+ * added after the page has loaded (or at the first swipe or dot), so they never slow the first one.
+ * Wrapping from the last slide to the first jumps instead of scrolling back past every slide.
  */
 import { prefersReducedMotion } from '@theme/core';
 
@@ -40,9 +43,18 @@ class SwSlideshow extends HTMLElement {
     this.addEventListener('focusin', this.#onFocusIn);
     this.addEventListener('focusout', this.#onFocusOut);
     document.addEventListener('visibilitychange', this.#sync);
+    if (document.readyState === 'complete') this.#hydrate();
+    else window.addEventListener('load', this.#hydrate, { once: true });
     this.#setActive(0);
     this.#sync();
   }
+
+  /** Puts the waiting slide photos into the page. */
+  #hydrate = () => {
+    this.querySelectorAll('template[data-slide-media]').forEach((template) => {
+      if (template instanceof HTMLTemplateElement) template.replaceWith(template.content);
+    });
+  };
 
   disconnectedCallback() {
     this.#track?.removeEventListener('scroll', this.#onScroll);
@@ -52,6 +64,7 @@ class SwSlideshow extends HTMLElement {
     this.removeEventListener('focusin', this.#onFocusIn);
     this.removeEventListener('focusout', this.#onFocusOut);
     document.removeEventListener('visibilitychange', this.#sync);
+    window.removeEventListener('load', this.#hydrate);
     clearInterval(this.#timer);
     cancelAnimationFrame(this.#frame);
   }
@@ -96,6 +109,7 @@ class SwSlideshow extends HTMLElement {
   };
 
   #onScroll = () => {
+    this.#hydrate();
     cancelAnimationFrame(this.#frame);
     this.#frame = requestAnimationFrame(() => {
       const track = this.#track;
@@ -108,10 +122,13 @@ class SwSlideshow extends HTMLElement {
   #go(index) {
     const track = this.#track;
     if (!track) return;
+    this.#hydrate();
     const count = this.#slides.length;
     const next = ((index % count) + count) % count;
     const sign = getComputedStyle(track).direction === 'rtl' ? -1 : 1;
-    track.scrollTo({ left: sign * next * track.clientWidth, behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+    const wraps = count > 2 && Math.abs(next - this.#index) === count - 1;
+    const behavior = prefersReducedMotion() || wraps ? 'instant' : 'smooth';
+    track.scrollTo({ left: sign * next * track.clientWidth, behavior });
     this.#setActive(next);
   }
 

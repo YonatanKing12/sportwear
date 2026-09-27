@@ -582,6 +582,15 @@
     }
   }
 
+  /* Touch screens: every footer link and button is at least 44px tall. */
+  @media (pointer: coarse) {
+    .footer__link,
+    .footer__policy-link,
+    .footer__meta .localization__option {
+      min-block-size: var(--touch-target);
+    }
+  }
+
   .footer__payment-list {
     display: flex;
     flex-wrap: wrap;

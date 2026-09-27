@@ -27,7 +27,9 @@
     },
     "meta": {
       "tagged": "Tagged \"{{ tags }}\"",
-      "page": "Page {{ page }}"
+      "page": "Page {{ page }}",
+      "home_title": "{{ shop }} | Football and Basketball Jerseys",
+      "home_description": "Football jerseys, basketball jerseys and shorts of your favorite clubs and national teams, for adults and kids. Free home delivery on every order within 10 business days, and returns within 45 days."
     },
     "placeholders": {
       "product_title": "Product name"
@@ -37,7 +39,7 @@
       "shipping_free": "Free home delivery",
       "returns": "Returns within 45 days",
       "stock": "Stock held in Israel",
-      "secure_payment": "Secure payment: credit card, Apple\u00a0Pay and Google\u00a0Pay"
+      "secure_payment": "Secure payment"
     },
     "js": {
       "cart_error_html": "We couldn't update your cart. Please try again.",

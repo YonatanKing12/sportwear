@@ -96,6 +96,12 @@
     }
   }
 
+  /* Outside Arabic pages, "العربية" uses the system font, so the Arabic web font (166 KB) is not
+     downloaded for one word. */
+  html:not([lang='ar']) .localization__option[lang='ar'] {
+    font-family: system-ui, sans-serif;
+  }
+
   .localization__compact {
     position: relative;
   }

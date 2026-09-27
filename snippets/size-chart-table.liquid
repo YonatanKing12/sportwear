@@ -176,10 +176,17 @@
       </tbody>
     </table>
   </div>
-  {%- if has_chest_width -%}
-    <p id="{{ hint_id }}" class="{{ class_prefix }}__note">{{ 'products.size_chart.chest_width_hint' | t }}</p>
-  {%- endif -%}
+  {%- # A chart's own note already says how it was measured, so the theme's measuring hint shows only without one. -%}
   {%- if fit_note != blank -%}
-    <p class="{{ class_prefix }}__note">{{ fit_note | escape | newline_to_br }}</p>
+    <p
+      {% if has_chest_width %}
+        id="{{ hint_id }}"
+      {% endif %}
+      class="{{ class_prefix }}__note"
+    >
+      {{ fit_note | escape | newline_to_br }}
+    </p>
+  {%- elsif has_chest_width -%}
+    <p id="{{ hint_id }}" class="{{ class_prefix }}__note">{{ 'products.size_chart.chest_width_hint' | t }}</p>
   {%- endif -%}
 {%- endif -%}

@@ -7,7 +7,17 @@ import { writeFileSync } from 'node:fs';
 import path from 'node:path';
 import AxeBuilder from '@axe-core/playwright';
 import { launchBrowser } from '../lib/browser.mjs';
-import { loadConfig, newContext, openPage, outputDir, pageUrl, repoRoot, unlock, warnAboutMissingEnv } from './lib.mjs';
+import {
+  loadConfig,
+  newContext,
+  openPage,
+  outputDir,
+  pageUrl,
+  PREVIEW_BAR,
+  repoRoot,
+  unlock,
+  warnAboutMissingEnv,
+} from './lib.mjs';
 
 const TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 const cfg = loadConfig();
@@ -28,7 +38,7 @@ try {
         try {
           Object.assign(entry, await openPage(page, url));
           if (entry.blocked) throw new Error('blocked by Shopify rate limit / bot check; re-run this page later');
-          const result = await new AxeBuilder({ page }).withTags(TAGS).analyze();
+          const result = await new AxeBuilder({ page }).withTags(TAGS).exclude(PREVIEW_BAR).analyze();
           entry.violations = result.violations.map((v) => ({
             id: v.id,
             impact: v.impact,

@@ -44,6 +44,17 @@
     "price_max": "الحد الأقصى",
     "sort_by": "ترتيب حسب",
     "sort_apply": "ترتيب",
+    "sort_options": {
+      "manual": "مختارات",
+      "best_selling": "الأكثر مبيعًا",
+      "title_ascending": "الاسم: أ–ي",
+      "title_descending": "الاسم: ي–أ",
+      "price_ascending": "السعر: من الأقل إلى الأعلى",
+      "price_descending": "السعر: من الأعلى إلى الأقل",
+      "created_ascending": "الأقدم أولًا",
+      "created_descending": "الأحدث أولًا",
+      "relevance": "الأكثر صلة"
+    },
     "no_results_heading": "لا توجد منتجات تطابق عوامل التصفية هذه",
     "no_results_text": "جرّبوا إزالة عامل تصفية أو اثنين، أو امسحوها كلها وابدؤوا من جديد."
   },

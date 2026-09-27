@@ -6,6 +6,7 @@
  * Keeps the progress bar in step (--carousel-visible: the share of the row on screen,
  * --carousel-progress: 0 at the start, 1 at the end). Swiping and trackpads scroll the row natively.
  * Works the same in right-to-left languages, where scrollLeft runs from 0 down to negative values.
+ * A card that gets keyboard focus while partly outside the row is scrolled fully into view.
  */
 import { prefersReducedMotion } from '@theme/core';
 
@@ -21,6 +22,7 @@ class SwCarousel extends HTMLElement {
   connectedCallback() {
     this.#track?.addEventListener('scroll', this.#onScroll, { passive: true });
     this.addEventListener('click', this.#onClick);
+    this.addEventListener('focusin', this.#onFocusIn);
     this.#resizeObserver = new ResizeObserver(() => this.#update());
     if (this.#track) this.#resizeObserver.observe(this.#track);
     this.#update();
@@ -29,6 +31,7 @@ class SwCarousel extends HTMLElement {
   disconnectedCallback() {
     this.#track?.removeEventListener('scroll', this.#onScroll);
     this.removeEventListener('click', this.#onClick);
+    this.removeEventListener('focusin', this.#onFocusIn);
     this.#resizeObserver?.disconnect();
     cancelAnimationFrame(this.#frame);
   }
@@ -36,6 +39,19 @@ class SwCarousel extends HTMLElement {
   #onScroll = () => {
     cancelAnimationFrame(this.#frame);
     this.#frame = requestAnimationFrame(() => this.#update());
+  };
+
+  /** @param {FocusEvent} event */
+  #onFocusIn = (event) => {
+    const track = this.#track;
+    const target = /** @type {Element} */ (event.target);
+    if (!track || !track.contains(target)) return;
+    const item = /** @type {HTMLElement | null} */ (target.closest('[data-carousel-track] > *'));
+    if (!item) return;
+    const itemBox = item.getBoundingClientRect();
+    const trackBox = track.getBoundingClientRect();
+    if (itemBox.left >= trackBox.left && itemBox.right <= trackBox.right) return;
+    item.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
   };
 
   /** @param {MouseEvent} event */

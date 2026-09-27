@@ -20,6 +20,7 @@
     assign is_ltr = true
   endif
   assign track_id = 'HeroSlides-' | append: section.id
+  assign desktop_widths = '750,1100,1500,1920,2560,3840' | split: ','
 -%}
 
 {%- if slide_count > 0 -%}
@@ -72,9 +73,11 @@
 
             assign image_loading = 'lazy'
             assign image_priority = 'auto'
+            assign image_preload = false
             if forloop.first and section.index == 1
               assign image_loading = 'eager'
               assign image_priority = 'high'
+              assign image_preload = true
             endif
 
             assign heading_tag = 'h2'
@@ -95,32 +98,60 @@
           >
             <div class="hero-slideshow__media">
               {%- if desktop_image != blank -%}
+                {%- capture slide_picture -%}
                 <picture>
+                  {%- # Mobile first: the phone photo is the <img>, so the first slide's phone photo gets the Early Hints preload that most visitors need. -%}
                   {%- if mobile_image != blank -%}
                     <source
-                      media="(max-width: 749px)"
+                      media="(min-width: 750px)"
                       srcset="
-                        {{ mobile_image | image_url: width: 600 }} 600w,
-                        {{ mobile_image | image_url: width: 900 }} 900w,
-                        {{ mobile_image | image_url: width: 1200 }} 1200w
+                        {%- for w in desktop_widths -%}
+                          {%- assign width = w | plus: 0 -%}
+                          {%- if width <= desktop_image.width or forloop.first -%}
+                            {%- unless forloop.first %}, {% endunless -%}
+                            {{- desktop_image | image_url: width: width }} {{ width }}w
+                          {%- endif -%}
+                        {%- endfor -%}
                       "
                       sizes="100vw"
-                      width="{{ mobile_image.width }}"
-                      height="{{ mobile_image.height }}"
+                      width="{{ desktop_image.width }}"
+                      height="{{ desktop_image.height }}"
                     >
+                    {{
+                      mobile_image
+                      | image_url: width: 1200
+                      | image_tag:
+                        widths: '600, 900, 1200',
+                        sizes: '100vw',
+                        loading: image_loading,
+                        fetchpriority: image_priority,
+                        preload: image_preload,
+                        alt: '',
+                        class: 'hero-slideshow__image'
+                    }}
+                  {%- else -%}
+                    {{
+                      desktop_image
+                      | image_url: width: 3840
+                      | image_tag:
+                        widths: '750, 1100, 1500, 1920, 2560, 3840',
+                        sizes: '100vw',
+                        loading: image_loading,
+                        fetchpriority: image_priority,
+                        preload: image_preload,
+                        alt: '',
+                        class: 'hero-slideshow__image'
+                    }}
                   {%- endif -%}
-                  {{
-                    desktop_image
-                    | image_url: width: 3840
-                    | image_tag:
-                      widths: '750, 1100, 1500, 1920, 2560, 3840',
-                      sizes: '100vw',
-                      loading: image_loading,
-                      fetchpriority: image_priority,
-                      alt: '',
-                      class: 'hero-slideshow__image'
-                  }}
                 </picture>
+                {%- endcapture -%}
+                {%- if forloop.first -%}
+                  {{ slide_picture }}
+                {%- else -%}
+                  {%- # The other slides' photos load after the page (assets/hero-slideshow.js), so they don't compete with the first one. -%}
+                  <template data-slide-media>{{ slide_picture }}</template>
+                  <noscript>{{ slide_picture }}</noscript>
+                {%- endif -%}
               {%- else -%}
                 {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg hero-slideshow__image' }}
               {%- endif -%}
@@ -433,6 +464,8 @@
   }
 
   .hero-slideshow__toggle {
+    position: relative;
+    isolation: isolate;
     display: grid;
     place-items: center;
     inline-size: 28px;
@@ -446,6 +479,28 @@
     &:focus-visible {
       outline: 2px solid var(--color-accent);
       outline-offset: 2px;
+    }
+  }
+
+  /* Touch screens: 44px targets; the pause button keeps its 28px circle inside a larger hit area. */
+  @media (pointer: coarse) {
+    .hero-slideshow__dot {
+      block-size: 44px;
+    }
+
+    .hero-slideshow__toggle {
+      inline-size: 44px;
+      block-size: 44px;
+      background: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 8px;
+        z-index: -1;
+        border-radius: 50%;
+        background: rgb(13 14 17 / 0.55);
+      }
     }
   }
 

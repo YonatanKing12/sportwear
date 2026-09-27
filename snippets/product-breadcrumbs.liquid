@@ -3,8 +3,11 @@
   JSON-LD. The league comes from the metafield sportwear.leagues (first entry), the sport from the
   team, the league or the sport:* tag. The league or sport crumb links to the collection whose handle
   equals the league slug or sport key, when that collection exists; otherwise it is plain text.
-  The last crumb is the team (sportwear.team), falling back to the product type, then the title,
-  and carries aria-current="page". The JSON-LD lists only crumbs with a real URL, then the product.
+  The last crumb is the team (sportwear.team) and carries aria-current="page". Products without the
+  team and league metafields (the imported catalog) use their team:<slug> and league:<slug> tags
+  instead, through the collection with that handle, whose title Shopify translates. With no team at
+  all, the last crumb is the product title. The JSON-LD lists only crumbs with a real URL, then the
+  product.
 
   @param {product} product - The product
   @param {boolean} [show_nav] - Render the visible breadcrumb (default true). The JSON-LD is always output.
@@ -32,9 +35,27 @@
   assign middle_name = ''
   assign middle_handle = ''
   assign middle_url = ''
+  assign tag_team = blank
+  assign tag_league = blank
+  if team == blank or league == blank
+    for tag in product.tags
+      assign league_prefix = tag | slice: 0, 7
+      assign team_prefix = tag | slice: 0, 5
+      if league_prefix == 'league:' and tag_league == blank
+        assign tag_handle = tag | remove_first: 'league:'
+        assign tag_league = collections[tag_handle]
+      elsif team_prefix == 'team:' and tag_team == blank
+        assign tag_handle = tag | remove_first: 'team:'
+        assign tag_team = collections[tag_handle]
+      endif
+    endfor
+  endif
   if league != blank
     assign middle_name = league.name.value
     assign middle_handle = league.slug.value
+  elsif tag_league != blank
+    assign middle_name = tag_league.title
+    assign middle_url = tag_league.url
   else
     case sport
       when 'football'
@@ -45,7 +66,7 @@
         assign middle_handle = sport
     endcase
   endif
-  if middle_name != blank and middle_handle != blank
+  if middle_name != blank and middle_handle != blank and middle_url == blank
     assign middle_collection = collections[middle_handle]
     if middle_collection != blank
       assign middle_url = middle_collection.url
@@ -62,9 +83,11 @@
         assign team_url = team_collection.url
       endif
     endif
-  else
-    assign last_name = product.type
+  elsif tag_team != blank
+    assign last_name = tag_team.title
+    assign team_url = tag_team.url
   endif
+  assign team_name = last_name
   if last_name == blank
     assign last_name = product.title
   endif
@@ -120,7 +143,7 @@
         {
           "@type": "ListItem",
           "position": {{ position }},
-          "name": {{ team.name.value | json }},
+          "name": {{ team_name | json }},
           "item": {{ request.origin | append: team_url | json }}
         },
       {%- endif -%}
