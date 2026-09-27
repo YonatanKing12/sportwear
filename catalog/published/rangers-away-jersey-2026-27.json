@@ -134,5 +134,9 @@
       "en": "2026-09-27T16:12:18Z",
       "ar": "2026-09-27T16:12:18Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "rangers-away-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

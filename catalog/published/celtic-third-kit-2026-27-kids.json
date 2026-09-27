@@ -173,5 +173,9 @@
       "en": "2026-09-27T16:05:22Z",
       "ar": "2026-09-27T16:05:22Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "celtic-third-jersey-2026-27",
+    "complements_handles": []
   }
 }

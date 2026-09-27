@@ -173,5 +173,9 @@
       "en": "2026-09-27T16:00:40Z",
       "ar": "2026-09-27T16:00:41Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "besiktas-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

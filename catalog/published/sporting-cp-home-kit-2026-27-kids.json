@@ -175,5 +175,9 @@
       "en": "2026-09-27T16:14:22Z",
       "ar": "2026-09-27T16:14:23Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "sporting-cp-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

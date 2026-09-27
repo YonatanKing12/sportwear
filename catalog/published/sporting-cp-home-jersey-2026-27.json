@@ -135,5 +135,9 @@
       "en": "2026-09-27T16:14:21Z",
       "ar": "2026-09-27T16:14:22Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "sporting-cp-home-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

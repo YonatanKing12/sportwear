@@ -134,5 +134,9 @@
       "en": "2026-09-27T16:10:05Z",
       "ar": "2026-09-27T16:10:06Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "porto-third-kit-2026-27-kids",
+    "complements_handles": []
   }
 }

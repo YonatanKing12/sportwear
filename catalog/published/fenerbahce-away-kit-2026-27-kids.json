@@ -173,5 +173,9 @@
       "en": "2026-09-27T16:05:23Z",
       "ar": "2026-09-27T16:05:23Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "fenerbahce-away-jersey-2026-27",
+    "complements_handles": []
   }
 }

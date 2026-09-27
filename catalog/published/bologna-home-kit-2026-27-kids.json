@@ -173,5 +173,9 @@
       "en": "2026-09-27T16:00:42Z",
       "ar": "2026-09-27T16:00:42Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "bologna-home-jersey-2026-27",
+    "complements_handles": []
   }
 }

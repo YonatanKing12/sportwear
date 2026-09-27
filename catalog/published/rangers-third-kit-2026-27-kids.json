@@ -174,5 +174,9 @@
       "en": "2026-09-27T16:12:20Z",
       "ar": "2026-09-27T16:12:20Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "rangers-third-jersey-2026-27",
+    "complements_handles": []
   }
 }
