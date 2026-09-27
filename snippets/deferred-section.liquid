@@ -10,7 +10,7 @@
   @param {string} [color_scheme] - The section's color scheme id, for the outline's background
   @param {number} [min_height] - The outline's height in px on phones (default 560)
   @param {number} [min_height_desktop] - Its height in px from 750px (default: min_height)
-  @param {string} [shape] - 'row' (default: a heading and product tiles) or 'circles'
+  @param {string} [shape] - 'row' (default: a heading and product tiles), 'circles' or 'cards' (tall dark cards)
 
   @example
   {% render 'deferred-section', section_id: section.id, color_scheme: section.settings.color_scheme.id, min_height: 560 %}
@@ -87,6 +87,26 @@
     border-radius: var(--radius-card);
     background: var(--color-tile);
     opacity: 0.6;
+  }
+
+  .deferred-section__tiles--cards {
+    grid-auto-columns: min(64vw, 260px);
+
+    @media screen and (min-width: 750px) {
+      grid-auto-columns: 236px;
+      gap: var(--space-4);
+    }
+
+    @media screen and (min-width: 1200px) {
+      grid-auto-columns: 252px;
+      gap: var(--space-5);
+    }
+
+    .deferred-section__tile {
+      aspect-ratio: 4 / 5;
+      background: #16181d;
+      opacity: 0.12;
+    }
   }
 
   .deferred-section__tiles--circles {

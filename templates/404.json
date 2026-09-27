@@ -3,11 +3,11 @@
     "main": {
       "type": "main-404",
       "settings": {
-        "color_scheme": "scheme-day",
+        "color_scheme": "scheme-night",
         "show_search": true,
-        "padding_top": 64,
-        "padding_bottom": 80,
-        "image": "shopify://shop_images/sw-not-found.jpg"
+        "padding_top": 56,
+        "padding_bottom": 72,
+        "menu": "main-menu"
       }
     },
     "new_arrivals": {
@@ -96,6 +96,7 @@
       "settings": {
         "color_scheme": "scheme-day",
         "copy": "players",
+        "link": "shopify://collections/players",
         "show_count": true,
         "padding_top": 40,
         "padding_bottom": 40

@@ -351,14 +351,16 @@
   },
   "not_found": {
     "code": "404",
-    "heading": "Offside!",
-    "text": "The page you're looking for isn't in play: it doesn't exist, or it has moved. Try a search, or head back to the store.",
+    "heading": "Page not found",
+    "text": "Offside! The link you followed is out of play: it may be old, or the address may have a typo. Search for a jersey, or jump to a category.",
     "search_label": "Search the store",
     "search_placeholder": "Team, league or product",
     "search_submit": "Search",
     "home": "Back to the home page",
     "all_products": "Shop all products",
-    "eyebrow": "404 · Page not found"
+    "eyebrow": "Error 404",
+    "jersey_name": "Offside",
+    "popular": "Or jump straight to:"
   },
   "blogs": {
     "all": "All",
@@ -704,12 +706,14 @@
         "players": {
           "eyebrow": "NBA",
           "heading": "The stars",
-          "text": "Every jersey, by player"
+          "text": "Every jersey, by player",
+          "view_all": "All players"
         },
         "teams": {
           "eyebrow": "Teams",
           "heading": "Pick your team",
-          "text": "All your team's jerseys in one place"
+          "text": "All your team's jerseys in one place",
+          "view_all": "All teams"
         }
       }
     },

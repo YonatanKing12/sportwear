@@ -147,12 +147,14 @@
         "players": {
           "eyebrow": "NBA",
           "heading": "The stars",
-          "text": "Every jersey, by player"
+          "text": "Every jersey, by player",
+          "view_all": "All players"
         },
         "teams": {
           "eyebrow": "Teams",
           "heading": "Pick your team",
-          "text": "All your team's jerseys in one place"
+          "text": "All your team's jerseys in one place",
+          "view_all": "All teams"
         }
       }
     },

@@ -474,9 +474,9 @@
       }
     },
     "collection_circles": {
-      "name": "Collection circles",
+      "name": "Player and team cards",
       "presets": {
-        "name": "Collection circles"
+        "name": "Player and team cards"
       },
       "settings": {
         "copy": {
@@ -490,11 +490,31 @@
         },
         "show_count": {
           "label": "Show product count"
+        },
+        "link": {
+          "info": "Where the link next to the arrows goes, for example the players collection."
+        },
+        "link_label": {
+          "label": "Link text"
         }
       },
       "blocks": {
         "collection": {
-          "name": "Collection"
+          "name": "Collection",
+          "settings": {
+            "image": {
+              "label": "Card picture",
+              "info": "A cut-out jersey on a transparent background (PNG). Empty: the collection's \"Card picture\" field, else a photo of its first jersey."
+            },
+            "color": {
+              "label": "Card color",
+              "info": "Lights the card. Empty: the collection's \"Card color\" field, else the accent color."
+            },
+            "mark": {
+              "label": "Big number or letters",
+              "info": "Shown large behind the jersey: a player's number or a team's short code, such as 24 or RMA. Empty: the collection's \"Card number\" field."
+            }
+          }
         }
       }
     },

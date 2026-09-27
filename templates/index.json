@@ -455,6 +455,7 @@
       "settings": {
         "color_scheme": "scheme-day",
         "copy": "players",
+        "link": "shopify://collections/players",
         "show_count": true,
         "padding_top": 40,
         "padding_bottom": 40

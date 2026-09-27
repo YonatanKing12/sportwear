@@ -1,0 +1,311 @@
+{
+  "_note": "The collector cards of 2026-09-28 (owner: the small circles were unattractive and hard to read). Each collection's card: a cut-out of the jersey in the image (scripts/images/cutout.py; white jerseys cut with --thresh 4, the Juventus and Ja Morant photos with --bg auto), a color and a mark, stored in the collection metafields sportwear.card_image / card_color / card_mark (catalog/metafields.json). To change a card, edit those three fields on the collection in admin, or override them in the theme editor on the section's block.",
+  "cards": [
+    {
+      "collection": "kobe-bryant",
+      "kind": "player",
+      "mark": "24",
+      "color": "#552583",
+      "file": "sw-card-kobe-bryant.png",
+      "media_id": "gid://shopify/MediaImage/45307160723760",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-188304509.png"
+    },
+    {
+      "collection": "michael-jordan",
+      "kind": "player",
+      "mark": "23",
+      "color": "#CE1141",
+      "file": "sw-card-michael-jordan.png",
+      "media_id": "gid://shopify/MediaImage/45307161051440",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-97623630.png"
+    },
+    {
+      "collection": "lebron-james",
+      "kind": "player",
+      "mark": "23",
+      "color": "#6F2DA8",
+      "file": "sw-card-lebron-james.png",
+      "media_id": "gid://shopify/MediaImage/45307160822064",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-95046438.png"
+    },
+    {
+      "collection": "stephen-curry",
+      "kind": "player",
+      "mark": "30",
+      "color": "#FFC72C",
+      "file": "sw-card-stephen-curry.png",
+      "media_id": "gid://shopify/MediaImage/45307161215280",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-106384395.png"
+    },
+    {
+      "collection": "luka-doncic",
+      "kind": "player",
+      "mark": "77",
+      "color": "#B8C4CA",
+      "file": "sw-card-luka-doncic.png",
+      "media_id": "gid://shopify/MediaImage/45307160887600",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-126415536.png"
+    },
+    {
+      "collection": "kevin-durant",
+      "kind": "player",
+      "mark": "7",
+      "color": "#4A5A6A",
+      "file": "sw-card-kevin-durant.png",
+      "media_id": "gid://shopify/MediaImage/45307160690992",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-99027825.png"
+    },
+    {
+      "collection": "allen-iverson",
+      "kind": "player",
+      "mark": "3",
+      "color": "#006BB6",
+      "file": "sw-card-allen-iverson.png",
+      "media_id": "gid://shopify/MediaImage/45307160199472",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-88093901.png"
+    },
+    {
+      "collection": "giannis-antetokounmpo",
+      "kind": "player",
+      "mark": "34",
+      "color": "#EEE1C6",
+      "file": "sw-card-giannis-antetokounmpo.png",
+      "media_id": "gid://shopify/MediaImage/45307160461616",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-100219184.png"
+    },
+    {
+      "collection": "victor-wembanyama",
+      "kind": "player",
+      "mark": "1",
+      "color": "#00B2A9",
+      "file": "sw-card-victor-wembanyama.png",
+      "media_id": "gid://shopify/MediaImage/45307161248048",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-136506201.png"
+    },
+    {
+      "collection": "kyrie-irving",
+      "kind": "player",
+      "mark": "11",
+      "color": "#2B2D31",
+      "file": "sw-card-kyrie-irving.png",
+      "media_id": "gid://shopify/MediaImage/45307160756528",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-97596191.png"
+    },
+    {
+      "collection": "ja-morant",
+      "kind": "player",
+      "mark": "12",
+      "color": "#F5B112",
+      "file": "sw-card-ja-morant.png",
+      "media_id": "gid://shopify/MediaImage/45307160592688",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-15308717359408-front-v2.png"
+    },
+    {
+      "collection": "anthony-edwards",
+      "kind": "player",
+      "mark": "5",
+      "color": "#78BE20",
+      "file": "sw-card-anthony-edwards.png",
+      "media_id": "gid://shopify/MediaImage/45307160232240",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-163399313.png"
+    },
+    {
+      "collection": "jayson-tatum",
+      "kind": "player",
+      "mark": "0",
+      "color": "#BA9653",
+      "file": "sw-card-jayson-tatum.png",
+      "media_id": "gid://shopify/MediaImage/45307160625456",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-106680476.png"
+    },
+    {
+      "collection": "nikola-jokic",
+      "kind": "player",
+      "mark": "15",
+      "color": "#E03A3E",
+      "file": "sw-card-nikola-jokic.png",
+      "media_id": "gid://shopify/MediaImage/45307161084208",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-97402129.png"
+    },
+    {
+      "collection": "shaquille-oneal",
+      "kind": "player",
+      "mark": "32",
+      "color": "#0077C0",
+      "file": "sw-card-shaquille-oneal.png",
+      "media_id": "gid://shopify/MediaImage/45307161182512",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-95543204.png"
+    },
+    {
+      "collection": "larry-bird",
+      "kind": "player",
+      "mark": "33",
+      "color": "#F1EBDD",
+      "file": "sw-card-larry-bird.png",
+      "media_id": "gid://shopify/MediaImage/45307160789296",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-89882722.png"
+    },
+    {
+      "collection": "real-madrid",
+      "kind": "team",
+      "mark": "RMA",
+      "color": "#FEBE10",
+      "file": "sw-card-real-madrid.png",
+      "media_id": "gid://shopify/MediaImage/45307161149744",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/real-madrid-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "barcelona",
+      "kind": "team",
+      "mark": "BAR",
+      "color": "#A50044",
+      "file": "sw-card-barcelona.png",
+      "media_id": "gid://shopify/MediaImage/45307160297776",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/barcelona-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "manchester-united",
+      "kind": "team",
+      "mark": "MUN",
+      "color": "#DA291C",
+      "file": "sw-card-manchester-united.png",
+      "media_id": "gid://shopify/MediaImage/45307160985904",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/manchester-united-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "manchester-city",
+      "kind": "team",
+      "mark": "MCI",
+      "color": "#2E4A8C",
+      "file": "sw-card-manchester-city.png",
+      "media_id": "gid://shopify/MediaImage/45307160953136",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/manchester-city-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "arsenal",
+      "kind": "team",
+      "mark": "ARS",
+      "color": "#DBA111",
+      "file": "sw-card-arsenal.png",
+      "media_id": "gid://shopify/MediaImage/45307160265008",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-football-228361436.png"
+    },
+    {
+      "collection": "chelsea",
+      "kind": "team",
+      "mark": "CHE",
+      "color": "#034694",
+      "file": "sw-card-chelsea.png",
+      "media_id": "gid://shopify/MediaImage/45307160396080",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/chelsea-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "paris-saint-germain",
+      "kind": "team",
+      "mark": "PSG",
+      "color": "#DA291C",
+      "file": "sw-card-paris-saint-germain.png",
+      "media_id": "gid://shopify/MediaImage/45307161116976",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/paris-saint-germain-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "bayern-munich",
+      "kind": "team",
+      "mark": "FCB",
+      "color": "#0066B2",
+      "file": "sw-card-bayern-munich.png",
+      "media_id": "gid://shopify/MediaImage/45307160330544",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/bayern-munich-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "ac-milan",
+      "kind": "team",
+      "mark": "MIL",
+      "color": "#E01E26",
+      "file": "sw-card-ac-milan.png",
+      "media_id": "gid://shopify/MediaImage/45307160166704",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/ac-milan-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "inter-milan",
+      "kind": "team",
+      "mark": "INT",
+      "color": "#BFA36D",
+      "file": "sw-card-inter-milan.png",
+      "media_id": "gid://shopify/MediaImage/45307160559920",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/inter-milan-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "juventus",
+      "kind": "team",
+      "mark": "JUV",
+      "color": "#F5F5F5",
+      "file": "sw-card-juventus.png",
+      "media_id": "gid://shopify/MediaImage/45307160658224",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-football-185463732-main-v1.png"
+    },
+    {
+      "collection": "maccabi-haifa",
+      "kind": "team",
+      "mark": "MHA",
+      "color": "#0FA968",
+      "file": "sw-card-maccabi-haifa.png",
+      "media_id": "gid://shopify/MediaImage/45307160920368",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/maccabi-haifa-home-jersey-2026-27.png"
+    },
+    {
+      "collection": "hapoel-tel-aviv",
+      "kind": "team",
+      "mark": "HTA",
+      "color": "#C8102E",
+      "file": "sw-card-hapoel-tel-aviv.png",
+      "media_id": "gid://shopify/MediaImage/45307160527152",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/hapoel-tel-aviv-away-jersey-2026-27.png"
+    },
+    {
+      "collection": "los-angeles-lakers",
+      "kind": "team",
+      "mark": "LAL",
+      "color": "#FDB927",
+      "file": "sw-card-los-angeles-lakers.png",
+      "media_id": "gid://shopify/MediaImage/45307160854832",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-209200120.png"
+    },
+    {
+      "collection": "chicago-bulls",
+      "kind": "team",
+      "mark": "CHI",
+      "color": "#CE1141",
+      "file": "sw-card-chicago-bulls.png",
+      "media_id": "gid://shopify/MediaImage/45307160428848",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-96896163.png"
+    },
+    {
+      "collection": "golden-state-warriors",
+      "kind": "team",
+      "mark": "GSW",
+      "color": "#1D428A",
+      "file": "sw-card-golden-state-warriors.png",
+      "media_id": "gid://shopify/MediaImage/45307160494384",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-199492720.png"
+    },
+    {
+      "collection": "boston-celtics",
+      "kind": "team",
+      "mark": "BOS",
+      "color": "#007A33",
+      "file": "sw-card-boston-celtics.png",
+      "media_id": "gid://shopify/MediaImage/45307160363312",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-94399727.png"
+    },
+    {
+      "collection": "miami-heat",
+      "kind": "team",
+      "mark": "MIA",
+      "color": "#F9A01B",
+      "file": "sw-card-miami-heat.png",
+      "media_id": "gid://shopify/MediaImage/45307161018672",
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/sw-studio-jerseys-244981161.png"
+    }
+  ]
+}

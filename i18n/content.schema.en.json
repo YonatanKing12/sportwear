@@ -271,9 +271,12 @@
         "show_search": {
           "label": "Show search"
         },
-        "image": {
-          "label": "Picture",
-          "info": "A wide picture above the text (3:1 on computers, cropped to 16:9 on phones). Empty: a big \"404\"."
+        "jersey_name": {
+          "label": "Name on the shirt"
+        },
+        "menu": {
+          "label": "Category links",
+          "info": "The menu whose top links show as chips under the buttons."
         }
       }
     },

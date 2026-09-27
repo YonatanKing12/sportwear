@@ -1,7 +1,10 @@
 {%- comment -%}
-  404 page: a picture (setting "image"; without one, a big outlined "404"), the template's <h1>
-  ("Offside!"), a short explanation, a store search form and links back to the home page and to all
-  products. The "404" line and the picture are decorative.
+  404 page. The page must say at once that the address leads nowhere, so it opens with a giant "404"
+  printed on the back of a shirt that hangs on a hanger, with "Offside" as the name above the number
+  (decorative, and it sways gently unless the visitor prefers reduced motion). Next to it, in reading
+  order: "Error 404", the template's <h1> ("Page not found"), a short explanation, a store search form,
+  links to all products and the home page, and the top links of a menu as chips. The background is the
+  dark night scheme with faint pitch markings.
 {%- endcomment -%}
 {%- liquid
   assign heading = section.settings.heading
@@ -12,32 +15,47 @@
   if intro == blank
     assign intro = 'not_found.text' | t
   endif
+  assign jersey_name = section.settings.jersey_name
+  if jersey_name == blank
+    assign jersey_name = 'not_found.jersey_name' | t
+  endif
   assign search_id = 'NotFoundSearch-' | append: section.id
+  assign chips_id = 'NotFoundLinks-' | append: section.id
+  assign chip_menu = linklists[section.settings.menu]
 -%}
 <div
   class="section not-found color-{{ section.settings.color_scheme.id }}"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
-  <div class="page-width">
-    {%- if section.settings.image != blank -%}
-      <div class="not-found__media">
-        {%- render 'image',
-          image: section.settings.image,
-          sizes: '(min-width: 1180px) 1100px, calc(100vw - 32px)',
-          widths: '480, 720, 960, 1100, 1500, 2200',
-          loading: 'eager',
-          fetchpriority: 'high',
-          alt: '',
-          class: 'not-found__image'
-        -%}
+  <div class="not-found__pitch" aria-hidden="true"></div>
+  <div class="page-width not-found__grid">
+    <div class="not-found__visual" aria-hidden="true">
+      <div class="not-found__jersey">
+        <svg class="not-found__shirt" viewBox="0 -72 420 532" focusable="false" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="NotFoundFabric-{{ section.id }}" x1="0" y1="0" x2="0" y2="1">
+              <stop class="not-found__fabric-top" offset="0"/>
+              <stop class="not-found__fabric-bottom" offset="1"/>
+            </linearGradient>
+          </defs>
+          <path class="not-found__hanger" d="M210 -2V-22c0-8 20-14 20-30 0-11-9-18-20-18s-20 7-20 18" />
+          <path class="not-found__hanger" d="M66 44L210 -4L354 44" />
+          <path
+            class="not-found__body"
+            fill="url(#NotFoundFabric-{{ section.id }})"
+            d="M146 14C166 36 254 36 274 14L352 40L414 120L362 172L342 152V446C342 452 338 456 332 456H88C82 456 78 452 78 446V152L58 172L6 120L68 40Z"
+          />
+          <path class="not-found__trim" d="M146 14C166 36 254 36 274 14" />
+          <path class="not-found__trim" d="M22 104L50 132M398 104L370 132" />
+          <path class="not-found__seam" d="M78 158V446M342 158V446" />
+        </svg>
+        <span class="not-found__name">{{ jersey_name | escape }}</span>
+        <span class="not-found__number">{{ 'not_found.code' | t }}</span>
       </div>
-    {%- endif -%}
-    <div class="not-found__inner">
-      {%- if section.settings.image != blank -%}
-        <p class="not-found__eyebrow" aria-hidden="true">{{ 'not_found.eyebrow' | t }}</p>
-      {%- else -%}
-        <p class="not-found__code" aria-hidden="true">{{ 'not_found.code' | t }}</p>
-      {%- endif -%}
+    </div>
+
+    <div class="not-found__content">
+      <p class="eyebrow not-found__eyebrow">{{ 'not_found.eyebrow' | t }}</p>
       <h1 class="display-l not-found__heading">{{ heading }}</h1>
       <p class="not-found__text">{{ intro }}</p>
 
@@ -71,72 +89,210 @@
       {%- endif -%}
 
       <div class="not-found__actions">
-        <a class="button button--secondary" href="{{ routes.root_url }}">
-          {%- render 'icon', name: 'arrow-back', size: 20 -%}
-          <span>{{ 'not_found.home' | t }}</span>
-        </a>
         <a class="button button--primary" href="{{ routes.all_products_collection_url }}">
           <span>{{ 'not_found.all_products' | t }}</span>
           {%- render 'icon', name: 'arrow-forward', size: 20 -%}
         </a>
+        <a class="button button--secondary" href="{{ routes.root_url }}">
+          {{- 'not_found.home' | t -}}
+        </a>
       </div>
+
+      {%- if chip_menu != blank and chip_menu.links.size > 0 -%}
+        <nav class="not-found__links" aria-labelledby="{{ chips_id }}">
+          <p class="not-found__links-label" id="{{ chips_id }}">{{ 'not_found.popular' | t }}</p>
+          <ul class="not-found__chips" role="list">
+            {%- for link in chip_menu.links limit: 6 -%}
+              <li>
+                <a class="chip" href="{{ link.url }}">{{ link.title | escape }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
     </div>
   </div>
 </div>
 
 {% stylesheet %}
-  .not-found__media {
-    max-inline-size: 1100px;
-    margin-inline: auto;
-    margin-block-end: var(--space-8);
+  .not-found {
+    position: relative;
     overflow: hidden;
-    border-radius: var(--radius-card);
-    aspect-ratio: 16 / 9;
-    background: var(--color-surface);
+    isolation: isolate;
+  }
 
-    @media screen and (min-width: 750px) {
-      aspect-ratio: 3 / 1;
+  /* Faint pitch markings: the halfway line and the centre circle, lit from above. */
+  .not-found__pitch {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(60% 55% at 50% 0%, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 70%),
+      radial-gradient(
+        circle at 50% 58%,
+        transparent 0 139px,
+        color-mix(in srgb, var(--color-text) 9%, transparent) 140px 141.5px,
+        transparent 142.5px
+      ),
+      linear-gradient(
+        to right,
+        transparent calc(50% - 0.75px),
+        color-mix(in srgb, var(--color-text) 9%, transparent) calc(50% - 0.75px) calc(50% + 0.75px),
+        transparent calc(50% + 0.75px)
+      );
+    pointer-events: none;
+
+    @media screen and (min-width: 990px) {
+      background:
+        radial-gradient(60% 55% at 50% 0%, color-mix(in srgb, var(--color-accent) 10%, transparent), transparent 70%),
+        radial-gradient(
+          circle at 50% 50%,
+          transparent 0 219px,
+          color-mix(in srgb, var(--color-text) 9%, transparent) 220px 221.5px,
+          transparent 222.5px
+        ),
+        linear-gradient(
+          to right,
+          transparent calc(50% - 0.75px),
+          color-mix(in srgb, var(--color-text) 9%, transparent) calc(50% - 0.75px) calc(50% + 0.75px),
+          transparent calc(50% + 0.75px)
+        );
     }
   }
 
-  .not-found__image {
-    display: block;
+  .not-found__grid {
+    display: grid;
+    align-items: center;
+    gap: var(--space-8);
+
+    @media screen and (min-width: 990px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: var(--space-12);
+    }
+  }
+
+  .not-found__visual {
+    display: grid;
+    justify-items: center;
+
+    @media screen and (min-width: 990px) {
+      order: 2;
+    }
+  }
+
+  /* The shirt on its hanger. The name and number sit on its back like printed lettering. */
+  .not-found__jersey {
+    position: relative;
+    container-type: inline-size;
+    inline-size: min(68vw, 280px);
+    aspect-ratio: 420 / 532;
+    transform-origin: 50% 2%;
+    animation: not-found-sway 7s ease-in-out infinite;
+
+    @media screen and (min-width: 990px) {
+      inline-size: min(100%, 400px);
+    }
+  }
+
+  .not-found__shirt {
+    position: absolute;
+    inset: 0;
     inline-size: 100%;
     block-size: 100%;
-    object-fit: cover;
+    overflow: visible;
+    filter: drop-shadow(0 26px 30px rgb(0 0 0 / 0.5));
+  }
+
+  .not-found__fabric-top {
+    stop-color: var(--color-accent);
+  }
+
+  .not-found__fabric-bottom {
+    stop-color: color-mix(in oklab, var(--color-accent) 78%, #000);
+  }
+
+  .not-found__hanger {
+    fill: none;
+    stroke: color-mix(in srgb, var(--color-text) 60%, transparent);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .not-found__trim {
+    fill: none;
+    stroke: #0d0e11;
+    stroke-width: 10;
+    stroke-linecap: round;
+  }
+
+  .not-found__seam {
+    fill: none;
+    stroke: rgb(13 14 17 / 0.14);
+    stroke-width: 3;
+  }
+
+  .not-found__name,
+  .not-found__number {
+    position: absolute;
+    inset-inline: 22%;
+    color: #0d0e11;
+    font-family: var(--font-display);
+    line-height: 1;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .not-found__name {
+    inset-block-start: 27%;
+    font-size: 11cqi;
+    letter-spacing: 0.08em;
+  }
+
+  :lang(ar) .not-found__name {
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+
+  .not-found__number {
+    inset-block-start: 41%;
+    font-size: 40cqi;
+    letter-spacing: -0.01em;
+    direction: ltr;
+  }
+
+  .not-found__content {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-4);
+    max-inline-size: 560px;
+    text-align: start;
+
+    @media screen and (max-width: 989px) {
+      justify-self: center;
+      justify-items: center;
+      text-align: center;
+    }
   }
 
   .not-found__eyebrow {
-    color: var(--color-muted);
-    font-size: var(--text-sm);
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    margin: 0;
+    color: var(--color-accent-text);
+    font-variant-numeric: tabular-nums;
   }
 
-  .not-found__inner {
-    display: grid;
-    justify-items: center;
-    gap: var(--space-5);
-    max-inline-size: 640px;
-    margin-inline: auto;
-    text-align: center;
-  }
-
-  .not-found__code {
-    color: transparent;
-    font-family: var(--font-display);
-    font-size: clamp(96px, 22vw, 220px);
-    line-height: 0.9;
-    letter-spacing: 0.02em;
-    -webkit-text-stroke: 2px color-mix(in srgb, var(--color-text) 22%, transparent);
-    direction: ltr;
-    user-select: none;
+  .not-found__heading {
+    margin: 0;
+    text-wrap: balance;
   }
 
   .not-found__text {
-    max-inline-size: 48ch;
+    max-inline-size: 46ch;
+    margin: 0;
     color: var(--color-muted);
     font-size: var(--text-lg);
+    line-height: var(--leading-body);
   }
 
   .not-found__search-wrapper {
@@ -155,7 +311,7 @@
     flex: 1 1 auto;
     min-inline-size: 0;
     min-block-size: var(--control-height);
-    border-color: color-mix(in srgb, var(--color-text) 45%, var(--color-background));
+    background: var(--color-surface);
   }
 
   .not-found__search-button {
@@ -170,12 +326,55 @@
   .not-found__actions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: var(--space-3);
-    margin-block-start: var(--space-2);
+    inline-size: 100%;
 
     & .button {
-      flex: 1 1 220px;
+      flex: 1 1 200px;
+    }
+  }
+
+  .not-found__links {
+    display: grid;
+    gap: var(--space-2);
+    inline-size: 100%;
+    margin-block-start: var(--space-2);
+  }
+
+  .not-found__links-label {
+    margin: 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 700;
+  }
+
+  .not-found__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (max-width: 989px) {
+      justify-content: center;
+    }
+  }
+
+  @keyframes not-found-sway {
+    0%,
+    100% {
+      rotate: -2.5deg;
+    }
+
+    50% {
+      rotate: 2.5deg;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .not-found__jersey {
+      animation: none;
     }
   }
 {% endstylesheet %}
@@ -188,13 +387,7 @@
       "type": "color_scheme",
       "id": "color_scheme",
       "label": "t:settings.color_scheme",
-      "default": "scheme-day"
-    },
-    {
-      "type": "image_picker",
-      "id": "image",
-      "label": "t:sections.main_404.settings.image.label",
-      "info": "t:sections.main_404.settings.image.info"
+      "default": "scheme-night"
     },
     {
       "type": "text",
@@ -209,10 +402,23 @@
       "info": "t:settings.default_text_info"
     },
     {
+      "type": "text",
+      "id": "jersey_name",
+      "label": "t:sections.main_404.settings.jersey_name.label",
+      "info": "t:settings.default_text_info"
+    },
+    {
       "type": "checkbox",
       "id": "show_search",
       "label": "t:sections.main_404.settings.show_search.label",
       "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "t:sections.main_404.settings.menu.label",
+      "info": "t:sections.main_404.settings.menu.info",
+      "default": "main-menu"
     },
     {
       "type": "range",
@@ -222,7 +428,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:settings.padding_top",
-      "default": 64
+      "default": 56
     },
     {
       "type": "range",
@@ -232,7 +438,7 @@
       "step": 4,
       "unit": "px",
       "label": "t:settings.padding_bottom",
-      "default": 80
+      "default": 72
     }
   ]
 }

@@ -1,13 +1,17 @@
 {%- comment -%}
-  Collection circles: a row of round pictures that link to collections, such as players or teams.
-  Each block is a collection; its picture is the collection's own image, or else the photo of the first
-  adult jersey among its first 6 products (a team's newest product may be its shorts or a kids set),
-  or else its first product's (collection.featured_image), shown whole on the light product tile. The name
-  under it is the collection's own (translated) title, with the product count under that. The row
-  scrolls sideways at every width (arrows from tablets up, through <sw-carousel> in
-  assets/product-carousel.js). A collection with no products is skipped outside the theme editor.
-  The heading, eyebrow and text come from a translated copy set (players, teams) unless the owner
-  writes their own.
+  Player and team cards: a row of big collector cards that link to collections, such as players or teams.
+  Each block is a collection. Its card shows:
+  - a cut-out jersey: the block's picture, else the collection's metafield sportwear.card_image, else a
+    photo of the collection's first adult jersey (or its first product) on a light tile;
+  - the card's color (block setting, else sportwear.card_color, else the accent) as a glow on a dark card;
+  - a giant outlined number or short code behind the jersey (block setting, else sportwear.card_mark,
+    for example 24 or RMA);
+  - the collection's own (translated) title and product count on a dark nameplate, with an arrow.
+  On computers with a mouse the card tilts toward the pointer (assets/collector-cards.js); with reduced
+  motion it stays still. The row scrolls sideways at every width (arrows from tablets up, through
+  <sw-carousel> in assets/product-carousel.js). A collection with no products is skipped outside the
+  theme editor. The heading, eyebrow, text and link label come from a translated copy set (players,
+  teams) unless the owner writes their own.
 {%- endcomment -%}
 {%- liquid
   # Further down a page (after its third section) this section can wait until the visitor scrolls near
@@ -23,9 +27,9 @@
   {%- render 'deferred-section',
     section_id: section.id,
     color_scheme: section.settings.color_scheme.id,
-    min_height: 360,
-    min_height_desktop: 420,
-    shape: 'circles'
+    min_height: 520,
+    min_height_desktop: 520,
+    shape: 'cards'
   -%}
 {%- else -%}
   {%- liquid
@@ -33,6 +37,7 @@
     assign eyebrow = section.settings.eyebrow | escape
     assign heading = section.settings.heading | escape
     assign text = section.settings.text | escape
+    assign link_label = section.settings.link_label | escape
     if copy != 'none'
       assign copy_key = 'home.collection_circles.copy.' | append: copy
       if eyebrow == blank
@@ -44,12 +49,18 @@
       if text == blank
         assign text = copy_key | append: '.text' | t
       endif
+      if link_label == blank
+        assign link_label = copy_key | append: '.view_all' | t
+      endif
     endif
     if heading == blank
       assign heading = 'home.collection_circles.heading' | t
     endif
+    if link_label == blank
+      assign link_label = 'general.view_all' | t
+    endif
 
-    assign list_id = 'CollectionCircles-' | append: section.id
+    assign list_id = 'CollectionCards-' | append: section.id
     assign visible_count = 0
     for block in section.blocks
       if block.settings.collection.all_products_count > 0 or request.design_mode
@@ -59,125 +70,203 @@
   -%}
   {%- if visible_count > 0 -%}
     <div
-      class="section collection-circles color-{{ section.settings.color_scheme.id }}"
+      class="section collection-cards color-{{ section.settings.color_scheme.id }}"
       style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
     >
-      <sw-carousel class="collection-circles__carousel">
+      <sw-carousel class="collection-cards__carousel">
         <div class="page-width">
-          <div class="section-header collection-circles__header">
-            <div class="collection-circles__title">
+          <div class="section-header collection-cards__header">
+            <div class="collection-cards__title">
               {%- if eyebrow != blank -%}
-                <p class="eyebrow collection-circles__eyebrow">{{ eyebrow }}</p>
+                <p class="eyebrow collection-cards__eyebrow">{{ eyebrow }}</p>
               {%- endif -%}
-              <h2 class="collection-circles__heading display-m">{{ heading }}</h2>
+              <h2 class="collection-cards__heading display-m">{{ heading }}</h2>
               {%- if text != blank -%}
-                <p class="collection-circles__text">{{ text }}</p>
+                <p class="collection-cards__text">{{ text }}</p>
               {%- endif -%}
             </div>
-            <div class="collection-circles__arrows js-only">
-              <button
-                type="button"
-                class="collection-circles__arrow"
-                aria-controls="{{ list_id }}"
-                aria-disabled="true"
-                data-carousel-prev
-              >
-                {%- render 'icon', name: 'chevron-back', size: 20 -%}
-                <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
-              </button>
-              <button
-                type="button"
-                class="collection-circles__arrow"
-                aria-controls="{{ list_id }}"
-                aria-disabled="false"
-                data-carousel-next
-              >
-                {%- render 'icon', name: 'chevron-forward', size: 20 -%}
-                <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
-              </button>
+            <div class="collection-cards__tools">
+              {%- if section.settings.link != blank -%}
+                <a class="collection-cards__all" href="{{ section.settings.link }}">
+                  {{- link_label -}}
+                </a>
+              {%- endif -%}
+              <div class="collection-cards__arrows js-only">
+                <button
+                  type="button"
+                  class="collection-cards__arrow"
+                  aria-controls="{{ list_id }}"
+                  aria-disabled="true"
+                  data-carousel-prev
+                >
+                  {%- render 'icon', name: 'chevron-back', size: 20 -%}
+                  <span class="visually-hidden">{{ 'accessibility.previous' | t }}</span>
+                </button>
+                <button
+                  type="button"
+                  class="collection-cards__arrow"
+                  aria-controls="{{ list_id }}"
+                  aria-disabled="false"
+                  data-carousel-next
+                >
+                  {%- render 'icon', name: 'chevron-forward', size: 20 -%}
+                  <span class="visually-hidden">{{ 'accessibility.next' | t }}</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
-        <ul id="{{ list_id }}" class="collection-circles__track" role="list" data-carousel-track>
-          {%- for block in section.blocks -%}
-            {%- liquid
-              assign circle_collection = block.settings.collection
-              if circle_collection == blank or circle_collection.all_products_count == 0
-                unless request.design_mode
-                  continue
-                endunless
-              endif
+        <sw-collector-cards class="collection-cards__deck">
+          <ul id="{{ list_id }}" class="collection-cards__track" role="list" data-carousel-track>
+            {%- for block in section.blocks -%}
+              {%- liquid
+                assign card_collection = block.settings.collection
+                if card_collection == blank or card_collection.all_products_count == 0
+                  unless request.design_mode
+                    continue
+                  endunless
+                endif
 
-              assign circle_image = blank
-              if circle_collection != blank
-                assign circle_image = circle_collection.image
-                if circle_image == blank
-                  assign kids_image = blank
-                  for circle_product in circle_collection.products limit: 6
-                    if circle_product.type contains 'Jersey'
-                      if circle_product.tags contains 'audience:kids'
-                        if kids_image == blank
-                          assign kids_image = circle_product.featured_media.preview_image
+                assign card_cutout = block.settings.image
+                assign card_color = block.settings.color
+                assign card_mark = block.settings.mark | strip
+                assign card_photo = blank
+                if card_collection != blank
+                  if card_cutout == blank
+                    assign card_cutout = card_collection.metafields.sportwear.card_image.value
+                  endif
+                  if card_color == blank
+                    assign card_color = card_collection.metafields.sportwear.card_color.value
+                  endif
+                  if card_mark == blank
+                    assign card_mark = card_collection.metafields.sportwear.card_mark.value | strip
+                  endif
+
+                  # No cut-out: the collection's own image, else the photo of its first adult jersey among
+                  # its first 6 products (a team's newest product may be its shorts or a kids set), else
+                  # its first product's.
+                  if card_cutout == blank
+                    assign card_photo = card_collection.image
+                    if card_photo == blank
+                      assign kids_photo = blank
+                      for card_product in card_collection.products limit: 6
+                        if card_product.type contains 'Jersey'
+                          if card_product.tags contains 'audience:kids'
+                            if kids_photo == blank
+                              assign kids_photo = card_product.featured_media.preview_image
+                            endif
+                          else
+                            assign card_photo = card_product.featured_media.preview_image
+                            break
+                          endif
                         endif
-                      else
-                        assign circle_image = circle_product.featured_media.preview_image
-                        break
+                      endfor
+                      if card_photo == blank
+                        assign card_photo = kids_photo
+                      endif
+                      if card_photo == blank
+                        assign card_photo = card_collection.featured_image
                       endif
                     endif
-                  endfor
-                  if circle_image == blank
-                    assign circle_image = kids_image
-                  endif
-                  if circle_image == blank
-                    assign circle_image = circle_collection.featured_image
                   endif
                 endif
-              endif
-            -%}
-            <li class="collection-circles__item" {{ block.shopify_attributes }}>
-              {%- if circle_collection != blank -%}
-                <a class="collection-circles__link" href="{{ circle_collection.url }}">
-                  <span class="collection-circles__media">
-                    {%- if circle_image != blank -%}
-                      {%- render 'image',
-                        image: circle_image,
-                        sizes: '(min-width: 990px) 128px, 96px',
-                        widths: '120, 180, 240, 300, 400',
-                        alt: '',
-                        class: 'collection-circles__image'
-                      -%}
-                    {%- else -%}
-                      {%- render 'icon', name: 'shirt', size: 36 -%}
+
+                assign mark_class = ''
+                case card_mark.size
+                  when 1
+                    assign mark_class = ' collector-card__mark--1'
+                  when 3
+                    assign mark_class = ' collector-card__mark--3'
+                  when 4, 5, 6
+                    assign mark_class = ' collector-card__mark--4'
+                endcase
+              -%}
+              <li class="collection-cards__item" {{ block.shopify_attributes }}>
+                {%- if card_collection != blank -%}
+                  <a
+                    class="collector-card"
+                    href="{{ card_collection.url }}"
+                    {% if card_color != blank %}
+                      style="--card-color: {{ card_color }};"
+                    {% endif %}
+                  >
+                    <span class="collector-card__dots" aria-hidden="true"></span>
+                    {%- if card_mark != blank -%}
+                      <span class="collector-card__mark{{ mark_class }}" aria-hidden="true">
+                        {{- card_mark | escape -}}
+                      </span>
                     {%- endif -%}
-                  </span>
-                  <span class="collection-circles__name">{{ circle_collection.title | escape }}</span>
-                  {%- if section.settings.show_count -%}
-                    <span class="collection-circles__count">
-                      {{- 'home.featured_collection.count' | t: count: circle_collection.all_products_count -}}
+                    {%- if card_cutout != blank -%}
+                      <span class="collector-card__media">
+                        {%- render 'image',
+                          image: card_cutout,
+                          sizes: '(min-width: 1200px) 202px, (min-width: 750px) 190px, 52vw',
+                          widths: '200, 300, 400, 500, 600',
+                          alt: '',
+                          class: 'collector-card__image'
+                        -%}
+                      </span>
+                    {%- else -%}
+                      <span class="collector-card__media collector-card__media--photo">
+                        <span class="collector-card__photo">
+                          {%- if card_photo != blank -%}
+                            {%- render 'image',
+                              image: card_photo,
+                              sizes: '(min-width: 1200px) 172px, (min-width: 750px) 160px, 44vw',
+                              widths: '180, 270, 360, 480',
+                              alt: '',
+                              class: 'collector-card__image'
+                            -%}
+                          {%- else -%}
+                            {%- render 'icon', name: 'shirt', size: 40 -%}
+                          {%- endif -%}
+                        </span>
+                      </span>
+                    {%- endif -%}
+                    <span class="collector-card__shine" aria-hidden="true"></span>
+                    <span class="collector-card__logo" aria-hidden="true">{%- render 'logo-mark' -%}</span>
+                    <span class="collector-card__plate">
+                      <span class="collector-card__name">{{ card_collection.title | escape }}</span>
+                      <span class="collector-card__meta">
+                        {%- if section.settings.show_count -%}
+                          <span class="collector-card__count">
+                            {{- 'home.featured_collection.count' | t: count: card_collection.all_products_count -}}
+                          </span>
+                        {%- endif -%}
+                        <span class="collector-card__cta" aria-hidden="true">
+                          {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+                        </span>
+                      </span>
                     </span>
-                  {%- endif -%}
-                </a>
-              {%- else -%}
-                <span class="collection-circles__link">
-                  <span class="collection-circles__media">{%- render 'icon', name: 'shirt', size: 36 -%}</span>
-                  <span class="collection-circles__name">{{ 'home.collection_circles.placeholder' | t }}</span>
-                </span>
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
-        </ul>
+                  </a>
+                {%- else -%}
+                  <span class="collector-card collector-card--placeholder">
+                    <span class="collector-card__media collector-card__media--photo">
+                      <span class="collector-card__photo">{%- render 'icon', name: 'shirt', size: 40 -%}</span>
+                    </span>
+                    <span class="collector-card__plate">
+                      <span class="collector-card__name">{{ 'home.collection_circles.placeholder' | t }}</span>
+                    </span>
+                  </span>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </sw-collector-cards>
       </sw-carousel>
     </div>
     <script type="module" src="{{ 'product-carousel.js' | asset_url }}"></script>
+    <script type="module" src="{{ 'collector-cards.js' | asset_url }}"></script>
   {%- endif -%}
 {%- endif -%}
 
 {% stylesheet %}
-  .collection-circles__carousel {
+  .collection-cards__carousel,
+  .collection-cards__deck {
     display: block;
   }
 
-  .collection-circles__title {
+  .collection-cards__title {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -185,17 +274,17 @@
     min-inline-size: 0;
   }
 
-  .collection-circles__eyebrow {
+  .collection-cards__eyebrow {
     margin: 0;
     color: var(--color-accent-text);
   }
 
-  .collection-circles__heading {
+  .collection-cards__heading {
     margin: 0;
     overflow-wrap: break-word;
   }
 
-  .collection-circles__text {
+  .collection-cards__text {
     max-inline-size: 60ch;
     margin: 0;
     color: var(--color-muted);
@@ -203,19 +292,43 @@
     line-height: var(--leading-body);
   }
 
-  /* The row starts where the page content starts and runs to the screen's end edge, like the product
-     rows; each circle snaps to the start. */
-  .collection-circles__track {
-    --circle-size: 96px;
-    --circles-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+  .collection-cards__tools {
     display: flex;
+    flex-shrink: 0;
+    align-items: center;
     gap: var(--space-4);
+  }
+
+  .collection-cards__all {
+    display: inline-flex;
+    align-items: center;
+    min-block-size: var(--touch-target);
+    color: inherit;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 5px;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration-color: var(--color-accent-text);
+    }
+  }
+
+  /* The row starts where the page content starts and runs to the screen's end edge, like the product
+     rows; each card snaps to the start. On phones the next card peeks in. */
+  .collection-cards__track {
+    --card-inline: min(64vw, 260px);
+    --cards-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
+    display: flex;
+    gap: var(--space-3);
     margin: 0;
-    padding-block: var(--space-1);
-    padding-inline: var(--circles-start) var(--gutter);
+    padding-block: var(--space-2) var(--space-5);
+    padding-inline: var(--cards-start) var(--gutter);
     overflow-x: auto;
     overscroll-behavior-inline: contain;
-    scroll-padding-inline: var(--circles-start);
+    scroll-padding-inline: var(--cards-start);
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     list-style: none;
@@ -224,80 +337,316 @@
       display: none;
     }
 
-    @media screen and (min-width: 990px) {
-      --circle-size: 128px;
-      gap: var(--space-6);
+    @media screen and (min-width: 750px) {
+      --card-inline: 236px;
+      gap: var(--space-4);
+    }
+
+    @media screen and (min-width: 1200px) {
+      --card-inline: 252px;
+      gap: var(--space-5);
     }
   }
 
-  .collection-circles__item {
-    position: relative;
-    flex: 0 0 auto;
-    inline-size: var(--circle-size);
+  .collection-cards__item {
+    flex: 0 0 var(--card-inline);
+    perspective: 900px;
     scroll-snap-align: start;
   }
 
-  .collection-circles__link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-2);
-    color: inherit;
-    text-align: center;
-    text-decoration: none;
-
-    &:hover .collection-circles__media,
-    &:focus-visible .collection-circles__media {
-      box-shadow:
-        0 0 0 2px var(--color-background),
-        0 0 0 4px var(--color-text);
-    }
-
-    &:hover .collection-circles__image {
-      transform: scale(1.06);
-    }
-  }
-
-  .collection-circles__media {
-    display: grid;
-    place-items: center;
-    inline-size: var(--circle-size);
-    block-size: var(--circle-size);
-    border-radius: 50%;
-    background: var(--color-tile);
-    color: var(--color-muted);
+  /* The card: a dark trading card lit in the collection's color. --px and --py (-1 to 1) follow the
+     pointer (assets/collector-cards.js) and tilt the card, the number and the jersey. */
+  .collector-card {
+    --card-color: var(--color-accent);
+    --card-ink: #07080a;
+    --card-glow: color-mix(in oklab, var(--card-color) 78%, #fff);
+    --px: 0;
+    --py: 0;
+    --lift: 0px;
+    position: relative;
+    display: block;
+    container-type: inline-size;
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    transition: box-shadow var(--duration-fast) var(--ease);
+    isolation: isolate;
+    border-radius: var(--radius-card);
+    background:
+      radial-gradient(
+        75% 58% at 50% 34%,
+        color-mix(in oklab, var(--card-glow) 88%, transparent) 0%,
+        color-mix(in oklab, var(--card-color) 42%, transparent) 42%,
+        transparent 74%
+      ),
+      linear-gradient(
+        168deg,
+        color-mix(in oklab, var(--card-color) 46%, var(--card-ink)) 0%,
+        color-mix(in oklab, var(--card-color) 16%, var(--card-ink)) 62%,
+        var(--card-ink) 100%
+      );
+    color: #fff;
+    text-decoration: none;
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.08) inset,
+      0 10px 24px -12px rgb(8 9 11 / 0.55);
+    transform: rotateY(calc(var(--px) * 7deg)) rotateX(calc(var(--py) * -6deg)) translateY(var(--lift));
+    transition:
+      transform var(--duration) var(--ease),
+      box-shadow var(--duration) var(--ease);
+
+    /* The inner frame of a printed card; it lights up in the accent color on hover and focus. */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 7px;
+      z-index: 4;
+      border: 1px solid rgb(255 255 255 / 0.14);
+      border-radius: max(0px, calc(var(--radius-card) - 3px));
+      pointer-events: none;
+      transition: border-color var(--duration) var(--ease);
+    }
+
+    &:is(a):hover,
+    &:is(a):focus-visible {
+      --lift: -6px;
+      box-shadow:
+        0 1px 0 rgb(255 255 255 / 0.1) inset,
+        0 22px 34px -16px rgb(8 9 11 / 0.6);
+
+      &::after {
+        border-color: color-mix(in oklab, var(--color-accent) 75%, transparent);
+      }
+    }
+
+    &:focus-visible {
+      outline: 3px solid var(--color-text);
+      outline-offset: 3px;
+    }
+
+    &:is(a):active {
+      --lift: 0px;
+      scale: 0.98;
+    }
+
+    &[data-tilting] {
+      transition-duration: 90ms;
+    }
   }
 
-  .collection-circles__image {
-    inline-size: 82%;
-    block-size: 82%;
-    object-fit: contain;
+  /* Halftone dots in the top corner: the print texture of a collector card. */
+  .collector-card__dots {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: radial-gradient(rgb(255 255 255 / 0.22) 1px, transparent 1.3px);
+    background-size: 7px 7px;
+    mask-image: radial-gradient(90% 70% at 100% 0%, #000 0%, transparent 62%);
+    opacity: 0.55;
+    pointer-events: none;
+  }
+
+  /* The giant number or code behind the jersey. Digits and Latin letters read left to right. */
+  .collector-card__mark {
+    position: absolute;
+    inset-block-start: 4%;
+    inset-inline: 0;
+    z-index: 1;
+    color: color-mix(in oklab, var(--card-glow) 16%, transparent);
+    font-family: var(--font-display);
+    font-size: 86cqi;
+    line-height: 0.86;
+    letter-spacing: -0.01em;
+    text-align: center;
+    -webkit-text-stroke: 1.5px color-mix(in oklab, var(--card-glow) 58%, transparent);
+    direction: ltr;
+    white-space: nowrap;
+    user-select: none;
+    pointer-events: none;
+    transform: translate3d(calc(var(--px) * -8px), calc(var(--py) * -8px), 0);
     transition: transform var(--duration) var(--ease);
   }
 
-  .collection-circles__name {
-    display: -webkit-box;
+  .collector-card__mark--1 {
+    font-size: 104cqi;
+  }
+
+  .collector-card__mark--3 {
+    inset-block-start: 9%;
+    font-size: 50cqi;
+  }
+
+  .collector-card__mark--4 {
+    inset-block-start: 11%;
+    font-size: 38cqi;
+  }
+
+  .collector-card__media {
+    position: absolute;
+    inset-block: 6% 34%;
+    inset-inline: 10%;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    transform: translate3d(calc(var(--px) * 6px), calc(var(--py) * 6px), 0);
+    transition: transform var(--duration) var(--ease);
+  }
+
+  .collector-card__image {
     max-inline-size: 100%;
+    max-block-size: 100%;
+    inline-size: auto;
+    block-size: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 18px rgb(0 0 0 / 0.45));
+    transition: transform var(--duration) var(--ease);
+  }
+
+  /* No cut-out picture: the product photo on its light tile, framed like a card's photo window. */
+  .collector-card__media--photo {
+    inset-block: 9% 36%;
+    inset-inline: 17%;
+  }
+
+  .collector-card__photo {
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    aspect-ratio: 1;
     overflow: hidden;
-    font-size: var(--text-sm);
-    font-weight: 700;
-    line-height: 1.25;
+    border-radius: var(--radius-card);
+    background: var(--color-tile);
+    color: #5b616e;
+    box-shadow: 0 14px 22px -10px rgb(0 0 0 / 0.55);
+
+    .collector-card__image {
+      inline-size: 88%;
+      block-size: 88%;
+      filter: none;
+    }
+  }
+
+  .collector-card:is(a):hover .collector-card__image {
+    transform: translateY(-4px) scale(1.05);
+  }
+
+  /* A sweep of light across the card on hover, like foil, with a glare that follows the pointer. */
+  .collector-card__shine {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background:
+      radial-gradient(
+        circle at calc(50% + var(--px) * 50%) calc(50% + var(--py) * 50%),
+        rgb(255 255 255 / 0.16),
+        transparent 42%
+      ),
+      linear-gradient(
+        112deg,
+        transparent 38%,
+        rgb(255 255 255 / 0.16) 47%,
+        rgb(255 255 255 / 0.04) 53%,
+        transparent 60%
+      );
+    background-position:
+      0 0,
+      115% 0;
+    background-size:
+      100% 100%,
+      260% 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+      opacity var(--duration) var(--ease),
+      background-position 900ms var(--ease);
+  }
+
+  .collector-card:is(a):hover .collector-card__shine {
+    background-position:
+      0 0,
+      -15% 0;
+    opacity: 1;
+  }
+
+  .collector-card__logo {
+    position: absolute;
+    inset-block-start: 15px;
+    inset-inline-end: 15px;
+    z-index: 4;
+    display: block;
+    inline-size: 22px;
+    color: rgb(255 255 255 / 0.62);
+
+    .logo-mark {
+      display: block;
+      inline-size: 100%;
+      block-size: auto;
+    }
+  }
+
+  .collector-card__plate {
+    position: absolute;
+    inset-inline: 0;
+    inset-block-end: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding: 16% var(--space-4) var(--space-4);
+    background: linear-gradient(to top, rgb(7 8 10 / 0.96) 0%, rgb(7 8 10 / 0.86) 52%, transparent 100%);
+  }
+
+  .collector-card__name {
+    display: -webkit-box;
+    overflow: hidden;
+    font-family: var(--font-display);
+    font-size: clamp(22px, 11cqi, 30px);
+    line-height: 1.02;
+    text-transform: uppercase;
     overflow-wrap: break-word;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
   }
 
-  .collection-circles__count {
-    margin-block-start: calc(var(--space-1) * -1);
-    color: var(--color-muted);
-    font-size: var(--text-xs);
+  :lang(ar) .collector-card__name {
+    line-height: 1.25;
+  }
+
+  .collector-card__meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    min-block-size: 36px;
+  }
+
+  .collector-card__count {
+    color: rgb(255 255 255 / 0.74);
+    font-size: var(--text-sm);
     font-weight: 600;
     font-variant-numeric: tabular-nums;
   }
 
-  .collection-circles__arrows {
+  .collector-card__cta {
+    display: inline-grid;
+    flex-shrink: 0;
+    place-items: center;
+    inline-size: 36px;
+    block-size: 36px;
+    margin-inline-start: auto;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #0d0e11;
+    transition: translate var(--duration) var(--ease);
+  }
+
+  .collector-card:is(a):hover .collector-card__cta {
+    translate: 3px 0;
+  }
+
+  .collector-card:is(a):hover .collector-card__cta:dir(rtl) {
+    translate: -3px 0;
+  }
+
+  .collection-cards__arrows {
     display: none;
     flex-shrink: 0;
     gap: var(--space-2);
@@ -307,7 +656,7 @@
     }
   }
 
-  .collection-circles__arrow {
+  .collection-cards__arrow {
     display: inline-grid;
     place-items: center;
     inline-size: var(--touch-target);
@@ -335,17 +684,32 @@
   }
 
   /* Everything fits: no arrows. */
-  sw-carousel:not([data-scrollable]) .collection-circles__arrows {
+  sw-carousel:not([data-scrollable]) .collection-cards__arrows {
     display: none;
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .collection-circles__image {
+    .collector-card,
+    .collector-card__mark,
+    .collector-card__media,
+    .collector-card__image,
+    .collector-card__shine,
+    .collector-card__cta {
       transition: none;
     }
 
-    .collection-circles__link:hover .collection-circles__image {
+    .collector-card,
+    .collector-card__mark,
+    .collector-card__media {
       transform: none;
+    }
+
+    .collector-card:is(a):hover .collector-card__image {
+      transform: none;
+    }
+
+    .collector-card:is(a):hover .collector-card__cta {
+      translate: none;
     }
   }
 {% endstylesheet %}
@@ -401,6 +765,18 @@
       "info": "t:settings.default_text_info"
     },
     {
+      "type": "url",
+      "id": "link",
+      "label": "t:settings.link",
+      "info": "t:sections.collection_circles.settings.link.info"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "t:sections.collection_circles.settings.link_label.label",
+      "info": "t:settings.default_text_info"
+    },
+    {
       "type": "checkbox",
       "id": "show_count",
       "label": "t:sections.collection_circles.settings.show_count.label",
@@ -436,6 +812,24 @@
           "type": "collection",
           "id": "collection",
           "label": "t:settings.collection"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.collection_circles.blocks.collection.settings.image.label",
+          "info": "t:sections.collection_circles.blocks.collection.settings.image.info"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "t:sections.collection_circles.blocks.collection.settings.color.label",
+          "info": "t:sections.collection_circles.blocks.collection.settings.color.info"
+        },
+        {
+          "type": "text",
+          "id": "mark",
+          "label": "t:sections.collection_circles.blocks.collection.settings.mark.label",
+          "info": "t:sections.collection_circles.blocks.collection.settings.mark.info"
         }
       ]
     }

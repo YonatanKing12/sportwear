@@ -199,12 +199,30 @@
     }
   ],
   "collection_metafields": {
-    "_note": "Collection metafields (namespace sportwear). Created 2026-09-27.",
+    "_note": "Collection metafields (namespace sportwear). banner created 2026-09-27; card_image, card_color and card_mark created 2026-09-28.",
     "banner": {
       "definition": "gid://shopify/MetafieldDefinition/278240952624",
       "type": "file_reference (images only), pinned, storefront PUBLIC_READ",
       "name": "באנר",
       "use": "The wide picture at the top of the collection page and in the empty cart's category tiles (design/imagery/README.md, 'Brand graphics'). Set on 32 collections on 2026-09-27; which picture where: design/imagery/brand-prompts.json, collection_banners."
+    },
+    "card_image": {
+      "definition": "gid://shopify/MetafieldDefinition/278256189744",
+      "type": "file_reference (images only), pinned, storefront PUBLIC_READ",
+      "name": "Card picture",
+      "use": "A cut-out jersey on a transparent background for the collection's collector card (sections/collection-circles.liquid: the players and teams rows on the home page and the 404 page). Set on 34 collections on 2026-09-28 (design/imagery/collector-cards.json); made with scripts/images/cutout.py from the collection's studio photo."
+    },
+    "card_color": {
+      "definition": "gid://shopify/MetafieldDefinition/278256222512",
+      "type": "color, pinned, storefront PUBLIC_READ",
+      "name": "Card color",
+      "use": "The color that lights the collector card (a glow on a dark card). Picked per card for the team's identity and for contrast with the jersey; neighbours in a row differ."
+    },
+    "card_mark": {
+      "definition": "gid://shopify/MetafieldDefinition/278256255280",
+      "type": "single_line_text_field (max 6), pinned, storefront PUBLIC_READ",
+      "name": "Card number",
+      "use": "The giant outlined number or code behind the jersey: a player's number (24) or a team's short code (RMA)."
     }
   }
 }
