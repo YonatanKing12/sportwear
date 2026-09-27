@@ -1,0 +1,306 @@
+[
+  {
+    "file": "bulls-court-ball.png",
+    "uploaded_as": "Red Bulls jersey at the neighborhood court.png",
+    "teams": ["chicago-bulls"],
+    "shows": "A woman with a ball on a court in a red Bulls 1 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "bulls-court-kfar-saba.png",
+    "uploaded_as": "Candid Bulls jersey in Kfar Saba.png",
+    "teams": ["chicago-bulls"],
+    "shows": "A man with a ball on a neighbourhood court in a red Bulls 1 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "bulls-park-bench.png",
+    "uploaded_as": "Bulls Jersey Park Bench Snapshot.png",
+    "teams": ["chicago-bulls"],
+    "shows": "A woman on a park bench in a red Bulls 1 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "celtics-court-break.png",
+    "uploaded_as": "Everyday basketball break in Israel.png",
+    "teams": ["boston-celtics"],
+    "shows": "A man resting by a court in a green Boston 7 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "celtics-ramat-gan.png",
+    "uploaded_as": "Ramat Gan green jersey snapshot.png",
+    "teams": ["boston-celtics"],
+    "shows": "A woman outside a building in a green Boston 7 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "celtics-torino-jerusalem-steps.png",
+    "uploaded_as": "Two friends in jerseys on Jerusalem steps.png",
+    "teams": ["boston-celtics", "torino"],
+    "shows": "Two friends on Jerusalem stone steps in Boston 7 and Torino shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "courtyard-porto-sporting-torino.png",
+    "uploaded_as": "After-class chat in the Israeli courtyard.png",
+    "teams": ["porto", "sporting", "torino"],
+    "shows": "Three students in a school courtyard: Porto, Sporting and Torino home shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "hornets-shorts-skatepark.png",
+    "uploaded_as": "Hornets Shorts at Tel Aviv Skatepark.png",
+    "teams": ["charlotte-hornets", "basketball-shorts"],
+    "shows": "A woman at a Tel Aviv skatepark in teal Hornets shorts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "knicks-court-ball.png",
+    "uploaded_as": "Everyday Basketball Court Snapshot.png",
+    "teams": ["new-york-knicks"],
+    "shows": "A woman with a ball on a court in a white New York 8 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "knicks-court-smile.png",
+    "uploaded_as": "Candid New York 8 Basketball Snapshot.png",
+    "teams": ["new-york-knicks"],
+    "shows": "A man with a ball on a court in a white New York 8 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "knicks-court-steps.png",
+    "uploaded_as": "Postgame pause on the neighborhood court.png",
+    "teams": ["new-york-knicks"],
+    "shows": "A man resting on court steps in a white New York 8 jersey",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "knicks-courtside-wide.png",
+    "uploaded_as": "Urban courtside in a New York jersey.png",
+    "teams": ["new-york-knicks"],
+    "shows": "A man with a ball by a court fence in a white New York 8 jersey (wide)",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "file": "knicks-napoli-court-gate.png",
+    "uploaded_as": "Candid basketball court gate portrait.png",
+    "teams": ["new-york-knicks", "napoli"],
+    "shows": "A woman in a New York 8 jersey and a man in the Napoli shirt at a court gate",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "knicks-napoli-gate.png",
+    "uploaded_as": "Friends waiting by the court gate.png",
+    "teams": ["new-york-knicks", "napoli"],
+    "shows": "Two friends by a court gate, a New York 8 jersey from the back and the Napoli shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "napoli-bench-by-the-court.png",
+    "uploaded_as": "Candid Napoli break by the court.png",
+    "teams": ["napoli"],
+    "shows": "A man resting on a bench by a futsal court in the blue Napoli shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "napoli-pitch-wide.png",
+    "uploaded_as": "Napoli jersey on a quiet pitch.png",
+    "teams": ["napoli"],
+    "shows": "A man on the steps of an empty pitch in the Napoli shirt (wide)",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "file": "napoli-roma-street.png",
+    "uploaded_as": "Friends in Napoli and Roma shirts.png",
+    "teams": ["napoli", "roma"],
+    "shows": "Two friends walking down a street in Napoli and Roma shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "napoli-seaside.png",
+    "uploaded_as": "Casual Napoli shirt by the seaside.png",
+    "teams": ["napoli"],
+    "shows": "A man on a seaside promenade in the blue Napoli shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "napoli-sports-steps.png",
+    "uploaded_as": "Napoli shirt on neighborhood sports steps.png",
+    "teams": ["napoli"],
+    "shows": "A man on the steps of a sports ground in the Napoli shirt",
+    "width": 1672,
+    "height": 940
+  },
+  {
+    "file": "porto-haifa-terrace.png",
+    "uploaded_as": "Porto shirt on a Haifa terrace.png",
+    "teams": ["porto"],
+    "shows": "Two friends on a Haifa terrace with coffee, one in the Porto shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "porto-hornets-beach.png",
+    "uploaded_as": "Friends in colorful teamwear by the sea.png",
+    "teams": ["porto", "charlotte-hornets", "basketball-shorts"],
+    "shows": "Two friends on a beach promenade: a Porto shirt and teal Hornets shorts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "porto-hornets-herzliya-beach.png",
+    "uploaded_as": "Friends by Herzliya Beach.png",
+    "teams": ["porto", "charlotte-hornets", "basketball-shorts"],
+    "shows": "Three friends on the Herzliya beach promenade: a Porto shirt and teal Hornets shorts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-bakery-coffee.png",
+    "uploaded_as": "Coffee break in a cream Roma shirt.png",
+    "teams": ["roma"],
+    "shows": "A woman with a coffee outside a bakery in the cream Roma shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-juice-kiosk-2.png",
+    "uploaded_as": "Vendor at a juice kiosk.png",
+    "teams": ["roma"],
+    "shows": "A man at a juice kiosk in the cream Roma shirt (a second take)",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-juice-kiosk.png",
+    "uploaded_as": "Casual Roma shirt at neighborhood juice kiosk.png",
+    "teams": ["roma"],
+    "shows": "A man at a juice kiosk in the cream Roma shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-knicks-alley-wide.png",
+    "uploaded_as": "Friends in Roma and New York jerseys.png",
+    "teams": ["roma", "new-york-knicks"],
+    "shows": "Two friends walking along a stone wall in Roma and New York 8 shirts (wide)",
+    "width": 1942,
+    "height": 809
+  },
+  {
+    "file": "roma-knicks-kiosk.png",
+    "uploaded_as": "Friends in Roma and New York Jerseys(1).png",
+    "teams": ["roma", "new-york-knicks"],
+    "shows": "Two friends by a corner kiosk in Roma and New York 8 shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-knicks-napoli-field.png",
+    "uploaded_as": "Friends in football shirts by the field.png",
+    "teams": ["roma", "new-york-knicks", "napoli"],
+    "shows": "Three friends by a pitch in Roma, New York 8 and Napoli shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "roma-ping-pong.png",
+    "uploaded_as": "Candid park ping-pong in the Roma jersey.png",
+    "teams": ["roma"],
+    "shows": "A woman at a park ping-pong table in the cream Roma shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "shorts-eucalyptus-court.png",
+    "uploaded_as": "Candid basketball by the eucalyptus court.png",
+    "teams": ["basketball-shorts"],
+    "shows": "A man leaning on a rail by a court in white basketball shorts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "sporting-bulls-torino-park.png",
+    "uploaded_as": "Friends in jerseys under eucalyptus trees.png",
+    "teams": ["sporting", "chicago-bulls", "torino"],
+    "shows": "Three friends at a park table in Sporting, Bulls 1 and Torino shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "sporting-herzliya-promenade.png",
+    "uploaded_as": "Herzliya promenade sporting shirt snapshot.png",
+    "teams": ["sporting"],
+    "shows": "A woman on the Herzliya promenade in the Sporting shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "sporting-porto-bicycle.png",
+    "uploaded_as": "Friends in football shirts by a bicycle.png",
+    "teams": ["sporting", "porto"],
+    "shows": "Two friends by a bicycle in Sporting and Porto shirts",
+    "width": 1672,
+    "height": 940
+  },
+  {
+    "file": "sporting-porto-courtyard.png",
+    "uploaded_as": "Courtyard Break in Sporting and Porto Shirts.png",
+    "teams": ["sporting", "porto"],
+    "shows": "Two students in a courtyard in Sporting and Porto shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "sporting-windowsill.png",
+    "uploaded_as": "Candid green-and-white student on a windowsill.png",
+    "teams": ["sporting"],
+    "shows": "A student on a school windowsill in the green-and-white Sporting shirt",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "torino-bulls-steps.png",
+    "uploaded_as": "Friends After the Community Game.png",
+    "teams": ["torino", "chicago-bulls"],
+    "shows": "Two friends on stadium steps in Torino and Bulls 1 shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "torino-celtics-cafe.png",
+    "uploaded_as": "Neighborhood café coffee break.png",
+    "teams": ["torino", "boston-celtics"],
+    "shows": "Two friends with iced coffee outside a café in Torino and Boston 7 shirts",
+    "width": 1672,
+    "height": 941
+  },
+  {
+    "file": "torino-yarkon-park.png",
+    "uploaded_as": "Casual cyclist by Yarkon Park.png",
+    "teams": ["torino"],
+    "shows": "A cyclist by the Yarkon in the maroon Torino shirt",
+    "width": 1672,
+    "height": 941
+  }
+]
