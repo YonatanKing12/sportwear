@@ -17,7 +17,12 @@
       "note": "kids set: jersey + shorts (the supplier sells kids kits as sets)",
       "source": "owner, 2026-09-26"
     },
-    { "product_type": "Basketball Jersey", "audience": "adult", "price": null, "source": "TBD" },
+    {
+      "product_type": "Basketball Jersey",
+      "audience": "adult",
+      "price": 149,
+      "source": "owner, 2026-09-27: 'אותו מחיר עד היום' (new basketball jerseys at the ₪149 of those imported before)"
+    },
     { "product_type": "Basketball Jersey", "audience": "kids", "price": null, "source": "TBD" },
     {
       "product_type": "Basketball Shorts",

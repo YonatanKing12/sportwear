@@ -2,8 +2,8 @@
 
 Usage: python3 scripts/catalog/jerseyxie-build.py <picks.json> [--out catalog/ready]
 
-picks.json: [{"id": "<wave1 id>", "handle", "album", "images": {"front": "<png>", "back": "<png>"}}]
-(the wave-1 row gives the team, kit, season and audience; images are the normalized studio photos).
+picks.json: [{"id": "<wave row id>", "handle", "album", "images": {"front": "<png>", "back": "<png>", "details": ["<jpg>"]}}]
+(the wave row gives the team, kit, season and audience; images are the normalized studio photos).
 
 Writes one file per product in the shape of catalog/product.schema.json, in Hebrew with English and
 Arabic translations, from catalog/classification.json (team names), catalog/taxonomy.json (kits, team
@@ -20,7 +20,8 @@ C = load('catalog/classification.json')
 T = load('catalog/taxonomy.json')
 P = load('catalog/pricing.json')
 S = load('catalog/store-setup.json')
-W = {r['id']: r for r in load('catalog/sources/jerseyxie/wave1.json')['products']}
+W = {r['id']: r for wave in ('wave1', 'wave2') if os.path.exists(os.path.join(ROOT, f'catalog/sources/jerseyxie/{wave}.json'))
+     for r in load(f'catalog/sources/jerseyxie/{wave}.json')['products']}
 
 picks = json.load(open(sys.argv[1]))
 out_dir = sys.argv[sys.argv.index('--out') + 1] if '--out' in sys.argv else os.path.join(ROOT, 'catalog/ready')
@@ -104,8 +105,16 @@ def texts(team, kit, season, audience, national):
             'en': f"The {en_team} {kp['en']} kit for kids ({season if national else season + ' season'}): jersey and shorts, sizes 16 to 28.",
             'ar': f"الطقم {kp['ar']} {ar_of} للأطفال {when['ar']}: قميص وشورت، بمقاسات من 16 إلى 28.",
         }
-    seo_title = {lang: (f'{t} | SportWear' if len(t) <= 49 else t) for lang, t in title.items()}
+    seo_title = {lang: seo_title_for(t) for lang, t in title.items()}
     return title, desc, seo_title, seo
+
+
+def seo_title_for(t):
+    """Search titles stay within 60 characters: the title plus " | SportWear" when it fits, else the title (cut at
+    a word when longer than 60)."""
+    if len(t) + len(' | SportWear') <= 60:
+        return f'{t} | SportWear'
+    return t if len(t) <= 60 else t[:61].rsplit(' ', 1)[0].rstrip(',–- ')
 
 
 def classify_tags(records):
@@ -136,7 +145,7 @@ for pick in picks:
     product_type = 'Football Jersey' if audience == 'adult' else 'Football Kit'
     title, desc, seo_title, seo_desc = texts(team, kit, season, audience, national)
     price = price_for(product_type, audience)
-    code = CODES[team_slug]
+    code = CODES.get(team_slug) or T['teams'][f'football:{team_slug}']['code']
     type_code = 'FJ' if audience == 'adult' else 'FK'
     ak = 'A' if audience == 'adult' else 'K'
     variants = [{'size': s, 'source_size_label': s, 'sku': f"SW-{type_code}-{code}-{KIT[kit]['code']}-{SEASON_CODE[season]}-{ak}-{s}",
@@ -149,6 +158,8 @@ for pick in picks:
     images = [{'url': 'file://' + pick['images']['front'], 'alt_he': f"{title['he']} – חזית", 'view': 'front'}]
     if pick['images'].get('back'):
         images.append({'url': 'file://' + pick['images']['back'], 'alt_he': f"{title['he']} – גב", 'view': 'back'})
+    for detail in pick['images'].get('details') or []:
+        images.append({'url': 'file://' + detail, 'alt_he': f"{title['he']} (תקריב של הבד וההדפס)", 'view': 'detail'})
     records.append({
         'handle': pick['handle'], 'status': 'ready', 'sport': 'football', 'product_type': product_type, 'audience': audience,
         'size_chart': CHART[audience],

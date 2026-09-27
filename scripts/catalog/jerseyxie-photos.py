@@ -1,4 +1,4 @@
-"""Photo work for products picked from the jerseyxie wave (catalog/sources/jerseyxie/wave1.json).
+"""Photo work for products picked from the jerseyxie waves (catalog/sources/jerseyxie/wave1.json, wave2.json).
 
 Usage: python3 scripts/catalog/jerseyxie-photos.py <command> <ids-or-picks.json> <work_dir>
 
@@ -9,11 +9,12 @@ Usage: python3 scripts/catalog/jerseyxie-photos.py <command> <ids-or-picks.json>
   refs    <picks.json>  Copies the picked photos to <work>/studio/ref/<handle>[__back].jpg and writes
                         <work>/studio-products.json for scripts/images/studio.py.
   qa      <picks.json>  Side-by-side sheets <work>/qa/qa-NN.jpg: supplier photo | normalized studio photo.
+  details <picks.json>  The picked close-ups (pick["details"]) as 1200 px squares in <work>/details/.
   build   <picks.json>  Writes <work>/picks-build.json, the input of scripts/catalog/jerseyxie-build.py.
 
-ids.json: ["<wave1 row id>", ...]
+ids.json: ["<wave row id>", ...]
 picks.json: [{"id": "<row id>", "album": "<album id>", "front": "<album>/<NN.ext>", "back": "<album>/<NN.ext>" | null,
-              "note": "<optional re-render note>"}]
+              "details": ["<album>/<NN.ext>", ...] (optional close-ups), "note": "<optional re-render note>"}]
 The handle comes from the row: {team}-{kit}-jersey-{season} (adults) or {team}-{kit}-kit-{season}-kids (kids),
 where season is 2026-27 for clubs and 2026 for national teams.
 """
@@ -22,7 +23,9 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
-ROWS = {r['id']: r for r in json.load(open(os.path.join(ROOT, 'catalog/sources/jerseyxie/wave1.json')))['products']}
+ROWS = {r['id']: r for wave in ('wave1', 'wave2')
+        if os.path.exists(os.path.join(ROOT, f'catalog/sources/jerseyxie/{wave}.json'))
+        for r in json.load(open(os.path.join(ROOT, f'catalog/sources/jerseyxie/{wave}.json')))['products']}
 ALBUMS = {a['id']: a for a in json.load(open(os.path.join(ROOT, 'catalog/sources/jerseyxie/albums.json')))['albums']}
 FONT = next((p for p in ('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',
                          '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf') if os.path.exists(p)), None)
@@ -59,9 +62,17 @@ def fetch(ids, work):
         for album in sorted(row['albums'], key=int, reverse=True):
             page = os.path.join(work, 'html', album + '.html')
             os.makedirs(os.path.dirname(page), exist_ok=True)
-            if not os.path.exists(page) or os.path.getsize(page) < 2000:
-                curl(f'https://jerseyxie.x.yupoo.com/albums/{album}?uid=1', page)
+            for attempt in range(3):  # a dropped connection is retried, then the album is skipped
+                if os.path.exists(page) and os.path.getsize(page) >= 2000:
+                    break
+                try:
+                    curl(f'https://jerseyxie.x.yupoo.com/albums/{album}?uid=1', page)
+                except subprocess.CalledProcessError:
+                    time.sleep(5 * (attempt + 1))
                 time.sleep(1.2)
+            if not os.path.exists(page) or os.path.getsize(page) < 2000:
+                print('album page not fetched, skipped:', album, flush=True)
+                continue
             html = open(page, encoding='utf-8', errors='ignore').read()
             urls = []
             for u in re.findall(r'data-origin-src="([^"]+)"', html):
@@ -75,8 +86,9 @@ def fetch(ids, work):
                 ext = u.rsplit('.', 1)[-1].lower().split('?')[0]
                 f = os.path.join(folder, f'{i:02d}.{ext}')
                 if not os.path.exists(f) or os.path.getsize(f) < 2000:
-                    try:
-                        curl(u, f, referer='https://jerseyxie.x.yupoo.com/')
+                    try:  # to a .part file first, so a dropped download never leaves a cut photo
+                        curl(u, f + '.part', referer='https://jerseyxie.x.yupoo.com/')
+                        os.replace(f + '.part', f)
                     except subprocess.CalledProcessError:
                         continue
                     time.sleep(0.3)
@@ -189,6 +201,23 @@ def qa(picks, work):
         print(out)
 
 
+def details(picks, work):
+    """The picked close-ups (pick["details"], up to two "<album>/<NN.ext>") as centred squares, 1200 x 1200 JPEG:
+    <work>/details/sw-detail-<handle>-<n>.jpg (the store's close-up line, design/imagery/README.md)."""
+    out = os.path.join(work, 'details')
+    os.makedirs(out, exist_ok=True)
+    count = 0
+    for p in picks:
+        for n, rel in enumerate((p.get('details') or [])[:2], 1):
+            im = Image.open(os.path.join(work, 'albums', rel)).convert('RGB')
+            side = min(im.size)
+            left, top = (im.width - side) // 2, (im.height - side) // 2
+            im = im.crop((left, top, left + side, top + side)).resize((1200, 1200), Image.LANCZOS)
+            im.save(os.path.join(out, f"sw-detail-{p['handle']}-{n}.jpg"), quality=88)
+            count += 1
+    print(count, 'close-ups in', out)
+
+
 def build(picks, work):
     norm = os.path.join(work, 'studio', 'norm')
     out = []
@@ -198,8 +227,10 @@ def build(picks, work):
         if not os.path.exists(front):
             print('no studio front photo, skipped:', p['id'])
             continue
+        crops = [os.path.join(work, 'details', f"sw-detail-{p['handle']}-{n}.jpg") for n in (1, 2)]
         out.append({'id': p['id'], 'handle': p['handle'], 'album': p['album'],
-                    'images': {'front': front, 'back': back if os.path.exists(back) else None}})
+                    'images': {'front': front, 'back': back if os.path.exists(back) else None,
+                               'details': [c for c in crops if os.path.exists(c)]}})
     json.dump(out, open(os.path.join(work, 'picks-build.json'), 'w'), indent=1)
     print(len(out), 'products in', os.path.join(work, 'picks-build.json'))
 
@@ -210,4 +241,4 @@ if __name__ == '__main__':
     if command in ('fetch', 'sheet'):
         {'fetch': fetch, 'sheet': sheet}[command](json.load(open(arg)), work)
     else:
-        {'refs': refs, 'qa': qa, 'build': build}[command](load_picks(arg), work)
+        {'refs': refs, 'qa': qa, 'details': details, 'build': build}[command](load_picks(arg), work)

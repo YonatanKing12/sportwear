@@ -222,6 +222,34 @@
       "en": "NFL",
       "ar": "NFL",
       "keywords": ["nfl", "دوري كرة القدم الأمريكية"]
+    },
+    "eredivisie": {
+      "sport": "football",
+      "he": "ארדיביזי",
+      "en": "Eredivisie",
+      "ar": "الدوري الهولندي",
+      "keywords": ["eredivisie", "الدوري الهولندي"]
+    },
+    "scottish-premiership": {
+      "sport": "football",
+      "he": "הליגה הסקוטית",
+      "en": "Scottish Premiership",
+      "ar": "الدوري الاسكتلندي",
+      "keywords": ["scottish premiership", "الدوري الاسكتلندي"]
+    },
+    "super-lig": {
+      "sport": "football",
+      "he": "הליגה הטורקית",
+      "en": "Süper Lig",
+      "ar": "الدوري التركي",
+      "keywords": ["super lig", "الدوري التركي"]
+    },
+    "argentine-primera": {
+      "sport": "football",
+      "he": "הליגה הארגנטינאית",
+      "en": "Argentine Primera División",
+      "ar": "الدوري الأرجنتيني",
+      "keywords": ["argentine primera", "الدوري الأرجنتيني"]
     }
   },
   "teams": {
@@ -1475,6 +1503,474 @@
       "ar": "هبوعيل تل أبيب",
       "match": ["הפועל תל אביב"],
       "keywords": ["hapoel tel aviv", "هبوعيل تل أبيب"]
+    },
+    "aston-villa": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "אסטון וילה",
+      "en": "Aston Villa",
+      "ar": "أستون فيلا",
+      "match": ["אסטון וילה"],
+      "keywords": ["aston villa", "villa", "أستون فيلا"]
+    },
+    "bournemouth": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "בורנמות׳",
+      "en": "AFC Bournemouth",
+      "ar": "بورنموث",
+      "match": ["בורנמות׳", "בורנמות'"],
+      "keywords": ["afc bournemouth", "bournemouth", "بورنموث"]
+    },
+    "brentford": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ברנטפורד",
+      "en": "Brentford",
+      "ar": "برينتفورد",
+      "match": ["ברנטפורד"],
+      "keywords": ["brentford", "برينتفورد"]
+    },
+    "brighton": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ברייטון",
+      "en": "Brighton & Hove Albion",
+      "ar": "برايتون",
+      "match": ["ברייטון"],
+      "keywords": ["brighton & hove albion", "brighton", "برايتون"]
+    },
+    "burnley": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ברנלי",
+      "en": "Burnley",
+      "ar": "بيرنلي",
+      "match": ["ברנלי"],
+      "keywords": ["burnley", "بيرنلي"]
+    },
+    "crystal-palace": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "קריסטל פאלאס",
+      "en": "Crystal Palace",
+      "ar": "كريستال بالاس",
+      "match": ["קריסטל פאלאס"],
+      "keywords": ["crystal palace", "كريستال بالاس"]
+    },
+    "everton": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "אברטון",
+      "en": "Everton",
+      "ar": "إيفرتون",
+      "match": ["אברטון"],
+      "keywords": ["everton", "إيفرتون"]
+    },
+    "fulham": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "פולהאם",
+      "en": "Fulham",
+      "ar": "فولهام",
+      "match": ["פולהאם"],
+      "keywords": ["fulham", "فولهام"]
+    },
+    "leeds-united": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "לידס יונייטד",
+      "en": "Leeds United",
+      "ar": "ليدز يونايتد",
+      "match": ["לידס יונייטד", "לידס"],
+      "keywords": ["leeds united", "leeds", "ليدز", "ليدز يونايتد"]
+    },
+    "nottingham-forest": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "נוטינגהאם פורסט",
+      "en": "Nottingham Forest",
+      "ar": "نوتينغهام فورست",
+      "match": ["נוטינגהאם פורסט"],
+      "keywords": ["nottingham forest", "forest", "نوتينغهام فورست"]
+    },
+    "sunderland": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "סנדרלנד",
+      "en": "Sunderland",
+      "ar": "سندرلاند",
+      "match": ["סנדרלנד"],
+      "keywords": ["sunderland", "سندرلاند"]
+    },
+    "west-ham-united": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "ווסטהאם",
+      "en": "West Ham United",
+      "ar": "وست هام يونايتد",
+      "match": ["ווסטהאם", "ווסטהאם יונייטד", "וסטהאם"],
+      "keywords": ["west ham united", "west ham", "وست هام", "وست هام يونايتد"]
+    },
+    "wolverhampton-wanderers": {
+      "sport": "football",
+      "league": "premier-league",
+      "he": "וולברהמפטון",
+      "en": "Wolverhampton Wanderers",
+      "ar": "وولفرهامبتون",
+      "match": ["וולברהמפטון", "וולבס"],
+      "keywords": ["wolverhampton wanderers", "wolves", "ذئاب", "وولفرهامبتون"]
+    },
+    "sevilla": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "סביליה",
+      "en": "Sevilla",
+      "ar": "إشبيلية",
+      "match": ["סביליה"],
+      "keywords": ["sevilla", "إشبيلية"]
+    },
+    "valencia": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ולנסיה",
+      "en": "Valencia",
+      "ar": "فالنسيا",
+      "match": ["ולנסיה"],
+      "keywords": ["valencia", "فالنسيا"]
+    },
+    "villarreal": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ויאריאל",
+      "en": "Villarreal",
+      "ar": "فياريال",
+      "match": ["ויאריאל"],
+      "keywords": ["villarreal", "فياريال"]
+    },
+    "real-betis": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ריאל בטיס",
+      "en": "Real Betis",
+      "ar": "ريال بيتيس",
+      "match": ["ריאל בטיס", "בטיס"],
+      "keywords": ["real betis", "betis", "بيتيس", "ريال بيتيس"]
+    },
+    "real-sociedad": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ריאל סוסיאדד",
+      "en": "Real Sociedad",
+      "ar": "ريال سوسيداد",
+      "match": ["ריאל סוסיאדד"],
+      "keywords": ["real sociedad", "sociedad", "ريال سوسيداد"]
+    },
+    "athletic-bilbao": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "אתלטיק בילבאו",
+      "en": "Athletic Club",
+      "ar": "أتلتيك بلباو",
+      "match": ["אתלטיק בילבאו", "בילבאו"],
+      "keywords": ["athletic club", "athletic bilbao", "bilbao", "بلباو", "أتلتيك بلباو"]
+    },
+    "girona": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "ג׳ירונה",
+      "en": "Girona",
+      "ar": "جيرونا",
+      "match": ["ג׳ירונה", "ג'ירונה"],
+      "keywords": ["girona", "جيرونا"]
+    },
+    "celta-vigo": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "סלטה ויגו",
+      "en": "Celta Vigo",
+      "ar": "سيلتا فيغو",
+      "match": ["סלטה ויגו", "סלטה"],
+      "keywords": ["celta vigo", "celta", "سيلتا", "سيلتا فيغو"]
+    },
+    "espanyol": {
+      "sport": "football",
+      "league": "la-liga",
+      "he": "אספניול",
+      "en": "Espanyol",
+      "ar": "إسبانيول",
+      "match": ["אספניול"],
+      "keywords": ["espanyol", "إسبانيول"]
+    },
+    "lazio": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "לאציו",
+      "en": "Lazio",
+      "ar": "لاتسيو",
+      "match": ["לאציו"],
+      "keywords": ["lazio", "لاتسيو"]
+    },
+    "atalanta": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "אטאלנטה",
+      "en": "Atalanta",
+      "ar": "أتالانتا",
+      "match": ["אטאלנטה"],
+      "keywords": ["atalanta", "أتالانتا"]
+    },
+    "fiorentina": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "פיורנטינה",
+      "en": "Fiorentina",
+      "ar": "فيورنتينا",
+      "match": ["פיורנטינה"],
+      "keywords": ["fiorentina", "فيورنتينا"]
+    },
+    "bologna": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "בולוניה",
+      "en": "Bologna",
+      "ar": "بولونيا",
+      "match": ["בולוניה"],
+      "keywords": ["bologna", "بولونيا"]
+    },
+    "como": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "קומו",
+      "en": "Como",
+      "ar": "كومو",
+      "match": ["קומו"],
+      "keywords": ["como", "como 1907", "كومو"]
+    },
+    "torino": {
+      "sport": "football",
+      "league": "serie-a",
+      "he": "טורינו",
+      "en": "Torino",
+      "ar": "تورينو",
+      "match": ["טורינו"],
+      "keywords": ["torino", "تورينو"]
+    },
+    "bayer-leverkusen": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "באייר לברקוזן",
+      "en": "Bayer Leverkusen",
+      "ar": "باير ليفركوزن",
+      "match": ["באייר לברקוזן", "לברקוזן"],
+      "keywords": ["bayer leverkusen", "leverkusen", "ليفركوزن", "باير ليفركوزن"]
+    },
+    "eintracht-frankfurt": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "איינטרכט פרנקפורט",
+      "en": "Eintracht Frankfurt",
+      "ar": "آينتراخت فرانكفورت",
+      "match": ["איינטרכט פרנקפורט", "פרנקפורט"],
+      "keywords": ["eintracht frankfurt", "frankfurt", "فرانكفورت", "آينتراخت فرانكفورت"]
+    },
+    "vfb-stuttgart": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "שטוטגרט",
+      "en": "VfB Stuttgart",
+      "ar": "شتوتغارت",
+      "match": ["שטוטגרט"],
+      "keywords": ["vfb stuttgart", "stuttgart", "شتوتغارت"]
+    },
+    "borussia-monchengladbach": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "בורוסיה מנשנגלדבאך",
+      "en": "Borussia Mönchengladbach",
+      "ar": "بوروسيا مونشنغلادباخ",
+      "match": ["בורוסיה מנשנגלדבאך", "מנשנגלדבאך"],
+      "keywords": ["borussia mönchengladbach", "gladbach", "monchengladbach", "مونشنغلادباخ", "بوروسيا مونشنغلادباخ"]
+    },
+    "werder-bremen": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "ורדר ברמן",
+      "en": "Werder Bremen",
+      "ar": "فيردر بريمن",
+      "match": ["ורדר ברמן"],
+      "keywords": ["werder bremen", "bremen", "فيردر بريمن"]
+    },
+    "hamburger-sv": {
+      "sport": "football",
+      "league": "bundesliga",
+      "he": "המבורג",
+      "en": "Hamburger SV",
+      "ar": "هامبورغ",
+      "match": ["המבורג"],
+      "keywords": ["hamburger sv", "hamburg", "hsv", "هامبورغ"]
+    },
+    "lyon": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "ליון",
+      "en": "Olympique Lyonnais",
+      "ar": "ليون",
+      "match": ["ליון", "אולימפיק ליון"],
+      "keywords": ["olympique lyonnais", "lyon", "ليون"]
+    },
+    "lille": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "ליל",
+      "en": "Lille",
+      "ar": "ليل",
+      "match": ["ליל"],
+      "keywords": ["lille", "losc", "ليل"]
+    },
+    "monaco": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "מונאקו",
+      "en": "AS Monaco",
+      "ar": "موناكو",
+      "match": ["מונאקו"],
+      "keywords": ["as monaco", "monaco", "موناكو"]
+    },
+    "lens": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "לאנס",
+      "en": "RC Lens",
+      "ar": "لانس",
+      "match": ["לאנס"],
+      "keywords": ["rc lens", "lens", "لانس"]
+    },
+    "nice": {
+      "sport": "football",
+      "league": "ligue-1",
+      "he": "ניס",
+      "en": "OGC Nice",
+      "ar": "نيس",
+      "match": ["ניס"],
+      "keywords": ["ogc nice", "nice", "نيس"]
+    },
+    "braga": {
+      "sport": "football",
+      "league": "primeira-liga",
+      "he": "בראגה",
+      "en": "SC Braga",
+      "ar": "براغا",
+      "match": ["בראגה"],
+      "keywords": ["sc braga", "braga", "براغا"]
+    },
+    "ajax": {
+      "sport": "football",
+      "league": "eredivisie",
+      "he": "אייאקס",
+      "en": "Ajax",
+      "ar": "أياكس",
+      "match": ["אייאקס", "אייאקס אמסטרדם"],
+      "keywords": ["ajax", "ajax amsterdam", "أياكس"]
+    },
+    "feyenoord": {
+      "sport": "football",
+      "league": "eredivisie",
+      "he": "פיינורד",
+      "en": "Feyenoord",
+      "ar": "فينورد",
+      "match": ["פיינורד"],
+      "keywords": ["feyenoord", "فينورد"]
+    },
+    "psv": {
+      "sport": "football",
+      "league": "eredivisie",
+      "he": "פ.ס.וו איינדהובן",
+      "en": "PSV Eindhoven",
+      "ar": "آيندهوفن",
+      "match": ["פ.ס.וו איינדהובן", "איינדהובן", "פ.ס.וו."],
+      "keywords": ["psv eindhoven", "eindhoven", "آيندهوفن"]
+    },
+    "celtic": {
+      "sport": "football",
+      "league": "scottish-premiership",
+      "he": "סלטיק",
+      "en": "Celtic",
+      "ar": "سلتيك",
+      "match": ["סלטיק"],
+      "keywords": ["celtic", "سلتيك"]
+    },
+    "rangers": {
+      "sport": "football",
+      "league": "scottish-premiership",
+      "he": "ריינג׳רס",
+      "en": "Rangers",
+      "ar": "رينجرز",
+      "match": ["ריינג׳רס", "ריינג'רס"],
+      "keywords": ["rangers", "glasgow rangers", "رينجرز"]
+    },
+    "galatasaray": {
+      "sport": "football",
+      "league": "super-lig",
+      "he": "גלאטסראיי",
+      "en": "Galatasaray",
+      "ar": "غلطة سراي",
+      "match": ["גלאטסראיי", "גלטסראיי"],
+      "keywords": ["galatasaray", "غلطة سراي"]
+    },
+    "fenerbahce": {
+      "sport": "football",
+      "league": "super-lig",
+      "he": "פנרבחצ׳ה",
+      "en": "Fenerbahçe",
+      "ar": "فنربخشة",
+      "match": ["פנרבחצ׳ה", "פנרבחצ'ה"],
+      "keywords": ["fenerbahçe", "fenerbahce", "فنربخشة"]
+    },
+    "besiktas": {
+      "sport": "football",
+      "league": "super-lig",
+      "he": "בשיקטאש",
+      "en": "Beşiktaş",
+      "ar": "بشكتاش",
+      "match": ["בשיקטאש"],
+      "keywords": ["beşiktaş", "besiktas", "بشكتاش"]
+    },
+    "al-hilal": {
+      "sport": "football",
+      "league": "saudi-pro-league",
+      "he": "אל הילאל",
+      "en": "Al Hilal",
+      "ar": "الهلال",
+      "match": ["אל הילאל"],
+      "keywords": ["al hilal", "الهلال"]
+    },
+    "boca-juniors": {
+      "sport": "football",
+      "league": "argentine-primera",
+      "he": "בוקה ג׳וניורס",
+      "en": "Boca Juniors",
+      "ar": "بوكا جونيورز",
+      "match": ["בוקה ג׳וניורס", "בוקה ג'וניורס", "בוקה"],
+      "keywords": ["boca juniors", "boca", "بوكا جونيورز"]
+    },
+    "river-plate": {
+      "sport": "football",
+      "league": "argentine-primera",
+      "he": "ריבר פלייט",
+      "en": "River Plate",
+      "ar": "ريفر بليت",
+      "match": ["ריבר פלייט"],
+      "keywords": ["river plate", "river", "ريفر بليت"]
+    },
+    "flamengo": {
+      "sport": "football",
+      "league": "brasileirao",
+      "he": "פלמנגו",
+      "en": "Flamengo",
+      "ar": "فلامنغو",
+      "match": ["פלמנגו"],
+      "keywords": ["flamengo", "فلامنغو"]
     }
   },
   "players": {

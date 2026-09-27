@@ -301,6 +301,30 @@
       "he": "NFL",
       "en": "NFL",
       "ar": "NFL"
+    },
+    "eredivisie": {
+      "sport": "football",
+      "he": "ארדיביזי",
+      "en": "Eredivisie",
+      "ar": "الدوري الهولندي"
+    },
+    "scottish-premiership": {
+      "sport": "football",
+      "he": "הליגה הסקוטית",
+      "en": "Scottish Premiership",
+      "ar": "الدوري الاسكتلندي"
+    },
+    "super-lig": {
+      "sport": "football",
+      "he": "הליגה הטורקית",
+      "en": "Süper Lig",
+      "ar": "الدوري التركي"
+    },
+    "argentine-primera": {
+      "sport": "football",
+      "he": "הליגה הארגנטינאית",
+      "en": "Argentine Primera División",
+      "ar": "الدوري الأرجنتيني"
     }
   },
   "styles": {
@@ -1293,6 +1317,422 @@
       "en": "Washington Commanders",
       "ar": "واشنطن كوماندرز",
       "leagues": ["nfl"]
+    },
+    "football:aston-villa": {
+      "slug": "aston-villa",
+      "code": "AVL",
+      "he": "אסטון וילה",
+      "en": "Aston Villa",
+      "ar": "أستون فيلا",
+      "leagues": ["premier-league"]
+    },
+    "football:bournemouth": {
+      "slug": "bournemouth",
+      "code": "BOU",
+      "he": "בורנמות׳",
+      "en": "AFC Bournemouth",
+      "ar": "بورنموث",
+      "leagues": ["premier-league"]
+    },
+    "football:brentford": {
+      "slug": "brentford",
+      "code": "BRE",
+      "he": "ברנטפורד",
+      "en": "Brentford",
+      "ar": "برينتفورد",
+      "leagues": ["premier-league"]
+    },
+    "football:brighton": {
+      "slug": "brighton",
+      "code": "BHA",
+      "he": "ברייטון",
+      "en": "Brighton & Hove Albion",
+      "ar": "برايتون",
+      "leagues": ["premier-league"]
+    },
+    "football:burnley": {
+      "slug": "burnley",
+      "code": "BUR",
+      "he": "ברנלי",
+      "en": "Burnley",
+      "ar": "بيرنلي",
+      "leagues": ["premier-league"]
+    },
+    "football:crystal-palace": {
+      "slug": "crystal-palace",
+      "code": "CRY",
+      "he": "קריסטל פאלאס",
+      "en": "Crystal Palace",
+      "ar": "كريستال بالاس",
+      "leagues": ["premier-league"]
+    },
+    "football:everton": {
+      "slug": "everton",
+      "code": "EVE",
+      "he": "אברטון",
+      "en": "Everton",
+      "ar": "إيفرتون",
+      "leagues": ["premier-league"]
+    },
+    "football:fulham": {
+      "slug": "fulham",
+      "code": "FUL",
+      "he": "פולהאם",
+      "en": "Fulham",
+      "ar": "فولهام",
+      "leagues": ["premier-league"]
+    },
+    "football:leeds-united": {
+      "slug": "leeds-united",
+      "code": "LEE",
+      "he": "לידס יונייטד",
+      "en": "Leeds United",
+      "ar": "ليدز يونايتد",
+      "leagues": ["premier-league"]
+    },
+    "football:nottingham-forest": {
+      "slug": "nottingham-forest",
+      "code": "NFO",
+      "he": "נוטינגהאם פורסט",
+      "en": "Nottingham Forest",
+      "ar": "نوتينغهام فورست",
+      "leagues": ["premier-league"]
+    },
+    "football:sunderland": {
+      "slug": "sunderland",
+      "code": "SUN",
+      "he": "סנדרלנד",
+      "en": "Sunderland",
+      "ar": "سندرلاند",
+      "leagues": ["premier-league"]
+    },
+    "football:west-ham-united": {
+      "slug": "west-ham-united",
+      "code": "WHU",
+      "he": "ווסטהאם",
+      "en": "West Ham United",
+      "ar": "وست هام يونايتد",
+      "leagues": ["premier-league"]
+    },
+    "football:wolverhampton-wanderers": {
+      "slug": "wolverhampton-wanderers",
+      "code": "WOL",
+      "he": "וולברהמפטון",
+      "en": "Wolverhampton Wanderers",
+      "ar": "وولفرهامبتون",
+      "leagues": ["premier-league"]
+    },
+    "football:sevilla": {
+      "slug": "sevilla",
+      "code": "SEV",
+      "he": "סביליה",
+      "en": "Sevilla",
+      "ar": "إشبيلية",
+      "leagues": ["la-liga"]
+    },
+    "football:valencia": {
+      "slug": "valencia",
+      "code": "VAL",
+      "he": "ולנסיה",
+      "en": "Valencia",
+      "ar": "فالنسيا",
+      "leagues": ["la-liga"]
+    },
+    "football:villarreal": {
+      "slug": "villarreal",
+      "code": "VIL",
+      "he": "ויאריאל",
+      "en": "Villarreal",
+      "ar": "فياريال",
+      "leagues": ["la-liga"]
+    },
+    "football:real-betis": {
+      "slug": "real-betis",
+      "code": "BET",
+      "he": "ריאל בטיס",
+      "en": "Real Betis",
+      "ar": "ريال بيتيس",
+      "leagues": ["la-liga"]
+    },
+    "football:real-sociedad": {
+      "slug": "real-sociedad",
+      "code": "RSO",
+      "he": "ריאל סוסיאדד",
+      "en": "Real Sociedad",
+      "ar": "ريال سوسيداد",
+      "leagues": ["la-liga"]
+    },
+    "football:athletic-bilbao": {
+      "slug": "athletic-bilbao",
+      "code": "ATH",
+      "he": "אתלטיק בילבאו",
+      "en": "Athletic Club",
+      "ar": "أتلتيك بلباو",
+      "leagues": ["la-liga"]
+    },
+    "football:girona": {
+      "slug": "girona",
+      "code": "GIR",
+      "he": "ג׳ירונה",
+      "en": "Girona",
+      "ar": "جيرونا",
+      "leagues": ["la-liga"]
+    },
+    "football:celta-vigo": {
+      "slug": "celta-vigo",
+      "code": "CEL",
+      "he": "סלטה ויגו",
+      "en": "Celta Vigo",
+      "ar": "سيلتا فيغو",
+      "leagues": ["la-liga"]
+    },
+    "football:espanyol": {
+      "slug": "espanyol",
+      "code": "RCD",
+      "he": "אספניול",
+      "en": "Espanyol",
+      "ar": "إسبانيول",
+      "leagues": ["la-liga"]
+    },
+    "football:lazio": {
+      "slug": "lazio",
+      "code": "LAZ",
+      "he": "לאציו",
+      "en": "Lazio",
+      "ar": "لاتسيو",
+      "leagues": ["serie-a"]
+    },
+    "football:atalanta": {
+      "slug": "atalanta",
+      "code": "ATA",
+      "he": "אטאלנטה",
+      "en": "Atalanta",
+      "ar": "أتالانتا",
+      "leagues": ["serie-a"]
+    },
+    "football:fiorentina": {
+      "slug": "fiorentina",
+      "code": "FIO",
+      "he": "פיורנטינה",
+      "en": "Fiorentina",
+      "ar": "فيورنتينا",
+      "leagues": ["serie-a"]
+    },
+    "football:bologna": {
+      "slug": "bologna",
+      "code": "BOL",
+      "he": "בולוניה",
+      "en": "Bologna",
+      "ar": "بولونيا",
+      "leagues": ["serie-a"]
+    },
+    "football:como": {
+      "slug": "como",
+      "code": "COM",
+      "he": "קומו",
+      "en": "Como",
+      "ar": "كومو",
+      "leagues": ["serie-a"]
+    },
+    "football:torino": {
+      "slug": "torino",
+      "code": "TOR",
+      "he": "טורינו",
+      "en": "Torino",
+      "ar": "تورينو",
+      "leagues": ["serie-a"]
+    },
+    "football:bayer-leverkusen": {
+      "slug": "bayer-leverkusen",
+      "code": "B04",
+      "he": "באייר לברקוזן",
+      "en": "Bayer Leverkusen",
+      "ar": "باير ليفركوزن",
+      "leagues": ["bundesliga"]
+    },
+    "football:eintracht-frankfurt": {
+      "slug": "eintracht-frankfurt",
+      "code": "SGE",
+      "he": "איינטרכט פרנקפורט",
+      "en": "Eintracht Frankfurt",
+      "ar": "آينتراخت فرانكفورت",
+      "leagues": ["bundesliga"]
+    },
+    "football:vfb-stuttgart": {
+      "slug": "vfb-stuttgart",
+      "code": "VFB",
+      "he": "שטוטגרט",
+      "en": "VfB Stuttgart",
+      "ar": "شتوتغارت",
+      "leagues": ["bundesliga"]
+    },
+    "football:borussia-monchengladbach": {
+      "slug": "borussia-monchengladbach",
+      "code": "BMG",
+      "he": "בורוסיה מנשנגלדבאך",
+      "en": "Borussia Mönchengladbach",
+      "ar": "بوروسيا مونشنغلادباخ",
+      "leagues": ["bundesliga"]
+    },
+    "football:werder-bremen": {
+      "slug": "werder-bremen",
+      "code": "SVW",
+      "he": "ורדר ברמן",
+      "en": "Werder Bremen",
+      "ar": "فيردر بريمن",
+      "leagues": ["bundesliga"]
+    },
+    "football:hamburger-sv": {
+      "slug": "hamburger-sv",
+      "code": "HSV",
+      "he": "המבורג",
+      "en": "Hamburger SV",
+      "ar": "هامبورغ",
+      "leagues": ["bundesliga"]
+    },
+    "football:lyon": {
+      "slug": "lyon",
+      "code": "LYO",
+      "he": "ליון",
+      "en": "Olympique Lyonnais",
+      "ar": "ليون",
+      "leagues": ["ligue-1"]
+    },
+    "football:lille": {
+      "slug": "lille",
+      "code": "LIL",
+      "he": "ליל",
+      "en": "Lille",
+      "ar": "ليل",
+      "leagues": ["ligue-1"]
+    },
+    "football:monaco": {
+      "slug": "monaco",
+      "code": "MON",
+      "he": "מונאקו",
+      "en": "AS Monaco",
+      "ar": "موناكو",
+      "leagues": ["ligue-1"]
+    },
+    "football:lens": {
+      "slug": "lens",
+      "code": "RCL",
+      "he": "לאנס",
+      "en": "RC Lens",
+      "ar": "لانس",
+      "leagues": ["ligue-1"]
+    },
+    "football:nice": {
+      "slug": "nice",
+      "code": "NIC",
+      "he": "ניס",
+      "en": "OGC Nice",
+      "ar": "نيس",
+      "leagues": ["ligue-1"]
+    },
+    "football:braga": {
+      "slug": "braga",
+      "code": "SCB",
+      "he": "בראגה",
+      "en": "SC Braga",
+      "ar": "براغا",
+      "leagues": ["primeira-liga"]
+    },
+    "football:ajax": {
+      "slug": "ajax",
+      "code": "AJA",
+      "he": "אייאקס",
+      "en": "Ajax",
+      "ar": "أياكس",
+      "leagues": ["eredivisie"]
+    },
+    "football:feyenoord": {
+      "slug": "feyenoord",
+      "code": "FEY",
+      "he": "פיינורד",
+      "en": "Feyenoord",
+      "ar": "فينورد",
+      "leagues": ["eredivisie"]
+    },
+    "football:psv": {
+      "slug": "psv",
+      "code": "PSV",
+      "he": "פ.ס.וו איינדהובן",
+      "en": "PSV Eindhoven",
+      "ar": "آيندهوفن",
+      "leagues": ["eredivisie"]
+    },
+    "football:celtic": {
+      "slug": "celtic",
+      "code": "CLT",
+      "he": "סלטיק",
+      "en": "Celtic",
+      "ar": "سلتيك",
+      "leagues": ["scottish-premiership"]
+    },
+    "football:rangers": {
+      "slug": "rangers",
+      "code": "RAN",
+      "he": "ריינג׳רס",
+      "en": "Rangers",
+      "ar": "رينجرز",
+      "leagues": ["scottish-premiership"]
+    },
+    "football:galatasaray": {
+      "slug": "galatasaray",
+      "code": "GAL",
+      "he": "גלאטסראיי",
+      "en": "Galatasaray",
+      "ar": "غلطة سراي",
+      "leagues": ["super-lig"]
+    },
+    "football:fenerbahce": {
+      "slug": "fenerbahce",
+      "code": "FEN",
+      "he": "פנרבחצ׳ה",
+      "en": "Fenerbahçe",
+      "ar": "فنربخشة",
+      "leagues": ["super-lig"]
+    },
+    "football:besiktas": {
+      "slug": "besiktas",
+      "code": "BJK",
+      "he": "בשיקטאש",
+      "en": "Beşiktaş",
+      "ar": "بشكتاش",
+      "leagues": ["super-lig"]
+    },
+    "football:al-hilal": {
+      "slug": "al-hilal",
+      "code": "HIL",
+      "he": "אל הילאל",
+      "en": "Al Hilal",
+      "ar": "الهلال",
+      "leagues": ["saudi-pro-league"]
+    },
+    "football:boca-juniors": {
+      "slug": "boca-juniors",
+      "code": "BOC",
+      "he": "בוקה ג׳וניורס",
+      "en": "Boca Juniors",
+      "ar": "بوكا جونيورز",
+      "leagues": ["argentine-primera"]
+    },
+    "football:river-plate": {
+      "slug": "river-plate",
+      "code": "RIV",
+      "he": "ריבר פלייט",
+      "en": "River Plate",
+      "ar": "ريفر بليت",
+      "leagues": ["argentine-primera"]
+    },
+    "football:flamengo": {
+      "slug": "flamengo",
+      "code": "FLA",
+      "he": "פלמנגו",
+      "en": "Flamengo",
+      "ar": "فلامنغو",
+      "leagues": ["brasileirao"]
     }
   },
   "players": {
