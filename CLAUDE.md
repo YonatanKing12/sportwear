@@ -40,10 +40,10 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. The live theme still shows "100% מקורי" / "100% original" badges on every product page and in the mobile menu, and the old shipping texts (free above ₪250, 3 business days); "SportWear (next)" has neither (checked in he/en/ar on 2026-09-27) |
 | Catalog | 1,562 products, all ACTIVE; 1,561 on the Online Store (the demo product is on no channel); 0 orders. Details in "The catalog" below |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
-| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). Also on it since the evening of 2026-09-27 (owner's requests): a branded empty cart (drawer and cart page), league banners on the collection pages and a 404 picture ("נבדל!"); see `design/imagery/README.md`, "Brand graphics". `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27) The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Legal texts | `legal/` (see its README). Live in he/en/ar since 2026-09-27: `/pages/shipping-returns` (a friendly returns and shipping text, 45 days; the URL to give as the return policy) and `/pages/accessibility`. The store policies (`/policies/*`) wait for the owner to paste them from https://claude.ai/code/artifact/9e4da37c-1a78-4630-9b76-3cb5c20d8455 |
 | Google | The owner connected the Google & YouTube channel and Merchant Center on 2026-09-27. Initial review pending; what to do about each notice is on the paste page above |
@@ -190,6 +190,20 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
+- The owner wrote on 2026-09-27 that they were attaching pictures to use on the site; none arrived (the message had no
+  attachments). We asked them to send them again
+- A promotion the owner asked about (2026-09-27): the third item (the cheapest) at 70% off, the fifth item free. Tested
+  with two Buy X get Y test codes (deleted after) and `draftOrderCalculate`:
+  - each works on its own with Shopify's own discounts: "buy 2, get 1 at 70% off" and "buy 4, get 1 free" go to the
+    cheapest item;
+  - on this plan the two never stack: with 5 items only the free item applies. They don't stack with the ₪229 set price
+    either (Shopify picks the better deal for the customer);
+  - both at once (5 items = one free plus one at 70% off) needs a discount app from the Shopify App Store (custom apps
+    with Functions are Plus-only).
+
+  Waiting on the owner: which version, which products, once per order or every 3 items, and when to start. After that:
+  the automatic discounts plus the promotion on the site (announcement bar, product page, a cart line saying how many
+  items to add)
 - Which card gateway (and whether it supports Bit). Until then the site shows the official Visa, Mastercard,
   Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
   `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo
