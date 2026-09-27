@@ -281,8 +281,31 @@ const compiled = (preview, html, kind) => {
   );
   const main = list.html.slice(list.html.indexOf('<main'), list.html.indexOf('</main>'));
   check('collections page 1 has 6 items', count(main, '<li>') === 6);
-  const list2 = render('list-collections?page=2', 'he');
-  check('empty collection placeholder', list2.html.includes('data-placeholder="collection-apparel-1"'));
+  // A collection's featured_image falls back to its first product's image, as on Shopify, so only a collection
+  // with no products shows the placeholder. Find the page that lists the first empty mock collection instead of
+  // assuming a page number: new mock collections move it. On that page, every item must show the placeholder
+  // exactly when its collection is empty.
+  const listed = [...smoke.world(smoke.pageSpec('list-collections', 'he')).collectionsByHandle.values()].filter(
+    (c) => c.handle !== 'all',
+  );
+  const emptyIndex = listed.findIndex((c) => c.products_count === 0);
+  check('mock catalog has an empty collection', emptyIndex >= 0);
+  if (emptyIndex >= 0) {
+    const emptyPage = Math.floor(emptyIndex / 6) + 1;
+    const pageHtml = render(`list-collections?page=${emptyPage}`, 'he').html;
+    const pageMain = pageHtml.slice(pageHtml.indexOf('<main'), pageHtml.indexOf('</main>'));
+    const items = [...pageMain.matchAll(/<li>\s*<a href="[^"]*\/collections\/([^"?]+)"[\s\S]*?<\/li>/g)].map((m) => ({
+      handle: m[1],
+      placeholder: m[0].includes('data-placeholder="collection-apparel-1"'),
+    }));
+    const empty = new Set(listed.filter((c) => c.products_count === 0).map((c) => c.handle));
+    check(
+      `empty collection placeholder (page ${emptyPage}: ${items.filter((i) => i.placeholder).length} of ${items.length})`,
+      items.some((i) => i.handle === listed[emptyIndex].handle) &&
+        items.every((i) => i.placeholder === empty.has(i.handle)),
+      items.map((i) => `${i.handle}${i.placeholder ? ' (placeholder)' : ''}`).join(', '),
+    );
+  }
 }
 
 /* ------------------------------------------------------------------ metaobject settings */
