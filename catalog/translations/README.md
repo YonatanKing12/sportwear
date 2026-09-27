@@ -2,8 +2,9 @@
 
 `store-content.json` holds the translations of the store's non-product content:
 
-- the 146 collections (on 2026-09-26: 101 added by the categories work, for clubs, NBA teams, players, styles and hoodies;
-  then `kids-football` and the 25 team collections of wave 1)
+- the 205 smart collections (on 2026-09-26: 101 added by the categories work, for clubs, NBA teams, players, styles and
+  hoodies; then `kids-football` and the 25 team collections of wave 1; on 2026-09-27 the 59 team collections of wave 2),
+  plus the manual `our-picks`
 - the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 15 hidden child lists that Shopify keeps behind the main-menu items that have children
 - 4 pages
 - the 10 league metaobjects (`sw_league`), `name` field only
@@ -40,6 +41,12 @@ Wave 1 (2026-09-26 evening) added 55 resources and 80 fields: 25 team collection
 `kids-football` first under ילדים) and the 4 hidden child lists that Shopify created behind בונדסליגה, ליגות נוספות,
 נבחרות and ליגת העל. Read back: every value matches this file, none is outdated, and the 119 existing main-menu items
 kept their IDs and translations.
+
+Wave 2 (2026-09-27 afternoon) added 118 resources and 177 fields: 59 team collections (the clubs of the jerseyxie wave 2,
+every one except `porto`, which already had a collection; IDs in `store-setup.json`) and 59 main-menu items, the team
+names under their leagues. Shopify created no hidden child list this time, because all seven leagues already had
+children. Read back: every value matches this file, none is outdated, and the 145 existing main-menu items kept their
+IDs and translations.
 
 What is not translated:
 

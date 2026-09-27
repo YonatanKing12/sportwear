@@ -16,7 +16,8 @@
   "shop_metafield": {
     "id": "gid://shopify/Metafield/189562572308784",
     "owner": "gid://shopify/Shop/99967467824",
-    "value": "scripts/lib/filter-names.mjs output, 136 teams, 19 leagues, 66 players, 3 audiences, 6 kits, 3 styles, 5 product types"
+    "value": "scripts/lib/filter-names.mjs output, 136 teams, 19 leagues, 66 players, 3 audiences, 6 kits, 3 styles, 5 product types",
+    "updated_2026-09-27_wave2": "Rewritten at 15:16 UTC with the same script after the wave 2 clubs and leagues were in taxonomy.json: 188 teams, 23 leagues, 66 players, 3 audiences, 6 kits, 3 styles, 5 product types. It only adds names (52 teams; the leagues eredivisie, scottish-premiership, super-lig and argentine-primera); no key was removed or renamed. Written with compareDigest and read back byte-identical to the script output."
   },
   "product_metafields": {
     "products": 1226,

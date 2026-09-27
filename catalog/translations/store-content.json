@@ -10,7 +10,8 @@
       "fields": 391,
       "verified": "Read back from Shopify after registering: all values match this file and none is outdated. The 59 original resources survived the switch of the primary language to Hebrew.",
       "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop).",
-      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated."
+      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated.",
+      "categories_wave2_update": "2026-09-27 afternoon (wave 2): registered for 59 new team collections (title and description) and 59 new main-menu items, the team names under their leagues (118 resources, 177 fields). Shopify created no new hidden child list (the seven leagues already had children). Read back: every value matches this file and none is outdated. The 145 existing main-menu items kept their IDs, and their translations are not outdated."
     },
     "en": {
       "status": "registered",
@@ -19,7 +20,8 @@
       "fields": 391,
       "verified": "translationsRegister returned no userErrors, and every field reads back with outdated: false.",
       "categories_update": "2026-09-26 afternoon: registered for the 101 new collections (title and description), the 104 new menu items and the 9 new hidden child menus (214 resources, 315 fields). Read back with a bulk export: every value matches this file and none is outdated. The main-menu item 'גופיות כדורסל' was removed from the menu (it stays in footer-shop).",
-      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated."
+      "categories_wave1_update": "2026-09-26 evening (wave 1): registered for 25 new team collections (title and description), 26 new main-menu items and the 4 hidden child lists Shopify created behind בונדסליגה, ליגות נוספות, נבחרות and ליגת העל (55 resources, 80 fields). Read back: every value matches this file and none is outdated. The 119 existing main-menu items kept their IDs, and their translations are not outdated.",
+      "categories_wave2_update": "2026-09-27 afternoon (wave 2): registered for 59 new team collections (title and description) and 59 new main-menu items, the team names under their leagues (118 resources, 177 fields). Shopify created no new hidden child list (the seven leagues already had children). Read back: every value matches this file and none is outdated. The 145 existing main-menu items kept their IDs, and their translations are not outdated."
     }
   },
   "not_translated": {
@@ -2582,6 +2584,1068 @@
           "digest": "bac8efc26c6304f71c156d9cc79e5b96398cab9d8ab1e3799d2402c8b9253ee4"
         }
       }
+    },
+    {
+      "handle": "newcastle-united",
+      "resource_id": "gid://shopify/Collection/512899055920",
+      "fields": {
+        "title": {
+          "he": "ניוקאסל",
+          "en": "Newcastle United",
+          "ar": "نيوكاسل يونايتد",
+          "digest": "36d1ffce1c9d91e95dcc1c3f90e52e38c10bf2cc0c290eb09251771a1dbf6e53"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ניוקאסל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Newcastle United football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان نيوكاسل يونايتد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3be44caaf782bd9637cd89eef25c804c085396918748f4709cc420652b1d48f4"
+        }
+      }
+    },
+    {
+      "handle": "aston-villa",
+      "resource_id": "gid://shopify/Collection/512899088688",
+      "fields": {
+        "title": {
+          "he": "אסטון וילה",
+          "en": "Aston Villa",
+          "ar": "أستون فيلا",
+          "digest": "7f6edc9405223b84d3b88818f34b51c41f46162d00d9ca6c5f43583ce9108843"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אסטון וילה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Aston Villa football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان أستون فيلا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "50321ae3a9884e57ab78f49c1084d24c8d15b5f5a0888ebc9e56ffbff3da4a8d"
+        }
+      }
+    },
+    {
+      "handle": "west-ham-united",
+      "resource_id": "gid://shopify/Collection/512899121456",
+      "fields": {
+        "title": {
+          "he": "ווסטהאם",
+          "en": "West Ham United",
+          "ar": "وست هام يونايتد",
+          "digest": "8086de82b956afd7fcbe7fd5813c89f40d10e94bf7b0df5417e2f575b9b3b673"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ווסטהאם באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>West Ham United football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وست هام يونايتد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f5a96a819ede9d88c0ede39eaa9bb08471524d39de3797876610cae33b0ea574"
+        }
+      }
+    },
+    {
+      "handle": "everton",
+      "resource_id": "gid://shopify/Collection/512899154224",
+      "fields": {
+        "title": {
+          "he": "אברטון",
+          "en": "Everton",
+          "ar": "إيفرتون",
+          "digest": "12a3e731d080ab68dd5ee30c04ae41cab8a0894d3024995a8bfc62751843fae9"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אברטון באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Everton football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان إيفرتون لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "41615d2e6c4c44223761ec3afd5ba475b1401b264183b69b731dfc1173d2608d"
+        }
+      }
+    },
+    {
+      "handle": "leeds-united",
+      "resource_id": "gid://shopify/Collection/512899186992",
+      "fields": {
+        "title": {
+          "he": "לידס יונייטד",
+          "en": "Leeds United",
+          "ar": "ليدز يونايتد",
+          "digest": "9d376bb1270af82daaa8d307512cacd49ce8098b3ef5405fd61d87f86686f553"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של לידס יונייטד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Leeds United football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ليدز يونايتد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "558631cdb2deb04bdf85e329c2d4469077f1897c512beb90269efc984e97893b"
+        }
+      }
+    },
+    {
+      "handle": "nottingham-forest",
+      "resource_id": "gid://shopify/Collection/512899219760",
+      "fields": {
+        "title": {
+          "he": "נוטינגהאם פורסט",
+          "en": "Nottingham Forest",
+          "ar": "نوتينغهام فورست",
+          "digest": "996da8212b977b473667f097724c4fa8dcdeac7ee54b9fb5c03963b6022fc8d6"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של נוטינגהאם פורסט באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Nottingham Forest football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان نوتينغهام فورست لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "fe9f1ac458c62509bd67673070a3bcfe631db65af0835e868f050725cc10db4f"
+        }
+      }
+    },
+    {
+      "handle": "brighton",
+      "resource_id": "gid://shopify/Collection/512899252528",
+      "fields": {
+        "title": {
+          "he": "ברייטון",
+          "en": "Brighton & Hove Albion",
+          "ar": "برايتون",
+          "digest": "94df704b90ecb59ed84e01be7c26347e5776aefe6dceba370b302aa601175a11"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ברייטון באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Brighton &amp; Hove Albion football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان برايتون لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "09e78918a4564c2c05b525e309efac9221c0f2a057d38b068f30b0c3f67a3d0e"
+        }
+      }
+    },
+    {
+      "handle": "crystal-palace",
+      "resource_id": "gid://shopify/Collection/512899285296",
+      "fields": {
+        "title": {
+          "he": "קריסטל פאלאס",
+          "en": "Crystal Palace",
+          "ar": "كريستال بالاس",
+          "digest": "54c984c7374b9bf99861e9e47378ef2a43321461af34a794e635836fdfd1cbbe"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של קריסטל פאלאס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Crystal Palace football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان كريستال بالاس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "08330b2d70bb543cbeb9398d8557702508e7ef03e6bcbaa3f4e8e6453c93a6a2"
+        }
+      }
+    },
+    {
+      "handle": "fulham",
+      "resource_id": "gid://shopify/Collection/512899318064",
+      "fields": {
+        "title": {
+          "he": "פולהאם",
+          "en": "Fulham",
+          "ar": "فولهام",
+          "digest": "c85a6eadab2caa3f0325f319b46ec767212342f52246744ef4dd1bb607ef2d7c"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פולהאם באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Fulham football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فولهام لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "66820c7eac745a3070c12bcfc8879785fb2349b79045e2cfac3959980e693a1e"
+        }
+      }
+    },
+    {
+      "handle": "wolverhampton-wanderers",
+      "resource_id": "gid://shopify/Collection/512899350832",
+      "fields": {
+        "title": {
+          "he": "וולברהמפטון",
+          "en": "Wolverhampton Wanderers",
+          "ar": "وولفرهامبتون",
+          "digest": "87796f5f95c5fe433c3ece476b50f29e8ab130bc414516fd4be08feb29a8b8b4"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של וולברהמפטון באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Wolverhampton Wanderers football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وولفرهامبتون لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "305ce4795d614081e617966b2754835f698218a3c0d205673137dba1d5e1ebfc"
+        }
+      }
+    },
+    {
+      "handle": "sunderland",
+      "resource_id": "gid://shopify/Collection/512899383600",
+      "fields": {
+        "title": {
+          "he": "סנדרלנד",
+          "en": "Sunderland",
+          "ar": "سندرلاند",
+          "digest": "8c7348fdf247507dd0ad779f88807bb4b5f945b4a25426afe1a0647cd7c566a8"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של סנדרלנד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Sunderland football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان سندرلاند لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "d309ed5006a0db577e7322f00df069aac1141d8313df21844c7ca7d972210a79"
+        }
+      }
+    },
+    {
+      "handle": "brentford",
+      "resource_id": "gid://shopify/Collection/512899416368",
+      "fields": {
+        "title": {
+          "he": "ברנטפורד",
+          "en": "Brentford",
+          "ar": "برينتفورد",
+          "digest": "0eb76c32ac089b3afd6db6d16dc05e322a11bb550a437f8ee34f499614c0ad22"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ברנטפורד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Brentford football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان برينتفورد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "7e79d5d95fd551fb30ebe04c8fb3d2452061c3846b86fc58957d86774e23a65e"
+        }
+      }
+    },
+    {
+      "handle": "bournemouth",
+      "resource_id": "gid://shopify/Collection/512899449136",
+      "fields": {
+        "title": {
+          "he": "בורנמות׳",
+          "en": "AFC Bournemouth",
+          "ar": "بورنموث",
+          "digest": "28e0e9975fc38f38df82e76942c1cda22c7d7c17fe60c226ee6903bee9cfbbad"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בורנמות׳ באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>AFC Bournemouth football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بورنموث لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "d91f932277fa0942057e9f3afe71b463f4595809d2e43137851cb435afb24223"
+        }
+      }
+    },
+    {
+      "handle": "burnley",
+      "resource_id": "gid://shopify/Collection/512899481904",
+      "fields": {
+        "title": {
+          "he": "ברנלי",
+          "en": "Burnley",
+          "ar": "بيرنلي",
+          "digest": "a91fd21f37e79973341cd7f382490d80cbd4335c199838fa9ab8f226efca3576"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ברנלי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Burnley football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بيرنلي لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "7868919e1ef6d2c1a7bf712475f9c28a71395baf50733921f4fdfdbe253092ca"
+        }
+      }
+    },
+    {
+      "handle": "sevilla",
+      "resource_id": "gid://shopify/Collection/512899514672",
+      "fields": {
+        "title": {
+          "he": "סביליה",
+          "en": "Sevilla",
+          "ar": "إشبيلية",
+          "digest": "5de24a2b0f69e9fdb72fa5f75a1df86a2015b18db048b75bb5317025768eb7a7"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של סביליה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Sevilla football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان إشبيلية لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "15bbf574631da606645e592f5f35d77df8ecd5339341d533b5bb849d070bada3"
+        }
+      }
+    },
+    {
+      "handle": "valencia",
+      "resource_id": "gid://shopify/Collection/512899547440",
+      "fields": {
+        "title": {
+          "he": "ולנסיה",
+          "en": "Valencia",
+          "ar": "فالنسيا",
+          "digest": "258afc0bc77b8f58612404c4f5088d86b76a5f2726b6ae2849b4e57f1f27333f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ולנסיה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Valencia football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فالنسيا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "87a9fa0d72653f2000e2bc43caecd7912c1b765b8226f0a6a49e6cf763100f23"
+        }
+      }
+    },
+    {
+      "handle": "athletic-bilbao",
+      "resource_id": "gid://shopify/Collection/512899580208",
+      "fields": {
+        "title": {
+          "he": "אתלטיק בילבאו",
+          "en": "Athletic Club",
+          "ar": "أتلتيك بلباو",
+          "digest": "848dee4273f0916e485fb4eae8357aa15da4b7be81b8a96cd3cb5de058d0b6b6"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אתלטיק בילבאו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Athletic Club football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان أتلتيك بلباو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b8f59c53891ff2202591e7c570e0d067f688e42bfa7cb88abae1d76f6d4f148b"
+        }
+      }
+    },
+    {
+      "handle": "real-betis",
+      "resource_id": "gid://shopify/Collection/512899612976",
+      "fields": {
+        "title": {
+          "he": "ריאל בטיס",
+          "en": "Real Betis",
+          "ar": "ريال بيتيس",
+          "digest": "4dd4094ea74f37d2fde1e6a9927bf1bf761184e2bac9765a8c7e0231e7f7a922"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ריאל בטיס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Real Betis football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ريال بيتيس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "0b0761fb2fb0a721f9b3379de3d1700508c8e85864e53a595565355a63d9f99a"
+        }
+      }
+    },
+    {
+      "handle": "real-sociedad",
+      "resource_id": "gid://shopify/Collection/512899645744",
+      "fields": {
+        "title": {
+          "he": "ריאל סוסיאדד",
+          "en": "Real Sociedad",
+          "ar": "ريال سوسيداد",
+          "digest": "01e82337b15a32a447ea773196d4412aa13d7a733258544be860d18321fd21d4"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ריאל סוסיאדד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Real Sociedad football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ريال سوسيداد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a44b7577e26531c0f9b26a3397e964c3787dfa86389cded055467c39682fa6b1"
+        }
+      }
+    },
+    {
+      "handle": "villarreal",
+      "resource_id": "gid://shopify/Collection/512899678512",
+      "fields": {
+        "title": {
+          "he": "ויאריאל",
+          "en": "Villarreal",
+          "ar": "فياريال",
+          "digest": "30d5921607360b3615b937b148ac130c306d4b5b583a646792e9162a717bf700"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ויאריאל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Villarreal football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فياريال لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "91789088d25be8683e30359f1cbf08f300bd6b44a4239c4c1770a10dcaf3149f"
+        }
+      }
+    },
+    {
+      "handle": "girona",
+      "resource_id": "gid://shopify/Collection/512899711280",
+      "fields": {
+        "title": {
+          "he": "ג׳ירונה",
+          "en": "Girona",
+          "ar": "جيرونا",
+          "digest": "19f5b23edd20db8a308ff66aa384c76e88b9c30ef625f21b547c3cc8d2cb6ee6"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ג׳ירונה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Girona football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان جيرونا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "90be17895ea59e3432d86e45929959e478a311337c7e9169fdd406b1a56b90f2"
+        }
+      }
+    },
+    {
+      "handle": "celta-vigo",
+      "resource_id": "gid://shopify/Collection/512899744048",
+      "fields": {
+        "title": {
+          "he": "סלטה ויגו",
+          "en": "Celta Vigo",
+          "ar": "سيلتا فيغو",
+          "digest": "c8400e7cfda59b89cf1e34ec115e3599bd6718bb435119a7bff8ff343140bd3c"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של סלטה ויגו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Celta Vigo football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان سيلتا فيغو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a086b5dad2703aae6eaf9e677bfb93389387383233395b09d25d4f892fcf2bcc"
+        }
+      }
+    },
+    {
+      "handle": "espanyol",
+      "resource_id": "gid://shopify/Collection/512899776816",
+      "fields": {
+        "title": {
+          "he": "אספניול",
+          "en": "Espanyol",
+          "ar": "إسبانيول",
+          "digest": "9b2bab97aaa431c853462dbcf538e2524faab4cb2025a4bbab41a4f0b7419729"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אספניול באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Espanyol football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان إسبانيول لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "277d1e2cd50370621c8d28bca571bafe0d94c1fec4e7e1468a2c4f674ca68e0c"
+        }
+      }
+    },
+    {
+      "handle": "lazio",
+      "resource_id": "gid://shopify/Collection/512899809584",
+      "fields": {
+        "title": {
+          "he": "לאציו",
+          "en": "Lazio",
+          "ar": "لاتسيو",
+          "digest": "0114b8059a8ace48309991f034cb7ea7e786d6ef1fab87cd6aeccfe89cd4e617"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של לאציו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Lazio football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان لاتسيو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3b3dcfeb0a3c6ce9da6ae3da4a699fa3e97a185d58db95b7c01443fa4d43affe"
+        }
+      }
+    },
+    {
+      "handle": "atalanta",
+      "resource_id": "gid://shopify/Collection/512899842352",
+      "fields": {
+        "title": {
+          "he": "אטאלנטה",
+          "en": "Atalanta",
+          "ar": "أتالانتا",
+          "digest": "dddf33644d10c2c2181bf58fb771403216aba8dce6bc91279921c5171c879736"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אטאלנטה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Atalanta football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان أتالانتا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "45c07e9933c99058f3a77d1c38038090eb7e2cc27084da926ebc532c18547496"
+        }
+      }
+    },
+    {
+      "handle": "fiorentina",
+      "resource_id": "gid://shopify/Collection/512899875120",
+      "fields": {
+        "title": {
+          "he": "פיורנטינה",
+          "en": "Fiorentina",
+          "ar": "فيورنتينا",
+          "digest": "b09c36677d03d7372f7c5b2ea04a931eacbabb1b8aa20bf9a4d844f0fe471d1f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פיורנטינה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Fiorentina football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فيورنتينا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bd12f65aad5080c6afaefd2772bfa47d331572cf451c80dfcf1f269c7638865e"
+        }
+      }
+    },
+    {
+      "handle": "bologna",
+      "resource_id": "gid://shopify/Collection/512899907888",
+      "fields": {
+        "title": {
+          "he": "בולוניה",
+          "en": "Bologna",
+          "ar": "بولونيا",
+          "digest": "714d2f6947537d34d017a0bb50df15090f0345022d52a6ee45923cc28d93b7b3"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בולוניה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Bologna football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بولونيا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "0785800e14197a4deb3af06ab1818ce86729510e944e0fefe679eb277975925d"
+        }
+      }
+    },
+    {
+      "handle": "torino",
+      "resource_id": "gid://shopify/Collection/512899940656",
+      "fields": {
+        "title": {
+          "he": "טורינו",
+          "en": "Torino",
+          "ar": "تورينو",
+          "digest": "7a9b2544ff572109222871fb07045c1fc1e8d1b0495d98f32fdb9dbfb11f29bb"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של טורינו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Torino football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان تورينو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b4c2340f83e6b90572e4d7aeec659dd2caff7859f1657c4aed3e44884ab865b9"
+        }
+      }
+    },
+    {
+      "handle": "como",
+      "resource_id": "gid://shopify/Collection/512899973424",
+      "fields": {
+        "title": {
+          "he": "קומו",
+          "en": "Como",
+          "ar": "كومو",
+          "digest": "40ad3984984881c30556c0e580be01e82a0077ade724a2bbc5b66d09dfd2924e"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של קומו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Como football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان كومو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "9643e6b4925ae2c4a5fd433efa7e27d09105ecce10c0a433435a7dbb244d217a"
+        }
+      }
+    },
+    {
+      "handle": "bayer-leverkusen",
+      "resource_id": "gid://shopify/Collection/512900006192",
+      "fields": {
+        "title": {
+          "he": "באייר לברקוזן",
+          "en": "Bayer Leverkusen",
+          "ar": "باير ليفركوزن",
+          "digest": "dbc241caa31e4ca5c71ba5585b17258c90d5e2f2af77c39e5066b3f671cad8c5"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של באייר לברקוזן באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Bayer Leverkusen football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان باير ليفركوزن لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "091d897c252c2d6c985cb60e9894aab354e3664e28246fcca87539ed95b1fe49"
+        }
+      }
+    },
+    {
+      "handle": "rb-leipzig",
+      "resource_id": "gid://shopify/Collection/512900071728",
+      "fields": {
+        "title": {
+          "he": "ר.ב. לייפציג",
+          "en": "RB Leipzig",
+          "ar": "آر بي لايبزيغ",
+          "digest": "d85ec7da8c8acdc043cec4e0e5f1bbcd06b8873aab0654baa8423a303ba638d3"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ר.ב. לייפציג באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>RB Leipzig football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان آر بي لايبزيغ لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b82e3361c5d0d32550755868970be6c0b974d09a196f3d873dc5616139630f81"
+        }
+      }
+    },
+    {
+      "handle": "eintracht-frankfurt",
+      "resource_id": "gid://shopify/Collection/512900104496",
+      "fields": {
+        "title": {
+          "he": "איינטרכט פרנקפורט",
+          "en": "Eintracht Frankfurt",
+          "ar": "آينتراخت فرانكفورت",
+          "digest": "38a2adf879233c8457e1ce84c36debf5686796ac4348463534f59747c860febd"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של איינטרכט פרנקפורט באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Eintracht Frankfurt football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان آينتراخت فرانكفورت لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "92220f2cb9399d64e0186fd9da6797789767c4666ab46d23837b14a4038e059e"
+        }
+      }
+    },
+    {
+      "handle": "vfb-stuttgart",
+      "resource_id": "gid://shopify/Collection/512900137264",
+      "fields": {
+        "title": {
+          "he": "שטוטגרט",
+          "en": "VfB Stuttgart",
+          "ar": "شتوتغارت",
+          "digest": "51a0dc25bb966f79a08edcead154892c37ef977460ec285ab540928ee72a2a7b"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של שטוטגרט באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>VfB Stuttgart football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان شتوتغارت لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f917b6ce20240efedbe32e6bc029932e4a329a8932f45a9e23eb8d3cadf58637"
+        }
+      }
+    },
+    {
+      "handle": "borussia-monchengladbach",
+      "resource_id": "gid://shopify/Collection/512900170032",
+      "fields": {
+        "title": {
+          "he": "בורוסיה מנשנגלדבאך",
+          "en": "Borussia Mönchengladbach",
+          "ar": "بوروسيا مونشنغلادباخ",
+          "digest": "7cdd6cfeb16c644a8a3fd0227b92739541242c1a118db4b64c074d67dfcf7683"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בורוסיה מנשנגלדבאך באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Borussia Mönchengladbach football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بوروسيا مونشنغلادباخ لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "03ba98ef4bf4f456194a79fa9e3251188b7c27108135761039716bb6c8299d2b"
+        }
+      }
+    },
+    {
+      "handle": "werder-bremen",
+      "resource_id": "gid://shopify/Collection/512900202800",
+      "fields": {
+        "title": {
+          "he": "ורדר ברמן",
+          "en": "Werder Bremen",
+          "ar": "فيردر بريمن",
+          "digest": "58366efa4e0a241ccb2e25b9d9b0c04b9d416456c279246aa9a2a3b15a6cae3b"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ורדר ברמן באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Werder Bremen football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فيردر بريمن لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bf9614e98abe601d30337aaeab9e6119ed3c6177071888d94c34e090320ef03c"
+        }
+      }
+    },
+    {
+      "handle": "hamburger-sv",
+      "resource_id": "gid://shopify/Collection/512900235568",
+      "fields": {
+        "title": {
+          "he": "המבורג",
+          "en": "Hamburger SV",
+          "ar": "هامبورغ",
+          "digest": "41dad4b31b53c01f89805f586d88082e63c44f973f419acd30f77d5a7aaf64f8"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של המבורג באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Hamburger SV football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان هامبورغ لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "522223d3f8cc13260cb18b127ac27405e3b5bb0070cf72ea0b2bbcc35dd16fba"
+        }
+      }
+    },
+    {
+      "handle": "olympique-marseille",
+      "resource_id": "gid://shopify/Collection/512900268336",
+      "fields": {
+        "title": {
+          "he": "מארסיי",
+          "en": "Olympique de Marseille",
+          "ar": "أولمبيك مارسيليا",
+          "digest": "15df5a210f5f32df5811aa33a439a126bf4664f7f63ac5faf25da6b8f5c32532"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של מארסיי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Olympique de Marseille football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان أولمبيك مارسيليا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "c602832c3342cf612ec131bf7dcb3bcb17b794f282c5c9264b06728918374e59"
+        }
+      }
+    },
+    {
+      "handle": "lyon",
+      "resource_id": "gid://shopify/Collection/512900301104",
+      "fields": {
+        "title": {
+          "he": "ליון",
+          "en": "Olympique Lyonnais",
+          "ar": "ليون",
+          "digest": "89af6b21b094bb8400fa99d67282b781abbbdd5e0b2134b98e4331f67530931f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ליון באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Olympique Lyonnais football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ليون لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "495cdb644b6c663c5b5a656af1d3454de1b0e9989d64fdd67a99622f3d304ce3"
+        }
+      }
+    },
+    {
+      "handle": "monaco",
+      "resource_id": "gid://shopify/Collection/512900333872",
+      "fields": {
+        "title": {
+          "he": "מונאקו",
+          "en": "AS Monaco",
+          "ar": "موناكو",
+          "digest": "0d4a581d4e08aae90a6d6cfe1855e58a06c38a96076a1ecd3fea0feb89c58803"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של מונאקו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>AS Monaco football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان موناكو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "49a556eb5721ba94e54c34a2feac5e8a3b527a06d96453c1930b17fde1b7a3fd"
+        }
+      }
+    },
+    {
+      "handle": "lille",
+      "resource_id": "gid://shopify/Collection/512900366640",
+      "fields": {
+        "title": {
+          "he": "ליל",
+          "en": "Lille",
+          "ar": "ليل",
+          "digest": "d338383d2ddd33b27d19b5e535912ddd96e11b92852355eebea40dc5e3e5f427"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ליל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Lille football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ليل لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "2d65bc759988fff61f0ff3b422efdaaa8024052eae22123e3a752e596b15ee47"
+        }
+      }
+    },
+    {
+      "handle": "nice",
+      "resource_id": "gid://shopify/Collection/512900399408",
+      "fields": {
+        "title": {
+          "he": "ניס",
+          "en": "OGC Nice",
+          "ar": "نيس",
+          "digest": "da6856b0c00fc3a15a3226c8e1220589e11942ad3bbf106db579265aacd8e11d"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ניס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>OGC Nice football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان نيس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "90b954d718a0bfe8d883d265e84d4f4b53a9c0d9ac47732473a60517648c1c49"
+        }
+      }
+    },
+    {
+      "handle": "lens",
+      "resource_id": "gid://shopify/Collection/512900432176",
+      "fields": {
+        "title": {
+          "he": "לאנס",
+          "en": "RC Lens",
+          "ar": "لانس",
+          "digest": "24b6bc822295a2d1a9e7ac727adfb7a65d96c5393921946e76ee989c7e32de38"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של לאנס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>RC Lens football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان لانس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "09aa2f6923206f6bdfd81442aee220a04020fbd160483db15ab30386c5534533"
+        }
+      }
+    },
+    {
+      "handle": "benfica",
+      "resource_id": "gid://shopify/Collection/512900464944",
+      "fields": {
+        "title": {
+          "he": "בנפיקה",
+          "en": "Benfica",
+          "ar": "بنفيكا",
+          "digest": "0b0d507c1d33e3479e7a802a68996c38a72a635c76f0f3fa2110a533cb924914"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בנפיקה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Benfica football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بنفيكا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "6bc55bee886fcbfa99c4a4b39a68ee95ce7221decc81642fcc1ce5f0887c3f53"
+        }
+      }
+    },
+    {
+      "handle": "sporting-cp",
+      "resource_id": "gid://shopify/Collection/512900497712",
+      "fields": {
+        "title": {
+          "he": "ספורטינג ליסבון",
+          "en": "Sporting CP",
+          "ar": "سبورتينغ لشبونة",
+          "digest": "766e5328d74c257bbd836828cb8b7711b412078871c458dfda9589119d802792"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ספורטינג ליסבון באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Sporting CP football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان سبورتينغ لشبونة لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "53296a4cb3ee364b8b733695f788bcb7ccc1573214c4fb125eb300d9ab22cb52"
+        }
+      }
+    },
+    {
+      "handle": "braga",
+      "resource_id": "gid://shopify/Collection/512900530480",
+      "fields": {
+        "title": {
+          "he": "בראגה",
+          "en": "SC Braga",
+          "ar": "براغا",
+          "digest": "6aa7806a33a599e6640edfc2ad6ce6c3ed8bc1fb47e87be95bcf36a99f19ce74"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בראגה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>SC Braga football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان براغا لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "412c69ebb652a993d21a8d73be2ef0fa45e1a5f683331d743c0be4b51ddedc0a"
+        }
+      }
+    },
+    {
+      "handle": "ajax",
+      "resource_id": "gid://shopify/Collection/512900596016",
+      "fields": {
+        "title": {
+          "he": "אייאקס",
+          "en": "Ajax",
+          "ar": "أياكس",
+          "digest": "77bcaa2cbb541a267578c4c85ad2bcdca96a1dbe6cc7bfea8a7eabdf3522436d"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אייאקס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Ajax football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان أياكس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b4d7662d7001a7a0bd3e5c8e84b5fce970919d3cfc1b62a7c12b86e67222ca61"
+        }
+      }
+    },
+    {
+      "handle": "psv",
+      "resource_id": "gid://shopify/Collection/512900628784",
+      "fields": {
+        "title": {
+          "he": "פ.ס.וו איינדהובן",
+          "en": "PSV Eindhoven",
+          "ar": "آيندهوفن",
+          "digest": "5e54a94b12815600eee0f2990b46df6616e20f0395df4951f8a67667f2b3d28e"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פ.ס.וו איינדהובן באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>PSV Eindhoven football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان آيندهوفن لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "2893075903c720553075b0ced386f196c2009008a1dd0dc0cb4522b6b66d16f8"
+        }
+      }
+    },
+    {
+      "handle": "feyenoord",
+      "resource_id": "gid://shopify/Collection/512900661552",
+      "fields": {
+        "title": {
+          "he": "פיינורד",
+          "en": "Feyenoord",
+          "ar": "فينورد",
+          "digest": "d32d88fb4438127ec3fe936d65f92a9bcae6e59c5fe958792538db0ad745b503"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פיינורד באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Feyenoord football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فينورد لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "37ee1596b3664785d552fd726a20b0f364792ae4307d85b89d340c48597d9bc3"
+        }
+      }
+    },
+    {
+      "handle": "celtic",
+      "resource_id": "gid://shopify/Collection/512900694320",
+      "fields": {
+        "title": {
+          "he": "סלטיק",
+          "en": "Celtic",
+          "ar": "سلتيك",
+          "digest": "e70ec8014eac219096241da6733e3570e704bd7a6374155548528548fc4b0fca"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של סלטיק באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Celtic football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان سلتيك لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "848245a8294e74ef488eca8200f4e16b1373d6e40b58231e8ffd275b269e7b17"
+        }
+      }
+    },
+    {
+      "handle": "rangers",
+      "resource_id": "gid://shopify/Collection/512900727088",
+      "fields": {
+        "title": {
+          "he": "ריינג׳רס",
+          "en": "Rangers",
+          "ar": "رينجرز",
+          "digest": "f1700c5e6c5a89d622e2f55757ba91f4636f691a2a4dc679cb665e39b905ae69"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ריינג׳רס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Rangers football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان رينجرز لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b1904d77b12a71046538f8b093e69c650e24be5fcf4844089bd7e68beca13467"
+        }
+      }
+    },
+    {
+      "handle": "galatasaray",
+      "resource_id": "gid://shopify/Collection/512900759856",
+      "fields": {
+        "title": {
+          "he": "גלאטסראיי",
+          "en": "Galatasaray",
+          "ar": "غلطة سراي",
+          "digest": "6ea64138cbff6613e0dab992c053627c0dfcfcb7ab062fca357d7fc15391154a"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של גלאטסראיי באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Galatasaray football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان غلطة سراي لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "9c3d422d55c65da28a3286342203f2db6fab92003b9aa90176951bf2c50b8845"
+        }
+      }
+    },
+    {
+      "handle": "fenerbahce",
+      "resource_id": "gid://shopify/Collection/512900792624",
+      "fields": {
+        "title": {
+          "he": "פנרבחצ׳ה",
+          "en": "Fenerbahçe",
+          "ar": "فنربخشة",
+          "digest": "0d0781000a12542f806ebbc6c0ed92e518b50d463af95600eb9a01338507b923"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פנרבחצ׳ה באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Fenerbahçe football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فنربخشة لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "125085fee3e27870eb7ad49ef53322d66943cf95b6fa11f3b3f8026f6ab49648"
+        }
+      }
+    },
+    {
+      "handle": "besiktas",
+      "resource_id": "gid://shopify/Collection/512900825392",
+      "fields": {
+        "title": {
+          "he": "בשיקטאש",
+          "en": "Beşiktaş",
+          "ar": "بشكتاش",
+          "digest": "49c129c9a92c6d3ebac0e1d1e34f559fe6b35eedc6d4a0fbe1171c88ab120bff"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בשיקטאש באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Beşiktaş football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بشكتاش لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "9d2abcad031ca7bb75d40000a15f018bef561a5badb4dc48196b03d8616cd4cf"
+        }
+      }
+    },
+    {
+      "handle": "al-hilal",
+      "resource_id": "gid://shopify/Collection/512900858160",
+      "fields": {
+        "title": {
+          "he": "אל הילאל",
+          "en": "Al Hilal",
+          "ar": "الهلال",
+          "digest": "2032c5b4bfa70e3e2fba258144652cef5f0b95e26e0ba46bc5d95351d27c7609"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של אל הילאל באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Al Hilal football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان الهلال لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "7f1d590c49cab4c54f9177c8f43d9b8a303bdd9d2ecdb8a1763c7e05ae5302df"
+        }
+      }
+    },
+    {
+      "handle": "boca-juniors",
+      "resource_id": "gid://shopify/Collection/512900890928",
+      "fields": {
+        "title": {
+          "he": "בוקה ג׳וניורס",
+          "en": "Boca Juniors",
+          "ar": "بوكا جونيورز",
+          "digest": "a46bd29b12b9f6e89a14da0afd0294f67f4b074fded763b38d8fd58cb9caafcb"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של בוקה ג׳וניורס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Boca Juniors football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بوكا جونيورز لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "c9939dd4c0cb16d8f942e07f73a0cc4baab7129e0747df65c02ca0a153883dec"
+        }
+      }
+    },
+    {
+      "handle": "river-plate",
+      "resource_id": "gid://shopify/Collection/512900923696",
+      "fields": {
+        "title": {
+          "he": "ריבר פלייט",
+          "en": "River Plate",
+          "ar": "ريفر بليت",
+          "digest": "38909dd0f594fa88161b33b4510b487f0828e658fd9434ba93ccdaa22a644c1d"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של ריבר פלייט באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>River Plate football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان ريفر بليت لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "4e6f76d430958c5643ce3d21e357d9c859d205417ddb80f256bad01deb563b40"
+        }
+      }
+    },
+    {
+      "handle": "flamengo",
+      "resource_id": "gid://shopify/Collection/512900956464",
+      "fields": {
+        "title": {
+          "he": "פלמנגו",
+          "en": "Flamengo",
+          "ar": "فلامنغو",
+          "digest": "5f93c81ee19e78d1cd4aaa7bd6f67553ff1ea47955abfcbfa6e00bac4bb3cd65"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פלמנגו באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Flamengo football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فلامنغو لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "8df929df37dcd98f18215f2eb9bec52d79e361a287fa208078fb0dfc8322e474"
+        }
+      }
+    },
+    {
+      "handle": "palmeiras",
+      "resource_id": "gid://shopify/Collection/512900989232",
+      "fields": {
+        "title": {
+          "he": "פלמייראס",
+          "en": "Palmeiras",
+          "ar": "بالميراس",
+          "digest": "0e39bad79fbc494013f9331401de6d440b060cdc99d515957ec4bf92a8224576"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של פלמייראס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Palmeiras football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان بالميراس لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "0e128e7b83a8d315825b6c94d86fc4fd5e32b1cbacfc82de052722a30ad62b60"
+        }
+      }
+    },
+    {
+      "handle": "corinthians",
+      "resource_id": "gid://shopify/Collection/512901022000",
+      "fields": {
+        "title": {
+          "he": "קורינתיאנס",
+          "en": "Corinthians",
+          "ar": "كورينثيانز",
+          "digest": "5690fab68f5071b4398fd9e11d202b041555dfc8bd008f7701cbe2bac35f81ad"
+        },
+        "body_html": {
+          "he": "<p>חולצות הכדורגל של קורינתיאנס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Corinthians football jerseys in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان كورينثيانز لكرة القدم في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "6489bff84e13ecc6800b3c99eebe77883d7321f434cd717b48243a3bdbafb3af"
+        }
+      }
     }
   ],
   "menus": [
@@ -2692,6 +3756,174 @@
                       "digest": "d8c323cf5abb19497200f824955677e42ae2724a6fc32fc3cd45f51c728cf474"
                     }
                   }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831096112",
+                  "url": "/collections/newcastle-united",
+                  "fields": {
+                    "title": {
+                      "he": "ניוקאסל",
+                      "en": "Newcastle United",
+                      "ar": "نيوكاسل يونايتد",
+                      "digest": "36d1ffce1c9d91e95dcc1c3f90e52e38c10bf2cc0c290eb09251771a1dbf6e53"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831128880",
+                  "url": "/collections/aston-villa",
+                  "fields": {
+                    "title": {
+                      "he": "אסטון וילה",
+                      "en": "Aston Villa",
+                      "ar": "أستون فيلا",
+                      "digest": "7f6edc9405223b84d3b88818f34b51c41f46162d00d9ca6c5f43583ce9108843"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831161648",
+                  "url": "/collections/west-ham-united",
+                  "fields": {
+                    "title": {
+                      "he": "ווסטהאם",
+                      "en": "West Ham United",
+                      "ar": "وست هام يونايتد",
+                      "digest": "8086de82b956afd7fcbe7fd5813c89f40d10e94bf7b0df5417e2f575b9b3b673"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831194416",
+                  "url": "/collections/everton",
+                  "fields": {
+                    "title": {
+                      "he": "אברטון",
+                      "en": "Everton",
+                      "ar": "إيفرتون",
+                      "digest": "12a3e731d080ab68dd5ee30c04ae41cab8a0894d3024995a8bfc62751843fae9"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831227184",
+                  "url": "/collections/leeds-united",
+                  "fields": {
+                    "title": {
+                      "he": "לידס יונייטד",
+                      "en": "Leeds United",
+                      "ar": "ليدز يونايتد",
+                      "digest": "9d376bb1270af82daaa8d307512cacd49ce8098b3ef5405fd61d87f86686f553"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831259952",
+                  "url": "/collections/nottingham-forest",
+                  "fields": {
+                    "title": {
+                      "he": "נוטינגהאם פורסט",
+                      "en": "Nottingham Forest",
+                      "ar": "نوتينغهام فورست",
+                      "digest": "996da8212b977b473667f097724c4fa8dcdeac7ee54b9fb5c03963b6022fc8d6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831292720",
+                  "url": "/collections/brighton",
+                  "fields": {
+                    "title": {
+                      "he": "ברייטון",
+                      "en": "Brighton & Hove Albion",
+                      "ar": "برايتون",
+                      "digest": "94df704b90ecb59ed84e01be7c26347e5776aefe6dceba370b302aa601175a11"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831325488",
+                  "url": "/collections/crystal-palace",
+                  "fields": {
+                    "title": {
+                      "he": "קריסטל פאלאס",
+                      "en": "Crystal Palace",
+                      "ar": "كريستال بالاس",
+                      "digest": "54c984c7374b9bf99861e9e47378ef2a43321461af34a794e635836fdfd1cbbe"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831358256",
+                  "url": "/collections/fulham",
+                  "fields": {
+                    "title": {
+                      "he": "פולהאם",
+                      "en": "Fulham",
+                      "ar": "فولهام",
+                      "digest": "c85a6eadab2caa3f0325f319b46ec767212342f52246744ef4dd1bb607ef2d7c"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831391024",
+                  "url": "/collections/wolverhampton-wanderers",
+                  "fields": {
+                    "title": {
+                      "he": "וולברהמפטון",
+                      "en": "Wolverhampton Wanderers",
+                      "ar": "وولفرهامبتون",
+                      "digest": "87796f5f95c5fe433c3ece476b50f29e8ab130bc414516fd4be08feb29a8b8b4"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831423792",
+                  "url": "/collections/sunderland",
+                  "fields": {
+                    "title": {
+                      "he": "סנדרלנד",
+                      "en": "Sunderland",
+                      "ar": "سندرلاند",
+                      "digest": "8c7348fdf247507dd0ad779f88807bb4b5f945b4a25426afe1a0647cd7c566a8"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831456560",
+                  "url": "/collections/brentford",
+                  "fields": {
+                    "title": {
+                      "he": "ברנטפורד",
+                      "en": "Brentford",
+                      "ar": "برينتفورد",
+                      "digest": "0eb76c32ac089b3afd6db6d16dc05e322a11bb550a437f8ee34f499614c0ad22"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831489328",
+                  "url": "/collections/bournemouth",
+                  "fields": {
+                    "title": {
+                      "he": "בורנמות׳",
+                      "en": "AFC Bournemouth",
+                      "ar": "بورنموث",
+                      "digest": "28e0e9975fc38f38df82e76942c1cda22c7d7c17fe60c226ee6903bee9cfbbad"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831522096",
+                  "url": "/collections/burnley",
+                  "fields": {
+                    "title": {
+                      "he": "ברנלי",
+                      "en": "Burnley",
+                      "ar": "بيرنلي",
+                      "digest": "a91fd21f37e79973341cd7f382490d80cbd4335c199838fa9ab8f226efca3576"
+                    }
+                  }
                 }
               ]
             },
@@ -2740,6 +3972,114 @@
                       "en": "Atlético Madrid",
                       "ar": "أتلتيكو مدريد",
                       "digest": "5f8c201e8d8013ecb290c69b430d013f6019c84fde5826d5140b7837a2175035"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831554864",
+                  "url": "/collections/sevilla",
+                  "fields": {
+                    "title": {
+                      "he": "סביליה",
+                      "en": "Sevilla",
+                      "ar": "إشبيلية",
+                      "digest": "5de24a2b0f69e9fdb72fa5f75a1df86a2015b18db048b75bb5317025768eb7a7"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831587632",
+                  "url": "/collections/valencia",
+                  "fields": {
+                    "title": {
+                      "he": "ולנסיה",
+                      "en": "Valencia",
+                      "ar": "فالنسيا",
+                      "digest": "258afc0bc77b8f58612404c4f5088d86b76a5f2726b6ae2849b4e57f1f27333f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831620400",
+                  "url": "/collections/athletic-bilbao",
+                  "fields": {
+                    "title": {
+                      "he": "אתלטיק בילבאו",
+                      "en": "Athletic Club",
+                      "ar": "أتلتيك بلباو",
+                      "digest": "848dee4273f0916e485fb4eae8357aa15da4b7be81b8a96cd3cb5de058d0b6b6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831653168",
+                  "url": "/collections/real-betis",
+                  "fields": {
+                    "title": {
+                      "he": "ריאל בטיס",
+                      "en": "Real Betis",
+                      "ar": "ريال بيتيس",
+                      "digest": "4dd4094ea74f37d2fde1e6a9927bf1bf761184e2bac9765a8c7e0231e7f7a922"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831685936",
+                  "url": "/collections/real-sociedad",
+                  "fields": {
+                    "title": {
+                      "he": "ריאל סוסיאדד",
+                      "en": "Real Sociedad",
+                      "ar": "ريال سوسيداد",
+                      "digest": "01e82337b15a32a447ea773196d4412aa13d7a733258544be860d18321fd21d4"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831718704",
+                  "url": "/collections/villarreal",
+                  "fields": {
+                    "title": {
+                      "he": "ויאריאל",
+                      "en": "Villarreal",
+                      "ar": "فياريال",
+                      "digest": "30d5921607360b3615b937b148ac130c306d4b5b583a646792e9162a717bf700"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831751472",
+                  "url": "/collections/girona",
+                  "fields": {
+                    "title": {
+                      "he": "ג׳ירונה",
+                      "en": "Girona",
+                      "ar": "جيرونا",
+                      "digest": "19f5b23edd20db8a308ff66aa384c76e88b9c30ef625f21b547c3cc8d2cb6ee6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831784240",
+                  "url": "/collections/celta-vigo",
+                  "fields": {
+                    "title": {
+                      "he": "סלטה ויגו",
+                      "en": "Celta Vigo",
+                      "ar": "سيلتا فيغو",
+                      "digest": "c8400e7cfda59b89cf1e34ec115e3599bd6718bb435119a7bff8ff343140bd3c"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831817008",
+                  "url": "/collections/espanyol",
+                  "fields": {
+                    "title": {
+                      "he": "אספניול",
+                      "en": "Espanyol",
+                      "ar": "إسبانيول",
+                      "digest": "9b2bab97aaa431c853462dbcf538e2524faab4cb2025a4bbab41a4f0b7419729"
                     }
                   }
                 }
@@ -2816,6 +4156,78 @@
                       "digest": "58449537748947c61a7d05137e7142f3af838c1c7ef1cb80ee1a56fa54474913"
                     }
                   }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831849776",
+                  "url": "/collections/lazio",
+                  "fields": {
+                    "title": {
+                      "he": "לאציו",
+                      "en": "Lazio",
+                      "ar": "لاتسيو",
+                      "digest": "0114b8059a8ace48309991f034cb7ea7e786d6ef1fab87cd6aeccfe89cd4e617"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831882544",
+                  "url": "/collections/atalanta",
+                  "fields": {
+                    "title": {
+                      "he": "אטאלנטה",
+                      "en": "Atalanta",
+                      "ar": "أتالانتا",
+                      "digest": "dddf33644d10c2c2181bf58fb771403216aba8dce6bc91279921c5171c879736"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831915312",
+                  "url": "/collections/fiorentina",
+                  "fields": {
+                    "title": {
+                      "he": "פיורנטינה",
+                      "en": "Fiorentina",
+                      "ar": "فيورنتينا",
+                      "digest": "b09c36677d03d7372f7c5b2ea04a931eacbabb1b8aa20bf9a4d844f0fe471d1f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831948080",
+                  "url": "/collections/bologna",
+                  "fields": {
+                    "title": {
+                      "he": "בולוניה",
+                      "en": "Bologna",
+                      "ar": "بولونيا",
+                      "digest": "714d2f6947537d34d017a0bb50df15090f0345022d52a6ee45923cc28d93b7b3"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806831980848",
+                  "url": "/collections/torino",
+                  "fields": {
+                    "title": {
+                      "he": "טורינו",
+                      "en": "Torino",
+                      "ar": "تورينو",
+                      "digest": "7a9b2544ff572109222871fb07045c1fc1e8d1b0495d98f32fdb9dbfb11f29bb"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832013616",
+                  "url": "/collections/como",
+                  "fields": {
+                    "title": {
+                      "he": "קומו",
+                      "en": "Como",
+                      "ar": "كومو",
+                      "digest": "40ad3984984881c30556c0e580be01e82a0077ade724a2bbc5b66d09dfd2924e"
+                    }
+                  }
                 }
               ]
             },
@@ -2854,6 +4266,90 @@
                       "digest": "78ed15714a49a37d13d7c415d8dc3b269a99310dbc4b60225927f26cbc823719"
                     }
                   }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832046384",
+                  "url": "/collections/bayer-leverkusen",
+                  "fields": {
+                    "title": {
+                      "he": "באייר לברקוזן",
+                      "en": "Bayer Leverkusen",
+                      "ar": "باير ليفركوزن",
+                      "digest": "dbc241caa31e4ca5c71ba5585b17258c90d5e2f2af77c39e5066b3f671cad8c5"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832079152",
+                  "url": "/collections/rb-leipzig",
+                  "fields": {
+                    "title": {
+                      "he": "ר.ב. לייפציג",
+                      "en": "RB Leipzig",
+                      "ar": "آر بي لايبزيغ",
+                      "digest": "d85ec7da8c8acdc043cec4e0e5f1bbcd06b8873aab0654baa8423a303ba638d3"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832111920",
+                  "url": "/collections/eintracht-frankfurt",
+                  "fields": {
+                    "title": {
+                      "he": "איינטרכט פרנקפורט",
+                      "en": "Eintracht Frankfurt",
+                      "ar": "آينتراخت فرانكفورت",
+                      "digest": "38a2adf879233c8457e1ce84c36debf5686796ac4348463534f59747c860febd"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832144688",
+                  "url": "/collections/vfb-stuttgart",
+                  "fields": {
+                    "title": {
+                      "he": "שטוטגרט",
+                      "en": "VfB Stuttgart",
+                      "ar": "شتوتغارت",
+                      "digest": "51a0dc25bb966f79a08edcead154892c37ef977460ec285ab540928ee72a2a7b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832177456",
+                  "url": "/collections/borussia-monchengladbach",
+                  "fields": {
+                    "title": {
+                      "he": "בורוסיה מנשנגלדבאך",
+                      "en": "Borussia Mönchengladbach",
+                      "ar": "بوروسيا مونشنغلادباخ",
+                      "digest": "7cdd6cfeb16c644a8a3fd0227b92739541242c1a118db4b64c074d67dfcf7683"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832210224",
+                  "url": "/collections/werder-bremen",
+                  "fields": {
+                    "title": {
+                      "he": "ורדר ברמן",
+                      "en": "Werder Bremen",
+                      "ar": "فيردر بريمن",
+                      "digest": "58366efa4e0a241ccb2e25b9d9b0c04b9d416456c279246aa9a2a3b15a6cae3b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832242992",
+                  "url": "/collections/hamburger-sv",
+                  "fields": {
+                    "title": {
+                      "he": "המבורג",
+                      "en": "Hamburger SV",
+                      "ar": "هامبورغ",
+                      "digest": "41dad4b31b53c01f89805f586d88082e63c44f973f419acd30f77d5a7aaf64f8"
+                    }
+                  }
                 }
               ]
             },
@@ -2880,6 +4376,78 @@
                       "digest": "cd2a060f74678cd2338636241a77e686687581b5912059e0ebc80bcdc0e55226"
                     }
                   }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832275760",
+                  "url": "/collections/olympique-marseille",
+                  "fields": {
+                    "title": {
+                      "he": "מארסיי",
+                      "en": "Olympique de Marseille",
+                      "ar": "أولمبيك مارسيليا",
+                      "digest": "15df5a210f5f32df5811aa33a439a126bf4664f7f63ac5faf25da6b8f5c32532"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832308528",
+                  "url": "/collections/lyon",
+                  "fields": {
+                    "title": {
+                      "he": "ליון",
+                      "en": "Olympique Lyonnais",
+                      "ar": "ليون",
+                      "digest": "89af6b21b094bb8400fa99d67282b781abbbdd5e0b2134b98e4331f67530931f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832341296",
+                  "url": "/collections/monaco",
+                  "fields": {
+                    "title": {
+                      "he": "מונאקו",
+                      "en": "AS Monaco",
+                      "ar": "موناكو",
+                      "digest": "0d4a581d4e08aae90a6d6cfe1855e58a06c38a96076a1ecd3fea0feb89c58803"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832374064",
+                  "url": "/collections/lille",
+                  "fields": {
+                    "title": {
+                      "he": "ליל",
+                      "en": "Lille",
+                      "ar": "ليل",
+                      "digest": "d338383d2ddd33b27d19b5e535912ddd96e11b92852355eebea40dc5e3e5f427"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832406832",
+                  "url": "/collections/nice",
+                  "fields": {
+                    "title": {
+                      "he": "ניס",
+                      "en": "OGC Nice",
+                      "ar": "نيس",
+                      "digest": "da6856b0c00fc3a15a3226c8e1220589e11942ad3bbf106db579265aacd8e11d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832439600",
+                  "url": "/collections/lens",
+                  "fields": {
+                    "title": {
+                      "he": "לאנס",
+                      "en": "RC Lens",
+                      "ar": "لانس",
+                      "digest": "24b6bc822295a2d1a9e7ac727adfb7a65d96c5393921946e76ee989c7e32de38"
+                    }
+                  }
                 }
               ]
             },
@@ -2904,6 +4472,42 @@
                       "en": "FC Porto",
                       "ar": "بورتو",
                       "digest": "191b68cf503859b0deb1fd30258576b0966e3f26cb49884c5db5cbf6febc7b68"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832472368",
+                  "url": "/collections/benfica",
+                  "fields": {
+                    "title": {
+                      "he": "בנפיקה",
+                      "en": "Benfica",
+                      "ar": "بنفيكا",
+                      "digest": "0b0d507c1d33e3479e7a802a68996c38a72a635c76f0f3fa2110a533cb924914"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832505136",
+                  "url": "/collections/sporting-cp",
+                  "fields": {
+                    "title": {
+                      "he": "ספורטינג ליסבון",
+                      "en": "Sporting CP",
+                      "ar": "سبورتينغ لشبونة",
+                      "digest": "766e5328d74c257bbd836828cb8b7711b412078871c458dfda9589119d802792"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832537904",
+                  "url": "/collections/braga",
+                  "fields": {
+                    "title": {
+                      "he": "בראגה",
+                      "en": "SC Braga",
+                      "ar": "براغا",
+                      "digest": "6aa7806a33a599e6640edfc2ad6ce6c3ed8bc1fb47e87be95bcf36a99f19ce74"
                     }
                   }
                 }
@@ -2942,6 +4546,174 @@
                       "en": "Inter Miami",
                       "ar": "إنتر ميامي",
                       "digest": "74ab951e30d8f93fc4fe1c6dcf30f609320e82641b3068b773774a65bb34d6c3"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832570672",
+                  "url": "/collections/ajax",
+                  "fields": {
+                    "title": {
+                      "he": "אייאקס",
+                      "en": "Ajax",
+                      "ar": "أياكس",
+                      "digest": "77bcaa2cbb541a267578c4c85ad2bcdca96a1dbe6cc7bfea8a7eabdf3522436d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832603440",
+                  "url": "/collections/psv",
+                  "fields": {
+                    "title": {
+                      "he": "פ.ס.וו איינדהובן",
+                      "en": "PSV Eindhoven",
+                      "ar": "آيندهوفن",
+                      "digest": "5e54a94b12815600eee0f2990b46df6616e20f0395df4951f8a67667f2b3d28e"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832636208",
+                  "url": "/collections/feyenoord",
+                  "fields": {
+                    "title": {
+                      "he": "פיינורד",
+                      "en": "Feyenoord",
+                      "ar": "فينورد",
+                      "digest": "d32d88fb4438127ec3fe936d65f92a9bcae6e59c5fe958792538db0ad745b503"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832668976",
+                  "url": "/collections/celtic",
+                  "fields": {
+                    "title": {
+                      "he": "סלטיק",
+                      "en": "Celtic",
+                      "ar": "سلتيك",
+                      "digest": "e70ec8014eac219096241da6733e3570e704bd7a6374155548528548fc4b0fca"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832701744",
+                  "url": "/collections/rangers",
+                  "fields": {
+                    "title": {
+                      "he": "ריינג׳רס",
+                      "en": "Rangers",
+                      "ar": "رينجرز",
+                      "digest": "f1700c5e6c5a89d622e2f55757ba91f4636f691a2a4dc679cb665e39b905ae69"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832734512",
+                  "url": "/collections/galatasaray",
+                  "fields": {
+                    "title": {
+                      "he": "גלאטסראיי",
+                      "en": "Galatasaray",
+                      "ar": "غلطة سراي",
+                      "digest": "6ea64138cbff6613e0dab992c053627c0dfcfcb7ab062fca357d7fc15391154a"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832767280",
+                  "url": "/collections/fenerbahce",
+                  "fields": {
+                    "title": {
+                      "he": "פנרבחצ׳ה",
+                      "en": "Fenerbahçe",
+                      "ar": "فنربخشة",
+                      "digest": "0d0781000a12542f806ebbc6c0ed92e518b50d463af95600eb9a01338507b923"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832800048",
+                  "url": "/collections/besiktas",
+                  "fields": {
+                    "title": {
+                      "he": "בשיקטאש",
+                      "en": "Beşiktaş",
+                      "ar": "بشكتاش",
+                      "digest": "49c129c9a92c6d3ebac0e1d1e34f559fe6b35eedc6d4a0fbe1171c88ab120bff"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832832816",
+                  "url": "/collections/al-hilal",
+                  "fields": {
+                    "title": {
+                      "he": "אל הילאל",
+                      "en": "Al Hilal",
+                      "ar": "الهلال",
+                      "digest": "2032c5b4bfa70e3e2fba258144652cef5f0b95e26e0ba46bc5d95351d27c7609"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832865584",
+                  "url": "/collections/boca-juniors",
+                  "fields": {
+                    "title": {
+                      "he": "בוקה ג׳וניורס",
+                      "en": "Boca Juniors",
+                      "ar": "بوكا جونيورز",
+                      "digest": "a46bd29b12b9f6e89a14da0afd0294f67f4b074fded763b38d8fd58cb9caafcb"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832898352",
+                  "url": "/collections/river-plate",
+                  "fields": {
+                    "title": {
+                      "he": "ריבר פלייט",
+                      "en": "River Plate",
+                      "ar": "ريفر بليت",
+                      "digest": "38909dd0f594fa88161b33b4510b487f0828e658fd9434ba93ccdaa22a644c1d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832931120",
+                  "url": "/collections/flamengo",
+                  "fields": {
+                    "title": {
+                      "he": "פלמנגו",
+                      "en": "Flamengo",
+                      "ar": "فلامنغو",
+                      "digest": "5f93c81ee19e78d1cd4aaa7bd6f67553ff1ea47955abfcbfa6e00bac4bb3cd65"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832963888",
+                  "url": "/collections/palmeiras",
+                  "fields": {
+                    "title": {
+                      "he": "פלמייראס",
+                      "en": "Palmeiras",
+                      "ar": "بالميراس",
+                      "digest": "0e39bad79fbc494013f9331401de6d440b060cdc99d515957ec4bf92a8224576"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806832996656",
+                  "url": "/collections/corinthians",
+                  "fields": {
+                    "title": {
+                      "he": "קורינתיאנס",
+                      "en": "Corinthians",
+                      "ar": "كورينثيانز",
+                      "digest": "5690fab68f5071b4398fd9e11d202b041555dfc8bd008f7701cbe2bac35f81ad"
                     }
                   }
                 }
