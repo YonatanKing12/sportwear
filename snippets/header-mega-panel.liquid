@@ -5,8 +5,8 @@
     shortcuts into the collection (newest first, lowest price first);
   - middle: an image tile per sub-link (snippets/header-tile), with its first 8 third-level links
     under it and a "View all" link to the sub-link's own page when it has more;
-  - end: the header's "Mega menu promo" block for this collection, or the collection's first
-    3 products in its own sort order.
+  - end: the header's "Mega menu promo" block for this collection, or 3 of the collection's first
+    products in its own sort order, one per team.
   Every image is lazy, so nothing inside a closed panel is fetched.
 
   @param {link} link - The top-level menu link
@@ -209,8 +209,29 @@
         <div class="header-mega__aside">
           <p class="header-mega__label" id="{{ products_label_id }}">{{ 'header.mega.featured' | t }}</p>
           <ul class="header-mega__products" role="list" aria-labelledby="{{ products_label_id }}">
-            {%- comment -%} A for loop limit keeps the fetch to 3 products (no paginate here). {%- endcomment -%}
-            {%- for product in parent.products limit: 3 -%}
+            {%- liquid
+              # Up to 3 products, one per team (tag team:…), so the panel never shows three shirts of the
+              # same club. The loop limit keeps the fetch to the collection's first 12 (no paginate here).
+              assign shown_teams = ','
+              assign shown_count = 0
+            -%}
+            {%- for product in parent.products limit: 12 -%}
+              {%- liquid
+                assign product_team = ''
+                for tag in product.tags
+                  assign tag_prefix = tag | slice: 0, 5
+                  if tag_prefix == 'team:'
+                    assign product_team = tag
+                    break
+                  endif
+                endfor
+                assign team_key = ',' | append: product_team | append: ','
+                if product_team != blank and shown_teams contains team_key
+                  continue
+                endif
+                assign shown_teams = shown_teams | append: product_team | append: ','
+                assign shown_count = shown_count | plus: 1
+              -%}
               <li class="header-mega-product">
                 <div class="header-mega-product__media media-tile">
                   {%- render 'image',
@@ -226,6 +247,9 @@
                   {%- render 'price', product: product, class: 'header-mega-product__price' -%}
                 </div>
               </li>
+              {%- if shown_count >= 3 -%}
+                {%- break -%}
+              {%- endif -%}
             {%- endfor -%}
           </ul>
         </div>
