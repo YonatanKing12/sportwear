@@ -40,6 +40,7 @@
       "age_html": "Age {{ age }}",
       "kids_note_ages": "The age under each size is a guide only. The size guide shows the height and measurements for each size.",
       "kids_note_ages_short": "The age under each size is a guide only.",
+      "kids_note_letters": "These are kids' sizes, not adult sizes.",
       "unavailable": "Out of stock right now",
       "low_stock": {
         "one": "Only 1 left in this size",
@@ -111,6 +112,7 @@
       "measure_chest": "Chest: measure around the fullest part of your chest, under your arms, keeping the tape level.",
       "measure_length": "Length: measure from the highest point of your shoulder down to where you want the jersey to end.",
       "measure_tip": "Between two sizes, or prefer a looser fit? Choose the larger size.",
+      "kids_letters_html": "Sizes {{ first }} to {{ last }} on this item are kids' sizes, not adult sizes.",
       "help": "Need help choosing a size? Message us and we'll gladly help."
     },
     "recommendations": {

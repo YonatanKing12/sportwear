@@ -1,0 +1,16 @@
+{
+  "_note": "Size information of the supplier 968-NBA (Yupoo store 1464316803, \"968-NBA球衣批发\"), the source of the products the owner imported before (tag source:yupoo). That includes all 106 kids products imported before: 75 kids basketball jerseys (sw-jerseys-*) and 31 kids NFL hoodies (sw-hoodies-213102778-*), all sold in S, M, L, XL (query: tag:'audience:kids' AND tag:'source:yupoo'). Checked on 2026-09-27, after the owner saw kids basketball items with adult-looking sizes. S-XL are the supplier's own kids sizes: its kids hoodie album is titled \"2025款致敬卫衣童装齐全（S-XL）\" (kids hoodies, S-XL), and the size tags in its kids jersey photos read S, M or L. But the supplier publishes no size chart. None of the 75 kids jersey albums or the hoodie album holds one. The store has no size-chart album: searches for 尺码, 尺寸, 码 and size found none, and its 童装 (kids) category has 5 jersey albums only. Its contact page says nothing about sizes. So no age, height or measurement is known for these sizes, and the site shows none. Since 2026-09-27 the product page says they are kids' sizes (snippets/variant-picker.liquid, snippets/size-chart.liquid). Next step: when the owner gets the supplier's chart, or measures the garments, transcribe it under charts. Then create a sw_size_chart metaobject per chart (rows: size, age, height_cm, chest_width_cm, length_cm) and set sportwear.size_chart on the products; the age then shows under each size. jerseyxie's kids basketball chart (catalog/size-charts/jerseyxie.json) is another supplier's garment and is not used for these.",
+  "source": {
+    "store": "https://1464316803.x.yupoo.com",
+    "kids_category": "https://1464316803.x.yupoo.com/categories/3405234",
+    "kids_hoodie_album": "https://1464316803.x.yupoo.com/albums/213102778?uid=1",
+    "checked": "2026-09-27"
+  },
+  "products": {
+    "kids_basketball_jerseys": 75,
+    "kids_hoodies": 31,
+    "sizes": ["S", "M", "L", "XL"]
+  },
+  "requested": "2026-09-27: the owner got a message in Chinese for the supplier asking, for each kids size S-XL of the jerseys and the hoodies, the age, the height (cm), and the garment's length and chest width (cm).",
+  "charts": {}
+}

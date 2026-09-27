@@ -85,7 +85,7 @@
       },
       "sizes": {
         "title": "Adult and kids' sizes",
-        "text": "Adult sizes, and kids' sets in sizes 16\u00a0to\u00a028 (ages about 2\u00a0to\u00a013), all in one order."
+        "text": "Adult and kids' sizes in one order. In football, kids' sets come in sizes 16\u00a0to\u00a028 (ages about 2\u00a0to\u00a013)."
       },
       "delivery": {
         "title": "Delivery within 10 business days",
@@ -126,7 +126,7 @@
       },
       "sizing": {
         "question": "How do I choose the right size?",
-        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' items are sets of a jersey and shorts in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and the age is shown under each size. Kids' items are sold as separate products.</p>"
+        "answer_html": "<p>Check the size guide on the product page and compare it with a shirt that fits you well. Kids' football items are sets of a jersey and shorts in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and the age is shown under each size. Kids' basketball jerseys and hoodies come in kids' sizes S\u00a0to\u00a0XL. Kids' items are sold as separate products.</p>"
       },
       "payment": {
         "question": "How can I pay?",
@@ -155,7 +155,7 @@
     "adults_caption": "Adult size chart",
     "kids_caption": "Kids size chart",
     "adults_fallback": "Each product's size chart is on its page, next to the size picker.",
-    "kids_note": "Kids' items are sets of a jersey and shorts, in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013. On each product page, the age is shown under each size. Choose by your child's height, and if they're between two sizes, choose the larger one.",
+    "kids_note": "Kids' football sets (jersey and shorts) come in sizes 16\u00a0to\u00a028, for ages about 2\u00a0to\u00a013, and each set's page shows the age under each size. Kids' basketball jerseys and hoodies come in kids' sizes S\u00a0to\u00a0XL. If your child is between two sizes, choose the larger one.",
     "measure": {
       "heading": "How to measure",
       "intro": "The charts measure the garment itself, not the body. The easiest way is to measure a shirt that fits well and compare it with the chart.",

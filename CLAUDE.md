@@ -220,9 +220,12 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
   We offered to put the big clubs and the jerseys first
 - Connecting GitHub to Shopify, a one-time step for the development theme
-- The size chart of the products imported before (the owner will send it). Until then their 106 kids
-  products are sold in S–XL with no chart (the size guide shows how to measure), so a parent cannot tell
-  which size fits which age
+- The kids size chart of the products imported before. Their 106 kids products (75 basketball jerseys, 31 NFL
+  hoodies, all from the supplier 968-NBA) are sold in S–XL. Those are the supplier's own kids sizes (its kids
+  hoodie album says 童装 S-XL; the tags on its kids jerseys read S/M/L), but it publishes no chart, so a parent
+  cannot tell which size fits which age. The owner noticed this on 2026-09-27; we gave them a message in Chinese
+  asking the supplier for the chart (age, height, width, length for each size). Until it comes, the product page
+  says these are kids' sizes. Record and next steps: `catalog/size-charts/968-nba.json`
 - Products flagged for the owner:
   - The Bulls 23 print jersey (`sw-jerseys-158635085`) is an all-over Louis Vuitton monogram (a trademark risk:
     keep or hide).

@@ -5,6 +5,7 @@
   When the product's size chart (sportwear.size_chart) gives an age for a size, the main picker and the
   size sheet show it under the size ("22" over "age 7-8"), and the size's label (its accessible name)
   includes it. A product is a kids product when its sportwear.audience or its chart's audience is kids.
+  A kids product sized in letters (S ... XL) with no ages says under the sizes that they are kids' sizes.
   Sold-out sizes of single-option products stay visible but are disabled, struck through and announced
   as sold out. The same markup serves three places (context):
   - 'main': the picker in the product info column. The first option gets the "Size guide" button that
@@ -206,8 +207,10 @@
   {%- if is_kids and context != 'bar' -%}
     {%- liquid
       # "Sizes are ages in years" is only true of our age sizes (5-6 ... 13-14); sizes shown with their
-      # age get a note of their own, and other kids sizes none.
+      # age get a note of their own. Letter sizes on a kids product (the supplier's kids S ... XL, with no
+      # chart yet) look like adult sizes, so they say they are kids' sizes. Other kids sizes get no note.
       assign kids_note = ''
+      assign letter_sizes = 'XXS,XS,S,M,L,XL,XXL,2XL' | split: ','
       if show_ages
         if block.settings.show_size_guide
           assign kids_note = 'products.variant_picker.kids_note_ages' | t
@@ -220,6 +223,8 @@
         else
           assign kids_note = 'products.variant_picker.kids_note_short' | t
         endif
+      elsif letter_sizes contains first_value.name
+        assign kids_note = 'products.variant_picker.kids_note_letters' | t
       endif
     -%}
     {%- if kids_note != blank -%}

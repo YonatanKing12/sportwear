@@ -6,7 +6,8 @@
   2. Otherwise, for kids products (sportwear.audience = kids, or a kids chart without rows), the approximate
      height for each of our kids sizes (5-6 ... 13-14 = 116 ... 164 cm), limited to the sizes this product
      has. A kids product with none of those sizes (e.g. the supplier's 16-28) gets the guidance below.
-  3. Otherwise, short guidance on how to measure. No measurement is ever made up.
+  3. Otherwise, short guidance on how to measure. A kids product sized in letters (S ... XL) first says
+     these are kids' sizes. No measurement is ever made up.
 
   @param {product} product - The product
   @param {string} id - Unique id prefix for this instance
@@ -41,6 +42,18 @@
         assign matched = matched | plus: 1
       endif
     endfor
+  endif
+
+  # A kids product sized in letters (the supplier's kids S ... XL, no chart yet) reads like adult sizes,
+  # so the guide first says they are kids' sizes.
+  assign kids_letters = false
+  if matched == 0 and product_sizes != blank
+    assign letter_sizes = 'XXS,XS,S,M,L,XL,XXL,2XL' | split: ','
+    assign first_size = product_sizes | first
+    if letter_sizes contains first_size
+      assign kids_letters = true
+      assign last_size = product_sizes | last
+    endif
   endif
 -%}
 {%- if chart_table != blank -%}
@@ -79,6 +92,13 @@
   </div>
 {%- else -%}
   <div class="size-chart size-chart--guide">
+    {%- if kids_letters -%}
+      {%- capture first_html -%}<bdi dir="ltr">{{ first_size | escape }}</bdi>{%- endcapture -%}
+      {%- capture last_html -%}<bdi dir="ltr">{{ last_size | escape }}</bdi>{%- endcapture -%}
+      <p class="size-chart__kids-letters">
+        {{- 'products.size_chart.kids_letters_html' | t: first: first_html, last: last_html -}}
+      </p>
+    {%- endif -%}
     <{{ guide_tag }} class="size-chart__heading">{{ 'products.size_chart.measure_heading' | t }}</{{ guide_tag }}>
     <ul class="size-chart__tips">
       <li>{{ 'products.size_chart.measure_chest' | t }}</li>
@@ -172,6 +192,10 @@
   .size-chart__note {
     color: var(--color-muted);
     font-size: var(--text-sm);
+  }
+
+  .size-chart__kids-letters {
+    font-weight: 700;
   }
 
   .size-chart__heading {
