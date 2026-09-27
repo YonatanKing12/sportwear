@@ -620,8 +620,12 @@
     align-self: flex-start;
   }
 
+  /* The sheet takes its height from its content (capped by max-block-size), so the body's flex-basis
+     must be its content: with flex: 1 (a 0% basis in an auto-height column) Safari gave the body no
+     height, and iPhones showed the sheet without its sizes. It still shrinks and scrolls when capped. */
   .size-sheet__body {
-    flex: 1;
+    flex: 1 1 auto;
+    min-block-size: 0;
     padding-block: var(--space-3) var(--space-2);
     padding-inline: var(--space-5);
     overflow-y: auto;
