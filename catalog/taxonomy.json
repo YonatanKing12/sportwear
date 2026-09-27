@@ -404,7 +404,8 @@
       "he": "ניוקאסל",
       "en": "Newcastle United",
       "ar": "نيوكاسل يونايتد",
-      "leagues": ["premier-league"]
+      "leagues": ["premier-league"],
+      "code": "NEW"
     },
     "football:atletico-madrid": {
       "slug": "atletico-madrid",
@@ -460,7 +461,8 @@
       "he": "ר.ב. לייפציג",
       "en": "RB Leipzig",
       "ar": "آر بي لايبزيغ",
-      "leagues": ["bundesliga"]
+      "leagues": ["bundesliga"],
+      "code": "RBL"
     },
     "football:paris-saint-germain": {
       "slug": "paris-saint-germain",
@@ -474,28 +476,32 @@
       "he": "מארסיי",
       "en": "Olympique de Marseille",
       "ar": "أولمبيك مارسيليا",
-      "leagues": ["ligue-1"]
+      "leagues": ["ligue-1"],
+      "code": "OMA"
     },
     "football:benfica": {
       "slug": "benfica",
       "he": "בנפיקה",
       "en": "Benfica",
       "ar": "بنفيكا",
-      "leagues": ["primeira-liga"]
+      "leagues": ["primeira-liga"],
+      "code": "SLB"
     },
     "football:porto": {
       "slug": "porto",
       "he": "פורטו",
       "en": "FC Porto",
       "ar": "بورتو",
-      "leagues": ["primeira-liga"]
+      "leagues": ["primeira-liga"],
+      "code": "FCP"
     },
     "football:sporting-cp": {
       "slug": "sporting-cp",
       "he": "ספורטינג ליסבון",
       "en": "Sporting CP",
       "ar": "سبورتينغ لشبونة",
-      "leagues": ["primeira-liga"]
+      "leagues": ["primeira-liga"],
+      "code": "SCP"
     },
     "football:al-nassr": {
       "slug": "al-nassr",
@@ -551,14 +557,16 @@
       "he": "פלמייראס",
       "en": "Palmeiras",
       "ar": "بالميراس",
-      "leagues": ["brasileirao"]
+      "leagues": ["brasileirao"],
+      "code": "PAL"
     },
     "football:corinthians": {
       "slug": "corinthians",
       "he": "קורינתיאנס",
       "en": "Corinthians",
       "ar": "كورينثيانز",
-      "leagues": ["brasileirao"]
+      "leagues": ["brasileirao"],
+      "code": "COR"
     },
     "football:algeria": {
       "slug": "algeria",
@@ -1544,7 +1552,7 @@
     },
     "football:bayer-leverkusen": {
       "slug": "bayer-leverkusen",
-      "code": "B04",
+      "code": "LEV",
       "he": "באייר לברקוזן",
       "en": "Bayer Leverkusen",
       "ar": "باير ليفركوزن",

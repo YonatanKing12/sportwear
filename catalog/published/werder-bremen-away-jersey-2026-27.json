@@ -1,0 +1,134 @@
+{
+  "handle": "werder-bremen-away-jersey-2026-27",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Jersey",
+  "audience": "adult",
+  "size_chart": "jerseyxie-football-adult-fan",
+  "team": {
+    "slug": "werder-bremen",
+    "code": "SVW",
+    "he": "ורדר ברמן",
+    "en": "Werder Bremen",
+    "ar": "فيردر بريمن"
+  },
+  "leagues": ["bundesliga"],
+  "kit": "away",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצת חוץ ורדר ברמן 26/27",
+  "description_html_he": "<p>חולצת החוץ של ורדר ברמן לעונת 26/27, בגרסת אוהד.</p><ul><li>גרסת אוהד בגזרה נוחה, שרוול קצר</li><li>מידות S עד XL. טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצת חוץ ורדר ברמן 26/27 | SportWear",
+    "description_he": "חולצת החוץ של ורדר ברמן לעונת 26/27 בגרסת אוהד, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-FJ-SVW-A-2627-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-FJ-SVW-A-2627-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-FJ-SVW-A-2627-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-FJ-SVW-A-2627-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p2/studio/norm/werder-bremen-away-jersey-2026-27.png",
+      "alt_he": "חולצת חוץ ורדר ברמן 26/27 – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p2/studio/norm/werder-bremen-away-jersey-2026-27__back.png",
+      "alt_he": "חולצת חוץ ורדר ברמן 26/27 – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Werder Bremen Away Jersey 26/27",
+      "description_html": "<p>The Werder Bremen away jersey for the 26/27 season, fan version.</p><ul><li>Fan version with a comfortable fit, short sleeves</li><li>Sizes S to XL; the size chart is on this page</li></ul>",
+      "seo_title": "Werder Bremen Away Jersey 26/27 | SportWear",
+      "seo_description": "The Werder Bremen away jersey for the 26/27 season, fan version, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص فيردر بريمن الاحتياطي 26/27",
+      "description_html": "<p>القميص الاحتياطي لنادي فيردر بريمن لموسم 26/27، نسخة المشجعين.</p><ul><li>نسخة المشجعين بقصّة مريحة وأكمام قصيرة</li><li>المقاسات من S إلى XL، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "قميص فيردر بريمن الاحتياطي 26/27 | SportWear",
+      "seo_description": "القميص الاحتياطي لنادي فيردر بريمن لموسم 26/27، نسخة المشجعين، بمقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/252535950?uid=1",
+    "fetched_at": "2026-09-27T14:03:44Z",
+    "original_title": "26-27 Werder Bremen Away Cheap Soccer Jerseys Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:werder-bremen",
+    "league:bundesliga",
+    "kit:away",
+    "audience:adult",
+    "new",
+    "source:jerseyxie",
+    "album:252535950",
+    "season:2026-27",
+    "חולצה",
+    "חולצת כדורגל",
+    "jersey",
+    "football shirt",
+    "soccer jersey",
+    "قميص",
+    "werder bremen",
+    "bremen",
+    "فيردر بريمن",
+    "bundesliga",
+    "الدوري الألماني"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310241136944",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67859973734704",
+      "M": "gid://shopify/ProductVariant/67859973767472",
+      "L": "gid://shopify/ProductVariant/67859973800240",
+      "XL": "gid://shopify/ProductVariant/67859973833008"
+    },
+    "created_at": "2026-09-27T14:19:12Z"
+  }
+}

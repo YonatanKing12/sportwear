@@ -1,6 +1,14 @@
 {
   "_note": "English and Arabic titles of the 1,098 products imported before (tag source:yupoo), registered in Shopify on 2026-09-27 with translationsRegister (title and body_html in en and ar: 4,392 translations, read back with a bulk export: every value matches and none is outdated). Built by scripts/catalog/translate-titles.py from the Hebrew titles and catalog/classification.json; the description is the title plus the sizes line (and the few extra sentences listed in the script), in the same shape as the Hebrew one. When a Hebrew title changes, re-run the script on a fresh export and register that product again with the new digests.",
   "registered_at": "2026-09-27T00:05:00Z",
+  "updates": [
+    {
+      "at": "2026-09-27",
+      "products": 17,
+      "log": "catalog/published/city-edition-fixes-2026-09-27.json",
+      "what": "City Edition wording checked and fixed in 17 basketball jersey titles: he/en/ar updated here, en and ar re-registered for title and body_html (68 translations, read back: none outdated)."
+    }
+  ],
   "products": {
     "sw-jerseys-244984876": {
       "id": "gid://shopify/Product/15308538806576",
@@ -868,15 +876,15 @@
     },
     "sw-jerseys-183134202": {
       "id": "gid://shopify/Product/15308592316720",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק מהדורת עיר 2025",
-      "en": "Boston Celtics #9 Basketball Jersey – Green, City Edition 2025",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أخضر إصدار المدينة 2025"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק 2025",
+      "en": "Boston Celtics #9 Basketball Jersey – Green, 2025",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أخضر 2025"
     },
     "sw-jerseys-182546009": {
       "id": "gid://shopify/Product/15308592349488",
-      "he": "גופיית כדורסל ניו יורק ניקס מספר 32 כחול מהדורת עיר 2025",
-      "en": "New York Knicks #32 Basketball Jersey – Blue, City Edition 2025",
-      "ar": "قميص كرة سلة نيويورك نيكس رقم 32 أزرق إصدار المدينة 2025"
+      "he": "גופיית כדורסל ניו יורק ניקס מספר 32 כחול 2025",
+      "en": "New York Knicks #32 Basketball Jersey – Blue, 2025",
+      "ar": "قميص كرة سلة نيويورك نيكس رقم 32 أزرق 2025"
     },
     "sw-jerseys-182157340": {
       "id": "gid://shopify/Product/15308592415024",
@@ -976,9 +984,9 @@
     },
     "sw-jerseys-182545944": {
       "id": "gid://shopify/Product/15308593660208",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 20 כחול מהדורת עיר",
-      "en": "Philadelphia 76ers #20 Basketball Jersey – Blue, City Edition",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 20 أزرق إصدار المدينة"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 20 כחול",
+      "en": "Philadelphia 76ers #20 Basketball Jersey – Blue",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 20 أزرق"
     },
     "sw-jerseys-182157284": {
       "id": "gid://shopify/Product/15308593725744",
@@ -1156,9 +1164,9 @@
     },
     "sw-jerseys-188305232": {
       "id": "gid://shopify/Product/15308596937008",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב מהדורת עיר 2025",
-      "en": "Los Angeles Lakers #77 Basketball Jersey – Yellow, City Edition 2025",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أصفر إصدار المدينة 2025"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב 2025",
+      "en": "Los Angeles Lakers #77 Basketball Jersey – Yellow, 2025",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أصفر 2025"
     },
     "sw-jerseys-188304310": {
       "id": "gid://shopify/Product/15308596969776",
@@ -1270,9 +1278,9 @@
     },
     "sw-jerseys-188303519": {
       "id": "gid://shopify/Product/15308597920048",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן מהדורת עיר 2025",
-      "en": "Golden State Warriors #10 Basketball Jersey – White, City Edition 2025",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 10 أبيض إصدار المدينة 2025"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן 2025",
+      "en": "Golden State Warriors #10 Basketball Jersey – White, 2025",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 10 أبيض 2025"
     },
     "sw-jerseys-183134274": {
       "id": "gid://shopify/Product/15308597952816",
@@ -1864,9 +1872,9 @@
     },
     "sw-jerseys-164994797": {
       "id": "gid://shopify/Product/15308608962864",
-      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 מהדורת עיר",
-      "en": "Minnesota Timberwolves #5 Basketball Jersey – City Edition",
-      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 إصدار المدينة"
+      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור",
+      "en": "Minnesota Timberwolves #5 Basketball Jersey – Black",
+      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود"
     },
     "sw-jerseys-164339343": {
       "id": "gid://shopify/Product/15308608995632",
@@ -2374,9 +2382,9 @@
     },
     "sw-jerseys-149292072": {
       "id": "gid://shopify/Product/15308617679152",
-      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור 2024",
-      "en": "Dallas Mavericks #77 Basketball Jersey – Black, 2024",
-      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أسود 2024"
+      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור מהדורת עיר 2024",
+      "en": "Dallas Mavericks #77 Basketball Jersey – Black, City Edition 2024",
+      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أسود إصدار المدينة 2024"
     },
     "sw-jerseys-149291244": {
       "id": "gid://shopify/Product/15308617744688",
@@ -2542,9 +2550,9 @@
     },
     "sw-jerseys-149291561": {
       "id": "gid://shopify/Product/15308623937840",
-      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה",
-      "en": "Los Angeles Clippers #13 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 أزرق داكن"
+      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה מהדורת עיר",
+      "en": "Los Angeles Clippers #13 Basketball Jersey – Dark Blue, City Edition",
+      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 أزرق داكن إصدار المدينة"
     },
     "sw-jerseys-149290678": {
       "id": "gid://shopify/Product/15308624036144",
@@ -2764,9 +2772,9 @@
     },
     "sw-jerseys-149584815": {
       "id": "gid://shopify/Product/15308631703856",
-      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 שחור מהדורת עיר 2024",
-      "en": "Los Angeles Clippers #1 Basketball Jersey – Black, City Edition 2024",
-      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 1 أسود إصدار المدينة 2024"
+      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 שחור 2024",
+      "en": "Los Angeles Clippers #1 Basketball Jersey – Black, 2024",
+      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 1 أسود 2024"
     },
     "sw-football-253986162": {
       "id": "gid://shopify/Product/15308631769392",
@@ -2776,9 +2784,9 @@
     },
     "sw-jerseys-149291809": {
       "id": "gid://shopify/Product/15308631834928",
-      "he": "גופיית כדורסל פיניקס סאנס מספר 35 סגול 2024",
-      "en": "Phoenix Suns #35 Basketball Jersey – Purple, 2024",
-      "ar": "قميص كرة سلة فينيكس صنز رقم 35 بنفسجي 2024"
+      "he": "גופיית כדורסל פיניקס סאנס מספר 35 סגול מהדורת עיר 2024",
+      "en": "Phoenix Suns #35 Basketball Jersey – Purple, City Edition 2024",
+      "ar": "قميص كرة سلة فينيكس صنز رقم 35 بنفسجي إصدار المدينة 2024"
     },
     "sw-football-252374837": {
       "id": "gid://shopify/Product/15308631867696",
@@ -3484,9 +3492,9 @@
     },
     "sw-jerseys-134342815": {
       "id": "gid://shopify/Product/15308648317232",
-      "he": "גופיית כדורסל דאלאס מאבריקס מספר 2 כחול",
-      "en": "Dallas Mavericks #2 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة دالاس مافريكس رقم 2 أزرق"
+      "he": "גופיית כדורסל דאלאס מאבריקס מספר 2 כחול מהדורת עיר",
+      "en": "Dallas Mavericks #2 Basketball Jersey – Blue, City Edition",
+      "ar": "قميص كرة سلة دالاس مافريكس رقم 2 أزرق إصدار المدينة"
     },
     "sw-jerseys-132029421": {
       "id": "gid://shopify/Product/15308648382768",
@@ -4030,9 +4038,9 @@
     },
     "sw-jerseys-126878218": {
       "id": "gid://shopify/Product/15308657951024",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 45 לבן 2023",
-      "en": "Cleveland Cavaliers #45 Basketball Jersey – White, 2023",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 45 أبيض 2023"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 45 לבן מהדורת עיר 2023",
+      "en": "Cleveland Cavaliers #45 Basketball Jersey – White, City Edition 2023",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 45 أبيض إصدار المدينة 2023"
     },
     "sw-jerseys-126717939": {
       "id": "gid://shopify/Product/15308658016560",
@@ -4060,9 +4068,9 @@
     },
     "sw-jerseys-125774716": {
       "id": "gid://shopify/Product/15308658278704",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס לבן 22/23",
-      "en": "Los Angeles Lakers Basketball Jersey – White, 22/23",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز أبيض 22/23"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס לבן מהדורת עיר 22/23",
+      "en": "Los Angeles Lakers Basketball Jersey – White, City Edition 22/23",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز أبيض إصدار المدينة 22/23"
     },
     "sw-jerseys-125238663": {
       "id": "gid://shopify/Product/15308658344240",
@@ -4642,9 +4650,9 @@
     },
     "sw-jerseys-138859651": {
       "id": "gid://shopify/Product/15308672270640",
-      "he": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול מהדורת עיר 2023",
-      "en": "New York Knicks #11 Basketball Jersey – Blue, City Edition 2023",
-      "ar": "قميص كرة سلة نيويورك نيكس رقم 11 أزرق إصدار المدينة 2023"
+      "he": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+      "en": "New York Knicks #11 Basketball Jersey – Blue, 2023",
+      "ar": "قميص كرة سلة نيويورك نيكس رقم 11 أزرق 2023"
     },
     "sw-jerseys-137504628": {
       "id": "gid://shopify/Product/15308672336176",
@@ -5014,9 +5022,9 @@
     },
     "sw-jerseys-116023995": {
       "id": "gid://shopify/Product/15308677906736",
-      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 תכלת 2022",
-      "en": "Los Angeles Clippers #13 Basketball Jersey – Light Blue, 2022",
-      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 سماوي 2022"
+      "he": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 תכלת מהדורת עיר 2022",
+      "en": "Los Angeles Clippers #13 Basketball Jersey – Light Blue, City Edition 2022",
+      "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 سماوي إصدار المدينة 2022"
     },
     "sw-jerseys-110523943": {
       "id": "gid://shopify/Product/15308677939504",
@@ -5362,9 +5370,9 @@
     },
     "sw-jerseys-92424166": {
       "id": "gid://shopify/Product/15308691112240",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 11 שחור מהדורת עיר 2021",
-      "en": "Boston Celtics #11 Basketball Jersey – Black, City Edition 2021",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 11 أسود إصدار المدينة 2021"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 11 שחור 2021",
+      "en": "Boston Celtics #11 Basketball Jersey – Black, 2021",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 11 أسود 2021"
     },
     "sw-jerseys-90916654": {
       "id": "gid://shopify/Product/15308691145008",
@@ -5776,9 +5784,9 @@
     },
     "sw-jerseys-125774963": {
       "id": "gid://shopify/Product/15308696781104",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן 2023",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – White, 2023",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض 2023"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן מהדורת עיר 2023",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – White, City Edition 2023",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض إصدار المدينة 2023"
     },
     "sw-jerseys-105900794": {
       "id": "gid://shopify/Product/15308696813872",

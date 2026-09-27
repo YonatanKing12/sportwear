@@ -1,0 +1,400 @@
+{
+  "_note": "City Edition check of 2026-09-27, approved by the owner in the conversation ('כן, לתקן'). The photo reviewers who paired the supplier's shorts with the store's jerseys flagged 18 basketball jerseys whose City Edition wording looked wrong (scratchpad xk/findings.json). sw-jerseys-152407516 was skipped: its flag is a note about a supplier misprint (MINNESTOA), not a title issue. Each of the other 17 was checked against the store photos and the supplier's Yupoo album (1464316803.x.yupoo.com/albums/<album>), and against the published NBA uniform sets by season (City, Icon, Association, Statement and Classic editions, confirmed with team and league sources: NBA.com, SportsLogos.net and the teams' announcements). Signals used: the wordmark and trim, the Nike swoosh versus the Jordan Jumpman (Statement Editions since 2020-21), the vintage NIKE logo (Classic Editions), the text above the jock tag, sponsor and season patches (#6 Bill Russell patch = 2022-23, NBA 75 logo = 2021-22). All 17 flags were right: 8 titles gained 'מהדורת עיר' and 9 lost it (the Timberwolves Statement also got its colour, שחור, as in the earlier scan's fixes). Only the City Edition words changed; years and colours stay as they were. For each fix the same words changed in the description's first line and in every photo's alt text (as in scan-fixes-2026-09-27.json); tags were re-derived with scripts/catalog/classify.mjs (only style:city-edition and the 'city edition' keyword moved; a run on the old titles reported 0 changes); sportwear.styles was set to [\"city-edition\"] on the 8 and deleted on the 9 that have no style left; en and ar title and body_html were rebuilt with scripts/catalog/translate-titles.py (0 unknown words) and registered with translationsRegister, and catalog/translations/older-products.json was updated. Nothing else changed: price, stock, status, handle, channels, complements and set tags are as before. Every Admin API call followed graphql_schema, validate_graphql_codeblocks, then execution.",
+  "summary": {
+    "flagged": 18,
+    "skipped": 1,
+    "checked": 17,
+    "titles_fixed": 17,
+    "city_edition_added": 8,
+    "city_edition_removed": 9,
+    "unchanged": 0,
+    "alt_texts_updated": 37,
+    "products_retagged": 17,
+    "styles_metafields_set": 8,
+    "styles_metafields_deleted": 9,
+    "translations_registered": 68
+  },
+  "skipped": [
+    {
+      "handle": "sw-jerseys-152407516",
+      "why": "Timberwolves City Edition jersey: the supplier's front photo reads MINNESTOA (misprint); the store shows only its back. Pairing kept (same design)."
+    }
+  ],
+  "jerseys": [
+    {
+      "id": "gid://shopify/Product/15308657951024",
+      "handle": "sw-jerseys-126878218",
+      "flag": "Cavs #45 titled 'לבן 2023' is the 'The Land' City Edition design (reviewer).",
+      "before": "גופיית כדורסל קליבלנד קאבלירס מספר 45 לבן 2023",
+      "after": "גופיית כדורסל קליבלנד קאבלירס מספר 45 לבן מהדורת עיר 2023",
+      "why": "The white 'THE LAND' jersey with the Cavaliers' 'C' ball, tan and light-blue trim and 'For the Love. For the Land.' above the jock tag is the Cavaliers' 2022-23 City Edition (the #6 Bill Russell patch dates it to 2022-23; MITCHELL 45 on the back). The supplier's album title leaves the edition out.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567150948656"
+      },
+      "translations": {
+        "en": "Cleveland Cavaliers #45 Basketball Jersey – White, City Edition 2023",
+        "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 45 أبيض إصدار المدينة 2023"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308608962864",
+      "handle": "sw-jerseys-164994797",
+      "flag": "Timberwolves #5 titled 'מהדורת עיר' looks like the Jordan Statement design (reviewer).",
+      "before": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 מהדורת עיר",
+      "after": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור",
+      "why": "A Jordan-brand jersey, so a Statement Edition, not a City Edition (City Editions carry the Nike swoosh): the Timberwolves' 2022-23 to 2025-26 'Shadow Grey' Statement with the Aurora Green stripe across the chest and the fang-shaped M and V in TIMBERWOLVES (EDWARDS 5). The title had no colour; the jersey is black in every photo. Another Wolves #5 product with a different black design (sw-jerseys-164118532) has the same title words.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562636796208"
+      },
+      "translations": {
+        "en": "Minnesota Timberwolves #5 Basketball Jersey – Black",
+        "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308672270640",
+      "handle": "sw-jerseys-138859651",
+      "flag": "Knicks #11 titled 'כחול מהדורת עיר 2023' shows the standard blue Knicks design (reviewer).",
+      "before": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול מהדורת עיר 2023",
+      "after": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+      "why": "The regular royal-blue Icon: orange NEW YORK with white and silver trim, orange collar, Nike swoosh, #6 patch of 2022-23 (BRUNSON 11). The Knicks' 2022-23 City Edition is black and the 2023-24 one blue with pinstripes. The supplier's album title calls it City Edition; the photos do not.",
+      "description_changed": true,
+      "alt_texts_updated": 2,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562660749616"
+      },
+      "translations": {
+        "en": "New York Knicks #11 Basketball Jersey – Blue, 2023",
+        "ar": "قميص كرة سلة نيويورك نيكس رقم 11 أزرق 2023"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308592349488",
+      "handle": "sw-jerseys-182546009",
+      "flag": "Knicks #32 titled 'כחול מהדורת עיר 2025' shows the standard blue Knicks design (reviewer).",
+      "before": "גופיית כדורסל ניו יורק ניקס מספר 32 כחול מהדורת עיר 2025",
+      "after": "גופיית כדורסל ניו יורק ניקס מספר 32 כחול 2025",
+      "why": "The same royal-blue Icon (TOWNS 32, Abu Dhabi patch, 'Once a Knick. Always a Knick.' above the jock tag). The Knicks' 2024-25 City Edition is white with pinstripes.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562932724016"
+      },
+      "translations": {
+        "en": "New York Knicks #32 Basketball Jersey – Blue, 2025",
+        "ar": "قميص كرة سلة نيويورك نيكس رقم 32 أزرق 2025"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308596937008",
+      "handle": "sw-jerseys-188305232",
+      "flag": "Lakers jersey titled City Edition 2025 shows the standard gold Icon design (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב מהדורת עיר 2025",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב 2025",
+      "why": "The regular gold Icon: purple LAKERS script outlined in white, purple collar, 'Leave a Legacy' above the jock tag (DONCIC 77, bibigo patch). The Lakers' 2024-25 City Edition is the black-to-purple 'Lake Show' and the 2025-26 one the black 'California Dream'.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562879344944"
+      },
+      "translations": {
+        "en": "Los Angeles Lakers #77 Basketball Jersey – Yellow, 2025",
+        "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أصفر 2025"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308658278704",
+      "handle": "sw-jerseys-125774716",
+      "flag": "Lakers white jersey matches the white City Edition shorts (purple panels) but is not titled City Edition (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס לבן 22/23",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס לבן מהדורת עיר 22/23",
+      "why": "White jersey with 'Los Angeles' in purple outlined in black, black numbers, black-purple-black trim and no gold: the Lakers' 2022-23 City Edition (#6 patch; JAMES 6 on the back). Same design as sw-jerseys-138859708, already titled City Edition, and as the white City Edition shorts it is paired with.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567150981424"
+      },
+      "translations": {
+        "en": "Los Angeles Lakers Basketball Jersey – White, City Edition 22/23",
+        "ar": "قميص كرة سلة لوس أنجلوس ليكرز أبيض إصدار المدينة 22/23"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308696781104",
+      "handle": "sw-jerseys-125774963",
+      "flag": "Lakers white jersey matches the white City Edition shorts (purple panels) but is not titled City Edition (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן 2023",
+      "after": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן מהדורת עיר 2023",
+      "why": "The same 2022-23 City Edition 'Los Angeles' design (BRYANT 24, #6 patch) in the store photo and in four of the six supplier photos. The supplier's album also shows a different white LAKERS jersey with gold side panels (its first two photos); the store shows only the City Edition.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151014192"
+      },
+      "translations": {
+        "en": "Los Angeles Lakers #24 Basketball Jersey – White, City Edition 2023",
+        "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض إصدار المدينة 2023"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308592316720",
+      "handle": "sw-jerseys-183134202",
+      "flag": "Celtics jersey titled City Edition 2025 shows the standard green BOSTON jersey (reviewer).",
+      "before": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק מהדורת עיר 2025",
+      "after": "גופיית כדורסל בוסטון סלטיקס מספר 9 ירוק 2025",
+      "why": "The regular green Icon: BOSTON in white across the chest (the Celtics' Icon wordmark since 2017-18), Vistaprint patch, RONDO 9. The Celtics' 2024-25 City Edition is black with Action Green lettering and the 2025-26 one white and gold.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562932855088"
+      },
+      "translations": {
+        "en": "Boston Celtics #9 Basketball Jersey – Green, 2025",
+        "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أخضر 2025"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308631703856",
+      "handle": "sw-jerseys-149584815",
+      "flag": "Clippers jersey titled City Edition 2024 is the old black LA design (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 שחור מהדורת עיר 2024",
+      "after": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 1 שחור 2024",
+      "why": "Black jersey with the 2015-24 'LAC' logo, a red-white-blue collar and striped side panels: the Clippers' former Statement design, not a City Edition (2022-23 City: black 'Los Angeles' mosaic; 2023-24: navy 'Clips'; 2024-25: pacific-blue 'Clips'). HARDEN 1. The year is the supplier's season label and stays.",
+      "description_changed": true,
+      "alt_texts_updated": 2,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562795262256"
+      },
+      "translations": {
+        "en": "Los Angeles Clippers #1 Basketball Jersey – Black, 2024",
+        "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 1 أسود 2024"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308691112240",
+      "handle": "sw-jerseys-92424166",
+      "flag": "Celtics jersey titled City Edition 2021 is a Nike black jersey with green side panels (reviewer).",
+      "before": "גופיית כדורסל בוסטון סלטיקס מספר 11 שחור מהדורת עיר 2021",
+      "after": "גופיית כדורסל בוסטון סלטיקס מספר 11 שחור 2021",
+      "why": "Black jersey with green CELTICS, green side panels, Nike swoosh and the GE patch (IRVING 11): the Celtics' black Statement Edition of the Nike set introduced in 2017-18, not a City Edition. The year is the supplier's label and stays.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562587087152"
+      },
+      "translations": {
+        "en": "Boston Celtics #11 Basketball Jersey – Black, 2021",
+        "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 11 أسود 2021"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308623937840",
+      "handle": "sw-jerseys-149291561",
+      "flag": "Clippers jersey is a City Edition design but the title does not say so (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה",
+      "after": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה מהדורת עיר",
+      "why": "Navy 'Clips' wordmark with a basketball on the i, light-blue and black trim and Jonas Wood's basketball-and-plant drawings at the jock tag: the Clippers' 2023-24 City Edition, the same design as sw-jerseys-152007283 and sw-jerseys-149584887. GEORGE 13: Paul George still played for the Clippers that season, so the player tag stays.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151046960"
+      },
+      "translations": {
+        "en": "Los Angeles Clippers #13 Basketball Jersey – Dark Blue, City Edition",
+        "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 أزرق داكن إصدار المدينة"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308677906736",
+      "handle": "sw-jerseys-116023995",
+      "flag": "Clippers jersey is a City Edition design but the title does not say so (reviewer).",
+      "before": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 תכלת 2022",
+      "after": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 תכלת מהדורת עיר 2022",
+      "why": "Pacific-blue jersey with the 'Clippers' script in white outlined in orange, orange-and-white trim, maritime signal flags above the jock tag, the iridescent swoosh and the NBA 75 logo: the Clippers' 2021-22 City Edition (GEORGE 13), paired with the matching City Edition shorts.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151079728"
+      },
+      "translations": {
+        "en": "Los Angeles Clippers #13 Basketball Jersey – Light Blue, City Edition 2022",
+        "ar": "قميص كرة سلة لوس أنجلوس كليبرز رقم 13 سماوي إصدار المدينة 2022"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308617679152",
+      "handle": "sw-jerseys-149292072",
+      "flag": "Mavericks jersey is a City Edition design but the title does not say so (reviewer).",
+      "before": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור 2024",
+      "after": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור מהדורת עיר 2024",
+      "why": "Black jersey with MAVS in white outlined in royal blue, Leon Bridges' signature above the jock tag and 'For All of Dallas Fort Worth' below it: the Mavericks' 2023-24 City Edition ('Mavs x Bridges'), the same design as sw-jerseys-151489449 (DONCIC 77).",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151112496"
+      },
+      "translations": {
+        "en": "Dallas Mavericks #77 Basketball Jersey – Black, City Edition 2024",
+        "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أسود إصدار المدينة 2024"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308648317232",
+      "handle": "sw-jerseys-134342815",
+      "flag": "Mavericks jersey is a City Edition design but the title does not say so (reviewer).",
+      "before": "גופיית כדורסל דאלאס מאבריקס מספר 2 כחול",
+      "after": "גופיית כדורסל דאלאס מאבריקס מספר 2 כחול מהדורת עיר",
+      "why": "Royal blue with the retro 'Dallas' wordmark in white with green inline shadows, white-and-green side stripes, MFFL at the hem and the #6 patch: the Mavericks' 2022-23 City Edition (IRVING 2), the same design as sw-jerseys-126415536.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151145264"
+      },
+      "translations": {
+        "en": "Dallas Mavericks #2 Basketball Jersey – Blue, City Edition",
+        "ar": "قميص كرة سلة دالاس مافريكس رقم 2 أزرق إصدار المدينة"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308631834928",
+      "handle": "sw-jerseys-149291809",
+      "flag": "Suns jersey is a City Edition design (El Valle) but the title does not say so (reviewer).",
+      "before": "גופיית כדורסל פיניקס סאנס מספר 35 סגול 2024",
+      "after": "גופיית כדורסל פיניקס סאנס מספר 35 סגול מהדורת עיר 2024",
+      "why": "Purple 'El Valle' script, sunset-gradient numbers and lowrider pinstripe side panels: the Suns' 2023-24 City Edition (DURANT 35), the same design as sw-jerseys-149880003.",
+      "description_changed": true,
+      "alt_texts_updated": 3,
+      "tags": {
+        "add": ["style:city-edition", "city edition"],
+        "remove": []
+      },
+      "styles_metafield": {
+        "set": ["city-edition"],
+        "metafield": "gid://shopify/Metafield/189567151178032"
+      },
+      "translations": {
+        "en": "Phoenix Suns #35 Basketball Jersey – Purple, City Edition 2024",
+        "ar": "قميص كرة سلة فينيكس صنز رقم 35 بنفسجي إصدار المدينة 2024"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308593660208",
+      "handle": "sw-jerseys-182545944",
+      "flag": "76ers jersey titled City Edition is the regular blue PHILA design (reviewer).",
+      "before": "גופיית כדורסל פילדלפיה 76׳ מספר 20 כחול מהדורת עיר",
+      "after": "גופיית כדורסל פילדלפיה 76׳ מספר 20 כחול",
+      "why": "The regular blue Icon: PHILA in block letters with a red drop shadow, stars on the side panels and the gold 'Brotherly Love' above the jock tag (McCAIN 20). The 76ers' 2024-25 City Edition is white ('Sixers', a Spectrum tribute) and the 2025-26 one navy.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562929348912"
+      },
+      "translations": {
+        "en": "Philadelphia 76ers #20 Basketball Jersey – Blue",
+        "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 20 أزرق"
+      }
+    },
+    {
+      "id": "gid://shopify/Product/15308597920048",
+      "handle": "sw-jerseys-188303519",
+      "flag": "Warriors jersey titled City Edition 2025 matches the supplier 2025 retro (Classic) shorts (reviewer).",
+      "before": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן מהדורת עיר 2025",
+      "after": "גופיית כדורסל גולדן סטייט ווריורס מספר 10 לבן 2025",
+      "why": "White jersey with red WARRIORS in a blue block shadow, red-and-yellow collar and the vintage NIKE logo (BUTLER III 10): the Warriors' 2024-25 Classic Edition, a Philadelphia Warriors tribute, not a City Edition (the 2025-26 City Edition is the cream 'The Town'). No 'רטרו' added: the catalog names Nike Classic Editions by colour, like this same jersey with #30 (sw-jerseys-178550688, 'לבן 2025'), and keeps 'רטרו' for Mitchell & Ness and adidas throwbacks.",
+      "description_changed": true,
+      "alt_texts_updated": 1,
+      "tags": {
+        "add": [],
+        "remove": ["city edition", "style:city-edition"]
+      },
+      "styles_metafield": {
+        "deleted": "gid://shopify/Metafield/189562817773872"
+      },
+      "translations": {
+        "en": "Golden State Warriors #10 Basketball Jersey – White, 2025",
+        "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 10 أبيض 2025"
+      }
+    }
+  ],
+  "verification": {
+    "admin": "Read back: the 17 titles and handles, status ACTIVE, sportwear.styles on 8 and none on 9; translatableContent digests equal the SHA-256 of the new Hebrew title and description; all 68 en/ar translations outdated: false.",
+    "storefront": "sfgzdp-1m.myshopify.com /products/<handle>.js, /en/… and /ar/…: title, description, photo alt texts and tags match for all 17 in he, en and ar; price ₪149 and the 4 variants unchanged.",
+    "collections": "/collections/city-edition (tag style:city-edition) holds the 8 and none of the 9 (176 products).",
+    "filters": "The 'סגנון' storefront filter (filter.p.m.sportwear.styles=city-edition) on each team collection shows the 8 and none of the 9; the product changes after metafieldsSet re-indexed them, so no sw-reindex pass was needed."
+  },
+  "for_the_owner": [
+    "sw-jerseys-125774963 (Lakers #24, white City Edition 2022-23): the supplier's album mixes it with a different white LAKERS jersey with gold side panels. When ordering from the supplier, ask for the 'Los Angeles' City Edition shown on the site.",
+    "sw-jerseys-125774716 (Lakers white City Edition 22/23) shows JAMES 6 on the back but its title has no number. Adding 'מספר 6' would also give it the LeBron James tag and filter value. Not changed: it was not part of this fix."
+  ]
+}

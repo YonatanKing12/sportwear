@@ -9,7 +9,7 @@ ids.json:  {"<product handle>": "gid://shopify/Product/…"} for the products th
 Every product is created as DRAFT (the catalog rule). It carries the Hebrew texts, the single מידה option, one
 variant per size with its SKU, price, 5 units at the shop's location (tracked, no overselling), the photos with
 their Hebrew alt texts, and the sportwear metafields the storefront reads: the filter fields (audience,
-team_handle, league_handle, styles, player), the size chart and the set pieces (complements).
+team_handle, league_handle, kit, styles, player), the size chart and the set pieces (complements).
 """
 import json
 import sys
@@ -36,6 +36,8 @@ def build(product, urls, ids):
         metafield('league_handle', 'single_line_text_field', product['leagues'][0]),
         metafield('source_url', 'url', product['source']['url']),
     ]
+    if product.get('kit'):
+        fields.append(metafield('kit', 'single_line_text_field', product['kit']))
     if styles:
         fields.append(metafield('styles', 'list.single_line_text_field', json.dumps(styles)))
     if players:
