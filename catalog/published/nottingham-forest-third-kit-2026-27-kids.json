@@ -1,0 +1,174 @@
+{
+  "handle": "nottingham-forest-third-kit-2026-27-kids",
+  "status": "published_draft",
+  "sport": "football",
+  "product_type": "Football Kit",
+  "audience": "kids",
+  "size_chart": "jerseyxie-football-kids-set",
+  "team": {
+    "slug": "nottingham-forest",
+    "code": "NFO",
+    "he": "נוטינגהאם פורסט",
+    "en": "Nottingham Forest",
+    "ar": "نوتينغهام فورست"
+  },
+  "leagues": ["premier-league"],
+  "kit": "third",
+  "season": "26/27",
+  "vendor": "SportWear",
+  "title_he": "חולצה שלישית ומכנס נוטינגהאם פורסט 26/27 – ילדים",
+  "description_html_he": "<p>החולצה השלישית של נוטינגהאם פורסט לילדים לעונת 26/27, בסט עם המכנס התואם.</p><ul><li>סט של חולצה ומכנס, גרסת אוהד</li><li>מידות 16 עד 28 (גיל 2 עד 13). טבלת המידות מופיעה בעמוד</li></ul>",
+  "seo": {
+    "title_he": "חולצה שלישית ומכנס נוטינגהאם פורסט 26/27 – ילדים | SportWear",
+    "description_he": "החולצה השלישית והמכנס של נוטינגהאם פורסט לילדים לעונת 26/27, במידות 16 עד 28."
+  },
+  "variants": [
+    {
+      "size": "16",
+      "source_size_label": "16",
+      "sku": "SW-FK-NFO-T-2627-K-16",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "18",
+      "source_size_label": "18",
+      "sku": "SW-FK-NFO-T-2627-K-18",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "20",
+      "source_size_label": "20",
+      "sku": "SW-FK-NFO-T-2627-K-20",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "22",
+      "source_size_label": "22",
+      "sku": "SW-FK-NFO-T-2627-K-22",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "24",
+      "source_size_label": "24",
+      "sku": "SW-FK-NFO-T-2627-K-24",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "26",
+      "source_size_label": "26",
+      "sku": "SW-FK-NFO-T-2627-K-26",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "28",
+      "source_size_label": "28",
+      "sku": "SW-FK-NFO-T-2627-K-28",
+      "barcode": null,
+      "price": 99,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p6/studio/norm/nottingham-forest-third-kit-2026-27-kids.png",
+      "alt_he": "חולצה שלישית ומכנס נוטינגהאם פורסט 26/27 – ילדים – חזית",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/w2/p6/studio/norm/nottingham-forest-third-kit-2026-27-kids__back.png",
+      "alt_he": "חולצה שלישית ומכנס נוטינגהאם פורסט 26/27 – ילדים – גב",
+      "view": "back"
+    }
+  ],
+  "translations": {
+    "en": {
+      "title": "Nottingham Forest Third Kit 26/27 – Kids",
+      "description_html": "<p>The Nottingham Forest third kit for kids (26/27 season): the jersey with its matching shorts.</p><ul><li>A set of a jersey and shorts, fan version</li><li>Sizes 16 to 28 (ages 2 to 13); the size chart is on this page</li></ul>",
+      "seo_title": "Nottingham Forest Third Kit 26/27 – Kids | SportWear",
+      "seo_description": "The Nottingham Forest third kit for kids (26/27 season): jersey and shorts, sizes 16 to 28."
+    },
+    "ar": {
+      "title": "طقم نوتينغهام فورست الثالث 26/27 – أطفال",
+      "description_html": "<p>الطقم الثالث لنادي نوتينغهام فورست للأطفال لموسم 26/27: القميص مع الشورت المطابق.</p><ul><li>طقم من قميص وشورت، نسخة المشجعين</li><li>المقاسات من 16 إلى 28 (من عمر 2 إلى 13 سنة)، وجدول المقاسات في هذه الصفحة</li></ul>",
+      "seo_title": "طقم نوتينغهام فورست الثالث 26/27 – أطفال | SportWear",
+      "seo_description": "الطقم الثالث لنادي نوتينغهام فورست للأطفال لموسم 26/27: قميص وشورت، بمقاسات من 16 إلى 28."
+    }
+  },
+  "source": {
+    "url": "https://jerseyxie.x.yupoo.com/albums/256403142?uid=1",
+    "fetched_at": "2026-09-27T14:32:49Z",
+    "original_title": "26-27 Nottingham Forest Third Kids Cheap Soccer Jerseys and shorts Yupoo",
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (design/imagery/README.md)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:football",
+    "team:nottingham-forest",
+    "league:premier-league",
+    "kit:third",
+    "audience:kids",
+    "new",
+    "source:jerseyxie",
+    "album:256403142",
+    "season:2026-27",
+    "סט כדורגל",
+    "סט ילדים",
+    "kit",
+    "football kit",
+    "kids kit",
+    "طقم",
+    "طقم كرة قدم",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "nottingham forest",
+    "forest",
+    "نوتينغهام فورست",
+    "premier league",
+    "الدوري الإنجليزي"
+  ],
+  "shopify": {
+    "product_id": "gid://shopify/Product/15310263189808",
+    "variant_ids": {
+      "16": "gid://shopify/ProductVariant/67860128235824",
+      "18": "gid://shopify/ProductVariant/67860128268592",
+      "20": "gid://shopify/ProductVariant/67860128301360",
+      "22": "gid://shopify/ProductVariant/67860128334128",
+      "24": "gid://shopify/ProductVariant/67860128366896",
+      "26": "gid://shopify/ProductVariant/67860128399664",
+      "28": "gid://shopify/ProductVariant/67860128432432"
+    },
+    "created_at": "2026-09-27T14:49:03Z"
+  }
+}

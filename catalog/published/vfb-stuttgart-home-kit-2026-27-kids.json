@@ -169,6 +169,10 @@
       "26": "gid://shopify/ProductVariant/67859972686128",
       "28": "gid://shopify/ProductVariant/67859972718896"
     },
-    "created_at": "2026-09-27T14:18:19Z"
+    "created_at": "2026-09-27T14:18:19Z",
+    "translations_registered": {
+      "en": "2026-09-27T14:54:07Z",
+      "ar": "2026-09-27T14:54:07Z"
+    }
   }
 }
