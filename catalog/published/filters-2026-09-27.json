@@ -1,0 +1,576 @@
+{
+  "_note": "Storefront-filter data written on 2026-09-27 (catalog/README.md, 'מסננים באתר'). Source: the storefront's /products.json (1,226 Online Store products; the demo product is not on the channel). Undo: delete the metafields by key (or the definitions), and tagsRemove the kit tags below.",
+  "definitions": {
+    "created": {
+      "sportwear.team_handle": "gid://shopify/MetafieldDefinition/278039757104",
+      "sportwear.league_handle": "gid://shopify/MetafieldDefinition/278039789872",
+      "sportwear.styles": "gid://shopify/MetafieldDefinition/278039822640",
+      "sportwear.player": "gid://shopify/MetafieldDefinition/278039855408",
+      "shop sportwear.filter_names": "gid://shopify/MetafieldDefinition/278039888176"
+    },
+    "updated": {
+      "sportwear.audience": "choices adult, kids + women; name 'למי (Audience)'; admin-filterable",
+      "sportwear.kit": "name 'סוג חולצה (Kit)'; admin-filterable"
+    }
+  },
+  "shop_metafield": {
+    "id": "gid://shopify/Metafield/189562572308784",
+    "owner": "gid://shopify/Shop/99967467824",
+    "value": "scripts/lib/filter-names.mjs output, 136 teams, 19 leagues, 66 players, 3 audiences, 6 kits, 3 styles, 5 product types"
+  },
+  "product_metafields": {
+    "products": 1226,
+    "metafields_written": 4785,
+    "per_key": {
+      "audience": 1226,
+      "team_handle": 1221,
+      "league_handle": 1204,
+      "kit": 192,
+      "styles": 380,
+      "player": 562
+    },
+    "requests": "24 aliased metafieldsSet calls (8 x 25 metafields each), 0 userErrors",
+    "gaps": {
+      "no_team": [
+        "sw-jerseys-89381412",
+        "sw-jerseys-106292062",
+        "sw-football-217853848",
+        "sw-jerseys-121071914",
+        "sw-football-222641859"
+      ],
+      "no_league": [
+        "sw-jerseys-96835282",
+        "sw-jerseys-100146890",
+        "sw-jerseys-125774208",
+        "sw-jerseys-89381412",
+        "sw-jerseys-89669213",
+        "sw-jerseys-90021077",
+        "sw-jerseys-110047699",
+        "sw-jerseys-135857131",
+        "sw-jerseys-122738447",
+        "sw-jerseys-123864404",
+        "sw-jerseys-102486969",
+        "sw-jerseys-87652346",
+        "sw-football-217853848",
+        "sw-jerseys-135857311",
+        "sw-jerseys-134343761",
+        "sw-jerseys-110047649",
+        "sw-jerseys-90178409",
+        "sw-football-222641859",
+        "sw-jerseys-164995032",
+        "sw-jerseys-178551405",
+        "sw-jerseys-223293431",
+        "sw-jerseys-223293392"
+      ],
+      "kit_unknown": [
+        "sw-football-185463670 (חולצת כדורגל ריאל מדריד 24/25)",
+        "sw-football-187085262 (חולצת כדורגל יובנטוס 25/26)",
+        "sw-football-217853848 (חולצת כדורגל עם הדפס מריה חום 25/26)",
+        "sw-football-222641859 (חולצת כדורגל עם הדפס מריה שחור 25/26)"
+      ]
+    }
+  },
+  "kit_tags_added": {
+    "count": 64,
+    "note": "Football shirts imported before wave 1 had no kit: tag; the kit came from the Hebrew title",
+    "products": [
+      {
+        "handle": "sw-football-185358484",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185358720",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185358821",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185358891",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185463491",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185463551",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-185463604",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185463732",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-185463781",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-185463841",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185463886",
+        "tag": "kit:training"
+      },
+      {
+        "handle": "sw-football-185463949",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185464004",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185464045",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185464092",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185464242",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185464301",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-185464391",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-185539542",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-185539995",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-185540241",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-188076699",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-189822349",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-189836665",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-191110409",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-192193619",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-192924917",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-193714762",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-194076048",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-195660276",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-196896372",
+        "tag": "kit:special"
+      },
+      {
+        "handle": "sw-football-197365438",
+        "tag": "kit:fourth"
+      },
+      {
+        "handle": "sw-football-199305007",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-199574589",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-200627024",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-201569025",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-202596160",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-204029898",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-206087167",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-207236419",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-208155397",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-210067033",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-212657534",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-212930310",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-215168375",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-218848575",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-218913663",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-221883773",
+        "tag": "kit:fourth"
+      },
+      {
+        "handle": "sw-football-222643012",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-223763898",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-228361436",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-233520444",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-236063085",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-238620266",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-239331208",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-240291494",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-242180581",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-246424483",
+        "tag": "kit:fourth"
+      },
+      {
+        "handle": "sw-football-247596274",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-249247076",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-250582309",
+        "tag": "kit:home"
+      },
+      {
+        "handle": "sw-football-252374837",
+        "tag": "kit:away"
+      },
+      {
+        "handle": "sw-football-253986162",
+        "tag": "kit:third"
+      },
+      {
+        "handle": "sw-football-250152251",
+        "tag": "kit:away"
+      }
+    ]
+  },
+  "verification": {
+    "method": "productsCount(query: 'metafields.sportwear.<key>:<value>') for every value, against the plan (the demo product adds 1 to audience:adult and kit:home)",
+    "values_checked": 222,
+    "mismatches": []
+  },
+  "expected_counts": {
+    "audience": {
+      "adult": 1029,
+      "kids": 166,
+      "women": 31
+    },
+    "team_handle": {
+      "tottenham-hotspur": 5,
+      "spain": 6,
+      "real-madrid": 11,
+      "portugal": 4,
+      "paris-saint-germain": 7,
+      "netherlands": 4,
+      "napoli": 4,
+      "morocco": 3,
+      "manchester-united": 6,
+      "manchester-city": 7,
+      "maccabi-haifa": 2,
+      "italy": 4,
+      "israel": 2,
+      "inter-milan": 4,
+      "inter-miami": 5,
+      "hapoel-tel-aviv": 1,
+      "hapoel-petah-tikva": 3,
+      "germany": 6,
+      "france": 4,
+      "england": 4,
+      "croatia": 3,
+      "chelsea": 5,
+      "brazil": 5,
+      "borussia-dortmund": 4,
+      "belgium": 4,
+      "bayern-munich": 7,
+      "barcelona": 10,
+      "atletico-madrid": 6,
+      "as-roma": 7,
+      "arsenal": 8,
+      "argentina": 4,
+      "al-nassr": 5,
+      "ac-milan": 7,
+      "boston-celtics": 47,
+      "los-angeles-lakers": 167,
+      "orlando-magic": 12,
+      "space-jam": 3,
+      "chicago-bulls": 84,
+      "denver-nuggets": 23,
+      "phoenix-suns": 31,
+      "philadelphia-76ers": 46,
+      "miami-heat": 43,
+      "san-antonio-spurs": 27,
+      "brooklyn-nets": 27,
+      "detroit-pistons": 24,
+      "memphis-grizzlies": 22,
+      "bape": 7,
+      "milwaukee-bucks": 23,
+      "charlotte-hornets": 16,
+      "north-carolina": 4,
+      "atlanta-falcons": 3,
+      "denver-broncos": 3,
+      "kansas-city-chiefs": 3,
+      "new-england-patriots": 3,
+      "san-francisco-49ers": 3,
+      "arizona-cardinals": 3,
+      "dallas-cowboys": 3,
+      "jacksonville-jaguars": 3,
+      "minnesota-vikings": 3,
+      "pittsburgh-steelers": 3,
+      "los-angeles-clippers": 27,
+      "dallas-mavericks": 37,
+      "golden-state-warriors": 48,
+      "cincinnati-bengals": 3,
+      "houston-texans": 3,
+      "los-angeles-rams": 3,
+      "new-york-jets": 3,
+      "tennessee-titans": 3,
+      "chicago-bears": 3,
+      "green-bay-packers": 3,
+      "los-angeles-chargers": 3,
+      "new-york-giants": 3,
+      "buffalo-bills": 3,
+      "cleveland-browns": 3,
+      "indianapolis-colts": 3,
+      "miami-dolphins": 3,
+      "philadelphia-eagles": 3,
+      "washington-commanders": 3,
+      "tampa-bay-buccaneers": 3,
+      "carolina-panthers": 3,
+      "detroit-lions": 3,
+      "las-vegas-raiders": 3,
+      "new-orleans-saints": 3,
+      "seattle-seahawks": 3,
+      "seattle-supersonics": 11,
+      "atlanta-hawks": 9,
+      "cleveland-cavaliers": 19,
+      "minnesota-timberwolves": 21,
+      "metropolitans-92": 1,
+      "portland-trail-blazers": 6,
+      "houston-rockets": 12,
+      "new-york-knicks": 25,
+      "mexico": 3,
+      "japan": 1,
+      "algeria": 1,
+      "juventus": 2,
+      "all-star": 11,
+      "st-vincent-st-mary": 2,
+      "toronto-raptors": 10,
+      "oklahoma-city-thunder": 9,
+      "utah-jazz": 6,
+      "slam-dunk": 3,
+      "sacramento-kings": 8,
+      "club-america": 1,
+      "pumas-unam": 1,
+      "monterrey": 1,
+      "benfica": 1,
+      "colombia": 1,
+      "senegal": 3,
+      "red-bull-salzburg": 1,
+      "santos": 1,
+      "washington-wizards": 8,
+      "new-orleans-pelicans": 2,
+      "south-korea": 2,
+      "porto": 2,
+      "sporting-cp": 1,
+      "al-ittihad": 1,
+      "corinthians": 1,
+      "georgetown": 2,
+      "indiana-pacers": 15,
+      "lower-merion": 1,
+      "venezuela": 1,
+      "olympique-marseille": 1,
+      "palmeiras": 1,
+      "ivory-coast": 1,
+      "newcastle-united": 1,
+      "usa": 15,
+      "indiana-fever": 8,
+      "indiana-state": 1,
+      "iowa": 3,
+      "dallas-wings": 3,
+      "duke": 1,
+      "new-york-liberty": 2
+    },
+    "league_handle": {
+      "premier-league": 32,
+      "national-teams": 81,
+      "la-liga": 27,
+      "ligue-1": 6,
+      "serie-a": 24,
+      "israeli-premier-league": 6,
+      "mls": 5,
+      "bundesliga": 11,
+      "saudi-pro-league": 6,
+      "nba": 878,
+      "ncaa": 11,
+      "nfl": 93,
+      "liga-mx": 3,
+      "primeira-liga": 4,
+      "austrian-bundesliga": 1,
+      "brasileirao": 3,
+      "wnba": 13
+    },
+    "kit": {
+      "third": 36,
+      "home": 74,
+      "away": 72,
+      "special": 6,
+      "training": 1,
+      "fourth": 3
+    },
+    "styles": {
+      "retro": 200,
+      "city-edition": 143,
+      "special": 65
+    },
+    "player": {
+      "lebron-james": 49,
+      "magic-johnson": 4,
+      "shaquille-oneal": 10,
+      "derrick-rose": 4,
+      "jaylen-brown": 6,
+      "nikola-jokic": 11,
+      "steve-nash": 1,
+      "joel-embiid": 7,
+      "anthony-davis": 10,
+      "kobe-bryant": 55,
+      "tim-duncan": 6,
+      "kyrie-irving": 19,
+      "michael-jordan": 52,
+      "scottie-pippen": 5,
+      "grant-hill": 4,
+      "james-harden": 5,
+      "ja-morant": 17,
+      "giannis-antetokounmpo": 13,
+      "kevin-durant": 23,
+      "devin-booker": 8,
+      "dennis-rodman": 9,
+      "klay-thompson": 4,
+      "shawn-kemp": 4,
+      "stephen-curry": 26,
+      "jayson-tatum": 12,
+      "jimmy-butler": 11,
+      "lamelo-ball": 12,
+      "gary-payton": 3,
+      "paul-pierce": 2,
+      "tyrese-maxey": 6,
+      "allen-iverson": 16,
+      "damian-lillard": 5,
+      "larry-bird": 13,
+      "tyler-herro": 8,
+      "trae-young": 7,
+      "isiah-thomas": 1,
+      "paul-george": 4,
+      "wilt-chamberlain": 3,
+      "shai-gilgeous-alexander": 6,
+      "dwyane-wade": 12,
+      "victor-wembanyama": 12,
+      "jalen-brunson": 7,
+      "kawhi-leonard": 8,
+      "kareem-abdul-jabbar": 2,
+      "zion-williamson": 2,
+      "luka-doncic": 24,
+      "charles-barkley": 1,
+      "john-stockton": 1,
+      "jamal-murray": 1,
+      "dirk-nowitzki": 1,
+      "hakeem-olajuwon": 1,
+      "chris-paul": 1,
+      "reggie-miller": 4,
+      "anthony-edwards": 12,
+      "patrick-ewing": 2,
+      "paige-bueckers": 3,
+      "vince-carter": 4,
+      "ray-allen": 1,
+      "kevin-garnett": 1,
+      "penny-hardaway": 1
+    }
+  }
+}
