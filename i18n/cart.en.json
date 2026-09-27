@@ -15,7 +15,8 @@
       "title": "Your cart is empty",
       "text": "You haven't added anything yet",
       "button": "Start shopping",
-      "free_shipping": "Free shipping on orders over {{ amount }}"
+      "free_shipping": "Free shipping on orders over {{ amount }}",
+      "categories": "Or pick a category"
     },
     "free_shipping": {
       "remaining_html": "Only <strong>{{ amount }}</strong> more for free shipping",
@@ -46,11 +47,17 @@
       "label": "Order note",
       "placeholder": "For example: delivery instructions"
     },
+    "help": {
+      "whatsapp": "Questions before you pay? Message us on WhatsApp",
+      "whatsapp_message": "Hi, I have a question before I order"
+    },
     "summary": {
       "heading": "Order summary",
       "subtotal": "Subtotal",
+      "total": "Total",
       "shipping": "Shipping",
       "free": "Free",
+      "savings": "You save",
       "taxes_included": "Prices include VAT.",
       "taxes_at_checkout": "Taxes are calculated at checkout.",
       "shipping_at_checkout": "Shipping is calculated at checkout."

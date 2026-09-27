@@ -188,6 +188,10 @@
         },
         "cart_show_note": {
           "label": "Allow order notes"
+        },
+        "payment_icons": {
+          "label": "Payment logos",
+          "info": "Shopify's official logos, shown in this order in the cart, on the product page and in the footer. Names separated by commas: visa, master, american_express, diners_club, apple_pay, google_pay, bit, paypal. List only the methods your payment provider takes. Empty = the methods turned on in Settings > Payments."
         }
       }
     },

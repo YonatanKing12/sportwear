@@ -302,14 +302,18 @@
           {%- render 'localization-switcher', id: 'FooterLocalization' -%}
         {%- endif -%}
         {%- if section.settings.show_payment_icons -%}
-          {%- if shop.enabled_payment_types.size > 0 -%}
+          {%- capture payment_icons -%}
+            {%- render 'payment-icons',
+              id_prefix: 'Footer',
+              class: 'footer__payment-list',
+              item_class: 'footer__payment-item',
+              icon_class: 'footer__payment-icon'
+            -%}
+          {%- endcapture -%}
+          {%- if payment_icons != blank -%}
             <div class="footer__payments">
               <h2 class="visually-hidden">{{ 'footer.payment_methods' | t }}</h2>
-              <ul class="footer__payment-list" role="list">
-                {%- for type in shop.enabled_payment_types -%}
-                  <li class="footer__payment-item">{{ type | payment_type_svg_tag: class: 'footer__payment-icon' }}</li>
-                {%- endfor -%}
-              </ul>
+              {{ payment_icons }}
             </div>
           {%- else -%}
             <p class="footer__secure">

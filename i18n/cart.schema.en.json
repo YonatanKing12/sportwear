@@ -15,6 +15,10 @@
         "empty_collection": {
           "label": "Empty cart button link",
           "info": "Pick a collection. Leave empty to link to all products."
+        },
+        "empty_menu": {
+          "label": "Empty cart links",
+          "info": "Its top links show as chips in the empty cart, straight into a category. Leave empty to show none."
         }
       }
     },
@@ -30,6 +34,10 @@
         "empty_collection": {
           "label": "Empty cart and \"Continue shopping\" link",
           "info": "Pick a collection. Leave empty to link to all products."
+        },
+        "empty_menu": {
+          "label": "Empty cart links",
+          "info": "Its top links show as chips in the empty cart, straight into a category. Leave empty to show none."
         }
       }
     }

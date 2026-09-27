@@ -19,7 +19,8 @@
       "title": "سلة التسوق فارغة",
       "text": "لم تضيفوا أي منتج بعد",
       "button": "تسوّقوا الآن",
-      "free_shipping": "توصيل مجاني للطلبات التي تزيد على {{ amount }}"
+      "free_shipping": "توصيل مجاني للطلبات التي تزيد على {{ amount }}",
+      "categories": "أو اختاروا فئة"
     },
     "free_shipping": {
       "remaining_html": "تبقّى <strong>{{ amount }}</strong> فقط للحصول على توصيل مجاني",
@@ -50,11 +51,17 @@
       "label": "ملاحظة الطلب",
       "placeholder": "مثلًا: تعليمات التوصيل"
     },
+    "help": {
+      "whatsapp": "سؤال قبل الدفع؟ راسلونا على واتساب",
+      "whatsapp_message": "مرحبًا، لدي سؤال قبل أن أطلب"
+    },
     "summary": {
       "heading": "ملخص الطلب",
       "subtotal": "المجموع الفرعي",
+      "total": "المجموع",
       "shipping": "التوصيل",
       "free": "مجاني",
+      "savings": "توفيركم",
       "taxes_included": "الأسعار تشمل ضريبة القيمة المضافة.",
       "taxes_at_checkout": "تُحسب الضرائب عند الدفع.",
       "shipping_at_checkout": "تُحسب رسوم التوصيل عند الدفع."

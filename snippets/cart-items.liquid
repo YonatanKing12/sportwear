@@ -19,6 +19,7 @@
   assign image_sizes = sizes | default: '88px'
   assign eager_count = eager | default: 0
   assign set_offer_title = shop.metafields.sportwear.set_offer.value.discount_title
+  assign size_key = 'size'
 -%}
 <ul class="cart-items" role="list" data-cart-items>
   {%- for item in cart.items -%}
@@ -35,6 +36,26 @@
         when 'kids'
           assign audience_label = 'cart.item.audience.kids' | t
       endcase
+
+      # The age of a kids size from the product's size chart ("22" → "age 7-8"), as under the sizes
+      # on the product page, so a parent can check the size here too. Row keys are read through a
+      # variable: "size" must be looked up as a key, never as the built-in .size (count).
+      assign size_age = ''
+      assign size_chart = item.product.metafields.sportwear.size_chart.value
+      if size_chart != blank and item.product.has_only_default_variant == false
+        assign chart_rows = size_chart.table.value.rows
+        if chart_rows == blank
+          assign chart_rows = size_chart.table.value
+        endif
+        assign size_value = item.variant.option1 | append: '' | strip | downcase
+        for row in chart_rows
+          assign row_key = row[size_key] | append: '' | strip | downcase
+          if row_key == size_value and row.age != blank
+            assign size_age = row.age | append: '' | strip
+            break
+          endif
+        endfor
+      endif
 
       assign compare_line_price = item.original_line_price
       if item.variant.compare_at_price > item.original_price
@@ -100,6 +121,11 @@
                 <span class="cart-item__separator" aria-hidden="true">·</span>
               {% endif -%}
               <span>{% render 'option-name', name: option.name %}: <bdi>{{ option.value | escape }}</bdi></span>
+              {%- if forloop.first and size_age != blank %}
+                <span class="cart-item__separator" aria-hidden="true">·</span>
+                {%- capture age_html -%}<bdi dir="ltr">{{ size_age | escape }}</bdi>{%- endcapture -%}
+                <span>{{ 'products.variant_picker.age_html' | t: age: age_html }}</span>
+              {% endif -%}
             {%- endfor -%}
           {%- endunless -%}
         {%- endcapture -%}

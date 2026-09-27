@@ -1,11 +1,11 @@
 {%- doc -%}
   Free shipping in the cart drawer and on the cart page. When every order ships free (the
   free_shipping_threshold theme setting is 0, so free-shipping-cents prints -1), a short line says
-  so. With a positive threshold (₪), a progress bar shows how much is left before the order ships
-  free, or a confirmation once it does (the cart total after discounts is compared with the
-  threshold). Renders nothing when the setting is empty, when the cart is empty, or when no
-  free-shipping promise applies to the visitor (see free-shipping-cents). The bar is decorative
-  (aria-hidden): the text carries the information.
+  so, with the delivery time (up to 10 business days). With a positive threshold (₪), a progress bar
+  shows how much is left before the order ships free, or a confirmation once it does (the cart total
+  after discounts is compared with the threshold). Renders nothing when the setting is empty, when the
+  cart is empty, or when no free-shipping promise applies to the visitor (see free-shipping-cents).
+  The bar is decorative (aria-hidden): the text carries the information.
 
   @param {object} cart - The cart object
   @param {string} [class] - Extra classes on the wrapper
@@ -42,7 +42,10 @@
   <div class="free-shipping free-shipping--all{% if class != blank %} {{ class }}{% endif %}">
     <p class="free-shipping__message">
       <span class="free-shipping__check">{% render 'icon', name: 'check', size: 14 %}</span>
-      {{- 'cart.free_shipping.all' | t -}}
+      <span class="free-shipping__text">
+        {{- 'cart.free_shipping.all' | t -}}
+        &ensp;<span class="free-shipping__delivery">{{ 'products.shipping_note.delivery_short' | t }}</span>
+      </span>
     </p>
   </div>
 {%- elsif show_bar -%}

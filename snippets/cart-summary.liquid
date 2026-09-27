@@ -1,13 +1,27 @@
 {%- doc -%}
-  Cart totals and checkout, for the drawer footer and the cart page summary: cart-level discounts,
-  a "Shipping: Free" row when every order ships free or once the free-shipping threshold is reached
-  (see free-shipping-cents), the subtotal after discounts, the taxes/shipping note, the checkout
-  button (submits the enclosing cart form with name="checkout"), payment icons and a secure-payment
-  line. Render it inside the cart form (action routes.cart_url, method post).
+  Cart totals and checkout, for the drawer footer and the cart page summary, in the order a shopper
+  checks them right before paying:
+  - cart-level discounts, the shipping row ("Free" when every order ships free or the threshold is
+    reached; see free-shipping-cents) and "You save" (sale prices below their compare-at price plus
+    every discount, shown only when there is a saving);
+  - the amount: "Total" when nothing is added at checkout (taxes included and free shipping),
+    otherwise "Subtotal" with a note on what checkout adds;
+  - the checkout button (submits the enclosing cart form with name="checkout"; assets/cart.js shows a
+    spinner while the checkout loads);
+  - a trust row (returns within 45 days, stock in Israel, secure payment: the store's own terms, as on
+    the product page), the payment logos (snippets/payment-icons.liquid), and a WhatsApp link when
+    Theme settings > Contact has a number.
+  Render it inside the cart form (action routes.cart_url, method post).
+
+  In the drawer (compact) the shipping row is left out, since the free-shipping line at the top of the
+  drawer already says it, "incl. VAT" sits next to "Total" instead of on a line of its own, and the
+  trust row keeps returns and secure payment (one line on a 375px phone): the lines above the footer
+  stay in view on small phones.
 
   @param {object} cart - The cart object
-  @param {string} id_prefix - Unique prefix; keeps the payment icon title ids unique on the page
+  @param {string} id_prefix - Unique prefix; keeps the payment logos' title ids unique on the page
   @param {boolean} [express] - Show the store's accelerated checkout buttons when it has any (default false)
+  @param {boolean} [compact] - The drawer footer (default false)
 
   @example
   {% render 'cart-summary', cart: cart, id_prefix: 'CartDrawer' %}
@@ -25,9 +39,28 @@
     assign free_shipping = true
   endif
 
-  # payment_type_svg_tag prints fixed title ids (pi-visa, ...). Prefix them so the drawer and the
-  # cart page can both show the icons without duplicate ids.
-  assign payment_id_attribute = '"' | append: id_prefix | append: '-pi-'
+  # What the shopper saves: sale prices below the compare-at price, plus every discount (automatic
+  # ones such as the set price, and codes).
+  assign savings = cart.total_discount
+  for item in cart.items
+    if item.variant.compare_at_price > item.original_price
+      assign line_saving = item.variant.compare_at_price | minus: item.original_price | times: item.quantity
+      assign savings = savings | plus: line_saving
+    endif
+  endfor
+
+  # Nothing is added at checkout when prices include taxes and shipping is free: then it is the total.
+  assign final_total = false
+  if cart.taxes_included and free_shipping
+    assign final_total = true
+  endif
+
+  assign payment_label = 'cart.payment_methods' | t
+
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
+  assign whatsapp_digits = whatsapp_digits | strip
 -%}
 <div class="cart-summary">
   <dl class="cart-summary__rows">
@@ -43,7 +76,7 @@
         </dd>
       </div>
     {%- endfor -%}
-    {%- if free_shipping -%}
+    {%- if free_shipping and compact != true -%}
       <div class="cart-summary__row">
         <dt class="cart-summary__label">{{ 'cart.summary.shipping' | t }}</dt>
         <dd class="cart-summary__value">
@@ -51,31 +84,56 @@
         </dd>
       </div>
     {%- endif -%}
+    {%- if savings > 0 -%}
+      <div class="cart-summary__row cart-summary__row--savings">
+        <dt class="cart-summary__label">{{ 'cart.summary.savings' | t }}</dt>
+        <dd class="cart-summary__value">
+          <span class="badge badge--highlight">
+            <bdi>{{- savings | money_without_trailing_zeros -}}</bdi>
+          </span>
+        </dd>
+      </div>
+    {%- endif -%}
     <div class="cart-summary__row cart-summary__row--total">
-      <dt class="cart-summary__label">{{ 'cart.summary.subtotal' | t }}</dt>
+      <dt class="cart-summary__label">
+        {%- if final_total -%}
+          {{- 'cart.summary.total' | t -}}
+          {%- if compact -%}
+            <span class="cart-summary__label-note">{{ 'products.price.tax_included' | t }}</span>
+          {%- endif -%}
+        {%- else -%}
+          {{- 'cart.summary.subtotal' | t -}}
+        {%- endif -%}
+      </dt>
       <dd class="cart-summary__value">
         <bdi>{{ cart.total_price | money_without_trailing_zeros }}</bdi>
       </dd>
     </div>
   </dl>
 
-  <p class="cart-summary__note">
-    {%- if cart.taxes_included -%}
-      {{- 'cart.summary.taxes_included' | t -}}
-    {%- else -%}
-      {{- 'cart.summary.taxes_at_checkout' | t -}}
-    {%- endif -%}
-    {%- unless free_shipping %} {{ 'cart.summary.shipping_at_checkout' | t }}{%- endunless -%}
-  </p>
+  {%- unless compact and final_total -%}
+    <p class="cart-summary__note">
+      {%- if cart.taxes_included -%}
+        {{- 'cart.summary.taxes_included' | t -}}
+      {%- else -%}
+        {{- 'cart.summary.taxes_at_checkout' | t -}}
+      {%- endif -%}
+      {%- unless free_shipping %} {{ 'cart.summary.shipping_at_checkout' | t }}{%- endunless -%}
+    </p>
+  {%- endunless -%}
 
   <button
     type="submit"
     name="checkout"
     class="button button--primary button--large button--full cart-summary__checkout"
+    data-cart-checkout
     data-cart-focus="checkout"
   >
-    {%- render 'icon', name: 'lock', size: 18 -%}
-    {{ 'cart.checkout' | t }}
+    <span class="cart-summary__checkout-label">
+      {%- render 'icon', name: 'lock', size: 18 -%}
+      {{ 'cart.checkout' | t }}
+    </span>
+    <span class="spinner cart-summary__spinner" aria-hidden="true"></span>
   </button>
 
   {%- if express and additional_checkout_buttons -%}
@@ -84,18 +142,42 @@
     </div>
   {%- endif -%}
 
-  {%- if shop.enabled_payment_types.size > 0 -%}
-    <ul class="cart-payment-icons" role="list" aria-label="{{ 'cart.payment_methods' | t }}">
-      {%- for type in shop.enabled_payment_types -%}
-        <li class="cart-payment-icons__item">
-          {{- type | payment_type_svg_tag: class: 'cart-payment-icons__icon' | replace: '"pi-', payment_id_attribute -}}
-        </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+  <ul class="cart-trust" role="list">
+    <li class="cart-trust__item">
+      {%- render 'icon', name: 'return', size: 18 -%}
+      <span>{{ 'general.trust.returns' | t }}</span>
+    </li>
+    {%- unless compact -%}
+      <li class="cart-trust__item">
+        {%- render 'icon', name: 'map-pin', size: 18 -%}
+        <span>{{ 'general.trust.stock' | t }}</span>
+      </li>
+    {%- endunless -%}
+    <li class="cart-trust__item">
+      {%- render 'icon', name: 'shield-check', size: 18 -%}
+      <span>{{ 'general.trust.secure_payment' | t }}</span>
+    </li>
+  </ul>
 
-  <p class="cart-summary__secure">
-    {%- render 'icon', name: 'shield-check', size: 16 -%}
-    {{ 'cart.secure_payment' | t }}
-  </p>
+  {%- render 'payment-icons',
+    id_prefix: id_prefix,
+    class: 'cart-payment-icons',
+    item_class: 'cart-payment-icons__item',
+    icon_class: 'cart-payment-icons__icon',
+    label: payment_label
+  -%}
+
+  {%- if whatsapp_digits != blank -%}
+    {%- assign help_message = 'cart.help.whatsapp_message' | t | url_encode | replace: '+', '%20' -%}
+    <a
+      class="cart-help"
+      href="https://wa.me/{{ whatsapp_digits }}?text={{ help_message }}"
+      target="_blank"
+      rel="noopener"
+    >
+      {%- render 'icon', name: 'whatsapp', size: 18 -%}
+      <span>{{ 'cart.help.whatsapp' | t }}</span>
+      <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+    </a>
+  {%- endif -%}
 </div>

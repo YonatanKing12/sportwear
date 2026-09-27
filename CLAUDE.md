@@ -150,7 +150,9 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
-- Which card gateway (and whether it supports Bit)
+- Which card gateway (and whether it supports Bit). Until then the site shows the official Visa, Mastercard,
+  Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
+  `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo
 - Selling prices for new basketball jerseys and shorts (football is set: adults ₪139, kids sets ₪99)
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך")

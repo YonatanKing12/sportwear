@@ -10,6 +10,18 @@
     assign shop_url = section.settings.empty_collection.url
   endif
   assign total_money = cart.total_price | money_without_trailing_zeros
+
+  # "Total" when checkout adds nothing (prices include taxes and shipping is free), as in cart-summary.
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
+  assign total_label = 'cart.summary.subtotal' | t
+  if cart.taxes_included
+    if threshold_cents < 0 or threshold_cents > 0 and cart.total_price >= threshold_cents
+      assign total_label = 'cart.summary.total' | t
+    endif
+  endif
 -%}
 <div
   class="section main-cart color-{{ section.settings.color_scheme.id }}"
@@ -39,7 +51,12 @@
       </div>
 
       {%- if cart.empty? -%}
-        {%- render 'cart-empty', url: shop_url, class: 'main-cart__empty' -%}
+        {%- render 'cart-empty',
+          url: shop_url,
+          menu: section.settings.empty_menu,
+          id_prefix: 'MainCart',
+          class: 'main-cart__empty'
+        -%}
       {%- else -%}
         <div class="main-cart__layout">
           <div class="main-cart__main">
@@ -65,6 +82,32 @@
                 color_scheme: section.settings.upsell_color_scheme.id
               -%}
             {%- endif -%}
+
+            {%- comment -%}
+              Phones: the total and the checkout button stay at the bottom of the screen while the lines
+              scroll (sticky, no JavaScript), and settle right above the summary at the end of the column.
+              From 990px the summary sits beside the lines and is sticky itself, so the bar is hidden.
+            {%- endcomment -%}
+            <div class="main-cart__bar">
+              <p class="main-cart__bar-total">
+                <span class="main-cart__bar-label">{{ total_label }}</span>
+                <bdi>{{ total_money }}</bdi>
+              </p>
+              <button
+                type="submit"
+                name="checkout"
+                form="MainCartForm"
+                class="button button--primary main-cart__bar-button"
+                data-cart-checkout
+                data-cart-focus="checkout-bar"
+              >
+                <span class="cart-summary__checkout-label">
+                  {%- render 'icon', name: 'lock', size: 18 -%}
+                  {{ 'cart.checkout' | t }}
+                </span>
+                <span class="spinner cart-summary__spinner" aria-hidden="true"></span>
+              </button>
+            </div>
           </div>
 
           <form
@@ -151,6 +194,47 @@
     margin-block-start: var(--space-4);
   }
 
+  .main-cart__bar {
+    position: sticky;
+    inset-block-end: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    margin-block-start: var(--space-5);
+    margin-inline: calc(-1 * var(--gutter));
+    padding-block: var(--space-3) max(var(--space-3), env(safe-area-inset-bottom));
+    padding-inline: var(--gutter);
+    border-block-start: 1px solid var(--color-border);
+    background: var(--color-background);
+    box-shadow: 0 -8px 24px rgb(13 14 17 / 0.08);
+
+    @media screen and (min-width: 990px) {
+      display: none;
+    }
+  }
+
+  .main-cart__bar-total {
+    display: grid;
+    line-height: 1.2;
+    font-size: var(--text-lg);
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .main-cart__bar-label {
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .main-cart__bar-button {
+    flex: 1 1 auto;
+    max-inline-size: 280px;
+  }
+
   .main-cart__summary {
     display: flex;
     flex-direction: column;
@@ -204,6 +288,13 @@
       "id": "empty_collection",
       "label": "t:sections.main_cart.settings.empty_collection.label",
       "info": "t:sections.main_cart.settings.empty_collection.info"
+    },
+    {
+      "type": "link_list",
+      "id": "empty_menu",
+      "label": "t:sections.main_cart.settings.empty_menu.label",
+      "info": "t:sections.main_cart.settings.empty_menu.info",
+      "default": "main-menu"
     },
     {
       "type": "range",

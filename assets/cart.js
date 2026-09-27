@@ -11,7 +11,8 @@
  * - After a re-render, focus returns to the same control ([data-cart-focus]), or to the next line
  *   when a line was removed, and the result is announced to screen readers.
  * - Changes made elsewhere (product form, quick add) re-render the cart, and open the drawer when
- *   they add a product.
+ *   they add a product. The line just added gets a short accent mark, so it is clear what changed.
+ * - The checkout button shows a spinner while the checkout loads (a second press does nothing).
  */
 import {
   EVENTS,
@@ -35,6 +36,10 @@ const SOURCE = 'cart';
 const OPENING_SOURCES = new Set(['product-form', 'quick-add', 'set']);
 const QUANTITY_DELAY = 300;
 const NOTE_DELAY = 600;
+/** How long the "just added" mark stays (its CSS animation fades it out before). */
+const ADDED_MARK_TIME = 2600;
+/** A checkout that has not left the page by then (offline, blocked) gets its button back. */
+const CHECKOUT_BUSY_TIME = 10000;
 
 /**
  * @typedef {object} PendingQuantity
@@ -253,6 +258,25 @@ async function changeLine(view, key, entry) {
   }
 }
 
+/**
+ * Marks the lines of what was just added (the /cart/add.js answer: one line item, or { items }) in
+ * every cart view.
+ * @param {any} added
+ */
+function markAdded(added) {
+  const items = Array.isArray(added?.items) ? added.items : added?.key ? [added] : [];
+  const keys = items.map((item) => String(item.key ?? '')).filter(Boolean);
+  if (!keys.length) return;
+  for (const view of views) {
+    for (const key of keys) {
+      const line = view.findLine(key);
+      if (!line) continue;
+      line.classList.add('cart-item--added');
+      window.setTimeout(() => line.classList.remove('cart-item--added'), ADDED_MARK_TIME);
+    }
+  }
+}
+
 /* ------------------------------------------------------------------------------------------------
  * Set suggestions and order note
  * ---------------------------------------------------------------------------------------------- */
@@ -265,8 +289,9 @@ async function addSuggestion(view, form) {
   const formData = new FormData(form);
   const variantId = String(formData.get('id') ?? '');
   try {
-    const { sections } = await CartAPI.add(formData, { sections: sectionIds(), source: SOURCE });
+    const { sections, added } = await CartAPI.add(formData, { sections: sectionIds(), source: SOURCE });
     await renderViews(sections);
+    markAdded(added);
     view.focusVariant(variantId);
     say(view, sentences(config().strings.addedToCart ?? '', view.statusText()));
   } catch (error) {
@@ -487,12 +512,24 @@ class SwCart extends HTMLElement {
   };
 
   /**
-   * Set suggestions are added through CartAPI instead of leaving the page.
+   * Set suggestions are added through CartAPI instead of leaving the page. The checkout button shows
+   * that the checkout is loading, and ignores a second press meanwhile.
    * @param {SubmitEvent} event
    */
   #onSubmit = (event) => {
     const form = event.target;
-    if (!(form instanceof HTMLFormElement) || !form.matches('[data-cart-upsell]')) return;
+    if (!(form instanceof HTMLFormElement)) return;
+    const submitter = event.submitter;
+    if (submitter instanceof HTMLButtonElement && submitter.matches('[data-cart-checkout]')) {
+      if (submitter.getAttribute('aria-busy') === 'true') {
+        event.preventDefault();
+        return;
+      }
+      submitter.setAttribute('aria-busy', 'true');
+      window.setTimeout(() => submitter.removeAttribute('aria-busy'), CHECKOUT_BUSY_TIME);
+      return;
+    }
+    if (!form.matches('[data-cart-upsell]')) return;
     event.preventDefault();
     const button = form.querySelector('[type="submit"]');
     if (button?.getAttribute('aria-busy') === 'true') return;
@@ -622,18 +659,25 @@ if (!customElements.get('sw-cart')) customElements.define('sw-cart', SwCart);
  * Changes made elsewhere, back/forward cache, theme editor
  * ---------------------------------------------------------------------------------------------- */
 
-subscribe(EVENTS.cartUpdated, ({ sections, source }) => {
+subscribe(EVENTS.cartUpdated, ({ sections, source, added }) => {
   if (source === SOURCE) return;
   enqueue(async () => {
     await renderViews(sections ?? {});
-    if (OPENING_SOURCES.has(source) && config().cartType !== 'page') openDrawer(DRAWER_ID);
+    if (!OPENING_SOURCES.has(source)) return;
+    markAdded(added);
+    if (config().cartType !== 'page') openDrawer(DRAWER_ID);
   });
 });
 
 // A page restored from the back/forward cache shows the cart as it was when the customer left it
-// (for example before checking out). Refresh the cart views and, through the event, the header count.
+// (for example before checking out). Give the checkout buttons back at once (they were busy when the
+// page was left), then refresh the cart views and, through the event, the header count.
 window.addEventListener('pageshow', (event) => {
-  if (!event.persisted || !views.size) return;
+  if (!event.persisted) return;
+  for (const button of document.querySelectorAll('[data-cart-checkout][aria-busy="true"]')) {
+    button.removeAttribute('aria-busy');
+  }
+  if (!views.size) return;
   enqueue(async () => {
     try {
       const [cart, sections] = await Promise.all([

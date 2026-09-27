@@ -1,0 +1,47 @@
+{%- doc -%}
+  The payment methods the store takes, as Shopify's own logos (payment_type_svg_tag, the same artwork
+  Shopify shows at checkout): the names in Theme settings > Cart > Payment logos (comma-separated, for
+  example visa, master, american_express, diners_club, apple_pay, google_pay, bit, paypal) or, when that
+  is empty, the methods enabled in Settings > Payments. The logos' title ids get a prefix, so several
+  lists can share a page (footer, product page, cart drawer). Prints nothing when there is nothing to show.
+
+  @param {string} id_prefix - Unique prefix for the logos' title ids, e.g. 'Footer'
+  @param {string} [class] - Class of the list
+  @param {string} [item_class] - Class of each item
+  @param {string} [icon_class] - Class of each logo
+  @param {string} [label] - Accessible name of the list
+
+  @example
+  {% render 'payment-icons', id_prefix: 'Footer', class: 'footer__payment-list', item_class: 'footer__payment-item', icon_class: 'footer__payment-icon' %}
+{%- enddoc -%}
+{%- liquid
+  assign types = settings.payment_icons | downcase | replace: ' ', '' | split: ',' | uniq
+  if types.size == 0
+    assign types = shop.enabled_payment_types
+  endif
+  # payment_type_svg_tag prints fixed title ids (pi-visa, ...): prefix them to keep ids unique.
+  assign id_attribute = '"' | append: id_prefix | append: '-pi-'
+-%}
+{%- capture items -%}
+  {%- for type in types -%}
+    {%- if type == blank -%}
+      {%- continue -%}
+    {%- endif -%}
+    {%- assign svg = type | payment_type_svg_tag: class: icon_class -%}
+    {%- comment -%} A name Shopify has no logo for prints nothing: skip it rather than show an empty item. {%- endcomment -%}
+    {%- if svg contains '<svg' -%}
+      <li class="{{ item_class }}">{{- svg | replace: '"pi-', id_attribute -}}</li>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- if items != blank -%}
+  <ul
+    class="{{ class }}"
+    role="list"
+    {% if label != blank %}
+      aria-label="{{ label | escape }}"
+    {% endif %}
+  >
+    {{- items -}}
+  </ul>
+{%- endif -%}

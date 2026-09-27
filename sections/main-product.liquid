@@ -301,20 +301,25 @@
                   id_disabled: picker_submits_id,
                   size_required: size_required
                 -%}
-                {%- if block.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
-                  <div class="product-payments">
-                    <p class="product-payments__label">
-                      {%- render 'icon', name: 'lock', size: 14 -%}
-                      <span>{{ 'products.buy.secure_checkout' | t }}</span>
-                    </p>
-                    <ul class="product-payments__list" role="list">
-                      {%- for type in shop.enabled_payment_types -%}
-                        <li class="product-payments__item">
-                          {{- type | payment_type_svg_tag: class: 'product-payments__icon' -}}
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  </div>
+                {%- if block.settings.show_payment_icons -%}
+                  {%- assign payment_prefix = 'Product-' | append: section.id -%}
+                  {%- capture payment_icons -%}
+                    {%- render 'payment-icons',
+                      id_prefix: payment_prefix,
+                      class: 'product-payments__list',
+                      item_class: 'product-payments__item',
+                      icon_class: 'product-payments__icon'
+                    -%}
+                  {%- endcapture -%}
+                  {%- if payment_icons != blank -%}
+                    <div class="product-payments">
+                      <p class="product-payments__label">
+                        {%- render 'icon', name: 'lock', size: 14 -%}
+                        <span>{{ 'products.buy.secure_checkout' | t }}</span>
+                      </p>
+                      {{ payment_icons }}
+                    </div>
+                  {%- endif -%}
                 {%- endif -%}
               </div>
 

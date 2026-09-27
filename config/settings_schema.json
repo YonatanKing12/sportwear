@@ -398,6 +398,13 @@
         "id": "cart_show_note",
         "default": false,
         "label": "t:settings_schema.cart.settings.cart_show_note.label"
+      },
+      {
+        "type": "text",
+        "id": "payment_icons",
+        "default": "visa, master, apple_pay, google_pay",
+        "label": "t:settings_schema.cart.settings.payment_icons.label",
+        "info": "t:settings_schema.cart.settings.payment_icons.info"
       }
     ]
   },

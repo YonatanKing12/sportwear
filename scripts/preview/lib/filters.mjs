@@ -1,6 +1,9 @@
 // Shopify filters on top of LiquidJS's standard ones. Filters that cannot be emulated report a gap
 // and return their input, and unknown filters (typos included) are reported instead of ignored.
 import { createHash, createHmac } from 'node:crypto';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Drop, filters as builtinFilters, toValue } from 'liquidjs';
 import { BaseDrop } from './drops.mjs';
 import { stateOf } from './gaps.mjs';
@@ -533,26 +536,28 @@ const colorFilters = {
 
 /* ------------------------------------------------------------------------------------ misc */
 
-const PAYMENT_NAMES = {
-  visa: 'Visa',
-  master: 'Mastercard',
-  american_express: 'American Express',
-  apple_pay: 'Apple Pay',
-  google_pay: 'Google Pay',
-  paypal: 'PayPal',
-  shopify_pay: 'Shop Pay',
-  bit: 'Bit',
-};
+/** Shopify's own payment icons (activemerchant/payment_icons, MIT; fixtures/payment-icons), as the store shows them. */
+const PAYMENT_ICON_DIR = fileURLToPath(new URL('../fixtures/payment-icons/', import.meta.url));
+const paymentIcons = new Map();
 
 function paymentTypeSvgTag(type, ...args) {
   const { named } = argsOf(this, args);
   const id = String(toValue(type));
-  const label = PAYMENT_NAMES[id] ?? id;
-  const short = label
-    .replace(/American Express/, 'AMEX')
-    .replace(/Mastercard/, 'MC')
-    .toUpperCase();
-  return `<svg${attrs({ class: toValue(named.class) ?? undefined, xmlns: 'http://www.w3.org/2000/svg', role: 'img', 'aria-labelledby': `pi-${id}`, viewBox: '0 0 38 24', width: 38, height: 24 })}><title id="pi-${escapeHtml(id)}">${escapeHtml(label)}</title><rect width="38" height="24" rx="3" fill="#fff" stroke="#8a8f99"/><text x="19" y="15.5" font-size="${short.length > 6 ? 5.5 : 7}" font-family="Arial, sans-serif" font-weight="700" text-anchor="middle" fill="#0d0e11">${escapeHtml(short)}</text></svg>`;
+  if (!paymentIcons.has(id)) {
+    let svg = null;
+    try {
+      svg = readFileSync(path.join(PAYMENT_ICON_DIR, `${id.replace(/[^a-z0-9_]/g, '')}.svg`), 'utf8').trim();
+    } catch {
+      svg = null;
+    }
+    paymentIcons.set(id, svg);
+  }
+  const svg = paymentIcons.get(id);
+  const cls = toValue(named.class);
+  if (svg) return cls ? svg.replace('<svg ', `<svg class="${escapeHtml(cls)}" `) : svg;
+  // Not in the fixtures: nothing, as the snippets expect for a name Shopify has no logo for.
+  gap(this, 'unsupported', `payment_type_svg_tag: no fixture for "${id}" (scripts/preview/fixtures/payment-icons)`);
+  return '';
 }
 
 function formatAddress(address) {

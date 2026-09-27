@@ -114,7 +114,8 @@ const compiled = (preview, html, kind) => {
   check('collection setting + render for', count(html, 'class="smoke-card"') === 4 && html.includes('data-index="4"'));
   check('render with … as', html.includes('· <span class="smoke-price" data-cents="12000">120 NIS</span>'));
   check('metaobject metafield', html.includes('style="--team: #0D0E11">דמו FC</span>'));
-  check('payment icons', html.includes('<title id="pi-visa">Visa</title>'));
+  // The mock shop has PayPal enabled, as the store does; the logo is Shopify's own (fixtures/payment-icons).
+  check('payment icons', html.includes('<title id="pi-paypal">PayPal</title>') && !html.includes('<text'));
   check('date with locale format', html.includes('26/09/2026'));
   check('powered_by_link', html.includes('מופעל על ידי Shopify</a>'));
   const css = compiled(smoke, html, 'styles');

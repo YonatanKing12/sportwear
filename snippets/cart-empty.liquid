@@ -1,13 +1,16 @@
 {%- doc -%}
   Empty-cart message for the drawer and the cart page: a friendly line, a primary button back to
-  the shop and, when free shipping applies (see free-shipping-cents), a reminder of it: free
-  shipping on every order, or the amount it starts from.
+  the shop, the top links of a menu as chips (a way straight into a category, owner-editable in
+  Online Store > Navigation) and, when free shipping applies (see free-shipping-cents), a reminder of
+  it: free shipping on every order, or the amount it starts from.
 
   @param {string} url - Where the shopping button goes (a collection URL or routes.all_products_collection_url)
+  @param {object} [menu] - A link list whose top links become chips (default: none)
+  @param {string} [id_prefix] - Unique prefix for the chips heading id (default 'CartEmpty')
   @param {string} [class] - Extra classes on the wrapper
 
   @example
-  {% render 'cart-empty', url: routes.all_products_collection_url %}
+  {% render 'cart-empty', url: routes.all_products_collection_url, menu: section.settings.empty_menu, id_prefix: 'CartDrawer' %}
 {%- enddoc -%}
 {%- liquid
   capture threshold_cents
@@ -22,6 +25,19 @@
   <a class="button button--primary button--large cart-empty__button" href="{{ url }}">
     {{- 'cart.empty.button' | t -}}
   </a>
+  {%- if menu != blank and menu.links.size > 0 -%}
+    {%- assign chips_id = id_prefix | default: 'CartEmpty' | append: '-EmptyLinks' -%}
+    <nav class="cart-empty__links" aria-labelledby="{{ chips_id }}">
+      <p class="cart-empty__links-title" id="{{ chips_id }}">{{ 'cart.empty.categories' | t }}</p>
+      <ul class="cart-empty__chips" role="list">
+        {%- for link in menu.links limit: 6 -%}
+          <li>
+            <a class="chip" href="{{ link.url }}">{{ link.title | escape }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+  {%- endif -%}
   {%- if threshold_cents < 0 -%}
     <p class="cart-empty__perk">
       {%- render 'icon', name: 'truck', size: 18 -%}

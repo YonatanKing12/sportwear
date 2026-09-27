@@ -125,8 +125,8 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
 - **Free shipping** comes from the theme setting `free_shipping_threshold` (ILS), kept in sync with
   the shipping rates in admin:
   - `0` = free on every order (the store's setting now): the cart shows the line "משלוח חינם בכל
-    הזמנה" instead of a progress bar, the summary shows "Shipping: Free", and the announcement bar,
-    trust badges, product page and FAQ say shipping is free.
+    הזמנה" (with "עד 10 ימי עסקים") instead of a progress bar, the summary shows "Shipping: Free",
+    and the announcement bar, trust badges, product page and FAQ say shipping is free.
   - A positive amount = free from that amount: the progress bar, the "Shipping: Free" row once it is
     reached, and the set and upsell notes.
   - Empty = no free-shipping messages at all.
@@ -135,6 +135,10 @@ locales/he.default.json, en.json, ar.json, en.default.schema.json, he.schema.jso
 - **Trust strip:** free home delivery (or delivery within 10 business days where free shipping does
   not apply) · returns up to 45 days · stock held in Israel · secure payment (credit card, Apple Pay,
   Google Pay). Never an originality claim ("100% original", "authentic"): the owner ruled it out.
+- **Payment logos:** Shopify's official artwork only (`snippets/payment-icons.liquid`), listed in Theme
+  settings > Cart > Payment logos (default: Visa, Mastercard, Apple Pay, Google Pay, the methods the owner
+  plans). Show only methods the store's payment provider takes; home-made or text "logos" look like a scam
+  (owner, 2026-09-27).
 - **Team orders page:** CTA to WhatsApp. The number is a theme setting.
 - No fake urgency, scarcity or ratings. Stock hints must read real inventory. Show ratings only
   when real reviews exist.

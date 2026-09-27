@@ -171,6 +171,41 @@
   line-height: 1.4;
 }
 
+/* The line just added (assets/cart.js): a short accent mark at its start edge, fading out. */
+.cart-item--added {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset-block: var(--space-3);
+    inset-inline-start: calc(-1 * var(--space-3));
+    inline-size: 4px;
+    border-radius: 2px;
+    background: var(--color-accent);
+    animation: cart-item-added 2.4s var(--ease) forwards;
+  }
+}
+
+@keyframes cart-item-added {
+  0%,
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Without motion the mark stays still until assets/cart.js removes it (base.css would otherwise end
+   the fade at once and hide it). */
+@media (prefers-reduced-motion: reduce) {
+  .cart-item--added::before {
+    animation: none;
+  }
+}
+
 .cart-item--busy :is(.cart-item__price, .cart-quantity) {
   opacity: 0.5;
   transition: opacity var(--duration-fast) var(--ease);
@@ -453,6 +488,14 @@
   overflow-wrap: anywhere;
 }
 
+/* "incl. VAT" next to "Total" in the drawer. */
+.cart-summary__label-note {
+  margin-inline-start: var(--space-2);
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+
 .cart-summary__value {
   margin: 0;
   font-variant-numeric: tabular-nums;
@@ -469,6 +512,78 @@
   margin-block-start: var(--space-2);
 }
 
+/* Every checkout button (the summary's, and the cart page's sticky bar on phones). */
+[data-cart-checkout] {
+  position: relative;
+}
+
+.cart-summary__checkout-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-summary__spinner {
+  position: absolute;
+  inset: 0;
+  display: none;
+  margin: auto;
+}
+
+/* Checking out (assets/cart.js): the label gives way to a spinner and the button stays put. */
+[data-cart-checkout][aria-busy='true'] {
+  cursor: progress;
+
+  & .cart-summary__checkout-label {
+    visibility: hidden;
+  }
+
+  & .cart-summary__spinner {
+    display: block;
+  }
+}
+
+/* Returns, stock in Israel, secure payment: the store's own terms, right under the button. */
+.cart-trust {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-1) var(--space-4);
+  margin: var(--space-1) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cart-trust__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: color-mix(in srgb, var(--color-text) 78%, var(--color-background));
+  font-size: var(--text-sm);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+
+  & .icon {
+    flex-shrink: 0;
+    color: var(--color-muted);
+  }
+}
+
+.cart-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-block-size: var(--touch-target);
+  color: inherit;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .cart-summary__express:empty {
   display: none;
 }
@@ -481,19 +596,13 @@
   margin-block-start: var(--space-1);
 }
 
+.cart-payment-icons__item {
+  display: flex;
+}
+
 .cart-payment-icons__icon {
   inline-size: 38px;
   block-size: 24px;
-}
-
-.cart-summary__secure {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  color: var(--color-muted);
-  font-size: var(--text-sm);
-  font-weight: 600;
 }
 
 /* ---------- snippets/cart-note.liquid ---------- */
@@ -565,6 +674,29 @@
   margin-block-start: var(--space-2);
 }
 
+.cart-empty__links {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-2);
+  margin-block-start: var(--space-3);
+}
+
+.cart-empty__links-title {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+.cart-empty__chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 .cart-empty__perk {
   display: inline-flex;
   align-items: center;
@@ -602,6 +734,28 @@
   align-items: center;
   gap: var(--space-1) var(--space-2);
   font-weight: 800;
+}
+
+/* Every order ships free: the check stays beside the text, and the text wraps on its own. */
+.free-shipping--all .free-shipping__message {
+  flex-wrap: nowrap;
+}
+
+/* "Up to 10 business days" after "Free shipping on every order": lighter, kept whole, and on a
+   narrow drawer it wraps under the text as a second line (no separator left dangling). */
+.free-shipping__text {
+  flex: 1 1 auto;
+  min-inline-size: 0;
+}
+
+.free-shipping__delivery {
+  color: color-mix(in srgb, var(--color-text) 72%, var(--color-background));
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.free-shipping__text:has(.free-shipping__delivery) {
+  line-height: 1.5;
 }
 
 .free-shipping__check {

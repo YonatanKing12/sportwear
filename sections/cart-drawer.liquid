@@ -58,7 +58,7 @@
 
           {%- if cart.empty? -%}
             <div class="cart-drawer__body cart-drawer__body--empty">
-              {%- render 'cart-empty', url: shop_url -%}
+              {%- render 'cart-empty', url: shop_url, menu: section.settings.empty_menu, id_prefix: 'CartDrawer' -%}
             </div>
           {%- else -%}
             {%- render 'free-shipping-bar', cart: cart, class: 'cart-drawer__shipping' -%}
@@ -84,7 +84,7 @@
               method="post"
               novalidate
             >
-              {%- render 'cart-summary', cart: cart, id_prefix: 'CartDrawer' -%}
+              {%- render 'cart-summary', cart: cart, id_prefix: 'CartDrawer', compact: true -%}
             </form>
           {%- endif -%}
 
@@ -202,6 +202,13 @@
       "id": "empty_collection",
       "label": "t:sections.cart_drawer.settings.empty_collection.label",
       "info": "t:sections.cart_drawer.settings.empty_collection.info"
+    },
+    {
+      "type": "link_list",
+      "id": "empty_menu",
+      "label": "t:sections.cart_drawer.settings.empty_menu.label",
+      "info": "t:sections.cart_drawer.settings.empty_menu.info",
+      "default": "main-menu"
     }
   ]
 }

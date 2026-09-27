@@ -129,6 +129,17 @@ import {
   Its `sw-drawer` id is **`CartDrawer`**. The header cart link opens it with `data-drawer-open="CartDrawer"` (drawer
   mode) and is a normal link to `routes.cart_url` otherwise; it must work without JS (link to the cart page).
 - **Header cart link** contains `<span data-cart-bubble>{% render 'cart-bubble' %}</span>`.
+- **Cart summary** (`snippets/cart-summary.liquid`, drawer with `compact: true`, cart page without): "You save"
+  (compare-at savings plus every discount), "Total" when checkout adds nothing (taxes included and free
+  shipping, else "Subtotal" with a note), the checkout button (`[data-cart-checkout]`: `assets/cart.js` shows a
+  spinner and ignores a second press, and gives the button back on a back/forward-cache restore), a trust row
+  (returns, stock in Israel, secure payment) and the payment logos. On phones the cart page also keeps the total
+  and a checkout button in a sticky bar (`.main-cart__bar`, CSS only). A line just added gets a short accent
+  mark (`cart-item--added`). The empty cart shows the top links of a menu as chips (`empty_menu` setting).
+- **Payment logos**: only Shopify's own artwork, through `snippets/payment-icons.liquid`
+  (`payment_type_svg_tag`, title ids prefixed per list). It lists `settings.payment_icons` (comma-separated
+  names, Theme settings > Cart), or Settings > Payments when that is empty, and skips names Shopify has no
+  logo for. Never draw or upload card logos of our own.
 - **Storefront filters** (`snippets/facets-form.liquid`, `facets-active`, `facet-label`): SportWear's
   filters are product metafields in the `sportwear` namespace (`audience`, `player`, `styles`,
   `team_handle`, `league_handle`, `kit`) and the product type, with language-neutral values. Their
@@ -223,7 +234,8 @@ Schema must include (use the shared labels):
 - Tags: `sport:*`, `league:*`, `team:*`, `kit:*`, `season:*`, `audience:*`, `sale`, `new`.
 - Theme settings you may read: `settings.cart_type`, `settings.free_shipping_threshold` (₪: blank = no free
   shipping, 0 = free on every order, above 0 = free from that amount; read it through `free-shipping-cents`),
-  `settings.cart_show_upsell`, `settings.cart_show_note`, `settings.whatsapp_number`, `settings.business_*`,
+  `settings.cart_show_upsell`, `settings.cart_show_note`, `settings.payment_icons` (through
+  `snippets/payment-icons.liquid`), `settings.whatsapp_number`, `settings.business_*`,
   `settings.support_phone`, `settings.support_email`, `settings.predictive_search`, `settings.drawer_color_scheme`,
   `settings.card_*`, social links.
 

@@ -27,7 +27,7 @@ export const SHOP = {
   timezone: 'Asia/Jerusalem',
   taxes_included: true,
   customer_accounts: 'optional',
-  enabled_payment_types: ['visa', 'master', 'american_express', 'apple_pay', 'google_pay'],
+  enabled_payment_types: ['paypal'],
   email: 'support@example.com',
 };
 

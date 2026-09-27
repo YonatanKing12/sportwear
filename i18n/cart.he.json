@@ -17,7 +17,8 @@
       "title": "הסל שלכם ריק",
       "text": "עוד לא הוספתם מוצרים לסל",
       "button": "התחילו לקנות",
-      "free_shipping": "משלוח חינם בהזמנה מעל {{ amount }}"
+      "free_shipping": "משלוח חינם בהזמנה מעל {{ amount }}",
+      "categories": "או בחרו קטגוריה"
     },
     "free_shipping": {
       "remaining_html": "עוד <strong>{{ amount }}</strong> ותקבלו משלוח חינם",
@@ -48,11 +49,17 @@
       "label": "הערה להזמנה",
       "placeholder": "למשל: הוראות למסירת המשלוח"
     },
+    "help": {
+      "whatsapp": "שאלה לפני התשלום? כתבו לנו בוואטסאפ",
+      "whatsapp_message": "היי, יש לי שאלה לפני ההזמנה"
+    },
     "summary": {
       "heading": "סיכום ההזמנה",
       "subtotal": "סכום ביניים",
+      "total": "סה״כ",
       "shipping": "משלוח",
       "free": "חינם",
+      "savings": "החיסכון שלכם",
       "taxes_included": "המחירים כוללים מע״מ.",
       "taxes_at_checkout": "המסים יחושבו בשלב התשלום.",
       "shipping_at_checkout": "דמי המשלוח יחושבו בשלב התשלום."
