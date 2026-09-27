@@ -152,5 +152,9 @@
       "en": "2026-09-26T19:47:00Z",
       "ar": "2026-09-26T19:47:01Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "spain-away-kit-2026-kids",
+    "complements_handles": []
   }
 }

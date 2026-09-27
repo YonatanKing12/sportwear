@@ -17,9 +17,10 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   decision, 2026-09-26; it was 3 business days before).
 - **Shipping:** free on every order, Israel only (owner decisions, 2026-09-26). Admin's only zone is
   Israel, with one method, "משלוח חינם עד הבית" at ₪0, described "עד 10 ימי עסקים".
-- **Prices:** adult football shirts ₪139, kids sets (shirt + shorts) ₪99, basketball jerseys imported
-  before ₪149. A basketball jersey with the shorts of the same kit costs ₪229 instead of ₪268 (owner
-  decision 2026-09-27: an automatic discount takes ₪39 off the shorts; `catalog/pricing.json`, `sets`).
+- **Prices:** adult football shirts ₪139, kids sets (shirt + shorts) ₪99, basketball jerseys ₪149,
+  basketball shorts ₪119. New products keep the same prices (owner, 2026-09-27: "אותו מחיר עד היום").
+  A basketball jersey with the shorts of the same kit costs ₪229 instead of ₪268 (owner decision
+  2026-09-27: an automatic discount takes ₪39 off the shorts; `catalog/pricing.json`, `sets`).
   Lots of promotions are planned.
 - **Returns:** up to 45 days. The owner said "unopened"; we recommended "unworn, unwashed, tags on"
   instead, pending a lawyer's review of the wording.
@@ -36,16 +37,52 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
-| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet, and the live theme still shows the old shipping texts (free above ₪250, 3 business days) |
-| Catalog | 1,098 products imported by the owner (tag `source:yupoo`), 0 orders. A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles fixed, 4 photo fixes, 4 back photos added (`catalog/published/scan-fixes-2026-09-27.json`). 532 products also show the supplier's real close-ups of the fabric and print after their studio photos: 979 photos (`catalog/published/fabric-closeups-2026-09-27.json`, `design/imagery/README.md`). One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Every Online Store product carries the storefront-filter metafields, and the owner added the filters in Search & Discovery; checked on the storefront in he/en/ar (2026-09-27, `catalog/published/filters-2026-09-27.json`). Sets: 22 basketball jerseys and the 6 shorts of the same design are paired (`sportwear.complements`, shown as "השלימו את הסט" on the product page and in the cart; `catalog/published/complements-2026-09-27.json`). Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
+| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. The live theme still shows "100% מקורי" / "100% original" badges on every product page and in the mobile menu, and the old shipping texts (free above ₪250, 3 business days); "SportWear (next)" has neither (checked in he/en/ar on 2026-09-27) |
+| Catalog | 1,562 products, all ACTIVE; 1,561 on the Online Store (the demo product is on no channel); 0 orders. Details in "The catalog" below |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
-| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes (`deployed_commit` in `catalog/store-setup.json`). Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
-| Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself |
+| Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself. It also refuses `bulkOperationRunMutation`: create products with one `productSet` per call (parallel agents, one group each), then `bulk-update-product-status` and `publicationUpdate`, 50 per call. Stage at most 40 images per `stagedUploadsCreate` call (a bigger result is too large to come back inline) |
+
+## The catalog (as of 2026-09-27)
+
+- **Imported by the owner:** 1,098 products (tag `source:yupoo`).
+  - A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles
+    fixed, 4 photo fixes, 4 back photos added (`catalog/published/scan-fixes-2026-09-27.json`). 17 more
+    "מהדורת עיר" titles were fixed later that day (`catalog/published/city-edition-fixes-2026-09-27.json`).
+  - 532 products also show the supplier's real close-ups of the fabric and print after their studio photos:
+    979 photos (`catalog/published/fabric-closeups-2026-09-27.json`, `design/imagery/README.md`).
+- **jerseyxie, wave 1:** 128 products (tag `source:jerseyxie`), ACTIVE and on the Online Store since
+  2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page:
+  https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af
+- **jerseyxie, wave 2:** 229 products of 60 clubs, season 26/27: 137 adult jerseys at ₪139 and 92 kids sets
+  at ₪99. ACTIVE and on the Online Store since 2026-09-27, on the owner's instruction ("יש לך אישור מלא ואותו
+  מחיר עד היום", and the owner confirmed the 244-row wave). The 15 rows left out and their reasons:
+  `catalog/published/wave2-2026-09-27.json`. How it ran and the supplier traps: `catalog/sources/jerseyxie/README.md`.
+- **NBA shorts from xingkong-sports:** 106 (tag `source:xingkong-sports`) at ₪119, ACTIVE and on the Online
+  Store since 2026-09-27, on the owner's instruction; 116 shorts in all with the ten from before
+  (`catalog/sources/xingkong-sports/README.md`).
+- **Sets:** 84 of the 116 shorts are paired with 204 basketball jerseys of the same design:
+  - `sportwear.complements` and the tags `set:shorts` / `set:jersey`;
+  - shown as "השלימו את הסט" on the product page and in the cart;
+  - ₪229 per pair in the cart;
+  - logs: `catalog/published/complements-2026-09-27.json`, `complements-shorts-2026-09-27.json`.
+- **Adults ↔ kids:** 136 pairs linked both ways by `sportwear.counterpart` (the adults/kids toggle on the
+  product page). 88 of them were added on 2026-09-27, 6 of those with older adult shirts
+  (`catalog/published/counterparts-2026-09-27.json`). Only a team and kit with one adult product and one
+  kids set is linked.
+- **Filters:** every Online Store product carries the storefront-filter metafields, and the owner added
+  the filters in Search & Discovery; checked on the storefront in he/en/ar (2026-09-27,
+  `catalog/published/filters-2026-09-27.json`).
+- **Ordering from the supplier:** each product from wave 1, wave 2 and the shorts keeps its source album in
+  `sportwear.source_url`. Order from that album: albums of the same shirt can differ in sponsors
+  (Galatasaray: PASIFIK HOLDING or SOCAR), and kids sets often carry another sponsor than the adult shirt,
+  or none.
+- **Demo:** one demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision.
 
 ## Locked decisions
 
@@ -153,7 +190,6 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Which card gateway (and whether it supports Bit). Until then the site shows the official Visa, Mastercard,
   Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
   `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo
-- Selling prices for new basketball jerseys and shorts (football is set: adults ₪139, kids sets ₪99)
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך")
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
@@ -166,19 +202,35 @@ i18n/               translation parts per area, built into locales/ by npm run i
   The site keeps its placeholders until the owner approves
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
 - Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
-  `real-madrid-third-jersey-2026-27`): keep both or hide one
-- Stock: every one of the 5,088 variants shows exactly 5 units (checked 2026-09-27). If that is not the
-  real stock, a size sells out on the site after 5 orders and a size filter has nothing to narrow; only
-  the owner knows the real quantities
+  `real-madrid-third-jersey-2026-27`): keep both or hide one. The kids third links to the second one
+- Stock: every variant shows 5 units. That is 6,704 variants: the 5,088 checked on 2026-09-27, plus the 1,616
+  added that day with wave 2 and the shorts, all created with 5. If that is not the real stock, a size sells
+  out on the site after 5 orders and a size filter has nothing to narrow; only the owner knows the real
+  quantities
 - Buying the domain
-- Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch.
-  The live theme still shares links with no picture and the bare title "SportWear"; the new share image
-  (`design/share/README.md`) and titles come with the publish
+- **Urgent: publishing "SportWear (next)".** The live theme still shows the originality claim the owner ruled out
+  ("100% מקורי" on every product page and in the mobile menu). It also still has the old shipping texts and
+  shares links with no picture and the bare title "SportWear". The publish fixes all of these and brings the new
+  share image (`design/share/README.md`), the titles and the 2026-09-27 home page changes. Also open: whether the
+  site stays open until launch
+- Order on the home page and the NBA page (optional). The home football row and the NBA collection sort newest
+  first, so since 2026-09-27:
+  - the row opens with the clubs added that day (Torino, Sporting…);
+  - the NBA page opens with the 116 shorts, before the jerseys.
+
+  We offered to put the big clubs and the jerseys first
 - Connecting GitHub to Shopify, a one-time step for the development theme
 - The size chart of the products imported before (the owner will send it). Until then their 106 kids
   products are sold in S–XL with no chart (the size guide shows how to measure), so a parent cannot tell
   which size fits which age
-- Two products flagged by the close-up review: the Bulls 23 print jersey (`sw-jerseys-158635085`) is an
-  all-over Louis Vuitton monogram (a trademark risk: keep or hide), and the supplier's photos of the Hawks
-  15 yellow jersey (`sw-jerseys-105462222`) show the back name misprinted as "ANTHIOY" (the site shows only
-  its front; check with the supplier)
+- Products flagged for the owner:
+  - The Bulls 23 print jersey (`sw-jerseys-158635085`) is an all-over Louis Vuitton monogram (a trademark risk:
+    keep or hide).
+  - The supplier's photos of the Hawks 15 yellow jersey (`sw-jerseys-105462222`) show the back name misprinted
+    as "ANTHIOY" (the site shows only its front; check with the supplier).
+  - The supplier's front photo of the Timberwolves City Edition jersey (`sw-jerseys-152407516`) reads
+    "MINNESTOA" (the site shows only its back; check with the supplier).
+  - The album of the Lakers 24 jersey (`sw-jerseys-125774963`) also shows another white Lakers jersey. Order
+    the white "Los Angeles" City Edition shown on the site.
+  - Two different black Timberwolves 5 jerseys have near-identical titles (`sw-jerseys-164994797`,
+    `sw-jerseys-164118532`).

@@ -192,5 +192,9 @@
       "en": "2026-09-26T19:46:59Z",
       "ar": "2026-09-26T19:47:00Z"
     }
+  },
+  "relations": {
+    "counterpart_handle": "portugal-home-jersey-2026",
+    "complements_handles": []
   }
 }
