@@ -124,7 +124,8 @@
       "eyebrow": "The team and league from the product's team and leagues fields show here. This product has none yet. Only shown in the editor.",
       "audience_toggle": "An adults/kids switch shows here once the product's counterpart field points to the matching product. Only shown in the editor.",
       "complete_set": "Matching products (like a jersey and shorts) from the product's complements field show here when in stock. Only shown in the editor.",
-      "description": "The product description shows here. This product has none yet. Only shown in the editor."
+      "description": "The product description shows here. This product has none yet. Only shown in the editor.",
+      "team_card": "A card that links to the page of the product's team (or player) shows here, from the product's team_handle field. This product has no team with other products. Only shown in the editor."
     },
     "help": {
       "whatsapp": "Question about sizing or this product? Message us on WhatsApp",
@@ -133,6 +134,10 @@
     "sticky": {
       "label": "Quick buy",
       "selected_size": "Selected size:"
+    },
+    "team_card": {
+      "eyebrow_team": "More from the team",
+      "eyebrow_player": "More of this player"
     }
   }
 }

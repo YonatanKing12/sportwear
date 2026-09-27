@@ -1,0 +1,79 @@
+{%- doc -%}
+  "More from the team" card on the product page (sections/main-product.liquid, block team_card): a link to
+  the page of the product's player when the player has a collector card on the home page
+  (sportwear.card_image, sections/collection-circles.liquid), else to its team's page
+  (product.metafields.sportwear.team_handle). Only a page with other products counts. With a collector card
+  the card shows its jersey, big number and colour glow; styles are in sections/main-product.liquid.
+
+  @param {product} product - The product
+  @param {object} block - The section block (for shopify_attributes)
+
+  @example
+  {% render 'product-team-card', product: product, block: block %}
+{%- enddoc -%}
+{%- liquid
+  # The player's page when the product names a player who has a collector card (the home page's
+  # cards: sportwear.card_image), else the team's page. Only a page with more products than this one.
+  assign tc_collection = blank
+  assign tc_kind = 'team'
+  for tc_handle in product.metafields.sportwear.player.value
+    assign tc_candidate = collections[tc_handle]
+    if tc_candidate.metafields.sportwear.card_image != blank and tc_candidate.all_products_count > 1
+      assign tc_collection = tc_candidate
+      assign tc_kind = 'player'
+      break
+    endif
+  endfor
+  if tc_collection == blank
+    assign tc_team_handle = product.metafields.sportwear.team_handle.value
+    if tc_team_handle != blank
+      assign tc_candidate = collections[tc_team_handle]
+      if tc_candidate.all_products_count > 1
+        assign tc_collection = tc_candidate
+      endif
+    endif
+  endif
+-%}
+{%- if tc_collection != blank -%}
+  {%- liquid
+    assign tc_cutout = tc_collection.metafields.sportwear.card_image.value
+    assign tc_color = tc_collection.metafields.sportwear.card_color.value
+    assign tc_mark = tc_collection.metafields.sportwear.card_mark.value | strip
+    assign tc_eyebrow_key = 'products.team_card.eyebrow_' | append: tc_kind
+  -%}
+  <a
+    class="product-info__block product-info__block--team team-card color-scheme-night{% if tc_cutout != blank %} team-card--art{% endif %}"
+    href="{{ tc_collection.url }}"
+    {% if tc_color != blank %}
+      style="--team-color: {{ tc_color }};"
+    {% endif %}
+    {{ block.shopify_attributes }}
+  >
+    <span class="team-card__text">
+      <span class="team-card__eyebrow">{{ tc_eyebrow_key | t }}</span>
+      <span class="team-card__name">{{ tc_collection.title | escape }}</span>
+      <span class="team-card__count">
+        {{- 'home.featured_collection.count' | t: count: tc_collection.all_products_count -}}
+        {%- render 'icon', name: 'arrow-forward', size: 16 -%}
+      </span>
+    </span>
+    {%- if tc_cutout != blank -%}
+      <span class="team-card__art" aria-hidden="true">
+        {%- if tc_mark != blank -%}
+          <span class="team-card__mark">{{ tc_mark | escape }}</span>
+        {%- endif -%}
+        {%- render 'image',
+          image: tc_cutout,
+          sizes: '120px',
+          widths: '120, 180, 240',
+          alt: '',
+          class: 'team-card__jersey'
+        -%}
+      </span>
+    {%- endif -%}
+  </a>
+{%- elsif request.design_mode -%}
+  <p class="product-info__block product-editor-note" {{ block.shopify_attributes }}>
+    {{ 'products.editor.team_card' | t }}
+  </p>
+{%- endif -%}

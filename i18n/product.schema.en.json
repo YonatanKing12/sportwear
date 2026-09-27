@@ -39,7 +39,8 @@
         "show_sticky_buy_info": "Appears at the bottom of the screen once the add to cart button has scrolled out of view (on desktop, once the product details have). Customers can choose their size in it.",
         "show_payment_icons": "Show payment methods under the buttons",
         "show_whatsapp": "WhatsApp question button",
-        "show_whatsapp_info": "Shown when a WhatsApp number is set in Theme settings > Business details."
+        "show_whatsapp_info": "Shown when a WhatsApp number is set in Theme settings > Business details.",
+        "team_card_info": "Links to the page of the product's team, or of its player when the player has a collector card on the home page. With a collector card it shows the card's jersey, number and colour. Shown only when that page has other products."
       },
       "options": {
         "media_ratio_square": "Square",
@@ -57,7 +58,8 @@
         "complete_set": "Complete the set",
         "description": "Description",
         "collapsible": "Collapsible tab",
-        "size_table": "Size chart"
+        "size_table": "Size chart",
+        "team_card": "Team card"
       }
     },
     "product_recommendations": {

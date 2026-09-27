@@ -71,6 +71,10 @@
           "settings": {
             "open": false
           }
+        },
+        "team_card": {
+          "type": "team_card",
+          "settings": {}
         }
       },
       "block_order": [
@@ -85,7 +89,8 @@
         "trust",
         "description",
         "shipping_returns",
-        "size_table"
+        "size_table",
+        "team_card"
       ],
       "settings": {
         "color_scheme": "scheme-day",
