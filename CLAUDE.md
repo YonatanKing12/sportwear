@@ -28,18 +28,18 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   channels; this starts from zero.
 - **Launch target:** early October 2026 (≈ Oct 8, right after Sukkot).
 
-## The store (facts as of 2026-09-26)
+## The store (facts as of 2026-09-27)
 
 | Item | Value |
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet, and the live theme still shows the old shipping texts (free above ₪250, 3 business days) |
-| Catalog | The owner is importing products (about 1,100 by 2026-09-26, tag `source:yupoo`), 0 orders. One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
+| Catalog | 1,098 products imported by the owner (tag `source:yupoo`), 0 orders. A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles fixed, 4 photo fixes, 4 back photos added (`catalog/published/scan-fixes-2026-09-27.json`). 532 products also show the supplier's real close-ups of the fabric and print after their studio photos: 979 photos (`catalog/published/fabric-closeups-2026-09-27.json`, `design/imagery/README.md`). One demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision. Wave 1 from jerseyxie: 128 products (tag `source:jerseyxie`, files in `catalog/published/`), ACTIVE and on the Online Store since 2026-09-26, on the owner's instruction ("אתה יכול להפעיל לבד"). Review page: https://claude.ai/code/artifact/0e56a640-3b84-42af-bf9d-6abd4d4677af |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
-| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes (`deployed_commit` in `catalog/store-setup.json`). Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
-| Store translations | English and Arabic registered for the collections, menus, pages and league names. See `catalog/translations/README.md` |
+| Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 146 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
@@ -153,13 +153,25 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך")
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
-- Store policies: only Shopify's English privacy policy exists. No terms of use (תקנון) and no refund
-  policy yet; both need Hebrew drafts and a lawyer
+- Store policies: only Shopify's English privacy policy exists. Hebrew drafts of all five (terms, refunds,
+  shipping, privacy, contact details) are on the legal drafts page below; they need the business details and a
+  lawyer before they go into Settings → Policies
 - The legal pages: the accessibility contact (name, phone, email), who pays return shipping, whether to
-  charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility)
-  are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39. The site keeps its
-  placeholders until the owner approves
+  charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility,
+  and the five store policies) are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39.
+  The site keeps its placeholders until the owner approves
+- VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
+- Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
+  `real-madrid-third-jersey-2026-27`): keep both or hide one
+- Collection filters (size, league, team, adults/kids) are set in the Search & Discovery app, which only
+  the owner can open
 - Buying the domain
 - Publishing "SportWear (next)" (checked on the real store on 2026-09-26: it renders with the right texts), and whether the site stays open until launch
 - Connecting GitHub to Shopify, a one-time step for the development theme
-- The size chart of the products imported before (the owner will send it)
+- The size chart of the products imported before (the owner will send it). Until then their 106 kids
+  products are sold in S–XL with no chart (the size guide shows how to measure), so a parent cannot tell
+  which size fits which age
+- Two products flagged by the close-up review: the Bulls 23 print jersey (`sw-jerseys-158635085`) is an
+  all-over Louis Vuitton monogram (a trademark risk: keep or hide), and the supplier's photos of the Hawks
+  15 yellow jersey (`sw-jerseys-105462222`) show the back name misprinted as "ANTHIOY" (the site shows only
+  its front; check with the supplier)

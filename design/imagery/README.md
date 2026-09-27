@@ -57,6 +57,29 @@ demo product keeps its supplier photo (`catalog/published/scan-fixes-2026-09-27.
 
 Later the same day a crop bug came to light: `normalize.py` missed the thin outline of white garments on the light background and cut sleeves or edges. The script was fixed (a finer mask, with the old one as a fallback against background noise), the 947 earlier renders were measured with both masks, and the 19 uploaded photos the old crop had cut were re-cropped from their raw renders and replaced in place (`catalog/published/photo-recrop-2026-09-26.json`).
 
+## Product close-ups: real photos of the fabric
+
+On 2026-09-27 the owner asked for photos that show the quality of the fabric. These are the supplier's
+own close-ups from each product's Yupoo album, never generated:
+
+1. An inventory of every album (its photo URLs), contact sheets with numbered photos, and a visual review
+   that marks each photo as a full front, a full back, a close-up or other, and picks up to two close-ups
+   of the product's own garment. Mixed albums are common: a photo of another colorway or team is never
+   picked.
+2. Each pick is cropped to a centred square, 1200 × 1200 JPEG, named `sw-detail-<handle>-<n>.jpg`.
+3. Upload as for studio photos (`stagedUploadsCreate`, `fileCreate`, `fileUpdate referencesToAdd`). They
+   come after the studio photos, alt `<title> (תקריב של הבד וההדפס)`.
+
+The record is `catalog/published/fabric-closeups-2026-09-27.json`: 979 close-ups on 532 products (507 from
+the owner's import, 25 from jerseyxie; 447 with two, 85 with one). Albums with only full views (most
+jerseyxie albums, the football albums and the hoodie album) have no close-ups.
+
+The theme keeps them on the product page: a product card's hover photo skips `sw-detail-*` files, so grids
+keep the studio look (`snippets/product-card.liquid`). Alt texts are stored in Hebrew; on `/en` and `/ar`
+`snippets/media-alt.liquid` rebuilds them from the translated title plus "(back)" or "(close-up of the
+fabric and print)", so keep the Hebrew suffixes (" (גב)", " – גב", " (תקריב של הבד וההדפס)") on new
+photos.
+
 ## Home page photography
 
 The hero slides (`sw-v3-s1/s2/s3`, with `-ltr` and `-mobile` versions), the category tiles
