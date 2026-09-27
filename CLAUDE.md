@@ -195,7 +195,10 @@ i18n/               translation parts per area, built into locales/ by npm run i
 - Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
 - Store policies: only Shopify's English privacy policy exists. Hebrew drafts of all five (terms, refunds,
   shipping, privacy, contact details) are on the legal drafts page below; they need the business details and a
-  lawyer before they go into Settings → Policies
+  lawyer before they go into Settings → Policies. The owner asked for the terms of service on 2026-09-27: the full
+  version (16 sections, with six decisions and notes for the lawyer) is on its own page,
+  https://claude.ai/code/artifact/dce0b2bd-e3ab-491d-881e-74eebf55ea14 (the legal drafts page links to it). Once
+  approved: `shopPolicyUpdate` (TERMS_OF_SERVICE), then en/ar translations
 - The legal pages: the accessibility contact (name, phone, email), who pays return shipping, whether to
   charge the cancellation fee, and a lawyer's review. Full drafts (returns, cancellation, accessibility,
   and the five store policies) are on https://claude.ai/code/artifact/81442e94-2e3a-49a1-accb-4e113a95fd39.
