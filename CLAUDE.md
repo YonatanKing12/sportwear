@@ -40,17 +40,17 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. The live theme still shows "100% מקורי" / "100% original" badges on every product page and in the mobile menu, and the old shipping texts (free above ₪250, 3 business days); "SportWear (next)" has neither (checked in he/en/ar on 2026-09-27) |
 | Catalog | 1,562 products, all ACTIVE; 1,561 on the Online Store (the demo product is on no channel); 0 orders. Details in "The catalog" below |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
-| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). Also on it since the evening of 2026-09-27 (owner's requests): a branded empty cart (drawer and cart page), league banners on the collection pages and a 404 picture ("נבדל!"); see `design/imagery/README.md`, "Brand graphics". `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). Also on it since the evening of 2026-09-27 (owner's requests): a branded empty cart (drawer and cart page) and league banners on the collection pages (`design/imagery/README.md`, "Brand graphics"). Since the night to 2026-09-28: player and team cards instead of the small circles, a 404 page with a big "404" shirt, the owner's photos (a street slide in the hero, the "הלוק של האוהדים" row, product galleries, the empty cart; `design/photos/README.md`), the team's jersey in team and player banners, a "More from the team" card on product pages, whole page titles and a QA pass. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27) The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27), and the collector-card metafields (`sportwear.card_image`, `card_color`, `card_mark`) on 34 player and team collections (`design/imagery/collector-cards.json`). The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Legal texts | `legal/` (see its README). Live in he/en/ar since 2026-09-27: `/pages/shipping-returns` (a friendly returns and shipping text, 45 days; the URL to give as the return policy) and `/pages/accessibility`. The store policies (`/policies/*`) wait for the owner to paste them from https://claude.ai/code/artifact/9e4da37c-1a78-4630-9b76-3cb5c20d8455 |
 | Google | The owner connected the Google & YouTube channel and Merchant Center on 2026-09-27. Initial review pending; what to do about each notice is on the paste page above |
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself. It also refuses `bulkOperationRunMutation`: create products with one `productSet` per call (parallel agents, one group each), then `bulk-update-product-status` and `publicationUpdate`, 50 per call. Stage at most 40 images per `stagedUploadsCreate` call (a bigger result is too large to come back inline). It has no `write_legal_policies` scope, so `shopPolicyUpdate` is refused: the owner pastes policies, and we register their translations (`translationsRegister` works on `ShopPolicy`) |
 
-## The catalog (as of 2026-09-27)
+## The catalog (as of 2026-09-28)
 
 - **Imported by the owner:** 1,098 products (tag `source:yupoo`).
   - A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles
@@ -84,6 +84,15 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   `sportwear.source_url`. Order from that album: albums of the same shirt can differ in sponsors
   (Galatasaray: PASIFIK HOLDING or SOCAR), and kids sets often carry another sponsor than the adult shirt,
   or none.
+- **Scans of 2026-09-28** (the owner: "עברת על כל המוצרים וראית שהשמות תואמים למוצר עצמו"):
+  - the 335 products of wave 2 and the shorts, photo by photo: 2 titles, 2 upside-down close-ups, 8 renders fixed in
+    place (crest and sponsor lettering, sleeves, colours) and 11 front photos added where only a back showed
+    (`catalog/published/scan-2026-09-28.json`);
+  - a consistency round over all the products fixed 194: 42 Hebrew titles, the description's first line, 437 alt
+    texts, their en/ar translations, 13 tags and 2 adult/kids pairs
+    (`catalog/published/consistency-fixes-2026-09-28.json`).
+- **Titles:** a title can end in " | detail" to tell look-alike products apart ("… מספר 5 שחור | פס ירוק בחזה"). The
+  site shows it as a quieter "· detail"; alt texts, page titles and screen readers get ", detail".
 - **Demo:** one demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision.
 
 ## Locked decisions
@@ -190,8 +199,6 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
-- The owner wrote on 2026-09-27 that they were attaching pictures to use on the site; none arrived (the message had no
-  attachments). We asked them to send them again
 - A promotion the owner asked about (2026-09-27): the third item (the cheapest) at 70% off, the fifth item free. Tested
   with two Buy X get Y test codes (deleted after) and `draftOrderCalculate`:
   - each works on its own with Shopify's own discounts: "buy 2, get 1 at 70% off" and "buy 4, get 1 free" go to the
@@ -206,7 +213,12 @@ i18n/               translation parts per area, built into locales/ by npm run i
   items to add)
 - Which card gateway (and whether it supports Bit). Until then the site shows the official Visa, Mastercard,
   Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
-  `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo
+  `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo. The cart page also shows
+  a yellow PayPal button (Shopify's express checkout, from the PayPal entry in Settings → Payments; seen on
+  2026-09-28): finish the PayPal setup or turn it off there
+- Prices to confirm for `catalog/pricing.json`: the 93 NFL hoodies sell at ₪249 and the 75 kids basketball jerseys at
+  ₪149, the prices of the owner's import. The file has no rule for hoodies and "TBD" for kids basketball jerseys, so new
+  products of these kinds wait for the owner's price
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך"). The law asks for them before a purchase, and Google checks for contact details. The
   paste page's form puts them into the terms and builds the contact information policy; we add them to the
@@ -277,5 +289,14 @@ i18n/               translation parts per area, built into locales/ by npm run i
     "MINNESTOA" (the site shows only its back; check with the supplier).
   - The album of the Lakers 24 jersey (`sw-jerseys-125774963`) also shows another white Lakers jersey. Order
     the white "Los Angeles" City Edition shown on the site.
-  - Two different black Timberwolves 5 jerseys have near-identical titles (`sw-jerseys-164994797`,
-    `sw-jerseys-164118532`).
+  - The same item is listed twice in 4 pairs (keep both or hide one of each): SuperSonics 20 green retro
+    (`sw-jerseys-104480062` / `sw-jerseys-104250130`), Heat kids 22 black (`sw-jerseys-181434323` /
+    `sw-jerseys-158637414`), Timberwolves kids 5 white (`sw-jerseys-168442434` / `sw-jerseys-168712198`), Mavericks
+    kids 77 blue (`sw-jerseys-168712275` / `sw-jerseys-168443359`).
+  - Fashion brands in titles, the same trademark question as the Louis Vuitton print: BAPE in 7 titles, Supreme in 2
+    (handles in `catalog/published/consistency-fixes-2026-09-28.json`, `for_the_owner`).
+  - Burnley, West Ham and Wolves play the 2026-27 Championship and Girona the Segunda, but their 26/27 shirts still sit
+    under the Premier League and LaLiga (collections, filters, menus). Move them to "ליגות נוספות" or keep them.
+  - The SuperSonics 35 white retro (`sw-jerseys-135857824`) shows only its back: its album has no full front photo.
+  - Optional wording: the Hornets City Edition 2022 set (3 products) is titled "כחול" though it fades teal to blue
+    ("צבע מדורג" elsewhere), and the Heat kids 22 jerseys are the Miami City Edition design without saying so.

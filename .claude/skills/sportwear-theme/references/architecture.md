@@ -170,7 +170,21 @@ import {
   that discount from the theme's translations (`cart.item.set_discount`, matched on `discount_title`) and hides
   the 0 allocation a Buy X get Y leaves on the jersey line (`snippets/cart-items.liquid`).
 - **Collection banners**: collection metafield `sportwear.banner` (file reference, a wide picture), shown by `sections/main-collection.liquid` ("Show banner") with the title over it; else the collection image; a team's or player's page without one uses its league's (first product's `sportwear.league_handle`, `other-leagues` for football). Keep the collection image itself for product-like pictures: the mega menu tiles (`snippets/header-tile.liquid`) show it. The empty cart tiles use the banner too.
-- **404**: `sections/main-404.liquid` shows its "Picture" setting (wide) above "Offside!", or a big outlined "404" without one.
+- **Collector cards**: collection metafields `sportwear.card_image` (a cut-out jersey, file reference),
+  `sportwear.card_color` and `sportwear.card_mark` (the number behind it). They drive the player and team cards
+  (`sections/collection-circles.liquid`), the jersey in a team's or player's collection banner
+  (`sections/main-collection.liquid`) and the product page's "More from the team" card (block `team_card`,
+  `snippets/product-team-card.liquid`: the player's page when the product has one with other products, else the
+  team's). Files and how they were cut: `design/imagery/README.md`, "Collector cards".
+- **Product titles with a detail**: a title may end in " | detail" (a detail that tells look-alike products
+  apart, catalog convention). Visible titles render through `snippets/product-title.liquid` ("name · detail",
+  the detail quieter; the product page's h1 puts it on its own line). Plain text (alt, aria labels, messages,
+  the page title) replaces " | " with the `general.comma` translation and a space (Arabic "،").
+- **Page title**: `snippets/meta-tags.liquid`. Shopify cuts a product's default page title at 70 characters, so
+  with no SEO title the whole product title is used.
+- **404**: `sections/main-404.liquid` opens with a big "404" on the back of a hanging shirt (inline SVG, name
+  setting "Offside" / "נבדל", sways three times unless reduced motion), then "Error 404", the h1, a search form,
+  links and a menu's top links as chips, on the night scheme.
 - **Adults / kids switch**: product metafield `sportwear.counterpart` (product). The switch links to it.
 - **"You may also like"** in the cart drawer and on the cart page (`snippets/cart-recs.liquid`, one card per
   product in `snippets/cart-recs-card.liquid`; section settings `show_recs`, `recs_collection`, `recs_limit`):
