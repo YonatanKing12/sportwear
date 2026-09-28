@@ -1,0 +1,297 @@
+{
+  "date": "2026-09-28",
+  "what": "The main collections were sorted by best selling. With no orders yet that means newest first, so the home page rows and the category pages opened with the clubs added last (Torino, Sporting, Rangers kids sets...), the NBA and basketball pages with 116 shorts, the kids page with the newest clubs' sets, and the special editions row with a BAPE print. They are now sorted by hand (MANUAL): big teams first, adults before kids, jerseys before shorts.",
+  "owner_instruction": "The owner's reply to our list of open items on 2026-09-28: \"סבבה טפל במה שצריך ברמה הגבוה ביותר\". The list offered to put the big clubs and the jerseys first on the home page and the NBA page (CLAUDE.md, open items).",
+  "sort_order_before": "BEST_SELLING on all 19 collections (no orders, so newest first in practice)",
+  "sort_order_now": "MANUAL",
+  "how_to_revert": "Admin: Products > Collections > the collection > Sort > Best selling (or collectionUpdate with sortOrder BEST_SELLING). Worth doing once there are enough real sales.",
+  "hand_set": {
+    "football": {
+      "id": "gid://shopify/Collection/512840302896",
+      "order": "86 adult shirts first: the home shirts of the big clubs and national teams (Real Madrid, Barcelona, Manchester United, Manchester City, Arsenal, Chelsea, Bayern, PSG, Juventus 25/26 (no 26/27 yet), Milan, Inter, Atletico, Dortmund, Tottenham, Napoli, Argentina, Brazil, Portugal, Maccabi Haifa, Hapoel Tel Aviv, Al Nassr, Inter Miami...), then their away shirts, then their third shirts; the other adult shirts after them; the 152 kids sets at the end.",
+      "first_products": [
+        "חולצת בית ריאל מדריד 26/27",
+        "חולצת בית ברצלונה 26/27",
+        "חולצת בית מנצ׳סטר יונייטד 26/27",
+        "חולצת בית מנצ׳סטר סיטי 26/27",
+        "חולצת כדורגל ארסנל בית 26/27",
+        "חולצת בית צ׳לסי 26/27",
+        "חולצת בית באיירן מינכן 26/27",
+        "חולצת בית פריז סן ז׳רמן 26/27"
+      ]
+    },
+    "nba": {
+      "id": "gid://shopify/Collection/512840827184",
+      "order": "The best four jerseys of the 18 most popular teams in turns (72: Lakers, Bulls/Jordan, Warriors, Celtics, Heat, Knicks, 76ers, Mavericks, Nets, Suns, Bucks, Nuggets, Thunder, Spurs, Timberwolves, Grizzlies, Cavaliers, Clippers); the other jerseys after them in their earlier order; then the 116 shorts and the 73 kids jerseys at the end.",
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול רטרו",
+        "גופיית כדורסל מייקל ג׳ורדן מספר 23 אדום רטרו",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2023",
+        "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב BOSTON",
+        "גופיית כדורסל מיאמי היט מספר 6 בורדו",
+        "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | סמל Sixers וכדור",
+        "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023"
+      ]
+    }
+  },
+  "planned": {
+    "premier-league": {
+      "id": "gid://shopify/Collection/512840597808",
+      "products": 92,
+      "first_products": [
+        "חולצת בית מנצ׳סטר יונייטד 26/27",
+        "חולצת בית מנצ׳סטר סיטי 26/27",
+        "חולצת כדורגל ארסנל בית 26/27",
+        "חולצת בית צ׳לסי 26/27",
+        "חולצת בית טוטנהאם 26/27",
+        "חולצת בית ניוקאסל 26/27",
+        "חולצת בית אסטון וילה 26/27",
+        "חולצת בית אברטון 26/27"
+      ]
+    },
+    "la-liga": {
+      "id": "gid://shopify/Collection/512840630576",
+      "products": 66,
+      "first_products": [
+        "חולצת בית ריאל מדריד 26/27",
+        "חולצת בית ברצלונה 26/27",
+        "חולצת כדורגל אתלטיקו מדריד בית 26/27",
+        "חולצת בית ולנסיה 26/27",
+        "חולצת בית סביליה 26/27",
+        "חולצת בית ריאל בטיס 26/27",
+        "חולצת בית ריאל סוסיאדד 26/27",
+        "חולצת בית אתלטיק בילבאו 26/27"
+      ]
+    },
+    "serie-a": {
+      "id": "gid://shopify/Collection/512840663344",
+      "products": 34,
+      "first_products": [
+        "חולצת בית מילאן 26/27",
+        "חולצת בית אינטר 26/27",
+        "חולצת כדורגל יובנטוס 25/26",
+        "חולצת כדורגל נאפולי בית 26/27",
+        "חולצת בית רומא 26/27",
+        "חולצה שלישית לאציו 26/27",
+        "חולצת בית אטאלנטה 26/27",
+        "חולצת בית פיורנטינה 26/27"
+      ]
+    },
+    "bundesliga": {
+      "id": "gid://shopify/Collection/512840696112",
+      "products": 40,
+      "first_products": [
+        "חולצת בית באיירן מינכן 26/27",
+        "חולצת בית בורוסיה דורטמונד 26/27",
+        "חולצת בית באייר לברקוזן 26/27",
+        "חולצת בית ר.ב. לייפציג 26/27",
+        "חולצת בית איינטרכט פרנקפורט 26/27",
+        "חולצת בית בורוסיה מנשנגלדבאך 26/27",
+        "חולצת בית שטוטגרט 26/27",
+        "חולצת בית ורדר ברמן 26/27"
+      ]
+    },
+    "ligue-1": {
+      "id": "gid://shopify/Collection/512840728880",
+      "products": 27,
+      "first_products": [
+        "חולצת בית פריז סן ז׳רמן 26/27",
+        "חולצת בית מארסיי 26/27",
+        "חולצת בית ליון 26/27",
+        "חולצת בית מונאקו 26/27",
+        "חולצת בית ליל 26/27",
+        "חולצת בית לאנס 26/27",
+        "חולצת בית ניס 26/27",
+        "חולצת חוץ פריז סן ז׳רמן 26/27"
+      ]
+    },
+    "primeira-liga": {
+      "id": "gid://shopify/Collection/512860127536",
+      "products": 18,
+      "first_products": [
+        "חולצת בית בנפיקה 26/27",
+        "חולצת בית פורטו 26/27",
+        "חולצת בית ספורטינג ליסבון 26/27",
+        "חולצת בית בראגה 26/27",
+        "חולצת חוץ בנפיקה 26/27",
+        "חולצת כדורגל פורטו חוץ סגול 26/27",
+        "חולצה שלישית ספורטינג ליסבון 26/27",
+        "חולצת חוץ בראגה 26/27"
+      ]
+    },
+    "israeli-premier-league": {
+      "id": "gid://shopify/Collection/512840761648",
+      "products": 6,
+      "first_products": [
+        "חולצת בית מכבי חיפה 26/27",
+        "חולצת חוץ הפועל תל אביב 26/27",
+        "חולצת בית הפועל פתח תקווה 26/27",
+        "חולצת חוץ מכבי חיפה 26/27",
+        "חולצת חוץ הפועל פתח תקווה 26/27",
+        "חולצה שלישית הפועל פתח תקווה 26/27"
+      ]
+    },
+    "other-leagues": {
+      "id": "gid://shopify/Collection/512860160304",
+      "products": 74,
+      "first_products": [
+        "חולצת בית אל נאסר 26/27",
+        "חולצת חוץ אינטר מיאמי 26/27",
+        "חולצת בית סלטיק 26/27",
+        "חולצת בית ריינג׳רס 26/27",
+        "חולצת בית גלאטסראיי 26/27",
+        "חולצת בית פנרבחצ׳ה 26/27",
+        "חולצת בית בשיקטאש 26/27",
+        "חולצת חוץ אייאקס 26/27"
+      ]
+    },
+    "national-teams": {
+      "id": "gid://shopify/Collection/512840794416",
+      "products": 66,
+      "first_products": [
+        "חולצת בית נבחרת ארגנטינה 2026",
+        "חולצת בית נבחרת ברזיל 2026",
+        "חולצת בית נבחרת פורטוגל 2026",
+        "חולצת בית נבחרת ישראל 2026",
+        "חולצת בית נבחרת ספרד 2026",
+        "חולצת חוץ נבחרת צרפת 2026",
+        "חולצת כדורגל נבחרת גרמניה בית 2026",
+        "חולצת בית נבחרת אנגליה 2026"
+      ]
+    },
+    "kids": {
+      "id": "gid://shopify/Collection/512840466736",
+      "products": 258,
+      "first_products": [
+        "חולצת בית ומכנס ריאל מדריד 26/27 – ילדים",
+        "חולצת בית ומכנס ברצלונה 26/27 – ילדים",
+        "חולצת בית ומכנס מנצ׳סטר יונייטד 26/27 – ילדים",
+        "חולצת בית ומכנס מנצ׳סטר סיטי 26/27 – ילדים",
+        "חולצת בית ומכנס נבחרת ארגנטינה 2026 – ילדים",
+        "חולצת בית ומכנס ארסנל 26/27 – ילדים",
+        "חולצת בית ומכנס נבחרת ברזיל 2026 – ילדים",
+        "חולצת בית ומכנס צ׳לסי 26/27 – ילדים"
+      ]
+    },
+    "season-2026-27": {
+      "id": "gid://shopify/Collection/512860094768",
+      "products": 322,
+      "first_products": [
+        "חולצת בית ריאל מדריד 26/27",
+        "חולצת בית ברצלונה 26/27",
+        "חולצת בית מנצ׳סטר יונייטד 26/27",
+        "חולצת בית מנצ׳סטר סיטי 26/27",
+        "חולצת כדורגל ארסנל בית 26/27",
+        "חולצת בית צ׳לסי 26/27",
+        "חולצת בית באיירן מינכן 26/27",
+        "חולצת בית פריז סן ז׳רמן 26/27"
+      ]
+    },
+    "basketball": {
+      "id": "gid://shopify/Collection/512840335664",
+      "products": 1043,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול רטרו",
+        "גופיית כדורסל מייקל ג׳ורדן מספר 23 אדום רטרו",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2023",
+        "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב BOSTON",
+        "גופיית כדורסל מיאמי היט מספר 6 בורדו",
+        "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | סמל Sixers וכדור",
+        "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023"
+      ]
+    },
+    "basketball-jerseys": {
+      "id": "gid://shopify/Collection/512840368432",
+      "products": 927,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול רטרו",
+        "גופיית כדורסל מייקל ג׳ורדן מספר 23 אדום רטרו",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2023",
+        "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב BOSTON",
+        "גופיית כדורסל מיאמי היט מספר 6 בורדו",
+        "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | סמל Sixers וכדור",
+        "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023"
+      ]
+    },
+    "city-edition": {
+      "id": "gid://shopify/Collection/512861700400",
+      "products": 179,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול מהדורת עיר פסים",
+        "גופיית כדורסל שיקגו בולס מספר 23 מהדורת עיר 2023",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 23 שחור מהדורת עיר 2024",
+        "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן מהדורת עיר 2021",
+        "גופיית כדורסל מיאמי היט מספר 14 מהדורת עיר צבע מדורג 2021",
+        "גופיית כדורסל ניו יורק ניקס מספר 11 כחול מהדורת עיר פסים 2024",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 1 מהדורת עיר 2023",
+        "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023"
+      ]
+    },
+    "special-editions": {
+      "id": "gid://shopify/Collection/512861733168",
+      "products": 63,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 רטרו הדפס",
+        "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו מהדורת אליפות",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 30 הדפס",
+        "גופיית כדורסל בוסטון סלטיקס מספר 33 ירוק רטרו הדפס",
+        "גופיית כדורסל מיאמי היט מספר 93 אדום רטרו מהדורה משותפת",
+        "גופיית כדורסל ניו יורק ניקס מספר 33 כתום רטרו הדפס",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 3 רטרו הדפס | גרפיטי על רקע לבן",
+        "גופיית כדורסל ברוקלין נטס מספר 1 הדפס 2024"
+      ]
+    },
+    "retro": {
+      "id": "gid://shopify/Collection/512861667632",
+      "products": 213,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 סגול רטרו",
+        "גופיית כדורסל מייקל ג׳ורדן מספר 23 אדום רטרו",
+        "גופיית כדורסל גולדן סטייט ווריורס מספר 11 כחול רטרו",
+        "גופיית כדורסל בוסטון סלטיקס מספר 34 ירוק רטרו | כיתוב BOSTON ועיטור שחור",
+        "גופיית כדורסל מיאמי היט מספר 93 אדום רטרו מהדורה משותפת",
+        "גופיית כדורסל ניו יורק ניקס מספר 33 כתום רטרו הדפס",
+        "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | סמל Sixers וכדור",
+        "גופיית כדורסל דאלאס מאבריקס מספר 41 כחול רטרו"
+      ]
+    },
+    "kids-basketball": {
+      "id": "gid://shopify/Collection/512863404336",
+      "products": 75,
+      "first_products": [
+        "גופיית כדורסל לוס אנג׳לס לייקרס לילדים מספר 23 צהוב",
+        "גופיית כדורסל שיקגו בולס לילדים מספר 23 שחור רטרו",
+        "גופיית כדורסל גולדן סטייט ווריורס לילדים מספר 30 שחור וזהב",
+        "גופיית כדורסל בוסטון סלטיקס לילדים מספר 0 ירוק",
+        "גופיית כדורסל מיאמי היט לילדים מספר 14 מהדורת עיר",
+        "גופיית כדורסל ניו יורק ניקס לילדים מספר 11 כחול",
+        "גופיית כדורסל פילדלפיה 76׳ לילדים מספר 0 כחול כהה מהדורת עיר 2024",
+        "גופיית כדורסל דאלאס מאבריקס לילדים מספר 77 תכלת"
+      ]
+    }
+  },
+  "demoted_last": {
+    "_note": "Shown last in every planned collection while the owner decides (CLAUDE.md, 'Products flagged for the owner'). Nothing was hidden.",
+    "sw-jerseys-158635085": "Louis Vuitton print",
+    "sw-jerseys-223293431": "BAPE",
+    "sw-jerseys-223293392": "BAPE",
+    "sw-jerseys-178551405": "BAPE",
+    "sw-jerseys-90178409": "BAPE",
+    "sw-jerseys-90021077": "BAPE",
+    "sw-jerseys-89669213": "BAPE",
+    "sw-jerseys-100146890": "BAPE",
+    "sw-jerseys-121071914": "Supreme",
+    "sw-jerseys-106292062": "Supreme",
+    "sw-jerseys-181434323": "duplicate of sw-jerseys-158637414",
+    "sw-jerseys-168443359": "duplicate of sw-jerseys-168712275",
+    "sw-jerseys-168712198": "duplicate of sw-jerseys-168442434",
+    "sw-jerseys-104250130": "duplicate of sw-jerseys-104480062",
+    "sw-football-236063085": "second pink Real Madrid third (the kids third links to real-madrid-third-jersey-2026-27)"
+  },
+  "tool": "scripts/catalog/collection-order.py (fetch, plan, check). Rules and team order: catalog/collection-order.json. It never writes to Shopify; apply the moves with collectionReorderProducts (up to 250 per call, one call at a time per collection).",
+  "after_an_import": "Shopify does not place new products by these rules: run fetch and plan, apply the moves, then check.",
+  "check": "2026-09-28: 'check' reports all 17 planned collections in order; football and nba checked in admin; the home rows of SportWear (next) checked through the Section Rendering API (football, leagues tabs, kids, national teams, basketball jerseys, city edition, special editions, retro)."
+}

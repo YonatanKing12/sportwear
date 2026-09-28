@@ -142,6 +142,13 @@ Each product is one team × one kit × one season × one audience.
   - A new team or player collection needs a Hebrew title, a short description, EN/AR
     translations, publishing to the Online Store and a menu entry. A collection without a description
     (the leagues and categories) has an SEO description in he/en/ar instead, so search results show one.
+  - **Order:** the 19 collections behind the home rows (`football`, `nba`, `basketball`, `basketball-jerseys`,
+    the leagues, `national-teams`, `kids`, `season-2026-27`, `city-edition`, `retro`, `special-editions`,
+    `kids-basketball`) are sorted by hand (MANUAL) since 2026-09-28: adults before kids, jerseys before shorts,
+    big teams first, each team's best product first. Shopify doesn't place new products by these rules: after an
+    import run `python3 scripts/catalog/collection-order.py fetch|plan|check <work_dir>` and apply the moves with
+    `collectionReorderProducts` (rules in `catalog/collection-order.json`; `football` and `nba` are hand-set, see
+    `catalog/published/collection-order-2026-09-28.json`). Team collections stay "best selling".
 
 ## Size systems
 
