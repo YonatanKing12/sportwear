@@ -1,0 +1,193 @@
+{
+  "_note": "The owner asked (2026-09-28): 'חייב לדאוג ל sitemap כמו שצריך לכל השפות'. Shopify builds the sitemap itself; this records the check of every URL in it, in Hebrew, English and Arabic, and what was fixed. Checked on SportWear (next), the theme the owner is about to publish. Products, prices, stock and statuses were not touched.",
+  "sitemap": {
+    "index": "https://sportwear.co.il/sitemap.xml",
+    "robots_txt": "https://sportwear.co.il/robots.txt points to it (Sitemap: line)",
+    "languages": "One index for the three languages: Hebrew at the root, then /en/ and /ar/ child sitemaps (products in two files, collections, pages). /en/sitemap.xml and /ar/sitemap.xml do not exist (404): submit only the root index.",
+    "urls_per_language_before": {
+      "products": 1561,
+      "home": 1,
+      "collections": 207,
+      "pages": 6,
+      "blogs": 1
+    },
+    "urls_per_language_after": {
+      "products": 1561,
+      "home": 1,
+      "collections": 202,
+      "pages": 6,
+      "blogs": 0
+    },
+    "also": "sitemap_agentic_discovery.xml, added by Shopify"
+  },
+  "crawl": {
+    "urls": 5328,
+    "how": "scratchpad crawler: every URL of the 15 child sitemaps fetched on SportWear (next) (preview cookie), about 2.5 pages a second; status, <html lang/dir>, canonical, hreflang links, robots meta, <title>, meta description, first h1. Flagged pages fetched again after each fix.",
+    "template_checks": "All 5,328 answer 200 with the right lang and dir, a canonical to themselves, and hreflang links to he, en, ar and x-default (Shopify adds them through content_for_header). No Hebrew text on /en or /ar pages, no Arabic on Hebrew pages.",
+    "found": [
+      "Meta description of 1,097 Hebrew product pages (and many en/ar ones): with no SEO description of their own, Shopify's is the description with its paragraphs glued: 'Detroit Pistons #2 Basketball Jersey – Blue | Red Side StripesSizes: S, M, L, XL.'",
+      "Page title cut at 70 characters mid-word on long titles, also when the title has an apostrophe ('Kids&#39;'): '… Retro, Pins – SportWear'.",
+      "15 collections without any description (the categories and leagues: nba, premier-league, la-liga…): no meta description in any language.",
+      "Empty pages in the sitemap: the collections frontpage (Shopify's default), basketball-sets, sale, euroleague, israeli-basketball-league, and the empty blog 'news', each in three languages.",
+      "Share image alt text in Hebrew on /en and /ar pages; the English home description was 198 characters."
+    ]
+  },
+  "fixed": {
+    "theme": {
+      "files": [
+        "snippets/meta-tags.liquid",
+        "snippets/product-meta-description.liquid (new)",
+        "locales/en.json (general.meta.home_description)"
+      ],
+      "what": "A product page without its own meta description in the page's language gets one rebuilt from its description, a sentence per paragraph or list item (split at '</p>', '</li>'), the title's ' | detail' read as ', detail', cut at a word before 160 characters. Whole page titles (page_title compared with its entities decoded). og:image:alt in the page's language. Shorter English home description.",
+      "live_after": "the owner publishes SportWear (next)"
+    },
+    "hidden_from_search_engines": {
+      "_note": "Metafield seo.hidden = 1 (number_integer): the page leaves sitemap.xml in all three languages and gets <meta name=robots content=noindex,nofollow>. It stays reachable by link. When a collection gets products, delete its metafield (metafieldsDelete) so it comes back.",
+      "items": [
+        {
+          "type": "collection",
+          "handle": "frontpage",
+          "id": "gid://shopify/Collection/512835322160",
+          "metafield": "gid://shopify/Metafield/189649261887792",
+          "why": "Shopify's default 'Home page' collection; only the demo product, which is on no channel"
+        },
+        {
+          "type": "blog",
+          "handle": "news",
+          "id": "gid://shopify/Blog/122944586032",
+          "metafield": "gid://shopify/Metafield/189649261920560",
+          "why": "no articles"
+        },
+        {
+          "type": "collection",
+          "handle": "basketball-sets",
+          "id": "gid://shopify/Collection/512840433968",
+          "metafield": "gid://shopify/Metafield/189654024913200",
+          "why": "0 products"
+        },
+        {
+          "type": "collection",
+          "handle": "sale",
+          "id": "gid://shopify/Collection/512840499504",
+          "metafield": "gid://shopify/Metafield/189654024945968",
+          "why": "0 products until a product gets a compare-at price: unhide it when a sale starts"
+        },
+        {
+          "type": "collection",
+          "handle": "euroleague",
+          "id": "gid://shopify/Collection/512840859952",
+          "metafield": "gid://shopify/Metafield/189654024978736",
+          "why": "0 products"
+        },
+        {
+          "type": "collection",
+          "handle": "israeli-basketball-league",
+          "id": "gid://shopify/Collection/512840892720",
+          "metafield": "gid://shopify/Metafield/189654025011504",
+          "why": "0 products"
+        }
+      ],
+      "not_linked": "None of them is linked from the menus or the home page (checked on SportWear (next), he and en)."
+    },
+    "collection_seo_descriptions": {
+      "_note": "The 12 collections with products and no description got an SEO description (collection seo.description, Hebrew) and its en/ar translations (translationsRegister, key meta_description; digest = SHA-256 of the Hebrew). Search results only: the collection page shows no new text.",
+      "items": {
+        "basketball-jerseys": {
+          "id": "gid://shopify/Collection/512840368432",
+          "he": "גופיות כדורסל של קבוצות ושחקני NBA ועוד, כולל רטרו ומהדורות עיר, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Basketball jerseys of NBA teams and players and more, including retro and City Edition, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان كرة السلة لفرق ولاعبي NBA وغيرها، ومنها الريترو وإصدارات المدينة، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "65984691b3653e05bdd5211963d6fcbd1e3cf4831f7af9c2f9dd40111dc824ca"
+        },
+        "basketball-shorts": {
+          "id": "gid://shopify/Collection/512840401200",
+          "he": "מכנסי כדורסל של קבוצות NBA, כולל מהדורות עיר. רובם משתלבים בסט עם הגופייה התואמת. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Basketball shorts of NBA teams, including City Edition. Most pair with a matching jersey as a set. Free home delivery within 10 business days.",
+          "ar": "شورتات كرة السلة لفرق NBA، ومنها إصدارات المدينة، ومعظمها يكتمل كطقم مع القميص المطابق. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "5b9273c9bec8dd64e71282052ddc522af76b14a1378003833393d724953db06b"
+        },
+        "new": {
+          "id": "gid://shopify/Collection/512840532272",
+          "he": "המוצרים האחרונים שהוספנו לאתר, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "The latest products in our store, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "أحدث المنتجات في متجرنا، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "f6f181da806d7ce7d680cf2f8ee53130661b90338e37d0ce7c3a5eb94f4cec81"
+        },
+        "best-sellers": {
+          "id": "gid://shopify/Collection/512840565040",
+          "he": "כל המוצרים באתר לפי מכירות: חולצות כדורגל, גופיות כדורסל, מכנסיים וקפוצ׳ונים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Every product in our store, sorted by sales: football jerseys, basketball jerseys, shorts and hoodies. Free home delivery within 10 business days.",
+          "ar": "كل منتجات متجرنا مرتبة حسب المبيعات: قمصان كرة القدم وقمصان كرة السلة والشورتات والهوديز. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "5520a0e58932f069d74c9cf84adc6b1abfdff8dcb6c2c9279759832fb4a3991e"
+        },
+        "premier-league": {
+          "id": "gid://shopify/Collection/512840597808",
+          "he": "חולצות קבוצות הפרמייר ליג: ארסנל, מנצ׳סטר סיטי, מנצ׳סטר יונייטד, צ׳לסי ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Premier League shirts: Arsenal, Manchester City, Manchester United, Chelsea and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الإنجليزي الممتاز: آرسنال ومانشستر سيتي ومانشستر يونايتد وتشيلسي وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "fc26e8348179eaa00b51f485fe359c620a4ea1bac7a6af3424445a4904b1e5c9"
+        },
+        "la-liga": {
+          "id": "gid://shopify/Collection/512840630576",
+          "he": "חולצות קבוצות לה ליגה: ריאל מדריד, ברצלונה, אתלטיקו מדריד ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "LaLiga shirts: Real Madrid, FC Barcelona, Atlético Madrid and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الإسباني: ريال مدريد وبرشلونة وأتلتيكو مدريد وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "192400946c4d7ea493892b4246b7527afcab0a91207263cfba2373973126ec73"
+        },
+        "serie-a": {
+          "id": "gid://shopify/Collection/512840663344",
+          "he": "חולצות קבוצות סרייה A: יובנטוס, מילאן, אינטר, רומא, נאפולי ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Serie A shirts: Juventus, AC Milan, Inter Milan, AS Roma, Napoli and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الإيطالي: يوفنتوس وإيه سي ميلان وإنتر ميلان وروما ونابولي وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "d17f343c56b1f985635ac06afeb35806375d66ddc426abcea0a4d709af2b02e8"
+        },
+        "bundesliga": {
+          "id": "gid://shopify/Collection/512840696112",
+          "he": "חולצות קבוצות הבונדסליגה: באיירן מינכן, בורוסיה דורטמונד ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Bundesliga shirts: Bayern Munich, Borussia Dortmund and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الألماني: بايرن ميونخ وبوروسيا دورتموند وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "4a0ef502b12b08698f8571f5c964caf4c96548723bb1bb9c4ecf0822c2520527"
+        },
+        "ligue-1": {
+          "id": "gid://shopify/Collection/512840728880",
+          "he": "חולצות קבוצות ליג 1: פריז סן ז׳רמן, מארסיי, ליון ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Ligue 1 shirts: Paris Saint-Germain, Olympique de Marseille, Olympique Lyonnais and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الفرنسي: باريس سان جيرمان وأولمبيك مارسيليا وليون وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "af9c55deddc7fe09ab69bcf8a094b1b418c4891e2682acd86e0992a19b95c35d"
+        },
+        "israeli-premier-league": {
+          "id": "gid://shopify/Collection/512840761648",
+          "he": "חולצות ליגת העל: מכבי חיפה, הפועל תל אביב והפועל פתח תקווה. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "Israeli Premier League shirts: Maccabi Haifa, Hapoel Tel Aviv and Hapoel Petah Tikva. Free home delivery within 10 business days.",
+          "ar": "قمصان أندية الدوري الإسرائيلي الممتاز: مكابي حيفا وهبوعيل تل أبيب وهبوعيل بيتاح تكفا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "34de8eda004b3974dc07233d2c3f7e9b5b3ce5589902d957068d5949c0f4e042"
+        },
+        "national-teams": {
+          "id": "gid://shopify/Collection/512840794416",
+          "he": "חולצות נבחרות: ארגנטינה, ברזיל, ספרד, צרפת, גרמניה, פורטוגל ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "National team shirts: Argentina, Brazil, Spain, France, Germany, Portugal and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان المنتخبات: الأرجنتين والبرازيل وإسبانيا وفرنسا وألمانيا والبرتغال وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "f9bcbeae8a2145f6dd51fd2b0a019113fd22223ace67ba96347fe67bb951d64b"
+        },
+        "nba": {
+          "id": "gid://shopify/Collection/512840827184",
+          "he": "גופיות ומכנסי כדורסל של קבוצות ושחקני NBA: לייקרס, בולס, גולדן סטייט, סלטיקס ועוד, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.",
+          "en": "NBA basketball jerseys and shorts: Lakers, Bulls, Warriors, Celtics and more, for adults and kids. Free home delivery within 10 business days.",
+          "ar": "قمصان وشورتات كرة السلة لفرق ولاعبي NBA: ليكرز وبولز ووريرز وسيلتيكس وغيرها، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.",
+          "digest": "321c56c448fc6bddecbe89bf9e70fc06f969ce770d8750c175757990188e9151"
+        }
+      }
+    }
+  },
+  "after": "All 5,328 URLs fetched again where flagged: clean titles and descriptions in all three languages. 33 titles are exactly 70 characters long and complete (not cut).",
+  "search_console": {
+    "dns": "sportwear.co.il DNS is at the registrar (ns1/ns2.sitesdepot.com), not Shopify. A TXT record google-site-verification=… already exists (checked 2026-09-28), so the domain is verified with Google for the account that added it.",
+    "steps_for_the_owner": [
+      "search.google.com/search-console with the Google account used for Merchant Center",
+      "Property sportwear.co.il (Domain); if it is not listed, add it: the TXT record is already in DNS",
+      "Sitemaps: enter sitemap.xml, Submit (one index covers he, /en and /ar)",
+      "After publishing SportWear (next): URL inspection on /, /en and /ar, Request indexing"
+    ]
+  }
+}

@@ -121,7 +121,15 @@ Each product is one team × one kit × one season × one audience.
   - No invented specs.
   - No originality claims: never write "מקורי", "original", "authentic" or "genuine", even when
     the source says so (owner decision, 2026-09-26).
-- **SEO:** title up to 60 characters, meta description up to 155 characters, in Hebrew.
+- **SEO:** title up to 60 characters, meta description up to 155 characters, in Hebrew. A meta description
+  set in Hebrew needs its `meta_description` translations in EN/AR registered in the same step: until they
+  exist, `/en` and `/ar` show the Hebrew one. A product without one gets a clean description from the
+  theme (`snippets/product-meta-description.liquid`).
+- **Search engines and the sitemap** (`/sitemap.xml`, one index for he, `/en` and `/ar`; Shopify builds it):
+  every product, collection, page and blog on the Online Store is in it, in all three languages. An empty
+  collection or blog is kept out with the metafield `seo.hidden` = 1 (`number_integer`), which also adds
+  noindex. Remove the metafield when it gets products. Which ones are hidden now:
+  `catalog/published/seo-2026-09-28.json`.
 - **Collections** are smart collections on the tags above, never ad hoc (IDs and rules in
   `catalog/store-setup.json`, EN/AR in `catalog/translations/store-content.json`):
   - by sport and product type (`football`, `basketball`, `basketball-jerseys`, `basketball-shorts`,
@@ -132,7 +140,8 @@ Each product is one team × one kit × one season × one audience.
     `college-and-wnba`, `retro`, `city-edition`, `special-editions`, one per player with 3+
     products (handle = player slug) and `players`
   - A new team or player collection needs a Hebrew title, a short description, EN/AR
-    translations, publishing to the Online Store and a menu entry.
+    translations, publishing to the Online Store and a menu entry. A collection without a description
+    (the leagues and categories) has an SEO description in he/en/ar instead, so search results show one.
 
 ## Size systems
 
