@@ -552,11 +552,18 @@
   */
   .collection-banner--team {
     --team-color: var(--color-accent);
-    --team-space: 40%;
+    --team-space: 30%;
     --team-tilt: -4deg;
+    container-type: inline-size;
 
-    @media screen and (max-width: 749px) {
-      aspect-ratio: 2 / 1;
+    /* Phones: the banner grows with a long name ("Giannis Antetokounmpo") instead of clipping it. */
+    aspect-ratio: auto;
+    min-block-size: 190px;
+
+    @media screen and (min-width: 750px) {
+      --team-space: 40%;
+      aspect-ratio: 5 / 1;
+      min-block-size: 240px;
     }
 
     @media screen and (min-width: 990px) {
@@ -567,6 +574,12 @@
       position: relative;
       z-index: 1;
       padding-inline-end: calc(var(--team-space) + var(--space-2));
+    }
+
+    /* Whole words only, sized to the banner so the longest names fit beside the jersey. */
+    .collection-banner__title {
+      font-size: min(var(--display-l), 10cqi);
+      overflow-wrap: normal;
     }
   }
 

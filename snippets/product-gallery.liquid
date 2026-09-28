@@ -221,7 +221,9 @@
         aria-labelledby="{{ zoom_id }}-title"
       >
         <div class="product-modal__header">
-          <h2 id="{{ zoom_id }}-title" class="product-modal__title">{{ product.title | escape }}</h2>
+          <h2 id="{{ zoom_id }}-title" class="product-modal__title">
+            {% render 'product-title', title: product.title %}
+          </h2>
           <button type="button" class="button button--icon" data-drawer-close>
             {%- render 'icon', name: 'close' -%}
             <span class="visually-hidden">{{ 'general.close' | t }}</span>

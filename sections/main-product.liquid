@@ -730,8 +730,9 @@
       transform: translateY(-2px);
     }
 
+    /* The card is dark on a light page: the ring is ink (the card's own scheme would make it white). */
     &:focus-visible {
-      outline: 2px solid var(--color-accent);
+      outline: 2px solid var(--color-on-accent);
       outline-offset: 3px;
     }
   }
@@ -758,6 +759,15 @@
     font-weight: 700;
     line-height: var(--leading-display);
     overflow-wrap: anywhere;
+
+    &:lang(en) {
+      text-transform: var(--latin-heading-transform, uppercase);
+      letter-spacing: 0.01em;
+    }
+
+    &:lang(ar) {
+      line-height: 1.22;
+    }
   }
 
   .team-card__count {

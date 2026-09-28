@@ -167,7 +167,7 @@
         <div class="size-sheet__product">
           {%- comment -%} The title's ending stays together, as on product cards (snippets/product-card.liquid). {%- endcomment -%}
           <h2 id="{{ sheet_title_id }}" class="size-sheet__title">
-            {{- product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+            {%- render 'product-title', title: product.title -%}
           </h2>
           <div class="size-sheet__price" data-product-dynamic="sheet-price">
             {%- if show_product_price -%}

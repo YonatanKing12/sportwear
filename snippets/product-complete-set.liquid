@@ -70,7 +70,7 @@
               -%}
             </a>
             <div class="product-set__info">
-              <a class="product-set__title" href="{{ item.url }}">{{ item.title | escape }}</a>
+              <a class="product-set__title" href="{{ item.url }}">{% render 'product-title', title: item.title %}</a>
               {%- render 'price', product: item, class: 'product-set__price' -%}
               <div class="product-set__deal" data-product-dynamic="set-price-{{ item.id }}">
                 {%- render 'set-price',

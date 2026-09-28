@@ -1,0 +1,22 @@
+{%- doc -%}
+  A product title as visible text. A title such as "… מספר 1 אדום | תג תחתון לבן" names, after " | ", a detail
+  that tells look-alike products apart: it shows as a quieter " · detail" instead of a bar (the product page's
+  h1 puts it on its own line, sections/main-product.liquid). The ending after a dash stays together, so a line
+  never breaks right after it. Escaped. For attributes (aria-label, alt, title) use product.title | escape.
+
+  @param {string} title - The product title
+
+  @example
+  {% render 'product-title', title: product.title %}
+{%- enddoc -%}
+{%- liquid
+  assign title_main = title | split: ' | ' | first
+  assign title_detail = ''
+  if title contains ' | '
+    assign title_detail = title | remove_first: title_main | remove_first: ' | '
+  endif
+-%}
+{{- title_main | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+{%- if title_detail != blank -%}
+  <span class="product-title__detail"> ·&nbsp;{{ title_detail | escape }}</span>
+{%- endif -%}

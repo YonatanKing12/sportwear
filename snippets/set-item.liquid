@@ -18,7 +18,7 @@
 <div class="set-item" data-set-item="{{ index }}">
   <div class="set-item__head">
     <p class="set-item__role">{{ role }}</p>
-    <a class="set-item__title" href="{{ product.url }}">{{ product.title | escape }}</a>
+    <a class="set-item__title" href="{{ product.url }}">{% render 'product-title', title: product.title %}</a>
     {%- render 'price', product: product, class: 'set-item__price' -%}
   </div>
   <fieldset class="set-item__sizes">

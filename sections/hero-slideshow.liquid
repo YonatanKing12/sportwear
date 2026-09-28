@@ -354,8 +354,29 @@
   }
 
   /* A slide with its text fixed to one side (photo with its people on the other side): the gradient,
-     the text and the photo's crop follow that side in every language. */
+     the text and the photo's crop follow that side in every language. Such photos are real-life shots
+     (light walls, white shirts), so the scrim under the text is stronger and wider, keeping white text
+     above 4.5:1 on phones and computers. */
+  :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__media::after {
+    background: linear-gradient(
+      to top,
+      rgb(13 14 17 / 0.9) 0%,
+      rgb(13 14 17 / 0.8) 45%,
+      rgb(13 14 17 / 0.66) 62%,
+      rgb(13 14 17 / 0) 88%
+    );
+  }
+
   @media screen and (min-width: 750px) {
+    :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__media::after {
+      background: linear-gradient(
+        var(--hero-gradient-direction, to right),
+        rgb(13 14 17 / 0.84) 0%,
+        rgb(13 14 17 / 0.76) 46%,
+        rgb(13 14 17 / 0.32) 64%,
+        rgb(13 14 17 / 0) 80%
+      );
+    }
     .hero-slideshow__slide--text-right .hero-slideshow__media {
       --hero-gradient-direction: to left;
     }

@@ -56,7 +56,7 @@
 
     <p class="cart-recs__title" id="{{ title_id }}">
       <a class="cart-recs__link" href="{{ product.url }}">
-        {{- product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+        {%- render 'product-title', title: product.title -%}
       </a>
     </p>
     {%- render 'price', product: product, class: 'cart-recs__price' -%}

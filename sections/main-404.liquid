@@ -7,11 +7,11 @@
   dark night scheme with faint pitch markings.
 {%- endcomment -%}
 {%- liquid
-  assign heading = section.settings.heading
+  assign heading = section.settings.heading | escape
   if heading == blank
     assign heading = 'not_found.heading' | t
   endif
-  assign intro = section.settings.text
+  assign intro = section.settings.text | escape
   if intro == blank
     assign intro = 'not_found.text' | t
   endif
@@ -187,7 +187,7 @@
     inline-size: min(68vw, 280px);
     aspect-ratio: 420 / 532;
     transform-origin: 50% 2%;
-    animation: not-found-sway 7s ease-in-out infinite;
+    animation: not-found-sway 7s ease-in-out 3;
 
     @media screen and (min-width: 990px) {
       inline-size: min(100%, 400px);

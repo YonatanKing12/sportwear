@@ -4,7 +4,9 @@
     "checked": 335,
     "titles_fixed": 2,
     "photos_rotated": 2,
-    "for_the_owner": 8
+    "for_the_owner": 3,
+    "photos_fixed_in_place": 8,
+    "front_photos_added": 11
   },
   "titles": [
     {
@@ -41,6 +43,54 @@
       "media_image": "gid://shopify/MediaImage/45302585131312",
       "file": "sw-detail-shorts-98995595-2.jpg",
       "fix": "The second fabric close-up was upside down (the Brooklyn roundel): rotated 180° and replaced in place."
+    },
+    {
+      "handle": "celtic-away-jersey-2026-27",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45303832576304",
+      "fix": "The crest's ring text had become '125 ANNIVERSARY…' and lost 'THE': the arch and ring text were rebuilt from the supplier's own crest pixels (album 238094564, photo 02), now '60º ANIVERSARIO' and 'THE CELTIC FOOTBALL CLUB'. Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "celtic-home-jersey-2026-27",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45303843717424",
+      "fix": "Garbled gold arch text above the crest: rebuilt as '60º ANIVERSARIO' from the same badge (the away supplier crest, recoloured in the render's gold). Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "al-hilal-away-jersey-2026-27",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45303720706352",
+      "fix": "The Arabic line under 'flynas' was gibberish: re-set as 'طيران ناس' in the supplier's size and position (Noto Sans Arabic). Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "aston-villa-third-jersey-2026-27",
+      "view": "back",
+      "media_image": "gid://shopify/MediaImage/45303495164208",
+      "fix": "A made-up word 'adrino' under the neck: replaced with the supplier's small claret emblem (supplier pixels, album 251141568, photo 02). Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "galatasaray-third-jersey-2026-27",
+      "view": "back",
+      "media_image": "gid://shopify/MediaImage/45303947493680",
+      "fix": "Gibberish motto under the neck: re-set as 'İLKLERİN VE ENLERİN TAKIMI', read off the supplier's back photo. Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "west-ham-united-away-jersey-2026-27",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45303394959664",
+      "fix": "The front showed plain sleeves; the real shirt (and the back photo) has damask sleeves with white/black/light-blue knit cuffs. The sleeves were rebuilt from the product's own back render. Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "lille-third-jersey-2026-27",
+      "view": "front",
+      "media_image": "gid://shopify/MediaImage/45303545725232",
+      "fix": "Front and back were two different blues: both recoloured (blue pixels only) to the supplier's medium navy. Replaced in place (fileUpdate originalSource): same media ID, alt and position."
+    },
+    {
+      "handle": "lille-third-jersey-2026-27",
+      "view": "back",
+      "media_image": "gid://shopify/MediaImage/45303545758000",
+      "fix": "Same navy as the front now. Replaced in place (fileUpdate originalSource): same media ID, alt and position."
     }
   ],
   "for_the_owner": [
@@ -51,6 +101,71 @@
     {
       "handles": ["burnley-home-kit-2026-27-kids", "west-ham-united-*", "wolverhampton-wanderers-*", "girona-*"],
       "note": "Burnley, West Ham and Wolves were relegated from the Premier League at the end of 2025-26 and play the 2026-27 Championship; Girona (with Mallorca and Oviedo) went down from LaLiga to the Segunda (checked on 2026-09-28: premierleague.com 'Everything that's been decided in 2025/26', Wikipedia '2026-27 EFL Championship' and '2025-26 La Liga'). Their 26/27 products are still tagged league:premier-league / league:la-liga, so they show in those collections, filters and menus. Not changed: the owner decides whether to move them (for example to 'ליגות נוספות')."
+    },
+    {
+      "handles": ["sw-jerseys-135857824"],
+      "note": "SuperSonics 35 white retro still shows only its back: the supplier album has no full front photo. Ask the supplier for one, or keep as is."
     }
-  ]
+  ],
+  "front_photos": {
+    "_note": "Products that showed only the back of the garment (the photo imported for them was the album's back photo). A studio front was rendered from the front photo in the product's own supplier album (scripts/images/studio.py + normalize.py, checked against the album photo and the store's back), uploaded as sw-studio-<handle without sw->-front.png, attached with alt = the product title and moved to the first position. sw-jerseys-135857824 (SuperSonics 35) was skipped: its album has no full front photo (the one front is cropped at the neck and sides). sw-jerseys-152407516 keeps its back only on purpose (the supplier's front reads MINNESTOA).",
+    "added": [
+      {
+        "handle": "sw-jerseys-150932079",
+        "media_image": "gid://shopify/MediaImage/45307724398896",
+        "album_photo": "https://photo.yupoo.com/1464316803/c0dcf184/4f1a6d0b.jpg"
+      },
+      {
+        "handle": "sw-jerseys-151771597",
+        "media_image": "gid://shopify/MediaImage/45307724431664",
+        "album_photo": "https://photo.yupoo.com/1464316803/a0b34cc7/4fa27459.jpg"
+      },
+      {
+        "handle": "sw-jerseys-155384374",
+        "media_image": "gid://shopify/MediaImage/45307724464432",
+        "album_photo": "https://photo.yupoo.com/1464316803/d17d8c6b/72855a61.jpg"
+      },
+      {
+        "handle": "sw-jerseys-158635974",
+        "media_image": "gid://shopify/MediaImage/45307724497200",
+        "album_photo": "https://photo.yupoo.com/1464316803/5da8a607/9aaf75d5.jpg"
+      },
+      {
+        "handle": "sw-jerseys-160789635",
+        "media_image": "gid://shopify/MediaImage/45307724529968",
+        "album_photo": "https://photo.yupoo.com/1464316803/093b2b92/c6c8a255.jpg"
+      },
+      {
+        "handle": "sw-jerseys-165920012",
+        "media_image": "gid://shopify/MediaImage/45307724562736",
+        "album_photo": "https://photo.yupoo.com/1464316803/f3bfceb5/f3929b24.jpg"
+      },
+      {
+        "handle": "sw-jerseys-165920571",
+        "media_image": "gid://shopify/MediaImage/45307724595504",
+        "album_photo": "https://photo.yupoo.com/1464316803/d7195fc7/2a55329c.jpg"
+      },
+      {
+        "handle": "sw-shorts-121082769",
+        "media_image": "gid://shopify/MediaImage/45307724628272",
+        "album_photo": "https://photo.yupoo.com/xingkong-sports/4fc71373/2e749129.jpg"
+      },
+      {
+        "handle": "sw-shorts-130836699",
+        "media_image": "gid://shopify/MediaImage/45307724661040",
+        "album_photo": "https://photo.yupoo.com/xingkong-sports/5cb2251a/64b41a02.jpg"
+      },
+      {
+        "handle": "sw-shorts-182185968",
+        "media_image": "gid://shopify/MediaImage/45307724693808",
+        "album_photo": "https://photo.yupoo.com/xingkong-sports/eb9d03e7/7a17dee4.jpg"
+      },
+      {
+        "handle": "sw-shorts-97018163",
+        "media_image": "gid://shopify/MediaImage/45307724726576",
+        "album_photo": "https://photo.yupoo.com/xingkong-sports/5d5d839c/a2cd39be.jpg"
+      }
+    ],
+    "also": "sw-jerseys-155384374: its back photo's alt now ends with ' (גב)'."
+  }
 }

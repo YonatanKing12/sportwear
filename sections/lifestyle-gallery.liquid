@@ -134,7 +134,9 @@
                         -%}
                       </span>
                       <span class="lifestyle__tag-body">
-                        <span class="lifestyle__tag-title">{{ look_product.title | escape }}</span>
+                        <span class="lifestyle__tag-title">
+                          {%- render 'product-title', title: look_product.title -%}
+                        </span>
                         {%- render 'price', product: look_product, class: 'lifestyle__tag-price' -%}
                       </span>
                       <span class="lifestyle__tag-arrow" aria-hidden="true">

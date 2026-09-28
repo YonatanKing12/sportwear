@@ -243,7 +243,9 @@
                   -%}
                 </div>
                 <div class="header-mega-product__info">
-                  <a class="header-mega-product__link" href="{{ product.url }}">{{ product.title | escape }}</a>
+                  <a class="header-mega-product__link" href="{{ product.url }}">
+                    {%- render 'product-title', title: product.title -%}
+                  </a>
                   {%- render 'price', product: product, class: 'header-mega-product__price' -%}
                 </div>
               </li>

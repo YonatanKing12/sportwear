@@ -184,7 +184,7 @@
                   {%- if subtitle != blank -%}
                     <span class="predictive-search__subtitle">{{ subtitle | escape }}</span>
                   {%- endif -%}
-                  <span class="predictive-search__title">{{ product.title | escape }}</span>
+                  <span class="predictive-search__title">{% render 'product-title', title: product.title %}</span>
                   <span class="predictive-search__meta">
                     {%- render 'price', product: product, class: 'predictive-search__price' -%}
                     {%- unless product.available -%}

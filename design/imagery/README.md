@@ -57,6 +57,21 @@ demo product keeps its supplier photo (`catalog/published/scan-fixes-2026-09-27.
 
 Later the same day a crop bug came to light: `normalize.py` missed the thin outline of white garments on the light background and cut sleeves or edges. The script was fixed (a finer mask, with the old one as a fallback against background noise), the 947 earlier renders were measured with both masks, and the 19 uploaded photos the old crop had cut were re-cropped from their raw renders and replaced in place (`catalog/published/photo-recrop-2026-09-26.json`).
 
+The scan of 2026-09-28 (`catalog/published/scan-2026-09-28.json`) fixed what the renderer had got wrong in small
+print, all replaced in place:
+
+- **Text:** it repaired crest lettering (Celtic home and away) and a nape emblem (Aston Villa third) with the
+  supplier's own pixels, aligned and colour-matched. Where the supplier photo was too soft to lift letters from,
+  it re-set the line in a real font at the supplier's size and position (Al Hilal's Arabic sponsor line,
+  Galatasaray's motto).
+- **Other details:** it rebuilt West Ham away's sleeves from the product's own back render, and matched Lille
+  third's two blues to the supplier's navy.
+- **Front photos:** 11 older products had only a back photo because the imported photo was the album's back. They
+  got a studio front from the front photo in their own album, first in the gallery (`sw-studio-…-front.png`).
+
+A render with gibberish text is not accepted: check every word of small print (crest rings, sponsor lines, nape
+prints) at 100% before upload.
+
 ## Product close-ups: real photos of the fabric
 
 On 2026-09-27 the owner asked for photos that show the quality of the fabric. These are the supplier's
@@ -93,6 +108,16 @@ Rules for new atmosphere photos: fictional people only (no recognisable real peo
 as they are sold (no added names, numbers or text), and never present them as customers. Team names and
 crests appear as they do on the products; the lawyer question about branded jerseys covers these photos
 too.
+
+## Collector cards: jersey cut-outs
+
+The player and team cards (`sections/collection-circles.liquid`, the team banners and the product page's team
+card) use a cut-out jersey per collection: the collection metafield `sportwear.card_image` (with
+`card_color` and `card_mark`), 34 files `sw-card-<collection>.png`, listed in `collector-cards.json`. They were
+cut from studio photos with `scripts/images/cutout.py`; three of them (Arsenal, Golden State, Juventus)
+showed a light outline, specks or a halo on the dark cards and were re-cut on 2026-09-28 with
+`scripts/images/recut-card.py` and replaced in place. Check a new cut-out on a dark background at 200% before
+uploading.
 
 ## Brand graphics: banners, the empty cart and the 404 page
 

@@ -106,7 +106,7 @@
             data-cart-control="title"
           >
             {%- comment -%} The title's ending stays together, as on product cards (snippets/product-card.liquid). {%- endcomment -%}
-            {{- item.product.title | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
+            {%- render 'product-title', title: item.product.title -%}
           </a>
         </p>
 
