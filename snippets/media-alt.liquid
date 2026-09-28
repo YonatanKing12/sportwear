@@ -13,8 +13,10 @@
   {%- capture media_alt -%}{% render 'media-alt', media: media, product: product %}{%- endcapture -%}
 {%- enddoc -%}
 {%- liquid
+  assign title_comma = 'general.comma' | t | append: ' '
   if request.locale.primary
-    echo media.alt | default: product.title
+    assign stored_alt = media.alt | default: product.title
+    echo stored_alt | replace: ' | ', title_comma
   else
     assign stored_alt = media.alt | default: ''
     assign tail_three = stored_alt | slice: -3, 3
@@ -29,7 +31,7 @@
     elsif tail_four == '(גב)' or tail_three == ' גב' or stored_alt contains 'מבט אחורי'
       assign alt_suffix = 'products.gallery.alt_back' | t
     endif
-    echo product.title
+    echo product.title | replace: ' | ', title_comma
     if alt_suffix != blank
       echo ' ' | append: alt_suffix
     endif

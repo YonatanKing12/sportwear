@@ -1,5 +1,8 @@
 {%- liquid
   assign current_variant = product.selected_or_first_available_variant
+  # The title as plain text (messages, the hidden h1): the detail after " | " reads as ", detail".
+  assign title_comma = 'general.comma' | t | append: ' '
+  assign plain_title = product.title | replace: ' | ', title_comma
   assign form_id = 'ProductForm-' | append: section.id
 
   assign has_title = false
@@ -81,7 +84,7 @@
 
     {%- unless has_title -%}
       {%- # The page keeps its one h1 even when the merchant removes the title block. -%}
-      <h1 class="visually-hidden">{{ product.title | escape }}</h1>
+      <h1 class="visually-hidden">{{ plain_title | escape }}</h1>
     {%- endunless -%}
 
     <div class="main-product__layout{% if section.settings.sticky_info %} main-product__layout--sticky{% endif %}">
@@ -104,9 +107,9 @@
         data-variant-id="{{ current_variant.id }}"
         data-variant-available="{{ current_variant.available | default: false }}"
         data-variant-media-id="{{ current_variant.featured_media.id }}"
-        data-added-message="{{ 'products.buy.added' | t: title: product.title }}"
+        data-added-message="{{ 'products.buy.added' | t: title: plain_title }}"
         {% if picker_submits_id %}
-          data-added-size-message="{{ 'products.buy.added_with_size' | t: title: product.title, size: '[size]' }}"
+          data-added-size-message="{{ 'products.buy.added_with_size' | t: title: plain_title, size: '[size]' }}"
         {% endif %}
         {% if size_required %}
           data-size-required
@@ -166,7 +169,7 @@
                   | replace: ' - ', '&nbsp;-&#8288;&nbsp;'
                 -}}
                 {%- if title_detail != blank -%}
-                  <span class="visually-hidden">, </span>
+                  <span class="visually-hidden">{{ title_comma }}</span>
                   <span class="product-info__title-detail">{{ title_detail | escape }}</span>
                 {%- endif -%}
               </h1>
@@ -413,7 +416,7 @@
                 </ul>
                 {%- if block.settings.show_whatsapp and whatsapp_digits != blank -%}
                   {%- assign help_message = 'products.help.whatsapp_message_html'
-                    | t: title: product.title
+                    | t: title: plain_title
                     | url_encode
                     | replace: '+', '%20'
                   -%}

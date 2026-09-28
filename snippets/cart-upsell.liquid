@@ -112,7 +112,9 @@
 
         <div class="cart-upsell__info">
           <p class="cart-upsell__name" id="{{ name_id }}">
-            <a class="cart-upsell__link" href="{{ complement.url }}">{{ complement.title | escape }}</a>
+            <a class="cart-upsell__link" href="{{ complement.url }}">
+              {%- render 'product-title', title: complement.title -%}
+            </a>
           </p>
           <div class="cart-upsell__price">
             {%- render 'price', product: complement, class: 'cart-upsell__amount' -%}
@@ -141,7 +143,8 @@
               capture option_name
                 render 'option-name', name: complement.options.first
               endcapture
-              assign complement_title = complement.title | escape
+              assign title_comma = 'general.comma' | t | append: ' '
+              assign complement_title = complement.title | replace: ' | ', title_comma | escape
             -%}
             <label class="visually-hidden" for="{{ select_id }}">
               {{- 'cart.upsell.option_label_html' | t: option: option_name, title: complement_title -}}

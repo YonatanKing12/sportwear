@@ -89,7 +89,8 @@
   endif
   assign team_name = last_name
   if last_name == blank
-    assign last_name = product.title
+    assign title_comma = 'general.comma' | t | append: ' '
+    assign last_name = product.title | replace: ' | ', title_comma
   endif
 
   assign home_label = 'products.breadcrumbs.home' | t
@@ -151,7 +152,7 @@
       {
         "@type": "ListItem",
         "position": {{ position }},
-        "name": {{ product.title | json }},
+        "name": {{ product.title | replace: ' | ', ', ' | json }},
         "item": {{ canonical_url | json }}
       }
     ]

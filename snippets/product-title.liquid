@@ -1,8 +1,9 @@
 {%- doc -%}
   A product title as visible text. A title such as "… מספר 1 אדום | תג תחתון לבן" names, after " | ", a detail
-  that tells look-alike products apart: it shows as a quieter " · detail" instead of a bar (the product page's
-  h1 puts it on its own line, sections/main-product.liquid). The ending after a dash stays together, so a line
-  never breaks right after it. Escaped. For attributes (aria-label, alt, title) use product.title | escape.
+  that tells look-alike products apart: it shows as a quieter " · detail" instead of a bar, and screen readers
+  hear ", detail" (the product page's h1 puts it on its own line, sections/main-product.liquid). The ending
+  after a dash stays together, so a line never breaks right after it. Escaped. For plain text (aria-label, alt,
+  title) replace " | " with the 'general.comma' translation and a space.
 
   @param {string} title - The product title
 
@@ -18,5 +19,9 @@
 -%}
 {{- title_main | escape | replace: ' – ', '&nbsp;–&#8288;&nbsp;' -}}
 {%- if title_detail != blank -%}
-  <span class="product-title__detail"> ·&nbsp;{{ title_detail | escape }}</span>
+  {%- # No whitespace between the parts: the dot and its no-break space are the only gap. -%}
+  <span class="product-title__detail"
+    ><span aria-hidden="true"> ·&nbsp;</span><span class="visually-hidden">{{ 'general.comma' | t }} </span>
+    {{- title_detail | escape -}}
+  </span>
 {%- endif -%}

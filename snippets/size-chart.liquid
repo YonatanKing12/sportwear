@@ -25,7 +25,9 @@
   assign guide_tag = heading_tag | default: 'h3'
   assign caption_id = id | append: '-caption'
 
-  assign fallback_caption = 'products.size_chart.caption' | t: title: product.title
+  assign title_comma = 'general.comma' | t | append: ' '
+  assign plain_title = product.title | replace: ' | ', title_comma
+  assign fallback_caption = 'products.size_chart.caption' | t: title: plain_title
   capture chart_table
     render 'size-chart-table', chart: chart, id: id, class_prefix: 'size-chart', caption: fallback_caption
   endcapture

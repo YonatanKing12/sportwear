@@ -20,11 +20,12 @@
   assign eager_count = eager | default: 0
   assign set_offer_title = shop.metafields.sportwear.set_offer.value.discount_title
   assign size_key = 'size'
+  assign title_comma = 'general.comma' | t | append: ' '
 -%}
 <ul class="cart-items" role="list" data-cart-items>
   {%- for item in cart.items -%}
     {%- liquid
-      assign line_name = item.product.title
+      assign line_name = item.product.title | replace: ' | ', title_comma
       unless item.product.has_only_default_variant
         assign line_name = line_name | append: ' (' | append: item.variant.title | append: ')'
       endunless

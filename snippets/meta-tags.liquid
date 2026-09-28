@@ -10,6 +10,16 @@
 {%- liquid
   assign meta_title = page_title
   assign meta_description = page_description
+  if request.page_type == 'product' and product != blank
+    # With no SEO title, Shopify's page title is the product title cut at 70 characters, often
+    # mid-word ("… Beige J"). Use the whole title then, the detail after " | " read as ", detail".
+    assign title_length = page_title | size
+    assign title_start = product.title | slice: 0, title_length
+    if title_start == page_title
+      assign title_comma = 'general.comma' | t | append: ' '
+      assign meta_title = product.title | replace: ' | ', title_comma
+    endif
+  endif
   if request.page_type == 'index'
     if page_title == blank or page_title == shop.name
       assign meta_title = 'general.meta.home_title' | t: shop: shop.name

@@ -51,13 +51,15 @@
 
   # A short ending after the title's last dash (kids products end in " – Kids", " – ילדים") stays in
   # view: when the bar's title has to be cut, the rest of the title is cut instead.
-  assign title_name = product.title
+  # The detail after " | " reads "name · detail", as on the product cards.
+  assign bar_title = product.title | replace: ' | ', ' · '
+  assign title_name = bar_title
   assign title_end = ''
-  assign title_parts = product.title | split: ' – '
+  assign title_parts = bar_title | split: ' – '
   if title_parts.size > 1
     assign title_end = title_parts | last | strip
     if title_end.size > 0 and title_end.size <= 12
-      assign title_name = product.title | remove_last: title_end | strip | remove_last: ' –' | strip
+      assign title_name = bar_title | remove_last: title_end | strip | remove_last: ' –' | strip
     else
       assign title_end = ''
     endif
