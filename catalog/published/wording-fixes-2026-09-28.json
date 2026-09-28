@@ -1,0 +1,44 @@
+{
+  "_note": "Wording fixes of 2026-09-28, the two optional wording points of the owner list (CLAUDE.md), done under the owner's \"סבבה טפל במה שצריך ברמה הגבוה ביותר\". The Charlotte Hornets City Edition 2022 set (shorts and the #1 and #2 jerseys) fades teal to blue on the photos, so 'כחול' became 'צבע מדורג' as on the other gradient products, with the year and 'מהדורת עיר' on all three. The two Miami Heat kids #22 black jerseys are the Miami City Edition 2022 design, so their titles say it. For each product: the Hebrew title and the description's first line, the photo alt texts that started with the old title, the en/ar title and description (registered right after the Hebrew change), the tag style:city-edition and the filter metafield sportwear.styles = [\"city-edition\"] where missing; the storefront City Edition filter lists all five (checked on the Hornets and Heat pages). The shorts also got an SEO title and description in he/en/ar. Nothing changed price, stock, status, handle, channels or photo files. Checked by an Admin read and on the storefront (titles and descriptions in he/en/ar) on 2026-09-28. sw-jerseys-181434323 is still one of the 4 duplicate pairs waiting on the owner (shown last in the collections, not hidden).",
+  "products": {
+    "sw-shorts-112616724": {
+      "id": "gid://shopify/Product/15310204928304",
+      "title_before": "מכנסי כדורסל שארלוט הורנטס כחול מהדורת עיר 2022",
+      "title_after": "מכנסי כדורסל שארלוט הורנטס צבע מדורג מהדורת עיר 2022",
+      "en_title": "Charlotte Hornets Basketball Shorts – Gradient, City Edition 2022",
+      "ar_title": "شورت كرة سلة شارلوت هورنتس بلون متدرج إصدار المدينة 2022",
+      "seo_he": {
+        "title": "מכנסי כדורסל שארלוט הורנטס צבע מדורג מהדורת עיר 2022 | SportWear",
+        "description": "מכנסי הכדורסל של שארלוט הורנטס במהדורת העיר, בצבע מדורג מטורקיז לכחול, בגרסת אוהד, במידות S עד XL."
+      }
+    },
+    "sw-jerseys-107074855": {
+      "id": "gid://shopify/Product/15308655788336",
+      "title_before": "גופיית כדורסל שארלוט הורנטס מספר 2 כחול מהדורת עיר",
+      "title_after": "גופיית כדורסל שארלוט הורנטס מספר 2 צבע מדורג מהדורת עיר 2022",
+      "en_title": "Charlotte Hornets #2 Basketball Jersey – Gradient, City Edition 2022",
+      "ar_title": "قميص كرة سلة شارلوت هورنتس رقم 2 بلون متدرج إصدار المدينة 2022"
+    },
+    "sw-jerseys-122604480": {
+      "id": "gid://shopify/Product/15308660703536",
+      "title_before": "גופיית כדורסל שארלוט הורנטס מספר 1 כחול",
+      "title_after": "גופיית כדורסל שארלוט הורנטס מספר 1 צבע מדורג מהדורת עיר 2022",
+      "en_title": "Charlotte Hornets #1 Basketball Jersey – Gradient, City Edition 2022",
+      "ar_title": "قميص كرة سلة شارلوت هورنتس رقم 1 بلون متدرج إصدار المدينة 2022"
+    },
+    "sw-jerseys-158637414": {
+      "id": "gid://shopify/Product/15308609356080",
+      "title_before": "גופיית כדורסל מיאמי היט לילדים מספר 22 שחור",
+      "title_after": "גופיית כדורסל מיאמי היט לילדים מספר 22 שחור מהדורת עיר 2022",
+      "en_title": "Miami Heat #22 Kids' Basketball Jersey – Black, City Edition 2022",
+      "ar_title": "قميص كرة سلة ميامي هيت للأطفال رقم 22 أسود إصدار المدينة 2022"
+    },
+    "sw-jerseys-181434323": {
+      "id": "gid://shopify/Product/15308592513328",
+      "title_before": "גופיית כדורסל מיאמי היט לילדים מספר 22 שחור",
+      "title_after": "גופיית כדורסל מיאמי היט לילדים מספר 22 שחור מהדורת עיר 2022",
+      "en_title": "Miami Heat #22 Kids' Basketball Jersey – Black, City Edition 2022",
+      "ar_title": "قميص كرة سلة ميامي هيت للأطفال رقم 22 أسود إصدار المدينة 2022"
+    }
+  }
+}

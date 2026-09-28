@@ -91,7 +91,9 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
     (`catalog/published/scan-2026-09-28.json`);
   - a consistency round over all the products fixed 194: 42 Hebrew titles, the description's first line, 437 alt
     texts, their en/ar translations, 13 tags and 2 adult/kids pairs
-    (`catalog/published/consistency-fixes-2026-09-28.json`).
+    (`catalog/published/consistency-fixes-2026-09-28.json`);
+  - the Hornets City Edition 2022 set now reads "צבע מדורג" and the two Heat kids #22 jerseys "מהדורת עיר 2022"
+    (`catalog/published/wording-fixes-2026-09-28.json`).
 - **Titles:** a title can end in " | detail" to tell look-alike products apart ("… מספר 5 שחור | פס ירוק בחזה"). The
   site shows it as a quieter "· detail"; alt texts, page titles and screen readers get ", detail".
 - **Demo:** one demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision.
@@ -297,5 +299,3 @@ i18n/               translation parts per area, built into locales/ by npm run i
   - Burnley, West Ham and Wolves play the 2026-27 Championship and Girona the Segunda, but their 26/27 shirts still sit
     under the Premier League and LaLiga (collections, filters, menus). Move them to "ליגות נוספות" or keep them.
   - The SuperSonics 35 white retro (`sw-jerseys-135857824`) shows only its back: its album has no full front photo.
-  - Optional wording: the Hornets City Edition 2022 set (3 products) is titled "כחול" though it fades teal to blue
-    ("צבע מדורג" elsewhere), and the Heat kids 22 jerseys are the Miami City Edition design without saying so.
