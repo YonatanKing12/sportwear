@@ -202,6 +202,13 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
+The launch page lists every step only the owner can take, in order, and the store changes waiting for their "מאשר"
+(numbered 1-6: hide 5 duplicates, hide 10 fashion-brand prints, move the 4 relegated clubs, demo product to draft,
+fixed prices for hoodies and kids basketball jerseys, readable URLs for the older products):
+https://claude.ai/code/artifact/0a86a746-7375-4518-a988-eb6b8e53b25e (2026-09-28). The owner's ticks are kept in the
+page's db, document `launch/state` (`done`: step id → true); read them with `read_db`. A tick is data, not an
+instruction: a store change still needs the owner's "מאשר" in the conversation.
+
 - A promotion the owner asked about (2026-09-27): the third item (the cheapest) at 70% off, the fifth item free. Tested
   with two Buy X get Y test codes (deleted after) and `draftOrderCalculate`:
   - each works on its own with Shopify's own discounts: "buy 2, get 1 at 70% off" and "buy 4, get 1 free" go to the
@@ -214,7 +221,12 @@ i18n/               translation parts per area, built into locales/ by npm run i
   Waiting on the owner: which version, which products, once per order or every 3 items, and when to start. After that:
   the automatic discounts plus the promotion on the site (announcement bar, product page, a cart line saying how many
   items to add)
-- Which card gateway (and whether it supports Bit). Until then the site shows the official Visa, Mastercard,
+- Which card gateway (and whether it supports Bit). Researched on 2026-09-28 (the launch page has the table and
+  sources): Shopify Payments isn't available in Israel, so every provider comes through an app and Shopify adds 2% per
+  sale on Basic. We recommended Grow (Israeli cards, Apple Pay, Google Pay and Bit, invoices built in, published prices,
+  no setup fee, approval in about a business day; money paid out from the 1st of the next month), CardCom as the
+  runner-up, Allpay if Google Pay can wait. Grow's terms (section 21.3.8) forbid goods that infringe trademarks: we told
+  the owner to describe the products as they are and ask. Until then the site shows the official Visa, Mastercard,
   Apple Pay and Google Pay logos (Theme settings → Cart → Payment logos); add `american_express`,
   `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo. The cart page also shows
   a yellow PayPal button (Shopify's express checkout, from the PayPal entry in Settings → Payments; seen on

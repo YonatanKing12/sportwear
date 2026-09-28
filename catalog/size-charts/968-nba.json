@@ -13,5 +13,7 @@
   },
   "requested": "2026-09-27: the owner got a message in Chinese for the supplier asking, for each kids size S-XL of the jerseys and the hoodies, the age, the height (cm), and the garment's length and chest width (cm).",
   "audit": "2026-09-27, whole catalog (1,562 products): 258 are kids (tag audience:kids, metafield sportwear.audience = kids on all of them). 152 are jerseyxie football kits, all in 16-28 with the kids chart. The other 106 are these S-XL products, the only kids items without an age for each size. No kids item is hidden among the adult products. Supplier album titles: of the 1,098 products imported before, only these 106 come from kids (童装) albums. The lingshang88 football albums are adult S-4XL, and the 10 older shorts and the 106 new shorts have no kids album. No product has kids words in its tags, and no Football Kit, without being marked kids. The 31 hoodies titled for women (213102577) are women's, not kids.",
-  "charts": {}
+  "charts": {},
+  "message_zh": "您好！请问童装篮球球衣和童装卫衣有尺码表吗？S、M、L、XL 每个码适合多大年龄、多高（厘米）？衣长和胸宽（平铺，腋下到腋下）各多少厘米？有尺码表图片的话麻烦发一下，谢谢！",
+  "message_he": "שלום! יש לכם טבלת מידות לגופיות הכדורסל ולקפוצ׳ונים של ילדים? לכל מידה S, M, L, XL: לאיזה גיל ולאיזה גובה (ס״מ) היא מתאימה, ומה אורך הבגד ורוחב החזה (בית שחי לבית שחי, בפריסה) בס״מ? אם יש תמונה של טבלת מידות, נשמח לקבל אותה. תודה!"
 }
