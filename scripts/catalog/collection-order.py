@@ -2,7 +2,8 @@
 
 Usage: python3 scripts/catalog/collection-order.py <command> <work_dir>
 
-  fetch  Saves the storefront order of every collection in catalog/collection-order.json, and of nba, to
+  fetch  Saves the storefront order of every collection in catalog/collection-order.json (the main ones and the
+         team pages), and of nba, to
          <work>/collections.json (https://sportwear.co.il/collections/<handle>/products.json, 250 a page).
   plan   Reads <work>/collections.json and writes <work>/moves.json: for each collection that is not in order yet,
          its id and the moves for collectionReorderProducts, in calls of up to 250. Prints the first products of
@@ -172,7 +173,10 @@ def main():
     command, work = sys.argv[1], sys.argv[2]
     os.makedirs(work, exist_ok=True)
     cfg = json.load(open(CONFIG, encoding='utf-8'))
-    handles = list(cfg['collections'])
+    specs = dict(cfg['collections'])
+    # Team pages: the whole collection in the team's own order.
+    specs.update({h: {'id': gid, 'prefix': None, 'to_end': []} for h, gid in cfg.get('team_collections', {}).items()})
+    handles = list(specs)
     path = os.path.join(work, 'collections.json')
 
     if command == 'fetch':
@@ -180,13 +184,11 @@ def main():
         print(f'wrote {path}')
         return
 
-    cols = json.load(open(path, encoding='utf-8'))
-    if command == 'check':
-        cols = fetch(handles + ['nba'])
+    cols = fetch(handles + ['nba']) if command == 'check' else json.load(open(path, encoding='utf-8'))
     nba_index = {p['id']: i for i, p in enumerate(cols['nba'])}
     plans = {}
     for handle in handles:
-        spec = cfg['collections'][handle]
+        spec = specs[handle]
         planned = order(handle, cols[handle], nba_index, cfg)
         head, tail = head_and_tail(planned, spec)
         current = [p['id'] for p in cols[handle]]

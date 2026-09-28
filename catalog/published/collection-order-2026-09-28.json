@@ -291,7 +291,20 @@
     "sw-jerseys-104250130": "duplicate of sw-jerseys-104480062",
     "sw-football-236063085": "second pink Real Madrid third (the kids third links to real-madrid-third-jersey-2026-27)"
   },
+  "team_pages": {
+    "what": "The 126 team pages (one collection per club, national team or NBA team; handle = team slug) were sorted by best selling too, so 47 of them opened with a kids set and 22 with shorts (newest first). They are now MANUAL as well, each in the team's own order.",
+    "sort_order_before": "BEST_SELLING on all 126",
+    "sort_order_now": "MANUAL",
+    "order": "Adults first (football: the current season first, then home > away > third > fourth > special > training, older seasons and retro after; basketball: the nba page's order), then shorts, then kids, the items flagged for the owner last.",
+    "reordered": "103 pages needed moves: 1,268 moves in 4 requests of aliased collectionReorderProducts calls (all jobs returned without errors). The other 23 were already in order.",
+    "examples": {
+      "real-madrid": "7 adult shirts (home 26/27, third 26/27, then 25/26 and 24/25), then the 3 kids sets 26/27, then the second pink third (flagged) last",
+      "barcelona": "home, away, third and fourth 26/27, then the 25/26 shirts, then the 3 kids sets",
+      "los-angeles-lakers": "146 adult jerseys (the 8 purple retro first, as on the nba page), then 11 shorts, then 20 kids jerseys"
+    },
+    "config": "catalog/collection-order.json, team_collections (handle -> collection id). The tool plans and checks them with the main ones; a new team collection goes there too, set to MANUAL."
+  },
   "tool": "scripts/catalog/collection-order.py (fetch, plan, check). Rules and team order: catalog/collection-order.json. It never writes to Shopify; apply the moves with collectionReorderProducts (up to 250 per call, one call at a time per collection).",
   "after_an_import": "Shopify does not place new products by these rules: run fetch and plan, apply the moves, then check.",
-  "check": "2026-09-28: 'check' reports all 17 planned collections in order; football and nba checked in admin; the home rows of SportWear (next) checked through the Section Rendering API (football, leagues tabs, kids, national teams, basketball jerseys, city edition, special editions, retro)."
+  "check": "2026-09-28: 'check' reports all 143 planned collections in order (the 17 main ones and the 126 team pages); football and nba checked in admin; the home rows of SportWear (next) checked through the Section Rendering API (football, leagues tabs, kids, national teams, basketball jerseys, city edition, special editions, retro); real-madrid, barcelona and los-angeles-lakers checked on the storefront."
 }

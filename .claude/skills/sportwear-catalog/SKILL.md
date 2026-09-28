@@ -148,7 +148,11 @@ Each product is one team × one kit × one season × one audience.
     big teams first, each team's best product first. Shopify doesn't place new products by these rules: after an
     import run `python3 scripts/catalog/collection-order.py fetch|plan|check <work_dir>` and apply the moves with
     `collectionReorderProducts` (rules in `catalog/collection-order.json`; `football` and `nba` are hand-set, see
-    `catalog/published/collection-order-2026-09-28.json`). Team collections stay "best selling".
+    `catalog/published/collection-order-2026-09-28.json`). The 126 team pages (collection handle = team slug) are
+    MANUAL too, each in the team's own order: adults first (football: the current season, then home > away > third;
+    basketball: the nba page's order), then shorts, then kids. They are listed in `team_collections` in the same
+    file, and the tool plans and checks them with the main ones; a new team collection goes there too, set to
+    MANUAL.
 
 ## Size systems
 
