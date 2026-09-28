@@ -7,6 +7,12 @@
       "products": 17,
       "log": "catalog/published/city-edition-fixes-2026-09-27.json",
       "what": "City Edition wording checked and fixed in 17 basketball jersey titles: he/en/ar updated here, en and ar re-registered for title and body_html (68 translations, read back: none outdated)."
+    },
+    {
+      "at": "2026-09-28",
+      "products": 194,
+      "log": "catalog/published/consistency-fixes-2026-09-28.json",
+      "what": "Consistency fixes: 42 Hebrew titles changed (brand names in details, look-alikes told apart, PSG and Hardaway names, national-team seasons as 2026, NBA 2025/2026 as 25/26); the other 152 kept their Hebrew title but their en/ar titles were outdated after the ' | ' detail was added. On all 194 the description's first line is now the title; he/en/ar updated here, en and ar re-registered for title and body_html (776 translations, read back: values match, none outdated)."
     }
   ],
   "products": {
@@ -18,9 +24,9 @@
     },
     "sw-jerseys-244984790": {
       "id": "gid://shopify/Product/15308551094576",
-      "he": "גופיית כדורסל דטרויט פיסטונס מספר 2 כחול",
-      "en": "Detroit Pistons #2 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة ديترويت بيستونز رقم 2 أزرق"
+      "he": "גופיית כדורסל דטרויט פיסטונס מספר 2 כחול | פסי צד אדומים",
+      "en": "Detroit Pistons #2 Basketball Jersey – Blue | Red Side Stripes",
+      "ar": "قميص كرة سلة ديترويت بيستونز رقم 2 أزرق | خطوط جانبية حمراء"
     },
     "sw-jerseys-244984679": {
       "id": "gid://shopify/Product/15308551127344",
@@ -30,21 +36,21 @@
     },
     "sw-jerseys-244984556": {
       "id": "gid://shopify/Product/15308551160112",
-      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור",
-      "en": "Detroit Pistons #0 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود"
+      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור | עיטור טורקיז",
+      "en": "Detroit Pistons #0 Basketball Jersey – Black | Turquoise Trim",
+      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود | حواف فيروزية"
     },
     "sw-jerseys-244984455": {
       "id": "gid://shopify/Product/15308551192880",
-      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור",
-      "en": "Detroit Pistons #0 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود"
+      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור | פסי רוחב כחול ואדום",
+      "en": "Detroit Pistons #0 Basketball Jersey – Black | Blue and Red Horizontal Stripes",
+      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود | خطوط أفقية زرقاء وحمراء"
     },
     "sw-jerseys-244984055": {
       "id": "gid://shopify/Product/15308551258416",
-      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור",
-      "en": "Detroit Pistons #0 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود"
+      "he": "גופיית כדורסל דטרויט פיסטונס מספר 0 שחור | כיתוב Detroit בכתב יד",
+      "en": "Detroit Pistons #0 Basketball Jersey – Black | Script Detroit Lettering",
+      "ar": "قميص كرة سلة ديترويت بيستونز رقم 0 أسود | كتابة Detroit بخط اليد"
     },
     "sw-jerseys-244983951": {
       "id": "gid://shopify/Product/15308551291184",
@@ -126,9 +132,9 @@
     },
     "sw-jerseys-244981516": {
       "id": "gid://shopify/Product/15308551946544",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 שחור",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أسود"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 שחור | פסי צד ירוקים ואדומים",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – Black | Green and Red Side Stripes",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أسود | خطوط جانبية خضراء وحمراء"
     },
     "sw-jerseys-244981439": {
       "id": "gid://shopify/Product/15308552012080",
@@ -192,9 +198,9 @@
     },
     "sw-jerseys-244980173": {
       "id": "gid://shopify/Product/15308553847088",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור",
-      "en": "San Antonio Spurs #1 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור | פסי צד לבנים",
+      "en": "San Antonio Spurs #1 Basketball Jersey – Black | White Side Stripes",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود | خطوط جانبية بيضاء"
     },
     "sw-jerseys-244980054": {
       "id": "gid://shopify/Product/15308553879856",
@@ -204,9 +210,9 @@
     },
     "sw-jerseys-244979786": {
       "id": "gid://shopify/Product/15308553912624",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 לבן",
-      "en": "San Antonio Spurs #1 Basketball Jersey – White",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أبيض"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 לבן | כיתוב SPURS",
+      "en": "San Antonio Spurs #1 Basketball Jersey – White | SPURS Lettering",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أبيض | كتابة SPURS"
     },
     "sw-jerseys-225120874": {
       "id": "gid://shopify/Product/15308553945392",
@@ -234,15 +240,15 @@
     },
     "sw-jerseys-223293431": {
       "id": "gid://shopify/Product/15308554174768",
-      "he": "גופיית כדורסל BAPE מספר 93 הדפס",
-      "en": "BAPE #93 Basketball Jersey – Print",
-      "ar": "قميص كرة سلة بيب رقم 93 مطبوع"
+      "he": "גופיית כדורסל BAPE מספר 93 הדפס | סלטיקס בהדפס הסוואה ירוק",
+      "en": "BAPE #93 Basketball Jersey – Print | Celtics, Green Camo Print",
+      "ar": "قميص كرة سلة بيب رقم 93 مطبوع | سيلتيكس بطبعة تمويه خضراء"
     },
     "sw-jerseys-223293392": {
       "id": "gid://shopify/Product/15308554207536",
-      "he": "גופיית כדורסל BAPE מספר 93 הדפס",
-      "en": "BAPE #93 Basketball Jersey – Print",
-      "ar": "قميص كرة سلة بيب رقم 93 مطبوع"
+      "he": "גופיית כדורסל BAPE מספר 93 הדפס | ווריורס בהדפס הסוואה כחול",
+      "en": "BAPE #93 Basketball Jersey – Print | Warriors, Blue Camo Print",
+      "ar": "قميص كرة سلة بيب رقم 93 مطبوع | ووريرز بطبعة تمويه زرقاء"
     },
     "sw-jerseys-223293252": {
       "id": "gid://shopify/Product/15308554273072",
@@ -252,15 +258,15 @@
     },
     "sw-jerseys-223293185": {
       "id": "gid://shopify/Product/15308554338608",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | הדפס לבן משורטט",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | White Sketch Print",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | طبعة بيضاء بأسلوب الرسم"
     },
     "sw-jerseys-223293109": {
       "id": "gid://shopify/Product/15308554731824",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן | הדפס משורטט",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – White | Sketch Print",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض | طبعة بأسلوب الرسم"
     },
     "sw-jerseys-223292920": {
       "id": "gid://shopify/Product/15308554797360",
@@ -270,15 +276,15 @@
     },
     "sw-jerseys-223292685": {
       "id": "gid://shopify/Product/15308554862896",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור | סמל שור משורטט",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black | Sketched Bull Logo",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود | شعار ثور مرسوم"
     },
     "sw-jerseys-223292619": {
       "id": "gid://shopify/Product/15308554895664",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן",
-      "en": "Chicago Bulls #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן | סמל שור משורטט",
+      "en": "Chicago Bulls #23 Basketball Jersey – White | Sketched Bull Logo",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض | شعار ثور مرسوم"
     },
     "sw-jerseys-223292323": {
       "id": "gid://shopify/Product/15308554961200",
@@ -372,9 +378,9 @@
     },
     "sw-jerseys-221371043": {
       "id": "gid://shopify/Product/15308555780400",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 לבן",
-      "en": "Boston Celtics #9 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أبيض"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 לבן | כיתוב BOSTON ועיטור זהוב",
+      "en": "Boston Celtics #9 Basketball Jersey – White | BOSTON Lettering and Gold Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أبيض | كتابة BOSTON وحواف ذهبية"
     },
     "sw-jerseys-221370910": {
       "id": "gid://shopify/Product/15308556108080",
@@ -438,9 +444,9 @@
     },
     "sw-jerseys-218038796": {
       "id": "gid://shopify/Product/15308556697904",
-      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור",
-      "en": "Milwaukee Bucks #34 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود"
+      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור | סמל אייל לבן",
+      "en": "Milwaukee Bucks #34 Basketball Jersey – Black | White Deer Logo",
+      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود | شعار أيل أبيض"
     },
     "sw-jerseys-218038705": {
       "id": "gid://shopify/Product/15308556730672",
@@ -456,9 +462,9 @@
     },
     "sw-jerseys-218038482": {
       "id": "gid://shopify/Product/15308556861744",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 סגול",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 סגול | עיטור לבן",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Purple | White Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 بنفسجي | حواف بيضاء"
     },
     "sw-jerseys-218038351": {
       "id": "gid://shopify/Product/15308556894512",
@@ -480,21 +486,21 @@
     },
     "sw-jerseys-218037687": {
       "id": "gid://shopify/Product/15308557058352",
-      "he": "גופיית כדורסל הארדוויי מספר 6",
-      "en": "Hardaway #6 Basketball Jersey",
-      "ar": "قميص كرة سلة هارداواي رقم 6"
+      "he": "גופיית כדורסל נבחרת ארצות הברית פני הארדוויי מספר 6 כחול כהה רטרו",
+      "en": "USA Penny Hardaway #6 Basketball Jersey – Dark Blue, Retro",
+      "ar": "قميص كرة سلة منتخب الولايات المتحدة بيني هارداواي رقم 6 أزرق داكن ريترو"
     },
     "sw-jerseys-218037513": {
       "id": "gid://shopify/Product/15308557123888",
-      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 2025/2026",
-      "en": "Minnesota Timberwolves #5 Basketball Jersey – 2025/2026",
-      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 2025/2026"
+      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 25/26",
+      "en": "Minnesota Timberwolves #5 Basketball Jersey – 25/26",
+      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 25/26"
     },
     "sw-jerseys-218037270": {
       "id": "gid://shopify/Product/15308557156656",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 2025/2026",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – 2025/2026",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 2025/2026"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 25/26",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – 25/26",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 25/26"
     },
     "sw-jerseys-218037106": {
       "id": "gid://shopify/Product/15308557582640",
@@ -516,21 +522,21 @@
     },
     "sw-jerseys-218036690": {
       "id": "gid://shopify/Product/15308557779248",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0",
-      "en": "Boston Celtics #0 Basketball Jersey",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 | לבן עם עיטור זהוב",
+      "en": "Boston Celtics #0 Basketball Jersey | White with Gold Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 | أبيض مع حواف ذهبية"
     },
     "sw-jerseys-218036357": {
       "id": "gid://shopify/Product/15308557812016",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן",
-      "en": "Boston Celtics #0 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أبيض"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן | כיתוב בכתב יד ועיטור זהוב",
+      "en": "Boston Celtics #0 Basketball Jersey – White | Script Lettering and Gold Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أبيض | كتابة بخط اليد وحواف ذهبية"
     },
     "sw-jerseys-218036240": {
       "id": "gid://shopify/Product/15308557910320",
-      "he": "גופיית כדורסל אינדיאנה פייסרס מספר 0 לבן",
-      "en": "Indiana Pacers #0 Basketball Jersey – White",
-      "ar": "قميص كرة سلة إنديانا بيسرز رقم 0 أبيض"
+      "he": "גופיית כדורסל אינדיאנה פייסרס מספר 0 לבן | כיתוב INDIANA PACERS",
+      "en": "Indiana Pacers #0 Basketball Jersey – White | INDIANA PACERS Lettering",
+      "ar": "قميص كرة سلة إنديانا بيسرز رقم 0 أبيض | كتابة INDIANA PACERS"
     },
     "sw-jerseys-209200210": {
       "id": "gid://shopify/Product/15308557975856",
@@ -552,9 +558,9 @@
     },
     "sw-jerseys-209200082": {
       "id": "gid://shopify/Product/15308558172464",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 צהוב",
-      "en": "Los Angeles Lakers #34 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 34 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 צהוב | צווארון V",
+      "en": "Los Angeles Lakers #34 Basketball Jersey – Yellow | V-Neck",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 34 أصفر | ياقة V"
     },
     "sw-jerseys-209200007": {
       "id": "gid://shopify/Product/15308558205232",
@@ -612,15 +618,15 @@
     },
     "sw-jerseys-209196835": {
       "id": "gid://shopify/Product/15308558762288",
-      "he": "גופיית כדורסל יוסטון רוקטס מספר 7 אדום",
-      "en": "Houston Rockets #7 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة هيوستن روكتس رقم 7 أحمر"
+      "he": "גופיית כדורסל יוסטון רוקטס מספר 7 אדום | כיתוב HOUSTON ועיטור צהוב",
+      "en": "Houston Rockets #7 Basketball Jersey – Red | HOUSTON Lettering and Yellow Trim",
+      "ar": "قميص كرة سلة هيوستن روكتس رقم 7 أحمر | كتابة HOUSTON وحواف صفراء"
     },
     "sw-jerseys-209196765": {
       "id": "gid://shopify/Product/15308558958896",
-      "he": "גופיית כדורסל יוסטון רוקטס מספר 7 אדום",
-      "en": "Houston Rockets #7 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة هيوستن روكتس رقم 7 أحمر"
+      "he": "גופיית כדורסל יוסטון רוקטס מספר 7 אדום | כיתוב ROCKETS ועיטור שחור",
+      "en": "Houston Rockets #7 Basketball Jersey – Red | ROCKETS Lettering and Black Trim",
+      "ar": "قميص كرة سلة هيوستن روكتس رقم 7 أحمر | كتابة ROCKETS وحواف سوداء"
     },
     "sw-jerseys-209196709": {
       "id": "gid://shopify/Product/15308559024432",
@@ -666,9 +672,9 @@
     },
     "sw-jerseys-199492774": {
       "id": "gid://shopify/Product/15308559384880",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור",
-      "en": "Golden State Warriors #30 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أسود"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור | סמל גשר ופסי צד צהובים",
+      "en": "Golden State Warriors #30 Basketball Jersey – Black | Bridge Logo and Yellow Side Stripes",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أسود | شعار جسر وخطوط جانبية صفراء"
     },
     "sw-jerseys-199492720": {
       "id": "gid://shopify/Product/15308559450416",
@@ -678,15 +684,15 @@
     },
     "sw-jerseys-199492574": {
       "id": "gid://shopify/Product/15308559483184",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 4 שחור",
-      "en": "San Antonio Spurs #4 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 4 أسود"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 4 שחור | כיתוב SPURS",
+      "en": "San Antonio Spurs #4 Basketball Jersey – Black | SPURS Lettering",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 4 أسود | كتابة SPURS"
     },
     "sw-jerseys-199492472": {
       "id": "gid://shopify/Product/15308559548720",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 4 שחור",
-      "en": "San Antonio Spurs #4 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 4 أسود"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 4 שחור | כיתוב SATX",
+      "en": "San Antonio Spurs #4 Basketball Jersey – Black | SATX Lettering",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 4 أسود | كتابة SATX"
     },
     "sw-jerseys-199492242": {
       "id": "gid://shopify/Product/15308559614256",
@@ -702,15 +708,15 @@
     },
     "sw-jerseys-199488254": {
       "id": "gid://shopify/Product/15308559712560",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס דוגמת נחש",
-      "en": "Los Angeles Lakers Basketball Jersey – Snakeskin",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز بنقشة جلد الثعبان"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס דוגמת נחש | כיתוב MAMBA",
+      "en": "Los Angeles Lakers Basketball Jersey – Snakeskin | MAMBA Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز بنقشة جلد الثعبان | كتابة MAMBA"
     },
     "sw-jerseys-199488108": {
       "id": "gid://shopify/Product/15308559745328",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | פסי צד צהובים וסגולים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | Yellow and Purple Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | خطوط جانبية صفراء وبنفسجية"
     },
     "sw-jerseys-199488026": {
       "id": "gid://shopify/Product/15308559810864",
@@ -720,9 +726,9 @@
     },
     "sw-jerseys-199487913": {
       "id": "gid://shopify/Product/15308559843632",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 לבן רטרו",
-      "en": "Los Angeles Lakers #8 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 8 أبيض ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 לבן רטרו | כיתוב LAKERS ועיטור סגול",
+      "en": "Los Angeles Lakers #8 Basketball Jersey – White, Retro | LAKERS Lettering and Purple Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 8 أبيض ريترو | كتابة LAKERS وحواف بنفسجية"
     },
     "sw-jerseys-199487858": {
       "id": "gid://shopify/Product/15308559941936",
@@ -816,9 +822,9 @@
     },
     "sw-jerseys-193350481": {
       "id": "gid://shopify/Product/15308561154352",
-      "he": "גופיית כדורסל אינדיאנה פייסרס מספר 0 לבן",
-      "en": "Indiana Pacers #0 Basketball Jersey – White",
-      "ar": "قميص كرة سلة إنديانا بيسرز رقم 0 أبيض"
+      "he": "גופיית כדורסל אינדיאנה פייסרס מספר 0 לבן | כיתוב INDY",
+      "en": "Indiana Pacers #0 Basketball Jersey – White | INDY Lettering",
+      "ar": "قميص كرة سلة إنديانا بيسرز رقم 0 أبيض | كتابة INDY"
     },
     "sw-jerseys-188310986": {
       "id": "gid://shopify/Product/15308561219888",
@@ -858,9 +864,9 @@
     },
     "sw-jerseys-188304855": {
       "id": "gid://shopify/Product/15308592152880",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 לבן",
-      "en": "Los Angeles Lakers #77 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 לבן | מספר סגול ועיטור צהוב",
+      "en": "Los Angeles Lakers #77 Basketball Jersey – White | Purple Number and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أبيض | رقم بنفسجي وحواف صفراء"
     },
     "sw-jerseys-188303737": {
       "id": "gid://shopify/Product/15308592185648",
@@ -936,9 +942,9 @@
     },
     "sw-jerseys-170956991": {
       "id": "gid://shopify/Product/15308592808240",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור | כיתוב זהוב מלא",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black | Solid Gold Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود | كتابة ذهبية بالكامل"
     },
     "sw-jerseys-170956360": {
       "id": "gid://shopify/Product/15308592873776",
@@ -960,9 +966,9 @@
     },
     "sw-jerseys-188304731": {
       "id": "gid://shopify/Product/15308593463600",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 לבן",
-      "en": "Los Angeles Lakers #77 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 לבן | מספר טורקיז ועיטור צהוב",
+      "en": "Los Angeles Lakers #77 Basketball Jersey – White | Turquoise Number and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 77 أبيض | رقم فيروزي وحواف صفراء"
     },
     "sw-jerseys-188303645": {
       "id": "gid://shopify/Product/15308593529136",
@@ -1026,9 +1032,9 @@
     },
     "sw-jerseys-174168641": {
       "id": "gid://shopify/Product/15308594053424",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | עיטור צהוב",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | حواف صفراء"
     },
     "sw-jerseys-171731467": {
       "id": "gid://shopify/Product/15308594118960",
@@ -1128,9 +1134,9 @@
     },
     "sw-jerseys-181427157": {
       "id": "gid://shopify/Product/15308595953968",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 לבן",
-      "en": "San Antonio Spurs #1 Basketball Jersey – White",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أبيض"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 לבן | עיטור זהוב",
+      "en": "San Antonio Spurs #1 Basketball Jersey – White | Gold Trim",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أبيض | حواف ذهبية"
     },
     "sw-jerseys-178550688": {
       "id": "gid://shopify/Product/15308596019504",
@@ -1146,9 +1152,9 @@
     },
     "sw-jerseys-170957091": {
       "id": "gid://shopify/Product/15308596117808",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב | הדפס גרפיטי",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow | Graffiti Print",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر | طبعة غرافيتي"
     },
     "sw-jerseys-170956437": {
       "id": "gid://shopify/Product/15308596183344",
@@ -1158,9 +1164,9 @@
     },
     "sw-jerseys-169736910": {
       "id": "gid://shopify/Product/15308596216112",
-      "he": "גופיית כדורסל נבחרת ארצות הברית מספר 7 כחול כהה",
-      "en": "USA #7 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة منتخب الولايات المتحدة رقم 7 أزرق داكن"
+      "he": "גופיית כדורסל נבחרת ארצות הברית מספר 7 כחול כהה | מספר אדום ופסי צד אדומים",
+      "en": "USA #7 Basketball Jersey – Dark Blue | Red Number and Red Side Stripes",
+      "ar": "قميص كرة سلة منتخب الولايات المتحدة رقم 7 أزرق داكن | رقم أحمر وخطوط جانبية حمراء"
     },
     "sw-jerseys-188305232": {
       "id": "gid://shopify/Product/15308596937008",
@@ -1170,9 +1176,9 @@
     },
     "sw-jerseys-188304310": {
       "id": "gid://shopify/Product/15308596969776",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן | צווארון V ופסי צד צהובים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – White | V-Neck and Yellow Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض | ياقة V وخطوط جانبية صفراء"
     },
     "sw-jerseys-188303373": {
       "id": "gid://shopify/Product/15308597035312",
@@ -1236,9 +1242,9 @@
     },
     "sw-jerseys-174168469": {
       "id": "gid://shopify/Product/15308597494064",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו | כיתוב ומספר בקווי מתאר לבנים",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro | White Outlined Lettering and Number",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو | كتابة ورقم بخطوط خارجية بيضاء"
     },
     "sw-jerseys-171731188": {
       "id": "gid://shopify/Product/15308597592368",
@@ -1254,9 +1260,9 @@
     },
     "sw-jerseys-169737251": {
       "id": "gid://shopify/Product/15308597690672",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 שחור",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أسود"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 שחור | עיטור זהוב",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – Black | Gold Trim",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أسود | حواف ذهبية"
     },
     "sw-jerseys-169735394": {
       "id": "gid://shopify/Product/15308597723440",
@@ -1272,9 +1278,9 @@
     },
     "sw-jerseys-188304509": {
       "id": "gid://shopify/Product/15308597854512",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב | פסי צד סגולים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow | Purple Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر | خطوط جانبية بنفسجية"
     },
     "sw-jerseys-188303519": {
       "id": "gid://shopify/Product/15308597920048",
@@ -1326,9 +1332,9 @@
     },
     "sw-jerseys-188304137": {
       "id": "gid://shopify/Product/15308598313264",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס",
-      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס | לבן עם איורי גרפיטי",
+      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print | White with Graffiti Drawings",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع | أبيض مع رسومات غرافيتي"
     },
     "sw-jerseys-181429704": {
       "id": "gid://shopify/Product/15308598346032",
@@ -1356,9 +1362,9 @@
     },
     "sw-jerseys-178552312": {
       "id": "gid://shopify/Product/15308598542640",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – White",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | סמל GRIZZLIES ותג נוצה",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – White | GRIZZLIES Logo and Feather Patch",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض | شعار GRIZZLIES وشارة ريشة"
     },
     "sw-jerseys-183134176": {
       "id": "gid://shopify/Product/15308598575408",
@@ -1380,9 +1386,9 @@
     },
     "sw-jerseys-171731287": {
       "id": "gid://shopify/Product/15308598706480",
-      "he": "גופיית כדורסל נבחרת ארצות הברית מספר 7 כחול כהה",
-      "en": "USA #7 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة منتخب الولايات المتحدة رقم 7 أزرق داكن"
+      "he": "גופיית כדורסל נבחרת ארצות הברית מספר 7 כחול כהה | מספר בקווי מתאר ודגל בחזה",
+      "en": "USA #7 Basketball Jersey – Dark Blue | Outlined Number and Flag on the Chest",
+      "ar": "قميص كرة سلة منتخب الولايات المتحدة رقم 7 أزرق داكن | رقم بخطوط خارجية وعلم على الصدر"
     },
     "sw-jerseys-182156863": {
       "id": "gid://shopify/Product/15308598739248",
@@ -1404,9 +1410,9 @@
     },
     "sw-jerseys-169737311": {
       "id": "gid://shopify/Product/15308598870320",
-      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור",
-      "en": "Milwaukee Bucks #34 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود"
+      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור | כיתוב MILWAUKEE ועיטור זהוב",
+      "en": "Milwaukee Bucks #34 Basketball Jersey – Black | MILWAUKEE Lettering and Gold Trim",
+      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود | كتابة MILWAUKEE وحواف ذهبية"
     },
     "sw-jerseys-181430219": {
       "id": "gid://shopify/Product/15308598903088",
@@ -1446,9 +1452,9 @@
     },
     "sw-jerseys-174168397": {
       "id": "gid://shopify/Product/15308599165232",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן",
-      "en": "Chicago Bulls #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן | כיתוב ומספר בקווי מתאר",
+      "en": "Chicago Bulls #23 Basketball Jersey – White | Outlined Lettering and Number",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض | كتابة ورقم بخطوط خارجية"
     },
     "sw-jerseys-170957168": {
       "id": "gid://shopify/Product/15308599198000",
@@ -1512,15 +1518,15 @@
     },
     "sw-jerseys-168443049": {
       "id": "gid://shopify/Product/15308601753904",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23",
-      "en": "Chicago Bulls #23 Basketball Jersey",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 | שחור עם סמל שור אדום",
+      "en": "Chicago Bulls #23 Basketball Jersey | Black with a Red Bull Logo",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 | أسود مع شعار ثور أحمر"
     },
     "sw-jerseys-168442039": {
       "id": "gid://shopify/Product/15308601786672",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0",
-      "en": "Boston Celtics #0 Basketball Jersey",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 | שחור עם עיטור ירוק",
+      "en": "Boston Celtics #0 Basketball Jersey | Black with Green Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 | أسود مع حواف خضراء"
     },
     "sw-jerseys-167568118": {
       "id": "gid://shopify/Product/15308601819440",
@@ -1548,9 +1554,9 @@
     },
     "sw-jerseys-164118671": {
       "id": "gid://shopify/Product/15308602016048",
-      "he": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה",
-      "en": "Indiana Fever #22 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة إنديانا فيفر رقم 22 أزرق داكن"
+      "he": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה | כיתוב חסות מתחת למספר",
+      "en": "Indiana Fever #22 Basketball Jersey – Dark Blue | Sponsor Lettering Under the Number",
+      "ar": "قميص كرة سلة إنديانا فيفر رقم 22 أزرق داكن | كتابة الراعي تحت الرقم"
     },
     "sw-jerseys-163401010": {
       "id": "gid://shopify/Product/15308602048816",
@@ -1656,9 +1662,9 @@
     },
     "sw-jerseys-164118532": {
       "id": "gid://shopify/Product/15308603261232",
-      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור",
-      "en": "Minnesota Timberwolves #5 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود"
+      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור | מספר לבן ועיטור משובץ",
+      "en": "Minnesota Timberwolves #5 Basketball Jersey – Black | White Number and Checkered Trim",
+      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود | رقم أبيض وحواف بنقشة مربعات"
     },
     "sw-jerseys-163400884": {
       "id": "gid://shopify/Product/15308603294000",
@@ -1680,9 +1686,9 @@
     },
     "sw-jerseys-160789855": {
       "id": "gid://shopify/Product/15308603457840",
-      "he": "גופיית כדורסל וושינגטון וויזארדס מספר 23 לבן",
-      "en": "Washington Wizards #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة واشنطن ويزاردز رقم 23 أبيض"
+      "he": "גופיית כדורסל וושינגטון וויזארדס מספר 23 לבן | סמל NBA בחזה",
+      "en": "Washington Wizards #23 Basketball Jersey – White | NBA Logo on the Chest",
+      "ar": "قميص كرة سلة واشنطن ويزاردز رقم 23 أبيض | شعار NBA على الصدر"
     },
     "sw-jerseys-159109452": {
       "id": "gid://shopify/Product/15308603523376",
@@ -1698,9 +1704,9 @@
     },
     "sw-jerseys-158635085": {
       "id": "gid://shopify/Product/15308603621680",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס",
-      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס | שחור עם דוגמה גאומטרית",
+      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print | Black with a Geometric Pattern",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع | أسود بنقشة هندسية"
     },
     "sw-jerseys-155383847": {
       "id": "gid://shopify/Product/15308603687216",
@@ -1788,9 +1794,9 @@
     },
     "sw-jerseys-163401209": {
       "id": "gid://shopify/Product/15308606603568",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס דוגמת נחש",
-      "en": "Los Angeles Lakers Basketball Jersey – Snakeskin",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز بنقشة جلد الثعبان"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס דוגמת נחש | כיתוב LAKERS ועיטורי צד",
+      "en": "Los Angeles Lakers Basketball Jersey – Snakeskin | LAKERS Lettering and Side Details",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز بنقشة جلد الثعبان | كتابة LAKERS وزخارف جانبية"
     },
     "sw-jerseys-163399073": {
       "id": "gid://shopify/Product/15308606669104",
@@ -1800,9 +1806,9 @@
     },
     "sw-jerseys-162811479": {
       "id": "gid://shopify/Product/15308606734640",
-      "he": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה",
-      "en": "Indiana Fever #22 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة إنديانا فيفر رقم 22 أزرق داكن"
+      "he": "גופיית כדורסל אינדיאנה פיבר מספר 22 כחול כהה | ללא כיתוב חסות",
+      "en": "Indiana Fever #22 Basketball Jersey – Dark Blue | No Sponsor Lettering",
+      "ar": "قميص كرة سلة إنديانا فيفر رقم 22 أزرق داكن | بدون كتابة الراعي"
     },
     "sw-jerseys-162810909": {
       "id": "gid://shopify/Product/15308606800176",
@@ -1860,9 +1866,9 @@
     },
     "sw-jerseys-165920845": {
       "id": "gid://shopify/Product/15308608799024",
-      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה",
-      "en": "Dallas Mavericks #77 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أزرق داكن"
+      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה | כיתוב MAVS",
+      "en": "Dallas Mavericks #77 Basketball Jersey – Dark Blue | MAVS Lettering",
+      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أزرق داكن | كتابة MAVS"
     },
     "sw-jerseys-165919738": {
       "id": "gid://shopify/Product/15308608864560",
@@ -1872,9 +1878,9 @@
     },
     "sw-jerseys-164994797": {
       "id": "gid://shopify/Product/15308608962864",
-      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור",
-      "en": "Minnesota Timberwolves #5 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود"
+      "he": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 שחור | פס ירוק בחזה",
+      "en": "Minnesota Timberwolves #5 Basketball Jersey – Black | Green Stripe Across the Chest",
+      "ar": "قميص كرة سلة مينيسوتا تمبروولفز رقم 5 أسود | خط أخضر على الصدر"
     },
     "sw-jerseys-164339343": {
       "id": "gid://shopify/Product/15308608995632",
@@ -1938,9 +1944,9 @@
     },
     "sw-jerseys-155384316": {
       "id": "gid://shopify/Product/15308609552688",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 לבן רטרו",
-      "en": "Cleveland Cavaliers #23 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أبيض ريترو"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 לבן רטרו | תג תחתון בז׳",
+      "en": "Cleveland Cavaliers #23 Basketball Jersey – White, Retro | Beige Jock Tag",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أبيض ريترو | شارة سفلية بيج"
     },
     "sw-jerseys-168443273": {
       "id": "gid://shopify/Product/15308609585456",
@@ -1956,9 +1962,9 @@
     },
     "sw-jerseys-168442532": {
       "id": "gid://shopify/Product/15308609716528",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 לבן",
-      "en": "Boston Celtics #9 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أبيض"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 9 לבן | כיתוב CELTICS ועיטור ירוק",
+      "en": "Boston Celtics #9 Basketball Jersey – White | CELTICS Lettering and Green Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 9 أبيض | كتابة CELTICS وحواف خضراء"
     },
     "sw-jerseys-152407673": {
       "id": "gid://shopify/Product/15308609749296",
@@ -1974,9 +1980,9 @@
     },
     "sw-jerseys-152007698": {
       "id": "gid://shopify/Product/15308609847600",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו | ירוק זית עם תגים",
+      "en": "Chicago Bulls #23 Basketball Jersey – Retro | Olive Green with Patches",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو | أخضر زيتي مع شارات"
     },
     "sw-jerseys-165921469": {
       "id": "gid://shopify/Product/15308609913136",
@@ -2004,9 +2010,9 @@
     },
     "sw-jerseys-164995032": {
       "id": "gid://shopify/Product/15308610109744",
-      "he": "גופיית כדורסל סלאם דאנק מספר 10 אדום",
-      "en": "Slam Dunk #10 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة سلام دانك رقم 10 أحمر"
+      "he": "גופיית כדורסל סלאם דאנק מספר 10 אדום | מספר בלבד בגב",
+      "en": "Slam Dunk #10 Basketball Jersey – Red | Number Only on the Back",
+      "ar": "قميص كرة سلة سلام دانك رقم 10 أحمر | رقم فقط على الظهر"
     },
     "sw-jerseys-151427057": {
       "id": "gid://shopify/Product/15308610142512",
@@ -2034,9 +2040,9 @@
     },
     "sw-jerseys-162811793": {
       "id": "gid://shopify/Product/15308610437424",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו | כיתוב CHICAGO צבעוני וסמל שור",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro | Multicolor CHICAGO Lettering and Bull Logo",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو | كتابة CHICAGO ملوّنة وشعار ثور"
     },
     "sw-jerseys-162811063": {
       "id": "gid://shopify/Product/15308610502960",
@@ -2046,9 +2052,9 @@
     },
     "sw-jerseys-160789712": {
       "id": "gid://shopify/Product/15308610568496",
-      "he": "גופיית כדורסל שיקגו בולס מספר 1 אדום",
-      "en": "Chicago Bulls #1 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 1 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 1 אדום | תג תחתון שחור",
+      "en": "Chicago Bulls #1 Basketball Jersey – Red | Black Jock Tag",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 1 أحمر | شارة سفلية سوداء"
     },
     "sw-jerseys-159102690": {
       "id": "gid://shopify/Product/15308610601264",
@@ -2058,21 +2064,21 @@
     },
     "sw-jerseys-158636219": {
       "id": "gid://shopify/Product/15308610699568",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 צהוב",
-      "en": "Los Angeles Lakers #34 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 34 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 צהוב | צווארון עגול",
+      "en": "Los Angeles Lakers #34 Basketball Jersey – Yellow | Round Neck",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 34 أصفر | ياقة دائرية"
     },
     "sw-jerseys-155384374": {
       "id": "gid://shopify/Product/15308610732336",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו",
-      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו | תג תחתון בז׳",
+      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro | Beige Jock Tag",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو | شارة سفلية بيج"
     },
     "sw-jerseys-152836553": {
       "id": "gid://shopify/Product/15308610797872",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס לילדים מספר 30 כחול",
-      "en": "Golden State Warriors #30 Kids' Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز للأطفال رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס לילדים מספר 30 כחול | כיתוב WARRIORS ומספר אדום",
+      "en": "Golden State Warriors #30 Kids' Basketball Jersey – Blue | WARRIORS Lettering and Red Number",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز للأطفال رقم 30 أزرق | كتابة WARRIORS ورقم أحمر"
     },
     "sw-jerseys-152428724": {
       "id": "gid://shopify/Product/15308610830640",
@@ -2118,9 +2124,9 @@
     },
     "sw-jerseys-165920223": {
       "id": "gid://shopify/Product/15308614402352",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו | כיתוב ומספר בדוגמת הסוואה",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro | Camo Lettering and Number",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو | كتابة ورقم بنقشة التمويه"
     },
     "sw-jerseys-164995491": {
       "id": "gid://shopify/Product/15308614435120",
@@ -2166,9 +2172,9 @@
     },
     "sw-jerseys-159109385": {
       "id": "gid://shopify/Product/15308614893872",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23",
-      "en": "Chicago Bulls #23 Basketball Jersey",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 | הדפס אדום ושחור",
+      "en": "Chicago Bulls #23 Basketball Jersey | Red and Black Print",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 | طبعة حمراء وسوداء"
     },
     "sw-jerseys-158636300": {
       "id": "gid://shopify/Product/15308614959408",
@@ -2400,9 +2406,9 @@
     },
     "sw-jerseys-148097229": {
       "id": "gid://shopify/Product/15308617908528",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור | סמל שור זהוב",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black | Gold Bull Logo",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود | شعار ثور ذهبي"
     },
     "sw-jerseys-147321696": {
       "id": "gid://shopify/Product/15308617974064",
@@ -2424,9 +2430,9 @@
     },
     "sw-jerseys-144950915": {
       "id": "gid://shopify/Product/15308618203440",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור",
-      "en": "San Antonio Spurs #1 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור | כיתוב SAN ANTONIO",
+      "en": "San Antonio Spurs #1 Basketball Jersey – Black | SAN ANTONIO Lettering",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود | كتابة SAN ANTONIO"
     },
     "sw-jerseys-143991325": {
       "id": "gid://shopify/Product/15308618268976",
@@ -2538,9 +2544,9 @@
     },
     "sw-jerseys-149585276": {
       "id": "gid://shopify/Product/15308623774000",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו | הדפס אדום ושחור",
+      "en": "Chicago Bulls #23 Basketball Jersey – Retro | Red and Black Print",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو | طبعة حمراء وسوداء"
     },
     "sw-jerseys-149584549": {
       "id": "gid://shopify/Product/15308623872304",
@@ -2562,9 +2568,9 @@
     },
     "sw-jerseys-148352485": {
       "id": "gid://shopify/Product/15308624167216",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב רטרו",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב רטרו | צווארון V ופסי צד סגולים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow, Retro | V-Neck and Purple Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر ريترو | ياقة V وخطوط جانبية بنفسجية"
     },
     "sw-jerseys-147321877": {
       "id": "gid://shopify/Product/15308624232752",
@@ -2808,9 +2814,9 @@
     },
     "sw-jerseys-148745501": {
       "id": "gid://shopify/Product/15308632031536",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | כיתוב LOS ANGELES",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | LOS ANGELES Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | كتابة LOS ANGELES"
     },
     "sw-football-249247076": {
       "id": "gid://shopify/Product/15308632064304",
@@ -2850,9 +2856,9 @@
     },
     "sw-jerseys-146484515": {
       "id": "gid://shopify/Product/15308632457520",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור | כיתוב LOS ANGELES מדורג",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black | Arched LOS ANGELES Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود | كتابة LOS ANGELES مقوّسة"
     },
     "sw-jerseys-96559371": {
       "id": "gid://shopify/Product/15308632490288",
@@ -2874,15 +2880,15 @@
     },
     "sw-jerseys-96557626": {
       "id": "gid://shopify/Product/15308632621360",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 מהדורת עיר 2021",
-      "en": "Los Angeles Lakers #3 Basketball Jersey – City Edition 2021",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 إصدار المدينة 2021"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 מהדורת עיר 2021 | כיתוב כחול בהיר ועיטור מפוספס",
+      "en": "Los Angeles Lakers #3 Basketball Jersey – City Edition 2021 | Light Blue Lettering and Striped Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 إصدار المدينة 2021 | كتابة زرقاء فاتحة وحواف مخططة"
     },
     "sw-football-239331208": {
       "id": "gid://shopify/Product/15308632686896",
-      "he": "חולצת כדורגל נבחרת דרום קוריאה חוץ 26/27",
-      "en": "South Korea Away Jersey 26/27",
-      "ar": "قميص منتخب كوريا الجنوبية الاحتياطي 26/27"
+      "he": "חולצת כדורגל נבחרת דרום קוריאה חוץ 2026",
+      "en": "South Korea Away Jersey 2026",
+      "ar": "قميص منتخب كوريا الجنوبية الاحتياطي 2026"
     },
     "sw-jerseys-143991683": {
       "id": "gid://shopify/Product/15308632719664",
@@ -2898,9 +2904,9 @@
     },
     "sw-football-238620266": {
       "id": "gid://shopify/Product/15308632785200",
-      "he": "חולצת כדורגל נבחרת סנגל בית 26/27",
-      "en": "Senegal Home Jersey 26/27",
-      "ar": "قميص منتخب السنغال الأساسي 26/27"
+      "he": "חולצת כדורגל נבחרת סנגל בית 2026",
+      "en": "Senegal Home Jersey 2026",
+      "ar": "قميص منتخب السنغال الأساسي 2026"
     },
     "sw-jerseys-143991246": {
       "id": "gid://shopify/Product/15308632850736",
@@ -2916,9 +2922,9 @@
     },
     "sw-jerseys-95542347": {
       "id": "gid://shopify/Product/15308632949040",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול",
-      "en": "Golden State Warriors #30 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול | כיתוב THE CITY",
+      "en": "Golden State Warriors #30 Basketball Jersey – Blue | THE CITY Lettering",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق | كتابة THE CITY"
     },
     "sw-jerseys-143753745": {
       "id": "gid://shopify/Product/15308632981808",
@@ -2928,15 +2934,15 @@
     },
     "sw-football-233520444": {
       "id": "gid://shopify/Product/15308633014576",
-      "he": "חולצת כדורגל נבחרת מרוקו חוץ 26/27",
-      "en": "Morocco Away Jersey 26/27",
-      "ar": "قميص منتخب المغرب الاحتياطي 26/27"
+      "he": "חולצת כדורגל נבחרת מרוקו חוץ 2026",
+      "en": "Morocco Away Jersey 2026",
+      "ar": "قميص منتخب المغرب الاحتياطي 2026"
     },
     "sw-jerseys-95223890": {
       "id": "gid://shopify/Product/15308633047344",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 סגול",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 סגול | פסי צד שחורים",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Purple | Black Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 بنفسجي | خطوط جانبية سوداء"
     },
     "sw-jerseys-143012618": {
       "id": "gid://shopify/Product/15308633145648",
@@ -2958,9 +2964,9 @@
     },
     "sw-football-223763898": {
       "id": "gid://shopify/Product/15308633309488",
-      "he": "חולצת כדורגל נבחרת חוף השנהב בית 26/27",
-      "en": "Ivory Coast Home Jersey 26/27",
-      "ar": "قميص منتخب ساحل العاج الأساسي 26/27"
+      "he": "חולצת כדורגל נבחרת חוף השנהב בית 2026",
+      "en": "Ivory Coast Home Jersey 2026",
+      "ar": "قميص منتخب ساحل العاج الأساسي 2026"
     },
     "sw-jerseys-94399475": {
       "id": "gid://shopify/Product/15308633342256",
@@ -2994,9 +3000,9 @@
     },
     "sw-football-218913663": {
       "id": "gid://shopify/Product/15308633637168",
-      "he": "חולצת כדורגל נבחרת ונצואלה בית 26/27",
-      "en": "Venezuela Home Jersey 26/27",
-      "ar": "قميص منتخب فنزويلا الأساسي 26/27"
+      "he": "חולצת כדורגל נבחרת ונצואלה בית 2026",
+      "en": "Venezuela Home Jersey 2026",
+      "ar": "قميص منتخب فنزويلا الأساسي 2026"
     },
     "sw-jerseys-93379115": {
       "id": "gid://shopify/Product/15308633735472",
@@ -3024,9 +3030,9 @@
     },
     "sw-jerseys-143011453": {
       "id": "gid://shopify/Product/15308633997616",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 רטרו הדפס",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – Retro, Print",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 ريترو مطبوع"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 רטרו הדפס | גרפיטי על רקע כהה",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – Retro, Print | Graffiti on a Dark Background",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 ريترو مطبوع | غرافيتي على خلفية داكنة"
     },
     "sw-jerseys-90737589": {
       "id": "gid://shopify/Product/15308634030384",
@@ -3096,15 +3102,15 @@
     },
     "sw-jerseys-136506375": {
       "id": "gid://shopify/Product/15308634620208",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 רטרו הדפס",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – Retro, Print",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 ريترو مطبوع"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 רטרו הדפס | גרפיטי על רקע לבן",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – Retro, Print | Graffiti on a White Background",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 ريترو مطبوع | غرافيتي على خلفية بيضاء"
     },
     "sw-jerseys-89419160": {
       "id": "gid://shopify/Product/15308634652976",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב | ללא תגים בחזה",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow | No Patches on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر | بدون شارات على الصدر"
     },
     "sw-jerseys-135857559": {
       "id": "gid://shopify/Product/15308634685744",
@@ -3138,9 +3144,9 @@
     },
     "sw-jerseys-132029521": {
       "id": "gid://shopify/Product/15308635078960",
-      "he": "גופיית כדורסל דנבר נאגטס מספר 27 לבן",
-      "en": "Denver Nuggets #27 Basketball Jersey – White",
-      "ar": "قميص كرة سلة دنفر ناغتس رقم 27 أبيض"
+      "he": "גופיית כדורסל דנבר נאגטס מספר 27 לבן | כיתוב DENVER ועיטור אדום",
+      "en": "Denver Nuggets #27 Basketball Jersey – White | DENVER Lettering and Red Trim",
+      "ar": "قميص كرة سلة دنفر ناغتس رقم 27 أبيض | كتابة DENVER وحواف حمراء"
     },
     "sw-jerseys-132028643": {
       "id": "gid://shopify/Product/15308635111728",
@@ -3156,9 +3162,9 @@
     },
     "sw-jerseys-130839928": {
       "id": "gid://shopify/Product/15308635308336",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023",
-      "en": "Los Angeles Lakers #1 Basketball Jersey – White, 2023",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 أبيض 2023"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023 | כיתוב ומספר תכלת",
+      "en": "Los Angeles Lakers #1 Basketball Jersey – White, 2023 | Light Blue Lettering and Number",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 أبيض 2023 | كتابة ورقم باللون السماوي"
     },
     "sw-jerseys-129499130": {
       "id": "gid://shopify/Product/15308635373872",
@@ -3222,9 +3228,9 @@
     },
     "sw-jerseys-120280717": {
       "id": "gid://shopify/Product/15308639404336",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור",
-      "en": "Golden State Warriors #30 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أسود"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור | כיתוב WARRIORS לבן",
+      "en": "Golden State Warriors #30 Basketball Jersey – Black | White WARRIORS Lettering",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أسود | كتابة WARRIORS بيضاء"
     },
     "sw-jerseys-119830752": {
       "id": "gid://shopify/Product/15308639469872",
@@ -3234,9 +3240,9 @@
     },
     "sw-jerseys-117745194": {
       "id": "gid://shopify/Product/15308639568176",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – White",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | כיתוב MEMPHIS וסמל כסוף מבריק",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – White | MEMPHIS Lettering and Shiny Silver Logo",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض | كتابة MEMPHIS وشعار فضي لامع"
     },
     "sw-jerseys-117743286": {
       "id": "gid://shopify/Product/15308639633712",
@@ -3246,9 +3252,9 @@
     },
     "sw-jerseys-116024088": {
       "id": "gid://shopify/Product/15308639764784",
-      "he": "גופיית כדורסל שיקגו בולס לילדים מספר 23 אדום רטרו",
-      "en": "Chicago Bulls #23 Kids' Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز للأطفال رقم 23 أحمر ريترو"
+      "he": "גופיית כדורסל שיקגו בולס לילדים מספר 23 אדום רטרו | כיתוב BULLS",
+      "en": "Chicago Bulls #23 Kids' Basketball Jersey – Red, Retro | BULLS Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز للأطفال رقم 23 أحمر ريترو | كتابة BULLS"
     },
     "sw-jerseys-115261389": {
       "id": "gid://shopify/Product/15308639797552",
@@ -3276,9 +3282,9 @@
     },
     "sw-jerseys-110672660": {
       "id": "gid://shopify/Product/15308640125232",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן",
-      "en": "Philadelphia 76ers #21 Basketball Jersey – White",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 21 أبيض"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן | כיתוב PHILA",
+      "en": "Philadelphia 76ers #21 Basketball Jersey – White | PHILA Lettering",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 21 أبيض | كتابة PHILA"
     },
     "sw-jerseys-110047649": {
       "id": "gid://shopify/Product/15308640223536",
@@ -3288,9 +3294,9 @@
     },
     "sw-jerseys-108093118": {
       "id": "gid://shopify/Product/15308640321840",
-      "he": "גופיית כדורסל שיקגו בולס לילדים מספר 23 אדום רטרו",
-      "en": "Chicago Bulls #23 Kids' Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز للأطفال رقم 23 أحمر ريترو"
+      "he": "גופיית כדורסל שיקגו בולס לילדים מספר 23 אדום רטרו | כיתוב Chicago בכתב יד",
+      "en": "Chicago Bulls #23 Kids' Basketball Jersey – Red, Retro | Script Chicago Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز للأطفال رقم 23 أحمر ريترو | كتابة Chicago بخط اليد"
     },
     "sw-jerseys-107722150": {
       "id": "gid://shopify/Product/15308640452912",
@@ -3336,9 +3342,9 @@
     },
     "sw-jerseys-138859561": {
       "id": "gid://shopify/Product/15308642189616",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أبيض ريترو"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | כיתוב SIXERS ופסי צד כחולים",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – White, Retro | SIXERS Lettering and Blue Side Stripes",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أبيض ريترو | كتابة SIXERS وخطوط جانبية زرقاء"
     },
     "sw-jerseys-137504467": {
       "id": "gid://shopify/Product/15308642255152",
@@ -3396,15 +3402,15 @@
     },
     "sw-jerseys-132028207": {
       "id": "gid://shopify/Product/15308642746672",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול",
-      "en": "Los Angeles Lakers #1 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול | כוכבים לבנים בחזית",
+      "en": "Los Angeles Lakers #1 Basketball Jersey – Purple | White Stars on the Front",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 بنفسجي | نجوم بيضاء في الأمام"
     },
     "sw-jerseys-130850498": {
       "id": "gid://shopify/Product/15308642812208",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 אדום רטרו",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أحمر ريترو"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 אדום רטרו | כיתוב PHILA",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – Red, Retro | PHILA Lettering",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أحمر ريترو | كتابة PHILA"
     },
     "sw-jerseys-129501322": {
       "id": "gid://shopify/Product/15308642844976",
@@ -3420,9 +3426,9 @@
     },
     "sw-jerseys-128865382": {
       "id": "gid://shopify/Product/15308643008816",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור",
-      "en": "Brooklyn Nets #11 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור | כיתוב NETS ותג 6",
+      "en": "Brooklyn Nets #11 Basketball Jersey – Black | NETS Lettering and #6 Patch",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود | كتابة NETS وشارة رقم 6"
     },
     "sw-jerseys-143011890": {
       "id": "gid://shopify/Product/15308647629104",
@@ -3438,9 +3444,9 @@
     },
     "sw-jerseys-138860032": {
       "id": "gid://shopify/Product/15308647792944",
-      "he": "גופיית כדורסל דנבר נאגטס מספר 27 לבן",
-      "en": "Denver Nuggets #27 Basketball Jersey – White",
-      "ar": "قميص كرة سلة دنفر ناغتس رقم 27 أبيض"
+      "he": "גופיית כדורסל דנבר נאגטס מספר 27 לבן | כיתוב NUGGETS ועיטור צהוב",
+      "en": "Denver Nuggets #27 Basketball Jersey – White | NUGGETS Lettering and Yellow Trim",
+      "ar": "قميص كرة سلة دنفر ناغتس رقم 27 أبيض | كتابة NUGGETS وحواف صفراء"
     },
     "sw-jerseys-138859708": {
       "id": "gid://shopify/Product/15308647858480",
@@ -3468,9 +3474,9 @@
     },
     "sw-jerseys-136506294": {
       "id": "gid://shopify/Product/15308648087856",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול",
-      "en": "Los Angeles Lakers #1 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 סגול | עיטור צהוב ופסי צד שחורים",
+      "en": "Los Angeles Lakers #1 Basketball Jersey – Purple | Yellow Trim and Black Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 بنفسجي | حواف صفراء وخطوط جانبية سوداء"
     },
     "sw-jerseys-135857311": {
       "id": "gid://shopify/Product/15308648153392",
@@ -3480,9 +3486,9 @@
     },
     "sw-jerseys-134344038": {
       "id": "gid://shopify/Product/15308648218928",
-      "he": "גופיית כדורסל פיניקס סאנס מספר 35 שחור",
-      "en": "Phoenix Suns #35 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة فينيكس صنز رقم 35 أسود"
+      "he": "גופיית כדורסל פיניקס סאנס מספר 35 שחור | כיתוב PHOENIX",
+      "en": "Phoenix Suns #35 Basketball Jersey – Black | PHOENIX Lettering",
+      "ar": "قميص كرة سلة فينيكس صنز رقم 35 أسود | كتابة PHOENIX"
     },
     "sw-jerseys-134343704": {
       "id": "gid://shopify/Product/15308648251696",
@@ -3522,9 +3528,9 @@
     },
     "sw-jerseys-129398025": {
       "id": "gid://shopify/Product/15308648677680",
-      "he": "גופיית כדורסל פיניקס סאנס מספר 35 שחור",
-      "en": "Phoenix Suns #35 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة فينيكس صنز رقم 35 أسود"
+      "he": "גופיית כדורסל פיניקס סאנס מספר 35 שחור | כיתוב PHX",
+      "en": "Phoenix Suns #35 Basketball Jersey – Black | PHX Lettering",
+      "ar": "قميص كرة سلة فينيكس صنز رقم 35 أسود | كتابة PHX"
     },
     "sw-jerseys-128866462": {
       "id": "gid://shopify/Product/15308648710448",
@@ -3540,9 +3546,9 @@
     },
     "sw-jerseys-127573797": {
       "id": "gid://shopify/Product/15308648907056",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור | כיתוב BULLS והדפס גביעים",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black | BULLS Lettering and Trophy Print",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود | كتابة BULLS وطبعة كؤوس"
     },
     "sw-jerseys-151810166": {
       "id": "gid://shopify/Product/15308649431344",
@@ -3606,9 +3612,9 @@
     },
     "sw-jerseys-149291720": {
       "id": "gid://shopify/Product/15308650152240",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו | כיתוב Chicago בכתב יד",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro | Script Chicago Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو | كتابة Chicago بخط اليد"
     },
     "sw-jerseys-149291071": {
       "id": "gid://shopify/Product/15308650250544",
@@ -3636,9 +3642,9 @@
     },
     "sw-jerseys-89226070": {
       "id": "gid://shopify/Product/15308650512688",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 מהדורת עיר 2021",
-      "en": "Los Angeles Lakers #3 Basketball Jersey – City Edition 2021",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 إصدار المدينة 2021"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 מהדורת עיר 2021 | כיתוב כחול כהה ועיטור חלק",
+      "en": "Los Angeles Lakers #3 Basketball Jersey – City Edition 2021 | Dark Blue Lettering and Plain Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 إصدار المدينة 2021 | كتابة زرقاء داكنة وحواف سادة"
     },
     "sw-jerseys-146484307": {
       "id": "gid://shopify/Product/15308650545456",
@@ -3648,9 +3654,9 @@
     },
     "sw-jerseys-89128777": {
       "id": "gid://shopify/Product/15308650643760",
-      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה",
-      "en": "Dallas Mavericks #77 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أزرق داكن"
+      "he": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול כהה | כיתוב MAVERICKS",
+      "en": "Dallas Mavericks #77 Basketball Jersey – Dark Blue | MAVERICKS Lettering",
+      "ar": "قميص كرة سلة دالاس مافريكس رقم 77 أزرق داكن | كتابة MAVERICKS"
     },
     "sw-jerseys-144951549": {
       "id": "gid://shopify/Product/15308650676528",
@@ -3702,15 +3708,15 @@
     },
     "sw-jerseys-87881109": {
       "id": "gid://shopify/Product/15308651102512",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו | כיתוב ומספר לבנים",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro | White Lettering and Number",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو | كتابة ورقم باللون الأبيض"
     },
     "sw-jerseys-87652346": {
       "id": "gid://shopify/Product/15308651168048",
-      "he": "גופיית כדורסל פריז מספר 23 שחור",
-      "en": "Paris Basketball #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة باريس لكرة السلة رقم 23 أسود"
+      "he": "גופיית כדורסל פריז סן ז׳רמן מספר 23 שחור",
+      "en": "Paris Saint-Germain #23 Basketball Jersey – Black",
+      "ar": "قميص كرة سلة باريس سان جيرمان رقم 23 أسود"
     },
     "sw-jerseys-87391747": {
       "id": "gid://shopify/Product/15308651266352",
@@ -3726,9 +3732,9 @@
     },
     "sw-jerseys-87304052": {
       "id": "gid://shopify/Product/15308651397424",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו | כיתוב Chicago ותג תחתון לבן",
+      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro | Chicago Lettering and White Jock Tag",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو | كتابة Chicago وشارة سفلية بيضاء"
     },
     "sw-jerseys-87154232": {
       "id": "gid://shopify/Product/15308651462960",
@@ -3768,9 +3774,9 @@
     },
     "sw-jerseys-86849794": {
       "id": "gid://shopify/Product/15308651921712",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן",
-      "en": "Chicago Bulls #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן | כיתוב ומספר אדומים",
+      "en": "Chicago Bulls #23 Basketball Jersey – White | Red Lettering and Number",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض | كتابة ورقم باللون الأحمر"
     },
     "sw-jerseys-86802445": {
       "id": "gid://shopify/Product/15308651987248",
@@ -3780,9 +3786,9 @@
     },
     "sw-jerseys-86753346": {
       "id": "gid://shopify/Product/15308652085552",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 32 סגול רטרו",
-      "en": "Los Angeles Lakers #32 Basketball Jersey – Purple, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 32 بنفسجي ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 32 סגול רטרו | סמל NBA צבעוני בחזה",
+      "en": "Los Angeles Lakers #32 Basketball Jersey – Purple, Retro | Multicolor NBA Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 32 بنفسجي ريترو | شعار NBA ملوّن على الصدر"
     },
     "sw-football-218848575": {
       "id": "gid://shopify/Product/15308652413232",
@@ -3804,9 +3810,9 @@
     },
     "sw-football-212930310": {
       "id": "gid://shopify/Product/15308652642608",
-      "he": "חולצת כדורגל נבחרת מקסיקו חוץ 26/27",
-      "en": "Mexico Away Jersey 26/27",
-      "ar": "قميص منتخب المكسيك الاحتياطي 26/27"
+      "he": "חולצת כדורגל נבחרת מקסיקו חוץ 2026",
+      "en": "Mexico Away Jersey 2026",
+      "ar": "قميص منتخب المكسيك الاحتياطي 2026"
     },
     "sw-football-212657534": {
       "id": "gid://shopify/Product/15308652708144",
@@ -3834,9 +3840,9 @@
     },
     "sw-football-206087167": {
       "id": "gid://shopify/Product/15308652970288",
-      "he": "חולצת כדורגל נבחרת גרמניה בית 25/26",
-      "en": "Germany Home Jersey 25/26",
-      "ar": "قميص منتخب ألمانيا الأساسي 25/26"
+      "he": "חולצת כדורגל נבחרת גרמניה בית 2026",
+      "en": "Germany Home Jersey 2026",
+      "ar": "قميص منتخب ألمانيا الأساسي 2026"
     },
     "sw-football-204029898": {
       "id": "gid://shopify/Product/15308653068592",
@@ -3948,21 +3954,21 @@
     },
     "sw-jerseys-105808504": {
       "id": "gid://shopify/Product/15308656214320",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול | כוכבים לבנים בחזית",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple | White Stars on the Front",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي | نجوم بيضاء في الأمام"
     },
     "sw-jerseys-105462130": {
       "id": "gid://shopify/Product/15308656279856",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – White",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | סמל GRIZZLIES וכיתוב סגול וכתום",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – White | GRIZZLIES Logo and Purple and Orange Lettering",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض | شعار GRIZZLIES وكتابة بنفسجية وبرتقالية"
     },
     "sw-jerseys-105225676": {
       "id": "gid://shopify/Product/15308656345392",
-      "he": "גופיית כדורסל שיקגו בולס מספר 2 אדום",
-      "en": "Chicago Bulls #2 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 2 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 2 אדום | כיתוב BULLS",
+      "en": "Chicago Bulls #2 Basketball Jersey – Red | BULLS Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 2 أحمر | كتابة BULLS"
     },
     "sw-jerseys-105012518": {
       "id": "gid://shopify/Product/15308656410928",
@@ -4062,9 +4068,9 @@
     },
     "sw-jerseys-125775363": {
       "id": "gid://shopify/Product/15308658213168",
-      "he": "גופיית כדורסל וושינגטון וויזארדס מספר 23 לבן",
-      "en": "Washington Wizards #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة واشنطن ويزاردز رقم 23 أبيض"
+      "he": "גופיית כדורסל וושינגטון וויזארדס מספר 23 לבן | תג תחתון שחור",
+      "en": "Washington Wizards #23 Basketball Jersey – White | Black Jock Tag",
+      "ar": "قميص كرة سلة واشنطن ويزاردز رقم 23 أبيض | شارة سفلية سوداء"
     },
     "sw-jerseys-125774716": {
       "id": "gid://shopify/Product/15308658278704",
@@ -4074,15 +4080,15 @@
     },
     "sw-jerseys-125238663": {
       "id": "gid://shopify/Product/15308658344240",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו | תג מעוין בחזה",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro | Diamond Patch on the Chest",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو | شارة معيّنة الشكل على الصدر"
     },
     "sw-jerseys-125238002": {
       "id": "gid://shopify/Product/15308658409776",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול",
-      "en": "Los Angeles Lakers #6 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 6 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול | עיטור צהוב ופסי צד שחורים",
+      "en": "Los Angeles Lakers #6 Basketball Jersey – Purple | Yellow Trim and Black Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 6 بنفسجي | حواف صفراء وخطوط جانبية سوداء"
     },
     "sw-jerseys-125236417": {
       "id": "gid://shopify/Product/15308658475312",
@@ -4134,9 +4140,9 @@
     },
     "sw-jerseys-122454864": {
       "id": "gid://shopify/Product/15308658999600",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול",
-      "en": "Golden State Warriors #30 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול | כיתוב THE TOWN",
+      "en": "Golden State Warriors #30 Basketball Jersey – Blue | THE TOWN Lettering",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق | كتابة THE TOWN"
     },
     "sw-jerseys-122173386": {
       "id": "gid://shopify/Product/15308659065136",
@@ -4200,15 +4206,15 @@
     },
     "sw-jerseys-125238768": {
       "id": "gid://shopify/Product/15308659917104",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס",
-      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס | הדפס אדום ושחור",
+      "en": "Chicago Bulls #23 Basketball Jersey – Retro, Print | Red and Black Print",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 ريترو مطبوع | طبعة حمراء وسوداء"
     },
     "sw-jerseys-125238348": {
       "id": "gid://shopify/Product/15308660015408",
-      "he": "גופיית כדורסל דנבר נאגטס מספר 15 כחול",
-      "en": "Denver Nuggets #15 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة دنفر ناغتس رقم 15 أزرق"
+      "he": "גופיית כדורסל דנבר נאגטס מספר 15 כחול | כיתוב צהוב ותג 6",
+      "en": "Denver Nuggets #15 Basketball Jersey – Blue | Yellow Lettering and #6 Patch",
+      "ar": "قميص كرة سلة دنفر ناغتس رقم 15 أزرق | كتابة صفراء وشارة رقم 6"
     },
     "sw-jerseys-125236513": {
       "id": "gid://shopify/Product/15308660048176",
@@ -4218,9 +4224,9 @@
     },
     "sw-jerseys-125235582": {
       "id": "gid://shopify/Product/15308660146480",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו | כיתוב Chicago בכתב יד",
+      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro | Script Chicago Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو | كتابة Chicago بخط اليد"
     },
     "sw-jerseys-123864538": {
       "id": "gid://shopify/Product/15308660244784",
@@ -4248,15 +4254,15 @@
     },
     "sw-jerseys-122915464": {
       "id": "gid://shopify/Product/15308660539696",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן | עיטור ירוק וצהוב",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – White | Green and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض | حواف خضراء وصفراء"
     },
     "sw-jerseys-122738447": {
       "id": "gid://shopify/Product/15308660605232",
-      "he": "גופיית כדורסל פריז מספר 7 שחור",
-      "en": "Paris Basketball #7 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة باريس لكرة السلة رقم 7 أسود"
+      "he": "גופיית כדורסל פריז סן ז׳רמן מספר 7 שחור",
+      "en": "Paris Saint-Germain #7 Basketball Jersey – Black",
+      "ar": "قميص كرة سلة باريس سان جيرمان رقم 7 أسود"
     },
     "sw-jerseys-122604480": {
       "id": "gid://shopify/Product/15308660703536",
@@ -4302,9 +4308,9 @@
     },
     "sw-jerseys-125775146": {
       "id": "gid://shopify/Product/15308663914800",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה",
-      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה | סמל גשר וכוכבים בצדדים",
+      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue | Bridge Logo and Stars on the Sides",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن | شعار جسر ونجوم على الجانبين"
     },
     "sw-jerseys-125774603": {
       "id": "gid://shopify/Product/15308663980336",
@@ -4314,9 +4320,9 @@
     },
     "sw-jerseys-125238623": {
       "id": "gid://shopify/Product/15308664078640",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו | כיתוב BULLS ותג זהוב",
+      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro | BULLS Lettering and Gold Patch",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو | كتابة BULLS وشارة ذهبية"
     },
     "sw-jerseys-125237818": {
       "id": "gid://shopify/Product/15308664144176",
@@ -4380,9 +4386,9 @@
     },
     "sw-jerseys-122173062": {
       "id": "gid://shopify/Product/15308664897840",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 34 ירוק רטרו",
-      "en": "Boston Celtics #34 Basketball Jersey – Green, Retro",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 34 أخضر ريترو"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 34 ירוק רטרו | כיתוב CELTICS לבן",
+      "en": "Boston Celtics #34 Basketball Jersey – Green, Retro | White CELTICS Lettering",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 34 أخضر ريترو | كتابة CELTICS بيضاء"
     },
     "sw-football-192924917": {
       "id": "gid://shopify/Product/15308668830000",
@@ -4506,9 +4512,9 @@
     },
     "sw-jerseys-86652506": {
       "id": "gid://shopify/Product/15308670239024",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן | עיטור סגול וצהוב",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – White | Purple and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أبيض | حواف بنفسجية وصفراء"
     },
     "sw-jerseys-86622894": {
       "id": "gid://shopify/Product/15308670337328",
@@ -4518,9 +4524,9 @@
     },
     "sw-jerseys-86542838": {
       "id": "gid://shopify/Product/15308670370096",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 33 לבן רטרו",
-      "en": "Boston Celtics #33 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 33 أبيض ريترو"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 33 לבן רטרו | תג תחתון אפור",
+      "en": "Boston Celtics #33 Basketball Jersey – White, Retro | Grey Jock Tag",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 33 أبيض ريترو | شارة سفلية رمادية"
     },
     "sw-jerseys-86514386": {
       "id": "gid://shopify/Product/15308670435632",
@@ -4572,15 +4578,15 @@
     },
     "sw-jerseys-94399288": {
       "id": "gid://shopify/Product/15308670959920",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור | כיתוב Los Angeles מסולסל",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black | Ornate Los Angeles Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود | كتابة Los Angeles مزخرفة"
     },
     "sw-jerseys-93838646": {
       "id": "gid://shopify/Product/15308671025456",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה",
-      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה | כיתוב THE BAY",
+      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue | THE BAY Lettering",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن | كتابة THE BAY"
     },
     "sw-jerseys-93737119": {
       "id": "gid://shopify/Product/15308671123760",
@@ -4626,9 +4632,9 @@
     },
     "sw-jerseys-143012544": {
       "id": "gid://shopify/Product/15308671942960",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב | כוכבים בצדדים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow | Stars on the Sides",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر | نجوم على الجانبين"
     },
     "sw-jerseys-143011820": {
       "id": "gid://shopify/Product/15308671975728",
@@ -4674,21 +4680,21 @@
     },
     "sw-jerseys-137279952": {
       "id": "gid://shopify/Product/15308672532784",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023",
-      "en": "Los Angeles Lakers #1 Basketball Jersey – White, 2023",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 أبيض 2023"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 1 לבן 2023 | כיתוב ומספר סגולים",
+      "en": "Los Angeles Lakers #1 Basketball Jersey – White, 2023 | Purple Lettering and Number",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 1 أبيض 2023 | كتابة ورقم باللون البنفسجي"
     },
     "sw-jerseys-102069966": {
       "id": "gid://shopify/Product/15308672598320",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 אדום רטרו",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أحمر ريترو"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 אדום רטרו | סמל Sixers וכדור",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – Red, Retro | Sixers Logo and Ball",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أحمر ريترو | شعار Sixers وكرة"
     },
     "sw-jerseys-136506201": {
       "id": "gid://shopify/Product/15308672631088",
-      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור",
-      "en": "San Antonio Spurs #1 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود"
+      "he": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור | סמל 6 בחזה",
+      "en": "San Antonio Spurs #1 Basketball Jersey – Black | #6 Patch on the Chest",
+      "ar": "قميص كرة سلة سان أنطونيو سبيرز رقم 1 أسود | شارة رقم 6 على الصدر"
     },
     "sw-jerseys-101778843": {
       "id": "gid://shopify/Product/15308672663856",
@@ -4698,9 +4704,9 @@
     },
     "sw-jerseys-135857131": {
       "id": "gid://shopify/Product/15308672729392",
-      "he": "גופיית כדורסל סלאם דאנק מספר 10 אדום",
-      "en": "Slam Dunk #10 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة سلام دانك رقم 10 أحمر"
+      "he": "גופיית כדורסל סלאם דאנק מספר 10 אדום | שם ומספר בגב",
+      "en": "Slam Dunk #10 Basketball Jersey – Red | Name and Number on the Back",
+      "ar": "قميص كرة سلة سلام دانك رقم 10 أحمر | اسم ورقم على الظهر"
     },
     "sw-jerseys-101483235": {
       "id": "gid://shopify/Product/15308672794928",
@@ -4716,9 +4722,9 @@
     },
     "sw-jerseys-101296715": {
       "id": "gid://shopify/Product/15308672893232",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 13 סגול רטרו",
-      "en": "Los Angeles Lakers #13 Basketball Jersey – Purple, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 13 بنفسجي ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 13 סגול רטרו | סמל NBA זהוב בחזה",
+      "en": "Los Angeles Lakers #13 Basketball Jersey – Purple, Retro | Gold NBA Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 13 بنفسجي ريترو | شعار NBA ذهبي على الصدر"
     },
     "sw-jerseys-134343544": {
       "id": "gid://shopify/Product/15308672958768",
@@ -4746,9 +4752,9 @@
     },
     "sw-jerseys-132029309": {
       "id": "gid://shopify/Product/15308673188144",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | הדפס גביעים",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | Trophy Print",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | طبعة كؤوس"
     },
     "sw-jerseys-100218968": {
       "id": "gid://shopify/Product/15308673253680",
@@ -4806,9 +4812,9 @@
     },
     "sw-jerseys-128866157": {
       "id": "gid://shopify/Product/15308673712432",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב רטרו",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב רטרו | צווארון עגול ותג 60",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Yellow, Retro | Round Neck and 60 Patch",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أصفر ريترو | ياقة دائرية وشارة 60"
     },
     "sw-jerseys-99310194": {
       "id": "gid://shopify/Product/15308673745200",
@@ -4854,9 +4860,9 @@
     },
     "sw-jerseys-97059083": {
       "id": "gid://shopify/Product/15308674302256",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 13 סגול רטרו",
-      "en": "Los Angeles Lakers #13 Basketball Jersey – Purple, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 13 بنفسجي ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 13 סגול רטרו | סמל NBA צבעוני בחזה",
+      "en": "Los Angeles Lakers #13 Basketball Jersey – Purple, Retro | Multicolor NBA Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 13 بنفسجي ريترو | شعار NBA ملوّن على الصدر"
     },
     "sw-jerseys-96836231": {
       "id": "gid://shopify/Product/15308674367792",
@@ -4908,9 +4914,9 @@
     },
     "sw-jerseys-122172844": {
       "id": "gid://shopify/Product/15308676858160",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 7 שחור",
-      "en": "Brooklyn Nets #7 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أسود"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 7 שחור | כיתוב NETS",
+      "en": "Brooklyn Nets #7 Basketball Jersey – Black | NETS Lettering",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أسود | كتابة NETS"
     },
     "sw-jerseys-119831342": {
       "id": "gid://shopify/Product/15308676956464",
@@ -4944,9 +4950,9 @@
     },
     "sw-jerseys-121583069": {
       "id": "gid://shopify/Product/15308677218608",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול | עיטור צהוב ותג 75 בתחתית",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple | Yellow Trim and 75 Tag at the Hem",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي | حواف صفراء وشارة 75 في الأسفل"
     },
     "sw-jerseys-116024178": {
       "id": "gid://shopify/Product/15308677251376",
@@ -4986,15 +4992,15 @@
     },
     "sw-jerseys-114585756": {
       "id": "gid://shopify/Product/15308677579056",
-      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן",
-      "en": "Memphis Grizzlies #12 Basketball Jersey – White",
-      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض"
+      "he": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | כיתוב MEMPHIS וסמל כחול כהה",
+      "en": "Memphis Grizzlies #12 Basketball Jersey – White | MEMPHIS Lettering and Dark Blue Logo",
+      "ar": "قميص كرة سلة ممفيس غريزليز رقم 12 أبيض | كتابة MEMPHIS وشعار أزرق داكن"
     },
     "sw-jerseys-119830478": {
       "id": "gid://shopify/Product/15308677611824",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור רטרו | תג זהוב מלבני בחזה",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black, Retro | Gold Rectangular Patch on the Chest",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود ريترو | شارة ذهبية مستطيلة على الصدر"
     },
     "sw-jerseys-113666650": {
       "id": "gid://shopify/Product/15308677710128",
@@ -5094,9 +5100,9 @@
     },
     "sw-jerseys-107884274": {
       "id": "gid://shopify/Product/15308678627632",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס לילדים מספר 30 כחול",
-      "en": "Golden State Warriors #30 Kids' Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز للأطفال رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס לילדים מספר 30 כחול | סמל גשר צהוב",
+      "en": "Golden State Warriors #30 Kids' Basketball Jersey – Blue | Yellow Bridge Logo",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز للأطفال رقم 30 أزرق | شعار جسر أصفر"
     },
     "sw-jerseys-107722044": {
       "id": "gid://shopify/Product/15308678693168",
@@ -5112,9 +5118,9 @@
     },
     "sw-jerseys-121956419": {
       "id": "gid://shopify/Product/15308680397104",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 7 לבן",
-      "en": "Brooklyn Nets #7 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أبيض"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 7 לבן | כיתוב NETS אדום וכוכבים בצד",
+      "en": "Brooklyn Nets #7 Basketball Jersey – White | Red NETS Lettering and Stars on the Side",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أبيض | كتابة NETS حمراء ونجوم على الجانب"
     },
     "sw-jerseys-121584439": {
       "id": "gid://shopify/Product/15308680495408",
@@ -5130,15 +5136,15 @@
     },
     "sw-jerseys-121071984": {
       "id": "gid://shopify/Product/15308680626480",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול",
-      "en": "Golden State Warriors #30 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול | כיתוב WARRIORS",
+      "en": "Golden State Warriors #30 Basketball Jersey – Blue | WARRIORS Lettering",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق | كتابة WARRIORS"
     },
     "sw-jerseys-120280783": {
       "id": "gid://shopify/Product/15308680659248",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 33 לבן רטרו",
-      "en": "Boston Celtics #33 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 33 أبيض ريترو"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 33 לבן רטרו | תג תחתון בז׳",
+      "en": "Boston Celtics #33 Basketball Jersey – White, Retro | Beige Jock Tag",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 33 أبيض ريترو | شارة سفلية بيج"
     },
     "sw-jerseys-119831089": {
       "id": "gid://shopify/Product/15308680757552",
@@ -5166,9 +5172,9 @@
     },
     "sw-jerseys-115261468": {
       "id": "gid://shopify/Product/15308681052464",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול | עיטור צהוב וסמל NBA בגב",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Purple | Yellow Trim and NBA Logo on the Back",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 بنفسجي | حواف صفراء وشعار NBA على الظهر"
     },
     "sw-jerseys-115260069": {
       "id": "gid://shopify/Product/15308681118000",
@@ -5178,9 +5184,9 @@
     },
     "sw-jerseys-114585659": {
       "id": "gid://shopify/Product/15308681150768",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק",
-      "en": "Boston Celtics #0 Basketball Jersey – Green",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أخضر"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב CELTICS",
+      "en": "Boston Celtics #0 Basketball Jersey – Green | CELTICS Lettering",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أخضر | كتابة CELTICS"
     },
     "sw-jerseys-113666492": {
       "id": "gid://shopify/Product/15308681216304",
@@ -5214,9 +5220,9 @@
     },
     "sw-jerseys-107502068": {
       "id": "gid://shopify/Product/15308681511216",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו",
-      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו | כיתוב CAVS",
+      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro | CAVS Lettering",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو | كتابة CAVS"
     },
     "sw-jerseys-107317718": {
       "id": "gid://shopify/Product/15308681543984",
@@ -5358,9 +5364,9 @@
     },
     "sw-jerseys-93379735": {
       "id": "gid://shopify/Product/15308690981168",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור",
-      "en": "Los Angeles Lakers #24 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | עיטור סגול וצהוב",
+      "en": "Los Angeles Lakers #24 Basketball Jersey – Black | Purple and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 24 أسود | حواف بنفسجية وصفراء"
     },
     "sw-jerseys-92980294": {
       "id": "gid://shopify/Product/15308691013936",
@@ -5376,9 +5382,9 @@
     },
     "sw-jerseys-90916654": {
       "id": "gid://shopify/Product/15308691145008",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021",
-      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue, 2021",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن 2021"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021 | פס צד צהוב דק",
+      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue, 2021 | Thin Yellow Side Stripe",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن 2021 | خط جانبي أصفر رفيع"
     },
     "sw-jerseys-90591140": {
       "id": "gid://shopify/Product/15308691210544",
@@ -5406,9 +5412,9 @@
     },
     "sw-jerseys-89669153": {
       "id": "gid://shopify/Product/15308691439920",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021",
-      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue, 2021",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن 2021"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021 | פסי צד צהובים רחבים",
+      "en": "Golden State Warriors #30 Basketball Jersey – Dark Blue, 2021 | Wide Yellow Side Stripes",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق داكن 2021 | خطوط جانبية صفراء عريضة"
     },
     "sw-jerseys-89539469": {
       "id": "gid://shopify/Product/15308691505456",
@@ -5424,9 +5430,9 @@
     },
     "sw-jerseys-89334506": {
       "id": "gid://shopify/Product/15308691669296",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 לבן רטרו",
-      "en": "Los Angeles Lakers #3 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 أبيض ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 לבן רטרו | כיתוב LAKERS ועיטור צהוב",
+      "en": "Los Angeles Lakers #3 Basketball Jersey – White, Retro | LAKERS Lettering and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 أبيض ريترو | كتابة LAKERS وحواف صفراء"
     },
     "sw-hoodies-213102778-3": {
       "id": "gid://shopify/Product/15308691767600",
@@ -5526,9 +5532,9 @@
     },
     "sw-jerseys-88093901": {
       "id": "gid://shopify/Product/15308693078320",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו",
-      "en": "Philadelphia 76ers #3 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أبيض ريترو"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן רטרו | סמל Sixers וכדור",
+      "en": "Philadelphia 76ers #3 Basketball Jersey – White, Retro | Sixers Logo and Ball",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 3 أبيض ريترو | شعار Sixers وكرة"
     },
     "sw-jerseys-87751685": {
       "id": "gid://shopify/Product/15308693143856",
@@ -5538,9 +5544,9 @@
     },
     "sw-jerseys-87589344": {
       "id": "gid://shopify/Product/15308693209392",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב | תג עגול שחור בחזה",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow | Round Black Patch on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر | شارة سوداء دائرية على الصدر"
     },
     "sw-jerseys-87387059": {
       "id": "gid://shopify/Product/15308693274928",
@@ -5598,9 +5604,9 @@
     },
     "sw-jerseys-106990699": {
       "id": "gid://shopify/Product/15308694290736",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן",
-      "en": "Boston Celtics #0 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أبيض"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן | כיתוב ועיטור ירוקים",
+      "en": "Boston Celtics #0 Basketball Jersey – White | Green Lettering and Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أبيض | كتابة وحواف خضراء"
     },
     "sw-jerseys-106849198": {
       "id": "gid://shopify/Product/15308694421808",
@@ -5610,9 +5616,9 @@
     },
     "sw-jerseys-106553077": {
       "id": "gid://shopify/Product/15308694454576",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור",
-      "en": "Brooklyn Nets #11 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור | כיתוב BROOKLYN",
+      "en": "Brooklyn Nets #11 Basketball Jersey – Black | BROOKLYN Lettering",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود | كتابة BROOKLYN"
     },
     "sw-jerseys-106390553": {
       "id": "gid://shopify/Product/15308694585648",
@@ -5628,15 +5634,15 @@
     },
     "sw-jerseys-106014840": {
       "id": "gid://shopify/Product/15308694716720",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב",
-      "en": "Los Angeles Lakers #0 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 0 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב | סמל כסוף מבריק בחזה",
+      "en": "Los Angeles Lakers #0 Basketball Jersey – Yellow | Shiny Silver Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 0 أصفر | شعار فضي لامع على الصدر"
     },
     "sw-jerseys-105727983": {
       "id": "gid://shopify/Product/15308694815024",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 לבן רטרו",
-      "en": "Cleveland Cavaliers #23 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أبيض ريترو"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 לבן רטרו | תג תחתון שחור",
+      "en": "Cleveland Cavaliers #23 Basketball Jersey – White, Retro | Black Jock Tag",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أبيض ريترو | شارة سفلية سوداء"
     },
     "sw-jerseys-105346869": {
       "id": "gid://shopify/Product/15308694880560",
@@ -5670,9 +5676,9 @@
     },
     "sw-jerseys-104250745": {
       "id": "gid://shopify/Product/15308695241008",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור | מספר סגול במסגרת זהובה",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black | Purple Number with Gold Outline",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود | رقم بنفسجي بإطار ذهبي"
     },
     "sw-jerseys-103987675": {
       "id": "gid://shopify/Product/15308695372080",
@@ -5688,27 +5694,27 @@
     },
     "sw-jerseys-103308176": {
       "id": "gid://shopify/Product/15308695503152",
-      "he": "גופיית כדורסל שיקגו בולס מספר 11 אדום",
-      "en": "Chicago Bulls #11 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 11 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 11 אדום | כיתוב BULLS",
+      "en": "Chicago Bulls #11 Basketball Jersey – Red | BULLS Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 11 أحمر | كتابة BULLS"
     },
     "sw-jerseys-103159844": {
       "id": "gid://shopify/Product/15308695535920",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול",
-      "en": "Los Angeles Lakers #6 Basketball Jersey – Purple",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 6 بنفسجي"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול | כוכבים לבנים בחזית",
+      "en": "Los Angeles Lakers #6 Basketball Jersey – Purple | White Stars on the Front",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 6 بنفسجي | نجوم بيضاء في الأمام"
     },
     "sw-jerseys-102795524": {
       "id": "gid://shopify/Product/15308695634224",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן | פסי צד צהובים",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – White | Yellow Side Stripes",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أبيض | خطوط جانبية صفراء"
     },
     "sw-jerseys-127573779": {
       "id": "gid://shopify/Product/15308696027440",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – White",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أبيض"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן | כיתוב ומספר בקווי מתאר אפורים",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – White | Grey Outlined Lettering and Number",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أبيض | كتابة ورقم بخطوط خارجية رمادية"
     },
     "sw-jerseys-107311249": {
       "id": "gid://shopify/Product/15308696158512",
@@ -5736,9 +5742,9 @@
     },
     "sw-jerseys-106712248": {
       "id": "gid://shopify/Product/15308696355120",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 לבן רטרו",
-      "en": "Los Angeles Lakers #8 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 8 أبيض ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 8 לבן רטרו | כיתוב Los Angeles ועיטור כחול",
+      "en": "Los Angeles Lakers #8 Basketball Jersey – White, Retro | Los Angeles Lettering and Blue Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 8 أبيض ريترو | كتابة Los Angeles وحواف زرقاء"
     },
     "sw-jerseys-126878026": {
       "id": "gid://shopify/Product/15308696387888",
@@ -5748,9 +5754,9 @@
     },
     "sw-jerseys-106552848": {
       "id": "gid://shopify/Product/15308696486192",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 7 שחור",
-      "en": "Brooklyn Nets #7 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أسود"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 7 שחור | כיתוב BROOKLYN",
+      "en": "Brooklyn Nets #7 Basketball Jersey – Black | BROOKLYN Lettering",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أسود | كتابة BROOKLYN"
     },
     "sw-jerseys-126717855": {
       "id": "gid://shopify/Product/15308696518960",
@@ -5778,9 +5784,9 @@
     },
     "sw-jerseys-106048308": {
       "id": "gid://shopify/Product/15308696715568",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב | סמל כסוף מבריק בחזה",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Yellow | Shiny Silver Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أصفر | شعار فضي لامع على الصدر"
     },
     "sw-jerseys-125774963": {
       "id": "gid://shopify/Product/15308696781104",
@@ -5796,9 +5802,9 @@
     },
     "sw-jerseys-105462294": {
       "id": "gid://shopify/Product/15308696879408",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו | כיתוב BULLS ותג מעוין",
+      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro | BULLS Lettering and Diamond Patch",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو | كتابة BULLS وشارة معيّنة الشكل"
     },
     "sw-jerseys-125774208": {
       "id": "gid://shopify/Product/15308696912176",
@@ -5814,15 +5820,15 @@
     },
     "sw-jerseys-125238570": {
       "id": "gid://shopify/Product/15308697043248",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו | כיתוב BULLS ותג מעוין",
+      "en": "Chicago Bulls #23 Basketball Jersey – White, Retro | BULLS Lettering and Diamond Patch",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أبيض ريترو | كتابة BULLS وشارة معيّنة الشكل"
     },
     "sw-jerseys-105012887": {
       "id": "gid://shopify/Product/15308697108784",
-      "he": "גופיית כדורסל סיאטל סופרסוניקס מספר 20 ירוק רטרו",
-      "en": "Seattle SuperSonics #20 Basketball Jersey – Green, Retro",
-      "ar": "قميص كرة سلة سياتل سوبرسونيكس رقم 20 أخضر ريترو"
+      "he": "גופיית כדורסל סיאטל סופרסוניקס מספר 20 ירוק רטרו | פס רוחב אדום",
+      "en": "Seattle SuperSonics #20 Basketball Jersey – Green, Retro | Red Horizontal Band",
+      "ar": "قميص كرة سلة سياتل سوبرسونيكس رقم 20 أخضر ريترو | شريط أفقي أحمر"
     },
     "sw-jerseys-125236932": {
       "id": "gid://shopify/Product/15308697141552",
@@ -5838,9 +5844,9 @@
     },
     "sw-jerseys-125235868": {
       "id": "gid://shopify/Product/15308697239856",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו",
-      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו | כיתוב Chicago ותג תחתון שחור",
+      "en": "Chicago Bulls #23 Basketball Jersey – Red, Retro | Chicago Lettering and Black Jock Tag",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أحمر ريترو | كتابة Chicago وشارة سفلية سوداء"
     },
     "sw-jerseys-104887005": {
       "id": "gid://shopify/Product/15308697305392",
@@ -5856,9 +5862,9 @@
     },
     "sw-jerseys-104480466": {
       "id": "gid://shopify/Product/15308697403696",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 34 ירוק רטרו",
-      "en": "Boston Celtics #34 Basketball Jersey – Green, Retro",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 34 أخضر ريترو"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 34 ירוק רטרו | כיתוב BOSTON ועיטור שחור",
+      "en": "Boston Celtics #34 Basketball Jersey – Green, Retro | BOSTON Lettering and Black Trim",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 34 أخضر ريترو | كتابة BOSTON وحواف سوداء"
     },
     "sw-jerseys-123864234": {
       "id": "gid://shopify/Product/15308697436464",
@@ -5886,9 +5892,9 @@
     },
     "sw-jerseys-106849653": {
       "id": "gid://shopify/Product/15308697600304",
-      "he": "גופיית כדורסל שיקגו בולס מספר 11 אדום",
-      "en": "Chicago Bulls #11 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 11 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 11 אדום | כיתוב Chicago ופסי צד לבנים",
+      "en": "Chicago Bulls #11 Basketball Jersey – Red | Chicago Lettering and White Side Stripes",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 11 أحمر | كتابة Chicago وخطوط جانبية بيضاء"
     },
     "sw-jerseys-103764821": {
       "id": "gid://shopify/Product/15308697665840",
@@ -5904,9 +5910,9 @@
     },
     "sw-jerseys-106680476": {
       "id": "gid://shopify/Product/15308697764144",
-      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק",
-      "en": "Boston Celtics #0 Basketball Jersey – Green",
-      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أخضر"
+      "he": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב BOSTON",
+      "en": "Boston Celtics #0 Basketball Jersey – Green | BOSTON Lettering",
+      "ar": "قميص كرة سلة بوسطن سيلتيكس رقم 0 أخضر | كتابة BOSTON"
     },
     "sw-jerseys-103587024": {
       "id": "gid://shopify/Product/15308697796912",
@@ -5916,21 +5922,21 @@
     },
     "sw-jerseys-122915524": {
       "id": "gid://shopify/Product/15308697862448",
-      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור",
-      "en": "Milwaukee Bucks #34 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود"
+      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור | כיתוב BUCKS וקרניים לבנות",
+      "en": "Milwaukee Bucks #34 Basketball Jersey – Black | BUCKS Lettering and White Antlers",
+      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود | كتابة BUCKS وقرون بيضاء"
     },
     "sw-jerseys-106552772": {
       "id": "gid://shopify/Product/15308697895216",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 7 לבן",
-      "en": "Brooklyn Nets #7 Basketball Jersey – White",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أبيض"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 7 לבן | כיתוב BROOKLYN שחור",
+      "en": "Brooklyn Nets #7 Basketball Jersey – White | Black BROOKLYN Lettering",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 7 أبيض | كتابة BROOKLYN سوداء"
     },
     "sw-jerseys-103160556": {
       "id": "gid://shopify/Product/15308697993520",
-      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור",
-      "en": "Chicago Bulls #23 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود"
+      "he": "גופיית כדורסל שיקגו בולס מספר 23 שחור | כיתוב CHICAGO אדום",
+      "en": "Chicago Bulls #23 Basketball Jersey – Black | Red CHICAGO Lettering",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 23 أسود | كتابة CHICAGO حمراء"
     },
     "sw-jerseys-122739296": {
       "id": "gid://shopify/Product/15308698026288",
@@ -5940,9 +5946,9 @@
     },
     "sw-jerseys-106384395": {
       "id": "gid://shopify/Product/15308698059056",
-      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול",
-      "en": "Golden State Warriors #30 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق"
+      "he": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול | סמל גשר ופסי צד לבנים",
+      "en": "Golden State Warriors #30 Basketball Jersey – Blue | Bridge Logo and White Side Stripes",
+      "ar": "قميص كرة سلة غولدن ستايت ووريرز رقم 30 أزرق | شعار جسر وخطوط جانبية بيضاء"
     },
     "sw-jerseys-102972721": {
       "id": "gid://shopify/Product/15308698091824",
@@ -5958,9 +5964,9 @@
     },
     "sw-jerseys-106048204": {
       "id": "gid://shopify/Product/15308698190128",
-      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו",
-      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro",
-      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو"
+      "he": "גופיית כדורסל קליבלנד קאבלירס מספר 23 כחול כהה רטרו | תג תחתון שחור",
+      "en": "Cleveland Cavaliers #23 Basketball Jersey – Dark Blue, Retro | Black Jock Tag",
+      "ar": "قميص كرة سلة كليفلاند كافالييرز رقم 23 أزرق داكن ريترو | شارة سفلية سوداء"
     },
     "sw-jerseys-102795460": {
       "id": "gid://shopify/Product/15308698255664",
@@ -5970,9 +5976,9 @@
     },
     "sw-jerseys-122454761": {
       "id": "gid://shopify/Product/15308698288432",
-      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור",
-      "en": "Brooklyn Nets #11 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود"
+      "he": "גופיית כדורסל ברוקלין נטס מספר 11 שחור | כיתוב NETS ופסי צד מפוספסים",
+      "en": "Brooklyn Nets #11 Basketball Jersey – Black | NETS Lettering and Striped Side Panels",
+      "ar": "قميص كرة سلة بروكلين نتس رقم 11 أسود | كتابة NETS وجوانب مخططة"
     },
     "sw-jerseys-105900531": {
       "id": "gid://shopify/Product/15308698321200",
@@ -5994,9 +6000,9 @@
     },
     "sw-jerseys-105346010": {
       "id": "gid://shopify/Product/15308698452272",
-      "he": "גופיית כדורסל שיקגו בולס מספר 2 אדום",
-      "en": "Chicago Bulls #2 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 2 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 2 אדום | כיתוב Chicago ופסי צד לבנים",
+      "en": "Chicago Bulls #2 Basketball Jersey – Red | Chicago Lettering and White Side Stripes",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 2 أحمر | كتابة Chicago وخطوط جانبية بيضاء"
     },
     "sw-jerseys-105012782": {
       "id": "gid://shopify/Product/15308698517808",
@@ -6120,9 +6126,9 @@
     },
     "sw-jerseys-102183306": {
       "id": "gid://shopify/Product/15308702712112",
-      "he": "גופיית כדורסל דטרויט פיסטונס מספר 2 כחול",
-      "en": "Detroit Pistons #2 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة ديترويت بيستونز رقم 2 أزرق"
+      "he": "גופיית כדורסל דטרויט פיסטונס מספר 2 כחול | פסי צד אדומים ולבנים",
+      "en": "Detroit Pistons #2 Basketball Jersey – Blue | Red and White Side Stripes",
+      "ar": "قميص كرة سلة ديترويت بيستونز رقم 2 أزرق | خطوط جانبية حمراء وبيضاء"
     },
     "sw-hoodies-213101663-19": {
       "id": "gid://shopify/Product/15308702777648",
@@ -6132,9 +6138,9 @@
     },
     "sw-jerseys-101779524": {
       "id": "gid://shopify/Product/15308702810416",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 שחור",
-      "en": "Los Angeles Lakers #7 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 7 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 שחור | כיתוב Los Angeles מסולסל",
+      "en": "Los Angeles Lakers #7 Basketball Jersey – Black | Ornate Los Angeles Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 7 أسود | كتابة Los Angeles مزخرفة"
     },
     "sw-hoodies-213101663-25": {
       "id": "gid://shopify/Product/15308702875952",
@@ -6324,9 +6330,9 @@
     },
     "sw-jerseys-100882492": {
       "id": "gid://shopify/Product/15308712640816",
-      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור",
-      "en": "Milwaukee Bucks #34 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود"
+      "he": "גופיית כדורסל מילווקי באקס מספר 34 שחור | סמל אייל ירוק ופסי צד",
+      "en": "Milwaukee Bucks #34 Basketball Jersey – Black | Green Deer Logo and Side Stripes",
+      "ar": "قميص كرة سلة ميلووكي باكس رقم 34 أسود | شعار أيل أخضر وخطوط جانبية"
     },
     "sw-jerseys-100267387": {
       "id": "gid://shopify/Product/15308712673584",
@@ -6390,9 +6396,9 @@
     },
     "sw-jerseys-101778547": {
       "id": "gid://shopify/Product/15308716998960",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 שחור",
-      "en": "Los Angeles Lakers #7 Basketball Jersey – Black",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 7 أسود"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 7 שחור | כיתוב LAKERS ועיטור צהוב",
+      "en": "Los Angeles Lakers #7 Basketball Jersey – Black | LAKERS Lettering and Yellow Trim",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 7 أسود | كتابة LAKERS وحواف صفراء"
     },
     "sw-jerseys-101297298": {
       "id": "gid://shopify/Product/15308717031728",
@@ -6402,9 +6408,9 @@
     },
     "sw-jerseys-101296495": {
       "id": "gid://shopify/Product/15308717130032",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב",
-      "en": "Los Angeles Lakers #0 Basketball Jersey – Yellow",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 0 أصفر"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 0 צהוב | סמל סגול כהה בחזה",
+      "en": "Los Angeles Lakers #0 Basketball Jersey – Yellow | Dark Purple Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 0 أصفر | شعار بنفسجي داكن على الصدر"
     },
     "sw-jerseys-100658961": {
       "id": "gid://shopify/Product/15308717195568",
@@ -6516,9 +6522,9 @@
     },
     "sw-jerseys-95541793": {
       "id": "gid://shopify/Product/15308723323184",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 לבן רטרו",
-      "en": "Los Angeles Lakers #3 Basketball Jersey – White, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 أبيض ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 לבן רטרו | כיתוב Los Angeles כחול",
+      "en": "Los Angeles Lakers #3 Basketball Jersey – White, Retro | Blue Los Angeles Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 3 أبيض ريترو | كتابة Los Angeles زرقاء"
     },
     "sw-jerseys-95048560": {
       "id": "gid://shopify/Product/15308723388720",
@@ -6528,9 +6534,9 @@
     },
     "sw-jerseys-97934401": {
       "id": "gid://shopify/Product/15308724175152",
-      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן",
-      "en": "Philadelphia 76ers #21 Basketball Jersey – White",
-      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 21 أبيض"
+      "he": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן | סמל פעמון",
+      "en": "Philadelphia 76ers #21 Basketball Jersey – White | Bell Logo",
+      "ar": "قميص كرة سلة فيلادلفيا سفنتي سيكسرز رقم 21 أبيض | شعار جرس"
     },
     "sw-jerseys-97597478": {
       "id": "gid://shopify/Product/15308724240688",
@@ -6540,9 +6546,9 @@
     },
     "sw-jerseys-97402129": {
       "id": "gid://shopify/Product/15308724338992",
-      "he": "גופיית כדורסל דנבר נאגטס מספר 15 כחול",
-      "en": "Denver Nuggets #15 Basketball Jersey – Blue",
-      "ar": "قميص كرة سلة دنفر ناغتس رقم 15 أزرق"
+      "he": "גופיית כדורסל דנבר נאגטס מספר 15 כחול | כיתוב לבן וצווארון אדום",
+      "en": "Denver Nuggets #15 Basketball Jersey – Blue | White Lettering and Red Collar",
+      "ar": "قميص كرة سلة دنفر ناغتس رقم 15 أزرق | كتابة بيضاء وياقة حمراء"
     },
     "sw-jerseys-97381444": {
       "id": "gid://shopify/Product/15308724437296",
@@ -6552,9 +6558,9 @@
     },
     "sw-jerseys-96896163": {
       "id": "gid://shopify/Product/15308724535600",
-      "he": "גופיית כדורסל שיקגו בולס מספר 1 אדום",
-      "en": "Chicago Bulls #1 Basketball Jersey – Red",
-      "ar": "قميص كرة سلة شيكاغو بولز رقم 1 أحمر"
+      "he": "גופיית כדורסל שיקגו בולס מספר 1 אדום | תג תחתון לבן",
+      "en": "Chicago Bulls #1 Basketball Jersey – Red | White Jock Tag",
+      "ar": "قميص كرة سلة شيكاغو بولز رقم 1 أحمر | شارة سفلية بيضاء"
     },
     "sw-jerseys-96835282": {
       "id": "gid://shopify/Product/15308724633904",
@@ -6582,15 +6588,15 @@
     },
     "sw-jerseys-95361111": {
       "id": "gid://shopify/Product/15308724961584",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 32 סגול רטרו",
-      "en": "Los Angeles Lakers #32 Basketball Jersey – Purple, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 32 بنفسجي ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 32 סגול רטרו | סמל NBA זהוב בחזה",
+      "en": "Los Angeles Lakers #32 Basketball Jersey – Purple, Retro | Gold NBA Logo on the Chest",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 32 بنفسجي ريترو | شعار NBA ذهبي على الصدر"
     },
     "sw-jerseys-95046438": {
       "id": "gid://shopify/Product/15308725027120",
-      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו",
-      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro",
-      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو"
+      "he": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 שחור רטרו | כיתוב Los Angeles בכתב יד",
+      "en": "Los Angeles Lakers #23 Basketball Jersey – Black, Retro | Script Los Angeles Lettering",
+      "ar": "قميص كرة سلة لوس أنجلوس ليكرز رقم 23 أسود ريترو | كتابة Los Angeles بخط اليد"
     },
     "sw-jerseys-94399727": {
       "id": "gid://shopify/Product/15308725125424",

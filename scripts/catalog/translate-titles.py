@@ -44,9 +44,12 @@ EXTRA_SENTENCES = {  # the few description lines that are not the title or the s
         'قميص كرة سلة نيويورك نيكس، رقم 8، بتصميم أبيض مقلّم.'),
 }
 EXTRA_NAMES = {  # names in titles that classification.json does not list as teams or players
-    'פריז': ('Paris Basketball', 'باريس لكرة السلة'), 'BAPE': ('BAPE', 'BAPE'), 'הארדוויי': ('Hardaway', 'هارداواي'),
+    'BAPE': ('BAPE', 'BAPE'), 'הארדוויי': ('Hardaway', 'هارداواي'),
     'בעיצוב NBA ו־Supreme': ('NBA × Supreme', 'بتصميم NBA × Supreme'),
 }
+# A bare 'פריז' is not listed: it can be Paris Saint-Germain or Paris Basketball, and mapping it to
+# 'Paris Basketball' mistitled two PSG jerseys (fixed 2026-09-28). 'פריז סן ז׳רמן' comes from
+# classification.json and, being longer, is matched first; a title with only 'פריז' is flagged.
 
 names = []  # (hebrew, en, ar), longest first
 for slug, t in C['teams'].items():
