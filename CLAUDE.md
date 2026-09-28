@@ -215,6 +215,11 @@ page's db, document `launch/state` (`done`: step id → true); read them with `r
 instruction: a store change still needs the owner's "מאשר" in the conversation. The owner approved all six store
 changes the page proposed on 2026-09-28 ("The catalog", "Approved on 2026-09-28"). Five are done. The sixth, readable
 URLs for the 1,098 older products, waits for Google's approval of the store, as we recommended; the owner tells us when.
+When it runs (`productUpdate` with `redirectNewHandle: true`): Shopify doesn't update references to a handle, and the
+home page (`templates/index.json`) picks 6 of these products by handle (`sw-shorts-162704069`, `sw-jerseys-97381444`,
+`sw-jerseys-96896163`, `sw-jerseys-244984876`, `sw-football-252374837`, `sw-football-250582309`). Change those settings
+in the same step, on an unpublished theme the owner then publishes (never the live one). `catalog/translations/older-products.json`
+and several records are keyed by the old handles: keep a map old → new.
 
 - A promotion the owner asked about (2026-09-27): the third item (the cheapest) at 70% off, the fifth item free. Tested
   with two Buy X get Y test codes (deleted after) and `draftOrderCalculate`:
