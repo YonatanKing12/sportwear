@@ -12,7 +12,7 @@
     "en": "Girona",
     "ar": "جيرونا"
   },
-  "leagues": ["la-liga"],
+  "leagues": ["segunda-division"],
   "kit": "away",
   "season": "26/27",
   "vendor": "SportWear",
@@ -102,7 +102,7 @@
   "tags": [
     "sport:football",
     "team:girona",
-    "league:la-liga",
+    "league:segunda-division",
     "kit:away",
     "audience:adult",
     "new",
@@ -117,8 +117,8 @@
     "قميص",
     "girona",
     "جيرونا",
-    "la liga",
-    "الدوري الإسباني"
+    "segunda division",
+    "دوري الدرجة الثانية الإسباني"
   ],
   "shopify": {
     "product_id": "gid://shopify/Product/15310276559152",

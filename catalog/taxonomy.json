@@ -325,6 +325,18 @@
       "he": "הליגה הארגנטינאית",
       "en": "Argentine Primera División",
       "ar": "الدوري الأرجنتيني"
+    },
+    "championship": {
+      "sport": "football",
+      "he": "צ׳מפיונשיפ",
+      "en": "EFL Championship",
+      "ar": "دوري البطولة الإنجليزية"
+    },
+    "segunda-division": {
+      "sport": "football",
+      "he": "הליגה הספרדית השנייה",
+      "en": "Segunda División",
+      "ar": "دوري الدرجة الثانية الإسباني"
     }
   },
   "styles": {
@@ -1364,7 +1376,7 @@
       "he": "ברנלי",
       "en": "Burnley",
       "ar": "بيرنلي",
-      "leagues": ["premier-league"]
+      "leagues": ["championship"]
     },
     "football:crystal-palace": {
       "slug": "crystal-palace",
@@ -1420,7 +1432,7 @@
       "he": "ווסטהאם",
       "en": "West Ham United",
       "ar": "وست هام يونايتد",
-      "leagues": ["premier-league"]
+      "leagues": ["championship"]
     },
     "football:wolverhampton-wanderers": {
       "slug": "wolverhampton-wanderers",
@@ -1428,7 +1440,7 @@
       "he": "וולברהמפטון",
       "en": "Wolverhampton Wanderers",
       "ar": "وولفرهامبتون",
-      "leagues": ["premier-league"]
+      "leagues": ["championship"]
     },
     "football:sevilla": {
       "slug": "sevilla",
@@ -1484,7 +1496,7 @@
       "he": "ג׳ירונה",
       "en": "Girona",
       "ar": "جيرونا",
-      "leagues": ["la-liga"]
+      "leagues": ["segunda-division"]
     },
     "football:celta-vigo": {
       "slug": "celta-vigo",

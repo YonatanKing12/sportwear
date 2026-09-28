@@ -23,14 +23,37 @@
       "price": 149,
       "source": "owner, 2026-09-27: 'אותו מחיר עד היום' (new basketball jerseys at the ₪149 of those imported before)"
     },
-    { "product_type": "Basketball Jersey", "audience": "kids", "price": null, "source": "TBD" },
+    {
+      "product_type": "Basketball Jersey",
+      "audience": "kids",
+      "price": 89,
+      "source": "owner, 2026-09-28: 'הכל מאושר. רק לילדים תעשה מחיר 89 לגופיה' (in reply to the launch page's proposal of ₪149, the price of their import). The 75 kids basketball jerseys already in the store moved from ₪149 to ₪89 the same day: catalog/published/prices-2026-09-28.json"
+    },
     {
       "product_type": "Basketball Shorts",
       "audience": "adult",
       "price": 119,
       "source": "owner, 2026-09-27: the shorts imported from xingkong-sports sell at ₪119, like the ten shorts imported before (a ₪149 jersey with its matching shorts stays ₪229 as a set)"
     },
-    { "product_type": "Basketball Shorts", "audience": "kids", "price": null, "source": "TBD" }
+    { "product_type": "Basketball Shorts", "audience": "kids", "price": null, "source": "TBD" },
+    {
+      "product_type": "Hoodie",
+      "audience": "adult",
+      "price": 249,
+      "source": "owner, 2026-09-28: 'הכל מאושר' (the launch page's proposal: NFL hoodies at the ₪249 of the owner's import; the 93 in the store, men, women and kids, sell at ₪249)"
+    },
+    {
+      "product_type": "Hoodie",
+      "audience": "women",
+      "price": 249,
+      "source": "owner, 2026-09-28 (as the adult hoodies)"
+    },
+    {
+      "product_type": "Hoodie",
+      "audience": "kids",
+      "price": 249,
+      "source": "owner, 2026-09-28 (as the adult hoodies; only the kids jersey was changed, to ₪89)"
+    }
   ],
   "sets": {
     "_note": "Owner decision, 2026-09-27 ('אפשר לעשות מחיר לסט ב229'; confirmed ₪229, saving ₪39): a basketball jersey and the shorts of the same kit bought together cost ₪229 instead of ₪149 + ₪119 = ₪268. An automatic Buy X get Y discount takes ₪39 off the shorts when the matching jersey is in the cart (every pair in the order). Which products: tags set:jersey and set:shorts. Log and IDs: catalog/published/set-offer-2026-09-27.json. If the amount changes, change the discount and the shop metafield sportwear.set_offer together.",

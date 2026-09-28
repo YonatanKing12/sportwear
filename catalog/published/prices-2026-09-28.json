@@ -1,0 +1,910 @@
+{
+  "date": "2026-09-28",
+  "owner_instruction": "The owner, 2026-09-28, in reply to the six proposals on the launch page (https://claude.ai/code/artifact/0a86a746-7375-4518-a988-eb6b8e53b25e): \"הכל מאושר. רק לילדים תעשה מחיר 89 לגופיה\".",
+  "what": "Every kids basketball jersey (product type Basketball Jersey, tag audience:kids) now sells at ₪89 instead of ₪149: 75 products, 300 variants (S, M, L, XL). No compare-at price was set, before or after, so the site shows ₪89 with no strike-through. 3 of the 75 are the duplicates hidden the same day (DRAFT), priced too so they match if they come back.",
+  "rules": "catalog/pricing.json: Basketball Jersey / kids ₪89; Hoodie (adult, women, kids) ₪249, the price the 93 NFL hoodies already sell at.",
+  "checked": "All 300 variants returned ₪89.00 with no errors; storefront: the 72 active kids jerseys show 89.00 (288 variants); a product page shows ₪89 in he, en and ar. No kids jersey carries set tags, a counterpart or complements, so the ₪229 set price and the adults/kids toggle are unaffected.",
+  "how_to_revert": "productVariantsBulkUpdate with price 149.00 for the variants below.",
+  "products": [
+    {
+      "handle": "sw-jerseys-90705750",
+      "id": "gid://shopify/Product/15308671385904",
+      "variants": [
+        "gid://shopify/ProductVariant/67854779646256",
+        "gid://shopify/ProductVariant/67854779679024",
+        "gid://shopify/ProductVariant/67854779711792",
+        "gid://shopify/ProductVariant/67854779744560"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-108094119",
+      "id": "gid://shopify/Product/15308678070576",
+      "variants": [
+        "gid://shopify/ProductVariant/67854794195248",
+        "gid://shopify/ProductVariant/67854794228016",
+        "gid://shopify/ProductVariant/67854794260784",
+        "gid://shopify/ProductVariant/67854794293552"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-125236932",
+      "id": "gid://shopify/Product/15308697141552",
+      "variants": [
+        "gid://shopify/ProductVariant/67854831419696",
+        "gid://shopify/ProductVariant/67854831452464",
+        "gid://shopify/ProductVariant/67854831485232",
+        "gid://shopify/ProductVariant/67854831518000"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-126717776",
+      "id": "gid://shopify/Product/15308659654960",
+      "variants": [
+        "gid://shopify/ProductVariant/67854758084912",
+        "gid://shopify/ProductVariant/67854758117680",
+        "gid://shopify/ProductVariant/67854758150448",
+        "gid://shopify/ProductVariant/67854758183216"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-89381359",
+      "id": "gid://shopify/Product/15308691538224",
+      "variants": [
+        "gid://shopify/ProductVariant/67854818115888",
+        "gid://shopify/ProductVariant/67854818148656",
+        "gid://shopify/ProductVariant/67854818181424",
+        "gid://shopify/ProductVariant/67854818214192"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-244982450",
+      "id": "gid://shopify/Product/15308551422256",
+      "variants": [
+        "gid://shopify/ProductVariant/67854561542448",
+        "gid://shopify/ProductVariant/67854561575216",
+        "gid://shopify/ProductVariant/67854561607984",
+        "gid://shopify/ProductVariant/67854561640752"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-150257095",
+      "id": "gid://shopify/Product/15308623610160",
+      "variants": [
+        "gid://shopify/ProductVariant/67854687142192",
+        "gid://shopify/ProductVariant/67854687174960",
+        "gid://shopify/ProductVariant/67854687207728",
+        "gid://shopify/ProductVariant/67854687240496"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-169089088",
+      "id": "gid://shopify/Product/15308605849904",
+      "variants": [
+        "gid://shopify/ProductVariant/67854653948208",
+        "gid://shopify/ProductVariant/67854653980976",
+        "gid://shopify/ProductVariant/67854654013744",
+        "gid://shopify/ProductVariant/67854654046512"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-147321628",
+      "id": "gid://shopify/Product/15308632260912",
+      "variants": [
+        "gid://shopify/ProductVariant/67854702313776",
+        "gid://shopify/ProductVariant/67854702346544",
+        "gid://shopify/ProductVariant/67854702379312",
+        "gid://shopify/ProductVariant/67854702412080"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-149879796",
+      "id": "gid://shopify/Product/15308631605552",
+      "variants": [
+        "gid://shopify/ProductVariant/67854700347696",
+        "gid://shopify/ProductVariant/67854700380464",
+        "gid://shopify/ProductVariant/67854700413232",
+        "gid://shopify/ProductVariant/67854700446000"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152407673",
+      "id": "gid://shopify/Product/15308609749296",
+      "variants": [
+        "gid://shopify/ProductVariant/67854661878064",
+        "gid://shopify/ProductVariant/67854661910832",
+        "gid://shopify/ProductVariant/67854661943600",
+        "gid://shopify/ProductVariant/67854661976368"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168442434",
+      "id": "gid://shopify/Product/15308608667952",
+      "variants": [
+        "gid://shopify/ProductVariant/67854658928944",
+        "gid://shopify/ProductVariant/67854658961712",
+        "gid://shopify/ProductVariant/67854658994480",
+        "gid://shopify/ProductVariant/67854659027248"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-89370458",
+      "id": "gid://shopify/Product/15308692652336",
+      "variants": [
+        "gid://shopify/ProductVariant/67854820802864",
+        "gid://shopify/ProductVariant/67854820835632",
+        "gid://shopify/ProductVariant/67854820868400",
+        "gid://shopify/ProductVariant/67854820901168"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-90021199",
+      "id": "gid://shopify/Product/15308671549744",
+      "variants": [
+        "gid://shopify/ProductVariant/67854780006704",
+        "gid://shopify/ProductVariant/67854780039472",
+        "gid://shopify/ProductVariant/67854780072240",
+        "gid://shopify/ProductVariant/67854780105008"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143012081",
+      "id": "gid://shopify/Product/15308641894704",
+      "variants": [
+        "gid://shopify/ProductVariant/67854721319216",
+        "gid://shopify/ProductVariant/67854721351984",
+        "gid://shopify/ProductVariant/67854721384752",
+        "gid://shopify/ProductVariant/67854721417520"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-107884274",
+      "id": "gid://shopify/Product/15308678627632",
+      "variants": [
+        "gid://shopify/ProductVariant/67854795833648",
+        "gid://shopify/ProductVariant/67854795866416",
+        "gid://shopify/ProductVariant/67854795899184",
+        "gid://shopify/ProductVariant/67854795931952"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143753787",
+      "id": "gid://shopify/Product/15308618334512",
+      "variants": [
+        "gid://shopify/ProductVariant/67854679376176",
+        "gid://shopify/ProductVariant/67854679408944",
+        "gid://shopify/ProductVariant/67854679441712",
+        "gid://shopify/ProductVariant/67854679474480"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-123864538",
+      "id": "gid://shopify/Product/15308660244784",
+      "variants": [
+        "gid://shopify/ProductVariant/67854759723312",
+        "gid://shopify/ProductVariant/67854759756080",
+        "gid://shopify/ProductVariant/67854759788848",
+        "gid://shopify/ProductVariant/67854759821616"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-150258240",
+      "id": "gid://shopify/Product/15308623544624",
+      "variants": [
+        "gid://shopify/ProductVariant/67854686978352",
+        "gid://shopify/ProductVariant/67854687011120",
+        "gid://shopify/ProductVariant/67854687043888",
+        "gid://shopify/ProductVariant/67854687076656"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168442954",
+      "id": "gid://shopify/Product/15308602933552",
+      "variants": [
+        "gid://shopify/ProductVariant/67854648934704",
+        "gid://shopify/ProductVariant/67854648967472",
+        "gid://shopify/ProductVariant/67854649000240",
+        "gid://shopify/ProductVariant/67854649033008"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-149879856",
+      "id": "gid://shopify/Product/15308617548080",
+      "variants": [
+        "gid://shopify/ProductVariant/67854677508400",
+        "gid://shopify/ProductVariant/67854677541168",
+        "gid://shopify/ProductVariant/67854677573936",
+        "gid://shopify/ProductVariant/67854677606704"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152407647",
+      "id": "gid://shopify/Product/15308607193392",
+      "variants": [
+        "gid://shopify/ProductVariant/67854657356080",
+        "gid://shopify/ProductVariant/67854657388848",
+        "gid://shopify/ProductVariant/67854657421616",
+        "gid://shopify/ProductVariant/67854657454384"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-130850670",
+      "id": "gid://shopify/Product/15308648546608",
+      "variants": [
+        "gid://shopify/ProductVariant/67854734164272",
+        "gid://shopify/ProductVariant/67854734197040",
+        "gid://shopify/ProductVariant/67854734229808",
+        "gid://shopify/ProductVariant/67854734262576"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-107317634",
+      "id": "gid://shopify/Product/15308655722800",
+      "variants": [
+        "gid://shopify/ProductVariant/67854749401392",
+        "gid://shopify/ProductVariant/67854749434160",
+        "gid://shopify/ProductVariant/67854749466928",
+        "gid://shopify/ProductVariant/67854749499696"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-108093118",
+      "id": "gid://shopify/Product/15308640321840",
+      "variants": [
+        "gid://shopify/ProductVariant/67854719123760",
+        "gid://shopify/ProductVariant/67854719156528",
+        "gid://shopify/ProductVariant/67854719189296",
+        "gid://shopify/ProductVariant/67854719222064"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152836553",
+      "id": "gid://shopify/Product/15308610797872",
+      "variants": [
+        "gid://shopify/ProductVariant/67854664728880",
+        "gid://shopify/ProductVariant/67854664761648",
+        "gid://shopify/ProductVariant/67854664794416",
+        "gid://shopify/ProductVariant/67854664827184"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-125236417",
+      "id": "gid://shopify/Product/15308658475312",
+      "variants": [
+        "gid://shopify/ProductVariant/67854755365168",
+        "gid://shopify/ProductVariant/67854755397936",
+        "gid://shopify/ProductVariant/67854755430704",
+        "gid://shopify/ProductVariant/67854755463472"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143753088",
+      "id": "gid://shopify/Product/15308618432816",
+      "variants": [
+        "gid://shopify/ProductVariant/67854679572784",
+        "gid://shopify/ProductVariant/67854679605552",
+        "gid://shopify/ProductVariant/67854679638320",
+        "gid://shopify/ProductVariant/67854679671088"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-169089017",
+      "id": "gid://shopify/Product/15308601655600",
+      "variants": [
+        "gid://shopify/ProductVariant/67854645330224",
+        "gid://shopify/ProductVariant/67854645362992",
+        "gid://shopify/ProductVariant/67854645395760",
+        "gid://shopify/ProductVariant/67854645428528"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152836577",
+      "id": "gid://shopify/Product/15308615090480",
+      "variants": [
+        "gid://shopify/ProductVariant/67854671872304",
+        "gid://shopify/ProductVariant/67854671905072",
+        "gid://shopify/ProductVariant/67854671937840",
+        "gid://shopify/ProductVariant/67854671970608"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152428791",
+      "id": "gid://shopify/Product/15308603752752",
+      "variants": [
+        "gid://shopify/ProductVariant/67854651228464",
+        "gid://shopify/ProductVariant/67854651261232",
+        "gid://shopify/ProductVariant/67854651294000",
+        "gid://shopify/ProductVariant/67854651326768"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143753665",
+      "id": "gid://shopify/Product/15308651036976",
+      "variants": [
+        "gid://shopify/ProductVariant/67854740455728",
+        "gid://shopify/ProductVariant/67854740488496",
+        "gid://shopify/ProductVariant/67854740521264",
+        "gid://shopify/ProductVariant/67854740554032"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-116024088",
+      "id": "gid://shopify/Product/15308639764784",
+      "variants": [
+        "gid://shopify/ProductVariant/67854717878576",
+        "gid://shopify/ProductVariant/67854717911344",
+        "gid://shopify/ProductVariant/67854717944112",
+        "gid://shopify/ProductVariant/67854717976880"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143011375",
+      "id": "gid://shopify/Product/15308647694640",
+      "variants": [
+        "gid://shopify/ProductVariant/67854732034352",
+        "gid://shopify/ProductVariant/67854732067120",
+        "gid://shopify/ProductVariant/67854732099888",
+        "gid://shopify/ProductVariant/67854732132656"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-151427057",
+      "id": "gid://shopify/Product/15308610142512",
+      "variants": [
+        "gid://shopify/ProductVariant/67854663057712",
+        "gid://shopify/ProductVariant/67854663090480",
+        "gid://shopify/ProductVariant/67854663123248",
+        "gid://shopify/ProductVariant/67854663156016"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-169088627",
+      "id": "gid://shopify/Product/15308599034160",
+      "variants": [
+        "gid://shopify/ProductVariant/67854639628592",
+        "gid://shopify/ProductVariant/67854639661360",
+        "gid://shopify/ProductVariant/67854639694128",
+        "gid://shopify/ProductVariant/67854639726896"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152836455",
+      "id": "gid://shopify/Product/15308602474800",
+      "variants": [
+        "gid://shopify/ProductVariant/67854648049968",
+        "gid://shopify/ProductVariant/67854648082736",
+        "gid://shopify/ProductVariant/67854648115504",
+        "gid://shopify/ProductVariant/67854648148272"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143753745",
+      "id": "gid://shopify/Product/15308632981808",
+      "variants": [
+        "gid://shopify/ProductVariant/67854704378160",
+        "gid://shopify/ProductVariant/67854704410928",
+        "gid://shopify/ProductVariant/67854704443696",
+        "gid://shopify/ProductVariant/67854704476464"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-121286570",
+      "id": "gid://shopify/Product/15308677284144",
+      "variants": [
+        "gid://shopify/ProductVariant/67854792032560",
+        "gid://shopify/ProductVariant/67854792065328",
+        "gid://shopify/ProductVariant/67854792098096",
+        "gid://shopify/ProductVariant/67854792130864"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-209196626",
+      "id": "gid://shopify/Product/15308559122736",
+      "variants": [
+        "gid://shopify/ProductVariant/67854580121904",
+        "gid://shopify/ProductVariant/67854580154672",
+        "gid://shopify/ProductVariant/67854580187440",
+        "gid://shopify/ProductVariant/67854580220208"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-125236353",
+      "id": "gid://shopify/Product/15308664242480",
+      "variants": [
+        "gid://shopify/ProductVariant/67854766473520",
+        "gid://shopify/ProductVariant/67854766506288",
+        "gid://shopify/ProductVariant/67854766539056",
+        "gid://shopify/ProductVariant/67854766571824"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-123864404",
+      "id": "gid://shopify/Product/15308658606384",
+      "variants": [
+        "gid://shopify/ProductVariant/67854755725616",
+        "gid://shopify/ProductVariant/67854755758384",
+        "gid://shopify/ProductVariant/67854755791152",
+        "gid://shopify/ProductVariant/67854755823920"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-163401010",
+      "id": "gid://shopify/Product/15308602048816",
+      "variants": [
+        "gid://shopify/ProductVariant/67854646837552",
+        "gid://shopify/ProductVariant/67854646870320",
+        "gid://shopify/ProductVariant/67854646903088",
+        "gid://shopify/ProductVariant/67854646935856"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-121286501",
+      "id": "gid://shopify/Product/15308676661552",
+      "variants": [
+        "gid://shopify/ProductVariant/67854790328624",
+        "gid://shopify/ProductVariant/67854790361392",
+        "gid://shopify/ProductVariant/67854790394160",
+        "gid://shopify/ProductVariant/67854790426928"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-125236513",
+      "id": "gid://shopify/Product/15308660048176",
+      "variants": [
+        "gid://shopify/ProductVariant/67854759330096",
+        "gid://shopify/ProductVariant/67854759362864",
+        "gid://shopify/ProductVariant/67854759395632",
+        "gid://shopify/ProductVariant/67854759428400"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-144951549",
+      "id": "gid://shopify/Product/15308650676528",
+      "variants": [
+        "gid://shopify/ProductVariant/67854739407152",
+        "gid://shopify/ProductVariant/67854739439920",
+        "gid://shopify/ProductVariant/67854739472688",
+        "gid://shopify/ProductVariant/67854739505456"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143012618",
+      "id": "gid://shopify/Product/15308633145648",
+      "variants": [
+        "gid://shopify/ProductVariant/67854704836912",
+        "gid://shopify/ProductVariant/67854704869680",
+        "gid://shopify/ProductVariant/67854704902448",
+        "gid://shopify/ProductVariant/67854704935216"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152836524",
+      "id": "gid://shopify/Product/15308609618224",
+      "variants": [
+        "gid://shopify/ProductVariant/67854661550384",
+        "gid://shopify/ProductVariant/67854661583152",
+        "gid://shopify/ProductVariant/67854661615920",
+        "gid://shopify/ProductVariant/67854661648688"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168712394",
+      "id": "gid://shopify/Product/15308601688368",
+      "variants": [
+        "gid://shopify/ProductVariant/67854645461296",
+        "gid://shopify/ProductVariant/67854645494064",
+        "gid://shopify/ProductVariant/67854645526832",
+        "gid://shopify/ProductVariant/67854645559600"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-244982383",
+      "id": "gid://shopify/Product/15308551455024",
+      "variants": [
+        "gid://shopify/ProductVariant/67854561673520",
+        "gid://shopify/ProductVariant/67854561706288",
+        "gid://shopify/ProductVariant/67854561739056",
+        "gid://shopify/ProductVariant/67854561771824"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-151810166",
+      "id": "gid://shopify/Product/15308649431344",
+      "variants": [
+        "gid://shopify/ProductVariant/67854736392496",
+        "gid://shopify/ProductVariant/67854736425264",
+        "gid://shopify/ProductVariant/67854736458032",
+        "gid://shopify/ProductVariant/67854736490800"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-143991491",
+      "id": "gid://shopify/Product/15308624560432",
+      "variants": [
+        "gid://shopify/ProductVariant/67854689370416",
+        "gid://shopify/ProductVariant/67854689403184",
+        "gid://shopify/ProductVariant/67854689435952",
+        "gid://shopify/ProductVariant/67854689468720"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-158637414",
+      "id": "gid://shopify/Product/15308609356080",
+      "variants": [
+        "gid://shopify/ProductVariant/67854660698416",
+        "gid://shopify/ProductVariant/67854660731184",
+        "gid://shopify/ProductVariant/67854660763952",
+        "gid://shopify/ProductVariant/67854660796720"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-169089325",
+      "id": "gid://shopify/Product/15308599296304",
+      "variants": [
+        "gid://shopify/ProductVariant/67854640578864",
+        "gid://shopify/ProductVariant/67854640611632",
+        "gid://shopify/ProductVariant/67854640644400",
+        "gid://shopify/ProductVariant/67854640677168"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-89381247",
+      "id": "gid://shopify/Product/15308634784048",
+      "variants": [
+        "gid://shopify/ProductVariant/67854709424432",
+        "gid://shopify/ProductVariant/67854709457200",
+        "gid://shopify/ProductVariant/67854709489968",
+        "gid://shopify/ProductVariant/67854709522736"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-181430219",
+      "id": "gid://shopify/Product/15308598903088",
+      "variants": [
+        "gid://shopify/ProductVariant/67854639202608",
+        "gid://shopify/ProductVariant/67854639235376",
+        "gid://shopify/ProductVariant/67854639268144",
+        "gid://shopify/ProductVariant/67854639300912"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-181427327",
+      "id": "gid://shopify/Product/15308599066928",
+      "variants": [
+        "gid://shopify/ProductVariant/67854639759664",
+        "gid://shopify/ProductVariant/67854639792432",
+        "gid://shopify/ProductVariant/67854639825200",
+        "gid://shopify/ProductVariant/67854639857968"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168712275",
+      "id": "gid://shopify/Product/15308594413872",
+      "variants": [
+        "gid://shopify/ProductVariant/67854628323632",
+        "gid://shopify/ProductVariant/67854628356400",
+        "gid://shopify/ProductVariant/67854628389168",
+        "gid://shopify/ProductVariant/67854628421936"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-144951780",
+      "id": "gid://shopify/Product/15308632555824",
+      "variants": [
+        "gid://shopify/ProductVariant/67854703067440",
+        "gid://shopify/ProductVariant/67854703100208",
+        "gid://shopify/ProductVariant/67854703132976",
+        "gid://shopify/ProductVariant/67854703165744"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-188306741",
+      "id": "gid://shopify/Product/15308561416496",
+      "variants": [
+        "gid://shopify/ProductVariant/67854585954608",
+        "gid://shopify/ProductVariant/67854585987376",
+        "gid://shopify/ProductVariant/67854586020144",
+        "gid://shopify/ProductVariant/67854586052912"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-151244434",
+      "id": "gid://shopify/Product/15308623216944",
+      "variants": [
+        "gid://shopify/ProductVariant/67854686126384",
+        "gid://shopify/ProductVariant/67854686159152",
+        "gid://shopify/ProductVariant/67854686191920",
+        "gid://shopify/ProductVariant/67854686224688"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-151771712",
+      "id": "gid://shopify/Product/15308622954800",
+      "variants": [
+        "gid://shopify/ProductVariant/67854685405488",
+        "gid://shopify/ProductVariant/67854685438256",
+        "gid://shopify/ProductVariant/67854685471024",
+        "gid://shopify/ProductVariant/67854685503792"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-144951134",
+      "id": "gid://shopify/Product/15308624494896",
+      "variants": [
+        "gid://shopify/ProductVariant/67854689206576",
+        "gid://shopify/ProductVariant/67854689239344",
+        "gid://shopify/ProductVariant/67854689272112",
+        "gid://shopify/ProductVariant/67854689304880"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-151771652",
+      "id": "gid://shopify/Product/15308615680304",
+      "variants": [
+        "gid://shopify/ProductVariant/67854672953648",
+        "gid://shopify/ProductVariant/67854672986416",
+        "gid://shopify/ProductVariant/67854673019184",
+        "gid://shopify/ProductVariant/67854673051952"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-152428753",
+      "id": "gid://shopify/Product/15308615156016",
+      "variants": [
+        "gid://shopify/ProductVariant/67854672036144",
+        "gid://shopify/ProductVariant/67854672068912",
+        "gid://shopify/ProductVariant/67854672101680",
+        "gid://shopify/ProductVariant/67854672134448"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168657417",
+      "id": "gid://shopify/Product/15308599361840",
+      "variants": [
+        "gid://shopify/ProductVariant/67854640841008",
+        "gid://shopify/ProductVariant/67854640873776",
+        "gid://shopify/ProductVariant/67854640906544",
+        "gid://shopify/ProductVariant/67854640939312"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-181429794",
+      "id": "gid://shopify/Product/15308593889584",
+      "variants": [
+        "gid://shopify/ProductVariant/67854626816304",
+        "gid://shopify/ProductVariant/67854626849072",
+        "gid://shopify/ProductVariant/67854626881840",
+        "gid://shopify/ProductVariant/67854626914608"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-171731715",
+      "id": "gid://shopify/Product/15308592775472",
+      "variants": [
+        "gid://shopify/ProductVariant/67854624391472",
+        "gid://shopify/ProductVariant/67854624424240",
+        "gid://shopify/ProductVariant/67854624457008",
+        "gid://shopify/ProductVariant/67854624489776"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-188307324",
+      "id": "gid://shopify/Product/15308561383728",
+      "variants": [
+        "gid://shopify/ProductVariant/67854585823536",
+        "gid://shopify/ProductVariant/67854585856304",
+        "gid://shopify/ProductVariant/67854585889072",
+        "gid://shopify/ProductVariant/67854585921840"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-188307721",
+      "id": "gid://shopify/Product/15308561318192",
+      "variants": [
+        "gid://shopify/ProductVariant/67854585659696",
+        "gid://shopify/ProductVariant/67854585692464",
+        "gid://shopify/ProductVariant/67854585725232",
+        "gid://shopify/ProductVariant/67854585758000"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-188308098",
+      "id": "gid://shopify/Product/15308561285424",
+      "variants": [
+        "gid://shopify/ProductVariant/67854585528624",
+        "gid://shopify/ProductVariant/67854585561392",
+        "gid://shopify/ProductVariant/67854585594160",
+        "gid://shopify/ProductVariant/67854585626928"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-188310986",
+      "id": "gid://shopify/Product/15308561219888",
+      "variants": [
+        "gid://shopify/ProductVariant/67854585364784",
+        "gid://shopify/ProductVariant/67854585397552",
+        "gid://shopify/ProductVariant/67854585430320",
+        "gid://shopify/ProductVariant/67854585463088"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-181434323",
+      "id": "gid://shopify/Product/15308592513328",
+      "variants": [
+        "gid://shopify/ProductVariant/67854623605040",
+        "gid://shopify/ProductVariant/67854623637808",
+        "gid://shopify/ProductVariant/67854623670576",
+        "gid://shopify/ProductVariant/67854623703344"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168443359",
+      "id": "gid://shopify/Product/15308614140208",
+      "variants": [
+        "gid://shopify/ProductVariant/67854668988720",
+        "gid://shopify/ProductVariant/67854669021488",
+        "gid://shopify/ProductVariant/67854669054256",
+        "gid://shopify/ProductVariant/67854669087024"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    },
+    {
+      "handle": "sw-jerseys-168712198",
+      "id": "gid://shopify/Product/15308614041904",
+      "variants": [
+        "gid://shopify/ProductVariant/67854668792112",
+        "gid://shopify/ProductVariant/67854668824880",
+        "gid://shopify/ProductVariant/67854668857648",
+        "gid://shopify/ProductVariant/67854668890416"
+      ],
+      "price_before": "149.00",
+      "price_now": "89.00"
+    }
+  ]
+}

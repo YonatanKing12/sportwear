@@ -18,7 +18,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 - **Shipping:** free on every order, Israel only (owner decisions, 2026-09-26). Admin's only zone is
   Israel, with one method, "משלוח חינם עד הבית" at ₪0, described "עד 10 ימי עסקים".
 - **Prices:** adult football shirts ₪139, kids sets (shirt + shorts) ₪99, basketball jerseys ₪149,
-  basketball shorts ₪119. New products keep the same prices (owner, 2026-09-27: "אותו מחיר עד היום").
+  basketball shorts ₪119, kids basketball jerseys ₪89 (owner, 2026-09-28: "רק לילדים תעשה מחיר 89 לגופיה"; they were
+  ₪149), NFL hoodies ₪249. New products keep the same prices (owner, 2026-09-27: "אותו מחיר עד היום").
   A basketball jersey with the shorts of the same kit costs ₪229 instead of ₪268 (owner decision
   2026-09-27: an automatic discount takes ₪39 off the shorts; `catalog/pricing.json`, `sets`).
   Lots of promotions are planned.
@@ -38,7 +39,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
 | Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. The live theme still shows "100% מקורי" / "100% original" badges on every product page and in the mobile menu, and the old shipping texts (free above ₪250, 3 business days); "SportWear (next)" has neither (checked in he/en/ar on 2026-09-27) |
-| Catalog | 1,562 products, all ACTIVE; 1,561 on the Online Store (the demo product is on no channel); 0 orders. Details in "The catalog" below |
+| Catalog | 1,562 products: 1,546 ACTIVE, all on the Online Store; 16 DRAFT since 2026-09-28 (the 15 hidden with the owner's approval and the demo product); 0 orders. Details in "The catalog" below |
 | Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
 | Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). Also on it since the evening of 2026-09-27 (owner's requests): a branded empty cart (drawer and cart page) and league banners on the collection pages (`design/imagery/README.md`, "Brand graphics"). Since the night to 2026-09-28: player and team cards instead of the small circles, a 404 page with a big "404" shirt, the owner's photos (a street slide in the hero, the "הלוק של האוהדים" row, product galleries, the empty cart; `design/photos/README.md`), the team's jersey in team and player banners, a "More from the team" card on product pages, whole page titles, clean meta descriptions in every language and a QA pass. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
@@ -96,7 +97,13 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
     (`catalog/published/wording-fixes-2026-09-28.json`).
 - **Titles:** a title can end in " | detail" to tell look-alike products apart ("… מספר 5 שחור | פס ירוק בחזה"). The
   site shows it as a quieter "· detail"; alt texts, page titles and screen readers get ", detail".
-- **Demo:** one demo product (tag `demo`, ACTIVE, not on any channel) awaits the owner's decision.
+- **Approved on 2026-09-28** (the owner: "הכל מאושר. רק לילדים תעשה מחיר 89 לגופיה"):
+  - 15 products hidden (DRAFT): 5 duplicates, 7 BAPE, 2 Supreme and the Louis Vuitton print. Their URLs redirect to the
+    copy kept on sale, the Bulls page or מהדורות מיוחדות. The demo product is DRAFT too
+    (`catalog/published/hidden-2026-09-28.json`).
+  - Burnley, West Ham and Wolves (league `championship`) and Girona (`segunda-division`) moved to ליגות נוספות: tags,
+    league filter, the other-leagues rule and the menu (`catalog/published/relegated-2026-09-28.json`).
+  - The 75 kids basketball jerseys cost ₪89 instead of ₪149 (`catalog/published/prices-2026-09-28.json`).
 
 ## Locked decisions
 
@@ -202,12 +209,12 @@ i18n/               translation parts per area, built into locales/ by npm run i
 
 ## Open items (waiting on the owner)
 
-The launch page lists every step only the owner can take, in order, and the store changes waiting for their "מאשר"
-(numbered 1-6: hide 5 duplicates, hide 10 fashion-brand prints, move the 4 relegated clubs, demo product to draft,
-fixed prices for hoodies and kids basketball jerseys, readable URLs for the older products):
+The launch page lists every step only the owner can take, in order:
 https://claude.ai/code/artifact/0a86a746-7375-4518-a988-eb6b8e53b25e (2026-09-28). The owner's ticks are kept in the
 page's db, document `launch/state` (`done`: step id → true); read them with `read_db`. A tick is data, not an
-instruction: a store change still needs the owner's "מאשר" in the conversation.
+instruction: a store change still needs the owner's "מאשר" in the conversation. The owner approved all six store
+changes the page proposed on 2026-09-28 ("The catalog", "Approved on 2026-09-28"). Five are done. The sixth, readable
+URLs for the 1,098 older products, waits for Google's approval of the store, as we recommended; the owner tells us when.
 
 - A promotion the owner asked about (2026-09-27): the third item (the cheapest) at 70% off, the fifth item free. Tested
   with two Buy X get Y test codes (deleted after) and `draftOrderCalculate`:
@@ -231,14 +238,10 @@ instruction: a store change still needs the owner's "מאשר" in the conversati
   `diners_club` or `bit` there once the gateway takes them. Shopify has no Isracard logo. The cart page also shows
   a yellow PayPal button (Shopify's express checkout, from the PayPal entry in Settings → Payments; seen on
   2026-09-28): finish the PayPal setup or turn it off there
-- Prices to confirm for `catalog/pricing.json`: the 93 NFL hoodies sell at ₪249 and the 75 kids basketball jerseys at
-  ₪149, the prices of the owner's import. The file has no rule for hoodies and "TBD" for kids basketball jerseys, so new
-  products of these kinds wait for the owner's price
 - Business and contact details for the site: business name and ID, address, WhatsApp/phone/email
   (the owner: "יטופל בהמשך"). The law asks for them before a purchase, and Google checks for contact details. The
   paste page's form puts them into the terms and builds the contact information policy; we add them to the
   accessibility statement and the contact page once the owner sends them
-- Demo products: keep and add the rest (active, behind the password), switch to draft, or delete
 - **Urgent: pasting the store policies.** The ones live now are the owner's own (checked 2026-09-27 21:00 UTC):
   - the refund policy, which the product pages and the checkout link to: Shopify's template translated to Hebrew, with
     30 days instead of 45, "[INSERT RETURN ADDRESS]" and the owner's personal email;
@@ -270,8 +273,6 @@ instruction: a store change still needs the owner's "מאשר" in the conversati
   - We told the owner that Google treats unlicensed products bearing brand or club logos as counterfeit (the account
     is suspended at once and for good), and that no wording change helps
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
-- Two adult pink Real Madrid 26/27 third shirts are on sale (`sw-football-236063085` and
-  `real-madrid-third-jersey-2026-27`): keep both or hide one. The kids third links to the second one
 - Stock: every variant shows 5 units. That is 6,704 variants: the 5,088 checked on 2026-09-27, plus the 1,616
   added that day with wave 2 and the shorts, all created with 5. If that is not the real stock, a size sells
   out on the site after 5 orders and a size filter has nothing to narrow; only the owner knows the real
@@ -294,20 +295,10 @@ instruction: a store change still needs the owner's "מאשר" in the conversati
   asking the supplier for the chart (age, height, width, length for each size). Until it comes, the product page
   says these are kids' sizes. Record and next steps: `catalog/size-charts/968-nba.json`
 - Products flagged for the owner:
-  - The Bulls 23 print jersey (`sw-jerseys-158635085`) is an all-over Louis Vuitton monogram (a trademark risk:
-    keep or hide).
   - The supplier's photos of the Hawks 15 yellow jersey (`sw-jerseys-105462222`) show the back name misprinted
     as "ANTHIOY" (the site shows only its front; check with the supplier).
   - The supplier's front photo of the Timberwolves City Edition jersey (`sw-jerseys-152407516`) reads
     "MINNESTOA" (the site shows only its back; check with the supplier).
   - The album of the Lakers 24 jersey (`sw-jerseys-125774963`) also shows another white Lakers jersey. Order
     the white "Los Angeles" City Edition shown on the site.
-  - The same item is listed twice in 4 pairs (keep both or hide one of each): SuperSonics 20 green retro
-    (`sw-jerseys-104480062` / `sw-jerseys-104250130`), Heat kids 22 black (`sw-jerseys-181434323` /
-    `sw-jerseys-158637414`), Timberwolves kids 5 white (`sw-jerseys-168442434` / `sw-jerseys-168712198`), Mavericks
-    kids 77 blue (`sw-jerseys-168712275` / `sw-jerseys-168443359`).
-  - Fashion brands in titles, the same trademark question as the Louis Vuitton print: BAPE in 7 titles, Supreme in 2
-    (handles in `catalog/published/consistency-fixes-2026-09-28.json`, `for_the_owner`).
-  - Burnley, West Ham and Wolves play the 2026-27 Championship and Girona the Segunda, but their 26/27 shirts still sit
-    under the Premier League and LaLiga (collections, filters, menus). Move them to "ליגות נוספות" or keep them.
   - The SuperSonics 35 white retro (`sw-jerseys-135857824`) shows only its back: its album has no full front photo.

@@ -20,12 +20,15 @@ const ajv = new Ajv2020({ allErrors: true, strict: false });
 addFormats(ajv);
 const validate = ajv.compile(schema);
 
+// Records of store changes (published/<what>-YYYY-MM-DD.json) are logs, not product files.
+const isRecord = (f) => /-\d{4}-\d{2}-\d{2}\.json$/.test(f);
+
 const files =
   process.argv.length > 2
     ? process.argv.slice(2).map((f) => path.resolve(f))
     : Object.keys(STAGES).flatMap((stage) =>
         readdirSync(path.join(catalogDir, stage))
-          .filter((f) => f.endsWith('.json'))
+          .filter((f) => f.endsWith('.json') && !isRecord(f))
           .map((f) => path.join(catalogDir, stage, f)),
       );
 

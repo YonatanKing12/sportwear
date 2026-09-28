@@ -1,0 +1,202 @@
+{
+  "date": "2026-09-28",
+  "owner_instruction": "The owner, 2026-09-28, in reply to the six proposals on the launch page (https://claude.ai/code/artifact/0a86a746-7375-4518-a988-eb6b8e53b25e): \"הכל מאושר. רק לילדים תעשה מחיר 89 לגופיה\". Proposals 1 (hide 5 duplicates), 2 (hide 10 fashion-brand prints) and 4 (demo product to draft).",
+  "what": "15 products moved from ACTIVE to DRAFT: 5 duplicates (the other copy stays on sale) and 10 prints naming a fashion brand (7 BAPE, 2 Supreme, 1 Louis Vuitton monogram). Draft products leave the site, the sitemap, the collections, the filters and the Google feed. Nothing was deleted: setting a product back to ACTIVE brings it back (its Online Store publication was kept).",
+  "checked_before": "No product links to any of the 15 (sportwear.counterpart, sportwear.complements: all 1,562 products read), none carries set tags, none is in our-picks or named in the theme; no collection is left empty (there is no BAPE collection).",
+  "redirects": "Each hidden product URL redirects (301) to the copy kept on sale, or for the prints to the Bulls page and to מהדורות מיוחדות; checked in he, /en and /ar. Shopify only follows a redirect while the page is missing, so reactivating a product shows the product again.",
+  "hidden": [
+    {
+      "handle": "sw-jerseys-181434323",
+      "id": "gid://shopify/Product/15308592513328",
+      "title": "גופיית כדורסל מיאמי היט לילדים מספר 22 שחור מהדורת עיר 2022",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-181434323",
+        "to": "/products/sw-jerseys-158637414"
+      },
+      "reason": "duplicate",
+      "kept": "sw-jerseys-158637414"
+    },
+    {
+      "handle": "sw-jerseys-168443359",
+      "id": "gid://shopify/Product/15308614140208",
+      "title": "גופיית כדורסל דאלאס מאבריקס לילדים מספר 77 כחול",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-168443359",
+        "to": "/products/sw-jerseys-168712275"
+      },
+      "reason": "duplicate",
+      "kept": "sw-jerseys-168712275"
+    },
+    {
+      "handle": "sw-jerseys-168712198",
+      "id": "gid://shopify/Product/15308614041904",
+      "title": "גופיית כדורסל מינסוטה טימברוולבס לילדים מספר 5 לבן",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-168712198",
+        "to": "/products/sw-jerseys-168442434"
+      },
+      "reason": "duplicate",
+      "kept": "sw-jerseys-168442434"
+    },
+    {
+      "handle": "sw-jerseys-104250130",
+      "id": "gid://shopify/Product/15308697534768",
+      "title": "גופיית כדורסל סיאטל סופרסוניקס מספר 20 ירוק רטרו",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-104250130",
+        "to": "/products/sw-jerseys-104480062"
+      },
+      "reason": "duplicate",
+      "kept": "sw-jerseys-104480062"
+    },
+    {
+      "handle": "sw-football-236063085",
+      "id": "gid://shopify/Product/15308632916272",
+      "title": "חולצת כדורגל ריאל מדריד שלישית 26/27",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-football-236063085",
+        "to": "/products/real-madrid-third-jersey-2026-27"
+      },
+      "reason": "duplicate",
+      "kept": "real-madrid-third-jersey-2026-27"
+    },
+    {
+      "handle": "sw-jerseys-158635085",
+      "id": "gid://shopify/Product/15308603621680",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 רטרו הדפס | שחור עם דוגמה גאומטרית",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-158635085",
+        "to": "/collections/chicago-bulls"
+      },
+      "reason": "Louis Vuitton print"
+    },
+    {
+      "handle": "sw-jerseys-223293431",
+      "id": "gid://shopify/Product/15308554174768",
+      "title": "גופיית כדורסל BAPE מספר 93 הדפס | סלטיקס בהדפס הסוואה ירוק",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-223293431",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-223293392",
+      "id": "gid://shopify/Product/15308554207536",
+      "title": "גופיית כדורסל BAPE מספר 93 הדפס | ווריורס בהדפס הסוואה כחול",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-223293392",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-178551405",
+      "id": "gid://shopify/Product/15308597461296",
+      "title": "גופיית כדורסל BAPE מספר 93 סגול רטרו",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-178551405",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-90178409",
+      "id": "gid://shopify/Product/15308634259760",
+      "title": "גופיית כדורסל BAPE מספר 23 אדום מהדורה משותפת",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-90178409",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-90021077",
+      "id": "gid://shopify/Product/15308691341616",
+      "title": "גופיית כדורסל BAPE צהוב מהדורה משותפת",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-90021077",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-89669213",
+      "id": "gid://shopify/Product/15308692324656",
+      "title": "גופיית כדורסל BAPE אדום מהדורה משותפת",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-89669213",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-100146890",
+      "id": "gid://shopify/Product/15308717261104",
+      "title": "גופיית כדורסל BAPE מספר 24 צהוב",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-100146890",
+        "to": "/collections/special-editions"
+      },
+      "reason": "BAPE"
+    },
+    {
+      "handle": "sw-jerseys-121071914",
+      "id": "gid://shopify/Product/15308639338800",
+      "title": "גופיית כדורסל בעיצוב NBA ו־Supreme מספר 94 לבן",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-121071914",
+        "to": "/collections/special-editions"
+      },
+      "reason": "Supreme"
+    },
+    {
+      "handle": "sw-jerseys-106292062",
+      "id": "gid://shopify/Product/15308656083248",
+      "title": "גופיית כדורסל בעיצוב NBA ו־Supreme מספר 94 שחור",
+      "status_before": "ACTIVE",
+      "status_now": "DRAFT",
+      "redirect": {
+        "from": "/products/sw-jerseys-106292062",
+        "to": "/collections/special-editions"
+      },
+      "reason": "Supreme"
+    }
+  ],
+  "demo_product": {
+    "handle": "demo-fc-home-jersey-2026-27",
+    "id": "gid://shopify/Product/15307595448624",
+    "status_before": "ACTIVE (on no sales channel)",
+    "status_now": "DRAFT",
+    "note": "Its demo metaobjects (sw_team demo-fc, demo-united, demo-stars) are unchanged."
+  },
+  "how_to_revert": "bulk-update-product-status (or productUpdate) with status ACTIVE for the ids above; the redirects can stay (Admin: Online Store > Navigation > URL redirects)."
+}

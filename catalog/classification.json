@@ -250,6 +250,20 @@
       "en": "Argentine Primera División",
       "ar": "الدوري الأرجنتيني",
       "keywords": ["argentine primera", "الدوري الأرجنتيني"]
+    },
+    "championship": {
+      "sport": "football",
+      "he": "צ׳מפיונשיפ",
+      "en": "EFL Championship",
+      "ar": "دوري البطولة الإنجليزية",
+      "keywords": ["championship", "دوري البطولة الإنجليزية"]
+    },
+    "segunda-division": {
+      "sport": "football",
+      "he": "הליגה הספרדית השנייה",
+      "en": "Segunda División",
+      "ar": "دوري الدرجة الثانية الإسباني",
+      "keywords": ["segunda division", "دوري الدرجة الثانية الإسباني"]
     }
   },
   "teams": {
@@ -1542,7 +1556,7 @@
     },
     "burnley": {
       "sport": "football",
-      "league": "premier-league",
+      "league": "championship",
       "he": "ברנלי",
       "en": "Burnley",
       "ar": "بيرنلي",
@@ -1605,7 +1619,7 @@
     },
     "west-ham-united": {
       "sport": "football",
-      "league": "premier-league",
+      "league": "championship",
       "he": "ווסטהאם",
       "en": "West Ham United",
       "ar": "وست هام يونايتد",
@@ -1614,7 +1628,7 @@
     },
     "wolverhampton-wanderers": {
       "sport": "football",
-      "league": "premier-league",
+      "league": "championship",
       "he": "וולברהמפטון",
       "en": "Wolverhampton Wanderers",
       "ar": "وولفرهامبتون",
@@ -1677,7 +1691,7 @@
     },
     "girona": {
       "sport": "football",
-      "league": "la-liga",
+      "league": "segunda-division",
       "he": "ג׳ירונה",
       "en": "Girona",
       "ar": "جيرونا",

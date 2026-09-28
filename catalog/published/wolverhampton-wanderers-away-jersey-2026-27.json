@@ -12,7 +12,7 @@
     "en": "Wolverhampton Wanderers",
     "ar": "وولفرهامبتون"
   },
-  "leagues": ["premier-league"],
+  "leagues": ["championship"],
   "kit": "away",
   "season": "26/27",
   "vendor": "SportWear",
@@ -102,7 +102,7 @@
   "tags": [
     "sport:football",
     "team:wolverhampton-wanderers",
-    "league:premier-league",
+    "league:championship",
     "kit:away",
     "audience:adult",
     "new",
@@ -119,8 +119,8 @@
     "wolves",
     "ذئاب",
     "وولفرهامبتون",
-    "premier league",
-    "الدوري الإنجليزي"
+    "championship",
+    "دوري البطولة الإنجليزية"
   ],
   "shopify": {
     "product_id": "gid://shopify/Product/15310270759216",

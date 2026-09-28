@@ -1,0 +1,61 @@
+{
+  "date": "2026-09-28",
+  "owner_instruction": "The owner, 2026-09-28, in reply to the six proposals on the launch page (https://claude.ai/code/artifact/0a86a746-7375-4518-a988-eb6b8e53b25e): \"הכל מאושר. רק לילדים תעשה מחיר 89 לגופיה\". Proposal 3.",
+  "what": "Burnley, West Ham and Wolves play the 2026-27 Championship and Girona the Segunda División, so their 15 shirts left the Premier League and LaLiga pages, filters and menus for ליגות נוספות. The team pages themselves did not change.",
+  "products": {
+    "west-ham-united": [
+      "gid://shopify/Product/15310267547952",
+      "gid://shopify/Product/15310268072240",
+      "gid://shopify/Product/15310268596528",
+      "gid://shopify/Product/15310269153584",
+      "gid://shopify/Product/15310269546800",
+      "gid://shopify/Product/15310270267696"
+    ],
+    "wolverhampton-wanderers": [
+      "gid://shopify/Product/15310270759216",
+      "gid://shopify/Product/15310271316272",
+      "gid://shopify/Product/15310271775024",
+      "gid://shopify/Product/15310272430384",
+      "gid://shopify/Product/15310272954672"
+    ],
+    "burnley": ["gid://shopify/Product/15310281343280"],
+    "girona": [
+      "gid://shopify/Product/15310276559152",
+      "gid://shopify/Product/15310277116208",
+      "gid://shopify/Product/15310277509424"
+    ]
+  },
+  "leagues_added": {
+    "championship": {
+      "he": "צ׳מפיונשיפ",
+      "en": "EFL Championship",
+      "ar": "دوري البطولة الإنجليزية",
+      "teams": ["west-ham-united", "wolverhampton-wanderers", "burnley"]
+    },
+    "segunda-division": {
+      "he": "הליגה הספרדית השנייה",
+      "en": "Segunda División",
+      "ar": "دوري الدرجة الثانية الإسباني",
+      "teams": ["girona"]
+    }
+  },
+  "changes": {
+    "tags": {
+      "championship": {
+        "removed": ["league:premier-league", "premier league", "الدوري الإنجليزي"],
+        "added": ["league:championship", "championship", "دوري البطولة الإنجليزية"]
+      },
+      "segunda-division": {
+        "removed": ["league:la-liga", "la liga", "الدوري الإسباني"],
+        "added": ["league:segunda-division", "segunda division", "دوري الدرجة الثانية الإسباني"]
+      }
+    },
+    "metafield": "sportwear.league_handle = championship / segunda-division (the league filter); sportwear.leagues was empty on all 15",
+    "other_leagues_rule": "other-leagues (gid://shopify/Collection/512860160304) also takes TAG league:championship and TAG league:segunda-division (11 conditions, any)",
+    "filter_names": "shop metafield sportwear.filter_names rewritten from taxonomy.json: the two leagues added, nothing else changed (read back and compared byte for byte)",
+    "menu": "main-menu: ווסטהאם, וולברהמפטון and ברנלי left פרמייר ליג, ג׳ירונה left לה ליגה; the four were appended to ליגות נוספות (after the existing 16). menuUpdate sent the full tree; all 200 items kept their ids, titles, links and translations (read back and compared)",
+    "catalog_files": "catalog/taxonomy.json and catalog/classification.json (the two leagues, the four teams), the 15 product files in catalog/published/",
+    "order": "other-leagues re-sorted by scripts/catalog/collection-order.py (67 moves); check: all 143 collections in order"
+  },
+  "checked": "Storefront: premier-league 80 products and la-liga 62, none of the four clubs; other-leagues 89 with all 15. SportWear (next): the league filter on other-leagues lists צ׳מפיונשיפ (12) and הליגה הספרדית השנייה (3), in English and Arabic too. Product and team pages need no change: a football league without a page of its own falls back to other-leagues (banner, league row, breadcrumb shows כדורגל)."
+}

@@ -303,7 +303,7 @@
     "israeli-basketball-league": "TAG league:israeli-basketball-league",
     "season-2026-27": "TAG season:2026-27",
     "primeira-liga": "TAG league:primeira-liga",
-    "other-leagues": "TAG league:saudi-pro-league OR TAG league:mls OR TAG league:liga-mx OR TAG league:brasileirao OR TAG league:austrian-bundesliga OR TAG league:eredivisie OR TAG league:scottish-premiership OR TAG league:super-lig OR TAG league:argentine-primera",
+    "other-leagues": "TAG league:saudi-pro-league OR TAG league:mls OR TAG league:liga-mx OR TAG league:brasileirao OR TAG league:austrian-bundesliga OR TAG league:eredivisie OR TAG league:scottish-premiership OR TAG league:super-lig OR TAG league:argentine-primera OR TAG league:championship OR TAG league:segunda-division (the last two since 2026-09-28: the relegated Burnley, West Ham, Wolves and Girona; catalog/published/relegated-2026-09-28.json)",
     "real-madrid": "TAG team:real-madrid",
     "barcelona": "TAG team:barcelona",
     "atletico-madrid": "TAG team:atletico-madrid",
@@ -709,6 +709,7 @@
     "main-menu": "gid://shopify/Menu/316216410416",
     "footer": "gid://shopify/Menu/316216443184",
     "footer-shop": "gid://shopify/Menu/316236693808",
+    "main-menu_2026-09-28": "ווסטהאם, וולברהמפטון and ברנלי moved from פרמייר ליג, and ג׳ירונה from לה ליגה, to the end of ליגות נוספות (relegated; owner approved). menuUpdate with the full tree: all 200 items kept their ids and translations. catalog/published/relegated-2026-09-28.json",
     "main-menu_wave2_2026-09-27": "Wave 2 appended 59 team links to main-menu, each after the existing teams of its league: פרמייר ליג +14, לה ליגה +9, סרייה A +6, בונדסליגה +7, ליג 1 +6, ליגה פורטוגלית +3, ליגות נוספות +14. menuUpdate sent the full tree: the 145 existing items kept their IDs, titles, links, order and translations (read back; none outdated). main-menu now has 204 items. No hidden child list was created (all seven leagues already had children). Link IDs and translations: translations/store-content.json.",
     "hidden_child_menus": {
       "_note": "Legacy menus Shopify keeps behind each main-menu item that has children. Not shown in the admin; their titles mirror the parent item and are translated (see translations/store-content.json).",
@@ -746,7 +747,7 @@
     "markets": "one market, Israel (gid://shopify/Market/98940223792); the only delivery zone is Israel"
   },
   "demo_products": {
-    "_note": "Theme-preview fixtures, tag 'demo'. Created ACTIVE but not published to any channel. Owner decides: keep and add the rest, switch to draft, or delete.",
+    "_note": "Theme-preview fixtures, tag 'demo'. Created ACTIVE but not published to any channel. DRAFT since 2026-09-28 (owner approved; catalog/published/hidden-2026-09-28.json).",
     "demo-fc-home-jersey-2026-27": "gid://shopify/Product/15307595448624"
   },
   "brand_images": "Brand graphics of 2026-09-27 in Content > Files: sw-empty-cart.jpg (empty cart), sw-not-found.jpg (404) and 18 collection banners sw-col-*.jpg, set on 32 collections through the collection metafield sportwear.banner (definition gid://shopify/MetafieldDefinition/278240952624). IDs and mapping: design/imagery/brand-prompts.json."

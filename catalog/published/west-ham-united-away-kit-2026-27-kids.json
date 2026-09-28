@@ -12,7 +12,7 @@
     "en": "West Ham United",
     "ar": "وست هام يونايتد"
   },
-  "leagues": ["premier-league"],
+  "leagues": ["championship"],
   "kit": "away",
   "season": "26/27",
   "vendor": "SportWear",
@@ -132,7 +132,7 @@
   "tags": [
     "sport:football",
     "team:west-ham-united",
-    "league:premier-league",
+    "league:championship",
     "kit:away",
     "audience:kids",
     "new",
@@ -156,8 +156,8 @@
     "west ham",
     "وست هام",
     "وست هام يونايتد",
-    "premier league",
-    "الدوري الإنجليزي"
+    "championship",
+    "دوري البطولة الإنجليزية"
   ],
   "shopify": {
     "product_id": "gid://shopify/Product/15310268072240",
