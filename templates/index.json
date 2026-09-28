@@ -6,9 +6,9 @@
         "football": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sw-v3-s1.jpg",
-            "image_ltr": "shopify://shop_images/sw-v3-s1-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v2-hero-mobile.jpg",
+            "image": "shopify://shop_images/sw-v4-hero-football.jpg",
+            "image_ltr": "shopify://shop_images/sw-v4-hero-football-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v4-hero-football-mobile.jpg",
             "copy": "football",
             "button_link": "shopify://collections/football",
             "secondary_button_link": "shopify://collections/basketball"
@@ -17,9 +17,9 @@
         "street": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sw-look-hero-street.jpg",
-            "image_mobile": "shopify://shop_images/sw-look-hero-street-mobile.jpg",
-            "text_side": "right",
+            "image": "shopify://shop_images/sw-v4-hero-street.jpg",
+            "image_ltr": "shopify://shop_images/sw-v4-hero-street-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v4-hero-street-mobile.jpg",
             "copy": "street",
             "button_link": "shopify://collections/all",
             "secondary_button_link": "shopify://collections/new"
@@ -28,9 +28,9 @@
         "nba": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sw-v3-s2.jpg",
-            "image_ltr": "shopify://shop_images/sw-v3-s2-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v3-s2-mobile.jpg",
+            "image": "shopify://shop_images/sw-v4-hero-nba.jpg",
+            "image_ltr": "shopify://shop_images/sw-v4-hero-nba-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v4-hero-nba-mobile.jpg",
             "copy": "basketball",
             "button_link": "shopify://collections/nba",
             "secondary_button_link": "shopify://collections/basketball-shorts"
@@ -39,9 +39,9 @@
         "national": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sw-v3-s3.jpg",
-            "image_ltr": "shopify://shop_images/sw-v3-s3-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v3-s3-mobile.jpg",
+            "image": "shopify://shop_images/sw-v4-hero-national.jpg",
+            "image_ltr": "shopify://shop_images/sw-v4-hero-national-ltr.jpg",
+            "image_mobile": "shopify://shop_images/sw-v4-hero-national-mobile.jpg",
             "copy": "national",
             "button_link": "shopify://collections/national-teams",
             "secondary_button_link": "shopify://collections/football"
@@ -126,33 +126,47 @@
         "football": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-cat-football.jpg",
+            "image": "shopify://shop_images/sw-v4-cat-football.jpg",
             "collection": "football"
           }
         },
         "basketball": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-cat-basketball.jpg",
-            "collection": "basketball"
+            "image": "shopify://shop_images/sw-v4-cat-basketball.jpg",
+            "collection": "basketball-jerseys"
+          }
+        },
+        "shorts": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-v4-cat-shorts.jpg",
+            "collection": "basketball-shorts"
+          }
+        },
+        "hoodies": {
+          "type": "tile",
+          "settings": {
+            "image": "shopify://shop_images/sw-v4-cat-hoodies.jpg",
+            "collection": "nfl-hoodies"
           }
         },
         "kids": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-cat-kids.jpg",
+            "image": "shopify://shop_images/sw-v4-cat-kids.jpg",
             "collection": "kids"
           }
         },
         "teams": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v2-cat-teams.jpg",
+            "image": "shopify://shop_images/sw-v4-cat-teams.jpg",
             "page": "team-orders"
           }
         }
       },
-      "block_order": ["football", "basketball", "kids", "teams"],
+      "block_order": ["football", "basketball", "shorts", "hoodies", "kids", "teams"],
       "settings": {
         "color_scheme": "scheme-day",
         "show_count": true,

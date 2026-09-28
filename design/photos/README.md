@@ -26,9 +26,12 @@ The kits in the photos are products the store sells, so the photos sell them dir
 - **Home page, "Shop the look"** (`sections/lifestyle-gallery.liquid`): nine 4:5 crops, each with a tag that shows
   the product, its price and a link.
 - **Empty cart**: the Napoli fan on a bench by the court ("your cart's still on the bench").
-- **Home hero, second slide "מהמגרש לרחוב"** (`copy: street`): the Roma and Knicks friends by the stone wall on
-  computers (the text sits on the wall, on the right, in every language: the slide's "Text side" is set to right,
-  since shirts with lettering can't be mirrored for English), and the Knicks player by the court on phones.
+- **Home hero, second slide "מהמגרש לרחוב"** (`copy: street`), on the live theme only: the Roma and Knicks friends
+  by the stone wall on computers (the slide's "Text side" is set to right, since shirts with lettering can't be
+  mirrored for English), and the Knicks player by the court on phones. The owner said on 2026-09-28 that not every
+  photo they sent fits the hero on both phones and computers, so "SportWear (next 2)" replaces this slide with a photo
+  made for each frame (`design/imagery/README.md`, "Home page photography"). The Knicks player stays in the Knicks 8
+  gallery.
 
 The crops were made with Pillow from these originals (square 1200 px and 4:5 960×1200 px, centred on the person);
 the centres are in `index.json` (`used_on`). Uploaded files are named `sw-look-<file>-sq.jpg` / `-45.jpg`.

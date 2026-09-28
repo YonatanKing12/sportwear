@@ -1,0 +1,198 @@
+{
+  "_note": "Home page photos made on 2026-09-28 at the owner's request (\"אנשים ישראלים, רקע ישראלי, סממנים ישראליים, ולא תמונה מושלמת מידי\"; the hero must not look AI and must fit phones and computers). Fictional people wearing products the store sells. Every file was checked at full size before upload. See design/imagery/README.md, \"Home page photography\".",
+  "model": "gpt-image-2.5-flare through the OpenAI Images edit endpoint, quality high (the edit script and the key stay outside the repo; the style block below was appended to every prompt)",
+  "style_block": " PHOTO STYLE: an unedited smartphone snapshot that a friend took in Israel, on the phone's ordinary main wide camera held at chest height. Everything is in focus, with no background blur. Plain natural daylight (late morning or early afternoon) with hard, real shadows and a pale, slightly hazy sky that may be a little overexposed; true-to-life, slightly muted colours; the phone's normal processing with fine sensor noise. No colour grading, no filters, no golden hour, no sunset, no dramatic clouds, no lens flare, no studio light, no cinematic look. The framing is casual and a little imperfect (slightly tilted, someone partly cut by the edge), a quick photo between friends, not a fashion shoot and not an advertisement. PEOPLE: ordinary Israelis of mixed backgrounds (for example Mizrahi, Ashkenazi, Ethiopian-Israeli, Russian-Israeli), in their twenties or thirties unless described otherwise, not models, not celebrities and not athletes. Natural skin with pores, freckles, stubble or a bit of sweat, frizzy or messy hair, normal bodies, relaxed expressions caught mid-moment (talking, laughing, squinting in the sun), mostly looking at each other rather than at the camera. Everyday clothes with the jerseys: jeans or shorts, sneakers or sandals, a cap, sunglasses pushed up, a small backpack or a water bottle. JERSEYS: reproduce every jersey exactly as in its reference photo: the same colours, stripes, collar, crest, manufacturer logo and sponsor text, spelled exactly, with no extra text, no player names and no numbers added. They are worn loosely and look real: slightly wrinkled, hanging naturally. TEXT AND SYMBOLS (strict): there is no writing of any kind anywhere in the image: no graffiti, no signs, no posters, no stickers, no letters, words or numbers on walls, benches, fences, cars or objects. No flags and no political, religious or national symbols. The only lettering in the whole image is what is printed on the jerseys in the reference photos, and no other logos or brand names appear.",
+  "theme": {
+    "templates/index.json": "hero_slideshow blocks image / image_ltr / image_mobile, category_tiles blocks",
+    "dev_theme": "gid://shopify/OnlineStoreTheme/188590424368 (SportWear (next 2))"
+  },
+  "contrast_check": "white hero text vs the brightest 1% of pixels behind it, he/en/ar at 360, 390, 800, 1440 and 1920 px: worst 8.5:1 (heading), 9.2:1 (lead)",
+  "files": [
+    {
+      "file": "sw-v4-hero-football.jpg",
+      "id": "gid://shopify/MediaImage/45342692671792",
+      "size": "3840x1280",
+      "use": "hero slide \"football\"",
+      "frame": "people in the left 40%, text on the right (Hebrew, Arabic)",
+      "products": [
+        "maccabi-haifa-home-jersey-2026-27",
+        "real-madrid-home-jersey-2026-27",
+        "barcelona-home-jersey-2026-27"
+      ],
+      "scene": "Three friends, arms around each other, after a Friday-morning game on a neighbourhood pitch: green cage fence, 1970s apartment blocks with solar water heaters, eucalyptus trees.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-football-ltr.jpg",
+      "id": "gid://shopify/MediaImage/45342692704560",
+      "size": "3840x1280",
+      "use": "hero slide \"football\"",
+      "frame": "people on the right, text on the left (English)",
+      "products": [
+        "maccabi-haifa-home-jersey-2026-27",
+        "real-madrid-home-jersey-2026-27",
+        "barcelona-home-jersey-2026-27"
+      ],
+      "scene": "Three friends, arms around each other, after a Friday-morning game on a neighbourhood pitch: green cage fence, 1970s apartment blocks with solar water heaters, eucalyptus trees.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-football-mobile.jpg",
+      "id": "gid://shopify/MediaImage/45342692737328",
+      "size": "1088x1408",
+      "use": "hero slide \"football\"",
+      "frame": "people in the upper half, text over the lower half (phones)",
+      "products": [
+        "maccabi-haifa-home-jersey-2026-27",
+        "real-madrid-home-jersey-2026-27",
+        "barcelona-home-jersey-2026-27"
+      ],
+      "scene": "Three friends, arms around each other, after a Friday-morning game on a neighbourhood pitch: green cage fence, 1970s apartment blocks with solar water heaters, eucalyptus trees.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-street.jpg",
+      "id": "gid://shopify/MediaImage/45342692770096",
+      "size": "3840x1280",
+      "use": "hero slide \"street\"",
+      "frame": "people in the left 40%, text on the right (Hebrew, Arabic)",
+      "products": ["manchester-city-home-jersey-2026-27", "sw-jerseys-97381444"],
+      "scene": "Three friends with iced coffee on a quiet Tel Aviv street: red-and-white kerb, scooters, ficus trees, bougainvillea, a 1950s building with rounded balconies.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-street-ltr.jpg",
+      "id": "gid://shopify/MediaImage/45342692802864",
+      "size": "3840x1280",
+      "use": "hero slide \"street\"",
+      "frame": "people on the right, text on the left (English)",
+      "products": ["manchester-city-home-jersey-2026-27", "sw-jerseys-97381444"],
+      "scene": "Three friends with iced coffee on a quiet Tel Aviv street: red-and-white kerb, scooters, ficus trees, bougainvillea, a 1950s building with rounded balconies.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-street-mobile.jpg",
+      "id": "gid://shopify/MediaImage/45342692835632",
+      "size": "1088x1408",
+      "use": "hero slide \"street\"",
+      "frame": "people in the upper half, text over the lower half (phones)",
+      "products": ["manchester-city-home-jersey-2026-27", "sw-jerseys-97381444"],
+      "scene": "Three friends with iced coffee on a quiet Tel Aviv street: red-and-white kerb, scooters, ficus trees, bougainvillea, a 1950s building with rounded balconies.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-nba.jpg",
+      "id": "gid://shopify/MediaImage/45342692868400",
+      "size": "3840x1280",
+      "use": "hero slide \"nba\"",
+      "frame": "people in the left 40%, text on the right (Hebrew, Arabic)",
+      "products": ["sw-jerseys-188304509", "sw-jerseys-199492774", "sw-jerseys-223292619"],
+      "scene": "Three friends on a break from a pickup game on a neighbourhood court: cracked green and red asphalt, chain net, green fence, Jerusalem-stone wall, apartment blocks.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-nba-ltr.jpg",
+      "id": "gid://shopify/MediaImage/45342692901168",
+      "size": "3840x1280",
+      "use": "hero slide \"nba\"",
+      "frame": "people on the right, text on the left (English)",
+      "products": ["sw-jerseys-188304509", "sw-jerseys-199492774", "sw-jerseys-223292619"],
+      "scene": "Three friends on a break from a pickup game on a neighbourhood court: cracked green and red asphalt, chain net, green fence, Jerusalem-stone wall, apartment blocks.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-nba-mobile.jpg",
+      "id": "gid://shopify/MediaImage/45342692933936",
+      "size": "1088x1408",
+      "use": "hero slide \"nba\"",
+      "frame": "people in the upper half, text over the lower half (phones)",
+      "products": ["sw-jerseys-188304509", "sw-jerseys-199492774", "sw-jerseys-223292619"],
+      "scene": "Three friends on a break from a pickup game on a neighbourhood court: cracked green and red asphalt, chain net, green fence, Jerusalem-stone wall, apartment blocks.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-national.jpg",
+      "id": "gid://shopify/MediaImage/45342692966704",
+      "size": "3840x1280",
+      "use": "hero slide \"national\"",
+      "frame": "people in the left 40%, text on the right (Hebrew, Arabic)",
+      "products": ["israel-home-jersey-2026", "brazil-home-jersey-2026", "argentina-home-jersey-2026"],
+      "scene": "Three friends walking on the Tel Aviv promenade with matkot: sand, sea, palms, a lifeguard hut.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-national-ltr.jpg",
+      "id": "gid://shopify/MediaImage/45342692999472",
+      "size": "3840x1280",
+      "use": "hero slide \"national\"",
+      "frame": "people on the right, text on the left (English)",
+      "products": ["israel-home-jersey-2026", "brazil-home-jersey-2026", "argentina-home-jersey-2026"],
+      "scene": "Three friends walking on the Tel Aviv promenade with matkot: sand, sea, palms, a lifeguard hut.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-hero-national-mobile.jpg",
+      "id": "gid://shopify/MediaImage/45342693032240",
+      "size": "1088x1408",
+      "use": "hero slide \"national\"",
+      "frame": "people in the upper half, text over the lower half (phones)",
+      "products": ["israel-home-jersey-2026", "brazil-home-jersey-2026", "argentina-home-jersey-2026"],
+      "scene": "Three friends walking on the Tel Aviv promenade with matkot: sand, sea, palms, a lifeguard hut.",
+      "made": "one 2304x1536 photo per slide (edit endpoint, product photos as references), extended to this frame with a transparent-area edit"
+    },
+    {
+      "file": "sw-v4-cat-football.jpg",
+      "id": "gid://shopify/MediaImage/45342693065008",
+      "size": "1024x1280",
+      "use": "category tile -> football",
+      "products": ["manchester-united-home-jersey-2026-27"],
+      "scene": "A man with a ball by the fence of a neighbourhood pitch.",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    },
+    {
+      "file": "sw-v4-cat-basketball.jpg",
+      "id": "gid://shopify/MediaImage/45342693097776",
+      "size": "1024x1280",
+      "use": "category tile -> basketball-jerseys",
+      "products": ["sw-jerseys-223292685"],
+      "scene": "A young woman with a ball on a neighbourhood court.",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    },
+    {
+      "file": "sw-v4-cat-shorts.jpg",
+      "id": "gid://shopify/MediaImage/45342693130544",
+      "size": "1024x1280",
+      "use": "category tile -> basketball-shorts",
+      "products": ["sw-shorts-102715994"],
+      "scene": "A young man on a stone wall by the court, ball at his feet; the ball's brand name was painted out.",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    },
+    {
+      "file": "sw-v4-cat-hoodies.jpg",
+      "id": "gid://shopify/MediaImage/45342693163312",
+      "size": "1024x1280",
+      "use": "category tile -> nfl-hoodies",
+      "products": ["sw-hoodies-213101663-24", "sw-hoodies-213102577-24", "sw-hoodies-213102778-24"],
+      "scene": "A young woman with a coffee in a wet Jerusalem-stone alley on a winter morning (no landmarks).",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    },
+    {
+      "file": "sw-v4-cat-kids.jpg",
+      "id": "gid://shopify/MediaImage/45342693196080",
+      "size": "1024x1280",
+      "use": "category tile -> kids",
+      "products": ["real-madrid-home-kit-2026-27-kids", "barcelona-home-kit-2026-27-kids"],
+      "scene": "Two children playing football in a schoolyard after school.",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    },
+    {
+      "file": "sw-v4-cat-teams.jpg",
+      "id": "gid://shopify/MediaImage/45342693228848",
+      "size": "1024x1280",
+      "use": "category tile -> page team-orders",
+      "products": ["chelsea-home-jersey-2026-27"],
+      "scene": "An amateur team of eight in matching shirts after a Friday game.",
+      "made": "1024x1280 (edit endpoint, product photo as reference)"
+    }
+  ]
+}

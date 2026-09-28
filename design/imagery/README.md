@@ -97,12 +97,45 @@ photos.
 
 ## Home page photography
 
-The hero slides (`sw-v3-s1/s2/s3`, with `-ltr` and `-mobile` versions), the category tiles
-(`sw-v2-cat-*`) and the lifestyle gallery (`sw-v2-life-*`) show fictional people wearing jerseys the
-store sells, generated with the product photos as references. They live in Content → Files and are
-referenced as `shopify://shop_images/<file>` in `templates/index.json`; resized copies sit in
-`scripts/preview/fixtures/images/` for the local preview. The first, darker set (`sw-*.jpg`, prompts in
-`prompts.json`) is no longer used.
+The hero slides and the category tiles show fictional people wearing products the store sells,
+generated with the product photos as references. They live in Content → Files and are referenced as
+`shopify://shop_images/<file>` in `templates/index.json`; resized copies sit in
+`scripts/preview/fixtures/images/` for the local preview.
+
+**Current set (2026-09-28, `sw-v4-*`).** The owner: the hero is the first thing a customer sees, and
+if it looks like AI, trust is gone before they scroll; they asked for "Israeli people, an Israeli
+background, Israeli details, and not too perfect a picture", made to fit phones and computers. So every
+photo is a candid phone snapshot in plain daylight (no golden hour, no grading, no background blur),
+with ordinary Israelis of different backgrounds and everyday Israeli places: a neighbourhood pitch
+with a green cage fence and solar water heaters on the roofs, a Tel Aviv street with a red-and-white
+kerb, a court with a Jerusalem-stone wall, the Tel Aviv promenade with matkot, a Jerusalem alley, a
+schoolyard. Each hero slide has three files made for its frame:
+
+| File | Size | Frame |
+| --- | --- | --- |
+| `sw-v4-hero-<slide>.jpg` | 3840 × 1280 | people in the left 40%, heads in the top fifth; the right side is calm, for the Hebrew and Arabic text |
+| `sw-v4-hero-<slide>-ltr.jpg` | 3840 × 1280 | the same scene with the people on the right, for the English text on the left |
+| `sw-v4-hero-<slide>-mobile.jpg` | 1088 × 1408 | people in the upper half, the text over the lower half |
+
+Slides: `football` (Maccabi Haifa, Real Madrid and Barcelona home 26/27), `street` (Manchester City home
+26/27 and the Boston 7 jersey), `nba` (Lakers 24 yellow, Golden State 30 black, the white Bulls 23 with
+the sketched bull) and `national` (Israel, Brazil and Argentina home 2026). Tiles (`sw-v4-cat-<tile>.jpg`,
+1024 × 1280): `football` (Manchester United home 26/27), `basketball` (the black Bulls 23 with the
+sketched bull), `shorts` (the yellow Lakers shorts), `hoodies` (the olive Dallas Cowboys hoodie),
+`kids` (Real Madrid and Barcelona home kids kits) and `teams` (Chelsea home 26/27).
+
+How they were made: `gpt-image-2.5-flare` through the Images edit endpoint, with the product's studio photo
+as the reference and a style block for the candid look (people, places, no text or flags anywhere except
+the products' own print). Each hero scene was generated once as a 3:2 photo and then extended to the three
+frames with a transparent-area edit, so the people and jerseys stay the same in every version. Every file
+was checked at full size for AI tells, stray text and jersey accuracy against the product photo; one brand
+name on a basketball (shorts tile) was painted out. The hero section's scrim and crop are tuned for these
+frames (`sections/hero-slideshow.liquid`): worst-case contrast of the white text over the photos was 8.5:1
+in he/en/ar from 360 to 1920 px wide. Record, with the products shown and the style block: `home-photos-2026-09-28.json`.
+
+Older sets: `sw-v3-*` and `sw-v2-*` (the first AI generation, glossy golden-hour look) stay in Files
+because the live theme uses them until "SportWear (next 2)" is published; `sw-*.jpg` (the first, darker
+set, prompts in `prompts.json`) is unused.
 
 Rules for new atmosphere photos: fictional people only (no recognisable real people or players), jerseys
 as they are sold (no added names, numbers or text), and never present them as customers. Team names and

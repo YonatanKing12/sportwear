@@ -38,10 +38,10 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
-| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. The live theme still shows "100% מקורי" / "100% original" badges on every product page and in the mobile menu, and the old shipping texts (free above ₪250, 3 business days); "SportWear (next)" has neither (checked in he/en/ar on 2026-09-27) |
+| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. Since the owner published "SportWear (next)" (2026-09-28 13:06 UTC) the live site has no originality claim and the current shipping texts (checked in he/en/ar at 14:20 UTC) |
 | Catalog | 1,562 products: 1,546 ACTIVE, all on the Online Store; 16 DRAFT since 2026-09-28 (the 15 hidden with the owner's approval and the demo product); 0 orders. Details in "The catalog" below |
-| Live theme | Our theme: "SportWear (dev)", `gid://shopify/OnlineStoreTheme/188519711024`, published by the owner on 2026-09-26 (at commit 71be9d5). Never write to it. Horizon is now unpublished |
-| Dev theme | "SportWear (next)", unpublished, `gid://shopify/OnlineStoreTheme/188528591152` (`SW_PREVIEW_THEME_ID=188528591152`), a copy of the live theme made on 2026-09-26, updated on 2026-09-27 with the real-site QA fixes and, on the owner's request, a home page without the kids sizes section (its basketball row now reads `basketball-jerseys`). Also on it since the evening of 2026-09-27 (owner's requests): a branded empty cart (drawer and cart page) and league banners on the collection pages (`design/imagery/README.md`, "Brand graphics"). Since the night to 2026-09-28: player and team cards instead of the small circles, a 404 page with a big "404" shirt, the owner's photos (a street slide in the hero, the "הלוק של האוהדים" row, product galleries, the empty cart; `design/photos/README.md`), the team's jersey in team and player banners, a "More from the team" card on product pages, whole page titles, clean meta descriptions in every language and a QA pass. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Live theme | Our theme: "SportWear (next)", `gid://shopify/OnlineStoreTheme/188528591152`, published by the owner on 2026-09-28 13:06 UTC (at commit fbe8d55; no editor changes when checked at 14:05 UTC). Never write to it. The theme live before, "SportWear (dev)" (`188519711024`, at 71be9d5), and Horizon are unpublished |
+| Dev theme | "SportWear (next 2)", unpublished, `gid://shopify/OnlineStoreTheme/188590424368` (`SW_PREVIEW_THEME_ID=188590424368`), a copy of the live theme made on 2026-09-28 14:09 UTC (named "next 2" because the live theme is "SportWear (next)"). On it since then (owner's requests of 2026-09-28): new hero photos made for the hero, candid Israeli scenes with a desktop, an English and a phone version per slide, and six category tiles with basketball shorts and NFL hoodies added (`design/imagery/README.md`, "Home page photography"). Editor changes made in the live theme from now on are not in the copy. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
 | Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 1 manual collection (`our-picks`, the home page's first row, editable by the owner), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27), and the collector-card metafields (`sportwear.card_image`, `card_color`, `card_mark`) on 34 player and team collections (`design/imagery/collector-cards.json`). The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). The 19 collections behind the home rows are sorted by hand (MANUAL) since 2026-09-28: big teams first, adults before kids, jerseys before shorts, the items flagged for the owner last (it was best selling, i.e. newest first with no orders). The 126 team pages are MANUAL too, each in the team's own order (adults, then shorts, then kids; `team_collections` in `catalog/collection-order.json`). After an import, re-run `scripts/catalog/collection-order.py` (record: `catalog/published/collection-order-2026-09-28.json`). IDs in `catalog/store-setup.json` |
@@ -271,8 +271,8 @@ and several records are keyed by the old handles: keep a map old → new.
   - The return policy has to be added in Merchant Center too, because the Google app doesn't sync it: 45 days, with
     the shipping-returns URL.
   - Verify a phone number and address in Business info.
-  - The initial review expects a checkout that can take a payment (no card gateway yet) and a site without the
-    originality claim (publish "SportWear (next)").
+  - The initial review expects a checkout that can take a payment (no card gateway yet). The originality claim is off
+    the live site since the owner published "SportWear (next)" on 2026-09-28.
   - "Personal hardships" most likely comes from the 8 Indiana Fever jerseys (Fever is a health term). It only limits
     personalized ads.
   - We told the owner that Google treats unlicensed products bearing brand or club logos as counterfeit (the account
@@ -282,17 +282,14 @@ and several records are keyed by the old handles: keep a map old → new.
   added that day with wave 2 and the shorts, all created with 5. If that is not the real stock, a size sells
   out on the site after 5 orders and a size filter has nothing to narrow; only the owner knows the real
   quantities
-- **Urgent: publishing "SportWear (next)".** The live theme still shows the originality claim the owner ruled out
-  ("100% מקורי" on every product page and in the mobile menu), now while Google reviews the store. It also still has
-  the old shipping texts (free above ₪250, 3 business days), which contradict the free shipping Google gets, and
-  shares links with no picture and the bare title "SportWear". The publish fixes all of these and brings the new
-  share image (`design/share/README.md`), the titles and the 2026-09-27 home page changes. Also open: whether the
-  site stays open until launch
+- Publishing "SportWear (next 2)": the new hero photos and the six category tiles (2026-09-28). The owner published
+  "SportWear (next)" on 2026-09-28 13:06 UTC, which took the originality claim and the old shipping texts off the live
+  site. Also open: whether the site stays open until launch
 - Connecting GitHub to Shopify, a one-time step for the development theme
 - Google Search Console: submit `sitemap.xml` (one index for the three languages) with the Google account used for
   Merchant Center. The domain's DNS is at the registrar (sitesdepot) and already has a google-site-verification TXT
   record. Steps: `catalog/published/seo-2026-09-28.json`, `search_console`. The theme's SEO fixes (whole titles, clean
-  descriptions) go live when "SportWear (next)" is published
+  descriptions) are live since the owner published "SportWear (next)" on 2026-09-28
 - The kids size chart of the products imported before. Their 106 kids products (75 basketball jerseys, 31 NFL
   hoodies, all from the supplier 968-NBA) are sold in S–XL. Those are the supplier's own kids sizes (its kids
   hoodie album says 童装 S-XL; the tags on its kids jerseys read S/M/L), but it publishes no chart, so a parent

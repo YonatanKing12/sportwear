@@ -1107,10 +1107,10 @@
           "settings": {
             "image": {
               "label": "Desktop image",
-              "info": "A wide, short photo, at least 3000 px wide (4:1). People on the left; the text sits on the right."
+              "info": "A wide photo in 3:1, such as 3840 × 1280 px. The people stand in the left 40%, with their heads in the top fifth; the text sits on the right."
             },
             "image_mobile": {
-              "info": "Portrait photo (4:5). Without one, the desktop photo is cropped."
+              "info": "A tall photo, such as 1088 × 1408 px. The people fill the upper half; the text sits over the lower half. Without one, the desktop photo is cropped."
             },
             "copy": {
               "label": "Ready-made text",

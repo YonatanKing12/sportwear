@@ -284,7 +284,9 @@
     }
   }
 
-  /* Phones: a tall edge-to-edge photo with the text at the bottom. From 750px: a wide, short band. */
+  /* Phones: a tall edge-to-edge photo (made at 1088 x 1408, a little wider than the slide, so only its
+     sides are trimmed) with the people in its upper half and the text over the lower half, below the
+     jerseys. From 750px: a wide, short band. */
   .hero-slideshow__slide {
     position: relative;
     isolation: isolate;
@@ -292,7 +294,7 @@
     flex: 0 0 100%;
     align-items: flex-end;
     min-inline-size: 0;
-    min-block-size: clamp(420px, 118vw, 560px);
+    min-block-size: clamp(440px, 140vw, 640px);
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
@@ -313,25 +315,21 @@
       block-size: 100%;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to top,
-        rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 20%)) 0%,
-        rgb(13 14 17 / calc(var(--hero-overlay, 55%) * 0.6)) 45%,
-        rgb(13 14 17 / 0) 72%
-      );
-    }
-
+    /* From 750px: a scrim across the text side only, dark under the text (which ends before 46% of
+       the width at every size) and clear by 64%, so the people on the other side stay bright. The
+       photos are daylight shots (light walls, white shirts, sky), hence the strength: white text stays
+       above 4.5:1. On phones the scrim sits behind the text itself (.hero-slideshow__content). */
     @media screen and (min-width: 750px) {
       &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
         background: linear-gradient(
           var(--hero-gradient-direction, to right),
-          rgb(13 14 17 / var(--hero-overlay, 55%)) 0%,
-          rgb(13 14 17 / calc(var(--hero-overlay, 55%) * 0.55)) 38%,
-          rgb(13 14 17 / 0) 62%
+          rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 29%)) 0%,
+          rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 21%)) 46%,
+          rgb(13 14 17 / calc(var(--hero-overlay, 55%) - 25%)) 55%,
+          rgb(13 14 17 / 0) 64%
         );
       }
     }
@@ -341,42 +339,30 @@
     --hero-gradient-direction: to left;
   }
 
-  /* Desktop photos are 3:1 while the band is thinner: the crop keeps a little more of the top, where
-     the heads are. */
+  /* Desktop photos are 3:1 and made for this band: the people stand on the side away from the text
+     (left in right-to-left languages, right in English), their heads in the upper fifth. The band is
+     wider than 3:1 on most screens, so the crop keeps the top; on tablets, where it is narrower, it
+     keeps the people's side. On wide phones the slide is wider than the phone photo, so its crop keeps
+     the heads and trims the ground under the text. */
   .hero-slideshow__image {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
+    object-position: 50% 10%;
 
     @media screen and (min-width: 750px) {
-      object-position: 50% 30%;
+      object-position: var(--hero-focus-x, 75%) 15%;
     }
   }
 
-  /* A slide with its text fixed to one side (photo with its people on the other side): the gradient,
-     the text and the photo's crop follow that side in every language. Such photos are real-life shots
-     (light walls, white shirts), so the scrim under the text is stronger and wider, keeping white text
-     above 4.5:1 on phones and computers. */
-  :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__media::after {
-    background: linear-gradient(
-      to top,
-      rgb(13 14 17 / 0.9) 0%,
-      rgb(13 14 17 / 0.8) 45%,
-      rgb(13 14 17 / 0.66) 62%,
-      rgb(13 14 17 / 0) 88%
-    );
+  [dir='rtl'] .hero-slideshow__image {
+    --hero-focus-x: 25%;
   }
 
+  /* A slide with its text fixed to one side (a photo whose people stand on the other side and that has
+     no version for the other direction): the scrim, the text and the crop follow that side in every
+     language. */
   @media screen and (min-width: 750px) {
-    :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__media::after {
-      background: linear-gradient(
-        var(--hero-gradient-direction, to right),
-        rgb(13 14 17 / 0.84) 0%,
-        rgb(13 14 17 / 0.76) 46%,
-        rgb(13 14 17 / 0.32) 64%,
-        rgb(13 14 17 / 0) 80%
-      );
-    }
     .hero-slideshow__slide--text-right .hero-slideshow__media {
       --hero-gradient-direction: to left;
     }
@@ -386,15 +372,11 @@
     }
 
     .hero-slideshow__slide--text-right .hero-slideshow__image {
-      object-position: 20% 12%;
+      --hero-focus-x: 20%;
     }
 
     .hero-slideshow__slide--text-left .hero-slideshow__image {
-      object-position: 80% 12%;
-    }
-
-    :is(.hero-slideshow__slide--text-right, .hero-slideshow__slide--text-left) .hero-slideshow__text {
-      max-inline-size: min(34rem, 44%);
+      --hero-focus-x: 80%;
     }
 
     [dir='ltr'] .hero-slideshow__slide--text-right .hero-slideshow__text,
@@ -403,17 +385,43 @@
     }
   }
 
+  /* Phones: the text sits at the bottom of the photo, on a scrim that starts just above it and darkens
+     to the bottom edge. It follows the text's real height in every language, so the photo above the
+     text (the people and their jerseys) stays clear. */
   .hero-slideshow__content {
+    position: relative;
     inline-size: 100%;
     padding-block: var(--space-6) var(--space-12);
 
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -32px 0 0;
+      z-index: -1;
+      background: linear-gradient(
+        to bottom,
+        rgb(13 14 17 / 0) 0,
+        rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 17%)) 56px,
+        rgb(13 14 17 / calc(var(--hero-overlay, 55%) + 30%)) 100%
+      );
+      pointer-events: none;
+    }
+
     @media screen and (min-width: 750px) {
       padding-block: var(--space-8);
+
+      &::before {
+        content: none;
+      }
     }
   }
 
   .hero-slideshow__text {
     max-inline-size: 34rem;
+
+    @media screen and (min-width: 750px) {
+      max-inline-size: min(34rem, 44%);
+    }
   }
 
   .hero-slideshow__heading {

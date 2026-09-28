@@ -122,7 +122,7 @@
       "copy": {
         "football": {
           "heading": "Football jerseys",
-          "text": "Real Madrid, Barcelona, Arsenal, Milan and more",
+          "text": "Real Madrid, Barcelona, Maccabi Haifa, Arsenal and more",
           "button_label": "Shop football jerseys",
           "secondary_button_label": "Basketball jerseys"
         },
@@ -134,7 +134,7 @@
         },
         "national": {
           "heading": "National team jerseys",
-          "text": "Brazil, France, Japan, Germany and more",
+          "text": "Israel, Brazil, Argentina, France and more",
           "button_label": "Shop national teams",
           "secondary_button_label": "Football jerseys"
         },

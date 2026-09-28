@@ -119,7 +119,7 @@
     "height": 809,
     "used_on": [
       "product gallery of sw-jerseys-244984876 (square crop, centre 0.29)",
-      "home hero slideshow, slide \"street\" (phones; 4:5 crop, centre 0.29): sw-look-hero-street-mobile.jpg"
+      "home hero slideshow, slide \"street\" (phones; 4:5 crop, centre 0.29): sw-look-hero-street-mobile.jpg — live theme only until \"SportWear (next 2)\" is published; the dev theme uses sw-v4-hero-street*"
     ]
   },
   {
@@ -262,7 +262,7 @@
     "width": 1942,
     "height": 809,
     "used_on": [
-      "home hero slideshow, slide \"street\" (desktop, all languages; 3:1 crop from the top, text on the right): sw-look-hero-street.jpg"
+      "home hero slideshow, slide \"street\" (desktop, all languages; 3:1 crop from the top, text on the right): sw-look-hero-street.jpg — live theme only until \"SportWear (next 2)\" is published; the dev theme uses sw-v4-hero-street*"
     ]
   },
   {

@@ -38,8 +38,10 @@ publishes the dev theme, make a new one before the next deploy:
 
 1. Compare a few live checksums (`templates/index.json`, the section groups, the locale files) with
    the repo at `deployed_commit`, so you know whether the owner changed anything in the editor.
-2. `themeDuplicate(id: <live theme>, name: "SportWear (next)")` copies the live theme with every
-   editor change in it. Poll `theme(id) { processing processingFailed }` until it is ready.
+2. `themeDuplicate(id: <live theme>, name: "SportWear (next N)")` copies the live theme with every
+   editor change in it. Give it a name the live theme doesn't have (the live one keeps the name it had as
+   the dev theme: on 2026-09-28 "SportWear (next)" went live and the copy became "SportWear (next 2)").
+   Poll `theme(id) { processing processingFailed }` until it is ready.
 3. Record the new ID in `catalog/store-setup.json` and `CLAUDE.md` (`SW_PREVIEW_THEME_ID`), then
    deploy the files changed since the live commit.
 4. Tell the owner that editor changes made in the live theme from now on are not in the copy:
