@@ -6,7 +6,8 @@
   "You may also like" first tries the product's own team: when it has a team:<slug> tag whose
   collection holds at least two other products in stock, those are shown right away (the same
   audience first), since Shopify's recommendations have no sales to learn from yet and often suggest
-  another sport.
+  another sport. Without a team page, a hoodie gets the NFL hoodies of its audience and other
+  products their league's page (sportwear.league_handle).
 {%- endcomment -%}
 {%- liquid
   assign columns = section.settings.columns_desktop
@@ -32,6 +33,25 @@
         break
       endif
     endfor
+
+    # No team page with other products (the NFL teams have none): the hoodies of the same audience, else
+    # the product's league, before Shopify's recommendations (which suggested football shirts for hoodies).
+    if team_collection == blank or team_collection.all_products_count < 3
+      if product.type == 'Hoodie'
+        if product.tags contains 'audience:kids'
+          assign team_collection = collections['nfl-hoodies-kids']
+        elsif product.tags contains 'audience:women'
+          assign team_collection = collections['nfl-hoodies-women']
+        else
+          assign team_collection = collections['nfl-hoodies-men']
+        endif
+      else
+        assign league_handle = product.metafields.sportwear.league_handle.value
+        if league_handle != blank and collections[league_handle].all_products_count > 2
+          assign team_collection = collections[league_handle]
+        endif
+      endif
+    endif
   endif
   assign is_kids = false
   if product.tags contains 'audience:kids'
