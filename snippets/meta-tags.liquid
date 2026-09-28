@@ -2,7 +2,8 @@
   Page title, meta description, canonical URL, Open Graph and Twitter tags.
   hreflang tags are added by Shopify through content_for_header (do not add them here).
   The home page falls back to a translated title and description while Online Store > Preferences
-  has none. The link-preview image is the page's own (product, collection, article, or the one set
+  has none. A product page without an SEO description in its language gets one rebuilt from the
+  product description (snippets/product-meta-description.liquid). The link-preview image is the page's own (product, collection, article, or the one set
   in Online Store > Preferences), then the theme's share image setting, then SportWear's share image
   in the page's language (Content > Files: sw-share-he.jpg, sw-share-en.jpg, sw-share-ar.jpg,
   1200x630 with the logo; see design/share/README.md).
@@ -13,11 +14,27 @@
   if request.page_type == 'product' and product != blank
     # With no SEO title, Shopify's page title is the product title cut at 70 characters, often
     # mid-word ("… Beige J"). Use the whole title then, the detail after " | " read as ", detail".
-    assign title_length = page_title | size
+    # page_title is HTML-escaped ("Kids&#39;"): compared decoded.
+    assign page_title_plain = page_title | replace: '&#39;', "'" | replace: '&quot;', '"' | replace: '&amp;', '&'
+    assign title_length = page_title_plain | size
     assign title_start = product.title | slice: 0, title_length
-    if title_start == page_title
+    if title_start == page_title_plain
       assign title_comma = 'general.comma' | t | append: ' '
       assign meta_title = product.title | replace: ' | ', title_comma
+    endif
+
+    # With no SEO description in the page's language, Shopify's is the product description with its
+    # paragraphs glued together: rebuilt as sentences (snippets/product-meta-description.liquid).
+    # Compared with entities decoded ("Kids&#39;" = "Kids'").
+    assign body_start = product.description | strip_html | replace: '&#39;', "'" | replace: '&quot;', '"'
+    assign body_start = body_start | replace: '&amp;', '&' | replace: '&nbsp;', ' ' | strip_newlines | strip | slice: 0, 40
+    assign description_start = page_description | replace: '&#39;', "'" | replace: '&quot;', '"'
+    assign description_start = description_start | replace: '&amp;', '&' | replace: '&nbsp;', ' ' | strip_newlines | strip
+    assign description_start = description_start | slice: 0, 40
+    if body_start != blank and description_start == body_start
+      capture meta_description
+        render 'product-meta-description', product: product
+      endcapture
     endif
   endif
   if request.page_type == 'index'
@@ -42,7 +59,11 @@
   if og_image == blank
     assign og_image = images['sw-v3-s1.jpg']
   endif
-  assign og_image_alt = og_image.alt | default: og_title
+  # Image alt texts are stored in Hebrew: other languages describe the picture with the page's title.
+  assign og_image_alt = og_image.alt | default: og_title | replace: ' | ', ', '
+  unless request.locale.primary
+    assign og_image_alt = og_title
+  endunless
 
   if request.page_type == 'product'
     assign og_type = 'product'
@@ -53,7 +74,7 @@
   endif
 -%}
 <title>
-  {{- meta_title -}}
+  {{- meta_title | escape -}}
   {%- if current_tags -%}
     {%- assign tags_joined = current_tags | join: ', ' %} &ndash; {{ 'general.meta.tagged' | t: tags: tags_joined -}}
   {%- endif -%}

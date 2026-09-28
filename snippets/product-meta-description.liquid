@@ -1,0 +1,54 @@
+{%- doc -%}
+  A product page's meta description when it has none of its own in the page's language. Shopify then uses the
+  product description with its paragraphs and list items glued together ("… Red Side StripesSizes: S, M, L, XL."),
+  in every language. This rebuilds it from the same text: one sentence per paragraph or list item, the title line's
+  " | " detail read as ", detail", cut at a word before 160 characters. Plain text, not escaped.
+
+  @param {product} product - The product
+
+  @example
+  {%- capture meta_description -%}{% render 'product-meta-description', product: product %}{%- endcapture -%}
+{%- enddoc -%}
+{%- assign title_comma = 'general.comma' | t | append: ' ' -%}
+{%- assign blocks = product.description
+  | replace: '</li>', '</p>'
+  | replace: '</h2>', '</p>'
+  | replace: '</h3>', '</p>'
+  | replace: '<br>', '</p>'
+  | replace: '<br/>', '</p>'
+  | replace: '<br />', '</p>'
+  | split: '</p>'
+-%}
+{%- liquid
+  assign text = ''
+  for block in blocks
+    assign line = block | replace: '<', ' <' | strip_html | replace: '&nbsp;', ' ' | replace: '&amp;', '&'
+    assign line = line | replace: '&quot;', '"' | replace: '&#39;', "'" | replace: ' | ', title_comma | split: ' ' | join: ' '
+    if line == blank
+      continue
+    endif
+    # split + join turns runs of spaces and line breaks into one space. Each block ends as a sentence, so
+    # list items don't run into each other.
+    assign last_char = line | slice: -1
+    unless '.!?…:;؟' contains last_char
+      assign line = line | append: '.'
+    endunless
+    assign text = text | append: ' ' | append: line
+  endfor
+  assign text = text | strip
+
+  if text.size > 160
+    assign words = text | split: ' '
+    assign cut = ''
+    for word in words
+      assign candidate = cut | append: ' ' | append: word | strip
+      if candidate.size > 157
+        break
+      endif
+      assign cut = candidate
+    endfor
+    assign text = cut | append: '…'
+  endif
+
+  echo text
+-%}

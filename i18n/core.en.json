@@ -30,7 +30,7 @@
       "tagged": "Tagged \"{{ tags }}\"",
       "page": "Page {{ page }}",
       "home_title": "{{ shop }} | Football and Basketball Jerseys",
-      "home_description": "Football jerseys, basketball jerseys and shorts of your favorite clubs and national teams, for adults and kids. Free home delivery on every order within 10 business days, and returns within 45 days."
+      "home_description": "Football and basketball jerseys and shorts of your favorite teams, for adults and kids. Free home delivery within 10 business days, returns within 45 days."
     },
     "placeholders": {
       "product_title": "Product name"
