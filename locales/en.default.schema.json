@@ -1551,6 +1551,13 @@
           "label": "Show suggestions while typing"
         }
       }
+    },
+    "personalization": {
+      "name": "Personalization",
+      "variant_id": {
+        "label": "Printing variant ID",
+        "info": "Numeric variant ID of the ₪35 add-on. Enable only after a purchase test."
+      }
     }
   },
   "settings": {

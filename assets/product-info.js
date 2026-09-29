@@ -371,6 +371,7 @@ class SwProductInfo extends HTMLElement {
 
 class SwProductForm extends HTMLElement {
   #busy = false;
+  #unsubscribeVariant = null;
 
   get #form() {
     return this.querySelector('form');
@@ -388,12 +389,16 @@ class SwProductForm extends HTMLElement {
     form.addEventListener('submit', this.#onSubmit);
     this.addEventListener('click', this.#onStep);
     this.addEventListener('change', this.#onFieldChange);
+    this.#syncPrinting();
+    this.#unsubscribeVariant = subscribe(EVENTS.variantChanged, () => this.#syncPrinting());
   }
 
   disconnectedCallback() {
     this.#form?.removeEventListener('submit', this.#onSubmit);
     this.removeEventListener('click', this.#onStep);
     this.removeEventListener('change', this.#onFieldChange);
+    this.#unsubscribeVariant?.();
+    this.#unsubscribeVariant = null;
   }
 
   /** Quantity stepper buttons ([data-quantity-step="-1" | "1"]). @param {MouseEvent} event */
@@ -414,10 +419,45 @@ class SwProductForm extends HTMLElement {
   /** @param {Event} event */
   #onFieldChange = (event) => {
     const field = event.target;
+    if (field instanceof HTMLInputElement && field.matches('[data-print-toggle]')) this.#syncPrinting();
     if (!(field instanceof HTMLElement) || field.getAttribute('aria-invalid') !== 'true') return;
     field.removeAttribute('aria-invalid');
     this.#showError('');
   };
+
+  #syncPrinting() {
+    const panel = this.querySelector('[data-personalization]');
+    const toggle = panel?.querySelector('[data-print-toggle]');
+    const details = panel?.querySelector('[data-print-details]');
+    const name = panel?.querySelector('[data-print-name]');
+    if (
+      !(toggle instanceof HTMLInputElement) ||
+      !(details instanceof HTMLElement) ||
+      !(name instanceof HTMLInputElement)
+    )
+      return;
+    details.hidden = !toggle.checked;
+    name.disabled = !toggle.checked;
+    name.required = toggle.checked;
+    if (!toggle.checked) name.value = '';
+    const button = this.querySelector('[data-base-price]');
+    const price = button?.querySelector('[data-product-button-price]');
+    const total = panel.querySelector('[data-print-total]');
+    const base = Number(button?.dataset.basePrice);
+    const extra = Number(panel.dataset.addonPrice);
+    if (price instanceof HTMLElement && Number.isFinite(base) && Number.isFinite(extra)) {
+      if (!price.dataset.baseMoney) price.dataset.baseMoney = price.textContent.trim();
+      const formatted = new Intl.NumberFormat(document.documentElement.lang || 'he-IL', {
+        style: 'currency',
+        currency: 'ILS',
+        maximumFractionDigits: 0,
+      }).format((base + extra) / 100);
+      price.textContent = toggle.checked ? formatted : price.dataset.baseMoney;
+      if (total instanceof HTMLElement) {
+        total.textContent = toggle.checked ? panel.dataset.totalTemplate.replace('[price]', formatted) : '';
+      }
+    }
+  }
 
   /** @param {SubmitEvent} event */
   #onSubmit = async (event) => {
@@ -449,6 +489,45 @@ class SwProductForm extends HTMLElement {
       // looked up (the button is about to update).
       this.dispatchEvent(new CustomEvent(FORM_INCOMPLETE, { bubbles: true, detail: { submitter: button } }));
       return;
+    }
+
+    const panel = form.querySelector('[data-personalization]');
+    const toggle = panel?.querySelector('[data-print-toggle]');
+    if (toggle instanceof HTMLInputElement && toggle.checked) {
+      const nameInput = panel.querySelector('[data-print-name]');
+      const name = nameInput instanceof HTMLInputElement ? nameInput.value.trim().replace(/\s+/g, ' ') : '';
+      if (!name || Array.from(name).length > 10 || !/^[\p{L} ]+$/u.test(name)) {
+        if (nameInput instanceof HTMLInputElement) {
+          nameInput.setAttribute('aria-invalid', 'true');
+          nameInput.focus();
+        }
+        this.#showError(nameInput?.dataset.requiredMessage ?? '');
+        return;
+      }
+      const parentId = String(formData.get('id'));
+      const quantity = String(formData.get('quantity') ?? '1');
+      const addonId = panel.dataset.addonId;
+      if (!/^\d+$/.test(addonId ?? '')) return;
+      const properties = [...formData.entries()].filter(([key]) => key.startsWith('properties['));
+      const propertyName = nameInput.name.slice(11, -1);
+      formData.delete('id');
+      formData.delete('quantity');
+      for (const [key] of properties) formData.delete(key);
+      const printReference = crypto.randomUUID();
+      formData.set('items[0][id]', parentId);
+      formData.set('items[0][quantity]', quantity);
+      for (const [key, value] of properties) {
+        if (key === nameInput.name) continue;
+        formData.append(`items[0][properties][${key.slice(11, -1)}]`, value);
+      }
+      // Keep the name only on the paid line: if it is removed, fulfillment has no print instruction.
+      formData.set('items[0][properties][_sw_print_reference]', printReference);
+      formData.set('items[1][id]', addonId);
+      formData.set('items[1][quantity]', quantity);
+      formData.set('items[1][parent_id]', parentId);
+      formData.set(`items[1][properties][${propertyName}]`, name);
+      formData.set('items[1][properties][_sw_print_addon]', 'true');
+      formData.set('items[1][properties][_sw_print_reference]', printReference);
     }
 
     this.#showError('', button);

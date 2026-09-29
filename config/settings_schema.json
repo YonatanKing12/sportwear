@@ -363,6 +363,17 @@
     ]
   },
   {
+    "name": "t:settings_schema.personalization.name",
+    "settings": [
+      {
+        "type": "text",
+        "id": "personalization_variant_id",
+        "label": "t:settings_schema.personalization.variant_id.label",
+        "info": "t:settings_schema.personalization.variant_id.info"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.cart.name",
     "settings": [
       {
