@@ -119,7 +119,7 @@
           {%- if audience_label != blank -%}
             <span>{{ audience_label }}</span>
           {%- endif -%}
-          {%- unless item.product.has_only_default_variant -%}
+          {%- unless item.product.has_only_default_variant or is_print_addon -%}
             {%- for option in item.options_with_values -%}
               {%- comment -%} Spaces around the separator keep the parts apart for screen readers. {%- endcomment -%}
               {%- if audience_label != blank or forloop.index > 1 %}
