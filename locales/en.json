@@ -879,6 +879,15 @@
     "team_card": {
       "eyebrow_team": "More from the team",
       "eyebrow_player": "More of this player"
+    },
+    "personalization": {
+      "heading": "Name printing on the back",
+      "choice": "Add a custom name for ₪{{ amount }} per item",
+      "name_label": "Name to print (up to 10 characters including spaces)",
+      "property_name": "Name to print",
+      "required": "Enter a name of up to 10 characters.",
+      "replaces": "If the product already has lettering on the back, your name will replace it.",
+      "total": "Price per item with printing: {{ price }}"
     }
   }
 }

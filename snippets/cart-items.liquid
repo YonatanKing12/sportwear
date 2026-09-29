@@ -78,11 +78,15 @@
       endif
 
       assign quantity_rule = item.variant.quantity_rule
+      assign is_print_addon = false
+      if item.properties._sw_print_addon == 'true' and item.parent_relationship != blank
+        assign is_print_addon = true
+      endif
       assign quantity_id = id_prefix | append: '-Quantity-' | append: forloop.index
       assign error_id = id_prefix | append: '-LineError-' | append: forloop.index
     -%}
     <li
-      class="cart-item"
+      class="cart-item{% if is_print_addon %} cart-item--print-addon{% endif %}"
       data-cart-line
       data-key="{{ item.key }}"
       data-variant-id="{{ item.variant_id }}"
@@ -192,62 +196,66 @@
         {%- endif -%}
       </div>
 
-      <div class="cart-item__controls">
-        <div class="cart-quantity">
-          <button
-            type="button"
-            class="cart-quantity__button js-only"
-            data-cart-step="-1"
-            data-cart-focus="{{ item.key }}:minus"
-            data-cart-control="minus"
+      {%- if is_print_addon -%}
+        <input type="hidden" name="updates[]" form="{{ form_id }}" value="{{ item.quantity }}">
+      {%- else -%}
+        <div class="cart-item__controls">
+          <div class="cart-quantity">
+            <button
+              type="button"
+              class="cart-quantity__button js-only"
+              data-cart-step="-1"
+              data-cart-focus="{{ item.key }}:minus"
+              data-cart-control="minus"
+            >
+              {%- render 'icon', name: 'minus', size: 16 -%}
+              <span class="visually-hidden">{{ 'cart.item.decrease' | t: title: line_name }}</span>
+            </button>
+            <label class="visually-hidden" for="{{ quantity_id }}">
+              {{- 'cart.item.quantity' | t: title: line_name -}}
+            </label>
+            <input
+              class="cart-quantity__input"
+              type="number"
+              id="{{ quantity_id }}"
+              name="updates[]"
+              form="{{ form_id }}"
+              value="{{ item.quantity }}"
+              min="0"
+              step="{{ quantity_rule.increment }}"
+              {% if quantity_rule.max != null %}
+                max="{{ quantity_rule.max }}"
+              {% endif %}
+              inputmode="numeric"
+              autocomplete="off"
+              aria-describedby="{{ error_id }}"
+              data-cart-quantity
+              data-cart-focus="{{ item.key }}:input"
+              data-cart-control="input"
+            >
+            <button
+              type="button"
+              class="cart-quantity__button js-only"
+              data-cart-step="1"
+              data-cart-focus="{{ item.key }}:plus"
+              data-cart-control="plus"
+            >
+              {%- render 'icon', name: 'plus', size: 16 -%}
+              <span class="visually-hidden">{{ 'cart.item.increase' | t: title: line_name }}</span>
+            </button>
+          </div>
+          <a
+            class="cart-item__remove"
+            href="{{ item.url_to_remove }}"
+            data-cart-remove
+            data-cart-focus="{{ item.key }}:remove"
+            data-cart-control="remove"
           >
-            {%- render 'icon', name: 'minus', size: 16 -%}
-            <span class="visually-hidden">{{ 'cart.item.decrease' | t: title: line_name }}</span>
-          </button>
-          <label class="visually-hidden" for="{{ quantity_id }}">
-            {{- 'cart.item.quantity' | t: title: line_name -}}
-          </label>
-          <input
-            class="cart-quantity__input"
-            type="number"
-            id="{{ quantity_id }}"
-            name="updates[]"
-            form="{{ form_id }}"
-            value="{{ item.quantity }}"
-            min="0"
-            step="{{ quantity_rule.increment }}"
-            {% if quantity_rule.max != null %}
-              max="{{ quantity_rule.max }}"
-            {% endif %}
-            inputmode="numeric"
-            autocomplete="off"
-            aria-describedby="{{ error_id }}"
-            data-cart-quantity
-            data-cart-focus="{{ item.key }}:input"
-            data-cart-control="input"
-          >
-          <button
-            type="button"
-            class="cart-quantity__button js-only"
-            data-cart-step="1"
-            data-cart-focus="{{ item.key }}:plus"
-            data-cart-control="plus"
-          >
-            {%- render 'icon', name: 'plus', size: 16 -%}
-            <span class="visually-hidden">{{ 'cart.item.increase' | t: title: line_name }}</span>
-          </button>
+            {%- render 'icon', name: 'trash', size: 20 -%}
+            <span class="visually-hidden">{{ 'cart.item.remove' | t: title: line_name }}</span>
+          </a>
         </div>
-        <a
-          class="cart-item__remove"
-          href="{{ item.url_to_remove }}"
-          data-cart-remove
-          data-cart-focus="{{ item.key }}:remove"
-          data-cart-control="remove"
-        >
-          {%- render 'icon', name: 'trash', size: 20 -%}
-          <span class="visually-hidden">{{ 'cart.item.remove' | t: title: line_name }}</span>
-        </a>
-      </div>
+      {%- endif -%}
 
       <div class="cart-item__price">
         {%- if compare_line_price > item.final_line_price -%}

@@ -1037,6 +1037,8 @@ export class World {
             total_discount: 0,
             options_with_values: [new BaseDrop('line_item_option', { name: optionName, value: variant.title })],
             properties: {},
+            parent_relationship: null,
+            instructions: null,
             requires_shipping: true,
             taxable: true,
             gift_card: false,

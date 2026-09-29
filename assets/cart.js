@@ -238,10 +238,24 @@ async function changeLine(view, key, entry) {
   try {
     // The line item key identifies the line, as Shopify recommends: unlike the line number it stays
     // right even if the lines were reordered since the last render (another tab, another change).
-    const { cart, sections } = await CartAPI.change(
+    let { cart, sections } = await CartAPI.change(
       { id: lineKey, quantity },
       { sections: sectionIds(), source: SOURCE },
     );
+    // A priced printing line belongs to this jersey. Shopify removes it with the parent, but a
+    // quantity edit must carry the same per-unit quantity through to the child.
+    if (quantity > 0) {
+      const parent = cart.items?.find((item) => item.key === lineKey);
+      const child = cart.items?.find(
+        (item) => item.properties?._sw_print_addon === 'true' && item.parent_relationship?.parent_key === parent?.key,
+      );
+      if (child && child.quantity !== parent.quantity) {
+        ({ cart, sections } = await CartAPI.change(
+          { id: child.key, quantity: parent.quantity },
+          { sections: sectionIds(), source: SOURCE },
+        ));
+      }
+    }
     settle();
     await renderViews(sections);
 

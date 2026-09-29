@@ -30,6 +30,12 @@
   endif
   assign error_id = form_id | append: '-error'
   assign quantity_id = form_id | append: '-quantity'
+  assign print_eligible = false
+  if product.type == 'Football Jersey' or product.type == 'Basketball Jersey'
+    if settings.personalization_variant_id != blank
+      assign print_eligible = true
+    endif
+  endif
 -%}
 <sw-product-form class="product-buy" data-source="product-form">
   {%- form 'product', product, id: form_id, class: 'product-buy__form' -%}
@@ -42,6 +48,39 @@
         disabled
       {% endif %}
     >
+    {%- if print_eligible -%}
+      <fieldset
+        class="product-print js-only"
+        data-personalization
+        data-addon-id="{{ settings.personalization_variant_id | escape }}"
+        data-addon-price="3500"
+        data-total-template="{{ 'products.personalization.total' | t: price: '[price]' | escape }}"
+      >
+        <legend class="product-print__heading">{{ 'products.personalization.heading' | t }}</legend>
+        <label class="product-print__choice">
+          <input type="checkbox" data-print-toggle>
+          <span>{{ 'products.personalization.choice' | t: amount: '35' }}</span>
+        </label>
+        <div class="product-print__details" data-print-details hidden>
+          <label class="field__label" for="{{ form_id }}-print-name">
+            {{- 'products.personalization.name_label' | t -}}
+          </label>
+          <input
+            class="field__input"
+            id="{{ form_id }}-print-name"
+            type="text"
+            name="properties[{{ 'products.personalization.property_name' | t | escape }}]"
+            maxlength="10"
+            autocomplete="off"
+            data-print-name
+            data-required-message="{{ 'products.personalization.required' | t | escape }}"
+            disabled
+          >
+          <p class="product-print__note">{{ 'products.personalization.replaces' | t }}</p>
+          <p class="product-print__total" data-print-total aria-live="polite"></p>
+        </div>
+      </fieldset>
+    {%- endif -%}
     <div class="product-buy__row">
       {%- if block.settings.show_quantity -%}
         <div class="product-buy__quantity">
@@ -74,6 +113,7 @@
           name="add"
           id="{{ form_id }}-submit"
           class="button button--primary button--large button--full product-submit"
+          data-base-price="{{ variant.price }}"
           aria-describedby="{{ error_id }}"
           {% unless available %}
             disabled
@@ -87,7 +127,7 @@
               {%- render 'icon', name: 'bag', size: 20 -%}
               <span>{{ 'products.buy.add_to_cart' | t }}</span>
               <span aria-hidden="true">·</span>
-              <bdi>{{ variant.price | money_without_trailing_zeros }}</bdi>
+              <bdi data-product-button-price>{{ variant.price | money_without_trailing_zeros }}</bdi>
             </span>
           {%- elsif variant == blank -%}
             <span>{{ 'products.buy.unavailable' | t }}</span>
@@ -104,7 +144,7 @@
       role="alert"
       data-form-error
     ></p>
-    {%- if block.settings.show_dynamic_checkout -%}
+    {%- if block.settings.show_dynamic_checkout and print_eligible == false -%}
       <div
         class="product-buy__checkout"
         data-product-dynamic="checkout"
@@ -120,6 +160,49 @@
 </sw-product-form>
 
 {% stylesheet %}
+  .product-print {
+    margin-block-end: var(--space-4);
+    padding: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+  .product-print__heading {
+    font-weight: 800;
+    padding-inline: var(--space-1);
+  }
+  .product-print__choice {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    min-block-size: var(--touch-target);
+    cursor: pointer;
+  }
+  .product-print__choice input {
+    inline-size: 20px;
+    block-size: 20px;
+    accent-color: var(--color-text);
+  }
+  .product-print__details {
+    margin-block-start: var(--space-3);
+  }
+  .product-print__details[hidden] {
+    display: none;
+  }
+  .product-print__details .field__input {
+    display: block;
+    inline-size: 100%;
+    margin-block-start: var(--space-2);
+  }
+  .product-print__note {
+    margin-block-start: var(--space-2);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+
+  .product-print__total {
+    margin-block-start: var(--space-2);
+    font-weight: 800;
+  }
   .product-buy {
     display: block;
   }
