@@ -1,0 +1,2180 @@
+{
+  "_note": "The owner (2026-09-30): a collection of 250 products, a mixed order of basketball jerseys, football shirts and shorts, the most popular in the world, for the influencer barter platform they work with (it takes up to 250 products; each influencer picks one or two). A manual collection in admin, on no sales channel (not on the site), with seo.hidden = 1 so it stays out of the sitemap and search if it is ever published. Its order is set by hand (MANUAL).",
+  "date": "2026-09-30",
+  "collection": {
+    "id": "gid://shopify/Collection/513063256368",
+    "handle": "collabs",
+    "title": "שיתופי פעולה",
+    "admin": "https://admin.shopify.com/store/sfgzdp-1m/collections/513063256368",
+    "sort": "MANUAL",
+    "channels": "none (Online Store, Point of Sale and Google & YouTube are the store's only channels)",
+    "metafields": {
+      "seo.hidden": 1
+    }
+  },
+  "counts": {
+    "total": 250,
+    "football_shirts": 97,
+    "basketball_jerseys": 103,
+    "basketball_shorts": 50,
+    "shorts_next_to_their_jersey": 49
+  },
+  "rules": [
+    "Adults only (no kids sets, kids jerseys or hoodies); ACTIVE products on the Online Store.",
+    "Football: the biggest clubs and national teams by global following (Real Madrid, Barcelona, Manchester United and City, Arsenal, Chelsea, PSG, Bayern, Juventus, Milan, Inter, Dortmund, Atlético; Argentina, Brazil, Portugal, France, England, Germany, Spain, Italy, ...), mostly 26/27 and World Cup 2026 kits, 1 to 4 kits per team. Israel and Maccabi Haifa are in for the Israeli audience. Liverpool has no product in the store.",
+    "Basketball jerseys: the best-selling players now and the legends (LeBron James, Stephen Curry, Michael Jordan, Kobe Bryant, Luka Doncic, Giannis, Wembanyama, Tatum, Edwards, Gilgeous-Alexander, Jokic, Durant, ...), a cap per player and one per team + colour + style, so nothing looks twice.",
+    "Shorts: 50 of the 116, spread over the popular teams; 49 are the matching shorts of a jersey in the collection (the set pairs in sportwear.complements) and come right after it, so an influencer can pick a full set. The Charlotte white shorts have no matching jersey and follow a Hornets jersey.",
+    "Left out: the four products flagged for the owner (sw-jerseys-105462222, sw-jerseys-152407516, sw-jerseys-125774963, sw-jerseys-135857824), WNBA, and the two 'מריה' print shirts.",
+    "Order: most popular first, mixed: a football shirt, then a basketball jersey (with its shorts when the pair is in), and so on."
+  ],
+  "rebuild": "Scripts and the full product list used: the session scratchpad (pick_bb.py, assemble.py); the list below is the order in Shopify.",
+  "items": [
+    {
+      "pos": 1,
+      "handle": "real-madrid-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309468860720",
+      "title": "חולצת בית ריאל מדריד 26/27",
+      "type": "Football Jersey",
+      "team": "real-madrid"
+    },
+    {
+      "pos": 2,
+      "handle": "sw-jerseys-98170299",
+      "id": "gid://shopify/Product/15308717687088",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 שחור דוגמת נחש",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 3,
+      "handle": "sw-shorts-97018230",
+      "id": "gid://shopify/Product/15310215938352",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור דוגמת נחש",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-86507461", "sw-jerseys-98170299"]
+    },
+    {
+      "pos": 4,
+      "handle": "sw-jerseys-106384395",
+      "id": "gid://shopify/Product/15308698059056",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול | סמל גשר ופסי צד לבנים",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 5,
+      "handle": "sw-shorts-100267629",
+      "id": "gid://shopify/Product/15310203289904",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-106384395"]
+    },
+    {
+      "pos": 6,
+      "handle": "barcelona-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309465682224",
+      "title": "חולצת בית ברצלונה 26/27",
+      "type": "Football Jersey",
+      "team": "barcelona"
+    },
+    {
+      "pos": 7,
+      "handle": "sw-jerseys-103160556",
+      "id": "gid://shopify/Product/15308697993520",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 שחור | כיתוב CHICAGO אדום",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 8,
+      "handle": "sw-shorts-114463161",
+      "id": "gid://shopify/Product/15310205255984",
+      "title": "מכנסי כדורסל שיקגו בולס שחור",
+      "type": "Basketball Shorts",
+      "team": "chicago-bulls",
+      "set_with": ["sw-jerseys-103160556"]
+    },
+    {
+      "pos": 9,
+      "handle": "argentina-home-jersey-2026",
+      "id": "gid://shopify/Product/15309464174896",
+      "title": "חולצת בית נבחרת ארגנטינה 2026",
+      "type": "Football Jersey",
+      "team": "argentina"
+    },
+    {
+      "pos": 10,
+      "handle": "sw-jerseys-86652506",
+      "id": "gid://shopify/Product/15308670239024",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 לבן | עיטור סגול וצהוב",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 11,
+      "handle": "sw-shorts-102715980",
+      "id": "gid://shopify/Product/15308705530160",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס לבן",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-92980294", "sw-jerseys-86652506"]
+    },
+    {
+      "pos": 12,
+      "handle": "manchester-united-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309468401968",
+      "title": "חולצת בית מנצ׳סטר יונייטד 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-united"
+    },
+    {
+      "pos": 13,
+      "handle": "sw-jerseys-165920571",
+      "id": "gid://shopify/Product/15308601852208",
+      "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 לבן",
+      "type": "Basketball Jersey",
+      "team": "dallas-mavericks",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 14,
+      "handle": "sw-shorts-117771220",
+      "id": "gid://shopify/Product/15310206075184",
+      "title": "מכנסי כדורסל דאלאס מאבריקס לבן",
+      "type": "Basketball Shorts",
+      "team": "dallas-mavericks",
+      "set_with": ["sw-jerseys-165920571"]
+    },
+    {
+      "pos": 15,
+      "handle": "brazil-home-jersey-2026",
+      "id": "gid://shopify/Product/15309467746608",
+      "title": "חולצת בית נבחרת ברזיל 2026",
+      "type": "Football Jersey",
+      "team": "brazil"
+    },
+    {
+      "pos": 16,
+      "handle": "sw-jerseys-100882492",
+      "id": "gid://shopify/Product/15308712640816",
+      "title": "גופיית כדורסל מילווקי באקס מספר 34 שחור | סמל אייל ירוק ופסי צד",
+      "type": "Basketball Jersey",
+      "team": "milwaukee-bucks",
+      "player": "giannis-antetokounmpo"
+    },
+    {
+      "pos": 17,
+      "handle": "portugal-home-jersey-2026",
+      "id": "gid://shopify/Product/15309486620976",
+      "title": "חולצת בית נבחרת פורטוגל 2026",
+      "type": "Football Jersey",
+      "team": "portugal"
+    },
+    {
+      "pos": 18,
+      "handle": "sw-jerseys-136506201",
+      "id": "gid://shopify/Product/15308672631088",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 1 שחור | סמל 6 בחזה",
+      "type": "Basketball Jersey",
+      "team": "san-antonio-spurs",
+      "player": "victor-wembanyama"
+    },
+    {
+      "pos": 19,
+      "handle": "manchester-city-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480624432",
+      "title": "חולצת בית מנצ׳סטר סיטי 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-city"
+    },
+    {
+      "pos": 20,
+      "handle": "sw-jerseys-106680476",
+      "id": "gid://shopify/Product/15308697764144",
+      "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק | כיתוב BOSTON",
+      "type": "Basketball Jersey",
+      "team": "boston-celtics",
+      "player": "jayson-tatum"
+    },
+    {
+      "pos": 21,
+      "handle": "sw-shorts-116518878",
+      "id": "gid://shopify/Product/15310205616432",
+      "title": "מכנסי כדורסל בוסטון סלטיקס ירוק",
+      "type": "Basketball Shorts",
+      "team": "boston-celtics",
+      "set_with": ["sw-jerseys-106680476", "sw-jerseys-97381444"]
+    },
+    {
+      "pos": 22,
+      "handle": "paris-saint-germain-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309468631344",
+      "title": "חולצת בית פריז סן ז׳רמן 26/27",
+      "type": "Football Jersey",
+      "team": "paris-saint-germain"
+    },
+    {
+      "pos": 23,
+      "handle": "sw-jerseys-163399313",
+      "id": "gid://shopify/Product/15308609126704",
+      "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 כחול כהה שילוב צבעים",
+      "type": "Basketball Jersey",
+      "team": "minnesota-timberwolves",
+      "player": "anthony-edwards"
+    },
+    {
+      "pos": 24,
+      "handle": "sw-shorts-169876808",
+      "id": "gid://shopify/Product/15310214431024",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול כהה 2023",
+      "type": "Basketball Shorts",
+      "team": "minnesota-timberwolves",
+      "set_with": ["sw-jerseys-163399313"]
+    },
+    {
+      "pos": 25,
+      "handle": "bayern-munich-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309467517232",
+      "title": "חולצת בית באיירן מינכן 26/27",
+      "type": "Football Jersey",
+      "team": "bayern-munich"
+    },
+    {
+      "pos": 26,
+      "handle": "sw-jerseys-128864790",
+      "id": "gid://shopify/Product/15308673843504",
+      "title": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 2 כחול 2023",
+      "type": "Basketball Jersey",
+      "team": "oklahoma-city-thunder",
+      "player": "shai-gilgeous-alexander"
+    },
+    {
+      "pos": 27,
+      "handle": "sw-football-228361436",
+      "id": "gid://shopify/Product/15308633178416",
+      "title": "חולצת כדורגל ארסנל בית 26/27",
+      "type": "Football Jersey",
+      "team": "arsenal"
+    },
+    {
+      "pos": 28,
+      "handle": "sw-jerseys-97402129",
+      "id": "gid://shopify/Product/15308724338992",
+      "title": "גופיית כדורסל דנבר נאגטס מספר 15 כחול | כיתוב לבן וצווארון אדום",
+      "type": "Basketball Jersey",
+      "team": "denver-nuggets",
+      "player": "nikola-jokic"
+    },
+    {
+      "pos": 29,
+      "handle": "sw-football-194076048",
+      "id": "gid://shopify/Product/15308653658416",
+      "title": "חולצת כדורגל נבחרת צרפת בית 25/26",
+      "type": "Football Jersey",
+      "team": "france"
+    },
+    {
+      "pos": 30,
+      "handle": "sw-jerseys-106552848",
+      "id": "gid://shopify/Product/15308696486192",
+      "title": "גופיית כדורסל ברוקלין נטס מספר 7 שחור | כיתוב BROOKLYN",
+      "type": "Basketball Jersey",
+      "team": "brooklyn-nets",
+      "player": "kevin-durant"
+    },
+    {
+      "pos": 31,
+      "handle": "sw-shorts-107105006",
+      "id": "gid://shopify/Product/15310203519280",
+      "title": "מכנסי כדורסל ברוקלין נטס שחור",
+      "type": "Basketball Shorts",
+      "team": "brooklyn-nets",
+      "set_with": ["sw-jerseys-106553077", "sw-jerseys-107311417", "sw-jerseys-106552848"]
+    },
+    {
+      "pos": 32,
+      "handle": "chelsea-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481083184",
+      "title": "חולצת בית צ׳לסי 26/27",
+      "type": "Football Jersey",
+      "team": "chelsea"
+    },
+    {
+      "pos": 33,
+      "handle": "sw-jerseys-114585756",
+      "id": "gid://shopify/Product/15308677579056",
+      "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | כיתוב MEMPHIS וסמל כחול כהה",
+      "type": "Basketball Jersey",
+      "team": "memphis-grizzlies",
+      "player": "ja-morant"
+    },
+    {
+      "pos": 34,
+      "handle": "sw-shorts-117771209",
+      "id": "gid://shopify/Product/15310205681968",
+      "title": "מכנסי כדורסל ממפיס גריזליס לבן",
+      "type": "Basketball Shorts",
+      "team": "memphis-grizzlies",
+      "set_with": ["sw-jerseys-114585756"]
+    },
+    {
+      "pos": 35,
+      "handle": "sw-football-187085262",
+      "id": "gid://shopify/Product/15308669190448",
+      "title": "חולצת כדורגל יובנטוס 25/26",
+      "type": "Football Jersey",
+      "team": "juventus"
+    },
+    {
+      "pos": 36,
+      "handle": "sw-jerseys-97934008",
+      "id": "gid://shopify/Product/15308674072880",
+      "title": "גופיית כדורסל פילדלפיה 76׳ מספר 3 אפור",
+      "type": "Basketball Jersey",
+      "team": "philadelphia-76ers",
+      "player": "allen-iverson"
+    },
+    {
+      "pos": 37,
+      "handle": "ac-milan-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480657200",
+      "title": "חולצת בית מילאן 26/27",
+      "type": "Football Jersey",
+      "team": "ac-milan"
+    },
+    {
+      "pos": 38,
+      "handle": "sw-jerseys-138859651",
+      "id": "gid://shopify/Product/15308672270640",
+      "title": "גופיית כדורסל ניו יורק ניקס מספר 11 כחול 2023",
+      "type": "Basketball Jersey",
+      "team": "new-york-knicks",
+      "player": "jalen-brunson"
+    },
+    {
+      "pos": 39,
+      "handle": "sw-shorts-118413057",
+      "id": "gid://shopify/Product/15310206173488",
+      "title": "מכנסי כדורסל ניו יורק ניקס כחול",
+      "type": "Basketball Shorts",
+      "team": "new-york-knicks",
+      "set_with": ["sw-jerseys-138859651"]
+    },
+    {
+      "pos": 40,
+      "handle": "al-nassr-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481509168",
+      "title": "חולצת בית אל נאסר 26/27",
+      "type": "Football Jersey",
+      "team": "al-nassr"
+    },
+    {
+      "pos": 41,
+      "handle": "sw-jerseys-115260102",
+      "id": "gid://shopify/Product/15308677480752",
+      "title": "גופיית כדורסל מיאמי היט מספר 22 שחור 2022",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "jimmy-butler"
+    },
+    {
+      "pos": 42,
+      "handle": "sw-shorts-111582994",
+      "id": "gid://shopify/Product/15310204076336",
+      "title": "מכנסי כדורסל מיאמי היט שחור מהדורת עיר 2022",
+      "type": "Basketball Shorts",
+      "team": "miami-heat",
+      "set_with": ["sw-jerseys-115260069", "sw-jerseys-115260102", "sw-jerseys-115260002"]
+    },
+    {
+      "pos": 43,
+      "handle": "sw-football-185463491",
+      "id": "gid://shopify/Product/15308686098736",
+      "title": "חולצת כדורגל אינטר מיאמי בית 24/25",
+      "type": "Football Jersey",
+      "team": "inter-miami"
+    },
+    {
+      "pos": 44,
+      "handle": "sw-jerseys-143991246",
+      "id": "gid://shopify/Product/15308632850736",
+      "title": "גופיית כדורסל פיניקס סאנס מספר 1 סגול 2024",
+      "type": "Basketball Jersey",
+      "team": "phoenix-suns",
+      "player": "devin-booker"
+    },
+    {
+      "pos": 45,
+      "handle": "sw-shorts-152903274",
+      "id": "gid://shopify/Product/15310210564400",
+      "title": "מכנסי כדורסל פיניקס סאנס סגול 2024",
+      "type": "Basketball Shorts",
+      "team": "phoenix-suns",
+      "set_with": ["sw-jerseys-143991246"]
+    },
+    {
+      "pos": 46,
+      "handle": "israel-home-jersey-2026",
+      "id": "gid://shopify/Product/15309468172592",
+      "title": "חולצת בית נבחרת ישראל 2026",
+      "type": "Football Jersey",
+      "team": "israel"
+    },
+    {
+      "pos": 47,
+      "handle": "sw-jerseys-106553077",
+      "id": "gid://shopify/Product/15308694454576",
+      "title": "גופיית כדורסל ברוקלין נטס מספר 11 שחור | כיתוב BROOKLYN",
+      "type": "Basketball Jersey",
+      "team": "brooklyn-nets",
+      "player": "kyrie-irving"
+    },
+    {
+      "pos": 48,
+      "handle": "sw-jerseys-110672660",
+      "id": "gid://shopify/Product/15308640125232",
+      "title": "גופיית כדורסל פילדלפיה 76׳ מספר 21 לבן | כיתוב PHILA",
+      "type": "Basketball Jersey",
+      "team": "philadelphia-76ers",
+      "player": "joel-embiid"
+    },
+    {
+      "pos": 49,
+      "handle": "sw-shorts-134500600",
+      "id": "gid://shopify/Product/15308705235248",
+      "title": "מכנסי כדורסל פילדלפיה 76׳ לבן",
+      "type": "Basketball Shorts",
+      "team": "philadelphia-76ers",
+      "set_with": ["sw-jerseys-110672660"]
+    },
+    {
+      "pos": 50,
+      "handle": "england-home-jersey-2026",
+      "id": "gid://shopify/Product/15309483934000",
+      "title": "חולצת בית נבחרת אנגליה 2026",
+      "type": "Football Jersey",
+      "team": "england"
+    },
+    {
+      "pos": 51,
+      "handle": "sw-jerseys-122604480",
+      "id": "gid://shopify/Product/15308660703536",
+      "title": "גופיית כדורסל שארלוט הורנטס מספר 1 צבע מדורג מהדורת עיר 2022",
+      "type": "Basketball Jersey",
+      "team": "charlotte-hornets",
+      "player": "lamelo-ball"
+    },
+    {
+      "pos": 52,
+      "handle": "sw-shorts-112616724",
+      "id": "gid://shopify/Product/15310204928304",
+      "title": "מכנסי כדורסל שארלוט הורנטס צבע מדורג מהדורת עיר 2022",
+      "type": "Basketball Shorts",
+      "team": "charlotte-hornets",
+      "set_with": ["sw-jerseys-122604480"]
+    },
+    {
+      "pos": 53,
+      "handle": "sw-football-206087167",
+      "id": "gid://shopify/Product/15308652970288",
+      "title": "חולצת כדורגל נבחרת גרמניה בית 2026",
+      "type": "Football Jersey",
+      "team": "germany"
+    },
+    {
+      "pos": 54,
+      "handle": "sw-jerseys-127052899",
+      "id": "gid://shopify/Product/15308663554352",
+      "title": "גופיית כדורסל מיאמי היט מספר 3 לבן 2022",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "dwyane-wade"
+    },
+    {
+      "pos": 55,
+      "handle": "sw-shorts-148159925",
+      "id": "gid://shopify/Product/15310209155376",
+      "title": "מכנסי כדורסל מיאמי היט לבן מהדורת עיר 2023",
+      "type": "Basketball Shorts",
+      "team": "miami-heat",
+      "set_with": ["sw-jerseys-122915621", "sw-jerseys-127052899"]
+    },
+    {
+      "pos": 56,
+      "handle": "spain-home-jersey-2026",
+      "id": "gid://shopify/Product/15309487505712",
+      "title": "חולצת בית נבחרת ספרד 2026",
+      "type": "Football Jersey",
+      "team": "spain"
+    },
+    {
+      "pos": 57,
+      "handle": "sw-jerseys-158636219",
+      "id": "gid://shopify/Product/15308610699568",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 צהוב | צווארון עגול",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "shaquille-oneal"
+    },
+    {
+      "pos": 58,
+      "handle": "inter-milan-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309487407408",
+      "title": "חולצת בית אינטר 26/27",
+      "type": "Football Jersey",
+      "team": "inter-milan"
+    },
+    {
+      "pos": 59,
+      "handle": "sw-jerseys-159109452",
+      "id": "gid://shopify/Product/15308603523376",
+      "title": "גופיית כדורסל שיקגו בולס מספר 91",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "dennis-rodman"
+    },
+    {
+      "pos": 60,
+      "handle": "borussia-dortmund-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309488816432",
+      "title": "חולצת בית בורוסיה דורטמונד 26/27",
+      "type": "Football Jersey",
+      "team": "borussia-dortmund"
+    },
+    {
+      "pos": 61,
+      "handle": "sw-jerseys-160789712",
+      "id": "gid://shopify/Product/15308610568496",
+      "title": "גופיית כדורסל שיקגו בולס מספר 1 אדום | תג תחתון שחור",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "derrick-rose"
+    },
+    {
+      "pos": 62,
+      "handle": "sw-shorts-114463096",
+      "id": "gid://shopify/Product/15310204830000",
+      "title": "מכנסי כדורסל שיקגו בולס אדום",
+      "type": "Basketball Shorts",
+      "team": "chicago-bulls",
+      "set_with": ["sw-jerseys-160789712"]
+    },
+    {
+      "pos": 63,
+      "handle": "sw-football-247596274",
+      "id": "gid://shopify/Product/15308632195376",
+      "title": "חולצת כדורגל אתלטיקו מדריד בית 26/27",
+      "type": "Football Jersey",
+      "team": "atletico-madrid"
+    },
+    {
+      "pos": 64,
+      "handle": "sw-jerseys-181429961",
+      "id": "gid://shopify/Product/15308592578864",
+      "title": "גופיית כדורסל בוסטון סלטיקס מספר 33 שחור",
+      "type": "Basketball Jersey",
+      "team": "boston-celtics",
+      "player": "larry-bird"
+    },
+    {
+      "pos": 65,
+      "handle": "sw-shorts-117771224",
+      "id": "gid://shopify/Product/15310206730544",
+      "title": "מכנסי כדורסל בוסטון סלטיקס שחור",
+      "type": "Basketball Shorts",
+      "team": "boston-celtics",
+      "set_with": ["sw-jerseys-181429961"]
+    },
+    {
+      "pos": 66,
+      "handle": "tottenham-hotspur-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309488849200",
+      "title": "חולצת בית טוטנהאם 26/27",
+      "type": "Football Jersey",
+      "team": "tottenham-hotspur"
+    },
+    {
+      "pos": 67,
+      "handle": "sw-jerseys-95048560",
+      "id": "gid://shopify/Product/15308723388720",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 32 צהוב",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "magic-johnson"
+    },
+    {
+      "pos": 68,
+      "handle": "italy-home-jersey-2026",
+      "id": "gid://shopify/Product/15309488488752",
+      "title": "חולצת בית נבחרת איטליה 2026",
+      "type": "Football Jersey",
+      "team": "italy"
+    },
+    {
+      "pos": 69,
+      "handle": "sw-jerseys-97382254",
+      "id": "gid://shopify/Product/15308717982000",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 21 שחור",
+      "type": "Basketball Jersey",
+      "team": "san-antonio-spurs",
+      "player": "tim-duncan"
+    },
+    {
+      "pos": 70,
+      "handle": "sw-football-250582309",
+      "id": "gid://shopify/Product/15308631966000",
+      "title": "חולצת כדורגל נאפולי בית 26/27",
+      "type": "Football Jersey",
+      "team": "napoli"
+    },
+    {
+      "pos": 71,
+      "handle": "sw-jerseys-178550496",
+      "id": "gid://shopify/Product/15308592709936",
+      "title": "גופיית כדורסל טורונטו ראפטורס מספר 15 לבן",
+      "type": "Basketball Jersey",
+      "team": "toronto-raptors",
+      "player": "vince-carter"
+    },
+    {
+      "pos": 72,
+      "handle": "netherlands-home-jersey-2026",
+      "id": "gid://shopify/Product/15309485605168",
+      "title": "חולצת בית נבחרת הולנד 2026",
+      "type": "Football Jersey",
+      "team": "netherlands"
+    },
+    {
+      "pos": 73,
+      "handle": "sw-jerseys-97934727",
+      "id": "gid://shopify/Product/15308717785392",
+      "title": "גופיית כדורסל שיקגו בולס מספר 33 אדום",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "scottie-pippen"
+    },
+    {
+      "pos": 74,
+      "handle": "maccabi-haifa-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309468303664",
+      "title": "חולצת בית מכבי חיפה 26/27",
+      "type": "Football Jersey",
+      "team": "maccabi-haifa"
+    },
+    {
+      "pos": 75,
+      "handle": "sw-jerseys-102972721",
+      "id": "gid://shopify/Product/15308698091824",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 3 כחול",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "anthony-davis"
+    },
+    {
+      "pos": 76,
+      "handle": "sw-shorts-117771221",
+      "id": "gid://shopify/Product/15310205518128",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס כחול רטרו",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-102972721", "sw-jerseys-98170105", "sw-jerseys-188304969"]
+    },
+    {
+      "pos": 77,
+      "handle": "galatasaray-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310311686448",
+      "title": "חולצת בית גלאטסראיי 26/27",
+      "type": "Football Jersey",
+      "team": "galatasaray"
+    },
+    {
+      "pos": 78,
+      "handle": "sw-jerseys-97381444",
+      "id": "gid://shopify/Product/15308724437296",
+      "title": "גופיית כדורסל בוסטון סלטיקס מספר 7 ירוק",
+      "type": "Basketball Jersey",
+      "team": "boston-celtics",
+      "player": "jaylen-brown"
+    },
+    {
+      "pos": 79,
+      "handle": "as-roma-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15309485146416",
+      "title": "חולצת בית רומא 26/27",
+      "type": "Football Jersey",
+      "team": "as-roma"
+    },
+    {
+      "pos": 80,
+      "handle": "sw-jerseys-89539469",
+      "id": "gid://shopify/Product/15308691505456",
+      "title": "גופיית כדורסל אטלנטה הוקס מספר 11 אדום",
+      "type": "Basketball Jersey",
+      "team": "atlanta-hawks",
+      "player": "trae-young"
+    },
+    {
+      "pos": 81,
+      "handle": "newcastle-united-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310259519792",
+      "title": "חולצת בית ניוקאסל 26/27",
+      "type": "Football Jersey",
+      "team": "newcastle-united"
+    },
+    {
+      "pos": 82,
+      "handle": "sw-jerseys-225120784",
+      "id": "gid://shopify/Product/15308554109232",
+      "title": "גופיית כדורסל פילדלפיה 76׳ מספר 0 כחול",
+      "type": "Basketball Jersey",
+      "team": "philadelphia-76ers",
+      "player": "tyrese-maxey"
+    },
+    {
+      "pos": 83,
+      "handle": "sw-shorts-134500605",
+      "id": "gid://shopify/Product/15310208500016",
+      "title": "מכנסי כדורסל פילדלפיה 76׳ כחול",
+      "type": "Basketball Shorts",
+      "team": "philadelphia-76ers",
+      "set_with": ["sw-jerseys-225120784"]
+    },
+    {
+      "pos": 84,
+      "handle": "morocco-home-jersey-2026",
+      "id": "gid://shopify/Product/15309484720432",
+      "title": "חולצת בית נבחרת מרוקו 2026",
+      "type": "Football Jersey",
+      "team": "morocco"
+    },
+    {
+      "pos": 85,
+      "handle": "sw-jerseys-107785334",
+      "id": "gid://shopify/Product/15308681412912",
+      "title": "גופיית כדורסל פורטלנד טרייל בלייזרס מספר 0 שחור",
+      "type": "Basketball Jersey",
+      "team": "portland-trail-blazers",
+      "player": "damian-lillard"
+    },
+    {
+      "pos": 86,
+      "handle": "belgium-home-jersey-2026",
+      "id": "gid://shopify/Product/15309488455984",
+      "title": "חולצת בית נבחרת בלגיה 2026",
+      "type": "Football Jersey",
+      "team": "belgium"
+    },
+    {
+      "pos": 87,
+      "handle": "sw-jerseys-107311417",
+      "id": "gid://shopify/Product/15308694257968",
+      "title": "גופיית כדורסל ברוקלין נטס מספר 13 שחור",
+      "type": "Basketball Jersey",
+      "team": "brooklyn-nets",
+      "player": "james-harden"
+    },
+    {
+      "pos": 88,
+      "handle": "sw-jerseys-164994672",
+      "id": "gid://shopify/Product/15308606439728",
+      "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 2 כחול כהה",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-clippers",
+      "player": "kawhi-leonard"
+    },
+    {
+      "pos": 89,
+      "handle": "sw-shorts-182185751",
+      "id": "gid://shopify/Product/15310214824240",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה 2025",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-clippers",
+      "set_with": ["sw-jerseys-164994672"]
+    },
+    {
+      "pos": 90,
+      "handle": "croatia-home-jersey-2026",
+      "id": "gid://shopify/Product/15309481574704",
+      "title": "חולצת בית נבחרת קרואטיה 2026",
+      "type": "Football Jersey",
+      "team": "croatia"
+    },
+    {
+      "pos": 91,
+      "handle": "sw-jerseys-149291561",
+      "id": "gid://shopify/Product/15308623937840",
+      "title": "גופיית כדורסל לוס אנג׳לס קליפרס מספר 13 כחול כהה מהדורת עיר",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-clippers",
+      "player": "paul-george"
+    },
+    {
+      "pos": 92,
+      "handle": "sw-shorts-160277296",
+      "id": "gid://shopify/Product/15310212333872",
+      "title": "מכנסי כדורסל לוס אנג׳לס קליפרס כחול כהה מהדורת עיר 2024",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-clippers",
+      "set_with": ["sw-jerseys-149291561"]
+    },
+    {
+      "pos": 93,
+      "handle": "benfica-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310297858352",
+      "title": "חולצת בית בנפיקה 26/27",
+      "type": "Football Jersey",
+      "team": "benfica"
+    },
+    {
+      "pos": 94,
+      "handle": "sw-jerseys-149584713",
+      "id": "gid://shopify/Product/15308650053936",
+      "title": "גופיית כדורסל ניו אורלינס פליקנס מספר 1 שחור 2024",
+      "type": "Basketball Jersey",
+      "team": "new-orleans-pelicans",
+      "player": "zion-williamson"
+    },
+    {
+      "pos": 95,
+      "handle": "porto-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310313226544",
+      "title": "חולצת בית פורטו 26/27",
+      "type": "Football Jersey",
+      "team": "porto"
+    },
+    {
+      "pos": 96,
+      "handle": "sw-jerseys-116023843",
+      "id": "gid://shopify/Product/15308677382448",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 11 לבן",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "klay-thompson"
+    },
+    {
+      "pos": 97,
+      "handle": "sw-shorts-100267711",
+      "id": "gid://shopify/Product/15310202306864",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-116023843"]
+    },
+    {
+      "pos": 98,
+      "handle": "boca-juniors-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310240579888",
+      "title": "חולצת בית בוקה ג׳וניורס 26/27",
+      "type": "Football Jersey",
+      "team": "boca-juniors"
+    },
+    {
+      "pos": 99,
+      "handle": "sw-jerseys-115260069",
+      "id": "gid://shopify/Product/15308681118000",
+      "title": "גופיית כדורסל מיאמי היט מספר 14 שחור 2022",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "tyler-herro"
+    },
+    {
+      "pos": 100,
+      "handle": "flamengo-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310241694000",
+      "title": "חולצת בית פלמנגו 26/27",
+      "type": "Football Jersey",
+      "team": "flamengo"
+    },
+    {
+      "pos": 101,
+      "handle": "sw-jerseys-105900531",
+      "id": "gid://shopify/Product/15308698321200",
+      "title": "גופיית כדורסל שיקגו בולס מספר 11 לבן",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls"
+    },
+    {
+      "pos": 102,
+      "handle": "sw-shorts-114169258",
+      "id": "gid://shopify/Product/15310204698928",
+      "title": "מכנסי כדורסל שיקגו בולס לבן",
+      "type": "Basketball Shorts",
+      "team": "chicago-bulls",
+      "set_with": ["sw-jerseys-105900531"]
+    },
+    {
+      "pos": 103,
+      "handle": "fenerbahce-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310308606256",
+      "title": "חולצת בית פנרבחצ׳ה 26/27",
+      "type": "Football Jersey",
+      "team": "fenerbahce"
+    },
+    {
+      "pos": 104,
+      "handle": "sw-jerseys-98170105",
+      "id": "gid://shopify/Product/15308713296176",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 כחול",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 105,
+      "handle": "al-hilal-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310295728432",
+      "title": "חולצת בית אל הילאל 26/27",
+      "type": "Football Jersey",
+      "team": "al-hilal"
+    },
+    {
+      "pos": 106,
+      "handle": "sw-jerseys-106390553",
+      "id": "gid://shopify/Product/15308694585648",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 שחור 2022",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 107,
+      "handle": "sw-shorts-107104761",
+      "id": "gid://shopify/Product/15310204535088",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס שחור מהדורת עיר 2022",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-106390553"]
+    },
+    {
+      "pos": 108,
+      "handle": "sw-football-212930310",
+      "id": "gid://shopify/Product/15308652642608",
+      "title": "חולצת כדורגל נבחרת מקסיקו חוץ 2026",
+      "type": "Football Jersey",
+      "team": "mexico"
+    },
+    {
+      "pos": 109,
+      "handle": "sw-jerseys-86849794",
+      "id": "gid://shopify/Product/15308651921712",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 לבן | כיתוב ומספר אדומים",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 110,
+      "handle": "sw-football-185358821",
+      "id": "gid://shopify/Product/15308686262576",
+      "title": "חולצת כדורגל נבחרת יפן בית 24/25",
+      "type": "Football Jersey",
+      "team": "japan"
+    },
+    {
+      "pos": 111,
+      "handle": "sw-jerseys-132029421",
+      "id": "gid://shopify/Product/15308648382768",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 סגול 2023",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 112,
+      "handle": "sw-shorts-129375470",
+      "id": "gid://shopify/Product/15310208270640",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס סגול 2023",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-125238002", "sw-jerseys-132029421"]
+    },
+    {
+      "pos": 113,
+      "handle": "river-plate-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15310243004720",
+      "title": "חולצת חוץ ריבר פלייט 26/27",
+      "type": "Football Jersey",
+      "team": "river-plate"
+    },
+    {
+      "pos": 114,
+      "handle": "sw-jerseys-188305333",
+      "id": "gid://shopify/Product/15308597821744",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צבע מדורג 2025",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 115,
+      "handle": "sw-shorts-193401022",
+      "id": "gid://shopify/Product/15310215119152",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס צבע מדורג מהדורת עיר 2025",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-181429503", "sw-jerseys-181429598", "sw-jerseys-188305333"]
+    },
+    {
+      "pos": 116,
+      "handle": "celtic-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310304444720",
+      "title": "חולצת בית סלטיק 26/27",
+      "type": "Football Jersey",
+      "team": "celtic"
+    },
+    {
+      "pos": 117,
+      "handle": "sw-jerseys-106015302",
+      "id": "gid://shopify/Product/15308656148784",
+      "title": "גופיית כדורסל מילווקי באקס מספר 34 לבן וזהב / לבן",
+      "type": "Basketball Jersey",
+      "team": "milwaukee-bucks",
+      "player": "giannis-antetokounmpo"
+    },
+    {
+      "pos": 118,
+      "handle": "ajax-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15310271152432",
+      "title": "חולצת חוץ אייאקס 26/27",
+      "type": "Football Jersey",
+      "team": "ajax"
+    },
+    {
+      "pos": 119,
+      "handle": "sw-jerseys-160789635",
+      "id": "gid://shopify/Product/15308609290544",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 1 לבן",
+      "type": "Basketball Jersey",
+      "team": "san-antonio-spurs",
+      "player": "victor-wembanyama"
+    },
+    {
+      "pos": 120,
+      "handle": "olympique-marseille-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310286487856",
+      "title": "חולצת בית מארסיי 26/27",
+      "type": "Football Jersey",
+      "team": "olympique-marseille"
+    },
+    {
+      "pos": 121,
+      "handle": "sw-jerseys-149290421",
+      "id": "gid://shopify/Product/15308617810224",
+      "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 לבן 2024",
+      "type": "Basketball Jersey",
+      "team": "boston-celtics",
+      "player": "jayson-tatum"
+    },
+    {
+      "pos": 122,
+      "handle": "sw-shorts-159307062",
+      "id": "gid://shopify/Product/15310211416368",
+      "title": "מכנסי כדורסל בוסטון סלטיקס לבן מהדורת עיר 2024",
+      "type": "Basketball Shorts",
+      "team": "boston-celtics",
+      "set_with": ["sw-jerseys-149290421"]
+    },
+    {
+      "pos": 123,
+      "handle": "sporting-cp-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310319649072",
+      "title": "חולצת בית ספורטינג ליסבון 26/27",
+      "type": "Football Jersey",
+      "team": "sporting-cp"
+    },
+    {
+      "pos": 124,
+      "handle": "sw-jerseys-165919738",
+      "id": "gid://shopify/Product/15308608864560",
+      "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5",
+      "type": "Basketball Jersey",
+      "team": "minnesota-timberwolves",
+      "player": "anthony-edwards"
+    },
+    {
+      "pos": 125,
+      "handle": "sw-shorts-114169299",
+      "id": "gid://shopify/Product/15310204895536",
+      "title": "מכנסי כדורסל מינסוטה טימברוולבס כחול מהדורת עיר 2022",
+      "type": "Basketball Shorts",
+      "team": "minnesota-timberwolves",
+      "set_with": ["sw-jerseys-182156398", "sw-jerseys-165919738"]
+    },
+    {
+      "pos": 126,
+      "handle": "aston-villa-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310274920752",
+      "title": "חולצת בית אסטון וילה 26/27",
+      "type": "Football Jersey",
+      "team": "aston-villa"
+    },
+    {
+      "pos": 127,
+      "handle": "sw-jerseys-199487824",
+      "id": "gid://shopify/Product/15308559974704",
+      "title": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 2 לבן",
+      "type": "Basketball Jersey",
+      "team": "oklahoma-city-thunder",
+      "player": "shai-gilgeous-alexander"
+    },
+    {
+      "pos": 128,
+      "handle": "hapoel-tel-aviv-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309486326064",
+      "title": "חולצת חוץ הפועל תל אביב 26/27",
+      "type": "Football Jersey",
+      "team": "hapoel-tel-aviv"
+    },
+    {
+      "pos": 129,
+      "handle": "sw-jerseys-137504628",
+      "id": "gid://shopify/Product/15308672336176",
+      "title": "גופיית כדורסל דנבר נאגטס ניקולה יוקיץ׳ מספר 15 שחור 2023",
+      "type": "Basketball Jersey",
+      "team": "denver-nuggets",
+      "player": "nikola-jokic"
+    },
+    {
+      "pos": 130,
+      "handle": "sw-jerseys-129397712",
+      "id": "gid://shopify/Product/15308673614128",
+      "title": "גופיית כדורסל פיניקס סאנס מספר 35 לבן",
+      "type": "Basketball Jersey",
+      "team": "phoenix-suns",
+      "player": "kevin-durant"
+    },
+    {
+      "pos": 131,
+      "handle": "sw-shorts-121082872",
+      "id": "gid://shopify/Product/15310207222064",
+      "title": "מכנסי כדורסל פיניקס סאנס לבן",
+      "type": "Basketball Shorts",
+      "team": "phoenix-suns",
+      "set_with": ["sw-jerseys-129397712"]
+    },
+    {
+      "pos": 132,
+      "handle": "corinthians-home-jersey-2026-27",
+      "id": "gid://shopify/Product/15310240907568",
+      "title": "חולצת בית קורינתיאנס 26/27",
+      "type": "Football Jersey",
+      "team": "corinthians"
+    },
+    {
+      "pos": 133,
+      "handle": "sw-jerseys-100071130",
+      "id": "gid://shopify/Product/15308717359408",
+      "title": "גופיית כדורסל ממפיס גריזליס מספר 12 תכלת 2021",
+      "type": "Basketball Jersey",
+      "team": "memphis-grizzlies",
+      "player": "ja-morant"
+    },
+    {
+      "pos": 134,
+      "handle": "sw-football-193714762",
+      "id": "gid://shopify/Product/15308653691184",
+      "title": "חולצת כדורגל נבחרת דרום קוריאה בית 25/26",
+      "type": "Football Jersey",
+      "team": "south-korea"
+    },
+    {
+      "pos": 135,
+      "handle": "sw-jerseys-98169922",
+      "id": "gid://shopify/Product/15308673974576",
+      "title": "גופיית כדורסל פילדלפיה 76׳ מספר 3 שחור",
+      "type": "Basketball Jersey",
+      "team": "philadelphia-76ers",
+      "player": "allen-iverson"
+    },
+    {
+      "pos": 136,
+      "handle": "sw-football-238620266",
+      "id": "gid://shopify/Product/15308632785200",
+      "title": "חולצת כדורגל נבחרת סנגל בית 2026",
+      "type": "Football Jersey",
+      "team": "senegal"
+    },
+    {
+      "pos": 137,
+      "handle": "sw-jerseys-181428339",
+      "id": "gid://shopify/Product/15308592611632",
+      "title": "גופיית כדורסל ניו יורק ניקס מספר 11 פסים",
+      "type": "Basketball Jersey",
+      "team": "new-york-knicks",
+      "player": "jalen-brunson"
+    },
+    {
+      "pos": 138,
+      "handle": "real-madrid-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309487046960",
+      "title": "חולצה שלישית ריאל מדריד 26/27",
+      "type": "Football Jersey",
+      "team": "real-madrid"
+    },
+    {
+      "pos": 139,
+      "handle": "sw-jerseys-122915621",
+      "id": "gid://shopify/Product/15308664602928",
+      "title": "גופיית כדורסל מיאמי היט מספר 22 לבן 2022",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "jimmy-butler"
+    },
+    {
+      "pos": 140,
+      "handle": "sw-football-240291494",
+      "id": "gid://shopify/Product/15308632523056",
+      "title": "חולצת כדורגל ברצלונה חוץ 26/27",
+      "type": "Football Jersey",
+      "team": "barcelona"
+    },
+    {
+      "pos": 141,
+      "handle": "sw-jerseys-99799874",
+      "id": "gid://shopify/Product/15308712968496",
+      "title": "גופיית כדורסל פיניקס סאנס מספר 1 כתום 2021",
+      "type": "Basketball Jersey",
+      "team": "phoenix-suns",
+      "player": "devin-booker"
+    },
+    {
+      "pos": 142,
+      "handle": "argentina-away-jersey-2026",
+      "id": "gid://shopify/Product/15309481705776",
+      "title": "חולצת חוץ נבחרת ארגנטינה 2026",
+      "type": "Football Jersey",
+      "team": "argentina"
+    },
+    {
+      "pos": 143,
+      "handle": "sw-jerseys-128865212",
+      "id": "gid://shopify/Product/15308635504944",
+      "title": "גופיית כדורסל ברוקלין נטס מספר 11 לבן מהדורת עיר 2023",
+      "type": "Basketball Jersey",
+      "team": "brooklyn-nets",
+      "player": "kyrie-irving"
+    },
+    {
+      "pos": 144,
+      "handle": "sw-shorts-128674489",
+      "id": "gid://shopify/Product/15310207975728",
+      "title": "מכנסי כדורסל ברוקלין נטס לבן מהדורת עיר 2023",
+      "type": "Basketball Shorts",
+      "team": "brooklyn-nets",
+      "set_with": ["sw-jerseys-128865212"]
+    },
+    {
+      "pos": 145,
+      "handle": "manchester-united-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481214256",
+      "title": "חולצת חוץ מנצ׳סטר יונייטד 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-united"
+    },
+    {
+      "pos": 146,
+      "handle": "sw-jerseys-121584439",
+      "id": "gid://shopify/Product/15308680495408",
+      "title": "גופיית כדורסל שארלוט הורנטס מספר 1 תכלת",
+      "type": "Basketball Jersey",
+      "team": "charlotte-hornets",
+      "player": "lamelo-ball"
+    },
+    {
+      "pos": 147,
+      "handle": "sw-shorts-179568568",
+      "id": "gid://shopify/Product/15310215020848",
+      "title": "מכנסי כדורסל שארלוט הורנטס לבן",
+      "type": "Basketball Shorts",
+      "team": "charlotte-hornets"
+    },
+    {
+      "pos": 148,
+      "handle": "brazil-away-jersey-2026",
+      "id": "gid://shopify/Product/15309480591664",
+      "title": "חולצת חוץ נבחרת ברזיל 2026",
+      "type": "Football Jersey",
+      "team": "brazil"
+    },
+    {
+      "pos": 149,
+      "handle": "sw-jerseys-115260002",
+      "id": "gid://shopify/Product/15308639895856",
+      "title": "גופיית כדורסל מיאמי היט מספר 3 שחור 2022",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "dwyane-wade"
+    },
+    {
+      "pos": 150,
+      "handle": "sw-football-185539995",
+      "id": "gid://shopify/Product/15308669321520",
+      "title": "חולצת כדורגל נבחרת פורטוגל חוץ 25/26",
+      "type": "Football Jersey",
+      "team": "portugal"
+    },
+    {
+      "pos": 151,
+      "handle": "sw-jerseys-209200120",
+      "id": "gid://shopify/Product/15308558106928",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 34 סגול",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "shaquille-oneal"
+    },
+    {
+      "pos": 152,
+      "handle": "manchester-city-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480493360",
+      "title": "חולצת חוץ מנצ׳סטר סיטי 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-city"
+    },
+    {
+      "pos": 153,
+      "handle": "sw-jerseys-100267387",
+      "id": "gid://shopify/Product/15308712673584",
+      "title": "גופיית כדורסל שיקגו בולס מספר 91 שחור רטרו פסים",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "dennis-rodman"
+    },
+    {
+      "pos": 154,
+      "handle": "paris-saint-germain-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309485900080",
+      "title": "חולצת חוץ פריז סן ז׳רמן 26/27",
+      "type": "Football Jersey",
+      "team": "paris-saint-germain"
+    },
+    {
+      "pos": 155,
+      "handle": "sw-jerseys-137280095",
+      "id": "gid://shopify/Product/15308642353456",
+      "title": "גופיית כדורסל מיאמי היט מספר 14 בורדו",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "tyler-herro"
+    },
+    {
+      "pos": 156,
+      "handle": "sw-shorts-166290225",
+      "id": "gid://shopify/Product/15310213087536",
+      "title": "מכנסי כדורסל מיאמי היט בורדו 2023",
+      "type": "Basketball Shorts",
+      "team": "miami-heat",
+      "set_with": ["sw-jerseys-137280095"]
+    },
+    {
+      "pos": 157,
+      "handle": "bayern-munich-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309486883120",
+      "title": "חולצת חוץ באיירן מינכן 26/27",
+      "type": "Football Jersey",
+      "team": "bayern-munich"
+    },
+    {
+      "pos": 158,
+      "handle": "sw-jerseys-164994520",
+      "id": "gid://shopify/Product/15308603195696",
+      "title": "גופיית כדורסל ניו יורק ניקס מספר 0 לבן",
+      "type": "Basketball Jersey",
+      "team": "new-york-knicks"
+    },
+    {
+      "pos": 159,
+      "handle": "sw-shorts-121082989",
+      "id": "gid://shopify/Product/15310206959920",
+      "title": "מכנסי כדורסל ניו יורק ניקס לבן",
+      "type": "Basketball Shorts",
+      "team": "new-york-knicks",
+      "set_with": ["sw-jerseys-164994520"]
+    },
+    {
+      "pos": 160,
+      "handle": "arsenal-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309483213104",
+      "title": "חולצת חוץ ארסנל 26/27",
+      "type": "Football Jersey",
+      "team": "arsenal"
+    },
+    {
+      "pos": 161,
+      "handle": "sw-jerseys-106048308",
+      "id": "gid://shopify/Product/15308696715568",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 צהוב | סמל כסוף מבריק בחזה",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 162,
+      "handle": "sw-shorts-102715994",
+      "id": "gid://shopify/Product/15310204010800",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס צהוב",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-188305232", "sw-jerseys-106048308"]
+    },
+    {
+      "pos": 163,
+      "handle": "france-away-jersey-2026",
+      "id": "gid://shopify/Product/15309484917040",
+      "title": "חולצת חוץ נבחרת צרפת 2026",
+      "type": "Football Jersey",
+      "team": "france"
+    },
+    {
+      "pos": 164,
+      "handle": "sw-jerseys-89669153",
+      "id": "gid://shopify/Product/15308691439920",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 כחול כהה 2021 | פסי צד צהובים רחבים",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 165,
+      "handle": "sw-shorts-98995665",
+      "id": "gid://shopify/Product/15310216790320",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס כחול כהה מהדורת עיר 2021",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-89669153"]
+    },
+    {
+      "pos": 166,
+      "handle": "chelsea-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480788272",
+      "title": "חולצת חוץ צ׳לסי 26/27",
+      "type": "Football Jersey",
+      "team": "chelsea"
+    },
+    {
+      "pos": 167,
+      "handle": "sw-jerseys-168443049",
+      "id": "gid://shopify/Product/15308601753904",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 | שחור עם סמל שור אדום",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 168,
+      "handle": "sw-football-185463732",
+      "id": "gid://shopify/Product/15308685803824",
+      "title": "חולצת כדורגל יובנטוס שלישית 24/25",
+      "type": "Football Jersey",
+      "team": "juventus"
+    },
+    {
+      "pos": 169,
+      "handle": "sw-jerseys-148745501",
+      "id": "gid://shopify/Product/15308632031536",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור | כיתוב LOS ANGELES",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 170,
+      "handle": "sw-shorts-152164029",
+      "id": "gid://shopify/Product/15310209941808",
+      "title": "מכנסי כדורסל לוס אנג׳לס לייקרס שחור מהדורת עיר 2024",
+      "type": "Basketball Shorts",
+      "team": "los-angeles-lakers",
+      "set_with": ["sw-jerseys-148745501"]
+    },
+    {
+      "pos": 171,
+      "handle": "sw-jerseys-188305232",
+      "id": "gid://shopify/Product/15308596937008",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 צהוב 2025",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 172,
+      "handle": "ac-milan-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480427824",
+      "title": "חולצת חוץ מילאן 26/27",
+      "type": "Football Jersey",
+      "team": "ac-milan"
+    },
+    {
+      "pos": 173,
+      "handle": "sw-jerseys-221371975",
+      "id": "gid://shopify/Product/15308555354416",
+      "title": "גופיית כדורסל מילווקי באקס מספר 34 בז׳",
+      "type": "Basketball Jersey",
+      "team": "milwaukee-bucks",
+      "player": "giannis-antetokounmpo"
+    },
+    {
+      "pos": 174,
+      "handle": "al-nassr-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481148720",
+      "title": "חולצת חוץ אל נאסר 26/27",
+      "type": "Football Jersey",
+      "team": "al-nassr"
+    },
+    {
+      "pos": 175,
+      "handle": "sw-jerseys-218036993",
+      "id": "gid://shopify/Product/15308557648176",
+      "title": "גופיית כדורסל סן אנטוניו ספרס מספר 1 2026",
+      "type": "Basketball Jersey",
+      "team": "san-antonio-spurs",
+      "player": "victor-wembanyama"
+    },
+    {
+      "pos": 176,
+      "handle": "inter-miami-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309486391600",
+      "title": "חולצת חוץ אינטר מיאמי 26/27",
+      "type": "Football Jersey",
+      "team": "inter-miami"
+    },
+    {
+      "pos": 177,
+      "handle": "sw-jerseys-127573632",
+      "id": "gid://shopify/Product/15308657819952",
+      "title": "גופיית כדורסל בוסטון סלטיקס מספר 0 ירוק מהדורת עיר 22/23",
+      "type": "Basketball Jersey",
+      "team": "boston-celtics",
+      "player": "jayson-tatum"
+    },
+    {
+      "pos": 178,
+      "handle": "sw-shorts-132738732",
+      "id": "gid://shopify/Product/15310209024304",
+      "title": "מכנסי כדורסל בוסטון סלטיקס ירוק מהדורת עיר 2023",
+      "type": "Basketball Shorts",
+      "team": "boston-celtics",
+      "set_with": ["sw-jerseys-127573632"]
+    },
+    {
+      "pos": 179,
+      "handle": "israel-away-jersey-2026",
+      "id": "gid://shopify/Product/15309487571248",
+      "title": "חולצת חוץ נבחרת ישראל 2026",
+      "type": "Football Jersey",
+      "team": "israel"
+    },
+    {
+      "pos": 180,
+      "handle": "sw-jerseys-182156398",
+      "id": "gid://shopify/Product/15308593791280",
+      "title": "גופיית כדורסל מינסוטה טימברוולבס מספר 5 מהדורת עיר צבע מדורג",
+      "type": "Basketball Jersey",
+      "team": "minnesota-timberwolves",
+      "player": "anthony-edwards"
+    },
+    {
+      "pos": 181,
+      "handle": "england-away-jersey-2026",
+      "id": "gid://shopify/Product/15309481902384",
+      "title": "חולצת חוץ נבחרת אנגליה 2026",
+      "type": "Football Jersey",
+      "team": "england"
+    },
+    {
+      "pos": 182,
+      "handle": "sw-jerseys-221370196",
+      "id": "gid://shopify/Product/15308556337456",
+      "title": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 2 כחול כהה",
+      "type": "Basketball Jersey",
+      "team": "oklahoma-city-thunder",
+      "player": "shai-gilgeous-alexander"
+    },
+    {
+      "pos": 183,
+      "handle": "germany-away-jersey-2026",
+      "id": "gid://shopify/Product/15309485375792",
+      "title": "חולצת חוץ נבחרת גרמניה 2026",
+      "type": "Football Jersey",
+      "team": "germany"
+    },
+    {
+      "pos": 184,
+      "handle": "sw-jerseys-134344038",
+      "id": "gid://shopify/Product/15308648218928",
+      "title": "גופיית כדורסל פיניקס סאנס מספר 35 שחור | כיתוב PHOENIX",
+      "type": "Basketball Jersey",
+      "team": "phoenix-suns",
+      "player": "kevin-durant"
+    },
+    {
+      "pos": 185,
+      "handle": "sw-shorts-121082769",
+      "id": "gid://shopify/Product/15308705399088",
+      "title": "מכנסי כדורסל פיניקס סאנס מהדורת עיר 2021",
+      "type": "Basketball Shorts",
+      "team": "phoenix-suns",
+      "set_with": ["sw-jerseys-134344038"]
+    },
+    {
+      "pos": 186,
+      "handle": "spain-away-jersey-2026",
+      "id": "gid://shopify/Product/15309469188400",
+      "title": "חולצת חוץ נבחרת ספרד 2026",
+      "type": "Football Jersey",
+      "team": "spain"
+    },
+    {
+      "pos": 187,
+      "handle": "sw-jerseys-105462130",
+      "id": "gid://shopify/Product/15308656279856",
+      "title": "גופיית כדורסל ממפיס גריזליס מספר 12 לבן | סמל GRIZZLIES וכיתוב סגול וכתום",
+      "type": "Basketball Jersey",
+      "team": "memphis-grizzlies",
+      "player": "ja-morant"
+    },
+    {
+      "pos": 188,
+      "handle": "sw-shorts-193588866",
+      "id": "gid://shopify/Product/15310215414064",
+      "title": "מכנסי כדורסל ממפיס גריזליס לבן רטרו 2025",
+      "type": "Basketball Shorts",
+      "team": "memphis-grizzlies",
+      "set_with": ["sw-jerseys-105462130"]
+    },
+    {
+      "pos": 189,
+      "handle": "inter-milan-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309487079728",
+      "title": "חולצת חוץ אינטר 26/27",
+      "type": "Football Jersey",
+      "team": "inter-milan"
+    },
+    {
+      "pos": 190,
+      "handle": "sw-jerseys-218037106",
+      "id": "gid://shopify/Product/15308557582640",
+      "title": "גופיית כדורסל פילדלפיה 76׳ מספר 3 לבן",
+      "type": "Basketball Jersey",
+      "team": "philadelphia-76ers",
+      "player": "allen-iverson"
+    },
+    {
+      "pos": 191,
+      "handle": "borussia-dortmund-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309488685360",
+      "title": "חולצת חוץ בורוסיה דורטמונד 26/27",
+      "type": "Football Jersey",
+      "team": "borussia-dortmund"
+    },
+    {
+      "pos": 192,
+      "handle": "sw-jerseys-121582685",
+      "id": "gid://shopify/Product/15308676628784",
+      "title": "גופיית כדורסל מיאמי היט מספר 22 שחור",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "jimmy-butler"
+    },
+    {
+      "pos": 193,
+      "handle": "sw-shorts-141803097",
+      "id": "gid://shopify/Product/15310208893232",
+      "title": "מכנסי כדורסל מיאמי היט שחור",
+      "type": "Basketball Shorts",
+      "team": "miami-heat",
+      "set_with": ["sw-jerseys-121582685"]
+    },
+    {
+      "pos": 194,
+      "handle": "sw-football-242180581",
+      "id": "gid://shopify/Product/15308632391984",
+      "title": "חולצת כדורגל אתלטיקו מדריד חוץ 26/27",
+      "type": "Football Jersey",
+      "team": "atletico-madrid"
+    },
+    {
+      "pos": 195,
+      "handle": "sw-jerseys-115261389",
+      "id": "gid://shopify/Product/15308639797552",
+      "title": "גופיית כדורסל מיאמי היט מספר 3 מהדורת עיר צבע מדורג 2021",
+      "type": "Basketball Jersey",
+      "team": "miami-heat",
+      "player": "dwyane-wade"
+    },
+    {
+      "pos": 196,
+      "handle": "sw-shorts-97018209",
+      "id": "gid://shopify/Product/15310215643440",
+      "title": "מכנסי כדורסל מיאמי היט צבע מדורג מהדורת עיר 2021",
+      "type": "Basketball Shorts",
+      "team": "miami-heat",
+      "set_with": ["sw-jerseys-115261389"]
+    },
+    {
+      "pos": 197,
+      "handle": "tottenham-hotspur-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309488554288",
+      "title": "חולצת חוץ טוטנהאם 26/27",
+      "type": "Football Jersey",
+      "team": "tottenham-hotspur"
+    },
+    {
+      "pos": 198,
+      "handle": "sw-jerseys-162811063",
+      "id": "gid://shopify/Product/15308610502960",
+      "title": "גופיית כדורסל אוקלהומה סיטי ת׳אנדר מספר 7 כחול",
+      "type": "Basketball Jersey",
+      "team": "oklahoma-city-thunder"
+    },
+    {
+      "pos": 199,
+      "handle": "sw-shorts-118832839",
+      "id": "gid://shopify/Product/15310207484208",
+      "title": "מכנסי כדורסל אוקלהומה סיטי ת׳אנדר כחול",
+      "type": "Basketball Shorts",
+      "team": "oklahoma-city-thunder",
+      "set_with": ["sw-jerseys-162811063"]
+    },
+    {
+      "pos": 200,
+      "handle": "italy-away-jersey-2026",
+      "id": "gid://shopify/Product/15309487898928",
+      "title": "חולצת חוץ נבחרת איטליה 2026",
+      "type": "Football Jersey",
+      "team": "italy"
+    },
+    {
+      "pos": 201,
+      "handle": "sw-jerseys-125238002",
+      "id": "gid://shopify/Product/15308658409776",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 6 סגול | עיטור צהוב ופסי צד שחורים",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 202,
+      "handle": "napoli-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309484884272",
+      "title": "חולצת חוץ נאפולי 26/27",
+      "type": "Football Jersey",
+      "team": "napoli"
+    },
+    {
+      "pos": 203,
+      "handle": "sw-jerseys-178550688",
+      "id": "gid://shopify/Product/15308596019504",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 לבן 2025",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 204,
+      "handle": "sw-shorts-192208415",
+      "id": "gid://shopify/Product/15310215610672",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן רטרו 2025",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-178550688"]
+    },
+    {
+      "pos": 205,
+      "handle": "netherlands-away-jersey-2026",
+      "id": "gid://shopify/Product/15309485244720",
+      "title": "חולצת חוץ נבחרת הולנד 2026",
+      "type": "Football Jersey",
+      "team": "netherlands"
+    },
+    {
+      "pos": 206,
+      "handle": "sw-jerseys-97623630",
+      "id": "gid://shopify/Product/15308717850928",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 לבן רטרו מהדורת אליפות",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 207,
+      "handle": "maccabi-haifa-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15309488750896",
+      "title": "חולצת חוץ מכבי חיפה 26/27",
+      "type": "Football Jersey",
+      "team": "maccabi-haifa"
+    },
+    {
+      "pos": 208,
+      "handle": "sw-jerseys-86507461",
+      "id": "gid://shopify/Product/15308670533936",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 שחור מהדורת עיר דוגמת נחש",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 209,
+      "handle": "galatasaray-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15310311194928",
+      "title": "חולצת חוץ גלאטסראיי 26/27",
+      "type": "Football Jersey",
+      "team": "galatasaray"
+    },
+    {
+      "pos": 210,
+      "handle": "sw-jerseys-188304969",
+      "id": "gid://shopify/Product/15308595462448",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 77 כחול",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 211,
+      "handle": "sw-jerseys-93379115",
+      "id": "gid://shopify/Product/15308633735472",
+      "title": "גופיית כדורסל ברוקלין נטס מספר 7 שחור מהדורת עיר 2021",
+      "type": "Basketball Jersey",
+      "team": "brooklyn-nets",
+      "player": "kevin-durant"
+    },
+    {
+      "pos": 212,
+      "handle": "sw-shorts-97018069",
+      "id": "gid://shopify/Product/15310215315760",
+      "title": "מכנסי כדורסל ברוקלין נטס שחור מהדורת עיר 2021",
+      "type": "Basketball Shorts",
+      "team": "brooklyn-nets",
+      "set_with": ["sw-jerseys-93379115"]
+    },
+    {
+      "pos": 213,
+      "handle": "sw-football-252374837",
+      "id": "gid://shopify/Product/15308631867696",
+      "title": "חולצת כדורגל רומא חוץ 26/27",
+      "type": "Football Jersey",
+      "team": "as-roma"
+    },
+    {
+      "pos": 214,
+      "handle": "sw-jerseys-138860211",
+      "id": "gid://shopify/Product/15308642058544",
+      "title": "גופיית כדורסל דנבר נאגטס מספר 55 כחול",
+      "type": "Basketball Jersey",
+      "team": "denver-nuggets"
+    },
+    {
+      "pos": 215,
+      "handle": "sw-shorts-167972915",
+      "id": "gid://shopify/Product/15310213546288",
+      "title": "מכנסי כדורסל דנבר נאגטס כחול 2023",
+      "type": "Basketball Shorts",
+      "team": "denver-nuggets",
+      "set_with": ["sw-jerseys-138860211"]
+    },
+    {
+      "pos": 216,
+      "handle": "newcastle-united-away-jersey-2026-27",
+      "id": "gid://shopify/Product/15310258700592",
+      "title": "חולצת חוץ ניוקאסל 26/27",
+      "type": "Football Jersey",
+      "team": "newcastle-united"
+    },
+    {
+      "pos": 217,
+      "handle": "sw-jerseys-92980294",
+      "id": "gid://shopify/Product/15308691013936",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן רטרו",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 218,
+      "handle": "sw-football-233520444",
+      "id": "gid://shopify/Product/15308633014576",
+      "title": "חולצת כדורגל נבחרת מרוקו חוץ 2026",
+      "type": "Football Jersey",
+      "team": "morocco"
+    },
+    {
+      "pos": 219,
+      "handle": "sw-jerseys-106498722",
+      "id": "gid://shopify/Product/15308656017712",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 לבן מהדורת עיר 2022",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 220,
+      "handle": "sw-shorts-118413059",
+      "id": "gid://shopify/Product/15310206828848",
+      "title": "מכנסי כדורסל גולדן סטייט ווריורס לבן מהדורת עיר",
+      "type": "Basketball Shorts",
+      "team": "golden-state-warriors",
+      "set_with": ["sw-jerseys-106498722"]
+    },
+    {
+      "pos": 221,
+      "handle": "sw-football-189822349",
+      "id": "gid://shopify/Product/15308669092144",
+      "title": "חולצת כדורגל ריאל מדריד מהדורה מיוחדת 25/26",
+      "type": "Football Jersey",
+      "team": "real-madrid"
+    },
+    {
+      "pos": 222,
+      "handle": "sw-jerseys-104480306",
+      "id": "gid://shopify/Product/15308698714416",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 ירוק רטרו",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 223,
+      "handle": "barcelona-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309486489904",
+      "title": "חולצה שלישית ברצלונה 26/27",
+      "type": "Football Jersey",
+      "team": "barcelona"
+    },
+    {
+      "pos": 224,
+      "handle": "sw-jerseys-181429598",
+      "id": "gid://shopify/Product/15308597362992",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 מהדורת עיר צבע מדורג 2025",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 225,
+      "handle": "manchester-united-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481804080",
+      "title": "חולצה שלישית מנצ׳סטר יונייטד 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-united"
+    },
+    {
+      "pos": 226,
+      "handle": "sw-jerseys-149292072",
+      "id": "gid://shopify/Product/15308617679152",
+      "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 שחור מהדורת עיר 2024",
+      "type": "Basketball Jersey",
+      "team": "dallas-mavericks",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 227,
+      "handle": "sw-shorts-158850914",
+      "id": "gid://shopify/Product/15310211219760",
+      "title": "מכנסי כדורסל דאלאס מאבריקס שחור מהדורת עיר 2024",
+      "type": "Basketball Shorts",
+      "team": "dallas-mavericks",
+      "set_with": ["sw-jerseys-149292072"]
+    },
+    {
+      "pos": 228,
+      "handle": "sw-football-196896372",
+      "id": "gid://shopify/Product/15308653560112",
+      "title": "חולצת כדורגל נבחרת ברזיל מהדורה מיוחדת 25/26",
+      "type": "Football Jersey",
+      "team": "brazil"
+    },
+    {
+      "pos": 229,
+      "handle": "sw-jerseys-122915434",
+      "id": "gid://shopify/Product/15308658835760",
+      "title": "גופיית כדורסל קליבלנד קאבלירס מספר 10 בורדו",
+      "type": "Basketball Jersey",
+      "team": "cleveland-cavaliers"
+    },
+    {
+      "pos": 230,
+      "handle": "sw-shorts-162704294",
+      "id": "gid://shopify/Product/15310212694320",
+      "title": "מכנסי כדורסל קליבלנד קאבלירס בורדו 2023",
+      "type": "Basketball Shorts",
+      "team": "cleveland-cavaliers",
+      "set_with": ["sw-jerseys-122915434"]
+    },
+    {
+      "pos": 231,
+      "handle": "manchester-city-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309481017648",
+      "title": "חולצה שלישית מנצ׳סטר סיטי 26/27",
+      "type": "Football Jersey",
+      "team": "manchester-city"
+    },
+    {
+      "pos": 232,
+      "handle": "sw-jerseys-181429503",
+      "id": "gid://shopify/Product/15308598968624",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 מהדורת עיר צבע מדורג 2025",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 233,
+      "handle": "bayern-munich-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309487472944",
+      "title": "חולצה שלישית באיירן מינכן 26/27",
+      "type": "Football Jersey",
+      "team": "bayern-munich"
+    },
+    {
+      "pos": 234,
+      "handle": "sw-jerseys-218038545",
+      "id": "gid://shopify/Product/15308556796208",
+      "title": "גופיית כדורסל גולדן סטייט ווריורס מספר 30 בז׳",
+      "type": "Basketball Jersey",
+      "team": "golden-state-warriors",
+      "player": "stephen-curry"
+    },
+    {
+      "pos": 235,
+      "handle": "arsenal-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309484818736",
+      "title": "חולצה שלישית ארסנל 26/27",
+      "type": "Football Jersey",
+      "team": "arsenal"
+    },
+    {
+      "pos": 236,
+      "handle": "sw-jerseys-125235868",
+      "id": "gid://shopify/Product/15308697239856",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 אדום רטרו | כיתוב Chicago ותג תחתון שחור",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 237,
+      "handle": "sw-football-249247076",
+      "id": "gid://shopify/Product/15308632064304",
+      "title": "חולצת כדורגל צ׳לסי שלישית 26/27",
+      "type": "Football Jersey",
+      "team": "chelsea"
+    },
+    {
+      "pos": 238,
+      "handle": "sw-jerseys-127467029",
+      "id": "gid://shopify/Product/15308696191280",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 כחול כהה",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 239,
+      "handle": "ac-milan-third-jersey-2026-27",
+      "id": "gid://shopify/Product/15309480853808",
+      "title": "חולצה שלישית מילאן 26/27",
+      "type": "Football Jersey",
+      "team": "ac-milan"
+    },
+    {
+      "pos": 240,
+      "handle": "sw-jerseys-126415536",
+      "id": "gid://shopify/Product/15308658082096",
+      "title": "גופיית כדורסל דאלאס מאבריקס מספר 77 כחול מהדורת עיר 2023",
+      "type": "Basketball Jersey",
+      "team": "dallas-mavericks",
+      "player": "luka-doncic"
+    },
+    {
+      "pos": 241,
+      "handle": "sw-shorts-133346216",
+      "id": "gid://shopify/Product/15310208958768",
+      "title": "מכנסי כדורסל דאלאס מאבריקס כחול מהדורת עיר 2023",
+      "type": "Basketball Shorts",
+      "team": "dallas-mavericks",
+      "set_with": ["sw-jerseys-126415536"]
+    },
+    {
+      "pos": 242,
+      "handle": "germany-third-jersey-2026",
+      "id": "gid://shopify/Product/15309485703472",
+      "title": "חולצה שלישית נבחרת גרמניה 2026",
+      "type": "Football Jersey",
+      "team": "germany"
+    },
+    {
+      "pos": 243,
+      "handle": "sw-jerseys-127573779",
+      "id": "gid://shopify/Product/15308696027440",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 23 לבן | כיתוב ומספר בקווי מתאר אפורים",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "lebron-james"
+    },
+    {
+      "pos": 244,
+      "handle": "spain-third-jersey-2026",
+      "id": "gid://shopify/Product/15309488062768",
+      "title": "חולצה שלישית נבחרת ספרד 2026",
+      "type": "Football Jersey",
+      "team": "spain"
+    },
+    {
+      "pos": 245,
+      "handle": "sw-jerseys-126415506",
+      "id": "gid://shopify/Product/15308696584496",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 מהדורת עיר 2023",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 246,
+      "handle": "sw-football-185463551",
+      "id": "gid://shopify/Product/15308686033200",
+      "title": "חולצת כדורגל ריאל מדריד מהדורה משותפת 24/25",
+      "type": "Football Jersey",
+      "team": "real-madrid"
+    },
+    {
+      "pos": 247,
+      "handle": "sw-jerseys-143012544",
+      "id": "gid://shopify/Product/15308671942960",
+      "title": "גופיית כדורסל לוס אנג׳לס לייקרס מספר 24 צהוב | כוכבים בצדדים",
+      "type": "Basketball Jersey",
+      "team": "los-angeles-lakers",
+      "player": "kobe-bryant"
+    },
+    {
+      "pos": 248,
+      "handle": "sw-football-246424483",
+      "id": "gid://shopify/Product/15308632293680",
+      "title": "חולצת כדורגל ברצלונה רביעית 26/27",
+      "type": "Football Jersey",
+      "team": "barcelona"
+    },
+    {
+      "pos": 249,
+      "handle": "sw-jerseys-125234425",
+      "id": "gid://shopify/Product/15308664308016",
+      "title": "גופיית כדורסל שיקגו בולס מספר 23 שחור פסים",
+      "type": "Basketball Jersey",
+      "team": "chicago-bulls",
+      "player": "michael-jordan"
+    },
+    {
+      "pos": 250,
+      "handle": "sw-shorts-167973046",
+      "id": "gid://shopify/Product/15310213611824",
+      "title": "מכנסי כדורסל שיקגו בולס שחור 2023",
+      "type": "Basketball Shorts",
+      "team": "chicago-bulls",
+      "set_with": ["sw-jerseys-125234425"]
+    }
+  ]
+}

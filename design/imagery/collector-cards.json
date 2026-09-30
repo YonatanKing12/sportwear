@@ -152,7 +152,8 @@
       "color": "#FEBE10",
       "file": "sw-card-real-madrid.png",
       "media_id": "gid://shopify/MediaImage/45307161149744",
-      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/real-madrid-home-jersey-2026-27.png"
+      "source_photo": "https://cdn.shopify.com/s/files/1/0999/6746/7824/files/real-madrid-home-jersey-2026-27.png",
+      "replaced": "2026-09-30: re-cut (scripts/images/recut-card.py flood 4 3, 820 x 763) from the new studio photo of album 221456533; the earlier card showed the button-front version the club never released"
     },
     {
       "collection": "barcelona",

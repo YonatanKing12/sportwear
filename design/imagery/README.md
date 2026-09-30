@@ -117,7 +117,9 @@ schoolyard. Each hero slide has three files made for its frame:
 | `sw-v4-hero-<slide>-ltr.jpg` | 3840 × 1280 | the same scene with the people on the right, for the English text on the left |
 | `sw-v4-hero-<slide>-mobile.jpg` | 1088 × 1408 | people in the upper half, the text over the lower half |
 
-Slides: `football` (Maccabi Haifa, Real Madrid and Barcelona home 26/27), `street` (Manchester City home
+Slides: `football` (Maccabi Haifa, Real Madrid and Barcelona home 26/27; on 2026-09-30 the Real Madrid shirt was
+repainted from the real shirt, because the product's first photos came from a supplier album of a button-front version
+the club never released: `catalog/published/real-madrid-home-fix-2026-09-30.json`), `street` (Manchester City home
 26/27 and the Boston 7 jersey), `nba` (Lakers 24 yellow, Golden State 30 black, the white Bulls 23 with
 the sketched bull) and `national` (Israel, Brazil and Argentina home 2026). Tiles (`sw-v4-cat-<tile>.jpg`,
 1024 × 1280): `football` (Manchester United home 26/27), `basketball` (the black Bulls 23 with the
@@ -149,8 +151,8 @@ card) use a cut-out jersey per collection: the collection metafield `sportwear.c
 `card_color` and `card_mark`), 34 files `sw-card-<collection>.png`, listed in `collector-cards.json`. They were
 cut from studio photos with `scripts/images/cutout.py`; three of them (Arsenal, Golden State, Juventus)
 showed a light outline, specks or a halo on the dark cards and were re-cut on 2026-09-28 with
-`scripts/images/recut-card.py` and replaced in place. Check a new cut-out on a dark background at 200% before
-uploading.
+`scripts/images/recut-card.py` and replaced in place. Real Madrid's was re-cut the same way on 2026-09-30 from the
+product's new front photo. Check a new cut-out on a dark background at 200% before uploading.
 
 ## Brand graphics: banners, the empty cart and the 404 page
 

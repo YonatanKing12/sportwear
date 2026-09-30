@@ -687,8 +687,9 @@
     "corinthians": "gid://shopify/Collection/512901022000"
   },
   "collections_curated": {
-    "_note": "Manual collections the owner can edit in admin (Products > Collections). our-picks (2026-09-26) feeds the home page's first row instead of best-sellers, which is sorted by sales and so meant nothing before the first order. 20 adult shirts: 16 football (clubs and national teams, none with a design doubt on the review page) and 4 NBA, in a hand-set order. Published to the Online Store, EN/AR registered.",
-    "our-picks": "gid://shopify/Collection/512873431344"
+    "_note": "Manual collections the owner can edit in admin (Products > Collections). our-picks (2026-09-26) feeds the home page's first row instead of best-sellers, which is sorted by sales and so meant nothing before the first order. 20 adult shirts: 16 football (clubs and national teams, none with a design doubt on the review page) and 4 NBA, in a hand-set order. Published to the Online Store, EN/AR registered. collabs (2026-09-30, \"שיתופי פעולה\"): 250 adult products for the owner's influencer barter platform (97 football shirts, 103 basketball jerseys, 50 shorts, most popular first, each pair of shorts right after its jersey); on no sales channel, seo.hidden = 1, MANUAL order. Record: catalog/published/collabs-2026-09-30.json.",
+    "our-picks": "gid://shopify/Collection/512873431344",
+    "collabs": "gid://shopify/Collection/513063256368"
   },
   "set_offer": {
     "_note": "The set price (₪229 for a basketball jersey and the matching shorts; owner decision 2026-09-27). One automatic Buy X get Y discount: buy 1 product of set-offer-jerseys, get 1 of set-offer-shorts ₪39 off; no end date, combines with shipping discounts only. The two smart collections are internal (not on any sales channel) and follow the tags set:jersey and set:shorts. The shop metafield tells the theme the amount, the discount's title and the tags (snippets/set-price.liquid, snippets/cart-items.liquid). Log: catalog/published/set-offer-2026-09-27.json",

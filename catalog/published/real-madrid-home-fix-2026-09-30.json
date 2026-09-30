@@ -1,0 +1,79 @@
+{
+  "_note": "Real Madrid home 26/27 (real-madrid-home-jersey-2026-27): the product was built from supplier album 252535921, a button-front version with a V-collar that Real Madrid and adidas never released (the real shirt, unveiled on 3 June 2026, has a round collar and no buttons). The owner asked about it on 2026-09-30. Every photo made from that album was remade from album 221456533 (the real shirt) and replaced in place on 2026-09-30, once the Shopify connector was back on SportWear: same media IDs, filenames, alt texts and gallery positions. A check of all 424 football products found no other button-front shirt.",
+  "date": "2026-09-30",
+  "product": {
+    "id": "gid://shopify/Product/15309468860720",
+    "handle": "real-madrid-home-jersey-2026-27"
+  },
+  "source_url": {
+    "metafield": "sportwear.source_url (gid://shopify/Metafield/189555235029296)",
+    "before": "https://jerseyxie.x.yupoo.com/albums/252535921?uid=1",
+    "after": "https://jerseyxie.x.yupoo.com/albums/221456533?uid=1",
+    "why": "orders go to the album the product is sold from; the old album ships the button-front version"
+  },
+  "replaced": [
+    {
+      "id": "gid://shopify/MediaImage/45292863193392",
+      "file": "real-madrid-home-jersey-2026-27.png",
+      "what": "product front (studio photo from album 221456533, photo 01)",
+      "size": "1254x1254"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45292863226160",
+      "file": "real-madrid-home-jersey-2026-27__back.png",
+      "what": "product back (album 221456533, photo 02)",
+      "size": "1254x1254"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45307161149744",
+      "file": "sw-card-real-madrid.png",
+      "what": "collector card and team banner jersey (recut-card.py flood 4 3)",
+      "size": "820x763"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45299256656176",
+      "file": "sw-share-he.jpg",
+      "what": "link-preview image, Hebrew",
+      "size": "1200x630"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45299256688944",
+      "file": "sw-share-en.jpg",
+      "what": "link-preview image, English",
+      "size": "1200x630"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45299256721712",
+      "file": "sw-share-ar.jpg",
+      "what": "link-preview image, Arabic",
+      "size": "1200x630"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45342692671792",
+      "file": "sw-v4-hero-football.jpg",
+      "what": "hero slide 'football' (SportWear (next 2) only)",
+      "size": "3840x1280"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45342692704560",
+      "file": "sw-v4-hero-football-ltr.jpg",
+      "what": "hero slide 'football', English layout",
+      "size": "3840x1280"
+    },
+    {
+      "id": "gid://shopify/MediaImage/45342692737328",
+      "file": "sw-v4-hero-football-mobile.jpg",
+      "what": "hero slide 'football', phones",
+      "size": "1088x1408"
+    }
+  ],
+  "how": "stagedUploadsCreate (IMAGE, PUT) for the 9 files, then one fileUpdate with originalSource per media ID: 0 userErrors. Checked after: every file READY at the new version (?v=1790800798); the product photos, the card and the share images served by the CDN are pixel-identical to the files uploaded, the hero JPEGs differ only by Shopify's re-encoding (mean difference under 5 of 255 in every part of the frame); the storefront product JSON lists the new photos.",
+  "repo": [
+    "design/share/sw-share-*.jpg replaced with the new versions",
+    "scripts/preview/fixtures/images/sw-v4-hero-football*.jpg refreshed (1920x640, 800x1035)",
+    "catalog/published/real-madrid-home-jersey-2026-27.json source.url",
+    "design/imagery/collector-cards.json and home-photos-2026-09-28.json notes",
+    "design/imagery/pending/real-madrid-home-2026-27/ removed (its files are the ones now in the store)"
+  ],
+  "caches": "WhatsApp and Facebook keep a shared link's preview for a while; a new share picks up the new share image."
+}
