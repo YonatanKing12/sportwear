@@ -202,6 +202,11 @@ Supplier traps seen in wave 1 (check every product's photos):
 - Baby onesies in adult albums (Barcelona, Spain), kids sets in adult albums (Manchester United).
 - Long-sleeve versions under short-sleeve titles (Argentina kids), and angled or partial photos.
 - The same kids product posted several times (merged in `wave1.json`).
+- Made-up versions of a real kit under the kit's plain title. Album 252535921, "26-27 Real Madrid Home", shows a
+  button-front shirt with a V-collar that the club never released; the real home shirt (round collar, no buttons)
+  is album 221456533. It went into the store with the buttons, and the owner spotted it on 2026-09-30
+  (`design/imagery/pending/real-madrid-home-2026-27/`). Pick the album whose shirt matches the club's real kit
+  (collar, placket, trim), not only its title.
 
 ## Wave 2 (2026-09-27)
 

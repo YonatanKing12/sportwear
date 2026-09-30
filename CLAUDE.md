@@ -296,6 +296,12 @@ and several records are keyed by the old handles: keep a map old → new.
   cannot tell which size fits which age. The owner noticed this on 2026-09-27; we gave them a message in Chinese
   asking the supplier for the chart (age, height, width, length for each size). Until it comes, the product page
   says these are kids' sizes. Record and next steps: `catalog/size-charts/968-nba.json`
+- **The Real Madrid home 26/27 shirt (`real-madrid-home-jersey-2026-27`) shows buttons** (the owner, 2026-09-30). Its
+  supplier album (252535921) is a button-front version the club never released; the real shirt is album 221456533.
+  The fix is ready in `design/imagery/pending/real-madrid-home-2026-27/` (product front and back, team card, share
+  images, the football hero slide) with the steps. It waits for the Shopify connector: on 2026-09-30 it was connected
+  to another store (MAGBAG), which we did not touch. A check of all 424 football products found no other
+  button-front shirt
 - Products flagged for the owner:
   - The supplier's photos of the Hawks 15 yellow jersey (`sw-jerseys-105462222`) show the back name misprinted
     as "ANTHIOY" (the site shows only its front; check with the supplier).
