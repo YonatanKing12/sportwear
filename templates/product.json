@@ -105,6 +105,20 @@
     "comparison": {
       "type": "store-comparison",
       "blocks": {
+        "row_fabric": {
+          "type": "row",
+          "settings": {
+            "topic": "fabric",
+            "show_for": "shirts"
+          }
+        },
+        "row_quality_check": {
+          "type": "row",
+          "settings": {
+            "topic": "quality_check",
+            "show_for": "all"
+          }
+        },
         "row_shipping": {
           "type": "row",
           "settings": {
@@ -141,7 +155,15 @@
           }
         }
       },
-      "block_order": ["row_shipping", "row_delivery", "row_returns", "row_kids_set", "row_basketball_set"],
+      "block_order": [
+        "row_fabric",
+        "row_quality_check",
+        "row_shipping",
+        "row_delivery",
+        "row_returns",
+        "row_kids_set",
+        "row_basketball_set"
+      ],
       "settings": {
         "color_scheme": "scheme-night",
         "padding_top": 48,

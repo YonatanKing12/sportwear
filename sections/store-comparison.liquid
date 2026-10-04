@@ -3,7 +3,8 @@
   layout of a broadcast head-to-head graphic: our value on one side, the topic in the middle, theirs on the
   other side (on phones the topic sits above the two values).
 
-  Each row is a block with a topic. Our side comes from the store where the store knows it: shipping from
+  Each row is a block with a topic. The fabric and quality-check rows say what the owner stated about the
+  shirts (2026-10-04, design/comparison/README.md). Our side comes from the store where the store knows it: shipping from
   free-shipping-cents, this product's price, its kids set (the product or its counterpart) and its basketball
   set price (snippets/set-price.liquid's rule: the shop's set offer and a matching complement); the rest is
   translated copy. A row is left out when it doesn't apply to the page's product
@@ -28,6 +29,7 @@
   assign threshold_cents = threshold_cents | plus: 0
 
   # What the page's product is (nothing on templates without a product).
+  assign shirt_types = 'Football Jersey,Football Kit,Basketball Jersey,NFL Jersey' | split: ','
   assign sport = ''
   assign is_kids = false
   if product != blank
@@ -97,6 +99,11 @@
           if product == blank or is_kids
             assign show = false
           endif
+        when 'shirts'
+          # Jerseys and kids kits, not shorts or hoodies (the fabric row speaks of the shirts).
+          unless shirt_types contains product.type
+            assign show = false
+          endunless
       endcase
 
       assign topic = block.settings.topic
@@ -126,6 +133,15 @@
           assign icon_name = 'return'
           assign ours = 'products.compare.returns.ours' | t
           assign ours_note = 'products.compare.returns.ours_note' | t
+        when 'fabric'
+          # The owner's own word on the fabric and print (design/comparison/README.md).
+          assign icon_name = 'shirt'
+          assign ours = 'products.compare.fabric.ours' | t
+          assign ours_note = 'products.compare.fabric.ours_note' | t
+        when 'quality_check'
+          assign icon_name = 'shield-check'
+          assign ours = 'products.compare.quality_check.ours' | t
+          assign ours_note = 'products.compare.quality_check.ours_note' | t
         when 'price'
           assign icon_name = 'tag'
           if product == blank
@@ -650,6 +666,11 @@
             { "value": "shipping", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.shipping" },
             { "value": "delivery", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.delivery" },
             { "value": "returns", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.returns" },
+            { "value": "fabric", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.fabric" },
+            {
+              "value": "quality_check",
+              "label": "t:sections.store_comparison.blocks.row.settings.topic.options.quality_check"
+            },
             { "value": "price", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.price" },
             { "value": "kids_set", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.kids_set" },
             {
@@ -683,7 +704,8 @@
               "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.american_football"
             },
             { "value": "kids", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.kids" },
-            { "value": "adults", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.adults" }
+            { "value": "adults", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.adults" },
+            { "value": "shirts", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.shirts" }
           ]
         },
         {

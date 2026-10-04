@@ -32,11 +32,9 @@
           "also_quote": "משלוח מהיר / כל הפריטים במלאי בישראל / עד 3 ימי עסקים / במקום עד 14 במשלוח הרגיל"
         },
         "stock_location": {
-          "value": "Mixed. The fast-shipping collection is stated to be in stock in Israel. The return terms tell customers to send returns to the supplier's warehouses in China or to the Israeli office. The site does not say where regular orders ship from.",
-          "url": "https://hoopers.co.il/",
-          "quote": "משלוח מהיר / כל הפריטים במלאי בישראל",
-          "also_url": "https://hoopers.co.il/pages/return-policy",
-          "also_quote": "לשלוח אותו בחזרה למחסני הספק בסין או ישירות אל משרדינו בישראל"
+          "value": "Abroad, apart from a 'fast shipping' collection held in Israel: the terms say the store works as dropshipping, products sent straight from suppliers abroad with no storage in Israel (found in the second pass; the first pass had 'mixed').",
+          "url": "https://hoopers.co.il/pages/termes-of-service",
+          "quote": "שיטת השילוח באתר פועלת במתכונת של דרופשיפינג – כלומר, המוצרים נשלחים ישירות מהספקים בחו\"ל אל הלקוח, ללא אחסון מקדים של הסחורה במחסן בישראל. זמן האספקה, בקרת האיכות, ואריזת המוצר הם באחריות הספקים בלבד, והחברה משמשת כמתווכת בלבד בין הספקים לבין הלקוח."
         },
         "returns": {
           "value": "14 days from receipt (new, unused). Size exchange within 14 days if the tag is still on. The customer pays return shipping unless the item is faulty or wrong. Cancellation fee 5% or ₪100, whichever is lower. Personalized items cannot be returned.",
@@ -81,7 +79,63 @@
           "also_quote": "ניתן לשלם באמצעי התשלום הזמינים בעמוד הקופה, כולל כרטיסי אשראי ופתרונות תשלום נתמכים."
         }
       },
-      "notes": "The competitor whose table the owner wants to match. The product page has a 'למה אצלנו' table with HOOPERS vs 'חנויות אחרות' rows: product photos, pop-ups ('דוכנים ופופ-אפים ברחבי הארץ'), customer club, special models, name/number printing ('במתנה לחברי המועדון (ההצטרפות חינם) · ₪10 לאורחים' vs 'לרוב ₪10 ומעלה, לפעמים חינם, לפעמים לא קיים'), size choice ('מחשבון שממליץ לפי גובה ומשקל, S עד 4XL'), delivery ('עד 14 ימי עסקים' vs 'לרוב 10-25 ימי עסקים'), size exchange ('עד 14 יום') and service. Its footnote: 'ההשוואה מבוססת על בדיקה של דפי המוצר בחנויות חולצות הכדורגל המובילות בישראל, יולי 2026'. Its claim of 'S עד 4XL — טווח רחב יותר ממה שרוב החנויות מציעות' does not hold: Jerseys.co.il, R:Sport, Liberokits, FootArmy and Jerseyniho also sell up to 4XL. Also has a customer club, a mystery box and a Kiryat Ata address (meta.json). Product reviews mention slow deliveries ('זמן הספקה היה ממש גרוע')."
+      "notes": "The competitor whose table the owner wants to match. The product page has a 'למה אצלנו' table with HOOPERS vs 'חנויות אחרות' rows: product photos, pop-ups ('דוכנים ופופ-אפים ברחבי הארץ'), customer club, special models, name/number printing ('במתנה לחברי המועדון (ההצטרפות חינם) · ₪10 לאורחים' vs 'לרוב ₪10 ומעלה, לפעמים חינם, לפעמים לא קיים'), size choice ('מחשבון שממליץ לפי גובה ומשקל, S עד 4XL'), delivery ('עד 14 ימי עסקים' vs 'לרוב 10-25 ימי עסקים'), size exchange ('עד 14 יום') and service. Its footnote: 'ההשוואה מבוססת על בדיקה של דפי המוצר בחנויות חולצות הכדורגל המובילות בישראל, יולי 2026'. Its claim of 'S עד 4XL — טווח רחב יותר ממה שרוב החנויות מציעות' does not hold: Jerseys.co.il, R:Sport, Liberokits, FootArmy and Jerseyniho also sell up to 4XL. Also has a customer club, a mystery box and a Kiryat Ata address (meta.json). Product reviews mention slow deliveries ('זמן הספקה היה ממש גרוע').",
+      "quality": {
+        "fabric": {
+          "value": "No material is named. The product page's version table says the fan version has a 'sportier, thicker' fabric with embroidered, sewn-on badges, and the player version (+₪19) a lighter, more breathable fabric with heat-pressed flat badges. The page also has an unboxing video ('real video, not AI') that shows the fabric, stitching, crest and neck tag, but it was filmed on a different shirt (Barcelona away 26/27).",
+          "url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "quote": "גרסת אוהד / גרסת שחקן … בד / ספורטיבי, עבה יותר / קל ונושם יותר / סמלים / רקומים ותפורים / מולחמים ושטוחים",
+          "also_quote": "פתחנו חבילה מול המצלמה, בדיוק כמו שהיא מגיעה אליכם הביתה — הבד, התפרים, הסמל, תג העורף והאריזה. בלי עריכה ובלי תמונות שנוצרו במחשב. הסרטון צולם על חולצת ברצלונה חוץ 26/27, ואותו סטנדרט תקף לכל חולצות הכדורגל שלנו. … וידאו אמיתי · לא AI"
+        },
+        "fabric_nba": {
+          "value": "Light, breathable fabric and a 'quality, durable print'. No material is named.",
+          "url": "https://hoopers.co.il/products/גופיית-nba-דני-אבדיה-פורטלנד-טרייל-בלייזרס-שחור-2025-26-hoopers",
+          "quote": "בד קליל ונושם — נוח למשחק ולחום … הדפס איכותי ועמיד"
+        },
+        "original_or_replica": {
+          "value": "The terms say every product is a replica, not made or sold by the brands' official makers. They also say all product information, including quality, comes straight from its partners. The product page says printed names 'arrive the same way as on the team's player shirts'.",
+          "url": "https://hoopers.co.il/pages/termes-of-service",
+          "quote": "הלקוח מאשר ומצהיר כי ידוע לו שכלל המוצרים הנמכרים באתר אינם מוצרים מקוריים של המותגים, אלא רפליקות (העתקים) בלבד … כל המידע המוצג באתר לגבי מוצרים לרבות טיבם ואיכותם, התקבל ישירות מהשותפים.",
+          "also_url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "also_quote": "תצוגה מקדימה בלבד · ההדפסה תגיע באותה צורה כמו על חולצות השחקנים של הקבוצה"
+        },
+        "photos": {
+          "value": "4 photos, all with the shirt on a model in a studio: front, back, and 2 close-ups of the chest (crest, sponsor, collar). None are supplier flat-lays. The page also carries the unboxing video of another shirt. The store doesn't say how the photos were made; it says only that the video is 'not AI'.",
+          "url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "quote": "[img:real-madrid-home-26-27] [img:חולצת כדורגל ריאל מדריד בית 26/27 — מבט אחורי] [img:חולצת כדורגל ריאל מדריד בית 26/27 (לבן) - detail] ×2 … בגלריה למעלה תראו את הדגם מלפנים, מאחור ובקלוז-אפ על הסמל וההדפסים",
+          "count": 4,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0568/8603/4507/files/hf_20260726_105418_cb90328e-094a-4136-8e30-66acd1c8a4f2.png",
+            "https://cdn.shopify.com/s/files/1/0568/8603/4507/files/hf_20260726_122554_34ca1a82-e876-4e3c-b5b3-97de6606de11.png",
+            "https://cdn.shopify.com/s/files/1/0568/8603/4507/files/det3-real-madrid-home-26-27_641bc944-375b-44ae-bfb9-bdeab5bdcf99.png",
+            "https://cdn.shopify.com/s/files/1/0568/8603/4507/files/det4-real-madrid-home-26-27_92d2ef1c-990a-4888-aa30-76510a645039.png"
+          ]
+        },
+        "photos_nba": {
+          "value": "6 studio photos on a model: front, back, side, a close-up of the front print and mesh fabric, a close-up of the back name and number, and the model holding a ball.",
+          "url": "https://hoopers.co.il/products/גופיית-nba-דני-אבדיה-פורטלנד-טרייל-בלייזרס-שחור-2025-26-hoopers",
+          "quote": "[img:גופיית אבדיה פורטלנד שחור - קלוז אפ הדפס PORTLAND ובד רשת | HOOPERS] [img:גופיית אבדיה פורטלנד שחור - קלוז אפ AVDIJA ומספר 8 בגב | HOOPERS]",
+          "count": 6
+        },
+        "quality_control": {
+          "value": "The store claims no check of its own. Its terms say it works as dropshipping, with products sent straight from suppliers abroad and no storage in Israel, and that quality control is the suppliers' responsibility alone. The store calls itself only an intermediary. (The home page does describe a 'fast shipping' collection held in stock in Israel.)",
+          "url": "https://hoopers.co.il/pages/termes-of-service",
+          "quote": "שיטת השילוח באתר פועלת במתכונת של דרופשיפינג – כלומר, המוצרים נשלחים ישירות מהספקים בחו\"ל אל הלקוח, ללא אחסון מקדים של הסחורה במחסן בישראל. זמן האספקה, בקרת האיכות, ואריזת המוצר הם באחריות הספקים בלבד, והחברה משמשת כמתווכת בלבד בין הספקים לבין הלקוח."
+        },
+        "defects": {
+          "value": "Report a fault within 5 business days, with photos. The remedy is a replacement or a refund. The customer pays return shipping unless the item is confirmed faulty or wrong. The terms add that the company handles the case with its partners under their policies but 'is not responsible' for a refund or compensation.",
+          "url": "https://hoopers.co.il/pages/return-policy",
+          "quote": "אם קיבלתם מוצר פגום או מוצר שאינו תואם להזמנה, אנא צרו קשר תוך 5 ימי עסקים ממועד קבלת המוצר.",
+          "also_url": "https://hoopers.co.il/pages/faq",
+          "also_quote": "עלות משלוח ההחזרה חלה על הלקוח, אלא אם מדובר במקרה שאושר כמוצר פגום או שגוי.",
+          "terms_quote": "החברה תנהל עבור המשתמש את ההתקשרות מול השותפים, ותפעל בהתאם למדיניותם, אך היא אינה האחראית בדבר זיכוי כספי או פיצוי הרוכש."
+        },
+        "care": {
+          "value": "Machine wash at 30°, inside out, no dryer.",
+          "url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "quote": "איך מכבסים את החולצה? כמו כל חולצת ספורט: 30 מעלות, הפוך, בלי מייבש. זה כל מה שצריך."
+        }
+      }
     },
     {
       "name": "Jerseys.co.il",
@@ -153,7 +207,65 @@
           "quote": "אנחנו מקבלים כרטיסי אשראי (Visa, Mastercard, Amex), Apple Pay, Google Pay, PayPal ותשלום בביט."
         }
       },
-      "notes": "Site-wide 3+1 promotion and coupon NEW-27 in the announcement bar. Says it has run since 2021 and has '10,000+' customers. Items are made to order and cannot be cancelled once production starts. Full refund if not delivered within 60 days."
+      "notes": "Site-wide 3+1 promotion and coupon NEW-27 in the announcement bar. Says it has run since 2021 and has '10,000+' customers. Items are made to order and cannot be cancelled once production starts. Full refund if not delivered within 60 days.",
+      "quality": {
+        "fabric": {
+          "value": "Recycled polyester with 'advanced sweat-absorbing technology' (FAQ). The product page says the crest is embroidered on the chest. The site says the fan version has slightly thicker fabric and sewn badges, and the player version (+₪59) thin, airy fabric and rubber-layer badges.",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-jersey-26-27",
+          "quote": "סמל: סמל המלכותיים רקום על החזה.",
+          "also_url": "https://www.jerseys.co.il/pages/faq",
+          "also_quote": "החולצות שלנו עשויות מפוליאסטר ממוחזר באיכות גבוהה עם טכנולוגיית ספיגת זיעה מתקדמת לנוחות מקסימלית.",
+          "fan_vs_player_url": "https://www.jerseys.co.il/",
+          "fan_vs_player_quote": "גרסת שחקן: Slim-Fit צמודה יותר, בד דק ואוורירי, סמלים בשכבות גומי. גרסת אוהד: Regular-Fit יומיומית, בד מעט עבה יותר, סמלים תפורים.",
+          "product_page_versions_quote": "גרסת אוהד / בד עבה יותר, תחושה נוחה ורגועה … גרסת שחקן / בד דק וקליל, מנדף זיעה מקסימלי"
+        },
+        "fabric_nba": {
+          "value": "Generic: 'top quality', 'penetrating print and breathable knit'. No material is named.",
+          "url": "https://www.jerseys.co.il/products/dani-avdija-portland-trail-blazers-nba-jersey",
+          "quote": "חולצה איכותית באיכות עליונה, משוקללת ומעובדת לביצועים מקסימליים. הדפס חדור וסריג נושם"
+        },
+        "original_or_replica": {
+          "value": "No originality or replica claim. The player version is described as 'exactly like on the pitch'.",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-jersey-26-27",
+          "quote": "גרסת שחקן +59 ₪ / בד דק ומנדף זיעה, בדיוק כמו על המגרש"
+        },
+        "photos": {
+          "value": "2 flat-lay photos of the shirt alone on white (front and back, 600×600). There is no person and no close-up. Pixel comparison shows they are identical to Liberokits's photos of the same shirt, so the two stores use the same source photos. The page says the photos are for illustration and the shirt may differ by version.",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-jersey-26-27",
+          "quote": "[img:חולצת כדורגל ריאל מדריד בית 26/27 חזית] [img:חולצת כדורגל ריאל מדריד בית 26/27 תמונה 2] … התמונות נועדו להמחשה בלבד. ייתכנו הבדלים בין החולצה המוצגת בתמונה לבין המוצר הסופי, בהתאם לבחירת הגרסה (שחקן או אוהד).",
+          "count": 2,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0739/1415/5197/files/real-madrid-home-jersey-26-27__0_75d88eb7-8970-4b6b-8b52-bf2e5059812a.png",
+            "https://cdn.shopify.com/s/files/1/0739/1415/5197/files/real-madrid-home-jersey-26-27__1_3a4f722d-b168-4cfc-b0ca-9c6ec632bc48.png"
+          ]
+        },
+        "photos_nba": {
+          "value": "2 images: a cut-out composite of front and back on black, and the back on a hanger. No person and no close-up.",
+          "url": "https://www.jerseys.co.il/products/dani-avdija-portland-trail-blazers-nba-jersey",
+          "quote": "[img:גופיית NBA - פורטלנד בלייזרס - דני אבדיה] ×2",
+          "count": 2
+        },
+        "quality_control": {
+          "value": "Yes. 'Every shirt is checked before it is packed', 'every order goes through quality control before delivery', and production plus quality check takes 3–7 business days.",
+          "url": "https://www.jerseys.co.il/pages/faq",
+          "quote": "כל חולצה עוברת בדיקה לפני שהיא נארזת: בד נושם שמתייבש מהר, הדפסה עמידה להרבה מאוד כביסות, וגזרה שיושבת בול. … כל הזמנה עוברת בקרת איכות לפני מסירה",
+          "also_url": "https://www.jerseys.co.il/policies/refund-policy",
+          "also_quote": "ייצור ובדיקת איכות: 3-7 ימי עסקים. … משלוח עצמו: 5-18 ימי עסקים, תלוי במדינת המקור של הפריט ובעומסי המכס."
+        },
+        "defects": {
+          "value": "Report within 48 hours, with photos, on WhatsApp. The remedy is a replacement, a repair or a full refund including shipping, and the store pays the return of a faulty or wrong item. Damage from unreasonable use, such as machine washing, is not covered.",
+          "url": "https://www.jerseys.co.il/pages/shipping-returns",
+          "quote": "📸 דווחו תוך 48 שעות - שלחו לנו תמונות של הפגם בוואטסאפ עם מספר ההזמנה. נבדוק את הפנייה ונציע אחת משלוש: החלפה (חולצה חדשה במקום), תיקון (אם אפשרי), או זיכוי כספי מלא כולל משלוח. אם הפגם נגרם משימוש לא סביר (כביסה במכונה, תוך משחק אקסטרים, וכו'), התקנון לא חל.",
+          "also_quote": "עלות משלוח חזרה: על חשבונכם במקרה של חרטה. על חשבוננו אם מדובר בפריט פגום או שגוי."
+        },
+        "care": {
+          "value": "The terms say: turn inside out, hand wash only and hang to dry. Outer prints are delicate, and washing against these instructions voids the warranty. The FAQ, though, says the printing 'guarantees durability over time'.",
+          "url": "https://www.jerseys.co.il/pages/takanon",
+          "quote": "8.1 יש להפוך את הבגד, לכבס ביד בלבד ולתלות לייבוש. הדפסים חיצוניים ועדינים דורשים טיפול זהיר. 8.2 כביסה או שימוש בניגוד להוראות מבטלים אחריות.",
+          "also_url": "https://www.jerseys.co.il/pages/faq",
+          "also_quote": "ההדפסה מתבצעת בטכנולוגיה מתקדמת שמבטיחה עמידות לאורך זמן."
+        }
+      }
     },
     {
       "name": "פאן שופ (FanShop)",
@@ -223,7 +335,51 @@
           "quote": "ניתן לשלם באתרנו באמצעות אפליקציית PayBox, ביט, כרטיס אשראי, PayPal, אפל פיי או גוגל פיי."
         }
       },
-      "notes": "Calls itself 'החנות הוותיקה בישראל' (since 2013 / 2018). Free surprise shirt on orders over ₪1,000. Recommends hand washing only. Refund or resend if not delivered within 60 business days."
+      "notes": "Calls itself 'החנות הוותיקה בישראל' (since 2013 / 2018). Free surprise shirt on orders over ₪1,000. Recommends hand washing only. Refund or resend if not delivered within 60 business days.",
+      "quality": {
+        "fabric": {
+          "value": "The product page says nothing about fabric or construction. Only a general FAQ answer and a guide article explain fan vs player versions, and they hedge: 'usually, though not always', the fan version has a regular cut, sewn or embroidered badges and thicker fabric, while the player version is slim with thin heat-pressed badges and thin perforated fabric. No material is named.",
+          "url": "https://www.fanshop.co.il/",
+          "quote": "לרוב (אך לא בכל המקרים) ההבדלים העיקריים הם שבחולצת המשחק הגיזרה היא צרה והסמלים מודבקים בזמן שבחולצת האוהד הגיזרה רגילה והסמלים תפורים.",
+          "also_url": "https://www.fanshop.co.il/חולצות-אוהד-או-שחקן/",
+          "also_quote": "בחולצת אוהד: סמל הקבוצה ולוגו היצרן הם בדרך כלל רקומים. … בחולצת שחקן: הסמלים הם הדבקות חום דקות."
+        },
+        "fabric_nba": {
+          "value": "Generic only: 'our jerseys are of the highest quality'.",
+          "url": "https://www.fanshop.co.il/p/גופיית_משחק_nba_לוס_אנג_לס_לייקרס_-_מהד-b49185bef5f7/",
+          "quote": "הגופיות שלנו הן באיכות הגבוהה ביותר ובמחיר אטרקטיבי ומשתלם."
+        },
+        "original_or_replica": null,
+        "photos": {
+          "value": "2 catalogue-style images of the shirt alone on white, ghost-mannequin style (front and back, 2000×2000). There is no person and no close-up. These are not photos of a stocked item, and the store doesn't say where they come from.",
+          "url": "https://www.fanshop.co.il/p/חולצת-משחק-ריאל-מדריד-בית-26-27/",
+          "quote": "[img:חולצת משחק ריאל מדריד בית 26/27] ×2 (files 26-27-real-madrid-home-front-new.jpg, 26-27-real-madrid-home-back-new.jpg)",
+          "count": 2,
+          "images": [
+            "https://www.fanshop.co.il/wp-content/uploads/2026/05/26-27-real-madrid-home-front-new.jpg",
+            "https://www.fanshop.co.il/wp-content/uploads/2026/05/26-27-real-madrid-home-back-new.jpg"
+          ]
+        },
+        "photos_nba": {
+          "value": "3 catalogue-style images: a front and back composite, the front and the back. No close-up.",
+          "url": "https://www.fanshop.co.il/p/גופיית_משחק_nba_לוס_אנג_לס_לייקרס_-_מהד-b49185bef5f7/",
+          "quote": "[img:גופיית משחק NBA לוס אנג'לס לייקרס - מהדורת הצהרה - לוקה דונצ'יץ] ×3",
+          "count": 3
+        },
+        "quality_control": null,
+        "defects": {
+          "value": "Report within 48 hours of delivery, with a description and photos. The remedy is a replacement, completion or credit. Damage from washing against the instructions is not treated as a defect. The pages don't say who pays to return a faulty item.",
+          "url": "https://www.fanshop.co.il/תנאי-רכישה-ומדיניות-החזרה/",
+          "quote": "במקרה של קבלת מוצר פגום, שגוי או חסר, הלקוח מתבקש לפנות לשירות הלקוחות בתוך 48 שעות מקבלת המשלוח עם תיאור ותמונות, ואנו נדאג לפתרון הוגן, לרבות החלפה, השלמה או זיכוי"
+        },
+        "care": {
+          "value": "Hand wash only. A gentle machine wash at up to 30°, inside out, is at the customer's own risk, and products ruined by washing are not replaced.",
+          "url": "https://www.fanshop.co.il/p/חולצת-משחק-ריאל-מדריד-בית-26-27/",
+          "quote": "כביסה: יש לכבס את המוצרים מהאתר בכביסה ידנית בלבד. כיבוס במכונת כביסה ייעשה באחריות הלקוח ובתוכנית עדינה עד 30° כאשר החולצה הפוכה (ההדפסים כלפי פנים).",
+          "also_url": "https://www.fanshop.co.il/",
+          "also_quote": "במקרים בהם המוצרים יהרסו עקב כביסה, לא נוכל לעזור ולהחליף את המוצר."
+        }
+      }
     },
     {
       "name": "R:Sport",
@@ -298,7 +454,60 @@
           "quote": "ניתן לשלם גם באמצעות [Apple Pay] [Google Pay] [PayPal] [Bit]"
         }
       },
-      "notes": "Also sells boots, goalkeeper gloves and balls. The announcement bar says 'בעקבות המצב הביטחוני ייתכנוי עיכובים במשלוחים'. Customer club: 10% off the first purchase. The site puts up bot checks ('Verifying your connection') after repeated requests; some JSON pages needed a retry."
+      "notes": "Also sells boots, goalkeeper gloves and balls. The announcement bar says 'בעקבות המצב הביטחוני ייתכנוי עיכובים במשלוחים'. Customer club: 10% off the first purchase. The site puts up bot checks ('Verifying your connection') after repeated requests; some JSON pages needed a retry.",
+      "quality": {
+        "fabric": {
+          "value": "100% polyester with sweat-wicking technology and an airy fabric. The page also calls it a 'durable, quality fabric' that 'stays in excellent condition after many washes'. Nothing is said about embroidery. The fan version is labelled 'חולצת אוהד / גזרה רגילה', and the FAQ says only that versions differ in cut, prints, stitching and fabric type.",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "החולצה עשויה 100% פוליאסטר בטכנולוגיית נידוף זיעה, עם בד מאוורר ששומר על גוף יבש ונוח … עם בד עמיד ואיכותי שנשאר במצב מצוין גם אחרי הרבה כביסות … הרכב בד / חומר: 100% פוליאסטר",
+          "also_url": "https://www.rsport.co.il/pages/שאלות-נפוצות",
+          "also_quote": "ישנם מספר הבדלים בין החולצות כגון: מידה, גיזרה, הדפסים, תפירות, סוג הבד ולפעמיים גם העיצוב."
+        },
+        "fabric_nba": {
+          "value": "100% light, breathable polyester.",
+          "url": "https://www.rsport.co.il/products/mlwbucks-jersey-gold-giannis",
+          "quote": "עשויה 100% פוליאסטר קל ונושם … חומר: 100% פוליאסטר קל ונושם"
+        },
+        "original_or_replica": {
+          "value": "The FAQ says many items are replicas 'at the highest finish level', from fabric quality to stitching, and that 'even the tags attached to the shirt are absolutely identical to the original'.",
+          "url": "https://www.rsport.co.il/pages/שאלות-נפוצות",
+          "quote": "כן יש הרבה פריטים שהם רפליקה ברמת הגימור הגבוהה ביותר. רמת הגימור באה לידי ביטוי החל מאיכות הבד ועד לרמת הדיוק של התפר, אפילו הטיקטים המצורפים לחולצה זהים באופן מוחלט למקור."
+        },
+        "photos": {
+          "value": "2 catalogue-style images of the shirt alone on light grey (front and back, 800×800). There is no person and no close-up.",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "עבור לשקופית 1 / עבור לשקופית 2 (2 product images, no alt text)",
+          "count": 2,
+          "images": [
+            "https://cdn.shopify.com/s/files/1/0729/9999/3594/files/1_a18c5fde-5c43-4b31-966a-7aeb48bb56a6.jpg",
+            "https://cdn.shopify.com/s/files/1/0729/9999/3594/files/2_4d783b2f-23ce-4bbb-8492-49cf5761a16d.jpg"
+          ]
+        },
+        "photos_nba": {
+          "value": "1 catalogue-style composite of front and back. No close-up.",
+          "url": "https://www.rsport.co.il/products/mlwbucks-jersey-gold-giannis",
+          "quote": "[img:גופיית משחק מהדורת זהב | יאניס אנטטוקומפו]",
+          "count": 1
+        },
+        "quality_control": {
+          "value": "Claims 'strict quality control', in the product page's warranty tab and in the FAQ, without saying when or where it happens.",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "המוצרים שלנו עוברים בקרת איכות מחמירה והמטרה שלנו היא תמיד מקבלת מוצר ברמת הגימור הגבוהה ביותר.",
+          "also_url": "https://www.rsport.co.il/pages/שאלות-נפוצות"
+        },
+        "defects": {
+          "value": "Report a faulty or wrong item within 3 business days at most, with a photo of the defect and proof of purchase. A faulty item is exchanged 'under the manufacturer's warranty' if returned within a reasonable time. The pages don't say who pays to return a faulty item; for a change of mind the customer pays.",
+          "url": "https://www.rsport.co.il/policies/refund-policy",
+          "quote": "על אחריות מבצע ההזמנה להודיע מיידית, לכל היותר עד 3 ימי עסקים, על קבלת מוצר פגום/מוצר שאינו תואם להזמנה.",
+          "also_url": "https://www.rsport.co.il/pages/שאלות-נפוצות",
+          "also_quote": "צרפו תמונה של הפגם, הוכחת קנייה, שם וטלפון ונחזור אליכם בהקדם. … אנו נבצע חילוף של פריט במידה והוא פגום והוחזר לחנות בזמן סביר לאחר ביצוע הרכישה ,תחת אחריות יצרן."
+        },
+        "care": {
+          "value": "Hand wash, or a gentle wash at up to 30°C. In a machine, at most 20 minutes in cold water with no softener. The prints are 'external, thin and delicate' and extra washing may damage them; the less you wash, the longer the print lasts.",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "מומלץ ועדיף לכבס ביד או בכביסה עדינה בטמפרטורה נמוכה (עד 30°C). כביסה במכונה תתבצע במקסימום 20 דקות, במים קרים בלבד וללא שימוש במרכך … ההדפסות על חולצות הכדורגל הן הדפסות חיצוניות, דקות ועדינות, ולכן כביסות נוספות עלולות לפגוע בהן."
+        }
+      }
     },
     {
       "name": "ליברו (Libero)",
@@ -368,7 +577,49 @@
           "quote": "התשלום באתר מתבצע באמצעות כרטיס אשראי או פייפאל. במידה ואין ברשותכם כ.אשראי ניתנת גם האפשרות לשלם באמצעות אפליקציית bit או העברה בנקאית."
         }
       },
-      "notes": "Says on its own pages that it is a personal-import model ('האתר אינו מחזיק מלאי מוצרים'). Refund if not received within about 60 business days. Customers are responsible for choosing the size; no exchange for a wrong size."
+      "notes": "Says on its own pages that it is a personal-import model ('האתר אינו מחזיק מלאי מוצרים'). Refund if not received within about 60 business days. Customers are responsible for choosing the size; no exchange for a wrong size.",
+      "quality": {
+        "fabric": {
+          "value": "The product page says only 'breathable, light fabric', with no material. The FAQ says the player version's badges are heat-pressed, while the fan version's are embroidered and sewn on and its fabric is a bit thicker. It adds that 'both versions are of the highest quality to be found'.",
+          "url": "https://www.liberokits.com/product/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "עשויה מבד נושם וקליל לנוחות מושלמת",
+          "also_url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "also_quote": "הסמלים בגרסת השחקן מוטבעים בהדבקה בשונה מהסמלים הרקומים בגרסת האוהד. גרסת אוהד … הבד מעט עבה יותר והסמלים שעל החולצה תפורים לבד … חשוב לציין ששתי הגרסאות באיכות הגבוהה ביותר שניתן למצוא."
+        },
+        "fabric_nba": null,
+        "original_or_replica": {
+          "value": "Says printing uses the season's 'original fonts, exactly like the shirts the players wear'.",
+          "url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "quote": "האם הדפסת השם והמספר בגב החולצה היא בפונט המקורי? כן, כל ההדפסות הן בפונטים המקוריים של אותה עונה, בדיוק כמו בחולצות שלובשים השחקנים."
+        },
+        "photos": {
+          "value": "2 flat-lay photos of the shirt alone on white (front and back, 600×600). There is no person and no close-up. They are pixel-identical to Jerseys.co.il's photos of the same shirt.",
+          "url": "https://www.liberokits.com/product/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "[img:חולצת כדורגל ריאל מדריד בית 26/27] ×2 (files ריאל-מדריד-2027-בית.jpg, ריאל-מדריד-2627-בית.jpg)",
+          "count": 2,
+          "images": [
+            "https://www.liberokits.com/wp-content/uploads/2026/03/ריאל-מדריד-2027-בית.jpg",
+            "https://www.liberokits.com/wp-content/uploads/2026/03/ריאל-מדריד-2627-בית.jpg"
+          ]
+        },
+        "photos_nba": {
+          "value": "1 catalogue-style composite of front and back. No close-up.",
+          "url": "https://www.liberokits.com/product/גופיית-nba-פילדלפיה-76-לברון-גיימס-כחול/",
+          "quote": "[img:גופיית NBA פילדלפיה 76 לברון ג'יימס - כחול]",
+          "count": 1
+        },
+        "quality_control": null,
+        "defects": {
+          "value": "Contact the store through the contact page to arrange a return or exchange. No deadline and no split of the return cost are stated.",
+          "url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "quote": "במידה והמוצר הגיע פגום ו/או שונה מהמוצר שהוזמן, ניתן ליצור איתנו קשר בדף צור קשר לתיאום החזרה/החלפה של המוצר."
+        },
+        "care": {
+          "value": "Hand wash, or a gentle wash at up to 30°, inside out so the prints face in. Machine washing is at the customer's own risk.",
+          "url": "https://www.liberokits.com/תקנון-ותנאי-שירות/",
+          "quote": "מומלץ לכבס את הבגדים באופן ידני או בכביסה עדינה של עד 30 מעלות. רצוי להפוך את הבגד לפני הכביסה כך שההדפסים יהיו בפנים. כיבוס המוצרים במכונת כביסה הוא על אחריות הלקוח בלבד."
+        }
+      }
     },
     {
       "name": "FootArmy",
@@ -439,7 +690,49 @@
           "quote": "ניתן לשלם באמצעות כרטיס אשראי או PayPal. ניתן לשלם באמצעות אפליקציית התשלומים ביט. ניתן לשלם באמצעות אפליקציית התשלומים Paybox."
         }
       },
-      "notes": "Has a points scheme ('FACoins') and a customer club. Refund or resend if a parcel has not arrived 45 business days after dispatch. Its FAQ says: 'FootArmy הינה חנות אינטרנט, מחסנינו ממוקמים בחו\"ל'."
+      "notes": "Has a points scheme ('FACoins') and a customer club. Refund or resend if a parcel has not arrived 45 business days after dispatch. Its FAQ says: 'FootArmy הינה חנות אינטרנט, מחסנינו ממוקמים בחו\"ל'.",
+      "quality": {
+        "fabric": {
+          "value": "No material and no embroidery are stated. The product page offers only 'advanced fabric technology — light and breathable', and says the crest sits on the chest next to a maker's logo 'that ensures a premium finish'. The FAQ says the player version is thinner, more breathable and more elastic, the fan version slightly thicker, and that 'both versions are especially high quality'.",
+          "url": "https://footarmy.net/p/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "טכנולוגיית בד מתקדמת / הבד קל ונושם, מותאם לאימונים ולשימוש יומיומי, ושומר על תחושת נוחות לאורך כל היום. … סמל ריאל מדריד ממוקם בגאווה על החזה, לצד לוגו יצרן איכותי שמבטיח גימור פרימיום.",
+          "also_url": "https://footarmy.net/שאלות-ותשובות/",
+          "also_quote": "חולצה בגרסת שחקן היא חולצה העשויה מבד דק, נושם ואלסטי יותר … חולצה בגרסת אוהד היא החולצה הרגילה שכולנו מכירים, מעט עבה יותר מגרסת השחקן. שתי הגרסאות איכותיות במיוחד"
+        },
+        "fabric_nba": null,
+        "original_or_replica": null,
+        "photos": {
+          "value": "4 images, all watermarked 'FootArmy.net'. Two are catalogue-style product images: the front, and a front-and-back composite with MBAPPÉ 10. The other two are promotional photos of Real Madrid players wearing the kit. None is a close-up of the fabric, crest or stitching. The shipping page says all photos are for illustration only.",
+          "url": "https://footarmy.net/p/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "[img:חולצת כדורגל ריאל מדריד תלבושת בית עונת 26/27] [img:חולצת כדורגל ריאל מדריד בית 26/27 - אמבפה] [img:… - אמבפה - תמונה 3] [img:… - אמבפה - תמונה 4]",
+          "count": 4,
+          "also_url": "https://footarmy.net/shipping-returns/",
+          "also_quote": "כל התמונות המופיעות באתר הן להמחשה בלבד. ייתכנו הבדלים קלים בין התמונות לבין המוצר שיתקבל בפועל",
+          "images": [
+            "https://footarmy.net/wp-content/uploads/2026/05/4060168023.webp",
+            "https://footarmy.net/wp-content/uploads/2026/05/016801680232.webp",
+            "https://footarmy.net/wp-content/uploads/2026/05/6016035215.webp",
+            "https://footarmy.net/wp-content/uploads/2026/05/60810350135.webp"
+          ]
+        },
+        "photos_nba": {
+          "value": "1 catalogue-style composite of front and back, showing 'YOUR NAME 00'. No close-up.",
+          "url": "https://footarmy.net/p/גופיית-nba-לוס-אנגלס-לייקרס-la-lakers-icon-edition-24-25/",
+          "quote": "[img:גופיית NBA לוס אנג'לס לייקרס LA Lakers Icon Edition]",
+          "count": 1
+        },
+        "quality_control": null,
+        "defects": {
+          "value": "Contact the store 'as soon as possible' with the order number and clear photos; no fixed deadline. The remedy is a replacement, repair, return or refund. For a confirmed fault there is no cancellation fee and the store pays the return.",
+          "url": "https://footarmy.net/shipping-returns/",
+          "quote": "אם התקבל מוצר פגום, מוצר שונה מזה שהוזמן או מוצר הכולל טעות שלא נמסרה על ידי הלקוח, יש לפנות לשירות הלקוחות בהקדם האפשרי. … במקרה שאושר כי מדובר בפגם, אי-התאמה או טעות מצד FootArmy, לא ייגבו מהלקוח דמי ביטול ועלות ההחזרה לא תחול עליו."
+        },
+        "care": {
+          "value": "Hand wash only. A gentle wash at up to 30° is at the customer's own risk, and products ruined by washing are not replaced.",
+          "url": "https://footarmy.net/שאלות-ותשובות/",
+          "quote": "ההמלצה הגורפת היא לכבס את המוצרים בכביסה ידנית בלבד, ולא להשתמש במכונת כביסה. במקרים בהם המוצרים יהרסו עקב כביסה, לא נוכל לעזור ולהחליף את המוצר."
+        }
+      }
     },
     {
       "name": "ג׳רזיניו (Jerseyniho)",
@@ -511,7 +804,57 @@
           "quote": "באתר ישנה אפשרות לשלם באמצעות כרטיס אשראי או פייפאל."
         }
       },
-      "notes": "Sukkot promotion '2+1 מתנה על כל האתר'; says it has '1000+' products. The home page shows 'אזל מהמלאי' labels next to several best sellers, while the product feed says they are in stock."
+      "notes": "Sukkot promotion '2+1 מתנה על כל האתר'; says it has '1000+' products. The home page shows 'אזל מהמלאי' labels next to several best sellers, while the product feed says they are in stock.",
+      "quality": {
+        "fabric": {
+          "value": "No material and no construction detail. The product page offers only the version choice (player +₪20) and a note that 'our models' fit tighter. The FAQ just names the versions: fan 'STADIUM', player 'VAPOR or DRI FIT ADVANTAGE'.",
+          "url": "https://jerseyniho.com/product/real-madrid-home-26-27/",
+          "quote": "חשוב: הדגמים שלנו הם בעלי גזרה צמודה יותר.",
+          "also_url": "https://jerseyniho.com/שאלות-תשובות/",
+          "also_quote": "חולצת האוהד (נקראת גם גרסת STADIUM) – החולצה שרב האוהדים קונים בגלל הגזרה הנוחה … חולצת השחקן (נקראת גם VAPOR או DRI FIT ADVANTAGE) – היא חולצה זהה לזאת שהשחקנים משחקים איתה"
+        },
+        "fabric_nba": null,
+        "original_or_replica": {
+          "value": "The FAQ says the player version 'is identical to the one the players play in'.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "חולצת השחקן (נקראת גם VAPOR או DRI FIT ADVANTAGE) – היא חולצה זהה לזאת שהשחקנים משחקים איתה"
+        },
+        "photos": {
+          "value": "2 cut-out product images of the shirt alone on white (front and back, 1080×1080). There is no person and no close-up. The terms say product photos are for illustration only.",
+          "url": "https://jerseyniho.com/product/real-madrid-home-26-27/",
+          "quote": "2 images (files real-madrid-home-26.webp, real-madrid-home-2026-2027-back.webp)",
+          "count": 2,
+          "also_url": "https://jerseyniho.com/תקנון-אתר/",
+          "also_quote": "תמונות המוצרים באתר מוצגות לצורכי המחשה בלבד. ייתכנו הבדלים מסוימים במראה, בגוון, בגודל, וכיו\"ב בין המוצר, כפי שהוא מוצג באתר, לבין המוצר שיסופק ללקוח.",
+          "images": [
+            "https://jerseyniho.com/wp-content/uploads/2026/05/real-madrid-home-26.webp",
+            "https://jerseyniho.com/wp-content/uploads/2026/05/real-madrid-home-2026-2027-back.webp"
+          ]
+        },
+        "photos_nba": {
+          "value": "1 composite of front and back, with an Israeli flag added above the number. No close-up.",
+          "url": "https://jerseyniho.com/product/nba-all-star-dani-avdia-26/",
+          "quote": "1 image (file all-star-dani-avdia-2026-israel-flag.webp)",
+          "count": 1
+        },
+        "quality_control": {
+          "value": "No inspection statement. The about page says only that products are 'chosen carefully' with an emphasis on quality.",
+          "url": "https://jerseyniho.com/מי-אנחנו/",
+          "quote": "אנחנו בוחרים את המוצרים שלנו בקפידה, שמים דגש על איכות, מגוון ושירות אישי"
+        },
+        "defects": {
+          "value": "Contact customer service on WhatsApp; no deadline is stated. The terms say the store is responsible for collecting or exchanging a faulty item from where it was delivered, and that it checks the claimed defect first. If the item turns out fine, there is no refund.",
+          "url": "https://jerseyniho.com/תקנון-אתר/",
+          "quote": "במקרה שהחזר, שינוי או ביטול נעשו עקב פגם במוצר, האחריות לאיסוף או החלפת המוצר הפגום מהמקום בו נמסר, תחול על האתר.",
+          "also_url": "https://jerseyniho.com/שאלות-תשובות/",
+          "also_quote": "ניתן לפנות אלינו לשירות הלקוחות בWhatsApp בשעות הפעילות ואנו נדאג לחזור אליכם בהקדם ולטפל בנושא במהירות האפשרית."
+        },
+        "care": {
+          "value": "Hand wash only. A gentle wash at up to 30°, inside out, works 'from the experience of thousands of customers', but products ruined by washing are not replaced.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "ההמלצה היא לכבס את המוצרים בכביסה ידנית בלבד ולא להשתמש במכונת כביסה. במקרים בהם המוצרים יהרסו עקב כביסה, לא נוכל לעזור ולהחליף את המוצר."
+        }
+      }
     },
     {
       "name": "אוהדימוס (Ohadimos)",
@@ -579,7 +922,46 @@
           "quote": "Payment Methods - Credit / Debit Cards - PAYPAL"
         }
       },
-      "notes": "A smaller Wix store ('© 2020'), included as the low-price data point. Its FAQ says outright: 'האם המוצרים מקוריים? כל המוצרים הם רפליקות באיכות הגבוהה ביותר.' (https://www.ohadimos.com/שאלות-ותשובות). Refund if not delivered within 65 days of the order. It does not say where its stock is."
+      "notes": "A smaller Wix store ('© 2020'), included as the low-price data point. Its FAQ says outright: 'האם המוצרים מקוריים? כל המוצרים הם רפליקות באיכות הגבוהה ביותר.' (https://www.ohadimos.com/שאלות-ותשובות). Refund if not delivered within 65 days of the order. It does not say where its stock is.",
+      "quality": {
+        "fabric": {
+          "value": "No material and no construction detail. The product page says only 'a 26/27 football shirt in the fan version'. The FAQ says the player version is thinner, more breathable and more elastic, the fan version slightly thicker. (The FAQ text is word for word the same as FootArmy's.)",
+          "url": "https://www.ohadimos.com/product-page/ריאל-מדריד-בית-26-27",
+          "quote": "חולצת כדורגל לעונת 26/27 בגרסת אוהד.",
+          "also_url": "https://www.ohadimos.com/שאלות-ותשובות",
+          "also_quote": "חולצה בגרסת שחקן היא חולצה העשויה מבד דק, נושם ואלסטי יותר … שתי הגרסאות איכותיות במיוחד ואין אחת עדיפה יותר"
+        },
+        "fabric_nba": null,
+        "original_or_replica": {
+          "value": "The FAQ says all products are replicas.",
+          "url": "https://www.ohadimos.com/שאלות-ותשובות",
+          "quote": "האם המוצרים מקוריים? כל המוצרים הם רפליקות באיכות הגבוהה ביותר."
+        },
+        "photos": {
+          "value": "2 images. One is a photo of the shirt on a hanger in front of a black mesh rack, the style used in supplier albums. The other is a generic photo of sleeve patches. There is no person and no close-up of the shirt. The product page warns that colours may differ because of screens 'and the editing the photos go through'.",
+          "url": "https://www.ohadimos.com/product-page/ריאל-מדריד-בית-26-27",
+          "quote": "שימו לב שתיתכן סטייה קטנה בצבעי הפריטים המוצגים בתמונות בעקבות הבדלים בין מסכים ועריכה שעוברות התמונות",
+          "count": 2,
+          "images": [
+            "https://static.wixstatic.com/media/71aa9b_93402934fc6f40f6b2937593fddf3633~mv2.jpg",
+            "https://static.wixstatic.com/media/71aa9b_2ef73741c3ee45d5904be8b2f427b6e1~mv2.png"
+          ]
+        },
+        "photos_nba": null,
+        "quality_control": null,
+        "defects": {
+          "value": "Report a defect within a week of receiving the parcel; after that the store takes no responsibility. A wrong item is sent again. The pages don't say who pays.",
+          "url": "https://www.ohadimos.com/store-policy",
+          "quote": "במקרה וקיבלתם מוצר עם פגם יש לדווח לנו על כך עד שבוע מיום קבלת החבילה! לאחר שבוע האתר לא ייקח אחריות על המוצר.",
+          "also_url": "https://www.ohadimos.com/shipping-returns",
+          "also_quote": "במקרה של קבלת פריט שגוי יש ליצור איתנו קשר וצוות האתר ישלח את ההזמנה מחדש בהקדם האפשרי."
+        },
+        "care": {
+          "value": "Turn inside out, hand wash and hang to dry in the shade. The prints are 'external, thin and delicate', and fewer washes make them last longer.",
+          "url": "https://www.ohadimos.com/שאלות-ותשובות",
+          "quote": "יש להפוך את הבגד, לכבסו ביד ולתלות לייבוש במקום מוצל. … ההדפסות על הפריטים הנן הדפסות חיצוניות, דקות ועדינות. פחות כביסות יאריכו את חיי ההדפס."
+        }
+      }
     }
   ],
   "not_included": [

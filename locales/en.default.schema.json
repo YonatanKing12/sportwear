@@ -1348,6 +1348,8 @@
                 "shipping": "Shipping",
                 "delivery": "Delivery time",
                 "returns": "Returns",
+                "fabric": "The fabric and print",
+                "quality_check": "Checked before shipping",
                 "price": "This product's price",
                 "kids_set": "Kids set",
                 "basketball_set": "Jersey + shorts set",
@@ -1363,7 +1365,8 @@
                 "basketball": "Basketball",
                 "american_football": "American football",
                 "kids": "Kids products",
-                "adults": "Adult products"
+                "adults": "Adult products",
+                "shirts": "Shirts (jerseys and kids kits)"
               }
             },
             "icon": {

@@ -907,6 +907,20 @@
       "theirs_label": "Other stores",
       "vs": "VS",
       "note": "Other stores: 8 online sports-shirt stores in Israel, going by what their own sites said on October 4, 2026.",
+      "fabric": {
+        "label": "Fabric and print",
+        "ours": "Holds up in the wash",
+        "ours_note": "Breathable sports fabric, and the print doesn't peel in a regular wash",
+        "theirs": "Hand wash, mostly",
+        "theirs_note": "7 of 8 say to wash by hand or on a gentle cycle"
+      },
+      "quality_check": {
+        "label": "Checked before shipping",
+        "ours": "Every item checked",
+        "ours_note": "Here in Israel, before it ships to you",
+        "theirs": "Straight from the supplier, mostly",
+        "theirs_note": "Sent from a warehouse abroad, with no check stated by the store"
+      },
       "shipping": {
         "label": "Home delivery",
         "ours": "Free",
