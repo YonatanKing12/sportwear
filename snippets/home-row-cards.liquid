@@ -98,10 +98,15 @@
   all" tile, arrows and progress bar (assets/product-carousel.js drives them).
 {%- endcomment -%}
 {% stylesheet %}
-  /* Carousel: the header and progress bar keep the page width; the row itself spans the screen. It
-     starts where the page content starts and runs past the end edge, where the next card peeks in
-     (the visible columns plus 0.3 of a card; on phones --carousel-peek, half a card for one column). */
+  /* Carousel: the row runs across the whole screen, with the gutter at the start and the next card
+     peeking in at the end edge (the visible columns plus 0.3 of a card; on phones --carousel-peek,
+     half a card for one column). The header and progress bar take the same width, so on a screen
+     wider than the page the row starts at the screen's side with its title, not at the page's
+     content line (owner, 2026-10-04: a row starting 230px in and running off the other side looked
+     lopsided). --page-width: 100vw does it for every .page-width and start offset inside. Cards stop
+     growing at 420px, so very wide screens show more of them. */
   .featured-collection__carousel {
+    --page-width: 100vw;
     display: block;
   }
 
@@ -109,7 +114,10 @@
     --carousel-cols: calc(var(--grid-cols) + var(--carousel-peek, 0.3));
     --carousel-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
     display: grid;
-    grid-auto-columns: calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols));
+    grid-auto-columns: min(
+      calc((100% - (var(--carousel-cols) - 1) * var(--grid-gap)) / var(--carousel-cols)),
+      var(--carousel-card-max, 420px)
+    );
     grid-auto-flow: column;
     gap: var(--grid-gap);
     margin: 0;

@@ -55,11 +55,9 @@
     assign columns_desktop = section.settings.columns_desktop
     assign columns_tablet = columns_desktop | at_most: 3
     capture card_sizes
-      echo '(min-width: 990px) calc((min(100vw, '
-      echo settings.page_width
-      echo 'px) - 64px) / '
+      echo '(min-width: 990px) min(calc((100vw - 64px) / '
       echo columns_desktop
-      echo '), (min-width: 750px) calc((100vw - 64px) / '
+      echo '), 420px), (min-width: 750px) calc((100vw - 64px) / '
       echo columns_tablet
       echo '), calc((100vw - 40px) / '
       echo mobile_visible
@@ -263,7 +261,13 @@
     line-height: var(--leading-body);
   }
 
-  /* The chips: one row that scrolls sideways, starting where the page content starts. */
+  /* Like the product rows, the whole section runs across the screen: its header, chips and rows start
+     at the screen's side (the gutter), not at the page's content line. */
+  .collection-tabs {
+    --page-width: 100vw;
+  }
+
+  /* The chips: one row that scrolls sideways, starting with the header. */
   .collection-tabs__tabs,
   .collection-tabs__links {
     --tabs-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));

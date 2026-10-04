@@ -198,8 +198,12 @@
     flex: none;
   }
 
-  /* The row starts where the page content starts and runs to the screen's end edge, like the product
-     rows; on phones the next photo peeks in. */
+  /* Like the product rows, the section runs across the whole screen: the header and the row start at
+     the screen's side (the gutter) and the row runs to the end edge; on phones the next photo peeks in. */
+  .lifestyle {
+    --page-width: 100vw;
+  }
+
   .lifestyle__track {
     --look-inline: min(74vw, 300px);
     --looks-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));

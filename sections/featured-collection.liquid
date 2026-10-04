@@ -66,7 +66,7 @@
     assign columns_tablet = columns_desktop | at_most: 3
     assign columns_mobile = section.settings.columns_mobile | plus: 0
     assign use_scroller = section.settings.mobile_scroller
-    # Carousel: one row that runs to the screen's edge at every width, with previous/next buttons, a
+    # Carousel: one row that runs across the whole screen at every width, with previous/next buttons, a
     # progress bar and a "view all" tile at its end. The next card peeks in: 0.3 of a card, or half a
     # card on a phone showing one column, so a large card still reads as a row to swipe.
     assign is_carousel = false
@@ -228,11 +228,9 @@
     # columns plus a peek) across the screen.
     if is_carousel
       capture card_sizes
-        echo '(min-width: 990px) calc((min(100vw, '
-        echo settings.page_width
-        echo 'px) - 64px) / '
+        echo '(min-width: 990px) min(calc((100vw - 64px) / '
         echo columns_desktop
-        echo '), (min-width: 750px) calc((100vw - 64px) / '
+        echo '), 420px), (min-width: 750px) calc((100vw - 64px) / '
         echo columns_tablet
         echo '), calc((100vw - 40px) / '
         echo mobile_visible

@@ -316,8 +316,13 @@
     }
   }
 
-  /* The row starts where the page content starts and runs to the screen's end edge, like the product
-     rows; each card snaps to the start. On phones the next card peeks in. */
+  /* Like the product rows, the section runs across the whole screen: the header and the row start at
+     the screen's side (the gutter) and the row runs to the end edge; each card snaps to the start. On
+     phones the next card peeks in. */
+  .collection-cards {
+    --page-width: 100vw;
+  }
+
   .collection-cards__track {
     --card-inline: min(64vw, 260px);
     --cards-start: max(var(--gutter), calc((100% - var(--page-width, 1440px)) / 2));
