@@ -133,10 +133,171 @@
         "padding_bottom": 44
       }
     },
-    "new_arrivals": {
+    "cross_football_basketball": {
       "type": "featured-collection",
       "settings": {
         "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "basketball-jerseys",
+        "copy": "basketball",
+        "audience": "product",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "football",
+        "rotation": "1_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "cross_football_nfl": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "nfl-jerseys",
+        "copy": "nfl",
+        "audience": "product",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "football",
+        "rotation": "2_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "cross_basketball_football": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "football",
+        "copy": "football",
+        "audience": "product",
+        "product_type": "Football Jersey",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "basketball",
+        "rotation": "1_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "cross_basketball_nfl": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "nfl-jerseys",
+        "copy": "nfl",
+        "audience": "product",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "basketball",
+        "rotation": "2_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "cross_nfl_basketball": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "basketball-jerseys",
+        "copy": "basketball",
+        "audience": "product",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "american_football",
+        "rotation": "1_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "cross_nfl_football": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "football",
+        "copy": "football",
+        "audience": "product",
+        "product_type": "Football Jersey",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "american_football",
+        "rotation": "2_2",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "kids_row": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-day",
+        "source": "collection",
+        "collection": "kids",
+        "copy": "none",
+        "audience": "kids",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "kids",
+        "rotation": "every",
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
+    "new_arrivals": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
         "source": "collection",
         "collection": "new",
         "copy": "new",
@@ -151,9 +312,47 @@
         "show_view_all": true,
         "show_count": true,
         "padding_top": 44,
+        "padding_bottom": 44,
+        "show_for": "all",
+        "rotation": "1_2"
+      }
+    },
+    "our_picks": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-soft",
+        "source": "collection",
+        "collection": "our-picks",
+        "copy": "none",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "show_for": "all",
+        "rotation": "2_2",
+        "padding_top": 44,
         "padding_bottom": 44
       }
     }
   },
-  "order": ["main", "recommendations", "league_row", "new_arrivals"]
+  "order": [
+    "main",
+    "recommendations",
+    "league_row",
+    "cross_football_basketball",
+    "cross_football_nfl",
+    "cross_basketball_football",
+    "cross_basketball_nfl",
+    "cross_nfl_basketball",
+    "cross_nfl_football",
+    "kids_row",
+    "new_arrivals",
+    "our_picks"
+  ]
 }

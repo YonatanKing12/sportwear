@@ -154,6 +154,25 @@ showed a light outline, specks or a halo on the dark cards and were re-cut on 20
 `scripts/images/recut-card.py` and replaced in place. Real Madrid's was re-cut the same way on 2026-09-30 from the
 product's new front photo. Check a new cut-out on a dark background at 200% before uploading.
 
+**Every team page since 2026-10-04** (the owner chose "a colour and a card for every team"): 136 more cards, 170 in
+all. Each comes from the first jersey on the team's page, a few swapped for the team's best-known shirt (France's navy
+home, Inter Miami's pink home, the Raiders' black, the Bears' navy). The studio renders sit in a soft grey shadow 5-8
+px wide (up to ~16 px under the hem) that a flood cut keeps as a light rim on a dark card, so `recut-card.py` has an
+`auto` mode that removes that shadow and keeps flat white or silver parts of the garment (white jerseys still cut best
+with `flood 4 1`; three real photos on a grey backdrop, Memphis, Utah and Houston, with `grey 160 1`). Which mode each
+card used, its colour, its mark and its source product are in `collector-cards.json`. The NFL team pages show their
+card on the night-field banner `sw-col-hoodies.jpg`, set as `sportwear.banner` on `nfl`, `nfl-jerseys` and
+`nfl-jerseys-kids` (a team page falls back to its league's banner). The Saints, Buccaneers, Titans and Commanders have
+no card until their first jerseys come.
+
+## Product page story band (removed)
+
+On 2026-10-04 the product pages got a story band: one big lifestyle photo with a line of copy, picked by the kind of
+product and shown in the team's colour. The owner turned it down the same day ("ענקי, לא מביא שום ערך, מרובע, עם
+מסגרת, גנרי": huge, no value, boxy, framed, generic) and it was taken out. The lesson for product pages: a big photo
+with general copy, often of another team's shirt, gives the buyer nothing. A photo there should show the product
+itself, as the owner's photos do in nine product galleries, or carry something the buyer uses.
+
 ## Brand graphics: banners, the empty cart and the 404 page
 
 On 2026-09-27 the owner asked for "lots of special graphics" to brand the site. Twenty wide pictures

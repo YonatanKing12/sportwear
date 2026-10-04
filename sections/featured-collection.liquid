@@ -1,4 +1,44 @@
 {%- liquid
+  # On a product page a row can show only for the products of one sport or audience, and only on one product
+  # page in two or three (by the product's id), so that product pages end with different rows. Elsewhere the
+  # row always shows.
+  assign row_visible = true
+  if product != blank
+    case section.settings.show_for
+      when 'football'
+        unless product.tags contains 'sport:football'
+          assign row_visible = false
+        endunless
+      when 'basketball'
+        unless product.tags contains 'sport:basketball'
+          assign row_visible = false
+        endunless
+      when 'american_football'
+        unless product.tags contains 'sport:american-football' or product.type == 'Hoodie'
+          assign row_visible = false
+        endunless
+      when 'kids'
+        unless product.tags contains 'audience:kids'
+          assign row_visible = false
+        endunless
+      when 'adults'
+        if product.tags contains 'audience:kids'
+          assign row_visible = false
+        endif
+    endcase
+    assign rotation = section.settings.rotation | default: 'every'
+    if rotation != 'every'
+      assign rotation_parts = rotation | split: '_'
+      assign rotation_slot = rotation_parts.first | plus: 0
+      assign rotation_of = rotation_parts.last | plus: 0
+      # Shopify's ids step by 32768, so the turn comes from the id divided by it (the id itself is always even).
+      assign product_slot = product.id | divided_by: 32768 | modulo: rotation_of | plus: 1
+      if product_slot != rotation_slot
+        assign row_visible = false
+      endif
+    endif
+  endif
+
   # Further down a page (after its third section) this section can wait until the visitor scrolls near
   # it: it renders as an outline (snippets/deferred-section.liquid) and assets/deferred-section.js loads
   # it through the Section Rendering API, where section.index is nil, as in the theme editor, so both
@@ -8,7 +48,9 @@
     assign defer_render = true
   endif
 -%}
-{%- if defer_render -%}
+{%- if row_visible == false -%}
+  {%- comment -%} Not for this product: nothing at all, not even the deferred outline. {%- endcomment -%}
+{%- elsif defer_render -%}
   {%- render 'deferred-section',
     section_id: section.id,
     color_scheme: section.settings.color_scheme.id,
@@ -41,6 +83,15 @@
     # tag audience:kids), and optionally only the first product of each team (its team:<slug> tag), so
     # a row sorted by date doesn't fill up with the team imported last.
     assign audience_filter = section.settings.audience | default: 'all'
+    if audience_filter == 'product'
+      assign audience_filter = 'all'
+      if product != blank
+        assign audience_filter = 'adult'
+        if product.tags contains 'audience:kids'
+          assign audience_filter = 'kids'
+        endif
+      endif
+    endif
     assign one_per_team = section.settings.one_per_team
     # Optionally only one product type, e.g. only the jerseys of a collection that also holds shorts;
     # such a row looks through more of the collection (its first 80 products instead of 40).
@@ -639,7 +690,9 @@
         },
         { "value": "shorts", "label": "t:sections.featured_collection.settings.copy.options.shorts" },
         { "value": "hoodies", "label": "t:sections.featured_collection.settings.copy.options.hoodies" },
-        { "value": "nfl", "label": "t:sections.featured_collection.settings.copy.options.nfl" }
+        { "value": "nfl", "label": "t:sections.featured_collection.settings.copy.options.nfl" },
+        { "value": "football", "label": "t:sections.featured_collection.settings.copy.options.football" },
+        { "value": "basketball", "label": "t:sections.featured_collection.settings.copy.options.basketball" }
       ],
       "default": "none"
     },
@@ -669,7 +722,8 @@
       "options": [
         { "value": "all", "label": "t:sections.featured_collection.settings.audience.options.all" },
         { "value": "adult", "label": "t:sections.featured_collection.settings.audience.options.adult" },
-        { "value": "kids", "label": "t:sections.featured_collection.settings.audience.options.kids" }
+        { "value": "kids", "label": "t:sections.featured_collection.settings.audience.options.kids" },
+        { "value": "product", "label": "t:sections.featured_collection.settings.audience.options.product" }
       ],
       "default": "all"
     },
@@ -773,6 +827,43 @@
       "id": "show_count",
       "label": "t:sections.featured_collection.settings.show_count.label",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured_collection.settings.product_pages.content",
+      "info": "t:sections.featured_collection.settings.product_pages.info"
+    },
+    {
+      "type": "select",
+      "id": "show_for",
+      "label": "t:sections.featured_collection.settings.show_for.label",
+      "options": [
+        { "value": "all", "label": "t:sections.featured_collection.settings.show_for.options.all" },
+        { "value": "football", "label": "t:sections.featured_collection.settings.show_for.options.football" },
+        { "value": "basketball", "label": "t:sections.featured_collection.settings.show_for.options.basketball" },
+        {
+          "value": "american_football",
+          "label": "t:sections.featured_collection.settings.show_for.options.american_football"
+        },
+        { "value": "kids", "label": "t:sections.featured_collection.settings.show_for.options.kids" },
+        { "value": "adults", "label": "t:sections.featured_collection.settings.show_for.options.adults" }
+      ],
+      "default": "all"
+    },
+    {
+      "type": "select",
+      "id": "rotation",
+      "label": "t:sections.featured_collection.settings.rotation.label",
+      "info": "t:sections.featured_collection.settings.rotation.info",
+      "options": [
+        { "value": "every", "label": "t:sections.featured_collection.settings.rotation.options.every" },
+        { "value": "1_2", "label": "t:sections.featured_collection.settings.rotation.options.1_2" },
+        { "value": "2_2", "label": "t:sections.featured_collection.settings.rotation.options.2_2" },
+        { "value": "1_3", "label": "t:sections.featured_collection.settings.rotation.options.1_3" },
+        { "value": "2_3", "label": "t:sections.featured_collection.settings.rotation.options.2_3" },
+        { "value": "3_3", "label": "t:sections.featured_collection.settings.rotation.options.3_3" }
+      ],
+      "default": "every"
     },
     {
       "type": "range",

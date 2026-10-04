@@ -802,7 +802,8 @@
           "options": {
             "all": "All products",
             "adult": "Adults only",
-            "kids": "Kids only"
+            "kids": "Kids only",
+            "product": "Same as the product (on product pages)"
           }
         },
         "one_per_team": {
@@ -844,7 +845,9 @@
             "special_editions": "Special editions",
             "shorts": "Basketball shorts",
             "hoodies": "NFL hoodies",
-            "nfl": "NFL jerseys"
+            "nfl": "NFL jerseys",
+            "football": "Football shirts",
+            "basketball": "Basketball jerseys"
           }
         },
         "intro_card": {
@@ -866,6 +869,33 @@
         "lazy_render": {
           "label": "Load when the visitor scrolls near it",
           "info": "From the fourth section of a page on, the section loads when the visitor gets close to it, so long pages open fast. It always shows in the theme editor."
+        },
+        "product_pages": {
+          "content": "On product pages",
+          "info": "Limit the row to some product pages, so that product pages end with different rows. Elsewhere the row always shows."
+        },
+        "show_for": {
+          "label": "Show on the pages of",
+          "options": {
+            "all": "Every product",
+            "football": "Football products",
+            "basketball": "Basketball products",
+            "american_football": "American football products",
+            "kids": "Kids products",
+            "adults": "Adult products"
+          }
+        },
+        "rotation": {
+          "label": "How often",
+          "info": "Each product page gets a fixed turn, so two rows set to \"1st of 2\" and \"2nd of 2\" take turns: half of the pages show one and half the other.",
+          "options": {
+            "every": "On every page",
+            "1_2": "1st of 2 pages",
+            "2_2": "2nd of 2 pages",
+            "1_3": "1st of 3 pages",
+            "2_3": "2nd of 3 pages",
+            "3_3": "3rd of 3 pages"
+          }
         }
       }
     },

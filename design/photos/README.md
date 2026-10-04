@@ -14,6 +14,9 @@ anywhere on the site ("תמונות מעולות ואותנטיות שאפשר �
 
 Where each photo is used on the site is listed in `index.json` (`used_on`) once it is placed.
 
+The 16 3:2 crops `sw-story-<file>.jpg` in Content → Files (2026-10-04) were made for a product-page band that the owner
+turned down the same day; they are not used.
+
 ## Where they are used (2026-09-28)
 
 The kits in the photos are products the store sells, so the photos sell them directly:

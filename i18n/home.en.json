@@ -48,6 +48,14 @@
         "nfl": {
           "eyebrow": "American football",
           "text": "The stars' jerseys of the NFL teams, for adults and kids"
+        },
+        "football": {
+          "eyebrow": "Football too",
+          "text": "This season's club and national team shirts"
+        },
+        "basketball": {
+          "eyebrow": "Basketball too",
+          "text": "NBA jerseys of the great teams and players"
         }
       }
     },
