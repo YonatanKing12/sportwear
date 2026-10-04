@@ -241,14 +241,14 @@
         <td class="compare__cell compare__cell--ours" role="cell">
           <span class="compare__value">
             {%- render 'icon', name: 'check', size: 14, class: 'compare__check' -%}
-            <bdi>{{ ours }}</bdi>
+            <span>{{ ours }}</span>
           </span>
           {%- if ours_note != blank -%}
             <span class="compare__detail">{{ ours_note }}</span>
           {%- endif -%}
         </td>
         <td class="compare__cell compare__cell--theirs" role="cell">
-          <span class="compare__value"><bdi>{{ theirs }}</bdi></span>
+          <span class="compare__value">{{ theirs }}</span>
           {%- if theirs_note != blank -%}
             <span class="compare__detail">{{ theirs_note }}</span>
           {%- endif -%}
@@ -304,6 +304,8 @@
     (ours | topic | theirs, the topic in the middle), and on phones the topic above two half-width
     values. The table keeps its roles (role="row" etc.) because display: grid drops them in some
     screen readers. Our column is lit with a faint wash of the accent; no frame around the board.
+    Values take the page's direction, so "99 ₪" and "119-230 ₪" read like every other price on the
+    site (ranges use a plain hyphen, which keeps the two numbers in order).
   */
   .compare__inner {
     max-width: 920px;

@@ -126,13 +126,6 @@
             "show_for": "all"
           }
         },
-        "row_price": {
-          "type": "row",
-          "settings": {
-            "topic": "price",
-            "show_for": "football_adults"
-          }
-        },
         "row_kids_set": {
           "type": "row",
           "settings": {
@@ -159,7 +152,6 @@
         "row_shipping",
         "row_delivery",
         "row_returns",
-        "row_price",
         "row_kids_set",
         "row_basketball_set",
         "row_languages"

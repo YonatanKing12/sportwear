@@ -1,0 +1,620 @@
+{
+  "checked_at": "2026-10-04",
+  "method": "Read-only web research on 2026-10-04. Stores were found with web searches in Hebrew and English ('חולצות כדורגל אונליין חנות', 'חולצות כדורגל משלוח חינם עד הבית', 'חולצות NBA גופיות כדורסל', 'HOOPERS חולצות כדורסל NBA', 'חליפת כדורגל לילדים חולצה ומכנס מחיר', 'חנות חולצות כדורגל 26/27 ריאל מדריד'). Each store's own pages were fetched with curl and turned into text: home page, shipping, returns, FAQ and terms pages, the Real Madrid home 26/27 product page, and kids, NBA and NFL pages. Where a store renders options with JavaScript, the page was rendered in headless Chromium (R:Sport's personalization panel was opened with one click, nothing added to a cart). Category price statistics come from each platform's public catalogue feed: Shopify /products.json for HOOPERS, Jerseys.co.il and R:Sport; the WooCommerce Store API for Fanshop, Liberokits, FootArmy and Jerseyniho; Wix's embedded product data for Ohadimos. Search-engine summaries were used only to find stores, never as facts. Quotes are copied from the page text; '…' marks omitted text and '/' a line break. A fact is null when the store's pages don't state it. Prices are as displayed on 2026-10-04 and many are temporary sale prices with a crossed-out 'regular' price. Sukkot promotions (2+1, 3+1) were running at several stores.",
+  "stores": [
+    {
+      "name": "HOOPERS",
+      "domain": "hoopers.co.il",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪149 (sale price; compare-at ₪179). Fan version by default; player version +₪19.",
+          "url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "quote": "S - 149.00 ₪ … גרסת אוהד / גרסת שחקן +19 ₪",
+          "product": "חולצת כדורגל ריאל מדריד בית 26/27 (לבן), sizes S–4XL",
+          "category_stats": {
+            "value": "Football shirts collection: 188 products, 186 at ₪149 and 2 at ₪199 (cheapest and most common ₪149). Season 26/27 collection: 94 products, all ₪149.",
+            "url": "https://hoopers.co.il/collections/football-jerseys/products.json",
+            "quote": "\"price\":\"149.00\" (186 of 188 products)"
+          }
+        },
+        "shipping": {
+          "value": "Free home delivery on every order, no minimum (the shipping page shows a regular ₪25 fee waived).",
+          "url": "https://hoopers.co.il/pages/shipping-policy",
+          "quote": "משלוח עד הבית / 25₪ / חינם על כל הזמנה … האם יש משלוח חינם? כן. משלוח חינם על כל הזמנה, בלי מינימום.",
+          "also_url": "https://hoopers.co.il/",
+          "also_quote": "🚚 משלוח חינם עד הבית / על כל הזמנה, בלי מינימום"
+        },
+        "delivery_time": {
+          "value": "Up to 14 business days; a separate 'fast shipping' collection arrives within up to 3 business days.",
+          "url": "https://hoopers.co.il/pages/shipping-policy",
+          "quote": "זמני השילוח הם עד 14 ימי עסקים.",
+          "also_url": "https://hoopers.co.il/",
+          "also_quote": "משלוח מהיר / כל הפריטים במלאי בישראל / עד 3 ימי עסקים / במקום עד 14 במשלוח הרגיל"
+        },
+        "stock_location": {
+          "value": "Mixed. The fast-shipping collection is stated to be in stock in Israel. The return terms tell customers to send returns to the supplier's warehouses in China or to the Israeli office. The site does not say where regular orders ship from.",
+          "url": "https://hoopers.co.il/",
+          "quote": "משלוח מהיר / כל הפריטים במלאי בישראל",
+          "also_url": "https://hoopers.co.il/pages/return-policy",
+          "also_quote": "לשלוח אותו בחזרה למחסני הספק בסין או ישירות אל משרדינו בישראל"
+        },
+        "returns": {
+          "value": "14 days from receipt (new, unused). Size exchange within 14 days if the tag is still on. The customer pays return shipping unless the item is faulty or wrong. Cancellation fee 5% or ₪100, whichever is lower. Personalized items cannot be returned.",
+          "url": "https://hoopers.co.il/pages/return-policy",
+          "quote": "✓ החזרה אפשרית עד 14 יום ממועד קבלת המוצר. … מי משלם על משלוח ההחזרה? עלות משלוח ההחזרה חלה על הלקוח.",
+          "also_url": "https://hoopers.co.il/pages/faq",
+          "also_quote": "עלות משלוח ההחזרה חלה על הלקוח, אלא אם מדובר במקרה שאושר כמוצר פגום או שגוי."
+        },
+        "name_printing": {
+          "value": "Name + number free for HOOPERS CLUB members (free to join); ₪10 for guests. Sleeve patch +₪10.",
+          "url": "https://hoopers.co.il/products/real-madrid-home-26-27",
+          "quote": "כן. לחברי HOOPERS CLUB הדפסת השם והמספר במתנה (ההצטרפות חינם - פשוט מתחברים לחשבון), ולאורחים בתוספת ₪10."
+        },
+        "kids_sets": {
+          "value": "Yes. Kids football kits are full shirt + shorts sets, sizes 16–28; all 42 kits are ₪179 (compare-at ₪199).",
+          "url": "https://hoopers.co.il/collections/kids-football-kits",
+          "quote": "חליפת כדורגל ווסטהאם חוץ 26/27 - ילדים (לבן/בורדו) | HOOPERS / מחיר מקורי 199.00 ₪ / מחיר מבצע179.00 ₪",
+          "also_url": "https://hoopers.co.il/pages/faq",
+          "also_quote": "חליפת כדורגל לילדים היא סט מלא של חולצה ומכנס יחד, באותה מידה ובאותו עיצוב."
+        },
+        "basketball": {
+          "value": "Yes. 316 NBA jerseys at ₪149–₪209 (most common ₪209 and ₪169); 182 basketball shorts at ₪169–₪189 (most ₪179); 19 kids NBA jerseys at ₪169. Set price: on the Deni Avdija Portland jersey page, a bundle of jersey + shorts + collector ball costs ₪449 instead of ₪557. We saw no jersey + shorts set without the ball (three other NBA jersey pages we checked had no set offer: Curry City Edition, Kerr Bulls retro and Kobe Lakers retro).",
+          "url": "https://hoopers.co.il/products/גופיית-nba-דני-אבדיה-פורטלנד-טרייל-בלייזרס-שחור-2025-26-hoopers",
+          "quote": "הסט המלא: גופייה + מכנס + כדור אספנות … חוסכים 108 ₪ / 449 ₪ / 557 ₪",
+          "category_url": "https://hoopers.co.il/collections/גופיות/products.json"
+        },
+        "nfl": {
+          "value": "Yes. 'NFL oversize' player shirts: 25 products at ₪199 (listed under Streetwear).",
+          "url": "https://hoopers.co.il/collections/nfl-oversize-jerseys",
+          "quote": "חולצות NFL אוברסייז לגברים – מהדורות שחקן … חולצת NFL אוברסייז גרין ביי פאקרס – ג'ורדן לאב 10 (ירוק) | HOOPERS 199.00 ₪"
+        },
+        "languages": {
+          "value": "Hebrew only. No language switcher; /en and /ar return 404.",
+          "url": "https://hoopers.co.il/",
+          "quote": "<html class=\"no-js\" lang=\"he-IL\" dir=\"ltr\">"
+        },
+        "payment": {
+          "value": "Credit cards (FAQ); the cart shows Bit, Apple Pay and Google Pay. A PayPal express button is configured in the cart code, but no visible text mentions PayPal.",
+          "url": "https://hoopers.co.il/",
+          "quote": "אופציה לשלם גם עם [Bit] [Apple Pay] [Google Pay]",
+          "also_url": "https://hoopers.co.il/pages/faq",
+          "also_quote": "ניתן לשלם באמצעי התשלום הזמינים בעמוד הקופה, כולל כרטיסי אשראי ופתרונות תשלום נתמכים."
+        }
+      },
+      "notes": "The competitor whose table the owner wants to match. The product page has a 'למה אצלנו' table with HOOPERS vs 'חנויות אחרות' rows: product photos, pop-ups ('דוכנים ופופ-אפים ברחבי הארץ'), customer club, special models, name/number printing ('במתנה לחברי המועדון (ההצטרפות חינם) · ₪10 לאורחים' vs 'לרוב ₪10 ומעלה, לפעמים חינם, לפעמים לא קיים'), size choice ('מחשבון שממליץ לפי גובה ומשקל, S עד 4XL'), delivery ('עד 14 ימי עסקים' vs 'לרוב 10-25 ימי עסקים'), size exchange ('עד 14 יום') and service. Its footnote: 'ההשוואה מבוססת על בדיקה של דפי המוצר בחנויות חולצות הכדורגל המובילות בישראל, יולי 2026'. Its claim of 'S עד 4XL — טווח רחב יותר ממה שרוב החנויות מציעות' does not hold: Jerseys.co.il, R:Sport, Liberokits, FootArmy and Jerseyniho also sell up to 4XL. Also has a customer club, a mystery box and a Kiryat Ata address (meta.json). Product reviews mention slow deliveries ('זמן הספקה היה ממש גרוע')."
+    },
+    {
+      "name": "Jerseys.co.il",
+      "domain": "www.jerseys.co.il",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪159 (compare-at ₪239). Fan version is the base price; player version +₪59.",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-jersey-26-27",
+          "quote": "חולצת כדורגל ריאל מדריד בית 26/27 / חסכון 33% / ₪239 / ₪159 … גרסת שחקן +59 ₪",
+          "product": "חולצת כדורגל ריאל מדריד בית 26/27, sizes S–4XL",
+          "category_stats": {
+            "value": "Men's football shirts collection: 846 products; most common ₪159 (519), then ₪179 (309); cheapest men's shirt ₪159. In the 26/27 collection, the ₪129 items are baby kits and the ₪139 items are women's crop tops.",
+            "url": "https://www.jerseys.co.il/collections/football-shirts-men/products.json",
+            "quote": "\"price\":\"159.00\" (519 of 846)"
+          }
+        },
+        "shipping": {
+          "value": "Free to a pickup point. Home delivery ₪29, free on orders of ₪499 or more.",
+          "url": "https://www.jerseys.co.il/pages/shipping-returns",
+          "quote": "🏪 נקודת איסוף - חינם לגמרי … 🏠 משלוח עד הבית - 29 ₪ (חינם בהזמנה מ-499 ₪)"
+        },
+        "delivery_time": {
+          "value": "7–25 business days from the order, production included.",
+          "url": "https://www.jerseys.co.il/pages/shipping-returns",
+          "quote": "זמן אספקה משוער: 7-25 ימי עסקים ממועד ההזמנה, כולל ייצור ומשלוח."
+        },
+        "stock_location": {
+          "value": "Mixed. Some models are held in stock; others are made and shipped to order. Order tracking shows the parcel's 'arrival in Israel' stage, and orders are produced and printed only after they are placed.",
+          "url": "https://www.jerseys.co.il/pages/faq",
+          "quote": "חלק מהדגמים זמינים אצלנו וחלק מיוצרים ונשלחים לפי הזמנה",
+          "also_quote": "רואים את כל המסע: ייצור, שילוח והגעה לארץ עם עדכוני HFD חיים"
+        },
+        "returns": {
+          "value": "14 days from receipt, only for unworn, unwashed items with no printing (a player name built into the design counts as printing). The customer pays return shipping on a change of mind. Cancellation fee up to 5% or ₪100.",
+          "url": "https://www.jerseys.co.il/pages/shipping-returns",
+          "quote": "חלון החזרה: 14 ימים מקבלת החבילה, בתנאי שהחולצה: … עלות משלוח חזרה: על חשבונכם במקרה של חרטה."
+        },
+        "name_printing": {
+          "value": "Free name + number on every order; league patch +₪5.",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-jersey-26-27",
+          "quote": "✓ חינם / הוספת שם ומספר בגב החולצה",
+          "also_url": "https://www.jerseys.co.il/",
+          "also_quote": "קבלו הדפסת שם ומספר אישית בחינם בכל הזמנה"
+        },
+        "kids_sets": {
+          "value": "Yes. Shirt + matching shorts, sizes 16–28 (ages 2–13). 187 kids kits: 139 at ₪159 and 48 at ₪179 (compare-at ₪239).",
+          "url": "https://www.jerseys.co.il/products/real-madrid-home-kids-kit-26-27",
+          "quote": "חליפת כדורגל לילדים ריאל מדריד בית 26/27 … ₪239 / ₪159 … הסט כולל חולצה ומכנס תואמים",
+          "category_url": "https://www.jerseys.co.il/collections/kids-football-kits"
+        },
+        "basketball": {
+          "value": "Yes. 48 NBA jerseys and 52 NBA/Jordan shorts, all ₪179 (compare-at ₪269). No set price: the jersey page offers the shorts at their own price ('משלימים את הסט').",
+          "url": "https://www.jerseys.co.il/products/dani-avdija-portland-trail-blazers-nba-jersey",
+          "quote": "משלימים את הסט … מכנסי NBA קצרים שיקגו בולס שחור אדום ₪269₪179"
+        },
+        "nfl": {
+          "value": "No. None of the 1,400 products in the store's product feed mention NFL or 'פוטבול'.",
+          "url": "https://www.jerseys.co.il/products.json",
+          "quote": null
+        },
+        "languages": {
+          "value": "Hebrew only; /en and /ar return 404 and the only hreflang is he-IL.",
+          "url": "https://www.jerseys.co.il/",
+          "quote": "<html lang=\"he\" dir=\"rtl\" class=\"no-js\">"
+        },
+        "payment": {
+          "value": "Visa, Mastercard, Amex, Apple Pay, Google Pay, PayPal and Bit. Product pages also show PayBox and bank-transfer icons.",
+          "url": "https://www.jerseys.co.il/",
+          "quote": "אנחנו מקבלים כרטיסי אשראי (Visa, Mastercard, Amex), Apple Pay, Google Pay, PayPal ותשלום בביט."
+        }
+      },
+      "notes": "Site-wide 3+1 promotion and coupon NEW-27 in the announcement bar. Says it has run since 2021 and has '10,000+' customers. Items are made to order and cannot be cancelled once production starts. Full refund if not delivered within 60 days."
+    },
+    {
+      "name": "פאן שופ (FanShop)",
+      "domain": "www.fanshop.co.il",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪145 (was ₪290). Fan version ('חולצת אוהד - גיזרה רגילה') by default; player version +₪20.",
+          "url": "https://www.fanshop.co.il/p/חולצת-משחק-ריאל-מדריד-בית-26-27/",
+          "quote": "המחיר המקורי היה: ₪290.00. המחיר הנוכחי הוא: ₪145.00. … חולצת משחק - גיזרה צמודה (+ ₪20.00)",
+          "product": "חולצת משחק ריאל מדריד בית 26/27",
+          "category_stats": {
+            "value": "Short-sleeve shirts category: 2,382 products; most common ₪145 (1,422), then ₪160 (616). Cheapest men's shirt ₪140 (an old Wales Euro 2020 shirt); the ₪129 items are women's crop tops. Season 26/27 category: 547 of 617 products at ₪145.",
+            "url": "https://www.fanshop.co.il/wp-json/wc/store/v1/products?category=4257",
+            "quote": "price 14500 (1,422 of 2,382)"
+          }
+        },
+        "shipping": {
+          "value": "Free standard shipping to a pickup point. Free home delivery only on orders over ₪450; otherwise home delivery is a paid upgrade arranged with the courier.",
+          "url": "https://www.fanshop.co.il/",
+          "quote": "משלוח חינם בכל הזמנה / משלוח חינם עד הבית בהזמנה מעל 450₪",
+          "also_url": "https://www.fanshop.co.il/תנאי-רכישה-ומדיניות-החזרה/",
+          "also_quote": "המשלוח הסטנדרטי הינו ללא עלות. בחלק מהמקרים תינתן ללקוח האפשרות לשדרג את המשלוח למשלוח עד הבית, בתשלום נוסף."
+        },
+        "delivery_time": {
+          "value": "Order preparation up to 5 business days, then 3–21 business days from dispatch.",
+          "url": "https://www.fanshop.co.il/תנאי-רכישה-ומדיניות-החזרה/",
+          "quote": "זמן האספקה במשלוח רשום הינו 3 עד 21 ימי עסקים ממועד המשלוח. … זמן הכנת ההזמנה עשוי לארוך עד 5 ימי עסקים"
+        },
+        "stock_location": {
+          "value": "Abroad: no stock is held in Israel and everything ships from warehouses abroad.",
+          "url": "https://www.fanshop.co.il/תנאי-רכישה-ומדיניות-החזרה/",
+          "quote": "חברת פאן שופ אינה מחזיקה מלאי בישראל, וכל המוצרים נשלחים באופן ישיר ממחסנים בחו\"ל."
+        },
+        "returns": {
+          "value": "14 business days from receipt, for items that are not personalized. The customer pays return shipping. Cancellation fee 5% or ₪100.",
+          "url": "https://www.fanshop.co.il/תנאי-רכישה-ומדיניות-החזרה/",
+          "quote": "ניתן לבטל רכישה ולהחזיר מוצרים שאינם מוצרים בהתאמה אישית תוך 14 ימי עסקים ממועד קבלת המוצר על ידי הלקוח. … הלקוח אחראי … לתשלום עבור משלוח ההחזרה"
+        },
+        "name_printing": {
+          "value": "Name + number +₪10. Patch ₪10–₪15.",
+          "url": "https://www.fanshop.co.il/p/חולצת-משחק-ריאל-מדריד-בית-26-27/",
+          "quote": "האם להוסיף הדפס (שם ומספר על גב החולצה)? … הוספת הדפס (+ ₪10.00)"
+        },
+        "kids_sets": {
+          "value": "Yes. Shirt + shorts. 856 kids sets, most at ₪145 (701 of them, cheapest ₪145, up to ₪185). The Real Madrid home 26/27 kids set is ₪145 (was ₪290).",
+          "url": "https://www.fanshop.co.il/p/חליפת-ילדים-ריאל-מדריד-בית-26-27/",
+          "quote": "המחיר המקורי היה: ₪290.00. המחיר הנוכחי הוא: ₪145.00. … הסט כולל חולצה, מכנס"
+        },
+        "basketball": {
+          "value": "Yes. 217 basketball jerseys at ₪160–₪190 (160 at ₪170); 74 NBA shorts at ₪145. No set price: the jersey page offers no shorts option, only accessories.",
+          "url": "https://www.fanshop.co.il/p/גופיית_משחק_nba_לוס_אנג_לס_לייקרס_-_מהד-b49185bef5f7/",
+          "quote": "גופיית משחק NBA לוס אנג'לס לייקרס – מהדורת הצהרה – לוקה דונצ'יץ / ₪400.00 / המחיר הנוכחי הוא: ₪170.00."
+        },
+        "nfl": {
+          "value": "No. A search for 'NFL' returns only an unrelated Manchester United training suit.",
+          "url": "https://www.fanshop.co.il/wp-json/wc/store/v1/products?search=NFL",
+          "quote": null
+        },
+        "languages": {
+          "value": "Hebrew only; /en/ returns 404. The 'en' flag on the page belongs to the accessibility widget, not to a site translation.",
+          "url": "https://www.fanshop.co.il/",
+          "quote": "<html dir=\"rtl\" lang=\"he-IL\" prefix=\"og: https://ogp.me/ns#\">"
+        },
+        "payment": {
+          "value": "PayBox, Bit, credit card, PayPal, Apple Pay, Google Pay.",
+          "url": "https://www.fanshop.co.il/",
+          "quote": "ניתן לשלם באתרנו באמצעות אפליקציית PayBox, ביט, כרטיס אשראי, PayPal, אפל פיי או גוגל פיי."
+        }
+      },
+      "notes": "Calls itself 'החנות הוותיקה בישראל' (since 2013 / 2018). Free surprise shirt on orders over ₪1,000. Recommends hand washing only. Refund or resend if not delivered within 60 business days."
+    },
+    {
+      "name": "R:Sport",
+      "domain": "www.rsport.co.il",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪200 (regular ₪349.90), fan version ('חולצת אוהד'). The player version is a separate product at ₪229.90 (regular ₪340).",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "מחיר מבצע200.00 ₪ / מחיר רגיל349.90 ₪ … חולצת אוהד / גזרה רגילה",
+          "product": "חולצת כדורגל ריאל מדריד בית 26/27 | גברים, sizes S–XXXXL",
+          "player_version_url": "https://www.rsport.co.il/products/חולצת-ריאל-מדריד-משחקי-בית-26-27-גברים",
+          "category_stats": {
+            "value": "Season 2026/27 collection: 59 men's shirts at ₪190–₪250; most common ₪200 (21), then ₪229.90 (14).",
+            "url": "https://www.rsport.co.il/collections/עונת-2026-27/products.json",
+            "quote": "\"price\":\"200.00\" (21 of 59 men's shirts)"
+          }
+        },
+        "shipping": {
+          "value": "Free shipping on all orders. Delivery is to the home or to a pickup point, depending on the shipping method and the service available in the customer's area.",
+          "url": "https://www.rsport.co.il/policies/shipping-policy",
+          "quote": "כל ההזמנות באתר כוללות משלוח חינם. … המוצרים יועברו למשלוח עד הבית או לנקודת איסוף בהתאם לשיטת המשלוח ולשירות הזמין באזור הלקוח."
+        },
+        "delivery_time": {
+          "value": "Handling up to 5 business days, then an estimated 10–14 business days from dispatch (up to 21 when there are delays). The FAQ and product pages say 7–14 business days from dispatch.",
+          "url": "https://www.rsport.co.il/policies/shipping-policy",
+          "quote": "זמן האספקה המשוער הוא בין 10 לבין 14 ימי עסקים מרגע יציאת ההזמנה למשלוח. … עומדים לרשות החברה עד 5 ימי עסקים לצורך השלמת הטיפול בהזמנה.",
+          "also_url": "https://www.rsport.co.il/pages/שאלות-נפוצות",
+          "also_quote": "זמן האספקה 14-7 ימי עסקים מרגע המשלוח (הערכה ולא התחייבות)"
+        },
+        "stock_location": {
+          "value": "Mixed: some orders ship from stock in Israel, others from warehouses or suppliers abroad.",
+          "url": "https://www.rsport.co.il/policies/shipping-policy",
+          "quote": "חלק מההזמנות נשלחות ממלאי הנמצא בישראל וחלק מההזמנות נשלחות ממחסנים, ספקים או שותפים לוגיסטיים הנמצאים מחוץ לישראל. לא כל ההזמנות נשלחות מישראל."
+        },
+        "returns": {
+          "value": "14 days. A cash refund only within 48 hours of purchase; after that, store credit only. The customer pays return shipping. Cancellation fee 5% or ₪100. Printed items cannot be returned. (The refund policy counts the 14 days from purchase; product pages count them from receipt.)",
+          "url": "https://www.rsport.co.il/policies/refund-policy",
+          "quote": "מדיניות ההחזרה שלנו תקפה 14 יום מרגע ביצוע הרכישה … מדיניות החזר כספי נמשכת כ 48 שעות בלבד מרגע הרכישה … עלות משלוח החזרת המוצר תחול על הלקוח"
+        },
+        "name_printing": {
+          "value": "Free. The product's personalization panel has name and number fields with no surcharge; patches cost +₪10 or +₪20.",
+          "url": "https://www.rsport.co.il/",
+          "quote": "הדפסת שם ומספר חינם",
+          "also_url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "also_quote": "התאמה אישית / הוספת שם בהתאמה אישית על החולצה / הקלד מספר על החולצה / … La Liga 25/26 (+ 10.00 ₪)"
+        },
+        "kids_sets": {
+          "value": "Yes. Shirt + matching shorts. 26/27 kids sets cost ₪160–₪230 (most ₪200); older seasons start at ₪104. None of the 287 sets in the kids collection is under ₪100.",
+          "url": "https://www.rsport.co.il/products/חליפת-כדורגל-ריאל-מדריד-תלבושת-שלישית-2026-27-ילדים",
+          "quote": "מחיר מבצע200.00 ₪ / מחיר רגיל290.00 ₪ … סוג פריט: חליפת כדורגל (סט חולצה ומכנס)",
+          "category_url": "https://www.rsport.co.il/collections/ילדים/products.json"
+        },
+        "basketball": {
+          "value": "Yes. NBA jerseys at ₪144.42–₪195.42 (118 at ₪170); NBA shorts at ₪159.99–₪249.90. No set price on the jersey page.",
+          "url": "https://www.rsport.co.il/products/mlwbucks-jersey-gold-giannis",
+          "quote": "גופיית משחק מהדורת זהב | יאניס אנטטוקומפו / מחיר מבצע170.00 ₪ / מחיר רגיל200.00 ₪",
+          "category_url": "https://www.rsport.co.il/collections/nba/products.json"
+        },
+        "nfl": {
+          "value": "Yes. A site search for 'NFL' returns 75 results, 68 of them of type 'חולצות NFL', at about ₪189.90–₪220.",
+          "url": "https://www.rsport.co.il/search?q=NFL&type=product",
+          "quote": "חולצות NFL (68) … חולצת NFL שיקגו ברס התאמה אישית | גברים / מחיר מבצע190.00 ₪"
+        },
+        "languages": {
+          "value": "Hebrew only; /en and /ar redirect to the Hebrew home page.",
+          "url": "https://www.rsport.co.il/",
+          "quote": "<html class=\"no-js\" lang=\"he\" dir=\"rtl\">"
+        },
+        "payment": {
+          "value": "Footer icons: Visa, Mastercard, Maestro, Apple Pay, Google Pay, PayPal. Product pages: 'ניתן לשלם גם באמצעות' Apple Pay, Google Pay, PayPal, Bit.",
+          "url": "https://www.rsport.co.il/products/חולצת-כדורגל-ריאל-מדריד-בית-26-27-גברים",
+          "quote": "ניתן לשלם גם באמצעות [Apple Pay] [Google Pay] [PayPal] [Bit]"
+        }
+      },
+      "notes": "Also sells boots, goalkeeper gloves and balls. The announcement bar says 'בעקבות המצב הביטחוני ייתכנוי עיכובים במשלוחים'. Customer club: 10% off the first purchase. The site puts up bot checks ('Verifying your connection') after repeated requests; some JSON pages needed a retry."
+    },
+    {
+      "name": "ליברו (Libero)",
+      "domain": "www.liberokits.com",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪119 (was ₪220). Fan version by default; player version +₪20; matching shorts +₪65.",
+          "url": "https://www.liberokits.com/product/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "המחיר המקורי היה: 220.00₪. … המחיר הנוכחי הוא: 119.00₪. … שדרוג לגרסת שחקן [+20.00₪]",
+          "product": "חולצת כדורגל ריאל מדריד בית 26/27, sizes S–4XL",
+          "category_stats": {
+            "value": "Men's football shirts category: 357 products; 320 at ₪119, 32 at ₪139; cheapest ₪119.",
+            "url": "https://www.liberokits.com/wp-json/wc/store/v1/products?category=68",
+            "quote": "price 11900 (320 of 357)"
+          }
+        },
+        "shipping": {
+          "value": "Free on every order, by registered mail to a pickup point. No home-delivery option is stated.",
+          "url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "quote": "המשלוחים שלנו הם בחינם ומתבצעים באמצעות דואר רשום לנקודת מסירה הקרובה אליכם,",
+          "also_url": "https://www.liberokits.com/",
+          "also_quote": "משלוח חינם בכל הזמנה"
+        },
+        "delivery_time": {
+          "value": "10–25 business days, plus 1–5 business days of order preparation ('on average usually up to 14 business days').",
+          "url": "https://www.liberokits.com/תקנון-ותנאי-שירות/",
+          "quote": "זמן האספקה הינו 10-25 ימי עסקים – בממוצע זמן המשלוח אורך בדרך כלל עד 14 ימים עסקים. זמן הכנת ההזמנה הוא 1-5 ימי עסקים. ימים אלה אינם חלק מזמן האספקה."
+        },
+        "stock_location": {
+          "value": "Abroad. The store holds no stock; orders are private imports shipped from warehouses abroad.",
+          "url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "quote": "לא, המוצרים נשלחים מהמחסנים בחו\"ל ואין אפשרות לאיסוף עצמי של ההזמנה."
+        },
+        "returns": {
+          "value": "No returns or exchanges, except for faulty or wrong items. Cancellation within 24 hours of the order, with a 5% fee.",
+          "url": "https://www.liberokits.com/תקנון-ותנאי-שירות/",
+          "quote": "האתר אינו מחזיק מלאי מוצרים וההזמנות מתבצעות באופן פרטי על פי בקשת הלקוח ולכן לא תינתן אפשרות להחליף או להחזיר את המוצר."
+        },
+        "name_printing": {
+          "value": "Name + number +₪10. Patch +₪5 or +₪10.",
+          "url": "https://www.liberokits.com/product/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "הדפסת שם ומספר בגב החולצה * לא / כן [+10.00₪]"
+        },
+        "kids_sets": {
+          "value": "Yes. Kids kits ('חליפת כדורגל לילדים'), sizes 16–28 (ages 2–13). 143 kits: 97 at ₪119 and 45 at ₪139 (was ₪230). The page does not list the kit's contents; its only add-on is socks.",
+          "url": "https://www.liberokits.com/product/חליפת-כדורגל-לילדים-ריאל-מדריד-בית-26-27/",
+          "quote": "המחיר המקורי היה: 230.00₪. … המחיר הנוכחי הוא: 119.00₪. … ילדים 16 (גיל 2-4) … ילדים 28 (גיל 12-13)"
+        },
+        "basketball": {
+          "value": "Yes. 67 NBA jerseys and 22 NBA shorts, all ₪149 (was ₪275). No set price and no shorts add-on on the jersey page.",
+          "url": "https://www.liberokits.com/product/גופיית-nba-פילדלפיה-76-לברון-גיימס-כחול/",
+          "quote": "גופיית NBA פילדלפיה 76 לברון ג'יימס – כחול / המחיר המקורי היה: 275.00₪. / המחיר הנוכחי הוא: 149.00₪."
+        },
+        "nfl": {
+          "value": "No. A search for 'NFL' returns 0 products, and there is no NFL category.",
+          "url": "https://www.liberokits.com/wp-json/wc/store/v1/products?search=NFL",
+          "quote": null
+        },
+        "languages": {
+          "value": "Hebrew only; /en/ and /ar/ return 404.",
+          "url": "https://www.liberokits.com/",
+          "quote": "<html dir=\"rtl\" lang=\"he-IL\">"
+        },
+        "payment": {
+          "value": "Credit card or PayPal. Bit or bank transfer can be arranged after the order.",
+          "url": "https://www.liberokits.com/שאלות-נפוצות/",
+          "quote": "התשלום באתר מתבצע באמצעות כרטיס אשראי או פייפאל. במידה ואין ברשותכם כ.אשראי ניתנת גם האפשרות לשלם באמצעות אפליקציית bit או העברה בנקאית."
+        }
+      },
+      "notes": "Says on its own pages that it is a personal-import model ('האתר אינו מחזיק מלאי מוצרים'). Refund if not received within about 60 business days. Customers are responsible for choosing the size; no exchange for a wrong size."
+    },
+    {
+      "name": "FootArmy",
+      "domain": "footarmy.net",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪140 (was ₪280). Fan version; player version +₪30; sizes 3XL and 4XL +₪20.",
+          "url": "https://footarmy.net/p/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "₪280 המחיר המקורי היה: ₪280. ₪140 המחיר הנוכחי הוא: ₪140. … גרסת שחקןגזרה צמודה ואתלטית+30₪",
+          "product": "חולצת כדורגל ריאל מדריד בית 26/27 (the same page offers a kids option at ₪150)",
+          "category_stats": {
+            "value": "Men's football shirts category: 2,474 products; most common ₪140 (1,477), then ₪160 (340) and ₪170 (320). The cheapest items in it are shorts (₪99), a mystery box (₪130) and T-shirts (₪139); the cheapest football shirt is ₪140. Season 26/27: 279 of 330 adult shirts at ₪140.",
+            "url": "https://footarmy.net/wp-json/wc/store/v1/products?category=107",
+            "quote": "price 140 (1,477 of 2,474)"
+          }
+        },
+        "shipping": {
+          "value": "Free to a pickup point or by registered mail. Home delivery costs ₪49 and is not available for every order. The FAQ says shipping is free on everything except the 'מלאי מיידי' (immediate stock) category.",
+          "url": "https://footarmy.net/shipping-returns/",
+          "quote": "משלוח חינם לנקודת מסירה או בדואר רשום … עלות משלוח עד הבית היא 49 ₪. אפשרות זו אינה זמינה עבור כל המוצרים וההזמנות",
+          "also_url": "https://footarmy.net/שאלות-ותשובות/",
+          "also_quote": "חינם! כל המוצרים באתר ללא עלות משלוח! * פרט לקטגוריית 'מלאי מיידי'"
+        },
+        "delivery_time": {
+          "value": "11–22 business days in total (up to 5 days of preparation, plus 11–17 days from the warehouse).",
+          "url": "https://footarmy.net/shipping-returns/",
+          "quote": "זמן הכנת ההזמנה: עד 5 ימי עסקים. זמן המשלוח לאחר היציאה מהמחסן: 11–17 ימי עסקים. זמן אספקה כולל משוער: 11–22 ימי עסקים."
+        },
+        "stock_location": {
+          "value": "Abroad: no local stock; orders ship from logistics warehouses abroad. A small 'מלאי מיידי' category of 26 items is the exception.",
+          "url": "https://footarmy.net/shipping-returns/",
+          "quote": "FootArmy אינה מחזיקה מלאי מקומי, והמוצרים נשלחים ישירות מהמחסנים הלוגיסטיים בחו\"ל."
+        },
+        "returns": {
+          "value": "Cancellation notice within 14 days of receipt, as the law sets. Returns only for unworn, unwashed, unprinted items with their tags. The customer pays return shipping for a non-faulty item. Cancellation fee up to 5% or ₪100. A direct exchange for another size is not guaranteed.",
+          "url": "https://footarmy.net/shipping-returns/",
+          "quote": "בעסקת מכר מרחוק ניתן למסור הודעת ביטול בתוך 14 ימים ממועד קבלת המוצר … עלות החזרת מוצר שאינו פגום תחול על הלקוח."
+        },
+        "name_printing": {
+          "value": "Name + number +₪10; this is also the price on NBA jerseys.",
+          "url": "https://footarmy.net/p/חולצת-כדורגל-ריאל-מדריד-בית-26-27/",
+          "quote": "שם ומספרללא הדפסה, שם ומספר אישיים או שחקן מהסגל / +10₪"
+        },
+        "kids_sets": {
+          "value": "Yes, usually shirt + matching shorts. 1,340 kids kits: most at ₪150 (835), cheapest ₪140. Baby outfits are ₪125.",
+          "url": "https://footarmy.net/",
+          "quote": "מה כוללת חליפת ילדים? חליפת ילדים כוללת בדרך כלל חולצה ומכנס תואם. יש לבדוק את פרטי המוצר לפני ההזמנה.",
+          "category_url": "https://footarmy.net/wp-json/wc/store/v1/products?category=125"
+        },
+        "basketball": {
+          "value": "Yes. 193 NBA jerseys at ₪170 (one at ₪180); 82 NBA/Jordan shorts at ₪160–₪199. The jersey page offers matching shorts at +₪170, the shorts' full price, so there is no set price.",
+          "url": "https://footarmy.net/p/גופיית-nba-לוס-אנגלס-לייקרס-la-lakers-icon-edition-24-25/",
+          "quote": "תוספת מכנס תואם / מכנס קצר - בתוספת ₪170"
+        },
+        "nfl": {
+          "value": "No NFL team jerseys. A search for 'NFL' returns only 'חולצת ריאל מדריד NFL - צבע לבן', a Real Madrid shirt in NFL style.",
+          "url": "https://footarmy.net/wp-json/wc/store/v1/products?search=NFL",
+          "quote": "חולצת ריאל מדריד NFL - צבע לבן"
+        },
+        "languages": {
+          "value": "Hebrew only; /en/ and /ar/ return 404.",
+          "url": "https://footarmy.net/",
+          "quote": "<html dir=\"rtl\" lang=\"he-IL\">"
+        },
+        "payment": {
+          "value": "Credit card, PayPal, Bit, PayBox.",
+          "url": "https://footarmy.net/שאלות-ותשובות/",
+          "quote": "ניתן לשלם באמצעות כרטיס אשראי או PayPal. ניתן לשלם באמצעות אפליקציית התשלומים ביט. ניתן לשלם באמצעות אפליקציית התשלומים Paybox."
+        }
+      },
+      "notes": "Has a points scheme ('FACoins') and a customer club. Refund or resend if a parcel has not arrived 45 business days after dispatch. Its FAQ says: 'FootArmy הינה חנות אינטרנט, מחסנינו ממוקמים בחו\"ל'."
+    },
+    {
+      "name": "ג׳רזיניו (Jerseyniho)",
+      "domain": "jerseyniho.com",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "From ₪159. Fan version by default; player version +₪20.",
+          "url": "https://jerseyniho.com/product/real-madrid-home-26-27/",
+          "quote": "ריאל מדריד בית 26/27 / החל מ / ₪159 … גרסת שחקן + 20₪",
+          "product": "ריאל מדריד בית 26/27, sizes S–4XL",
+          "category_stats": {
+            "value": "About 448 adult shirts and related items: 359 at ₪159 and 62 at ₪169 (long sleeve).",
+            "url": "https://jerseyniho.com/wp-json/wc/store/v1/products",
+            "quote": "price 159 (359)"
+          }
+        },
+        "shipping": {
+          "value": "Free to the nearest pickup point. The terms list delivery through pickup points or Israel Post; no home-delivery option is described. The terms also say the shipping cost is not included in product prices.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "כל הזמנה באתר שלנו תעניק לך משלוח חינם לנקודת איסוף הקרובה ביותר לאיזור מגוריך.",
+          "also_url": "https://jerseyniho.com/תקנון-אתר/",
+          "also_quote": "עלות המשלוח אינה כלולה במחירי המוצרים, והיא עשויה להתעדכן מעת לעת בהתאם לאמור בעת ביצוע ההזמנה באתר."
+        },
+        "delivery_time": {
+          "value": "7–21 business days.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "זמני האספקה הם בדרך כלל בין 7-21 ימי עסקים (לא כולל יום ההזמנה וימי שישי-שבת)."
+        },
+        "stock_location": {
+          "value": "Abroad: unclaimed parcels go back to 'our warehouses abroad'.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "יש לאסוף את החבילה מוקדם ככל הניתן מרגע קבלת ההודעה על מנת שהמשלוח לא יוחזר בחזרה למחסנינו בחו\"ל."
+        },
+        "returns": {
+          "value": "The pages conflict. The FAQ says no returns or exchanges, because every item is made to order. The terms allow returns or exchanges up to 14 days after receipt, excluding personalized items; the customer pays return costs and a cancellation fee of 5% or ₪100.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "כל הפריטים באתר שלנו מיוצרים עבורכם בהתאמה אישית ולכן לא ניתן לבצע החלפה/החזרה של ההזמנה.",
+          "also_url": "https://jerseyniho.com/תקנון-אתר/",
+          "also_quote": "החזר, שינוי או ביטול הזמנה יתאפשרו בהחזר כספי או בהחלפה בטווח זמן של עד 14 יום לאחר קבלת הלקוח את ההזמנה."
+        },
+        "name_printing": {
+          "value": "Free (announcement bar).",
+          "url": "https://jerseyniho.com/",
+          "quote": "הדפסת שם ומספר בחינם"
+        },
+        "kids_sets": {
+          "value": "Yes. 183 kids items, all ₪159; for example the Real Madrid home 26/27 kids set at 'from ₪159'. The page does not list the kit's contents. Baby outfits are ₪99 (e.g. 'תלבושת תינוק ריאל מדריד בית 26/27').",
+          "url": "https://jerseyniho.com/product/kids-real-madrid-home-26-27/",
+          "quote": "חליפת ילדים ריאל מדריד בית 26/27 / החל מ / ₪159"
+        },
+        "basketball": {
+          "value": "Yes, NBA jerseys at ₪169 (about 60, mostly older seasons 20/21–25/26), plus 'Jordan Diamond' shorts at ₪169. No NBA team shorts and no set price.",
+          "url": "https://jerseyniho.com/product/nba-all-star-dani-avdia-26/",
+          "quote": "גופיית ALL STAR דני אבדיה / ₪169"
+        },
+        "nfl": {
+          "value": "No. No product or category mentions NFL among the 1,017 products in the store feed.",
+          "url": "https://jerseyniho.com/wp-json/wc/store/v1/products",
+          "quote": null
+        },
+        "languages": {
+          "value": "Hebrew only; /en/ redirects to an unrelated product page.",
+          "url": "https://jerseyniho.com/",
+          "quote": "<html dir=\"rtl\" lang=\"he-IL\">"
+        },
+        "payment": {
+          "value": "Credit card or PayPal.",
+          "url": "https://jerseyniho.com/שאלות-תשובות/",
+          "quote": "באתר ישנה אפשרות לשלם באמצעות כרטיס אשראי או פייפאל."
+        }
+      },
+      "notes": "Sukkot promotion '2+1 מתנה על כל האתר'; says it has '1000+' products. The home page shows 'אזל מהמלאי' labels next to several best sellers, while the product feed says they are in stock."
+    },
+    {
+      "name": "אוהדימוס (Ohadimos)",
+      "domain": "www.ohadimos.com",
+      "facts": {
+        "adult_shirt_price": {
+          "value": "₪89, fan version. Matching shorts +₪35; patch +₪8.",
+          "url": "https://www.ohadimos.com/product-page/ריאל-מדריד-בית-26-27",
+          "quote": "חולצת כדורגל לעונת 26/27 בגרסת אוהד. … ריאל מדריד בית 26/27 ‏89.00 ‏₪",
+          "product": "ריאל מדריד בית 26/27",
+          "category_stats": {
+            "value": "The fan-version page lists 26/27 club shirts at ₪89; its price filter runs ₪89–₪159. Player versions are ₪129 (e.g. 'ברצלונה חוץ 25/26 גרסת שחקן').",
+            "url": "https://www.ohadimos.com/copy-of-גרסת-שחקן-1",
+            "quote": "חולצות משחק גרסת אוהד … ‏89 ‏₪ ‏159 ‏₪ … מילאן בית 26/27 ‏89.00 ‏₪"
+          }
+        },
+        "shipping": {
+          "value": "Free shipping only on orders over ₪299; the fee below that is not stated on the pages. Delivery is to the nearest pickup point.",
+          "url": "https://www.ohadimos.com/",
+          "quote": "משלוחים חינם בקנייה מעל 299 ש\"ח",
+          "also_url": "https://www.ohadimos.com/shipping-returns",
+          "also_quote": "משלוחים מגיעים לנקודת האיסוף הקרובה ביותר לכתובת הלקוח"
+        },
+        "delivery_time": {
+          "value": "10–35 business days (average about two and a half weeks). The product page says 10–25 business days.",
+          "url": "https://www.ohadimos.com/shipping-returns",
+          "quote": "זמני האספקה הם בין 10-35 ימי עסקים, זוהי הערכה ולא התחייבות. (זמן המשלוח הממוצע הינו שבועיים וחצי).",
+          "also_url": "https://www.ohadimos.com/product-page/ריאל-מדריד-בית-26-27",
+          "also_quote": "זמן האספקה הוא בין 10-25 ימי עסקים."
+        },
+        "stock_location": null,
+        "returns": {
+          "value": "No exchanges or returns after receipt. Cancellation only within 24 hours of the order or before shipping, with a 5% fee. Faults must be reported within a week.",
+          "url": "https://www.ohadimos.com/shipping-returns",
+          "quote": "לא יתאפשרו החלפות או החזרות לאחר קבלת ההזמנה."
+        },
+        "name_printing": {
+          "value": "Offered. No price is shown in the visible text, but the product's variant data on the page prices 'שם + מספר' at +₪15 (₪104 vs ₪89).",
+          "url": "https://www.ohadimos.com/product-page/ריאל-מדריד-בית-26-27",
+          "quote": "\"formattedPrice\":\"104.00 ₪\" for the variant with 'שם + מספר' vs \"89.00 ₪\" for 'ללא שם ומספר' (product JSON embedded in the page)"
+        },
+        "kids_sets": {
+          "value": "Yes, kids match kits at ₪120 (was ₪140), e.g. 26/27 national-team kits. The page does not list the kit's contents.",
+          "url": "https://www.ohadimos.com/copy-of-גרסת-שחקן-4",
+          "quote": "חליפות משחק ילדים … חליפת ילדים ספרד בית 26/27 ‏140.00 ‏₪ ‏120.00 ‏₪"
+        },
+        "basketball": {
+          "value": "None seen. There is no basketball or NBA category in the menu or the shop page, although the 'about' text mentions basketball replicas.",
+          "url": "https://www.ohadimos.com/",
+          "quote": "אוהדימוס היא חנות כדורגל אונליין מובילה המתמחה באספקת רפליקות כדורגל וכדורסל"
+        },
+        "nfl": {
+          "value": "No NFL products seen.",
+          "url": "https://www.ohadimos.com/shop",
+          "quote": null
+        },
+        "languages": {
+          "value": "Hebrew only; /en and /ar return 404.",
+          "url": "https://www.ohadimos.com/",
+          "quote": "<html lang=\"he\">"
+        },
+        "payment": {
+          "value": "Credit and debit cards, PayPal.",
+          "url": "https://www.ohadimos.com/store-policy",
+          "quote": "Payment Methods - Credit / Debit Cards - PAYPAL"
+        }
+      },
+      "notes": "A smaller Wix store ('© 2020'), included as the low-price data point. Its FAQ says outright: 'האם המוצרים מקוריים? כל המוצרים הם רפליקות באיכות הגבוהה ביותר.' (https://www.ohadimos.com/שאלות-ותשובות). Refund if not delivered within 65 days of the order. It does not say where its stock is."
+    }
+  ],
+  "not_included": [
+    {
+      "name": "Sport City",
+      "domain": "www.sportcity.co.il",
+      "reason": "Could not be loaded. Cloudflare's 'Just a moment…' challenge returned HTTP 403 to curl, to headless Chromium (with a 20-second wait) and to WebFetch, on the home page and on /c/NBA. Search results describe it as a large football + NBA store, but none of its facts could be checked, so none are recorded."
+    },
+    {
+      "name": "Max Sport (מקס ספורט)",
+      "domain": "www.maxsport.co.il",
+      "reason": "A general sports store (balls, boots, kids kits), not an adult-jersey specialist, so it is not among the 8. It is recorded because it contradicts a 'no kids set under ₪100' claim: its kids football kits sell at ₪99.",
+      "facts": {
+        "kids_sets": {
+          "value": "Kids football kit Real Madrid Mbappé 26/27 at ₪99 (sizes 4–16). The kits are its own make (fabric 'DRY TECH, פיתוח של Max Sport'). Its menu also advertises multi-buy deals ('2 חליפות עונה חדשה ב 149 ש\"ח').",
+          "url": "https://www.maxsport.co.il/product/חליפת-כדורגל-לילדים-ריאל-מדריד-אמבפה-עונת-2627",
+          "quote": "₪99.00 - חליפת כדורגל לילדים ריאל מדריד אמבפה עונת 26/27 מידה 4"
+        },
+        "shipping": {
+          "value": "Free self-pickup; home delivery ₪29 (up to 7 working days); a faster home option (up to 3 working days) is listed without a price in the page text.",
+          "url": "https://www.maxsport.co.il/product/חליפת-כדורגל-לילדים-ריאל-מדריד-אמבפה-עונת-2627",
+          "quote": "איסוף עצמי בחינם / משלוח עד הבית(עד 3 ימי עבודה פרט לישובים חריגים) / משלוח עד הבית(עד 7 ימי עבודה) 29.00 ₪"
+        },
+        "delivery_time": {
+          "value": "Up to 7 business days.",
+          "url": "https://www.maxsport.co.il/product/חליפת-כדורגל-לילדים-ריאל-מדריד-אמבפה-עונת-2627",
+          "quote": "זמן אספקה: עד7ימי עסקים"
+        },
+        "payment": {
+          "value": "Bit and PayPal mentioned in the header.",
+          "url": "https://www.maxsport.co.il/",
+          "quote": "ניתן לשלם בביט / ניתן לשלם באמצעות PayPal"
+        }
+      },
+      "notes": "The site is encoded in windows-1255; Hebrew URLs must be percent-encoded in cp1255 or its firewall blocks them."
+    }
+  ]
+}

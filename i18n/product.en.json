@@ -153,29 +153,29 @@
       "heading": "Head to head with other stores",
       "theirs_label": "Other stores",
       "vs": "VS",
-      "note": "",
+      "note": "Other stores: 8 online sports-shirt stores in Israel, going by what their own sites said on October 4, 2026.",
       "shipping": {
         "label": "Home delivery",
         "ours": "Free",
         "ours_note": "On every order, no minimum",
         "ours_from": "Free from {{ amount }}",
         "ours_from_note": "On orders of this amount or more",
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "Pickup point, mostly",
+        "theirs_note": "To the door: paid, above a minimum or not at all"
       },
       "delivery": {
         "label": "Delivery time",
         "ours": "Up to 10 business days",
         "ours_note": "From our stock in Israel, to your door",
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "Up to 14-35 business days",
+        "theirs_note": "At most of them, some or all orders ship from abroad"
       },
       "returns": {
         "label": "Returns and exchanges",
         "ours": "45 days",
         "ours_note": "From the day your order arrives",
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "14 days, mostly",
+        "theirs_note": "And some take no returns at all"
       },
       "price": {
         "label": "Shirt price",
@@ -187,14 +187,14 @@
         "label": "Kids set",
         "ours_note": "Shirt and shorts of the same kit",
         "ours_note_counterpart": "The kids set of this shirt: shirt and shorts",
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "119-230 ₪",
+        "theirs_note": "For this season's kids set"
       },
       "basketball_set": {
         "label": "Jersey and shorts",
         "ours_note": "Instead of {{ price }}, taken off in the cart",
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "From 298 ₪",
+        "theirs_note": "Jersey and shorts apart, no set price"
       },
       "languages": {
         "label": "Site languages",
@@ -202,8 +202,8 @@
           "one": "1 language",
           "other": "{{ count }} languages"
         },
-        "theirs": "",
-        "theirs_note": ""
+        "theirs": "Hebrew only",
+        "theirs_note": "At all 8 stores we checked"
       }
     }
   }
