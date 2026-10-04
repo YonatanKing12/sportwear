@@ -900,6 +900,64 @@
       "required": "Enter a name of up to 10 characters.",
       "replaces": "If the product already has lettering on the back, your name will replace it.",
       "total": "Price per item with printing: {{ price }}"
+    },
+    "compare": {
+      "eyebrow": "Why buy here",
+      "heading": "Head to head with other stores",
+      "theirs_label": "Other stores",
+      "vs": "VS",
+      "note": "",
+      "shipping": {
+        "label": "Home delivery",
+        "ours": "Free",
+        "ours_note": "On every order, no minimum",
+        "ours_from": "Free from {{ amount }}",
+        "ours_from_note": "On orders of this amount or more",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "delivery": {
+        "label": "Delivery time",
+        "ours": "Up to 10 business days",
+        "ours_note": "From our stock in Israel, to your door",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "returns": {
+        "label": "Returns and exchanges",
+        "ours": "45 days",
+        "ours_note": "From the day your order arrives",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "price": {
+        "label": "Shirt price",
+        "ours_note": "The price of this shirt",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "kids_set": {
+        "label": "Kids set",
+        "ours_note": "Shirt and shorts of the same kit",
+        "ours_note_counterpart": "The kids set of this shirt: shirt and shorts",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "basketball_set": {
+        "label": "Jersey and shorts",
+        "ours_note": "Instead of {{ price }}, taken off in the cart",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "languages": {
+        "label": "Site languages",
+        "ours": {
+          "one": "1 language",
+          "other": "{{ count }} languages"
+        },
+        "theirs": "",
+        "theirs_note": ""
+      }
     }
   }
 }

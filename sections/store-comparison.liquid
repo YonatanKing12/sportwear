@@ -1,0 +1,743 @@
+{%- comment -%}
+  Head to head ("ראש בראש"): SportWear next to other Israeli online sports-shirt stores, row by row, in the
+  layout of a broadcast head-to-head graphic: our value on one side, the topic in the middle, theirs on the
+  other side (on phones the topic sits above the two values).
+
+  Each row is a block with a topic. Our side comes from the store where the store knows it: shipping from
+  free-shipping-cents, this product's price, its kids set (the product or its counterpart), its basketball set
+  price (snippets/set-price.liquid's rule: the shop's set offer and a matching complement) and the site's
+  languages; the rest is translated copy. A row is left out when it doesn't apply to the page's product
+  ("Show for", or no set or kids set to show) or when the store can't back it (no free shipping for this
+  visitor). Every text can be overridden in the editor.
+
+  The other stores' side is translated copy (products.compare.<topic>.theirs*) taken from what the stores'
+  own pages said on the date in the footnote: design/comparison/. Change the research there first, then
+  the copy.
+{%- endcomment -%}
+{%- liquid
+  assign scheme = section.settings.color_scheme
+  assign heading_id = 'CompareHeading-' | append: section.id
+
+  capture threshold_cents
+    render 'free-shipping-cents'
+  endcapture
+  assign threshold_cents = threshold_cents | plus: 0
+
+  # What the page's product is (nothing on templates without a product).
+  assign sport = ''
+  assign is_kids = false
+  if product != blank
+    if product.tags contains 'sport:football'
+      assign sport = 'football'
+    elsif product.tags contains 'sport:basketball'
+      assign sport = 'basketball'
+    elsif product.tags contains 'sport:american-football' or product.type == 'Hoodie' or product.type == 'NFL Jersey'
+      assign sport = 'american_football'
+    endif
+    if product.tags contains 'audience:kids'
+      assign is_kids = true
+    endif
+  endif
+
+  assign eyebrow = section.settings.eyebrow | escape
+  if eyebrow == blank
+    assign eyebrow = 'products.compare.eyebrow' | t
+  endif
+  assign heading = section.settings.heading | escape
+  if heading == blank
+    assign heading = 'products.compare.heading' | t
+  endif
+  assign ours_label = section.settings.ours_label | escape
+  if ours_label == blank
+    assign ours_label = shop.name | escape
+  endif
+  assign theirs_label = section.settings.theirs_label | escape
+  if theirs_label == blank
+    assign theirs_label = 'products.compare.theirs_label' | t
+  endif
+  assign note = section.settings.note | escape
+  if note == blank
+    assign note = 'products.compare.note' | t
+  endif
+  if note contains 'translation missing'
+    assign note = ''
+  endif
+-%}
+
+{%- capture rows -%}
+  {%- for block in section.blocks -%}
+    {%- liquid
+      assign show = true
+      case block.settings.show_for
+        when 'football'
+          if sport != 'football'
+            assign show = false
+          endif
+        when 'football_adults'
+          if sport != 'football' or is_kids
+            assign show = false
+          endif
+        when 'basketball'
+          if sport != 'basketball'
+            assign show = false
+          endif
+        when 'american_football'
+          if sport != 'american_football'
+            assign show = false
+          endif
+        when 'kids'
+          unless is_kids
+            assign show = false
+          endunless
+        when 'adults'
+          if product == blank or is_kids
+            assign show = false
+          endif
+      endcase
+
+      assign topic = block.settings.topic
+      assign key = 'products.compare.' | append: topic
+      assign icon_name = 'check'
+      assign ours = ''
+      assign ours_note = ''
+
+      case topic
+        when 'shipping'
+          assign icon_name = 'truck'
+          if threshold_cents < 0
+            assign ours = 'products.compare.shipping.ours' | t
+            assign ours_note = 'products.compare.shipping.ours_note' | t
+          elsif threshold_cents > 0
+            assign amount = threshold_cents | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+            assign ours = 'products.compare.shipping.ours_from' | t: amount: amount
+            assign ours_note = 'products.compare.shipping.ours_from_note' | t
+          else
+            assign show = false
+          endif
+        when 'delivery'
+          assign icon_name = 'map-pin'
+          assign ours = 'products.compare.delivery.ours' | t
+          assign ours_note = 'products.compare.delivery.ours_note' | t
+        when 'returns'
+          assign icon_name = 'return'
+          assign ours = 'products.compare.returns.ours' | t
+          assign ours_note = 'products.compare.returns.ours_note' | t
+        when 'price'
+          assign icon_name = 'tag'
+          if product == blank
+            assign show = false
+          else
+            assign ours = product.price | money_without_trailing_zeros
+            assign ours_note = 'products.compare.price.ours_note' | t
+          endif
+        when 'kids_set'
+          # A kids football set: the page's own, or the kids counterpart of an adult shirt.
+          assign icon_name = 'users'
+          assign kids_set = blank
+          if product.type == 'Football Kit'
+            assign kids_set = product
+          else
+            assign counterpart = product.metafields.sportwear.counterpart.value
+            if counterpart != blank and counterpart.type == 'Football Kit' and counterpart.available
+              assign kids_set = counterpart
+            endif
+          endif
+          if kids_set == blank
+            assign show = false
+          else
+            assign ours = kids_set.price | money_without_trailing_zeros
+            if kids_set.id == product.id
+              assign ours_note = 'products.compare.kids_set.ours_note' | t
+            else
+              assign ours_note = 'products.compare.kids_set.ours_note_counterpart' | t
+            endif
+          endif
+        when 'basketball_set'
+          # The set price that checkout gives (the shop's set offer, as in snippets/set-price.liquid).
+          assign icon_name = 'shirt'
+          assign set_total = 0
+          assign offer = shop.metafields.sportwear.set_offer.value
+          if product != blank and offer != blank and offer.discount_amount > 0
+            for item in product.metafields.sportwear.complements.value
+              if item.available
+                assign pair = false
+                if product.tags contains offer.jersey_tag and item.tags contains offer.shorts_tag
+                  assign pair = true
+                elsif product.tags contains offer.shorts_tag and item.tags contains offer.jersey_tag
+                  assign pair = true
+                endif
+                if pair
+                  assign saving = offer.discount_amount | times: 100
+                  assign regular = product.price | plus: item.price
+                  assign set_total = regular | minus: saving
+                  break
+                endif
+              endif
+            endfor
+          endif
+          if set_total > 0
+            assign ours = set_total | money_without_trailing_zeros
+            assign regular_money = regular | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
+            assign ours_note = 'products.compare.basketball_set.ours_note' | t: price: regular_money
+          else
+            assign show = false
+          endif
+        when 'languages'
+          assign icon_name = 'globe'
+          assign language_count = shop.published_locales.size
+          if language_count > 1
+            assign ours = 'products.compare.languages.ours' | t: count: language_count
+            assign ours_note = shop.published_locales | map: 'endonym_name' | join: ' · '
+          else
+            assign show = false
+          endif
+        else
+          assign icon_name = block.settings.icon
+      endcase
+
+      if topic == 'custom'
+        assign label = block.settings.label | escape
+        assign theirs = block.settings.theirs | escape
+        assign theirs_note = block.settings.theirs_note | escape
+      else
+        assign label = key | append: '.label' | t
+        assign theirs = key | append: '.theirs' | t
+        assign theirs_note = key | append: '.theirs_note' | t
+        if block.settings.label != blank
+          assign label = block.settings.label | escape
+        endif
+        if block.settings.theirs != blank
+          assign theirs = block.settings.theirs | escape
+        endif
+        if block.settings.theirs_note != blank
+          assign theirs_note = block.settings.theirs_note | escape
+        endif
+      endif
+      if block.settings.ours != blank
+        assign ours = block.settings.ours | escape
+      endif
+      if block.settings.ours_note != blank
+        assign ours_note = block.settings.ours_note | escape
+      endif
+
+      # A topic whose other-stores copy is empty in this language stays out (Shopify may print
+      # "translation missing" for an empty or absent key).
+      if theirs contains 'translation missing'
+        assign theirs = ''
+      endif
+      if theirs_note contains 'translation missing'
+        assign theirs_note = ''
+      endif
+      if label == blank or ours == blank or theirs == blank
+        assign show = false
+      endif
+    -%}
+    {%- if show -%}
+      <tr class="compare__row" role="row" {{ block.shopify_attributes }}>
+        <th class="compare__topic" scope="row" role="rowheader">
+          {%- render 'icon', name: icon_name, size: 22, class: 'compare__icon' -%}
+          <span class="compare__label">{{ label }}</span>
+        </th>
+        <td class="compare__cell compare__cell--ours" role="cell">
+          <span class="compare__value">
+            {%- render 'icon', name: 'check', size: 14, class: 'compare__check' -%}
+            <bdi>{{ ours }}</bdi>
+          </span>
+          {%- if ours_note != blank -%}
+            <span class="compare__detail">{{ ours_note }}</span>
+          {%- endif -%}
+        </td>
+        <td class="compare__cell compare__cell--theirs" role="cell">
+          <span class="compare__value"><bdi>{{ theirs }}</bdi></span>
+          {%- if theirs_note != blank -%}
+            <span class="compare__detail">{{ theirs_note }}</span>
+          {%- endif -%}
+        </td>
+      </tr>
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+{%- if rows != blank -%}
+  <div
+    class="section compare color-{{ scheme.id }}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="page-width">
+      <div class="compare__inner">
+        <div class="compare__intro">
+          <p class="eyebrow compare__eyebrow">{{ eyebrow }}</p>
+          <h2 class="display-m compare__heading" id="{{ heading_id }}">{{ heading }}</h2>
+        </div>
+
+        <table class="compare__table" role="table" aria-labelledby="{{ heading_id }}">
+          <thead class="compare__head" role="rowgroup">
+            <tr class="compare__row compare__row--head" role="row">
+              <td class="compare__topic compare__vs" role="cell">
+                <span aria-hidden="true">{{ 'products.compare.vs' | t }}</span>
+              </td>
+              <th class="compare__cell compare__cell--ours compare__side" scope="col" role="columnheader">
+                {%- render 'logo-mark', class: 'compare__logo' -%}
+                <span>{{ ours_label }}</span>
+              </th>
+              <th class="compare__cell compare__cell--theirs compare__side" scope="col" role="columnheader">
+                {{ theirs_label }}
+              </th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            {{ rows }}
+          </tbody>
+        </table>
+
+        {%- if note != blank -%}
+          <p class="compare__note">{{ note }}</p>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  /*
+    A head-to-head board. Rows are grids so one table can change shape: three columns from tablets up
+    (ours | topic | theirs, the topic in the middle), and on phones the topic above two half-width
+    values. The table keeps its roles (role="row" etc.) because display: grid drops them in some
+    screen readers. Our column is lit with a faint wash of the accent; no frame around the board.
+  */
+  .compare__inner {
+    max-width: 920px;
+    margin-inline: auto;
+  }
+
+  .compare__intro {
+    display: grid;
+    justify-items: center;
+    gap: var(--space-2);
+    margin-block-end: var(--space-6);
+    text-align: center;
+  }
+
+  .compare__eyebrow {
+    color: var(--color-muted);
+  }
+
+  .compare__heading {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .compare__table {
+    display: block;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .compare__head,
+  .compare__table tbody {
+    display: block;
+  }
+
+  .compare__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+      'topic topic'
+      'ours theirs';
+    border-block-start: 1px solid var(--color-border);
+  }
+
+  .compare__row--head {
+    grid-template-areas: 'ours theirs';
+    position: relative;
+    border-block-start: 0;
+  }
+
+  .compare__topic {
+    grid-area: topic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-block: var(--space-3) 0;
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .compare__icon {
+    flex: none;
+    color: var(--color-muted);
+  }
+
+  .compare__cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: var(--space-2) var(--space-2) var(--space-3);
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .compare__cell--ours {
+    grid-area: ours;
+  }
+
+  .compare__cell--theirs {
+    grid-area: theirs;
+    color: var(--color-muted);
+  }
+
+  .compare__value {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-family: var(--font-display);
+    font-size: clamp(20px, 1rem + 0.85vw, 30px);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  .compare__cell--ours .compare__value {
+    color: var(--color-text);
+  }
+
+  .compare__check {
+    flex: none;
+    width: 22px;
+    height: 22px;
+    padding: 4px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  .compare__detail {
+    max-width: 32ch;
+    font-size: var(--text-xs);
+    line-height: 1.4;
+    color: var(--color-muted);
+    text-wrap: balance;
+  }
+
+  /* Column heads: the logo and name on our side, "other stores" on theirs, VS between them. */
+  .compare__side {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-2);
+    padding-block: var(--space-3);
+    font-size: var(--text-base);
+    font-weight: 800;
+  }
+
+  .compare__head .compare__cell--ours {
+    border-start-start-radius: var(--radius-card);
+    border-start-end-radius: var(--radius-card);
+    color: var(--color-text);
+  }
+
+  .compare__logo {
+    width: 30px;
+    height: auto;
+    color: var(--color-accent);
+  }
+
+  .compare__vs {
+    grid-area: auto;
+    position: absolute;
+    inset-block-start: 50%;
+    inset-inline-start: 50%;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--color-background);
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--color-muted);
+    translate: -50% -50%;
+  }
+
+  [dir='rtl'] .compare__vs {
+    translate: 50% -50%;
+  }
+
+  .compare__table tbody .compare__row:last-child .compare__cell--ours {
+    border-end-start-radius: var(--radius-card);
+    border-end-end-radius: var(--radius-card);
+  }
+
+  .compare__note {
+    max-width: 70ch;
+    margin: var(--space-6) auto 0;
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  :lang(ar) .compare__value {
+    line-height: 1.25;
+  }
+
+  @media screen and (min-width: 750px) {
+    .compare__cell--ours {
+      background: color-mix(in srgb, var(--color-accent) 7%, transparent);
+    }
+
+    .compare__row {
+      grid-template-columns: minmax(0, 1fr) minmax(150px, 0.62fr) minmax(0, 1fr);
+      grid-template-areas: 'ours topic theirs';
+      align-items: stretch;
+    }
+
+    .compare__row--head {
+      grid-template-areas: 'ours topic theirs';
+    }
+
+    .compare__topic {
+      flex-direction: column;
+      gap: var(--space-1);
+      padding: var(--space-3) var(--space-2);
+    }
+
+    /* Each side leans toward the topic in the middle. */
+    .compare__cell {
+      justify-content: center;
+      padding: var(--space-3) var(--space-6);
+    }
+
+    .compare__detail {
+      font-size: var(--text-sm);
+    }
+
+    .compare__cell--ours {
+      align-items: flex-end;
+      text-align: end;
+    }
+
+    .compare__cell--theirs {
+      align-items: flex-start;
+      text-align: start;
+    }
+
+    .compare__side {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .compare__side.compare__cell--theirs {
+      justify-content: flex-start;
+    }
+
+    .compare__vs {
+      grid-area: topic;
+      position: static;
+      width: auto;
+      height: auto;
+      background: none;
+      translate: none;
+    }
+
+    [dir='rtl'] .compare__vs {
+      translate: none;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.store_comparison.name",
+  "tag": "section",
+  "class": "section-store-comparison",
+  "enabled_on": {
+    "templates": ["product", "index", "page", "cart", "collection"]
+  },
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.store_comparison.settings.paragraph.content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "t:settings.eyebrow",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:settings.heading",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "ours_label",
+      "label": "t:sections.store_comparison.settings.ours_label.label",
+      "info": "t:sections.store_comparison.settings.ours_label.info"
+    },
+    {
+      "type": "text",
+      "id": "theirs_label",
+      "label": "t:sections.store_comparison.settings.theirs_label.label",
+      "info": "t:settings.default_text_info"
+    },
+    {
+      "type": "text",
+      "id": "note",
+      "label": "t:sections.store_comparison.settings.note.label",
+      "info": "t:sections.store_comparison.settings.note.info"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:settings.color_scheme",
+      "default": "scheme-night"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 48
+    }
+  ],
+  "blocks": [
+    {
+      "type": "row",
+      "name": "t:sections.store_comparison.blocks.row.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "topic",
+          "label": "t:sections.store_comparison.blocks.row.settings.topic.label",
+          "info": "t:sections.store_comparison.blocks.row.settings.topic.info",
+          "default": "shipping",
+          "options": [
+            { "value": "shipping", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.shipping" },
+            { "value": "delivery", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.delivery" },
+            { "value": "returns", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.returns" },
+            { "value": "price", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.price" },
+            { "value": "kids_set", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.kids_set" },
+            {
+              "value": "basketball_set",
+              "label": "t:sections.store_comparison.blocks.row.settings.topic.options.basketball_set"
+            },
+            {
+              "value": "languages",
+              "label": "t:sections.store_comparison.blocks.row.settings.topic.options.languages"
+            },
+            { "value": "custom", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.custom" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "show_for",
+          "label": "t:sections.store_comparison.blocks.row.settings.show_for.label",
+          "default": "all",
+          "options": [
+            { "value": "all", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.all" },
+            {
+              "value": "football",
+              "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.football"
+            },
+            {
+              "value": "football_adults",
+              "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.football_adults"
+            },
+            {
+              "value": "basketball",
+              "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.basketball"
+            },
+            {
+              "value": "american_football",
+              "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.american_football"
+            },
+            { "value": "kids", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.kids" },
+            { "value": "adults", "label": "t:sections.store_comparison.blocks.row.settings.show_for.options.adults" }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "t:sections.store_comparison.blocks.row.settings.icon.label",
+          "info": "t:sections.store_comparison.blocks.row.settings.icon.info",
+          "default": "check",
+          "options": [
+            { "value": "check", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.check" },
+            { "value": "truck", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.truck" },
+            { "value": "return", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.return" },
+            { "value": "tag", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.tag" },
+            { "value": "shirt", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.shirt" },
+            { "value": "users", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.users" },
+            { "value": "globe", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.globe" },
+            { "value": "chat", "label": "t:sections.store_comparison.blocks.row.settings.icon.options.chat" }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "t:sections.store_comparison.blocks.row.settings.label.label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "text",
+          "id": "ours",
+          "label": "t:sections.store_comparison.blocks.row.settings.ours.label",
+          "info": "t:sections.store_comparison.blocks.row.settings.ours.info"
+        },
+        {
+          "type": "text",
+          "id": "ours_note",
+          "label": "t:sections.store_comparison.blocks.row.settings.ours_note.label",
+          "info": "t:settings.default_text_info"
+        },
+        {
+          "type": "text",
+          "id": "theirs",
+          "label": "t:sections.store_comparison.blocks.row.settings.theirs.label",
+          "info": "t:sections.store_comparison.blocks.row.settings.theirs.info"
+        },
+        {
+          "type": "text",
+          "id": "theirs_note",
+          "label": "t:sections.store_comparison.blocks.row.settings.theirs_note.label",
+          "info": "t:settings.default_text_info"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
+  "presets": [
+    {
+      "name": "t:sections.store_comparison.presets.name",
+      "blocks": [
+        { "type": "row", "settings": { "topic": "shipping" } },
+        { "type": "row", "settings": { "topic": "returns" } },
+        { "type": "row", "settings": { "topic": "delivery" } },
+        { "type": "row", "settings": { "topic": "languages" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

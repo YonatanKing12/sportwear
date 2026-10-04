@@ -151,6 +151,68 @@
       "required": "أدخل اسمًا من 10 أحرف كحد أقصى.",
       "replaces": "إذا كانت هناك كتابة على ظهر المنتج، سيحل الاسم المخصص محلها.",
       "total": "السعر لكل قطعة مع الطباعة: {{ price }}"
+    },
+    "compare": {
+      "eyebrow": "لماذا تشترون منا",
+      "heading": "وجهاً لوجه مع المتاجر الأخرى",
+      "theirs_label": "متاجر أخرى",
+      "vs": "VS",
+      "note": "",
+      "shipping": {
+        "label": "التوصيل إلى المنزل",
+        "ours": "مجاناً",
+        "ours_note": "على كل طلب، بلا حد أدنى",
+        "ours_from": "مجاناً من {{ amount }}",
+        "ours_from_note": "للطلبات بهذا المبلغ أو أكثر",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "delivery": {
+        "label": "مدة التوصيل",
+        "ours": "حتى 10 أيام عمل",
+        "ours_note": "من مخزوننا في البلاد، حتى باب البيت",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "returns": {
+        "label": "الإرجاع والاستبدال",
+        "ours": "45 يوماً",
+        "ours_note": "من يوم استلام الطلب",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "price": {
+        "label": "سعر القميص",
+        "ours_note": "سعر هذا القميص",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "kids_set": {
+        "label": "طقم أطفال",
+        "ours_note": "قميص وشورت من نفس الطقم",
+        "ours_note_counterpart": "طقم الأطفال لهذا القميص: قميص وشورت",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "basketball_set": {
+        "label": "قميص وشورت",
+        "ours_note": "بدلاً من {{ price }}، يُخصم في السلة",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "languages": {
+        "label": "لغات الموقع",
+        "ours": {
+          "zero": "{{ count }} لغات",
+          "one": "لغة واحدة",
+          "two": "لغتان",
+          "few": "{{ count }} لغات",
+          "many": "{{ count }} لغة",
+          "other": "{{ count }} لغة"
+        },
+        "theirs": "",
+        "theirs_note": ""
+      }
     }
   }
 }

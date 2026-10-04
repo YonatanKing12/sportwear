@@ -102,6 +102,74 @@
         "padding_bottom": 48
       }
     },
+    "comparison": {
+      "type": "store-comparison",
+      "blocks": {
+        "row_shipping": {
+          "type": "row",
+          "settings": {
+            "topic": "shipping",
+            "show_for": "all"
+          }
+        },
+        "row_delivery": {
+          "type": "row",
+          "settings": {
+            "topic": "delivery",
+            "show_for": "all"
+          }
+        },
+        "row_returns": {
+          "type": "row",
+          "settings": {
+            "topic": "returns",
+            "show_for": "all"
+          }
+        },
+        "row_price": {
+          "type": "row",
+          "settings": {
+            "topic": "price",
+            "show_for": "football_adults"
+          }
+        },
+        "row_kids_set": {
+          "type": "row",
+          "settings": {
+            "topic": "kids_set",
+            "show_for": "football"
+          }
+        },
+        "row_basketball_set": {
+          "type": "row",
+          "settings": {
+            "topic": "basketball_set",
+            "show_for": "basketball"
+          }
+        },
+        "row_languages": {
+          "type": "row",
+          "settings": {
+            "topic": "languages",
+            "show_for": "all"
+          }
+        }
+      },
+      "block_order": [
+        "row_shipping",
+        "row_delivery",
+        "row_returns",
+        "row_price",
+        "row_kids_set",
+        "row_basketball_set",
+        "row_languages"
+      ],
+      "settings": {
+        "color_scheme": "scheme-night",
+        "padding_top": 48,
+        "padding_bottom": 48
+      }
+    },
     "recommendations": {
       "type": "product-recommendations",
       "settings": {
@@ -343,6 +411,7 @@
   },
   "order": [
     "main",
+    "comparison",
     "recommendations",
     "league_row",
     "cross_football_basketball",

@@ -924,6 +924,66 @@
       "required": "יש להזין שם להדפסה, עד 10 תווים.",
       "replaces": "אם מופיע כיתוב בגב המוצר, השם האישי יחליף אותו.",
       "total": "מחיר לפריט עם הדפסה: {{ price }}"
+    },
+    "compare": {
+      "eyebrow": "למה לקנות אצלנו",
+      "heading": "ראש בראש מול חנויות אחרות",
+      "theirs_label": "חנויות אחרות",
+      "vs": "VS",
+      "note": "",
+      "shipping": {
+        "label": "משלוח עד הבית",
+        "ours": "חינם",
+        "ours_note": "בכל הזמנה, בלי סכום מינימום",
+        "ours_from": "חינם מ־{{ amount }}",
+        "ours_from_note": "בהזמנה מהסכום הזה ומעלה",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "delivery": {
+        "label": "זמן אספקה",
+        "ours": "עד 10 ימי עסקים",
+        "ours_note": "מהמלאי שלנו בארץ, עד הבית",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "returns": {
+        "label": "החזרה והחלפה",
+        "ours": "45 יום",
+        "ours_note": "מהיום שקיבלתם את ההזמנה",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "price": {
+        "label": "מחיר החולצה",
+        "ours_note": "המחיר של החולצה הזאת",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "kids_set": {
+        "label": "סט ילדים",
+        "ours_note": "חולצה ומכנס של אותה ערכה",
+        "ours_note_counterpart": "סט הילדים של החולצה הזאת: חולצה ומכנס",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "basketball_set": {
+        "label": "גופייה ומכנס",
+        "ours_note": "במקום {{ price }}, ההנחה יורדת בסל",
+        "theirs": "",
+        "theirs_note": ""
+      },
+      "languages": {
+        "label": "שפות באתר",
+        "ours": {
+          "one": "שפה אחת",
+          "two": "שתי שפות",
+          "many": "{{ count }} שפות",
+          "other": "{{ count }} שפות"
+        },
+        "theirs": "",
+        "theirs_note": ""
+      }
     }
   }
 }

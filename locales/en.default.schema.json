@@ -1318,6 +1318,92 @@
         "related": "Related products",
         "complementary": "Complementary products"
       }
+    },
+    "store_comparison": {
+      "name": "Head to head",
+      "settings": {
+        "paragraph": {
+          "content": "SportWear next to other stores, one row per block. Our side fills itself from the store: free shipping (from Theme settings > Cart), this product's price, its kids set, its basketball set price and the site's languages. A row that doesn't fit the product is left out. The other stores' texts come from a check of their sites (design/comparison in the repo): keep them true and up to date."
+        },
+        "ours_label": {
+          "label": "Our column title",
+          "info": "Empty = the store name."
+        },
+        "theirs_label": {
+          "label": "Other stores column title"
+        },
+        "note": {
+          "label": "Footnote",
+          "info": "Where the other stores' facts come from and when they were checked. Empty = the default text."
+        }
+      },
+      "blocks": {
+        "row": {
+          "name": "Row",
+          "settings": {
+            "topic": {
+              "label": "Topic",
+              "info": "Shipping, delivery, returns and languages fit every page; price, kids set and jersey + shorts show only on products that have them.",
+              "options": {
+                "shipping": "Shipping",
+                "delivery": "Delivery time",
+                "returns": "Returns",
+                "price": "This product's price",
+                "kids_set": "Kids set",
+                "basketball_set": "Jersey + shorts set",
+                "languages": "Site languages",
+                "custom": "Custom (your own texts)"
+              }
+            },
+            "show_for": {
+              "label": "Show for",
+              "options": {
+                "all": "Every product",
+                "football": "Football",
+                "football_adults": "Adult football shirts",
+                "basketball": "Basketball",
+                "american_football": "American football",
+                "kids": "Kids products",
+                "adults": "Adult products"
+              }
+            },
+            "icon": {
+              "label": "Icon",
+              "info": "For custom rows; the other topics have their own.",
+              "options": {
+                "check": "Check",
+                "truck": "Truck",
+                "return": "Return",
+                "tag": "Price tag",
+                "shirt": "Shirt",
+                "users": "People",
+                "globe": "Globe",
+                "chat": "Chat"
+              }
+            },
+            "label": {
+              "label": "Topic name"
+            },
+            "ours": {
+              "label": "Our value",
+              "info": "Empty = from the store (or the default text). Custom rows need it."
+            },
+            "ours_note": {
+              "label": "Our detail"
+            },
+            "theirs": {
+              "label": "Other stores' value",
+              "info": "Only what you can back up. Custom rows need it."
+            },
+            "theirs_note": {
+              "label": "Other stores' detail"
+            }
+          }
+        }
+      },
+      "presets": {
+        "name": "Head to head"
+      }
     }
   },
   "settings_schema": {
