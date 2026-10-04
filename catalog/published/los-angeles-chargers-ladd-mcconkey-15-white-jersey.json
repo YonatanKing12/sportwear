@@ -1,0 +1,165 @@
+{
+  "handle": "los-angeles-chargers-ladd-mcconkey-15-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "los-angeles-chargers",
+    "code": "LAC",
+    "he": "לוס אנג׳לס צ׳ארג׳רס",
+    "en": "Los Angeles Chargers",
+    "ar": "لوس أنجلوس تشارجرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "ladd-mcconkey",
+    "name_on_back": "McCONKEY",
+    "he": "לאד מקונקי",
+    "en": "Ladd McConkey",
+    "ar": "لاد ماكونكي"
+  },
+  "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 לבן",
+  "description_html_he": "<p>חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע לבן, עם השם McCONKEY והמספר 15 על הגב (לאד מקונקי).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 לבן",
+    "description_he": "חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע לבן, עם McCONKEY 15 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LAC-15-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LAC-15-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LAC-15-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LAC-15-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-15-white-150396367-15.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-15-white-150396367-15__back.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Los Angeles Chargers #15 NFL Jersey – White",
+      "description_html": "<p>Los Angeles Chargers NFL jersey in white, with the name McCONKEY and the number 15 on the back (Ladd McConkey).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Los Angeles Chargers #15 NFL Jersey – White",
+      "seo_description": "Los Angeles Chargers NFL jersey in white, McCONKEY 15 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 15 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأبيض، مع الاسم McCONKEY والرقم 15 على الظهر (لاد ماكونكي).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 15 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأبيض، McCONKEY 15 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/150396367?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "闪电",
+    "photos": {
+      "front": "150396367/15",
+      "back": "150396367/15"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:los-angeles-chargers",
+    "league:nfl",
+    "audience:adult",
+    "player:ladd-mcconkey",
+    "לאד מקונקי",
+    "new",
+    "source:nfl-cyq888",
+    "album:150396367",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "los angeles chargers",
+    "chargers",
+    "لوس أنجلوس تشارجرز",
+    "تشارجرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "ladd mcconkey",
+    "mcconkey",
+    "لاد ماكونكي"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "2020 design: gold/powder-blue shoulder bolts, powder-blue name ('BOLT UP' collar)",
+    "render": "los-angeles-chargers-15-white-150396367-15"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332203299120",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935164465456",
+      "M": "gid://shopify/ProductVariant/67935164498224",
+      "L": "gid://shopify/ProductVariant/67935164530992",
+      "XL": "gid://shopify/ProductVariant/67935164563760"
+    },
+    "created_at": "2026-10-04T10:51:12Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:05:34Z",
+      "ar": "2026-10-04T11:05:35Z"
+    }
+  }
+}

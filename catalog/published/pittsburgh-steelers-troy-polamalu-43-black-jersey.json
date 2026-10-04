@@ -1,0 +1,165 @@
+{
+  "handle": "pittsburgh-steelers-troy-polamalu-43-black-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "pittsburgh-steelers",
+    "code": "PIT",
+    "he": "פיטסבורג סטילרס",
+    "en": "Pittsburgh Steelers",
+    "ar": "بيتسبرغ ستيلرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "troy-polamalu",
+    "name_on_back": "POLAMALU",
+    "he": "טרוי פולמלו",
+    "en": "Troy Polamalu",
+    "ar": "تروي بولامالو"
+  },
+  "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 43 שחור",
+  "description_html_he": "<p>חולצת פוטבול של פיטסבורג סטילרס בצבע שחור, עם השם POLAMALU והמספר 43 על הגב (טרוי פולמלו).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 43 שחור",
+    "description_he": "חולצת פוטבול של פיטסבורג סטילרס בצבע שחור, עם POLAMALU 43 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-PIT-43-BLK-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-PIT-43-BLK-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-PIT-43-BLK-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-PIT-43-BLK-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/pittsburgh-steelers-43-black-149778084-11.png",
+      "alt_he": "חולצת פוטבול פיטסבורג סטילרס מספר 43 שחור",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/pittsburgh-steelers-43-black-149778084-11__back.png",
+      "alt_he": "חולצת פוטבול פיטסבורג סטילרס מספר 43 שחור (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Pittsburgh Steelers #43 NFL Jersey – Black",
+      "description_html": "<p>Pittsburgh Steelers NFL jersey in black, with the name POLAMALU and the number 43 on the back (Troy Polamalu).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Pittsburgh Steelers #43 NFL Jersey – Black",
+      "seo_description": "Pittsburgh Steelers NFL jersey in black, POLAMALU 43 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية بيتسبرغ ستيلرز رقم 43 أسود",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق بيتسبرغ ستيلرز باللون الأسود، مع الاسم POLAMALU والرقم 43 على الظهر (تروي بولامالو).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية بيتسبرغ ستيلرز رقم 43 أسود",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق بيتسبرغ ستيلرز باللون الأسود، POLAMALU 43 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149778084?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "钢人",
+    "photos": {
+      "front": "149778084/11",
+      "back": "149778084/11"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:pittsburgh-steelers",
+    "league:nfl",
+    "audience:adult",
+    "player:troy-polamalu",
+    "טרוי פולמלו",
+    "new",
+    "source:nfl-cyq888",
+    "album:149778084",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "pittsburgh steelers",
+    "steelers",
+    "بيتسبرغ ستيلرز",
+    "ستيلرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "troy polamalu",
+    "polamalu",
+    "تروي بولامالو"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "white numbers, gold/white sleeve stripes",
+    "render": "pittsburgh-steelers-43-black-149778084-11"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332203856176",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935167447344",
+      "M": "gid://shopify/ProductVariant/67935167480112",
+      "L": "gid://shopify/ProductVariant/67935167512880",
+      "XL": "gid://shopify/ProductVariant/67935167545648"
+    },
+    "created_at": "2026-10-04T10:52:08Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:10:59Z",
+      "ar": "2026-10-04T11:10:59Z"
+    }
+  }
+}

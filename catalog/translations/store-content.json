@@ -3646,6 +3646,636 @@
           "digest": "6489bff84e13ecc6800b3c99eebe77883d7321f434cd717b48243a3bdbafb3af"
         }
       }
+    },
+    {
+      "handle": "nfl",
+      "resource_id": "gid://shopify/Collection/513263272240",
+      "fields": {
+        "title": {
+          "he": "NFL",
+          "en": "NFL",
+          "ar": "NFL",
+          "digest": "b217235b16b5defda14c851d8e8161508fa2387026c9eeb904e66a43d3be5d75"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של קבוצות ה-NFL, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>NFL team jerseys and hoodies, for adults and kids. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات فرق NFL، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "9df008095cc07e07436abbf61dbb26de4dd6b231e06045fa7cb14a68d6b167c5"
+        }
+      }
+    },
+    {
+      "handle": "nfl-jerseys",
+      "resource_id": "gid://shopify/Collection/513263305008",
+      "fields": {
+        "title": {
+          "he": "חולצות NFL",
+          "en": "NFL Jerseys",
+          "ar": "قمصان NFL",
+          "digest": "56ae82df09418bfc6724549e8d579550541db4321865c96496ecd48680d2f13f"
+        },
+        "body_html": {
+          "he": "<p>חולצות הפוטבול של קבוצות ה-NFL, עם השמות והמספרים של הכוכבים, למבוגרים ולילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>NFL team jerseys with the stars' names and numbers, for adults and kids. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فرق NFL بأسماء النجوم وأرقامهم، للكبار والأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "e16ca7122dd64dc0d2e4f0e898c07b3231e44dedc123f3c0a15019ce67d5e674"
+        }
+      }
+    },
+    {
+      "handle": "nfl-jerseys-kids",
+      "resource_id": "gid://shopify/Collection/513263337776",
+      "fields": {
+        "title": {
+          "he": "חולצות NFL לילדים",
+          "en": "Kids' NFL Jerseys",
+          "ar": "قمصان NFL للأطفال",
+          "digest": "4719367a5fdbc19cce0cd1a875af66b8a30691675aa394229d142721a8f9404d"
+        },
+        "body_html": {
+          "he": "<p>חולצות פוטבול של קבוצות ה-NFL במידות ילדים. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>NFL team jerseys in kids sizes. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان فرق NFL بمقاسات الأطفال. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "d21e1e414971d823e2bc8addd9aa9445724c44f48e4148a656a85162bfd56814"
+        }
+      }
+    },
+    {
+      "handle": "arizona-cardinals",
+      "resource_id": "gid://shopify/Collection/513263370544",
+      "fields": {
+        "title": {
+          "he": "אריזונה קרדינלס",
+          "en": "Arizona Cardinals",
+          "ar": "أريزونا كاردينالز",
+          "digest": "4d07e3cfc060f1c9c0b3f35e513b4e904fd88931a0407c1e567c76b968243a1d"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של אריזונה קרדינלס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Arizona Cardinals jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات أريزونا كاردينالز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "677eaa50e4486b2caea7ca33c61edb324c4b4992b366317ba781238e93cfddfe"
+        }
+      }
+    },
+    {
+      "handle": "atlanta-falcons",
+      "resource_id": "gid://shopify/Collection/513263403312",
+      "fields": {
+        "title": {
+          "he": "אטלנטה פאלקונס",
+          "en": "Atlanta Falcons",
+          "ar": "أتلانتا فالكونز",
+          "digest": "cfe50a5da7202e8557bb5567cd7844f7ea50ab832188a50e251f413ae7d87aa7"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של אטלנטה פאלקונס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Atlanta Falcons jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات أتلانتا فالكونز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b6b2d3050344923670ce8d9634fd698008062d60141a71bed5f248bc6e31ea16"
+        }
+      }
+    },
+    {
+      "handle": "baltimore-ravens",
+      "resource_id": "gid://shopify/Collection/513263436080",
+      "fields": {
+        "title": {
+          "he": "בולטימור רייבנס",
+          "en": "Baltimore Ravens",
+          "ar": "بالتيمور رافنز",
+          "digest": "533d7efd95718da96139ef13ceb00c300f5927f2d849c2b48fb1971b6bb0fe73"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של בולטימור רייבנס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Baltimore Ravens jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات بالتيمور رافنز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "37838cc7887949e7778bdb628466a2c26fc4ba9e75167d341a87795958adbdf8"
+        }
+      }
+    },
+    {
+      "handle": "buffalo-bills",
+      "resource_id": "gid://shopify/Collection/513263468848",
+      "fields": {
+        "title": {
+          "he": "באפלו בילס",
+          "en": "Buffalo Bills",
+          "ar": "بافالو بيلز",
+          "digest": "e4ee15b6b17e6efca6d01f079a76d6eb319ccc6f364ef36a8cdbbc3738a00eb8"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של באפלו בילס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Buffalo Bills jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات بافالو بيلز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "488edf9ebb19828982d9bbdd3798aae64c02c61832b94123a1ab59662e9306f3"
+        }
+      }
+    },
+    {
+      "handle": "carolina-panthers",
+      "resource_id": "gid://shopify/Collection/513263501616",
+      "fields": {
+        "title": {
+          "he": "קרוליינה פנתרס",
+          "en": "Carolina Panthers",
+          "ar": "كارولينا بانثرز",
+          "digest": "d897796954d3a10ab1f965ae3f883637f478d59aac1f1e320c3595459b2fc813"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של קרוליינה פנתרס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Carolina Panthers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات كارولينا بانثرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "7a4f7fd63878ef24e0b6344dc06f7f62d0378722bee4673360ab7c085e4df0d6"
+        }
+      }
+    },
+    {
+      "handle": "chicago-bears",
+      "resource_id": "gid://shopify/Collection/513263534384",
+      "fields": {
+        "title": {
+          "he": "שיקגו ברס",
+          "en": "Chicago Bears",
+          "ar": "شيكاغو بيرز",
+          "digest": "7172908e18302374c54cf22a16f3546a25ed90f0b805b890d9a8efaed3c07d48"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של שיקגו ברס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Chicago Bears jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات شيكاغو بيرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "891657f7f31ad308d7843157b5725665ea2296c13597384b35f2017b43be95e8"
+        }
+      }
+    },
+    {
+      "handle": "cincinnati-bengals",
+      "resource_id": "gid://shopify/Collection/513263567152",
+      "fields": {
+        "title": {
+          "he": "סינסינטי בנגלס",
+          "en": "Cincinnati Bengals",
+          "ar": "سينسيناتي بنغالز",
+          "digest": "c4f698b93967d3d4c8d42def5f6b0b17424f3499ad9f6652a27339b6284e8d8f"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של סינסינטי בנגלס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Cincinnati Bengals jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات سينسيناتي بنغالز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3e925eb35fdf4628378d62eff0eba753a4f465e58dbd432133bf25d69203aa84"
+        }
+      }
+    },
+    {
+      "handle": "cleveland-browns",
+      "resource_id": "gid://shopify/Collection/513263599920",
+      "fields": {
+        "title": {
+          "he": "קליבלנד בראונס",
+          "en": "Cleveland Browns",
+          "ar": "كليفلاند براونز",
+          "digest": "f3e7593f3f816e561a67dcbda1ae3838f6e95fd16de533216c4e23343827bb3c"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של קליבלנד בראונס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Cleveland Browns jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات كليفلاند براونز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "bde7fa8bf1a9807d9e5272023ad579af58f775dd6b40b95f1ed9adea567e3c18"
+        }
+      }
+    },
+    {
+      "handle": "dallas-cowboys",
+      "resource_id": "gid://shopify/Collection/513263632688",
+      "fields": {
+        "title": {
+          "he": "דאלאס קאובויס",
+          "en": "Dallas Cowboys",
+          "ar": "دالاس كاوبويز",
+          "digest": "f58949023b62d27a36681848e768eaed2e2e6d9db86c1f51ed0d7f805c000c2f"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של דאלאס קאובויס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Dallas Cowboys jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات دالاس كاوبويز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "a43e0823012ec6d6ca274fcd78691fa8dc6f20f691bd0c6401df81786127494d"
+        }
+      }
+    },
+    {
+      "handle": "denver-broncos",
+      "resource_id": "gid://shopify/Collection/513263665456",
+      "fields": {
+        "title": {
+          "he": "דנבר ברונקוס",
+          "en": "Denver Broncos",
+          "ar": "دنفر برونكوز",
+          "digest": "24355d5d3ced2ed39f3ab1d3f8d709d0c6f7f5eea6e6110da04b966fd84e43b3"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של דנבר ברונקוס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Denver Broncos jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات دنفر برونكوز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "d9674c6ebd921b529622bdbf08e7242af05698b2f90550568d2699b5d680767f"
+        }
+      }
+    },
+    {
+      "handle": "detroit-lions",
+      "resource_id": "gid://shopify/Collection/513263698224",
+      "fields": {
+        "title": {
+          "he": "דטרויט ליונס",
+          "en": "Detroit Lions",
+          "ar": "ديترويت لايونز",
+          "digest": "c2f5d77599377f0deb809b6b669ea17402dfff5c02b57b4f007e3a6e4720dee6"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של דטרויט ליונס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Detroit Lions jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات ديترويت لايونز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "71e2310089ef30491a7739573706c7dfa4d8c7ec99cc1993716f517aab9a0be6"
+        }
+      }
+    },
+    {
+      "handle": "green-bay-packers",
+      "resource_id": "gid://shopify/Collection/513263730992",
+      "fields": {
+        "title": {
+          "he": "גרין ביי פאקרס",
+          "en": "Green Bay Packers",
+          "ar": "غرين باي باكرز",
+          "digest": "cc3e7695e50654c314c1f05477447480362be99c7f3178a2f1cd793598801de6"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של גרין ביי פאקרס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Green Bay Packers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات غرين باي باكرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "7ce7c61d695d248751f28de1cc101e8dc6be542316ff5e3ff194b2ac32067c5c"
+        }
+      }
+    },
+    {
+      "handle": "houston-texans",
+      "resource_id": "gid://shopify/Collection/513263763760",
+      "fields": {
+        "title": {
+          "he": "יוסטון טקסאנס",
+          "en": "Houston Texans",
+          "ar": "هيوستن تكسانز",
+          "digest": "2ac9cbc99de18762570d46a8d07493abe57bea639a19b1ba6e49f2530bb45c3f"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של יוסטון טקסאנס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Houston Texans jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات هيوستن تكسانز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3da26bc6625718c0b0df42d72725a0a22c26c49449439049924c90ea202f8e93"
+        }
+      }
+    },
+    {
+      "handle": "indianapolis-colts",
+      "resource_id": "gid://shopify/Collection/513263796528",
+      "fields": {
+        "title": {
+          "he": "אינדיאנפוליס קולטס",
+          "en": "Indianapolis Colts",
+          "ar": "إنديانابوليس كولتس",
+          "digest": "786eb230505118ee78a530b3a9229053e7f2823a05adf7cfe64875c2ddbdfa2b"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של אינדיאנפוליס קולטס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Indianapolis Colts jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات إنديانابوليس كولتس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "ef95c2f33d2cdd9cd307c91dbb0a8c6fb106f44f23e50142efc312cfaf4b853d"
+        }
+      }
+    },
+    {
+      "handle": "jacksonville-jaguars",
+      "resource_id": "gid://shopify/Collection/513263829296",
+      "fields": {
+        "title": {
+          "he": "ג׳קסונוויל ג׳גוארס",
+          "en": "Jacksonville Jaguars",
+          "ar": "جاكسونفيل جاغوارز",
+          "digest": "75d427d0ffcaadaaf37a5308c4e0ff7b19c6aefec7d8ce8a4033db156f2f4182"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של ג׳קסונוויל ג׳גוארס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Jacksonville Jaguars jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات جاكسونفيل جاغوارز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3003d6fb29392f405e5616e028cebeb079e7d162bb34e6b54fc534a7e7a272f1"
+        }
+      }
+    },
+    {
+      "handle": "kansas-city-chiefs",
+      "resource_id": "gid://shopify/Collection/513263862064",
+      "fields": {
+        "title": {
+          "he": "קנזס סיטי צ׳יפס",
+          "en": "Kansas City Chiefs",
+          "ar": "كانساس سيتي تشيفز",
+          "digest": "f363fe407216d90aa58c8e4fe199b969ffeb15d5982c05ffb1b7453a04d9d3a2"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של קנזס סיטי צ׳יפס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Kansas City Chiefs jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات كانساس سيتي تشيفز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "d95ada45616a9bc84317d8460a728328fbdaccd4ae145d7e3868f3f7fbe82129"
+        }
+      }
+    },
+    {
+      "handle": "las-vegas-raiders",
+      "resource_id": "gid://shopify/Collection/513263894832",
+      "fields": {
+        "title": {
+          "he": "לאס וגאס ריידרס",
+          "en": "Las Vegas Raiders",
+          "ar": "لاس فيغاس رايدرز",
+          "digest": "54ae55c350cb8c97ffc33e9776f29bf9af8b20de0c1318b749aab6d2eb0fcb6d"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של לאס וגאס ריידרס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Las Vegas Raiders jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات لاس فيغاس رايدرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "68cedcc2bf93fcb79c38ebd553b2c14265e435373f43484e00f8aecbfbe9a5c2"
+        }
+      }
+    },
+    {
+      "handle": "los-angeles-chargers",
+      "resource_id": "gid://shopify/Collection/513263927600",
+      "fields": {
+        "title": {
+          "he": "לוס אנג׳לס צ׳ארג׳רס",
+          "en": "Los Angeles Chargers",
+          "ar": "لوس أنجلوس تشارجرز",
+          "digest": "0b33d90ae7dcf94daacf80b2a22fd4f13bdbbc2748f74e05074fc4f59904493e"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של לוס אנג׳לס צ׳ארג׳רס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Los Angeles Chargers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات لوس أنجلوس تشارجرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "50d7b5b1408b11126ddfdca0a33bb6d089deddd1bf7ec7a03e1b49811746f46a"
+        }
+      }
+    },
+    {
+      "handle": "los-angeles-rams",
+      "resource_id": "gid://shopify/Collection/513263960368",
+      "fields": {
+        "title": {
+          "he": "לוס אנג׳לס ראמס",
+          "en": "Los Angeles Rams",
+          "ar": "لوس أنجلوس رامز",
+          "digest": "fb33e8534346d64ba32324042ed226e72e13b627055e4f87d75b86065480060f"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של לוס אנג׳לס ראמס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Los Angeles Rams jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات لوس أنجلوس رامز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "3db7af2a5aad03ca1b7bfcae4172a84e65e3f49af50bde589d5fffe6a2acf93e"
+        }
+      }
+    },
+    {
+      "handle": "miami-dolphins",
+      "resource_id": "gid://shopify/Collection/513263993136",
+      "fields": {
+        "title": {
+          "he": "מיאמי דולפינס",
+          "en": "Miami Dolphins",
+          "ar": "ميامي دولفينز",
+          "digest": "ec4a9d43b3219e1a34963c055bff5a56323eefc01deabe04089245f6768dba48"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של מיאמי דולפינס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Miami Dolphins jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات ميامي دولفينز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "53c6e360128fd5f13a2177f30b7d9fe27ccc52e9940e1e4add4f0c11aae934ec"
+        }
+      }
+    },
+    {
+      "handle": "minnesota-vikings",
+      "resource_id": "gid://shopify/Collection/513264025904",
+      "fields": {
+        "title": {
+          "he": "מינסוטה ויקינגס",
+          "en": "Minnesota Vikings",
+          "ar": "مينيسوتا فايكنغز",
+          "digest": "73527d6a8618bbd12858665c9829b5408f88cdaa13f5e04a2333937b9918f098"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של מינסוטה ויקינגס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Minnesota Vikings jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات مينيسوتا فايكنغز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "ae8d73091b5e1b0782ebdf1ed81abb8ca3ef5d8f9989ad634a148fea13582411"
+        }
+      }
+    },
+    {
+      "handle": "new-england-patriots",
+      "resource_id": "gid://shopify/Collection/513264124208",
+      "fields": {
+        "title": {
+          "he": "ניו אינגלנד פטריוטס",
+          "en": "New England Patriots",
+          "ar": "نيو إنجلاند باتريوتس",
+          "digest": "5f422cb0b01600318903437794ab89a69a66bb606ec8c6e6a8b4a44ff7ea0957"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של ניו אינגלנד פטריוטס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>New England Patriots jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات نيو إنجلاند باتريوتس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "b896df2252a5287f16f134a0b4a2b6487b190aefc971af50bf7ebc81cd4979b6"
+        }
+      }
+    },
+    {
+      "handle": "new-orleans-saints",
+      "resource_id": "gid://shopify/Collection/513264156976",
+      "fields": {
+        "title": {
+          "he": "ניו אורלינס סיינטס",
+          "en": "New Orleans Saints",
+          "ar": "نيو أورلينز سينتس",
+          "digest": "72c2146133e2e9d8d3e8d914bcb54973eee97b38cea25fd2c89308714d202f2b"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של ניו אורלינס סיינטס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>New Orleans Saints jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات نيو أورلينز سينتس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "2e3a99f3710cfa2734374f7189515bc8d3a238a19c8f6d85e6b045e4bda198df"
+        }
+      }
+    },
+    {
+      "handle": "new-york-giants",
+      "resource_id": "gid://shopify/Collection/513264189744",
+      "fields": {
+        "title": {
+          "he": "ניו יורק ג׳איינטס",
+          "en": "New York Giants",
+          "ar": "نيويورك جاينتس",
+          "digest": "29e9cc97420a930c2b7127119d78ef69b35abef152f62cc1b15f8dc4a2339ccc"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של ניו יורק ג׳איינטס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>New York Giants jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات نيويورك جاينتس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "6277ab262d426212cbe3f7938b9c3d07cf63faa3f39a348a35247da002b37476"
+        }
+      }
+    },
+    {
+      "handle": "new-york-jets",
+      "resource_id": "gid://shopify/Collection/513264222512",
+      "fields": {
+        "title": {
+          "he": "ניו יורק ג׳טס",
+          "en": "New York Jets",
+          "ar": "نيويورك جتس",
+          "digest": "65c50a26fff6deb13b779c75456674149901d498fd2c42d1061e1bab1ea46c37"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של ניו יורק ג׳טס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>New York Jets jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات نيويورك جتس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "40ab7282046c8a93baadd0432b71b7f87f55e01d21a6d45f60f8a190544fed8e"
+        }
+      }
+    },
+    {
+      "handle": "philadelphia-eagles",
+      "resource_id": "gid://shopify/Collection/513264255280",
+      "fields": {
+        "title": {
+          "he": "פילדלפיה איגלס",
+          "en": "Philadelphia Eagles",
+          "ar": "فيلادلفيا إيغلز",
+          "digest": "0c07aa7101350a9fd16b3c891975cc3acdef3f881ee6032b86c50f66c16c5874"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של פילדלפיה איגלס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Philadelphia Eagles jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات فيلادلفيا إيغلز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f3a5d8236af68f10505791fdd5e3512088e72a5fc24e1fb3ed7c02bed6ea181f"
+        }
+      }
+    },
+    {
+      "handle": "pittsburgh-steelers",
+      "resource_id": "gid://shopify/Collection/513264288048",
+      "fields": {
+        "title": {
+          "he": "פיטסבורג סטילרס",
+          "en": "Pittsburgh Steelers",
+          "ar": "بيتسبرغ ستيلرز",
+          "digest": "990cbecc8478b562a5956c349b5b49c3c554a1d80b46ed19ed8d8330afc6ee17"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של פיטסבורג סטילרס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Pittsburgh Steelers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات بيتسبرغ ستيلرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "2b291078f2fa9ce756e9be95a28ebc3377695e1fcab526e1daf95e50262d7002"
+        }
+      }
+    },
+    {
+      "handle": "san-francisco-49ers",
+      "resource_id": "gid://shopify/Collection/513264320816",
+      "fields": {
+        "title": {
+          "he": "סן פרנסיסקו 49׳",
+          "en": "San Francisco 49ers",
+          "ar": "سان فرانسيسكو فورتي ناينرز",
+          "digest": "87906a94b741a2a6268dfc599e233a75de6f4c2367be6f36c0663881821a4603"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של סן פרנסיסקו 49׳ באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>San Francisco 49ers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات سان فرانسيسكو فورتي ناينرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "f2f859b38994eee1bc4c2e44f2b20ea5dfdafe09bc7d53ff8baa64d526434b45"
+        }
+      }
+    },
+    {
+      "handle": "seattle-seahawks",
+      "resource_id": "gid://shopify/Collection/513264353584",
+      "fields": {
+        "title": {
+          "he": "סיאטל סיהוקס",
+          "en": "Seattle Seahawks",
+          "ar": "سياتل سيهوكس",
+          "digest": "449937eee54a47bfb9dbdbe6820565a0016fe25b5f28b0503f10207024b3d18e"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של סיאטל סיהוקס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Seattle Seahawks jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات سياتل سيهوكس في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "1379d5e7e441d383827f3e2001594889c7b845b48da7cb46c60e2288cc7c1268"
+        }
+      }
+    },
+    {
+      "handle": "tampa-bay-buccaneers",
+      "resource_id": "gid://shopify/Collection/513264386352",
+      "fields": {
+        "title": {
+          "he": "טמפה ביי באקנירס",
+          "en": "Tampa Bay Buccaneers",
+          "ar": "تامبا باي بوكانيرز",
+          "digest": "11cf218404bc9a110ead50dc86dc6806a2bb4ed343bc298b3be51345c6f82acd"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של טמפה ביי באקנירס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Tampa Bay Buccaneers jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات تامبا باي بوكانيرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "37744dd4e44974a20e1bea25927ffed4ac70b8229020952e3170d96be32f856f"
+        }
+      }
+    },
+    {
+      "handle": "tennessee-titans",
+      "resource_id": "gid://shopify/Collection/513264419120",
+      "fields": {
+        "title": {
+          "he": "טנסי טייטאנס",
+          "en": "Tennessee Titans",
+          "ar": "تينيسي تايتنز",
+          "digest": "78d4fc14ea7486b3d4d479b2f0cbe6c55daee4e3fea51fb5bfed69610285a762"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של טנסי טייטאנס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Tennessee Titans jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات تينيسي تايتنز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "65b6c2e388348896465a9dbca110504c96a3be8034f001d8d7990a0634785475"
+        }
+      }
+    },
+    {
+      "handle": "washington-commanders",
+      "resource_id": "gid://shopify/Collection/513264451888",
+      "fields": {
+        "title": {
+          "he": "וושינגטון קומנדרס",
+          "en": "Washington Commanders",
+          "ar": "واشنطن كوماندرز",
+          "digest": "51e003cb8595fca33dc068b909996c51025db08cf6f0672f73e2c74d930404be"
+        },
+        "body_html": {
+          "he": "<p>חולצות וקפוצ׳ונים של וושינגטון קומנדרס באתר. משלוח חינם עד הבית, עד 10 ימי עסקים.</p>",
+          "en": "<p>Washington Commanders jerseys and hoodies in our store. Free home delivery within 10 business days.</p>",
+          "ar": "<p>قمصان وهوديات واشنطن كوماندرز في متجرنا. توصيل مجاني إلى المنزل خلال 10 أيام عمل.</p>",
+          "digest": "0e10342fa206a3e2d6d100f48f1fedd8972521fde599f6a05c60326d60e269fb"
+        }
+      }
     }
   ],
   "menus": [
@@ -3782,18 +4412,6 @@
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806831161648",
-                  "url": "/collections/west-ham-united",
-                  "fields": {
-                    "title": {
-                      "he": "ווסטהאם",
-                      "en": "West Ham United",
-                      "ar": "وست هام يونايتد",
-                      "digest": "8086de82b956afd7fcbe7fd5813c89f40d10e94bf7b0df5417e2f575b9b3b673"
-                    }
-                  }
-                },
-                {
                   "resource_id": "gid://shopify/Link/806831194416",
                   "url": "/collections/everton",
                   "fields": {
@@ -3866,18 +4484,6 @@
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806831391024",
-                  "url": "/collections/wolverhampton-wanderers",
-                  "fields": {
-                    "title": {
-                      "he": "וולברהמפטון",
-                      "en": "Wolverhampton Wanderers",
-                      "ar": "وولفرهامبتون",
-                      "digest": "87796f5f95c5fe433c3ece476b50f29e8ab130bc414516fd4be08feb29a8b8b4"
-                    }
-                  }
-                },
-                {
                   "resource_id": "gid://shopify/Link/806831423792",
                   "url": "/collections/sunderland",
                   "fields": {
@@ -3910,18 +4516,6 @@
                       "en": "AFC Bournemouth",
                       "ar": "بورنموث",
                       "digest": "28e0e9975fc38f38df82e76942c1cda22c7d7c17fe60c226ee6903bee9cfbbad"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806831522096",
-                  "url": "/collections/burnley",
-                  "fields": {
-                    "title": {
-                      "he": "ברנלי",
-                      "en": "Burnley",
-                      "ar": "بيرنلي",
-                      "digest": "a91fd21f37e79973341cd7f382490d80cbd4335c199838fa9ab8f226efca3576"
                     }
                   }
                 }
@@ -4048,18 +4642,6 @@
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806831751472",
-                  "url": "/collections/girona",
-                  "fields": {
-                    "title": {
-                      "he": "ג׳ירונה",
-                      "en": "Girona",
-                      "ar": "جيرونا",
-                      "digest": "19f5b23edd20db8a308ff66aa384c76e88b9c30ef625f21b547c3cc8d2cb6ee6"
-                    }
-                  }
-                },
-                {
                   "resource_id": "gid://shopify/Link/806831784240",
                   "url": "/collections/celta-vigo",
                   "fields": {
@@ -4080,6 +4662,226 @@
                       "en": "Espanyol",
                       "ar": "إسبانيول",
                       "digest": "9b2bab97aaa431c853462dbcf538e2524faab4cb2025a4bbab41a4f0b7419729"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103796528",
+              "url": "/collections/israeli-premier-league",
+              "fields": {
+                "title": {
+                  "he": "ליגת העל",
+                  "en": "Israeli Premier League",
+                  "ar": "الدوري الإسرائيلي الممتاز",
+                  "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
+                }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000623920",
+                  "url": "/collections/maccabi-haifa",
+                  "fields": {
+                    "title": {
+                      "he": "מכבי חיפה",
+                      "en": "Maccabi Haifa",
+                      "ar": "مكابي حيفا",
+                      "digest": "c852bb553effc1f872eca2948fb52609cd65086fb40841ad28cb071d3303d60a"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000656688",
+                  "url": "/collections/hapoel-tel-aviv",
+                  "fields": {
+                    "title": {
+                      "he": "הפועל תל אביב",
+                      "en": "Hapoel Tel Aviv",
+                      "ar": "هبوعيل تل أبيب",
+                      "digest": "2e6cb9889cbd4fd13a6688f1152d30080a971c1d40b4e2ba33a21ab95fc5b9b6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000689456",
+                  "url": "/collections/hapoel-petah-tikva",
+                  "fields": {
+                    "title": {
+                      "he": "הפועל פתח תקווה",
+                      "en": "Hapoel Petah Tikva",
+                      "ar": "هبوعيل بيتاح تكفا",
+                      "digest": "e2d6363dd236ff7643935de1f134f5cc339cc4a1c02b4c2413dbc3eb8339df1b"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "resource_id": "gid://shopify/Link/805103829296",
+              "url": "/collections/national-teams",
+              "fields": {
+                "title": {
+                  "he": "נבחרות",
+                  "en": "National Teams",
+                  "ar": "المنتخبات",
+                  "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
+                }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/806000197936",
+                  "url": "/collections/argentina",
+                  "fields": {
+                    "title": {
+                      "he": "ארגנטינה",
+                      "en": "Argentina",
+                      "ar": "الأرجنتين",
+                      "digest": "a9408d6f03e98fc699cf0acdcc9f06d830d44cdf5f69db1d57641c96ca7d7a5b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000230704",
+                  "url": "/collections/brazil",
+                  "fields": {
+                    "title": {
+                      "he": "ברזיל",
+                      "en": "Brazil",
+                      "ar": "البرازيل",
+                      "digest": "80fcd42dc5895334d8087d9a4ad925df81d33c35e1ec48f2a74f72804f392d53"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000263472",
+                  "url": "/collections/israel",
+                  "fields": {
+                    "title": {
+                      "he": "ישראל",
+                      "en": "Israel",
+                      "ar": "إسرائيل",
+                      "digest": "320ec40a3f33f385d5bcc3f4ea9ec4bdc1cc01d6a03b34313f00bdfa50b69b71"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000296240",
+                  "url": "/collections/spain",
+                  "fields": {
+                    "title": {
+                      "he": "ספרד",
+                      "en": "Spain",
+                      "ar": "إسبانيا",
+                      "digest": "dabb94430056bbcd736c987b63d2e451374c8b05fe67249758938e61e2f3df21"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000329008",
+                  "url": "/collections/portugal",
+                  "fields": {
+                    "title": {
+                      "he": "פורטוגל",
+                      "en": "Portugal",
+                      "ar": "البرتغال",
+                      "digest": "3d9f5da85f6f8a72b33c106d0fad86469f002008a5fc176acb0f62de767a3f2a"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000361776",
+                  "url": "/collections/france",
+                  "fields": {
+                    "title": {
+                      "he": "צרפת",
+                      "en": "France",
+                      "ar": "فرنسا",
+                      "digest": "f8b0af8caa275180de0203da6ab109f483184da9b9d2a5ca186c84bffbe37f93"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000394544",
+                  "url": "/collections/germany",
+                  "fields": {
+                    "title": {
+                      "he": "גרמניה",
+                      "en": "Germany",
+                      "ar": "ألمانيا",
+                      "digest": "720947126afe08bb7a7efd2bb82aae23f8ac9ffc7e1a0a2a0faed04cda1a9edf"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000427312",
+                  "url": "/collections/england",
+                  "fields": {
+                    "title": {
+                      "he": "אנגליה",
+                      "en": "England",
+                      "ar": "إنجلترا",
+                      "digest": "0792362a7ce40200c2c24866dbd68bf44c0cd173582dfa1f7c3d0eff98815091"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000460080",
+                  "url": "/collections/italy",
+                  "fields": {
+                    "title": {
+                      "he": "איטליה",
+                      "en": "Italy",
+                      "ar": "إيطاليا",
+                      "digest": "fa011d75ed692f496090411bfca3bf82a171937fe5a8a13ad1b79b2262f696e9"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000492848",
+                  "url": "/collections/netherlands",
+                  "fields": {
+                    "title": {
+                      "he": "הולנד",
+                      "en": "Netherlands",
+                      "ar": "هولندا",
+                      "digest": "25f4b6a5d422ffd8ffe58fc45f035158433b52ddb72d349414de36e95d363a74"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000525616",
+                  "url": "/collections/belgium",
+                  "fields": {
+                    "title": {
+                      "he": "בלגיה",
+                      "en": "Belgium",
+                      "ar": "بلجيكا",
+                      "digest": "9b60cd05a02048059fe9ebf82200cc0ff3db740911af7a3b8b10cf667739cb7b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000558384",
+                  "url": "/collections/croatia",
+                  "fields": {
+                    "title": {
+                      "he": "קרואטיה",
+                      "en": "Croatia",
+                      "ar": "كرواتيا",
+                      "digest": "66cf82038cbe9bcc249b26080fbb27e23e5ac942745f25f48f01ad8f2f87e8ac"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/806000591152",
+                  "url": "/collections/morocco",
+                  "fields": {
+                    "title": {
+                      "he": "מרוקו",
+                      "en": "Morocco",
+                      "ar": "المغرب",
+                      "digest": "92cb33b355874129539480199c7fed8d6a70cf73ef3b0092cae4c159eaece6d1"
                     }
                   }
                 }
@@ -4716,237 +5518,52 @@
                       "digest": "5690fab68f5071b4398fd9e11d202b041555dfc8bd008f7701cbe2bac35f81ad"
                     }
                   }
-                }
-              ]
-            },
-            {
-              "resource_id": "gid://shopify/Link/805103829296",
-              "url": "/collections/national-teams",
-              "fields": {
-                "title": {
-                  "he": "נבחרות",
-                  "en": "National Teams",
-                  "ar": "المنتخبات",
-                  "digest": "b8d17c0fe632c7b6b2c2c54603086a8974fd4d848f233f12cacdd6ec7a347036"
-                }
-              },
-              "items": [
+                },
                 {
-                  "resource_id": "gid://shopify/Link/806000197936",
-                  "url": "/collections/argentina",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "resource_id": "gid://shopify/Link/806831161648",
+                  "url": "/collections/west-ham-united",
                   "fields": {
                     "title": {
-                      "he": "ארגנטינה",
-                      "en": "Argentina",
-                      "ar": "الأرجنتين",
-                      "digest": "a9408d6f03e98fc699cf0acdcc9f06d830d44cdf5f69db1d57641c96ca7d7a5b"
+                      "he": "ווסטהאם",
+                      "en": "West Ham United",
+                      "ar": "وست هام يونايتد",
+                      "digest": "8086de82b956afd7fcbe7fd5813c89f40d10e94bf7b0df5417e2f575b9b3b673"
                     }
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806000230704",
-                  "url": "/collections/brazil",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "resource_id": "gid://shopify/Link/806831391024",
+                  "url": "/collections/wolverhampton-wanderers",
                   "fields": {
                     "title": {
-                      "he": "ברזיל",
-                      "en": "Brazil",
-                      "ar": "البرازيل",
-                      "digest": "80fcd42dc5895334d8087d9a4ad925df81d33c35e1ec48f2a74f72804f392d53"
+                      "he": "וולברהמפטון",
+                      "en": "Wolverhampton Wanderers",
+                      "ar": "وولفرهامبتون",
+                      "digest": "87796f5f95c5fe433c3ece476b50f29e8ab130bc414516fd4be08feb29a8b8b4"
                     }
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806000263472",
-                  "url": "/collections/israel",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "resource_id": "gid://shopify/Link/806831751472",
+                  "url": "/collections/girona",
                   "fields": {
                     "title": {
-                      "he": "ישראל",
-                      "en": "Israel",
-                      "ar": "إسرائيل",
-                      "digest": "320ec40a3f33f385d5bcc3f4ea9ec4bdc1cc01d6a03b34313f00bdfa50b69b71"
+                      "he": "ג׳ירונה",
+                      "en": "Girona",
+                      "ar": "جيرونا",
+                      "digest": "19f5b23edd20db8a308ff66aa384c76e88b9c30ef625f21b547c3cc8d2cb6ee6"
                     }
                   }
                 },
                 {
-                  "resource_id": "gid://shopify/Link/806000296240",
-                  "url": "/collections/spain",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
+                  "resource_id": "gid://shopify/Link/806831522096",
+                  "url": "/collections/burnley",
                   "fields": {
                     "title": {
-                      "he": "ספרד",
-                      "en": "Spain",
-                      "ar": "إسبانيا",
-                      "digest": "dabb94430056bbcd736c987b63d2e451374c8b05fe67249758938e61e2f3df21"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000329008",
-                  "url": "/collections/portugal",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "פורטוגל",
-                      "en": "Portugal",
-                      "ar": "البرتغال",
-                      "digest": "3d9f5da85f6f8a72b33c106d0fad86469f002008a5fc176acb0f62de767a3f2a"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000361776",
-                  "url": "/collections/france",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "צרפת",
-                      "en": "France",
-                      "ar": "فرنسا",
-                      "digest": "f8b0af8caa275180de0203da6ab109f483184da9b9d2a5ca186c84bffbe37f93"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000394544",
-                  "url": "/collections/germany",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "גרמניה",
-                      "en": "Germany",
-                      "ar": "ألمانيا",
-                      "digest": "720947126afe08bb7a7efd2bb82aae23f8ac9ffc7e1a0a2a0faed04cda1a9edf"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000427312",
-                  "url": "/collections/england",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "אנגליה",
-                      "en": "England",
-                      "ar": "إنجلترا",
-                      "digest": "0792362a7ce40200c2c24866dbd68bf44c0cd173582dfa1f7c3d0eff98815091"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000460080",
-                  "url": "/collections/italy",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "איטליה",
-                      "en": "Italy",
-                      "ar": "إيطاليا",
-                      "digest": "fa011d75ed692f496090411bfca3bf82a171937fe5a8a13ad1b79b2262f696e9"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000492848",
-                  "url": "/collections/netherlands",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "הולנד",
-                      "en": "Netherlands",
-                      "ar": "هولندا",
-                      "digest": "25f4b6a5d422ffd8ffe58fc45f035158433b52ddb72d349414de36e95d363a74"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000525616",
-                  "url": "/collections/belgium",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "בלגיה",
-                      "en": "Belgium",
-                      "ar": "بلجيكا",
-                      "digest": "9b60cd05a02048059fe9ebf82200cc0ff3db740911af7a3b8b10cf667739cb7b"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000558384",
-                  "url": "/collections/croatia",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "קרואטיה",
-                      "en": "Croatia",
-                      "ar": "كرواتيا",
-                      "digest": "66cf82038cbe9bcc249b26080fbb27e23e5ac942745f25f48f01ad8f2f87e8ac"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000591152",
-                  "url": "/collections/morocco",
-                  "_note": "Short country name: the parent item is נבחרות. The collection title keeps the full name (נבחרת ...).",
-                  "fields": {
-                    "title": {
-                      "he": "מרוקו",
-                      "en": "Morocco",
-                      "ar": "المغرب",
-                      "digest": "92cb33b355874129539480199c7fed8d6a70cf73ef3b0092cae4c159eaece6d1"
-                    }
-                  }
-                }
-              ]
-            },
-            {
-              "resource_id": "gid://shopify/Link/805103796528",
-              "url": "/collections/israeli-premier-league",
-              "fields": {
-                "title": {
-                  "he": "ליגת העל",
-                  "en": "Israeli Premier League",
-                  "ar": "الدوري الإسرائيلي الممتاز",
-                  "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
-                }
-              },
-              "items": [
-                {
-                  "resource_id": "gid://shopify/Link/806000623920",
-                  "url": "/collections/maccabi-haifa",
-                  "fields": {
-                    "title": {
-                      "he": "מכבי חיפה",
-                      "en": "Maccabi Haifa",
-                      "ar": "مكابي حيفا",
-                      "digest": "c852bb553effc1f872eca2948fb52609cd65086fb40841ad28cb071d3303d60a"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000656688",
-                  "url": "/collections/hapoel-tel-aviv",
-                  "fields": {
-                    "title": {
-                      "he": "הפועל תל אביב",
-                      "en": "Hapoel Tel Aviv",
-                      "ar": "هبوعيل تل أبيب",
-                      "digest": "2e6cb9889cbd4fd13a6688f1152d30080a971c1d40b4e2ba33a21ab95fc5b9b6"
-                    }
-                  }
-                },
-                {
-                  "resource_id": "gid://shopify/Link/806000689456",
-                  "url": "/collections/hapoel-petah-tikva",
-                  "fields": {
-                    "title": {
-                      "he": "הפועל פתח תקווה",
-                      "en": "Hapoel Petah Tikva",
-                      "ar": "هبوعيل بيتاح تكفا",
-                      "digest": "e2d6363dd236ff7643935de1f134f5cc339cc4a1c02b4c2413dbc3eb8339df1b"
+                      "he": "ברנלי",
+                      "en": "Burnley",
+                      "ar": "بيرنلي",
+                      "digest": "a91fd21f37e79973341cd7f382490d80cbd4335c199838fa9ab8f226efca3576"
                     }
                   }
                 }
@@ -5989,93 +6606,480 @@
                   "digest": "2f443d7ebd68ac78129380dbc0644b1cbe941d487a907c30685f46286f39d2c2"
                 }
               }
-            },
-            {
-              "resource_id": "gid://shopify/Link/805103927600",
-              "url": "/collections/euroleague",
-              "fields": {
-                "title": {
-                  "he": "יורוליג",
-                  "en": "EuroLeague",
-                  "ar": "اليوروليغ",
-                  "digest": "6c5c8d89fa8e3145267bfa1c77d0318ab811f29a22f9a6cba398b032a98e9700"
-                }
-              }
-            },
-            {
-              "resource_id": "gid://shopify/Link/805103960368",
-              "url": "/collections/israeli-basketball-league",
-              "_note": "Shortened for the menu (1-3 words). The collection title keeps the full name from taxonomy.json.",
-              "fields": {
-                "title": {
-                  "he": "ליגת העל בכדורסל",
-                  "en": "Israeli Basketball League",
-                  "ar": "دوري السلة الإسرائيلي",
-                  "digest": "0b771d10aa3a54a350e269f2b1ed3c1a38c94d0688d48331ef368d269ed35d4c"
-                }
-              }
-            },
-            {
-              "resource_id": "gid://shopify/Link/805104058672",
-              "url": "/collections/basketball-sets",
-              "fields": {
-                "title": {
-                  "he": "סטים לכדורסל",
-                  "en": "Basketball Sets",
-                  "ar": "أطقم كرة السلة",
-                  "digest": "08c5a80a6e2fbcbde7cd0a2c054fe4b473986d7ad3727bc15a6db3580abefef6"
-                }
-              }
             }
           ]
         },
         {
-          "resource_id": "gid://shopify/Link/805846974768",
-          "url": "/collections/nfl-hoodies",
+          "resource_id": "gid://shopify/Link/814082588976",
+          "url": "/collections/nfl",
           "fields": {
             "title": {
-              "he": "קפוצ׳ונים",
-              "en": "Hoodies",
-              "ar": "هوديات",
-              "digest": "aef82169c8f09da8492abc6413fa9dbb31cbfe878d626b605a03061ab1b012be"
+              "he": "NFL",
+              "en": "NFL",
+              "ar": "NFL",
+              "digest": "b217235b16b5defda14c851d8e8161508fa2387026c9eeb904e66a43d3be5d75"
             }
           },
           "items": [
             {
-              "resource_id": "gid://shopify/Link/805847007536",
-              "url": "/collections/nfl-hoodies-men",
+              "resource_id": "gid://shopify/Link/814082621744",
+              "url": "/collections/nfl-jerseys",
               "fields": {
                 "title": {
-                  "he": "גברים",
-                  "en": "Men",
-                  "ar": "الرجال",
-                  "digest": "a2d677880b191ca5e7e80730f428f9eefce0449ebd3bfcc9909597180ebd6a64"
+                  "he": "חולצות NFL",
+                  "en": "NFL Jerseys",
+                  "ar": "قمصان NFL",
+                  "digest": "56ae82df09418bfc6724549e8d579550541db4321865c96496ecd48680d2f13f"
+                }
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/814082654512",
+                  "url": "/collections/kansas-city-chiefs",
+                  "fields": {
+                    "title": {
+                      "he": "קנזס סיטי צ׳יפס",
+                      "en": "Kansas City Chiefs",
+                      "ar": "كانساس سيتي تشيفز",
+                      "digest": "f363fe407216d90aa58c8e4fe199b969ffeb15d5982c05ffb1b7453a04d9d3a2"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082687280",
+                  "url": "/collections/dallas-cowboys",
+                  "fields": {
+                    "title": {
+                      "he": "דאלאס קאובויס",
+                      "en": "Dallas Cowboys",
+                      "ar": "دالاس كاوبويز",
+                      "digest": "f58949023b62d27a36681848e768eaed2e2e6d9db86c1f51ed0d7f805c000c2f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082720048",
+                  "url": "/collections/philadelphia-eagles",
+                  "fields": {
+                    "title": {
+                      "he": "פילדלפיה איגלס",
+                      "en": "Philadelphia Eagles",
+                      "ar": "فيلادلفيا إيغلز",
+                      "digest": "0c07aa7101350a9fd16b3c891975cc3acdef3f881ee6032b86c50f66c16c5874"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082752816",
+                  "url": "/collections/san-francisco-49ers",
+                  "fields": {
+                    "title": {
+                      "he": "סן פרנסיסקו 49׳",
+                      "en": "San Francisco 49ers",
+                      "ar": "سان فرانسيسكو فورتي ناينرز",
+                      "digest": "87906a94b741a2a6268dfc599e233a75de6f4c2367be6f36c0663881821a4603"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082785584",
+                  "url": "/collections/pittsburgh-steelers",
+                  "fields": {
+                    "title": {
+                      "he": "פיטסבורג סטילרס",
+                      "en": "Pittsburgh Steelers",
+                      "ar": "بيتسبرغ ستيلرز",
+                      "digest": "990cbecc8478b562a5956c349b5b49c3c554a1d80b46ed19ed8d8330afc6ee17"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082818352",
+                  "url": "/collections/green-bay-packers",
+                  "fields": {
+                    "title": {
+                      "he": "גרין ביי פאקרס",
+                      "en": "Green Bay Packers",
+                      "ar": "غرين باي باكرز",
+                      "digest": "cc3e7695e50654c314c1f05477447480362be99c7f3178a2f1cd793598801de6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082851120",
+                  "url": "/collections/new-england-patriots",
+                  "fields": {
+                    "title": {
+                      "he": "ניו אינגלנד פטריוטס",
+                      "en": "New England Patriots",
+                      "ar": "نيو إنجلاند باتريوتس",
+                      "digest": "5f422cb0b01600318903437794ab89a69a66bb606ec8c6e6a8b4a44ff7ea0957"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082883888",
+                  "url": "/collections/buffalo-bills",
+                  "fields": {
+                    "title": {
+                      "he": "באפלו בילס",
+                      "en": "Buffalo Bills",
+                      "ar": "بافالو بيلز",
+                      "digest": "e4ee15b6b17e6efca6d01f079a76d6eb319ccc6f364ef36a8cdbbc3738a00eb8"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082916656",
+                  "url": "/collections/baltimore-ravens",
+                  "fields": {
+                    "title": {
+                      "he": "בולטימור רייבנס",
+                      "en": "Baltimore Ravens",
+                      "ar": "بالتيمور رافنز",
+                      "digest": "533d7efd95718da96139ef13ceb00c300f5927f2d849c2b48fb1971b6bb0fe73"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082949424",
+                  "url": "/collections/detroit-lions",
+                  "fields": {
+                    "title": {
+                      "he": "דטרויט ליונס",
+                      "en": "Detroit Lions",
+                      "ar": "ديترويت لايونز",
+                      "digest": "c2f5d77599377f0deb809b6b669ea17402dfff5c02b57b4f007e3a6e4720dee6"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814082982192",
+                  "url": "/collections/miami-dolphins",
+                  "fields": {
+                    "title": {
+                      "he": "מיאמי דולפינס",
+                      "en": "Miami Dolphins",
+                      "ar": "ميامي دولفينز",
+                      "digest": "ec4a9d43b3219e1a34963c055bff5a56323eefc01deabe04089245f6768dba48"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083014960",
+                  "url": "/collections/las-vegas-raiders",
+                  "fields": {
+                    "title": {
+                      "he": "לאס וגאס ריידרס",
+                      "en": "Las Vegas Raiders",
+                      "ar": "لاس فيغاس رايدرز",
+                      "digest": "54ae55c350cb8c97ffc33e9776f29bf9af8b20de0c1318b749aab6d2eb0fcb6d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083047728",
+                  "url": "/collections/chicago-bears",
+                  "fields": {
+                    "title": {
+                      "he": "שיקגו ברס",
+                      "en": "Chicago Bears",
+                      "ar": "شيكاغو بيرز",
+                      "digest": "7172908e18302374c54cf22a16f3546a25ed90f0b805b890d9a8efaed3c07d48"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083080496",
+                  "url": "/collections/new-york-giants",
+                  "fields": {
+                    "title": {
+                      "he": "ניו יורק ג׳איינטס",
+                      "en": "New York Giants",
+                      "ar": "نيويورك جاينتس",
+                      "digest": "29e9cc97420a930c2b7127119d78ef69b35abef152f62cc1b15f8dc4a2339ccc"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083113264",
+                  "url": "/collections/cincinnati-bengals",
+                  "fields": {
+                    "title": {
+                      "he": "סינסינטי בנגלס",
+                      "en": "Cincinnati Bengals",
+                      "ar": "سينسيناتي بنغالز",
+                      "digest": "c4f698b93967d3d4c8d42def5f6b0b17424f3499ad9f6652a27339b6284e8d8f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083146032",
+                  "url": "/collections/denver-broncos",
+                  "fields": {
+                    "title": {
+                      "he": "דנבר ברונקוס",
+                      "en": "Denver Broncos",
+                      "ar": "دنفر برونكوز",
+                      "digest": "24355d5d3ced2ed39f3ab1d3f8d709d0c6f7f5eea6e6110da04b966fd84e43b3"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083178800",
+                  "url": "/collections/los-angeles-rams",
+                  "fields": {
+                    "title": {
+                      "he": "לוס אנג׳לס ראמס",
+                      "en": "Los Angeles Rams",
+                      "ar": "لوس أنجلوس رامز",
+                      "digest": "fb33e8534346d64ba32324042ed226e72e13b627055e4f87d75b86065480060f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083211568",
+                  "url": "/collections/seattle-seahawks",
+                  "fields": {
+                    "title": {
+                      "he": "סיאטל סיהוקס",
+                      "en": "Seattle Seahawks",
+                      "ar": "سياتل سيهوكس",
+                      "digest": "449937eee54a47bfb9dbdbe6820565a0016fe25b5f28b0503f10207024b3d18e"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083244336",
+                  "url": "/collections/minnesota-vikings",
+                  "fields": {
+                    "title": {
+                      "he": "מינסוטה ויקינגס",
+                      "en": "Minnesota Vikings",
+                      "ar": "مينيسوتا فايكنغز",
+                      "digest": "73527d6a8618bbd12858665c9829b5408f88cdaa13f5e04a2333937b9918f098"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083277104",
+                  "url": "/collections/houston-texans",
+                  "fields": {
+                    "title": {
+                      "he": "יוסטון טקסאנס",
+                      "en": "Houston Texans",
+                      "ar": "هيوستن تكسانز",
+                      "digest": "2ac9cbc99de18762570d46a8d07493abe57bea639a19b1ba6e49f2530bb45c3f"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083309872",
+                  "url": "/collections/los-angeles-chargers",
+                  "fields": {
+                    "title": {
+                      "he": "לוס אנג׳לס צ׳ארג׳רס",
+                      "en": "Los Angeles Chargers",
+                      "ar": "لوس أنجلوس تشارجرز",
+                      "digest": "0b33d90ae7dcf94daacf80b2a22fd4f13bdbbc2748f74e05074fc4f59904493e"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083342640",
+                  "url": "/collections/new-york-jets",
+                  "fields": {
+                    "title": {
+                      "he": "ניו יורק ג׳טס",
+                      "en": "New York Jets",
+                      "ar": "نيويورك جتس",
+                      "digest": "65c50a26fff6deb13b779c75456674149901d498fd2c42d1061e1bab1ea46c37"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083375408",
+                  "url": "/collections/tampa-bay-buccaneers",
+                  "fields": {
+                    "title": {
+                      "he": "טמפה ביי באקנירס",
+                      "en": "Tampa Bay Buccaneers",
+                      "ar": "تامبا باي بوكانيرز",
+                      "digest": "11cf218404bc9a110ead50dc86dc6806a2bb4ed343bc298b3be51345c6f82acd"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083408176",
+                  "url": "/collections/washington-commanders",
+                  "fields": {
+                    "title": {
+                      "he": "וושינגטון קומנדרס",
+                      "en": "Washington Commanders",
+                      "ar": "واشنطن كوماندرز",
+                      "digest": "51e003cb8595fca33dc068b909996c51025db08cf6f0672f73e2c74d930404be"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083440944",
+                  "url": "/collections/atlanta-falcons",
+                  "fields": {
+                    "title": {
+                      "he": "אטלנטה פאלקונס",
+                      "en": "Atlanta Falcons",
+                      "ar": "أتلانتا فالكونز",
+                      "digest": "cfe50a5da7202e8557bb5567cd7844f7ea50ab832188a50e251f413ae7d87aa7"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083473712",
+                  "url": "/collections/new-orleans-saints",
+                  "fields": {
+                    "title": {
+                      "he": "ניו אורלינס סיינטס",
+                      "en": "New Orleans Saints",
+                      "ar": "نيو أورلينز سينتس",
+                      "digest": "72c2146133e2e9d8d3e8d914bcb54973eee97b38cea25fd2c89308714d202f2b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083506480",
+                  "url": "/collections/cleveland-browns",
+                  "fields": {
+                    "title": {
+                      "he": "קליבלנד בראונס",
+                      "en": "Cleveland Browns",
+                      "ar": "كليفلاند براونز",
+                      "digest": "f3e7593f3f816e561a67dcbda1ae3838f6e95fd16de533216c4e23343827bb3c"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083539248",
+                  "url": "/collections/indianapolis-colts",
+                  "fields": {
+                    "title": {
+                      "he": "אינדיאנפוליס קולטס",
+                      "en": "Indianapolis Colts",
+                      "ar": "إنديانابوليس كولتس",
+                      "digest": "786eb230505118ee78a530b3a9229053e7f2823a05adf7cfe64875c2ddbdfa2b"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083572016",
+                  "url": "/collections/jacksonville-jaguars",
+                  "fields": {
+                    "title": {
+                      "he": "ג׳קסונוויל ג׳גוארס",
+                      "en": "Jacksonville Jaguars",
+                      "ar": "جاكسونفيل جاغوارز",
+                      "digest": "75d427d0ffcaadaaf37a5308c4e0ff7b19c6aefec7d8ce8a4033db156f2f4182"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083604784",
+                  "url": "/collections/tennessee-titans",
+                  "fields": {
+                    "title": {
+                      "he": "טנסי טייטאנס",
+                      "en": "Tennessee Titans",
+                      "ar": "تينيسي تايتنز",
+                      "digest": "78d4fc14ea7486b3d4d479b2f0cbe6c55daee4e3fea51fb5bfed69610285a762"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083637552",
+                  "url": "/collections/arizona-cardinals",
+                  "fields": {
+                    "title": {
+                      "he": "אריזונה קרדינלס",
+                      "en": "Arizona Cardinals",
+                      "ar": "أريزونا كاردينالز",
+                      "digest": "4d07e3cfc060f1c9c0b3f35e513b4e904fd88931a0407c1e567c76b968243a1d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/814083670320",
+                  "url": "/collections/carolina-panthers",
+                  "fields": {
+                    "title": {
+                      "he": "קרוליינה פנתרס",
+                      "en": "Carolina Panthers",
+                      "ar": "كارولينا بانثرز",
+                      "digest": "d897796954d3a10ab1f965ae3f883637f478d59aac1f1e320c3595459b2fc813"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "resource_id": "gid://shopify/Link/814083703088",
+              "url": "/collections/nfl-jerseys-kids",
+              "fields": {
+                "title": {
+                  "he": "חולצות NFL לילדים",
+                  "en": "Kids' NFL Jerseys",
+                  "ar": "قمصان NFL للأطفال",
+                  "digest": "4719367a5fdbc19cce0cd1a875af66b8a30691675aa394229d142721a8f9404d"
                 }
               }
             },
             {
-              "resource_id": "gid://shopify/Link/805847040304",
-              "url": "/collections/nfl-hoodies-women",
+              "resource_id": "gid://shopify/Link/805846974768",
+              "url": "/collections/nfl-hoodies",
               "fields": {
                 "title": {
-                  "he": "נשים",
-                  "en": "Women",
-                  "ar": "النساء",
-                  "digest": "f1797e1d4b99a3c511956ff4dbdd9f85b1bef2cb541e3a0f2fd3b2984301bc0d"
+                  "he": "קפוצ׳ונים",
+                  "en": "Hoodies",
+                  "ar": "هوديات",
+                  "digest": "aef82169c8f09da8492abc6413fa9dbb31cbfe878d626b605a03061ab1b012be"
                 }
-              }
-            },
-            {
-              "resource_id": "gid://shopify/Link/805847073072",
-              "url": "/collections/nfl-hoodies-kids",
-              "fields": {
-                "title": {
-                  "he": "ילדים",
-                  "en": "Kids",
-                  "ar": "الأطفال",
-                  "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+              },
+              "items": [
+                {
+                  "resource_id": "gid://shopify/Link/805847007536",
+                  "url": "/collections/nfl-hoodies-men",
+                  "fields": {
+                    "title": {
+                      "he": "גברים",
+                      "en": "Men",
+                      "ar": "الرجال",
+                      "digest": "a2d677880b191ca5e7e80730f428f9eefce0449ebd3bfcc9909597180ebd6a64"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/805847040304",
+                  "url": "/collections/nfl-hoodies-women",
+                  "fields": {
+                    "title": {
+                      "he": "נשים",
+                      "en": "Women",
+                      "ar": "النساء",
+                      "digest": "f1797e1d4b99a3c511956ff4dbdd9f85b1bef2cb541e3a0f2fd3b2984301bc0d"
+                    }
+                  }
+                },
+                {
+                  "resource_id": "gid://shopify/Link/805847073072",
+                  "url": "/collections/nfl-hoodies-kids",
+                  "fields": {
+                    "title": {
+                      "he": "ילדים",
+                      "en": "Kids",
+                      "ar": "الأطفال",
+                      "digest": "a9974f03112aeabdfef92d44b4293fea89f0dc690ff1a806f86c77f8a99cf837"
+                    }
+                  }
                 }
-              }
+              ]
             }
           ]
         },
@@ -6116,6 +7120,18 @@
               }
             },
             {
+              "resource_id": "gid://shopify/Link/814083735856",
+              "url": "/collections/nfl-jerseys-kids",
+              "fields": {
+                "title": {
+                  "he": "חולצות NFL לילדים",
+                  "en": "Kids' NFL Jerseys",
+                  "ar": "قمصان NFL للأطفال",
+                  "digest": "4719367a5fdbc19cce0cd1a875af66b8a30691675aa394229d142721a8f9404d"
+                }
+              }
+            },
+            {
               "resource_id": "gid://shopify/Link/805847138608",
               "url": "/collections/nfl-hoodies-kids",
               "fields": {
@@ -6128,18 +7144,6 @@
               }
             }
           ]
-        },
-        {
-          "resource_id": "gid://shopify/Link/805104124208",
-          "url": "/collections/sale",
-          "fields": {
-            "title": {
-              "he": "מבצעים",
-              "en": "Sale",
-              "ar": "العروض",
-              "digest": "104937b96b40c42e4070979d6ca9e023eb3a77743eb98640cc2b732212b4e953"
-            }
-          }
         },
         {
           "resource_id": "gid://shopify/Link/805104156976",
@@ -6156,8 +7160,7 @@
       ],
       "child_lists": [
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'football' dropdown. Not shown in the admin; its title mirrors the parent item.",
-          "handle": "805103599920-child-910fcbecb170129b4b32674a3277ba1a-legacy",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'חולצות כדורגל' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316236628272",
           "fields": {
             "title": {
@@ -6166,11 +7169,11 @@
               "ar": "قمصان كرة القدم",
               "digest": "74d20886a04bc801de3abe1b633ce822f3978dfb13038942ea6890ed7d562966"
             }
-          }
+          },
+          "handle": "805103599920-child-910fcbecb170129b4b32674a3277ba1a-legacy"
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'basketball' dropdown. Not shown in the admin; its title mirrors the parent item.",
-          "handle": "805103862064-child-212d8ac5ecad1276ac1851ba8a5edb01-legacy",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'כדורסל' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316236661040",
           "fields": {
             "title": {
@@ -6179,10 +7182,11 @@
               "ar": "كرة السلة",
               "digest": "411040e8b7c6f11832017daf3b9b4309d4b18ff7265694b13d97c7aca9c8fdb7"
             }
-          }
+          },
+          "handle": "805103862064-child-212d8ac5ecad1276ac1851ba8a5edb01-legacy"
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'פרמייר ליג' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'פרמייר ליג' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342010160",
           "fields": {
             "title": {
@@ -6194,7 +7198,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'לה ליגה' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'לה ליגה' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342042928",
           "fields": {
             "title": {
@@ -6206,7 +7210,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'סרייה A' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'סרייה A' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342075696",
           "fields": {
             "title": {
@@ -6218,7 +7222,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליג 1' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליג 1' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342108464",
           "fields": {
             "title": {
@@ -6230,7 +7234,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגה פורטוגלית' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגה פורטוגלית' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342141232",
           "fields": {
             "title": {
@@ -6242,7 +7246,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'NBA' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'NBA' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342174000",
           "fields": {
             "title": {
@@ -6254,7 +7258,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'שחקנים' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'שחקנים' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342206768",
           "fields": {
             "title": {
@@ -6266,19 +7270,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'קפוצ׳ונים' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
-          "resource_id": "gid://shopify/Menu/316342239536",
-          "fields": {
-            "title": {
-              "he": "קפוצ׳ונים",
-              "en": "Hoodies",
-              "ar": "هوديات",
-              "digest": "aef82169c8f09da8492abc6413fa9dbb31cbfe878d626b605a03061ab1b012be"
-            }
-          }
-        },
-        {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'ילדים' dropdown (created 2026-09-26 when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ילדים' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316342272304",
           "fields": {
             "title": {
@@ -6290,7 +7282,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'בונדסליגה' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'בונדסליגה' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316364751152",
           "fields": {
             "title": {
@@ -6302,7 +7294,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגות נוספות' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגות נוספות' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316364783920",
           "fields": {
             "title": {
@@ -6314,7 +7306,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'נבחרות' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'נבחרות' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316364816688",
           "fields": {
             "title": {
@@ -6326,7 +7318,7 @@
           }
         },
         {
-          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגת העל' dropdown (created 2026-09-26 by wave 1, when the item got children). Its title mirrors the parent item.",
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'ליגת העל' dropdown. Not shown in the admin; its title mirrors the parent item.",
           "resource_id": "gid://shopify/Menu/316364849456",
           "fields": {
             "title": {
@@ -6334,6 +7326,42 @@
               "en": "Israeli Premier League",
               "ar": "الدوري الإسرائيلي الممتاز",
               "digest": "450e4465cd5cdd3269276df7243096320691a9dd98c9313abe423a8426b51e14"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'NFL' dropdown. Not shown in the admin; its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/317519954224",
+          "fields": {
+            "title": {
+              "he": "NFL",
+              "en": "NFL",
+              "ar": "NFL",
+              "digest": "b217235b16b5defda14c851d8e8161508fa2387026c9eeb904e66a43d3be5d75"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'חולצות NFL' dropdown. Not shown in the admin; its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/317519986992",
+          "fields": {
+            "title": {
+              "he": "חולצות NFL",
+              "en": "NFL Jerseys",
+              "ar": "قمصان NFL",
+              "digest": "56ae82df09418bfc6724549e8d579550541db4321865c96496ecd48680d2f13f"
+            }
+          }
+        },
+        {
+          "_note": "Hidden legacy menu that Shopify keeps behind the 'קפוצ׳ונים' dropdown. Not shown in the admin; its title mirrors the parent item.",
+          "resource_id": "gid://shopify/Menu/317520019760",
+          "fields": {
+            "title": {
+              "he": "קפוצ׳ונים",
+              "en": "Hoodies",
+              "ar": "هوديات",
+              "digest": "aef82169c8f09da8492abc6413fa9dbb31cbfe878d626b605a03061ab1b012be"
             }
           }
         }
@@ -6488,6 +7516,18 @@
           }
         },
         {
+          "resource_id": "gid://shopify/Link/814084391216",
+          "url": "/collections/nfl-jerseys",
+          "fields": {
+            "title": {
+              "he": "חולצות NFL",
+              "en": "NFL Jerseys",
+              "ar": "قمصان NFL",
+              "digest": "56ae82df09418bfc6724549e8d579550541db4321865c96496ecd48680d2f13f"
+            }
+          }
+        },
+        {
           "resource_id": "gid://shopify/Link/805847171376",
           "url": "/collections/nfl-hoodies",
           "fields": {
@@ -6532,18 +7572,6 @@
               "en": "New Arrivals",
               "ar": "وصل حديثًا",
               "digest": "9374f4011ca49ac661e038739bbfa31173b76e2e3dc01f47532372c81e2de896"
-            }
-          }
-        },
-        {
-          "resource_id": "gid://shopify/Link/805104582960",
-          "url": "/collections/sale",
-          "fields": {
-            "title": {
-              "he": "מבצעים",
-              "en": "Sale",
-              "ar": "العروض",
-              "digest": "104937b96b40c42e4070979d6ca9e023eb3a77743eb98640cc2b732212b4e953"
             }
           }
         }

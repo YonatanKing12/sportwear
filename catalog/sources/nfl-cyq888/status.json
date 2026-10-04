@@ -1,0 +1,2431 @@
+{
+  "_note": "Where each of the 309 picks (picks.json) stands. created: in Shopify, ACTIVE on the Online Store since 2026-10-04 (its file is catalog/published/<handle>.json). held: rendered, but the studio QA found a mistake that a local fix cannot mend; render it again with render_note (its product file waits in catalog/ready). not rendered yet: the OpenAI credit ran out on 2026-10-04 before these were rendered. local_fix: the render was mended with scripts/images/retouch.py before it was used. See README.md.",
+  "updated": "2026-10-04",
+  "counts": {
+    "picks": 309,
+    "created": 191,
+    "held": 17,
+    "not rendered yet": 101,
+    "created_adult": 139,
+    "created_kids": 52
+  },
+  "picks": [
+    {
+      "render": "philadelphia-eagles-1-teal-147832428-08",
+      "handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193665328"
+    },
+    {
+      "render": "philadelphia-eagles-1-white-147832428-09",
+      "handle": "philadelphia-eagles-jalen-hurts-1-white-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194124080"
+    },
+    {
+      "render": "philadelphia-eagles-1-green-147832428-81",
+      "handle": "philadelphia-eagles-jalen-hurts-1-green-throwback-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194418992"
+    },
+    {
+      "render": "philadelphia-eagles-26-teal-147832428-06",
+      "handle": "philadelphia-eagles-saquon-barkley-26-midnight-green-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194877744"
+    },
+    {
+      "render": "philadelphia-eagles-26-white-147832428-04",
+      "handle": "philadelphia-eagles-saquon-barkley-26-white-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195139888"
+    },
+    {
+      "render": "philadelphia-eagles-26-green-147832428-55",
+      "handle": "philadelphia-eagles-saquon-barkley-26-green-throwback-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195664176"
+    },
+    {
+      "render": "philadelphia-eagles-11-teal-147832428-71",
+      "handle": "philadelphia-eagles-aj-brown-11-midnight-green-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332196909360"
+    },
+    {
+      "render": "philadelphia-eagles-6-teal-147832428-67",
+      "handle": "philadelphia-eagles-devonta-smith-6-midnight-green-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332198056240"
+    },
+    {
+      "render": "philadelphia-eagles-62-green-147832428-80",
+      "handle": "philadelphia-eagles-jason-kelce-62-green-throwback-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332199727408"
+    },
+    {
+      "render": "philadelphia-eagles-33-teal-147832428-03",
+      "handle": "philadelphia-eagles-cooper-dejean-33-midnight-green-jersey",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332200808752"
+    },
+    {
+      "render": "dallas-cowboys-88-white-147835281-23",
+      "handle": "dallas-cowboys-ceedee-lamb-88-white-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193599792"
+    },
+    {
+      "render": "dallas-cowboys-88-navy-147835281-38",
+      "handle": "dallas-cowboys-ceedee-lamb-88-navy-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193829168"
+    },
+    {
+      "render": "dallas-cowboys-88-white-147835281-29",
+      "handle": "dallas-cowboys-ceedee-lamb-88-white-navy-sleeves-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193993008"
+    },
+    {
+      "render": "dallas-cowboys-4-white-147835281-26",
+      "handle": "dallas-cowboys-dak-prescott-4-white-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194189616"
+    },
+    {
+      "render": "dallas-cowboys-4-navy-147835281-41",
+      "handle": "dallas-cowboys-dak-prescott-4-navy-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194550064"
+    },
+    {
+      "render": "dallas-cowboys-3-white-147835281-16",
+      "handle": "dallas-cowboys-george-pickens-3-white-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194910512"
+    },
+    {
+      "render": "dallas-cowboys-3-navy-147835281-17",
+      "handle": "dallas-cowboys-george-pickens-3-navy-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195172656"
+    },
+    {
+      "render": "dallas-cowboys-13-white-147835281-06",
+      "handle": "dallas-cowboys-caleb-downs-13-white-jersey",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195729712"
+    },
+    {
+      "render": "kansas-city-chiefs-15-red-148033938-23",
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-red-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193927472"
+    },
+    {
+      "render": "kansas-city-chiefs-15-white-148033938-24",
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-white-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194386224"
+    },
+    {
+      "render": "kansas-city-chiefs-87-red-148033938-22",
+      "handle": "kansas-city-chiefs-travis-kelce-87-red-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194713904"
+    },
+    {
+      "render": "kansas-city-chiefs-87-white-148033938-21",
+      "handle": "kansas-city-chiefs-travis-kelce-87-white-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194976048"
+    },
+    {
+      "render": "kansas-city-chiefs-1-red-148033938-10",
+      "handle": "kansas-city-chiefs-xavier-worthy-1-red-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195467568"
+    },
+    {
+      "render": "kansas-city-chiefs-1-white-148033938-11",
+      "handle": "kansas-city-chiefs-xavier-worthy-1-white-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332196548912"
+    },
+    {
+      "render": "kansas-city-chiefs-4-red-148033938-14",
+      "handle": "kansas-city-chiefs-rashee-rice-4-red-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332197597488"
+    },
+    {
+      "render": "kansas-city-chiefs-15-black-148033938-04",
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-black-jersey",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332199072048"
+    },
+    {
+      "render": "buffalo-bills-17-royal-blue-148034170-20",
+      "handle": "buffalo-bills-josh-allen-17-blue-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332200153392"
+    },
+    {
+      "render": "buffalo-bills-17-white-148034170-19",
+      "handle": "buffalo-bills-josh-allen-17-white-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332201234736"
+    },
+    {
+      "render": "buffalo-bills-17-red-148034170-21",
+      "handle": "buffalo-bills-josh-allen-17-red-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202217776"
+    },
+    {
+      "render": "buffalo-bills-4-royal-blue-148034170-12",
+      "handle": "buffalo-bills-james-cook-iii-4-blue-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202512688"
+    },
+    {
+      "render": "buffalo-bills-4-white-148034170-05",
+      "handle": "buffalo-bills-james-cook-iii-4-white-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202774832"
+    },
+    {
+      "render": "buffalo-bills-86-royal-blue-148034170-01",
+      "handle": "buffalo-bills-dalton-kincaid-86-blue-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203069744"
+    },
+    {
+      "render": "buffalo-bills-86-white-148034170-02",
+      "handle": "buffalo-bills-dalton-kincaid-86-white-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203331888"
+    },
+    {
+      "render": "buffalo-bills-0-royal-blue-148034170-18",
+      "handle": "buffalo-bills-keon-coleman-0-blue-jersey",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203528496"
+    },
+    {
+      "render": "san-francisco-49ers-13-red-148034328-69",
+      "handle": "san-francisco-49ers-brock-purdy-13-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193763632"
+    },
+    {
+      "render": "san-francisco-49ers-13-white-148034328-67",
+      "handle": "san-francisco-49ers-brock-purdy-13-white-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194222384"
+    },
+    {
+      "render": "san-francisco-49ers-23-red-148034328-71",
+      "handle": "san-francisco-49ers-christian-mccaffrey-23-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194451760"
+    },
+    {
+      "render": "san-francisco-49ers-23-white-148034328-70",
+      "handle": "san-francisco-49ers-christian-mccaffrey-23-white-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194844976"
+    },
+    {
+      "render": "san-francisco-49ers-85-red-148034328-38",
+      "handle": "san-francisco-49ers-george-kittle-85-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195107120"
+    },
+    {
+      "render": "san-francisco-49ers-97-red-148034328-34",
+      "handle": "san-francisco-49ers-nick-bosa-97-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195598640"
+    },
+    {
+      "render": "san-francisco-49ers-54-red-148034328-57",
+      "handle": "san-francisco-49ers-fred-warner-54-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332196778288"
+    },
+    {
+      "render": "san-francisco-49ers-16-red-148034328-45",
+      "handle": "san-francisco-49ers-joe-montana-16-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332197794096"
+    },
+    {
+      "render": "san-francisco-49ers-80-red-148034328-36",
+      "handle": "san-francisco-49ers-jerry-rice-80-red-jersey",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332199366960"
+    },
+    {
+      "render": "miami-dolphins-13-teal-149341557-11",
+      "handle": "miami-dolphins-dan-marino-13-aqua-jersey",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203692336"
+    },
+    {
+      "render": "miami-dolphins-13-white-149341557-10",
+      "handle": "miami-dolphins-dan-marino-13-white-jersey",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "status": "held",
+      "view": "both",
+      "issue": "Shoulder TV numbers missing: the supplier jersey has aqua 13 numbers with an orange outline on both shoulder tops (orange/aqua edges show on the shoulders in the front and back photos); both renders show plain white shoulders.",
+      "render_note": "Add the 13 TV numbers on both shoulders in the front and back views: aqua with an orange outline, same block font as the chest number (as on miami-dolphins-28-white-149341557-07). Keep everything else unchanged."
+    },
+    {
+      "render": "miami-dolphins-28-teal-149341557-09",
+      "handle": "miami-dolphins-devon-achane-28-aqua-jersey",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203987248"
+    },
+    {
+      "render": "miami-dolphins-28-white-149341557-07",
+      "handle": "miami-dolphins-devon-achane-28-white-jersey",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204216624"
+    },
+    {
+      "render": "miami-dolphins-2-teal-149341557-06",
+      "handle": "miami-dolphins-malik-willis-2-aqua-jersey",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204511536"
+    },
+    {
+      "render": "las-vegas-raiders-2-black-149440630-13",
+      "handle": "las-vegas-raiders-ashton-jeanty-2-black-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "held",
+      "view": "front",
+      "issue": "Front sleeves are wrong: the left sleeve has an invented flat silver diagonal stripe (the side-on swoosh turned into a stripe) plus a 2, and the right sleeve is blank. The jersey has a white Nike swoosh and a silver 2 on both sleeves, as the supplier back photo and the back render show.",
+      "render_note": "On the front view give both sleeves the same trim as the back view: a small white Nike swoosh near the shoulder and a silver 2 sleeve number below it. Remove the silver diagonal stripe; the jersey has no sleeve stripe."
+    },
+    {
+      "render": "las-vegas-raiders-2-white-149440630-10",
+      "handle": "las-vegas-raiders-ashton-jeanty-2-white-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203823408"
+    },
+    {
+      "render": "las-vegas-raiders-89-black-149440630-23",
+      "handle": "las-vegas-raiders-brock-bowers-89-black-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204085552"
+    },
+    {
+      "render": "las-vegas-raiders-89-white-149440630-21",
+      "handle": "las-vegas-raiders-brock-bowers-89-white-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204314928"
+    },
+    {
+      "render": "las-vegas-raiders-98-black-149440630-25",
+      "handle": "las-vegas-raiders-maxx-crosby-98-black-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332205822256",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "las-vegas-raiders-15-black-149440630-08",
+      "handle": "las-vegas-raiders-fernando-mendoza-15-black-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206706992"
+    },
+    {
+      "render": "las-vegas-raiders-34-black-149440630-19",
+      "handle": "las-vegas-raiders-bo-jackson-34-black-jersey",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "status": "held",
+      "view": "both",
+      "issue": "Chest, back and sleeve numbers and the name JACKSON are rendered almost white; on the supplier jersey they are metallic silver-grey (clearly darker than the white NFL shield).",
+      "render_note": "Render every number (34 on chest, back and both sleeves) and the name JACKSON in the Raiders' metallic silver-grey exactly as in the supplier photo, not white; keep everything else as it is."
+    },
+    {
+      "render": "cincinnati-bengals-9-black-149773411-08",
+      "handle": "cincinnati-bengals-joe-burrow-9-black-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332205855024"
+    },
+    {
+      "render": "cincinnati-bengals-9-white-149773411-09",
+      "handle": "cincinnati-bengals-joe-burrow-9-white-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206674224"
+    },
+    {
+      "render": "cincinnati-bengals-9-orange-149773411-07",
+      "handle": "cincinnati-bengals-joe-burrow-9-orange-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206870832"
+    },
+    {
+      "render": "cincinnati-bengals-1-black-149773411-11",
+      "handle": "cincinnati-bengals-jamarr-chase-1-black-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207591728"
+    },
+    {
+      "render": "cincinnati-bengals-1-white-149773411-12",
+      "handle": "cincinnati-bengals-jamarr-chase-1-white-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207722800"
+    },
+    {
+      "render": "cincinnati-bengals-1-orange-149773411-10",
+      "handle": "cincinnati-bengals-jamarr-chase-1-orange-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208378160"
+    },
+    {
+      "render": "cincinnati-bengals-5-black-149773411-06",
+      "handle": "cincinnati-bengals-tee-higgins-5-black-jersey",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208509232"
+    },
+    {
+      "render": "baltimore-ravens-8-purple-149773646-07",
+      "handle": "baltimore-ravens-lamar-jackson-8-purple-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332205756720"
+    },
+    {
+      "render": "baltimore-ravens-8-white-149773646-01",
+      "handle": "baltimore-ravens-lamar-jackson-8-white-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206641456"
+    },
+    {
+      "render": "baltimore-ravens-8-black-149773646-15",
+      "handle": "baltimore-ravens-lamar-jackson-8-black-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "held",
+      "view": "front",
+      "issue": "Neck-tape text is changed: the render reads 'DARKNESS THERE IS NOTHING MORE'; the supplier tape reads 'DARKNESS THERE AND NOTHING MORE' (a small stacked AND).",
+      "render_note": "The purple neck-tape text must read DARKNESS THERE AND NOTHING MORE, with the small stacked word AND between THERE and NOTHING as on the supplier jersey; never write IS."
+    },
+    {
+      "render": "baltimore-ravens-22-purple-149773646-11",
+      "handle": "baltimore-ravens-derrick-henry-22-purple-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206805296"
+    },
+    {
+      "render": "baltimore-ravens-22-white-149773646-02",
+      "handle": "baltimore-ravens-derrick-henry-22-white-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207624496"
+    },
+    {
+      "render": "baltimore-ravens-14-purple-149773646-12",
+      "handle": "baltimore-ravens-kyle-hamilton-14-purple-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207755568"
+    },
+    {
+      "render": "baltimore-ravens-4-purple-149773646-06",
+      "handle": "baltimore-ravens-zay-flowers-4-purple-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208083248"
+    },
+    {
+      "render": "baltimore-ravens-4-white-149773646-03",
+      "handle": "baltimore-ravens-zay-flowers-4-white-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "held",
+      "view": "front",
+      "issue": "Neck tape reads 'PLA¥ LIKE A RAVEN': the Y has a stroke through it (the hanger wire crossing that letter in the supplier photo), and a thin hanger-wire line also crosses the inside of the neck above the size tag.",
+      "render_note": "Spell the neck tape cleanly as PLAY LIKE A RAVEN with a normal Y (no line through it), and leave out every trace of the hanger wire inside the neck; keep the rest as it is."
+    },
+    {
+      "render": "baltimore-ravens-52-purple-149773646-28",
+      "handle": "baltimore-ravens-ray-lewis-52-purple-jersey",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208410928"
+    },
+    {
+      "render": "detroit-lions-14-royal-blue-149775211-39",
+      "handle": "detroit-lions-amon-ra-st-brown-14-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332205658416"
+    },
+    {
+      "render": "detroit-lions-14-white-149775211-40",
+      "handle": "detroit-lions-amon-ra-st-brown-14-white-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332205920560"
+    },
+    {
+      "render": "detroit-lions-0-royal-blue-149775211-12",
+      "handle": "detroit-lions-jahmyr-gibbs-0-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206608688"
+    },
+    {
+      "render": "detroit-lions-0-white-149775211-13",
+      "handle": "detroit-lions-jahmyr-gibbs-0-white-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206739760"
+    },
+    {
+      "render": "detroit-lions-16-royal-blue-149775211-24",
+      "handle": "detroit-lions-jared-goff-16-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207231280"
+    },
+    {
+      "render": "detroit-lions-16-white-149775211-23",
+      "handle": "detroit-lions-jared-goff-16-white-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207657264"
+    },
+    {
+      "render": "detroit-lions-97-royal-blue-149775211-42",
+      "handle": "detroit-lions-aidan-hutchinson-97-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207952176"
+    },
+    {
+      "render": "detroit-lions-20-royal-blue-149775211-34",
+      "handle": "detroit-lions-barry-sanders-20-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208345392"
+    },
+    {
+      "render": "detroit-lions-87-royal-blue-149775211-37",
+      "handle": "detroit-lions-sam-laporta-87-blue-jersey",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208476464"
+    },
+    {
+      "render": "pittsburgh-steelers-90-black-149778084-24",
+      "handle": "pittsburgh-steelers-tj-watt-90-black-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209000752"
+    },
+    {
+      "render": "pittsburgh-steelers-90-white-149778084-36",
+      "handle": "pittsburgh-steelers-tj-watt-90-white-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209131824"
+    },
+    {
+      "render": "pittsburgh-steelers-4-black-149778084-15",
+      "handle": "pittsburgh-steelers-dk-metcalf-4-black-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203004208",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "pittsburgh-steelers-4-white-149778084-14",
+      "handle": "pittsburgh-steelers-dk-metcalf-4-white-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203233584"
+    },
+    {
+      "render": "pittsburgh-steelers-8-black-149778084-05",
+      "handle": "pittsburgh-steelers-aaron-rodgers-8-black-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203495728"
+    },
+    {
+      "render": "pittsburgh-steelers-43-black-149778084-11",
+      "handle": "pittsburgh-steelers-troy-polamalu-43-black-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203856176",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "pittsburgh-steelers-5-black-149778084-06",
+      "handle": "pittsburgh-steelers-jalen-ramsey-5-black-jersey",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204118320"
+    },
+    {
+      "render": "new-england-patriots-10-navy-149954872-37",
+      "handle": "new-england-patriots-drake-maye-10-navy-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208804144"
+    },
+    {
+      "render": "new-england-patriots-10-white-149954872-35",
+      "handle": "new-england-patriots-drake-maye-10-white-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332196679984"
+    },
+    {
+      "render": "new-england-patriots-10-red-149954872-36",
+      "handle": "new-england-patriots-drake-maye-10-red-throwback-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332197368112"
+    },
+    {
+      "render": "new-england-patriots-12-navy-149954872-30",
+      "handle": "new-england-patriots-tom-brady-12-navy-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332199235888"
+    },
+    {
+      "render": "new-england-patriots-12-red-149954872-29",
+      "handle": "new-england-patriots-tom-brady-12-red-throwback-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332200448304"
+    },
+    {
+      "render": "new-england-patriots-0-navy-149954872-20",
+      "handle": "new-england-patriots-christian-gonzalez-0-navy-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332201693488"
+    },
+    {
+      "render": "new-england-patriots-32-navy-149954872-14",
+      "handle": "new-england-patriots-treveyon-henderson-32-navy-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202414384"
+    },
+    {
+      "render": "new-england-patriots-8-navy-149954872-25",
+      "handle": "new-england-patriots-stefon-diggs-8-navy-jersey",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202676528"
+    },
+    {
+      "render": "minnesota-vikings-18-purple-149954908-32",
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332196942128"
+    },
+    {
+      "render": "minnesota-vikings-18-white-149954908-31",
+      "handle": "minnesota-vikings-justin-jefferson-18-white-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332198089008"
+    },
+    {
+      "render": "minnesota-vikings-18-purple-149954908-33",
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-gold-numbers-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332200186160"
+    },
+    {
+      "render": "minnesota-vikings-9-purple-149954908-29",
+      "handle": "minnesota-vikings-jj-mccarthy-9-purple-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332201365808"
+    },
+    {
+      "render": "minnesota-vikings-9-white-149954908-30",
+      "handle": "minnesota-vikings-jj-mccarthy-9-white-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202316080"
+    },
+    {
+      "render": "minnesota-vikings-3-purple-149954908-17",
+      "handle": "minnesota-vikings-jordan-addison-3-purple-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202578224"
+    },
+    {
+      "render": "minnesota-vikings-87-purple-149954908-16",
+      "handle": "minnesota-vikings-tj-hockenson-87-purple-jersey",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202873136"
+    },
+    {
+      "render": "green-bay-packers-10-green-149954975-34",
+      "handle": "green-bay-packers-jordan-love-10-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193501488"
+    },
+    {
+      "render": "green-bay-packers-10-white-149954975-33",
+      "handle": "green-bay-packers-jordan-love-10-white-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193730864"
+    },
+    {
+      "render": "green-bay-packers-1-green-149954975-17",
+      "handle": "green-bay-packers-micah-parsons-1-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332193861936"
+    },
+    {
+      "render": "green-bay-packers-1-white-149954975-16",
+      "handle": "green-bay-packers-micah-parsons-1-white-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194025776"
+    },
+    {
+      "render": "green-bay-packers-8-green-149954975-28",
+      "handle": "green-bay-packers-josh-jacobs-8-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194287920"
+    },
+    {
+      "render": "green-bay-packers-4-green-149954975-22",
+      "handle": "green-bay-packers-brett-favre-4-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332194681136"
+    },
+    {
+      "render": "green-bay-packers-0-green-149954975-11",
+      "handle": "green-bay-packers-matthew-golden-0-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195008816"
+    },
+    {
+      "render": "green-bay-packers-85-green-149954975-10",
+      "handle": "green-bay-packers-tucker-kraft-85-green-jersey",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332195500336"
+    },
+    {
+      "render": "atlanta-falcons-7-black-150115330-27",
+      "handle": "atlanta-falcons-bijan-robinson-7-black-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332200513840"
+    },
+    {
+      "render": "atlanta-falcons-7-white-150115330-04",
+      "handle": "atlanta-falcons-bijan-robinson-7-white-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332201595184"
+    },
+    {
+      "render": "atlanta-falcons-7-red-150115330-11",
+      "handle": "atlanta-falcons-bijan-robinson-7-red-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202348848"
+    },
+    {
+      "render": "atlanta-falcons-9-black-150115330-25",
+      "handle": "atlanta-falcons-michael-penix-jr-9-black-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202610992"
+    },
+    {
+      "render": "atlanta-falcons-9-white-150115330-08",
+      "handle": "atlanta-falcons-michael-penix-jr-9-white-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202938672"
+    },
+    {
+      "render": "atlanta-falcons-5-black-150115330-23",
+      "handle": "atlanta-falcons-drake-london-5-black-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203168048"
+    },
+    {
+      "render": "atlanta-falcons-5-white-150115330-02",
+      "handle": "atlanta-falcons-drake-london-5-white-jersey",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203397424"
+    },
+    {
+      "render": "indianapolis-colts-28-royal-blue-150396110-13",
+      "handle": "indianapolis-colts-jonathan-taylor-28-blue-jersey",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203921712"
+    },
+    {
+      "render": "indianapolis-colts-28-white-150396110-11",
+      "handle": "indianapolis-colts-jonathan-taylor-28-white-jersey",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204183856"
+    },
+    {
+      "render": "indianapolis-colts-28-black-150396110-02",
+      "handle": "indianapolis-colts-jonathan-taylor-28-black-jersey",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204413232"
+    },
+    {
+      "render": "indianapolis-colts-17-royal-blue-150396110-06",
+      "handle": "indianapolis-colts-daniel-jones-17-blue-jersey",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204675376"
+    },
+    {
+      "render": "indianapolis-colts-84-royal-blue-150396110-08",
+      "handle": "indianapolis-colts-tyler-warren-84-blue-jersey",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204839216"
+    },
+    {
+      "render": "los-angeles-chargers-10-powder-blue-150396367-04",
+      "handle": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332201955632"
+    },
+    {
+      "render": "los-angeles-chargers-10-white-150396367-02",
+      "handle": "los-angeles-chargers-justin-herbert-10-white-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202479920"
+    },
+    {
+      "render": "los-angeles-chargers-10-navy-150396367-03",
+      "handle": "los-angeles-chargers-justin-herbert-10-navy-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332202742064"
+    },
+    {
+      "render": "los-angeles-chargers-15-powder-blue-150396367-12",
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203036976"
+    },
+    {
+      "render": "los-angeles-chargers-15-white-150396367-15",
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-white-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203299120"
+    },
+    {
+      "render": "los-angeles-chargers-3-powder-blue-150396367-09",
+      "handle": "los-angeles-chargers-derwin-james-jr-3-powder-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203594032",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "houston-texans-7-navy-150455327-08",
+      "handle": "houston-texans-cj-stroud-7-navy-jersey",
+      "audience": "adult",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203135280"
+    },
+    {
+      "render": "houston-texans-7-white-150455327-10",
+      "handle": "houston-texans-cj-stroud-7-white-jersey",
+      "audience": "adult",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203430192",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "houston-texans-7-red-150455327-07",
+      "handle": "houston-texans-cj-stroud-7-red-jersey",
+      "audience": "adult",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332203725104",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "houston-texans-12-white-150455327-03",
+      "handle": "houston-texans-nico-collins-12-white-jersey",
+      "audience": "adult",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204052784"
+    },
+    {
+      "render": "houston-texans-51-white-150455327-05",
+      "handle": "houston-texans-will-anderson-jr-51-white-jersey",
+      "audience": "adult",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204282160"
+    },
+    {
+      "render": "chicago-bears-18-navy-150457315-37",
+      "handle": "chicago-bears-caleb-williams-18-navy-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-18-white-150457315-38",
+      "handle": "chicago-bears-caleb-williams-18-white-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204577072"
+    },
+    {
+      "render": "chicago-bears-18-orange-150457315-36",
+      "handle": "chicago-bears-caleb-williams-18-orange-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-34-navy-150457315-32",
+      "handle": "chicago-bears-walter-payton-34-navy-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-15-navy-150457315-35",
+      "handle": "chicago-bears-rome-odunze-15-navy-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-15-white-150457315-33",
+      "handle": "chicago-bears-rome-odunze-15-white-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-84-navy-150457315-20",
+      "handle": "chicago-bears-colston-loveland-84-navy-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-10-navy-150457315-14",
+      "handle": "chicago-bears-luther-burden-iii-10-navy-jersey",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-12-royal-blue-150856861-25",
+      "handle": "los-angeles-rams-puka-nacua-12-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-12-white-150856861-17",
+      "handle": "los-angeles-rams-puka-nacua-12-white-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-12-royal-blue-150856861-19",
+      "handle": "los-angeles-rams-puka-nacua-12-blue-throwback-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-9-royal-blue-150856861-27",
+      "handle": "los-angeles-rams-matthew-stafford-9-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-9-white-150856861-18",
+      "handle": "los-angeles-rams-matthew-stafford-9-white-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "los-angeles-rams-99-royal-blue-150856861-33",
+      "handle": "los-angeles-rams-aaron-donald-99-blue-jersey",
+      "audience": "adult",
+      "team": "los-angeles-rams",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-jets-5-green-151347506-07",
+      "handle": "new-york-jets-garrett-wilson-5-green-jersey",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-jets-5-white-151347506-04",
+      "handle": "new-york-jets-garrett-wilson-5-white-jersey",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-jets-5-black-151347506-06",
+      "handle": "new-york-jets-garrett-wilson-5-black-jersey",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-jets-20-green-151347506-11",
+      "handle": "new-york-jets-breece-hall-20-green-jersey",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332204740912"
+    },
+    {
+      "render": "new-york-jets-7-green-151347506-01",
+      "handle": "new-york-jets-justin-fields-7-green-jersey",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209197360"
+    },
+    {
+      "render": "carolina-panthers-9-black-151347842-11",
+      "handle": "carolina-panthers-bryce-young-9-black-jersey",
+      "audience": "adult",
+      "team": "carolina-panthers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "carolina-panthers-9-light-blue-151347842-09",
+      "handle": "carolina-panthers-bryce-young-9-light-blue-jersey",
+      "audience": "adult",
+      "team": "carolina-panthers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "carolina-panthers-4-black-151347842-02",
+      "handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey",
+      "audience": "adult",
+      "team": "carolina-panthers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209525040"
+    },
+    {
+      "render": "carolina-panthers-4-white-151347842-01",
+      "handle": "carolina-panthers-tetairoa-mcmillan-4-white-jersey",
+      "audience": "adult",
+      "team": "carolina-panthers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-10-orange-152030829-25",
+      "handle": "denver-broncos-bo-nix-10-orange-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210540848"
+    },
+    {
+      "render": "denver-broncos-10-white-152030829-23",
+      "handle": "denver-broncos-bo-nix-10-white-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-10-navy-152030829-24",
+      "handle": "denver-broncos-bo-nix-10-navy-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-2-orange-152030829-18",
+      "handle": "denver-broncos-patrick-surtain-ii-2-orange-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-2-white-152030829-19",
+      "handle": "denver-broncos-patrick-surtain-ii-2-white-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210802992"
+    },
+    {
+      "render": "denver-broncos-17-orange-152030829-03",
+      "handle": "denver-broncos-jaylen-waddle-17-orange-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-14-orange-152030829-15",
+      "handle": "denver-broncos-courtland-sutton-14-orange-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-7-orange-152030829-20",
+      "handle": "denver-broncos-john-elway-7-orange-jersey",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-5-maroon-152717856-15",
+      "handle": "washington-commanders-jayden-daniels-5-burgundy-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-5-white-152717856-14",
+      "handle": "washington-commanders-jayden-daniels-5-white-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-5-black-152717856-06",
+      "handle": "washington-commanders-jayden-daniels-5-black-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-5-maroon-152717856-07",
+      "handle": "washington-commanders-jayden-daniels-5-burgundy-throwback-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-17-maroon-152717856-11",
+      "handle": "washington-commanders-terry-mclaurin-17-burgundy-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "washington-commanders-17-white-152717856-10",
+      "handle": "washington-commanders-terry-mclaurin-17-white-jersey",
+      "audience": "adult",
+      "team": "washington-commanders",
+      "status": "held",
+      "view": "back",
+      "issue": "Round badge below the back collar is garbled: its ring reads 'COMMANDERS' / 'WASHINGTOTN' (misspelled) and the centre band is blank; the supplier's reads 'WASHINGTON FOOTBALL', years, and 'COMMANDERS' in the band.",
+      "render_note": "Copy the round badge below the back collar exactly as in the reference: 'WASHINGTON FOOTBALL' around the top and the years around the bottom, inside '19' and the W logo, a band reading 'COMMANDERS', then the stars and '32'. No misspelled, invented or blank text."
+    },
+    {
+      "render": "jacksonville-jaguars-12-teal-153058478-03",
+      "handle": "jacksonville-jaguars-travis-hunter-12-aqua-jersey",
+      "audience": "adult",
+      "team": "jacksonville-jaguars",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210966832",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "jacksonville-jaguars-12-white-153058478-06",
+      "handle": "jacksonville-jaguars-travis-hunter-12-white-jersey",
+      "audience": "adult",
+      "team": "jacksonville-jaguars",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "jacksonville-jaguars-16-teal-153058478-08",
+      "handle": "jacksonville-jaguars-trevor-lawrence-16-aqua-jersey",
+      "audience": "adult",
+      "team": "jacksonville-jaguars",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "jacksonville-jaguars-16-black-153058478-07",
+      "handle": "jacksonville-jaguars-trevor-lawrence-16-black-jersey",
+      "audience": "adult",
+      "team": "jacksonville-jaguars",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "cleveland-browns-95-brown-153267479-20",
+      "handle": "cleveland-browns-myles-garrett-95-brown-jersey",
+      "audience": "adult",
+      "team": "cleveland-browns",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "cleveland-browns-95-white-153267479-08",
+      "handle": "cleveland-browns-myles-garrett-95-white-jersey",
+      "audience": "adult",
+      "team": "cleveland-browns",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "cleveland-browns-12-brown-153267479-16",
+      "handle": "cleveland-browns-shedeur-sanders-12-brown-jersey",
+      "audience": "adult",
+      "team": "cleveland-browns",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "cleveland-browns-12-white-153267479-18",
+      "handle": "cleveland-browns-shedeur-sanders-12-white-jersey",
+      "audience": "adult",
+      "team": "cleveland-browns",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "cleveland-browns-10-brown-153267479-17",
+      "handle": "cleveland-browns-quinshon-judkins-10-brown-jersey",
+      "audience": "adult",
+      "team": "cleveland-browns",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-6-red-157086280-15",
+      "handle": "tampa-bay-buccaneers-baker-mayfield-6-red-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-6-white-157086280-12",
+      "handle": "tampa-bay-buccaneers-baker-mayfield-6-white-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-6-orange-157086280-11",
+      "handle": "tampa-bay-buccaneers-baker-mayfield-6-orange-throwback-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-2-red-157086280-05",
+      "handle": "tampa-bay-buccaneers-emeka-egbuka-2-red-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-12-red-157086280-18",
+      "handle": "tampa-bay-buccaneers-tom-brady-12-red-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-12-orange-157086280-13",
+      "handle": "tampa-bay-buccaneers-tom-brady-12-orange-throwback-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-13-red-157086280-17",
+      "handle": "tampa-bay-buccaneers-mike-evans-13-red-jersey",
+      "audience": "adult",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-1-royal-blue-157132868-21",
+      "handle": "new-york-giants-malik-nabers-1-blue-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-1-white-157132868-20",
+      "handle": "new-york-giants-malik-nabers-1-white-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209230128"
+    },
+    {
+      "render": "new-york-giants-1-royal-blue-157132868-19",
+      "handle": "new-york-giants-malik-nabers-1-blue-throwback-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-6-royal-blue-157132868-16",
+      "handle": "new-york-giants-jaxson-dart-6-blue-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-6-white-157132868-11",
+      "handle": "new-york-giants-jaxson-dart-6-white-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-51-royal-blue-157132868-15",
+      "handle": "new-york-giants-abdul-carter-51-blue-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-44-royal-blue-157132868-09",
+      "handle": "new-york-giants-cam-skattebo-44-blue-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-56-red-157132868-22",
+      "handle": "new-york-giants-lawrence-taylor-56-red-jersey",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209361200"
+    },
+    {
+      "render": "new-orleans-saints-41-black-174508308-22",
+      "handle": "new-orleans-saints-alvin-kamara-41-black-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-41-white-174508308-21",
+      "handle": "new-orleans-saints-alvin-kamara-41-white-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-12-black-174508308-29",
+      "handle": "new-orleans-saints-chris-olave-12-black-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-9-black-174508308-32",
+      "handle": "new-orleans-saints-drew-brees-9-black-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-9-white-174508308-31",
+      "handle": "new-orleans-saints-drew-brees-9-white-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-6-black-174508308-04",
+      "handle": "new-orleans-saints-tyler-shough-6-black-jersey",
+      "audience": "adult",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "arizona-cardinals-18-red-174508419-08",
+      "handle": "arizona-cardinals-marvin-harrison-jr-18-red-jersey",
+      "audience": "adult",
+      "team": "arizona-cardinals",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "arizona-cardinals-18-white-174508419-07",
+      "handle": "arizona-cardinals-marvin-harrison-jr-18-white-jersey",
+      "audience": "adult",
+      "team": "arizona-cardinals",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "arizona-cardinals-18-black-174508419-04",
+      "handle": "arizona-cardinals-marvin-harrison-jr-18-black-jersey",
+      "audience": "adult",
+      "team": "arizona-cardinals",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "arizona-cardinals-1-red-174508419-09",
+      "handle": "arizona-cardinals-kyler-murray-1-red-jersey",
+      "audience": "adult",
+      "team": "arizona-cardinals",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tennessee-titans-1-navy-178840915-08",
+      "handle": "tennessee-titans-cam-ward-1-navy-jersey",
+      "audience": "adult",
+      "team": "tennessee-titans",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tennessee-titans-1-light-blue-178840915-05",
+      "handle": "tennessee-titans-cam-ward-1-light-blue-jersey",
+      "audience": "adult",
+      "team": "tennessee-titans",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tennessee-titans-1-white-178840915-06",
+      "handle": "tennessee-titans-cam-ward-1-white-jersey",
+      "audience": "adult",
+      "team": "tennessee-titans",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tennessee-titans-98-light-blue-178840915-03",
+      "handle": "tennessee-titans-jeffery-simmons-98-light-blue-jersey",
+      "audience": "adult",
+      "team": "tennessee-titans",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-14-navy-218134333-39",
+      "handle": "seattle-seahawks-sam-darnold-14-navy-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208312624"
+    },
+    {
+      "render": "seattle-seahawks-14-white-218134333-07",
+      "handle": "seattle-seahawks-sam-darnold-14-white-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208443696"
+    },
+    {
+      "render": "seattle-seahawks-14-green-218134333-11",
+      "handle": "seattle-seahawks-sam-darnold-14-neon-green-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-11-navy-218134333-43",
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-navy-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-11-white-218134333-35",
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-white-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-11-green-218134333-37",
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-neon-green-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-9-navy-218134333-34",
+      "handle": "seattle-seahawks-kenneth-walker-iii-9-navy-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-21-navy-218134333-17",
+      "handle": "seattle-seahawks-devon-witherspoon-21-navy-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "seattle-seahawks-10-navy-218134333-22",
+      "handle": "seattle-seahawks-cooper-kupp-10-navy-jersey",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "philadelphia-eagles-1-teal-213771899-04-kids",
+      "handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey-kids",
+      "audience": "kids",
+      "team": "philadelphia-eagles",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211491120"
+    },
+    {
+      "render": "philadelphia-eagles-1-green-213771899-08-kids",
+      "handle": "philadelphia-eagles-jalen-hurts-1-green-throwback-jersey-kids",
+      "audience": "kids",
+      "team": "philadelphia-eagles",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "philadelphia-eagles-26-teal-213771899-17-kids",
+      "handle": "philadelphia-eagles-saquon-barkley-26-midnight-green-jersey-kids",
+      "audience": "kids",
+      "team": "philadelphia-eagles",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "philadelphia-eagles-26-white-213771899-25-kids",
+      "handle": "philadelphia-eagles-saquon-barkley-26-white-jersey-kids",
+      "audience": "kids",
+      "team": "philadelphia-eagles",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-18-navy-213771952-07-kids",
+      "handle": "chicago-bears-caleb-williams-18-navy-jersey-kids",
+      "audience": "kids",
+      "team": "chicago-bears",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210901296"
+    },
+    {
+      "render": "chicago-bears-18-white-213771952-08-kids",
+      "handle": "chicago-bears-caleb-williams-18-white-jersey-kids",
+      "audience": "kids",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "chicago-bears-34-navy-213771952-06-kids",
+      "handle": "chicago-bears-walter-payton-34-navy-jersey-kids",
+      "audience": "kids",
+      "team": "chicago-bears",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "miami-dolphins-28-teal-213772219-02-kids",
+      "handle": "miami-dolphins-devon-achane-28-aqua-jersey-kids",
+      "audience": "kids",
+      "team": "miami-dolphins",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "miami-dolphins-28-white-213772219-01-kids",
+      "handle": "miami-dolphins-devon-achane-28-white-jersey-kids",
+      "audience": "kids",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211032368"
+    },
+    {
+      "render": "miami-dolphins-13-teal-213772219-05-kids",
+      "handle": "miami-dolphins-dan-marino-13-aqua-jersey-kids",
+      "audience": "kids",
+      "team": "miami-dolphins",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211261744",
+      "local_fix": "invented back tag covered with fabric (scripts/images/retouch.py tag)"
+    },
+    {
+      "render": "kansas-city-chiefs-15-red-213772247-04-kids",
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-red-jersey-kids",
+      "audience": "kids",
+      "team": "kansas-city-chiefs",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "kansas-city-chiefs-15-white-213772247-09-kids",
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-white-jersey-kids",
+      "audience": "kids",
+      "team": "kansas-city-chiefs",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "kansas-city-chiefs-87-red-213772247-06-kids",
+      "handle": "kansas-city-chiefs-travis-kelce-87-red-jersey-kids",
+      "audience": "kids",
+      "team": "kansas-city-chiefs",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "arizona-cardinals-18-red-213772502-03-kids",
+      "handle": "arizona-cardinals-marvin-harrison-jr-18-red-jersey-kids",
+      "audience": "kids",
+      "team": "arizona-cardinals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211130672"
+    },
+    {
+      "render": "arizona-cardinals-1-red-213772502-04-kids",
+      "handle": "arizona-cardinals-kyler-murray-1-red-jersey-kids",
+      "audience": "kids",
+      "team": "arizona-cardinals",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-1-royal-blue-213772521-15-kids",
+      "handle": "new-york-giants-malik-nabers-1-blue-jersey-kids",
+      "audience": "kids",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-1-white-213772521-13-kids",
+      "handle": "new-york-giants-malik-nabers-1-white-jersey-kids",
+      "audience": "kids",
+      "team": "new-york-giants",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-york-giants-6-royal-blue-213772521-07-kids",
+      "handle": "new-york-giants-jaxson-dart-6-blue-jersey-kids",
+      "audience": "kids",
+      "team": "new-york-giants",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209590576"
+    },
+    {
+      "render": "new-orleans-saints-41-black-213772543-16-kids",
+      "handle": "new-orleans-saints-alvin-kamara-41-black-jersey-kids",
+      "audience": "kids",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-41-white-213772543-04-kids",
+      "handle": "new-orleans-saints-alvin-kamara-41-white-jersey-kids",
+      "audience": "kids",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "new-orleans-saints-12-black-213772543-08-kids",
+      "handle": "new-orleans-saints-chris-olave-12-black-jersey-kids",
+      "audience": "kids",
+      "team": "new-orleans-saints",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-10-orange-213772563-15-kids",
+      "handle": "denver-broncos-bo-nix-10-orange-jersey-kids",
+      "audience": "kids",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-10-white-213772563-10-kids",
+      "handle": "denver-broncos-bo-nix-10-white-jersey-kids",
+      "audience": "kids",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "denver-broncos-2-orange-213772563-16-kids",
+      "handle": "denver-broncos-patrick-surtain-ii-2-orange-jersey-kids",
+      "audience": "kids",
+      "team": "denver-broncos",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tennessee-titans-1-light-blue-213772629-01-kids",
+      "handle": "tennessee-titans-cam-ward-1-light-blue-throwback-jersey-kids",
+      "audience": "kids",
+      "team": "tennessee-titans",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-12-red-213772650-09-kids",
+      "handle": "tampa-bay-buccaneers-tom-brady-12-red-jersey-kids",
+      "audience": "kids",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-12-orange-213772650-06-kids",
+      "handle": "tampa-bay-buccaneers-tom-brady-12-orange-throwback-jersey-kids",
+      "audience": "kids",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "tampa-bay-buccaneers-6-red-213772650-08-kids",
+      "handle": "tampa-bay-buccaneers-baker-mayfield-6-red-jersey-kids",
+      "audience": "kids",
+      "team": "tampa-bay-buccaneers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "san-francisco-49ers-13-red-213772670-33-kids",
+      "handle": "san-francisco-49ers-brock-purdy-13-red-jersey-kids",
+      "audience": "kids",
+      "team": "san-francisco-49ers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "san-francisco-49ers-23-red-213772670-25-kids",
+      "handle": "san-francisco-49ers-christian-mccaffrey-23-red-jersey-kids",
+      "audience": "kids",
+      "team": "san-francisco-49ers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "san-francisco-49ers-85-red-213772670-40-kids",
+      "handle": "san-francisco-49ers-george-kittle-85-red-jersey-kids",
+      "audience": "kids",
+      "team": "san-francisco-49ers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "san-francisco-49ers-16-red-213772670-26-kids",
+      "handle": "san-francisco-49ers-joe-montana-16-red-jersey-kids",
+      "audience": "kids",
+      "team": "san-francisco-49ers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "dallas-cowboys-88-white-213772689-09-kids",
+      "handle": "dallas-cowboys-ceedee-lamb-88-white-jersey-kids",
+      "audience": "kids",
+      "team": "dallas-cowboys",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "dallas-cowboys-88-navy-213772689-10-kids",
+      "handle": "dallas-cowboys-ceedee-lamb-88-navy-jersey-kids",
+      "audience": "kids",
+      "team": "dallas-cowboys",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211687728"
+    },
+    {
+      "render": "dallas-cowboys-4-white-213772689-11-kids",
+      "handle": "dallas-cowboys-dak-prescott-4-white-jersey-kids",
+      "audience": "kids",
+      "team": "dallas-cowboys",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "pittsburgh-steelers-90-black-213772704-05-kids",
+      "handle": "pittsburgh-steelers-tj-watt-90-black-jersey-kids",
+      "audience": "kids",
+      "team": "pittsburgh-steelers",
+      "status": "not rendered yet"
+    },
+    {
+      "render": "pittsburgh-steelers-90-white-213772704-07-kids",
+      "handle": "pittsburgh-steelers-tj-watt-90-white-jersey-kids",
+      "audience": "kids",
+      "team": "pittsburgh-steelers",
+      "status": "held",
+      "view": "front",
+      "issue": "Dark bar across the neck at the top of the neck tag: the hanger's bar rendered as part of the jersey (the real black neck tape is higher up and is already there).",
+      "render_note": "Remove the bar at the top of the neck tag; the tag hangs on plain white fabric below the black back-neck tape. It is the hanger, not part of the jersey."
+    },
+    {
+      "render": "pittsburgh-steelers-4-black-213772704-09-kids",
+      "handle": "pittsburgh-steelers-dk-metcalf-4-black-jersey-kids",
+      "audience": "kids",
+      "team": "pittsburgh-steelers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209262896",
+      "local_fix": "hanger line inside the neck removed (scripts/images/retouch.py hanger)"
+    },
+    {
+      "render": "carolina-panthers-9-black-213772787-07-kids",
+      "handle": "carolina-panthers-bryce-young-9-black-jersey-kids",
+      "audience": "kids",
+      "team": "carolina-panthers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209721648"
+    },
+    {
+      "render": "carolina-panthers-4-black-213772787-03-kids",
+      "handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey-kids",
+      "audience": "kids",
+      "team": "carolina-panthers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209951024"
+    },
+    {
+      "render": "jacksonville-jaguars-12-teal-213772822-06-kids",
+      "handle": "jacksonville-jaguars-travis-hunter-12-aqua-jersey-kids",
+      "audience": "kids",
+      "team": "jacksonville-jaguars",
+      "status": "held",
+      "view": "front",
+      "issue": "Purple hanger bar rendered across the neck tag.",
+      "render_note": "Remove the purple line crossing the neck tag; inside the neck show only teal fabric, the grey tape and the tag. It is the hanger, not part of the jersey."
+    },
+    {
+      "render": "jacksonville-jaguars-16-teal-213772822-03-kids",
+      "handle": "jacksonville-jaguars-trevor-lawrence-16-aqua-jersey-kids",
+      "audience": "kids",
+      "team": "jacksonville-jaguars",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211196208"
+    },
+    {
+      "render": "washington-commanders-5-maroon-213772889-05-kids",
+      "handle": "washington-commanders-jayden-daniels-5-burgundy-jersey-kids",
+      "audience": "kids",
+      "team": "washington-commanders",
+      "status": "held",
+      "view": "back",
+      "issue": "Back-collar badge has wrong, garbled text: ring reads 'WASHINGTON' / 'FOOTBALL TEAM', the centre band is unreadable and '1?' replaces the stars.",
+      "render_note": "Copy the round badge below the back collar exactly as in the reference: 'WASHINGTON FOOTBALL' around the top and the years around the bottom, inside '19' and the W logo, a band reading 'COMMANDERS', then the stars and '32'. No misspelled, invented or blank text. Do not write 'FOOTBALL TEAM'."
+    },
+    {
+      "render": "washington-commanders-5-white-213772889-09-kids",
+      "handle": "washington-commanders-jayden-daniels-5-white-jersey-kids",
+      "audience": "kids",
+      "team": "washington-commanders",
+      "status": "held",
+      "view": "back",
+      "issue": "Back-collar badge is garbled: ring reads 'WASHINGTON' / 'COMMANDERS' and the centre shows gibberish ('17 W 12'-like) instead of 19 / W / COMMANDERS band / stars / 32.",
+      "render_note": "Copy the round badge below the back collar exactly as in the reference: 'WASHINGTON FOOTBALL' around the top and the years around the bottom, inside '19' and the W logo, a band reading 'COMMANDERS', then the stars and '32'. No misspelled, invented or blank text. Keep it black on white as on the supplier jersey."
+    },
+    {
+      "render": "washington-commanders-17-maroon-213772889-04-kids",
+      "handle": "washington-commanders-terry-mclaurin-17-burgundy-jersey-kids",
+      "audience": "kids",
+      "team": "washington-commanders",
+      "status": "held",
+      "view": "both",
+      "issue": "Front: purple hanger bar across the neck. Back: collar badge garbled ('10' instead of '19', unreadable centre band, wrong ring text).",
+      "render_note": "Front: remove the purple line across the neck (it is the hanger). Back: copy the round badge below the back collar exactly as in the reference: 'WASHINGTON FOOTBALL' around the top and the years around the bottom, inside '19' and the W logo, a band reading 'COMMANDERS', then the stars and '32'. No misspelled, invented or blank text."
+    },
+    {
+      "render": "los-angeles-chargers-10-powder-blue-213772989-09-kids",
+      "handle": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209393968"
+    },
+    {
+      "render": "los-angeles-chargers-10-navy-213772989-01-kids",
+      "handle": "los-angeles-chargers-justin-herbert-10-navy-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209656112"
+    },
+    {
+      "render": "los-angeles-chargers-15-powder-blue-213772989-08-kids",
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209885488"
+    },
+    {
+      "render": "new-york-jets-5-green-214161838-05-kids",
+      "handle": "new-york-jets-garrett-wilson-5-green-jersey-kids",
+      "audience": "kids",
+      "team": "new-york-jets",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209328432"
+    },
+    {
+      "render": "new-york-jets-5-white-214161838-03-kids",
+      "handle": "new-york-jets-garrett-wilson-5-white-jersey-kids",
+      "audience": "kids",
+      "team": "new-york-jets",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209557808"
+    },
+    {
+      "render": "indianapolis-colts-28-royal-blue-214161852-03-kids",
+      "handle": "indianapolis-colts-jonathan-taylor-28-blue-jersey-kids",
+      "audience": "kids",
+      "team": "indianapolis-colts",
+      "status": "held",
+      "view": "both",
+      "issue": "Shoulder stripes are white / royal / white; on the supplier jersey they are white / navy / white (the navy middle stripe is missing) on front and back.",
+      "render_note": "On both views make each shoulder stripe set white, navy, white: the stripe between the two white stripes is dark navy, not the royal-blue body colour."
+    },
+    {
+      "render": "indianapolis-colts-28-white-214161852-06-kids",
+      "handle": "indianapolis-colts-jonathan-taylor-28-white-jersey-kids",
+      "audience": "kids",
+      "team": "indianapolis-colts",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211097904"
+    },
+    {
+      "render": "los-angeles-rams-12-royal-blue-214161873-08-kids",
+      "handle": "los-angeles-rams-puka-nacua-12-blue-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209819952"
+    },
+    {
+      "render": "los-angeles-rams-12-white-214161873-04-kids",
+      "handle": "los-angeles-rams-puka-nacua-12-white-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210049328"
+    },
+    {
+      "render": "los-angeles-rams-9-royal-blue-214161873-02-kids",
+      "handle": "los-angeles-rams-matthew-stafford-9-blue-jersey-kids",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210311472"
+    },
+    {
+      "render": "houston-texans-7-navy-214161889-02-kids",
+      "handle": "houston-texans-cj-stroud-7-navy-jersey-kids",
+      "audience": "kids",
+      "team": "houston-texans",
+      "status": "held",
+      "view": "front",
+      "issue": "Sleeve logos on the front are full-colour red/white Texans bulls; on the supplier jersey (and the back render) the sleeve logo is tonal navy with a light-blue outline.",
+      "render_note": "Render the sleeve logos as a navy bull head with a thin light-blue outline, with no red or white fill, matching the back view."
+    },
+    {
+      "render": "houston-texans-7-white-214161889-01-kids",
+      "handle": "houston-texans-cj-stroud-7-white-jersey-kids",
+      "audience": "kids",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210409776"
+    },
+    {
+      "render": "houston-texans-7-red-214161889-03-kids",
+      "handle": "houston-texans-cj-stroud-7-red-jersey-kids",
+      "audience": "kids",
+      "team": "houston-texans",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210671920"
+    },
+    {
+      "render": "cincinnati-bengals-9-black-214161913-09-kids",
+      "handle": "cincinnati-bengals-joe-burrow-9-black-jersey-kids",
+      "audience": "kids",
+      "team": "cincinnati-bengals",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208607536"
+    },
+    {
+      "render": "cincinnati-bengals-9-orange-214161913-01-kids",
+      "handle": "cincinnati-bengals-joe-burrow-9-orange-jersey-kids",
+      "audience": "kids",
+      "team": "cincinnati-bengals",
+      "status": "held",
+      "view": "front",
+      "issue": "The black 'Paul Brown' script signature on the inner back collar is missing.",
+      "render_note": "Add the black 'Paul Brown' script signature, centred on the inner back collar just above the grey neck tape, as in the reference."
+    },
+    {
+      "render": "cincinnati-bengals-1-black-214161913-07-kids",
+      "handle": "cincinnati-bengals-jamarr-chase-1-black-jersey-kids",
+      "audience": "kids",
+      "team": "cincinnati-bengals",
+      "status": "held",
+      "view": "front",
+      "issue": "Purple hanger bar across the neck tag; the tag's logo cell is garbled ('7S-1').",
+      "render_note": "Remove the purple line across the neck tag (it is the hanger) and show the tag's NFL shield and Nike swoosh cell as on the other jerseys."
+    },
+    {
+      "render": "green-bay-packers-10-green-214161934-22-kids",
+      "handle": "green-bay-packers-jordan-love-10-green-jersey-kids",
+      "audience": "kids",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210704688"
+    },
+    {
+      "render": "green-bay-packers-10-white-214161934-24-kids",
+      "handle": "green-bay-packers-jordan-love-10-white-jersey-kids",
+      "audience": "kids",
+      "team": "green-bay-packers",
+      "status": "held",
+      "view": "front",
+      "issue": "Dark grey bar across the neck at the top of the neck tag: the hanger's bar rendered (the real grey neck tape is higher up and is already there).",
+      "render_note": "Remove the bar at the top of the neck tag; plain white fabric runs from the grey back-neck tape down to the tag. It is the hanger, not part of the jersey."
+    },
+    {
+      "render": "green-bay-packers-1-green-214161934-06-kids",
+      "handle": "green-bay-packers-micah-parsons-1-green-jersey-kids",
+      "audience": "kids",
+      "team": "green-bay-packers",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210934064"
+    },
+    {
+      "render": "atlanta-falcons-7-black-214161958-12-kids",
+      "handle": "atlanta-falcons-bijan-robinson-7-black-jersey-kids",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210213168"
+    },
+    {
+      "render": "atlanta-falcons-7-red-214161958-06-kids",
+      "handle": "atlanta-falcons-bijan-robinson-7-red-jersey-kids",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210475312"
+    },
+    {
+      "render": "atlanta-falcons-5-black-214161958-07-kids",
+      "handle": "atlanta-falcons-drake-london-5-black-jersey-kids",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210737456"
+    },
+    {
+      "render": "las-vegas-raiders-2-black-214161975-10-kids",
+      "handle": "las-vegas-raiders-ashton-jeanty-2-black-jersey-kids",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332206838064"
+    },
+    {
+      "render": "las-vegas-raiders-89-black-214161975-11-kids",
+      "handle": "las-vegas-raiders-brock-bowers-89-black-jersey-kids",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332207690032"
+    },
+    {
+      "render": "las-vegas-raiders-98-black-214161975-07-kids",
+      "handle": "las-vegas-raiders-maxx-crosby-98-black-jersey-kids",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208050480",
+      "local_fix": "hanger line inside the neck removed (scripts/images/retouch.py hanger)"
+    },
+    {
+      "render": "minnesota-vikings-18-purple-214161998-12-kids",
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-jersey-kids",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209787184"
+    },
+    {
+      "render": "minnesota-vikings-18-white-214161998-13-kids",
+      "handle": "minnesota-vikings-justin-jefferson-18-white-jersey-kids",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210016560"
+    },
+    {
+      "render": "minnesota-vikings-9-purple-214161998-08-kids",
+      "handle": "minnesota-vikings-jj-mccarthy-9-purple-jersey-kids",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210245936"
+    },
+    {
+      "render": "detroit-lions-14-royal-blue-214162016-07-kids",
+      "handle": "detroit-lions-amon-ra-st-brown-14-blue-jersey-kids",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208574768"
+    },
+    {
+      "render": "detroit-lions-0-royal-blue-214162016-13-kids",
+      "handle": "detroit-lions-jahmyr-gibbs-0-blue-jersey-kids",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208771376"
+    },
+    {
+      "render": "detroit-lions-97-royal-blue-214162016-14-kids",
+      "handle": "detroit-lions-aidan-hutchinson-97-blue-jersey-kids",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208935216"
+    },
+    {
+      "render": "detroit-lions-16-royal-blue-214162016-29-kids",
+      "handle": "detroit-lions-jared-goff-16-blue-jersey-kids",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209066288"
+    },
+    {
+      "render": "baltimore-ravens-8-purple-214162024-10-kids",
+      "handle": "baltimore-ravens-lamar-jackson-8-purple-jersey-kids",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208542000"
+    },
+    {
+      "render": "baltimore-ravens-8-white-214162024-12-kids",
+      "handle": "baltimore-ravens-lamar-jackson-8-white-jersey-kids",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208673072"
+    },
+    {
+      "render": "baltimore-ravens-22-purple-214162024-04-kids",
+      "handle": "baltimore-ravens-derrick-henry-22-purple-jersey-kids",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "status": "held",
+      "view": "back",
+      "issue": "The lavender back-neck panel with the word BALTIMORE inside the collar, clearly visible on the supplier back, is missing.",
+      "render_note": "Inside the back collar add the lavender panel with the small dark serif word BALTIMORE, exactly as on the supplier back photo (and as on the other Ravens purple kids renders); keep HENRY, 22 and everything else."
+    },
+    {
+      "render": "baltimore-ravens-14-purple-214162024-02-kids",
+      "handle": "baltimore-ravens-kyle-hamilton-14-purple-jersey-kids",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208836912"
+    },
+    {
+      "render": "cleveland-browns-12-brown-214162167-04-kids",
+      "handle": "cleveland-browns-shedeur-sanders-12-brown-jersey-kids",
+      "audience": "kids",
+      "team": "cleveland-browns",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211360048",
+      "local_fix": "near-black fabric given the Browns brown, front and back (scripts/images/retouch.py browns)"
+    },
+    {
+      "render": "cleveland-browns-95-brown-214162167-03-kids",
+      "handle": "cleveland-browns-myles-garrett-95-brown-jersey-kids",
+      "audience": "kids",
+      "team": "cleveland-browns",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332211589424",
+      "local_fix": "near-black fabric given the Browns brown, front and back (scripts/images/retouch.py browns)"
+    },
+    {
+      "render": "buffalo-bills-17-royal-blue-214852317-14-kids",
+      "handle": "buffalo-bills-josh-allen-17-blue-jersey-kids",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210082096"
+    },
+    {
+      "render": "buffalo-bills-17-white-214852317-09-kids",
+      "handle": "buffalo-bills-josh-allen-17-white-jersey-kids",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210278704"
+    },
+    {
+      "render": "buffalo-bills-4-royal-blue-214852317-06-kids",
+      "handle": "buffalo-bills-james-cook-iii-4-blue-jersey-kids",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332210508080"
+    },
+    {
+      "render": "new-england-patriots-10-navy-214852614-08-kids",
+      "handle": "new-england-patriots-drake-maye-10-navy-jersey-kids",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208967984"
+    },
+    {
+      "render": "new-england-patriots-10-white-214852614-13-kids",
+      "handle": "new-england-patriots-drake-maye-10-white-jersey-kids",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209164592"
+    },
+    {
+      "render": "new-england-patriots-12-navy-214852614-14-kids",
+      "handle": "new-england-patriots-tom-brady-12-navy-jersey-kids",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209295664"
+    },
+    {
+      "render": "seattle-seahawks-11-navy-219142282-15-kids",
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-navy-jersey-kids",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208640304"
+    },
+    {
+      "render": "seattle-seahawks-11-green-219142282-13-kids",
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-neon-green-jersey-kids",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332208869680"
+    },
+    {
+      "render": "seattle-seahawks-14-navy-219142282-01-kids",
+      "handle": "seattle-seahawks-sam-darnold-14-navy-jersey-kids",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "status": "created",
+      "product_id": "gid://shopify/Product/15332209033520"
+    }
+  ]
+}

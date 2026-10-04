@@ -44,6 +44,10 @@
         "hoodies": {
           "eyebrow": "American football",
           "text": "NFL team hoodies for men, women and kids"
+        },
+        "nfl": {
+          "eyebrow": "American football",
+          "text": "The stars' jerseys of the NFL teams, for adults and kids"
         }
       }
     },

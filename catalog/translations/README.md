@@ -2,10 +2,11 @@
 
 `store-content.json` holds the translations of the store's non-product content:
 
-- the 205 smart collections (on 2026-09-26: 101 added by the categories work, for clubs, NBA teams, players, styles and
-  hoodies; then `kids-football` and the 25 team collections of wave 1; on 2026-09-27 the 59 team collections of wave 2),
-  plus the manual `our-picks`
-- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 15 hidden child lists that Shopify keeps behind the main-menu items that have children
+- the 240 smart collections (on 2026-09-26: 101 added by the categories work, for clubs, NBA teams, players, styles and
+  hoodies; then `kids-football` and the 25 team collections of wave 1; on 2026-09-27 the 59 team collections of wave 2;
+  on 2026-10-04 the 35 NFL collections), plus the manual `our-picks`
+- the 3 menus (`main-menu`, `footer`, `footer-shop`) with every menu item, plus the 17 hidden child lists that Shopify
+  keeps behind the main-menu items that have children
 - 4 pages
 - the 10 league metaobjects (`sw_league`), `name` field only
 
@@ -47,6 +48,16 @@ every one except `porto`, which already had a collection; IDs in `store-setup.js
 names under their leagues. Shopify created no hidden child list this time, because all seven leagues already had
 children. Read back: every value matches this file, none is outdated, and the 145 existing main-menu items kept their
 IDs and translations.
+
+The NFL import (2026-10-04) added the 35 NFL collections (`nfl`, `nfl-jerseys`, `nfl-jerseys-kids` and the 32 team
+pages; IDs in `store-setup.json`), 36 main-menu items (a top-level "NFL" with "חולצות NFL", its 32 teams and "חולצות NFL
+לילדים", and "חולצות NFL לילדים" under ילדים), 1 footer-shop item and 3 hidden child lists (behind NFL, חולצות NFL and
+קפוצ׳ונים, which Shopify made new when the item moved under NFL). Moving an item to another level drops its
+translations: קפוצ׳ונים and its three children lost theirs and were registered again, and so were the four clubs moved
+to ליגות נוספות on 2026-09-28 (West Ham, Wolves, Burnley, Girona), which had lost theirs then. The menu items in this
+file were rebuilt from the live menus: the items removed earlier (יורוליג, ליגת העל בכדורסל, סטים לכדורסל, מבצעים) are
+gone. Read back: all 253 links and the 17 child lists have en and ar, none outdated, except Shopify's customer-account
+menu.
 
 What is not translated:
 

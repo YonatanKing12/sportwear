@@ -1,0 +1,156 @@
+{
+  "handle": "jacksonville-jaguars-travis-hunter-12-aqua-jersey-kids",
+  "status": "ready",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "jacksonville-jaguars",
+    "code": "JAX",
+    "he": "ג׳קסונוויל ג׳גוארס",
+    "en": "Jacksonville Jaguars",
+    "ar": "جاكسونفيل جاغوارز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "travis-hunter",
+    "name_on_back": "HUNTER",
+    "he": "טרוויס האנטר",
+    "en": "Travis Hunter",
+    "ar": "ترافيس هانتر"
+  },
+  "title_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 12 טורקיז – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של ג׳קסונוויל ג׳גוארס בצבע טורקיז, עם השם HUNTER והמספר 12 על הגב (טרוויס האנטר).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 12 טורקיז – ילדים",
+    "description_he": "חולצת פוטבול של ג׳קסונוויל ג׳גוארס בצבע טורקיז, עם HUNTER 12 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-JAX-12-AQU-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-JAX-12-AQU-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-JAX-12-AQU-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-JAX-12-AQU-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/jacksonville-jaguars-12-teal-213772822-06-kids.png",
+      "alt_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 12 טורקיז – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/jacksonville-jaguars-12-teal-213772822-06-kids__back.png",
+      "alt_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 12 טורקיז – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "jacksonville-jaguars-travis-hunter-12-aqua-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Jacksonville Jaguars #12 NFL Jersey – Aqua – Kids",
+      "description_html": "<p>Jacksonville Jaguars NFL jersey in aqua, with the name HUNTER and the number 12 on the back (Travis Hunter).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Jacksonville Jaguars #12 NFL Jersey – Aqua – Kids",
+      "seo_description": "Jacksonville Jaguars NFL jersey in aqua, HUNTER 12 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية جاكسونفيل جاغوارز رقم 12 فيروزي – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق جاكسونفيل جاغوارز باللون الفيروزي، مع الاسم HUNTER والرقم 12 على الظهر (ترافيس هانتر).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص NFL جاكسونفيل جاغوارز رقم 12 فيروزي – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق جاكسونفيل جاغوارز باللون الفيروزي، HUNTER 12 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213772822?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装美洲豹",
+    "photos": {
+      "front": "213772822/06",
+      "back": "213772822/06"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:jacksonville-jaguars",
+    "league:nfl",
+    "audience:kids",
+    "player:travis-hunter",
+    "טרוויס האנטר",
+    "new",
+    "source:nfl-cyq888",
+    "album:213772822",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "jacksonville jaguars",
+    "jaguars",
+    "جاكسونفيل جاغوارز",
+    "جاغوارز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "travis hunter",
+    "ترافيس هانتر"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "current home teal: black shoulder yoke and black sleeve cuffs, jaguar-head logo on the chest",
+    "render": "jacksonville-jaguars-12-teal-213772822-06-kids"
+  }
+}

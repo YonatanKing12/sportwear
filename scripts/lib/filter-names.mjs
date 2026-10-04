@@ -13,7 +13,7 @@ const pick = (entry) => (entry ? { he: entry.he, en: entry.en, ar: entry.ar } : 
 
 export const ENUM_ORDER = {
   audience: ['adult', 'kids', 'women'],
-  product_type: ['Football Jersey', 'Football Kit', 'Basketball Jersey', 'Basketball Shorts', 'Hoodie'],
+  product_type: ['Football Jersey', 'Football Kit', 'Basketball Jersey', 'Basketball Shorts', 'NFL Jersey', 'Hoodie'],
   kit: ['home', 'away', 'third', 'fourth', 'special', 'training'],
   styles: ['retro', 'city-edition', 'special'],
 };

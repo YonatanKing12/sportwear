@@ -1,0 +1,164 @@
+{
+  "handle": "green-bay-packers-tucker-kraft-85-green-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "green-bay-packers",
+    "code": "GB",
+    "he": "גרין ביי פאקרס",
+    "en": "Green Bay Packers",
+    "ar": "غرين باي باكرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "tucker-kraft",
+    "name_on_back": "KRAFT",
+    "he": "טאקר קראפט",
+    "en": "Tucker Kraft",
+    "ar": "تاكر كرافت"
+  },
+  "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 85 ירוק",
+  "description_html_he": "<p>חולצת פוטבול של גרין ביי פאקרס בצבע ירוק, עם השם KRAFT והמספר 85 על הגב (טאקר קראפט).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 85 ירוק",
+    "description_he": "חולצת פוטבול של גרין ביי פאקרס בצבע ירוק, עם KRAFT 85 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-GB-85-GRN-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-GB-85-GRN-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-GB-85-GRN-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-GB-85-GRN-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/green-bay-packers-85-green-149954975-10.png",
+      "alt_he": "חולצת פוטבול גרין ביי פאקרס מספר 85 ירוק",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/green-bay-packers-85-green-149954975-10__back.png",
+      "alt_he": "חולצת פוטבול גרין ביי פאקרס מספר 85 ירוק (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Green Bay Packers #85 NFL Jersey – Green",
+      "description_html": "<p>Green Bay Packers NFL jersey in green, with the name KRAFT and the number 85 on the back (Tucker Kraft).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Green Bay Packers #85 NFL Jersey – Green",
+      "seo_description": "Green Bay Packers NFL jersey in green, KRAFT 85 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية غرين باي باكرز رقم 85 أخضر",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق غرين باي باكرز باللون الأخضر، مع الاسم KRAFT والرقم 85 على الظهر (تاكر كرافت).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية غرين باي باكرز رقم 85 أخضر",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق غرين باي باكرز باللون الأخضر، KRAFT 85 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149954975?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "包装工",
+    "photos": {
+      "front": "149954975/10",
+      "back": "149954975/10"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:green-bay-packers",
+    "league:nfl",
+    "audience:adult",
+    "player:tucker-kraft",
+    "טאקר קראפט",
+    "new",
+    "source:nfl-cyq888",
+    "album:149954975",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "green bay packers",
+    "packers",
+    "غرين باي باكرز",
+    "باكرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "tucker kraft",
+    "تاكر كرافت"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "home: gold/white/gold sleeve stripes, gold-white striped collar, TV numbers on shoulders",
+    "render": "green-bay-packers-85-green-149954975-10"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332195500336",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935148441904",
+      "M": "gid://shopify/ProductVariant/67935148474672",
+      "L": "gid://shopify/ProductVariant/67935148507440",
+      "XL": "gid://shopify/ProductVariant/67935148540208"
+    },
+    "created_at": "2026-10-04T10:46:41Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:13:32Z",
+      "ar": "2026-10-04T11:13:32Z"
+    }
+  }
+}

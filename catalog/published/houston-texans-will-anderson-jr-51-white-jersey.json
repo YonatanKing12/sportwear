@@ -1,0 +1,164 @@
+{
+  "handle": "houston-texans-will-anderson-jr-51-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "houston-texans",
+    "code": "HOU",
+    "he": "יוסטון טקסאנס",
+    "en": "Houston Texans",
+    "ar": "هيوستن تكسانز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "will-anderson-jr",
+    "name_on_back": "ANDERSON JR",
+    "he": "וויל אנדרסון ג׳וניור",
+    "en": "Will Anderson Jr.",
+    "ar": "ويل أندرسون جونيور"
+  },
+  "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 51 לבן",
+  "description_html_he": "<p>חולצת פוטבול של יוסטון טקסאנס בצבע לבן, עם השם ANDERSON JR והמספר 51 על הגב (וויל אנדרסון ג׳וניור).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 51 לבן",
+    "description_he": "חולצת פוטבול של יוסטון טקסאנס בצבע לבן, עם ANDERSON JR 51 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-HOU-51-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-HOU-51-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-HOU-51-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-HOU-51-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/houston-texans-51-white-150455327-05.png",
+      "alt_he": "חולצת פוטבול יוסטון טקסאנס מספר 51 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/houston-texans-51-white-150455327-05__back.png",
+      "alt_he": "חולצת פוטבול יוסטון טקסאנס מספר 51 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Houston Texans #51 NFL Jersey – White",
+      "description_html": "<p>Houston Texans NFL jersey in white, with the name ANDERSON JR and the number 51 on the back (Will Anderson Jr.).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Houston Texans #51 NFL Jersey – White",
+      "seo_description": "Houston Texans NFL jersey in white, ANDERSON JR 51 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية هيوستن تكسانز رقم 51 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق هيوستن تكسانز باللون الأبيض، مع الاسم ANDERSON JR والرقم 51 على الظهر (ويل أندرسون جونيور).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية هيوستن تكسانز رقم 51 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق هيوستن تكسانز باللون الأبيض، ANDERSON JR 51 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/150455327?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "德州人",
+    "photos": {
+      "front": "150455327/05",
+      "back": "150455327/05"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:houston-texans",
+    "league:nfl",
+    "audience:adult",
+    "player:will-anderson-jr",
+    "וויל אנדרסון ג׳וניור",
+    "new",
+    "source:nfl-cyq888",
+    "album:150455327",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "houston texans",
+    "texans",
+    "هيوستن تكسانز",
+    "تكسانز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "will anderson jr",
+    "ويل أندرسون جونيور"
+  ],
+  "review": {
+    "style_guess": "unknown",
+    "variant": "white body, light-blue dotted numbers, red/navy striped sleeve bands, 'HOUSTON' inside the collar, H-with-star logo under the back collar",
+    "render": "houston-texans-51-white-150455327-05"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332204282160",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935169478960",
+      "M": "gid://shopify/ProductVariant/67935169511728",
+      "L": "gid://shopify/ProductVariant/67935169544496",
+      "XL": "gid://shopify/ProductVariant/67935169577264"
+    },
+    "created_at": "2026-10-04T10:52:58Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:17:15Z",
+      "ar": "2026-10-04T11:17:15Z"
+    }
+  }
+}

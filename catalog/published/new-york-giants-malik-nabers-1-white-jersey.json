@@ -1,0 +1,165 @@
+{
+  "handle": "new-york-giants-malik-nabers-1-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "new-york-giants",
+    "code": "NYG",
+    "he": "ניו יורק ג׳איינטס",
+    "en": "New York Giants",
+    "ar": "نيويورك جاينتس"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "malik-nabers",
+    "name_on_back": "NABERS",
+    "he": "מאליק נייברס",
+    "en": "Malik Nabers",
+    "ar": "مالك نايبرز"
+  },
+  "title_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 1 לבן",
+  "description_html_he": "<p>חולצת פוטבול של ניו יורק ג׳איינטס בצבע לבן, עם השם NABERS והמספר 1 על הגב (מאליק נייברס).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 1 לבן",
+    "description_he": "חולצת פוטבול של ניו יורק ג׳איינטס בצבע לבן, עם NABERS 1 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-NYG-1-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-NYG-1-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-NYG-1-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-NYG-1-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-york-giants-1-white-157132868-20.png",
+      "alt_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 1 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-york-giants-1-white-157132868-20__back.png",
+      "alt_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 1 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "New York Giants #1 NFL Jersey – White",
+      "description_html": "<p>New York Giants NFL jersey in white, with the name NABERS and the number 1 on the back (Malik Nabers).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "New York Giants #1 NFL Jersey – White",
+      "seo_description": "New York Giants NFL jersey in white, NABERS 1 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية نيويورك جاينتس رقم 1 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق نيويورك جاينتس باللون الأبيض، مع الاسم NABERS والرقم 1 على الظهر (مالك نايبرز).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية نيويورك جاينتس رقم 1 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق نيويورك جاينتس باللون الأبيض، NABERS 1 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/157132868?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "巨人",
+    "photos": {
+      "front": "157132868/20",
+      "back": "157132868/20"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:new-york-giants",
+    "league:nfl",
+    "audience:adult",
+    "player:malik-nabers",
+    "מאליק נייברס",
+    "new",
+    "source:nfl-cyq888",
+    "album:157132868",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "new york giants",
+    "giants",
+    "نيويورك جاينتس",
+    "جاينتس",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "malik nabers",
+    "nabers",
+    "مالك نايبرز"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "standard road: red 'ny' logo, red/white striped sleeve bands",
+    "render": "new-york-giants-1-white-157132868-20"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332209230128",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935200149808",
+      "M": "gid://shopify/ProductVariant/67935200182576",
+      "L": "gid://shopify/ProductVariant/67935200215344",
+      "XL": "gid://shopify/ProductVariant/67935200248112"
+    },
+    "created_at": "2026-10-04T11:04:02Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:22:04Z",
+      "ar": "2026-10-04T11:22:04Z"
+    }
+  }
+}

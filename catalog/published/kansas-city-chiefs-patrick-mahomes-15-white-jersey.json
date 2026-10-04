@@ -1,0 +1,165 @@
+{
+  "handle": "kansas-city-chiefs-patrick-mahomes-15-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "kansas-city-chiefs",
+    "code": "KC",
+    "he": "קנזס סיטי צ׳יפס",
+    "en": "Kansas City Chiefs",
+    "ar": "كانساس سيتي تشيفز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "patrick-mahomes",
+    "name_on_back": "MAHOMES",
+    "he": "פטריק מהומס",
+    "en": "Patrick Mahomes",
+    "ar": "باتريك ماهومز"
+  },
+  "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 לבן",
+  "description_html_he": "<p>חולצת פוטבול של קנזס סיטי צ׳יפס בצבע לבן, עם השם MAHOMES והמספר 15 על הגב (פטריק מהומס).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 לבן",
+    "description_he": "חולצת פוטבול של קנזס סיטי צ׳יפס בצבע לבן, עם MAHOMES 15 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-KC-15-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-KC-15-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-KC-15-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-KC-15-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/kansas-city-chiefs-15-white-148033938-24.png",
+      "alt_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/kansas-city-chiefs-15-white-148033938-24__back.png",
+      "alt_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Kansas City Chiefs #15 NFL Jersey – White",
+      "description_html": "<p>Kansas City Chiefs NFL jersey in white, with the name MAHOMES and the number 15 on the back (Patrick Mahomes).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Kansas City Chiefs #15 NFL Jersey – White",
+      "seo_description": "Kansas City Chiefs NFL jersey in white, MAHOMES 15 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية كانساس سيتي تشيفز رقم 15 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق كانساس سيتي تشيفز باللون الأبيض، مع الاسم MAHOMES والرقم 15 على الظهر (باتريك ماهومز).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية كانساس سيتي تشيفز رقم 15 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق كانساس سيتي تشيفز باللون الأبيض، MAHOMES 15 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/148033938?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "酋长",
+    "photos": {
+      "front": "148033938/24",
+      "back": "148033938/24"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:kansas-city-chiefs",
+    "league:nfl",
+    "audience:adult",
+    "player:patrick-mahomes",
+    "פטריק מהומס",
+    "new",
+    "source:nfl-cyq888",
+    "album:148033938",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "kansas city chiefs",
+    "chiefs",
+    "كانساس سيتي تشيفز",
+    "تشيفز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "patrick mahomes",
+    "mahomes",
+    "باتريك ماهومز"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "away: red/gold/red sleeve stripes, AFL logo patch on chest, TV numbers on shoulders",
+    "render": "kansas-city-chiefs-15-white-148033938-24"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332194386224",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935144345904",
+      "M": "gid://shopify/ProductVariant/67935144378672",
+      "L": "gid://shopify/ProductVariant/67935144411440",
+      "XL": "gid://shopify/ProductVariant/67935144444208"
+    },
+    "created_at": "2026-10-04T10:45:25Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:14:44Z",
+      "ar": "2026-10-04T11:14:44Z"
+    }
+  }
+}

@@ -222,7 +222,7 @@ function classify(product) {
   } else {
     player = matchPlayer(title);
     if (player) playerSource = 'title';
-    else if (sport === 'basketball' && team && C.player_numbers[team]) {
+    else if ((sport === 'basketball' || sport === 'american-football') && team && C.player_numbers[team]) {
       const number = shirtNumber(title);
       player = (number && C.player_numbers[team][number]) || null;
       if (player) playerSource = 'number';

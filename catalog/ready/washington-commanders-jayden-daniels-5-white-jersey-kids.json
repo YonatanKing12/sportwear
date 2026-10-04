@@ -1,0 +1,157 @@
+{
+  "handle": "washington-commanders-jayden-daniels-5-white-jersey-kids",
+  "status": "ready",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "washington-commanders",
+    "code": "WAS",
+    "he": "וושינגטון קומנדרס",
+    "en": "Washington Commanders",
+    "ar": "واشنطن كوماندرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "jayden-daniels",
+    "name_on_back": "DANIELS",
+    "he": "ג׳יידן דניאלס",
+    "en": "Jayden Daniels",
+    "ar": "جايدن دانيلز"
+  },
+  "title_he": "חולצת פוטבול וושינגטון קומנדרס מספר 5 לבן – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של וושינגטון קומנדרס בצבע לבן, עם השם DANIELS והמספר 5 על הגב (ג׳יידן דניאלס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול וושינגטון קומנדרס מספר 5 לבן – ילדים",
+    "description_he": "חולצת פוטבול של וושינגטון קומנדרס בצבע לבן, עם DANIELS 5 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-WAS-5-WHT-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-WAS-5-WHT-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-WAS-5-WHT-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-WAS-5-WHT-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/washington-commanders-5-white-213772889-09-kids.png",
+      "alt_he": "חולצת פוטבול וושינגטון קומנדרס מספר 5 לבן – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/washington-commanders-5-white-213772889-09-kids__back.png",
+      "alt_he": "חולצת פוטבול וושינגטון קומנדרס מספר 5 לבן – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Washington Commanders #5 NFL Jersey – White – Kids",
+      "description_html": "<p>Washington Commanders NFL jersey in white, with the name DANIELS and the number 5 on the back (Jayden Daniels).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Washington Commanders #5 NFL Jersey – White – Kids",
+      "seo_description": "Washington Commanders NFL jersey in white, DANIELS 5 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية واشنطن كوماندرز رقم 5 أبيض – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق واشنطن كوماندرز باللون الأبيض، مع الاسم DANIELS والرقم 5 على الظهر (جايدن دانيلز).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية واشنطن كوماندرز رقم 5 أبيض – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق واشنطن كوماندرز باللون الأبيض، DANIELS 5 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213772889?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装指挥官",
+    "photos": {
+      "front": "213772889/09",
+      "back": "213772889/09"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:washington-commanders",
+    "league:nfl",
+    "audience:kids",
+    "player:jayden-daniels",
+    "ג׳יידן דניאלס",
+    "new",
+    "source:nfl-cyq888",
+    "album:213772889",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "washington commanders",
+    "commanders",
+    "واشنطن كوماندرز",
+    "كوماندرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "jayden daniels",
+    "daniels",
+    "جايدن دانيلز"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "current away white: 'WASHINGTON' chest wordmark, burgundy sleeves with checkered white/black stripes, round crest patch under the back collar",
+    "render": "washington-commanders-5-white-213772889-09-kids"
+  }
+}

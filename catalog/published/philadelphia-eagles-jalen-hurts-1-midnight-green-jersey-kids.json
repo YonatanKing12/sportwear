@@ -1,0 +1,171 @@
+{
+  "handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "philadelphia-eagles",
+    "code": "PHI",
+    "he": "פילדלפיה איגלס",
+    "en": "Philadelphia Eagles",
+    "ar": "فيلادلفيا إيغلز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "jalen-hurts",
+    "name_on_back": "HURTS",
+    "he": "ג׳יילן הרטס",
+    "en": "Jalen Hurts",
+    "ar": "جالين هيرتس"
+  },
+  "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של פילדלפיה איגלס בצבע ירוק כהה, עם השם HURTS והמספר 1 על הגב (ג׳יילן הרטס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה – ילדים",
+    "description_he": "חולצת פוטבול של פילדלפיה איגלס בצבע ירוק כהה, עם HURTS 1 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-PHI-1-MGR-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-PHI-1-MGR-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-PHI-1-MGR-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-PHI-1-MGR-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/philadelphia-eagles-1-teal-213771899-04-kids.png",
+      "alt_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/philadelphia-eagles-1-teal-213771899-04-kids__back.png",
+      "alt_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Philadelphia Eagles #1 NFL Jersey – Midnight Green – Kids",
+      "description_html": "<p>Philadelphia Eagles NFL jersey in midnight green, with the name HURTS and the number 1 on the back (Jalen Hurts).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Philadelphia Eagles #1 NFL Jersey – Midnight Green – Kids",
+      "seo_description": "Philadelphia Eagles NFL jersey in midnight green, HURTS 1 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية فيلادلفيا إيغلز رقم 1 أخضر داكن – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق فيلادلفيا إيغلز باللون الأخضر الداكن، مع الاسم HURTS والرقم 1 على الظهر (جالين هيرتس).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص NFL فيلادلفيا إيغلز رقم 1 أخضر داكن – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق فيلادلفيا إيغلز باللون الأخضر الداكن، HURTS 1 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213771899?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装老鹰",
+    "photos": {
+      "front": "213771899/04",
+      "back": "213771899/04"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:philadelphia-eagles",
+    "league:nfl",
+    "audience:kids",
+    "player:jalen-hurts",
+    "ג׳יילן הרטס",
+    "new",
+    "source:nfl-cyq888",
+    "album:213771899",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "philadelphia eagles",
+    "eagles",
+    "فيلادلفيا إيغلز",
+    "إيغلز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "jalen hurts",
+    "hurts",
+    "جالين هيرتس"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "midnight green home: black collar and sleeve cuffs, italic 'EAGLES' chest wordmark",
+    "render": "philadelphia-eagles-1-teal-213771899-04-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332211491120",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935208735024",
+      "M": "gid://shopify/ProductVariant/67935208767792",
+      "L": "gid://shopify/ProductVariant/67935208800560",
+      "XL": "gid://shopify/ProductVariant/67935208833328"
+    },
+    "created_at": "2026-10-04T11:09:27Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:33:05Z",
+      "ar": "2026-10-04T11:33:05Z"
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "handle": "las-vegas-raiders-maxx-crosby-98-black-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "las-vegas-raiders",
+    "code": "LV",
+    "he": "לאס וגאס ריידרס",
+    "en": "Las Vegas Raiders",
+    "ar": "لاس فيغاس رايدرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "maxx-crosby",
+    "name_on_back": "CROSBY",
+    "he": "מקס קרוסבי",
+    "en": "Maxx Crosby",
+    "ar": "ماكس كروسبي"
+  },
+  "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור",
+  "description_html_he": "<p>חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם השם CROSBY והמספר 98 על הגב (מקס קרוסבי).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור",
+    "description_he": "חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם CROSBY 98 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LV-98-BLK-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LV-98-BLK-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LV-98-BLK-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LV-98-BLK-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-98-black-149440630-25.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-98-black-149440630-25__back.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "las-vegas-raiders-maxx-crosby-98-black-jersey-kids",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Las Vegas Raiders #98 NFL Jersey – Black",
+      "description_html": "<p>Las Vegas Raiders NFL jersey in black, with the name CROSBY and the number 98 on the back (Maxx Crosby).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Las Vegas Raiders #98 NFL Jersey – Black",
+      "seo_description": "Las Vegas Raiders NFL jersey in black, CROSBY 98 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لاس فيغاس رايدرز رقم 98 أسود",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، مع الاسم CROSBY والرقم 98 على الظهر (ماكس كروسبي).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية لاس فيغاس رايدرز رقم 98 أسود",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، CROSBY 98 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149440630?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "突击者",
+    "photos": {
+      "front": "149440630/25",
+      "back": "149440630/25"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:las-vegas-raiders",
+    "league:nfl",
+    "audience:adult",
+    "player:maxx-crosby",
+    "מקס קרוסבי",
+    "new",
+    "source:nfl-cyq888",
+    "album:149440630",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "las vegas raiders",
+    "raiders",
+    "لاس فيغاس رايدرز",
+    "رايدرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "maxx crosby",
+    "crosby",
+    "ماكس كروسبي"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "",
+    "render": "las-vegas-raiders-98-black-149440630-25"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332205822256",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935177441584",
+      "M": "gid://shopify/ProductVariant/67935177474352",
+      "L": "gid://shopify/ProductVariant/67935177507120",
+      "XL": "gid://shopify/ProductVariant/67935177539888"
+    },
+    "created_at": "2026-10-04T10:58:10Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:23:33Z",
+      "ar": "2026-10-04T11:23:33Z"
+    }
+  }
+}

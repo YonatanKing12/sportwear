@@ -1,0 +1,164 @@
+{
+  "handle": "baltimore-ravens-zay-flowers-4-purple-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "baltimore-ravens",
+    "code": "BAL",
+    "he": "בולטימור רייבנס",
+    "en": "Baltimore Ravens",
+    "ar": "بالتيمور رافنز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "zay-flowers",
+    "name_on_back": "FLOWERS",
+    "he": "זיי פלאוורס",
+    "en": "Zay Flowers",
+    "ar": "زاي فلاورز"
+  },
+  "title_he": "חולצת פוטבול בולטימור רייבנס מספר 4 סגול",
+  "description_html_he": "<p>חולצת פוטבול של בולטימור רייבנס בצבע סגול, עם השם FLOWERS והמספר 4 על הגב (זיי פלאוורס).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול בולטימור רייבנס מספר 4 סגול",
+    "description_he": "חולצת פוטבול של בולטימור רייבנס בצבע סגול, עם FLOWERS 4 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-BAL-4-PUR-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-BAL-4-PUR-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-BAL-4-PUR-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-BAL-4-PUR-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/baltimore-ravens-4-purple-149773646-06.png",
+      "alt_he": "חולצת פוטבול בולטימור רייבנס מספר 4 סגול",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/baltimore-ravens-4-purple-149773646-06__back.png",
+      "alt_he": "חולצת פוטבול בולטימור רייבנס מספר 4 סגול (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Baltimore Ravens #4 NFL Jersey – Purple",
+      "description_html": "<p>Baltimore Ravens NFL jersey in purple, with the name FLOWERS and the number 4 on the back (Zay Flowers).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Baltimore Ravens #4 NFL Jersey – Purple",
+      "seo_description": "Baltimore Ravens NFL jersey in purple, FLOWERS 4 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية بالتيمور رافنز رقم 4 بنفسجي",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق بالتيمور رافنز باللون البنفسجي، مع الاسم FLOWERS والرقم 4 على الظهر (زاي فلاورز).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية بالتيمور رافنز رقم 4 بنفسجي",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق بالتيمور رافنز باللون البنفسجي، FLOWERS 4 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149773646?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "乌鸦",
+    "photos": {
+      "front": "149773646/06",
+      "back": "149773646/06"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:baltimore-ravens",
+    "league:nfl",
+    "audience:adult",
+    "player:zay-flowers",
+    "זיי פלאוורס",
+    "new",
+    "source:nfl-cyq888",
+    "album:149773646",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "baltimore ravens",
+    "ravens",
+    "بالتيمور رافنز",
+    "رافنز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "zay flowers",
+    "زاي فلاورز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "new design: black feather-stripe collar, 'PLAY LIKE A RAVEN' neck tape, RAVENS chest wordmark, black cuffs",
+    "render": "baltimore-ravens-4-purple-149773646-06"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332208083248",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935195988272",
+      "M": "gid://shopify/ProductVariant/67935196021040",
+      "L": "gid://shopify/ProductVariant/67935196053808",
+      "XL": "gid://shopify/ProductVariant/67935196086576"
+    },
+    "created_at": "2026-10-04T11:00:49Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:27:26Z",
+      "ar": "2026-10-04T11:27:26Z"
+    }
+  }
+}

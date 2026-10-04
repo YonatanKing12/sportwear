@@ -1,0 +1,165 @@
+{
+  "handle": "minnesota-vikings-justin-jefferson-18-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "minnesota-vikings",
+    "code": "MIN",
+    "he": "מינסוטה ויקינגס",
+    "en": "Minnesota Vikings",
+    "ar": "مينيسوتا فايكنغز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "justin-jefferson",
+    "name_on_back": "JEFFERSON",
+    "he": "ג׳סטין ג׳פרסון",
+    "en": "Justin Jefferson",
+    "ar": "جاستن جيفرسون"
+  },
+  "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן",
+  "description_html_he": "<p>חולצת פוטבול של מינסוטה ויקינגס בצבע לבן, עם השם JEFFERSON והמספר 18 על הגב (ג׳סטין ג׳פרסון).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן",
+    "description_he": "חולצת פוטבול של מינסוטה ויקינגס בצבע לבן, עם JEFFERSON 18 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-MIN-18-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-MIN-18-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-MIN-18-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-MIN-18-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/minnesota-vikings-18-white-149954908-31.png",
+      "alt_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/minnesota-vikings-18-white-149954908-31__back.png",
+      "alt_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "minnesota-vikings-justin-jefferson-18-white-jersey-kids",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Minnesota Vikings #18 NFL Jersey – White",
+      "description_html": "<p>Minnesota Vikings NFL jersey in white, with the name JEFFERSON and the number 18 on the back (Justin Jefferson).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Minnesota Vikings #18 NFL Jersey – White",
+      "seo_description": "Minnesota Vikings NFL jersey in white, JEFFERSON 18 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية مينيسوتا فايكنغز رقم 18 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق مينيسوتا فايكنغز باللون الأبيض، مع الاسم JEFFERSON والرقم 18 على الظهر (جاستن جيفرسون).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية مينيسوتا فايكنغز رقم 18 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق مينيسوتا فايكنغز باللون الأبيض، JEFFERSON 18 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149954908?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "维京人",
+    "photos": {
+      "front": "149954908/31",
+      "back": "149954908/31"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:minnesota-vikings",
+    "league:nfl",
+    "audience:adult",
+    "player:justin-jefferson",
+    "ג׳סטין ג׳פרסון",
+    "new",
+    "source:nfl-cyq888",
+    "album:149954908",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "minnesota vikings",
+    "vikings",
+    "مينيسوتا فايكنغز",
+    "فايكنغز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "justin jefferson",
+    "jefferson",
+    "جاستن جيفرسون"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "standard away: purple numbers, VIKINGS wordmark, purple/gold horn-shaped sleeve stripes",
+    "render": "minnesota-vikings-18-white-149954908-31"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332198089008",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935152111920",
+      "M": "gid://shopify/ProductVariant/67935152144688",
+      "L": "gid://shopify/ProductVariant/67935152177456",
+      "XL": "gid://shopify/ProductVariant/67935152210224"
+    },
+    "created_at": "2026-10-04T10:47:46Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:16:09Z",
+      "ar": "2026-10-04T11:16:09Z"
+    }
+  }
+}

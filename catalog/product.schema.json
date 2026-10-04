@@ -32,8 +32,10 @@
       "description": "{team-slug}-{kit-slug}-{season-slug}[-kids], e.g. real-madrid-home-jersey-2026-27. Never changes after publishing."
     },
     "status": { "enum": ["needs_review", "ready", "published_draft", "active"] },
-    "sport": { "enum": ["football", "basketball"] },
-    "product_type": { "enum": ["Football Jersey", "Football Kit", "Basketball Jersey", "Basketball Shorts"] },
+    "sport": { "enum": ["football", "basketball", "american-football"] },
+    "product_type": {
+      "enum": ["Football Jersey", "Football Kit", "Basketball Jersey", "Basketball Shorts", "NFL Jersey"]
+    },
     "audience": { "enum": ["adult", "kids"] },
     "size_chart": {
       "type": ["string", "null"],
@@ -44,7 +46,11 @@
       "required": ["slug", "code", "he", "en", "ar"],
       "properties": {
         "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
-        "code": { "type": "string", "pattern": "^[A-Z]{3}$" },
+        "code": {
+          "type": "string",
+          "pattern": "^[A-Z]{2,3}$",
+          "description": "Three letters; NFL teams use the league's own two- or three-letter codes (KC, GB, PHI)."
+        },
         "he": { "type": "string" },
         "he_short": { "type": "string" },
         "en": { "type": "string" },
@@ -63,6 +69,22 @@
       "description": "e.g. 26/27, or the year of a national team's kit (2026)"
     },
     "vendor": { "type": ["string", "null"], "description": "Manufacturer brand, e.g. Nike, adidas, Puma" },
+    "player": {
+      "type": ["object", "null"],
+      "description": "NFL jerseys: the player whose name is printed on the back (taxonomy.json players).",
+      "required": ["slug", "en"],
+      "properties": {
+        "slug": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+        "name_on_back": { "type": "string" },
+        "he": { "type": "string" },
+        "en": { "type": "string" },
+        "ar": { "type": "string" }
+      }
+    },
+    "review": {
+      "type": ["object", "null"],
+      "description": "Notes from the photo review (style, variant, the studio render's name)."
+    },
     "title_he": { "type": "string" },
     "description_html_he": { "type": "string" },
     "seo": {
@@ -107,7 +129,11 @@
             ]
           },
           "source_size_label": { "type": ["string", "null"] },
-          "sku": { "type": "string", "pattern": "^SW-(FJ|FK|BJ|BS)-[A-Z]{3}-(H|A|T|F|S|TR)-\\d{4}-(A|K)-[A-Z0-9-]+$" },
+          "sku": {
+            "type": "string",
+            "pattern": "^SW-((FJ|FK|BJ|BS)-[A-Z]{3}-(H|A|T|F|S|TR)-\\d{4}-(A|K)-[A-Z0-9-]+|NJ-[A-Z]{2,3}-\\d{1,2}-[A-Z]{3}(-[A-Z]{1,2})?-(A|K)-[A-Z0-9]+)$",
+            "description": "NFL jerseys: SW-NJ-{team code}-{number}-{colour}[-T throwback|-NS/GN detail]-{A|K}-{size}"
+          },
           "barcode": { "type": ["string", "null"] },
           "price": { "type": ["number", "null"], "minimum": 0 },
           "compare_at_price": { "type": ["number", "null"], "minimum": 0 },

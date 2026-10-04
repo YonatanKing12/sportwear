@@ -1,0 +1,156 @@
+{
+  "handle": "indianapolis-colts-jonathan-taylor-28-blue-jersey-kids",
+  "status": "ready",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "indianapolis-colts",
+    "code": "IND",
+    "he": "אינדיאנפוליס קולטס",
+    "en": "Indianapolis Colts",
+    "ar": "إنديانابوليس كولتس"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "jonathan-taylor",
+    "name_on_back": "TAYLOR",
+    "he": "ג׳ונתן טיילור",
+    "en": "Jonathan Taylor",
+    "ar": "جوناثان تايلور"
+  },
+  "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 כחול – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של אינדיאנפוליס קולטס בצבע כחול, עם השם TAYLOR והמספר 28 על הגב (ג׳ונתן טיילור).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 כחול – ילדים",
+    "description_he": "חולצת פוטבול של אינדיאנפוליס קולטס בצבע כחול, עם TAYLOR 28 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-IND-28-BLU-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-IND-28-BLU-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-IND-28-BLU-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-IND-28-BLU-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/indianapolis-colts-28-royal-blue-214161852-03-kids.png",
+      "alt_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 כחול – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/indianapolis-colts-28-royal-blue-214161852-03-kids__back.png",
+      "alt_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 כחול – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "indianapolis-colts-jonathan-taylor-28-blue-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Indianapolis Colts #28 NFL Jersey – Blue – Kids",
+      "description_html": "<p>Indianapolis Colts NFL jersey in blue, with the name TAYLOR and the number 28 on the back (Jonathan Taylor).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Indianapolis Colts #28 NFL Jersey – Blue – Kids",
+      "seo_description": "Indianapolis Colts NFL jersey in blue, TAYLOR 28 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية إنديانابوليس كولتس رقم 28 أزرق – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق إنديانابوليس كولتس باللون الأزرق، مع الاسم TAYLOR والرقم 28 على الظهر (جوناثان تايلور).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص NFL إنديانابوليس كولتس رقم 28 أزرق – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق إنديانابوليس كولتس باللون الأزرق، TAYLOR 28 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214161852?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装小马",
+    "photos": {
+      "front": "214161852/03",
+      "back": "214161852/03"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:indianapolis-colts",
+    "league:nfl",
+    "audience:kids",
+    "player:jonathan-taylor",
+    "ג׳ונתן טיילור",
+    "new",
+    "source:nfl-cyq888",
+    "album:214161852",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "indianapolis colts",
+    "colts",
+    "إنديانابوليس كولتس",
+    "كولتس",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "jonathan taylor",
+    "جوناثان تايلور"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "classic home: white shoulder stripes, 'C' on collar",
+    "render": "indianapolis-colts-28-royal-blue-214161852-03-kids"
+  }
+}

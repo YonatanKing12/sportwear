@@ -53,6 +53,18 @@
       "audience": "kids",
       "price": 249,
       "source": "owner, 2026-09-28 (as the adult hoodies; only the kids jersey was changed, to ₪89)"
+    },
+    {
+      "product_type": "NFL Jersey",
+      "audience": "adult",
+      "price": 139,
+      "source": "owner, 2026-10-04 (answer to our question: '₪139' for an adult NFL jersey, like the football shirts)"
+    },
+    {
+      "product_type": "NFL Jersey",
+      "audience": "kids",
+      "price": 89,
+      "source": "owner, 2026-10-04 (answer to our question: '₪89' for a kids NFL jersey, like the kids basketball jerseys)"
     }
   ],
   "sets": {

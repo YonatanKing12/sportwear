@@ -25,6 +25,7 @@ KIND = {
     'Football Kit': 'kids football kit (a shirt and its matching shorts)',
     'Hoodie': 'hooded sweatshirt',
     'Basketball Shorts': 'pair of basketball shorts',
+    'NFL Jersey': 'American football (NFL) jersey',
 }
 
 PROMPT = (

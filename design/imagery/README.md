@@ -135,9 +135,9 @@ name on a basketball (shorts tile) was painted out. The hero section's scrim and
 frames (`sections/hero-slideshow.liquid`): worst-case contrast of the white text over the photos was 8.5:1
 in he/en/ar from 360 to 1920 px wide. Record, with the products shown and the style block: `home-photos-2026-09-28.json`.
 
-Older sets: `sw-v3-*` and `sw-v2-*` (the first AI generation, glossy golden-hour look) stay in Files
-because the live theme uses them until "SportWear (next 2)" is published; `sw-*.jpg` (the first, darker
-set, prompts in `prompts.json`) is unused.
+Older sets: `sw-v3-*` and `sw-v2-*` (the first AI generation, glossy golden-hour look) stay in Files; the
+live theme stopped using them when the owner published "SportWear (next 2)" on 2026-09-29. `sw-*.jpg` (the
+first, darker set, prompts in `prompts.json`) is unused.
 
 Rules for new atmosphere photos: fictional people only (no recognisable real people or players), jerseys
 as they are sold (no added names, numbers or text), and never present them as customers. Team names and

@@ -148,7 +148,7 @@
           "type": "tile",
           "settings": {
             "image": "shopify://shop_images/sw-v4-cat-hoodies.jpg",
-            "collection": "nfl-hoodies"
+            "collection": "nfl"
           }
         },
         "kids": {
@@ -832,6 +832,27 @@
         "padding_bottom": 40
       }
     },
+    "nfl": {
+      "type": "featured-collection",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "source": "collection",
+        "collection": "nfl-jerseys",
+        "copy": "nfl",
+        "audience": "all",
+        "product_type": "all",
+        "one_per_team": true,
+        "layout": "carousel",
+        "intro_card": false,
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "columns_mobile": "1",
+        "show_view_all": true,
+        "show_count": true,
+        "padding_top": 44,
+        "padding_bottom": 44
+      }
+    },
     "hoodies": {
       "type": "featured-collection",
       "settings": {
@@ -874,6 +895,7 @@
     "national_teams",
     "special_editions",
     "teams",
+    "nfl",
     "hoodies",
     "cta_band"
   ]

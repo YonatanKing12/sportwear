@@ -1,0 +1,164 @@
+{
+  "handle": "new-york-jets-justin-fields-7-green-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "new-york-jets",
+    "code": "NYJ",
+    "he": "ניו יורק ג׳טס",
+    "en": "New York Jets",
+    "ar": "نيويورك جتس"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "justin-fields",
+    "name_on_back": "FIELDS",
+    "he": "ג׳סטין פילדס",
+    "en": "Justin Fields",
+    "ar": "جاستن فيلدز"
+  },
+  "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 7 ירוק",
+  "description_html_he": "<p>חולצת פוטבול של ניו יורק ג׳טס בצבע ירוק, עם השם FIELDS והמספר 7 על הגב (ג׳סטין פילדס).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 7 ירוק",
+    "description_he": "חולצת פוטבול של ניו יורק ג׳טס בצבע ירוק, עם FIELDS 7 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-NYJ-7-GRN-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-NYJ-7-GRN-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-NYJ-7-GRN-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-NYJ-7-GRN-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-york-jets-7-green-151347506-01.png",
+      "alt_he": "חולצת פוטבול ניו יורק ג׳טס מספר 7 ירוק",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-york-jets-7-green-151347506-01__back.png",
+      "alt_he": "חולצת פוטבול ניו יורק ג׳טס מספר 7 ירוק (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "New York Jets #7 NFL Jersey – Green",
+      "description_html": "<p>New York Jets NFL jersey in green, with the name FIELDS and the number 7 on the back (Justin Fields).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "New York Jets #7 NFL Jersey – Green",
+      "seo_description": "New York Jets NFL jersey in green, FIELDS 7 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية نيويورك جتس رقم 7 أخضر",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق نيويورك جتس باللون الأخضر، مع الاسم FIELDS والرقم 7 على الظهر (جاستن فيلدز).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية نيويورك جتس رقم 7 أخضر",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق نيويورك جتس باللون الأخضر، FIELDS 7 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/151347506?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "喷气机",
+    "photos": {
+      "front": "151347506/01",
+      "back": "151347506/01"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:new-york-jets",
+    "league:nfl",
+    "audience:adult",
+    "player:justin-fields",
+    "ג׳סטין פילדס",
+    "new",
+    "source:nfl-cyq888",
+    "album:151347506",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "new york jets",
+    "jets",
+    "نيويورك جتس",
+    "جتس",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "justin fields",
+    "جاستن فيلدز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "Legacy green but with a BLACK V-collar and black back collar (the other Legacy green photos and the official renders have a white collar)",
+    "render": "new-york-jets-7-green-151347506-01"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332209197360",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935200018736",
+      "M": "gid://shopify/ProductVariant/67935200051504",
+      "L": "gid://shopify/ProductVariant/67935200084272",
+      "XL": "gid://shopify/ProductVariant/67935200117040"
+    },
+    "created_at": "2026-10-04T11:03:56Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:31:13Z",
+      "ar": "2026-10-04T11:31:13Z"
+    }
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "handle": "buffalo-bills-dalton-kincaid-86-blue-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "buffalo-bills",
+    "code": "BUF",
+    "he": "באפלו בילס",
+    "en": "Buffalo Bills",
+    "ar": "بافالو بيلز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "dalton-kincaid",
+    "name_on_back": "KINCAID",
+    "he": "דלטון קינקייד",
+    "en": "Dalton Kincaid",
+    "ar": "دالتون كينكيد"
+  },
+  "title_he": "חולצת פוטבול באפלו בילס מספר 86 כחול",
+  "description_html_he": "<p>חולצת פוטבול של באפלו בילס בצבע כחול, עם השם KINCAID והמספר 86 על הגב (דלטון קינקייד).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול באפלו בילס מספר 86 כחול",
+    "description_he": "חולצת פוטבול של באפלו בילס בצבע כחול, עם KINCAID 86 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-BUF-86-BLU-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-BUF-86-BLU-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-BUF-86-BLU-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-BUF-86-BLU-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/buffalo-bills-86-royal-blue-148034170-01.png",
+      "alt_he": "חולצת פוטבול באפלו בילס מספר 86 כחול",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/buffalo-bills-86-royal-blue-148034170-01__back.png",
+      "alt_he": "חולצת פוטבול באפלו בילס מספר 86 כחול (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Buffalo Bills #86 NFL Jersey – Blue",
+      "description_html": "<p>Buffalo Bills NFL jersey in blue, with the name KINCAID and the number 86 on the back (Dalton Kincaid).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Buffalo Bills #86 NFL Jersey – Blue",
+      "seo_description": "Buffalo Bills NFL jersey in blue, KINCAID 86 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية بافالو بيلز رقم 86 أزرق",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق بافالو بيلز باللون الأزرق، مع الاسم KINCAID والرقم 86 على الظهر (دالتون كينكيد).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية بافالو بيلز رقم 86 أزرق",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق بافالو بيلز باللون الأزرق، KINCAID 86 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/148034170?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "比尔",
+    "photos": {
+      "front": "148034170/01",
+      "back": "148034170/01"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:buffalo-bills",
+    "league:nfl",
+    "audience:adult",
+    "player:dalton-kincaid",
+    "דלטון קינקייד",
+    "new",
+    "source:nfl-cyq888",
+    "album:148034170",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "buffalo bills",
+    "bills",
+    "بافالو بيلز",
+    "بيلز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "dalton kincaid",
+    "kincaid",
+    "دالتون كينكيد"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "classic home: white collar with red/navy trim, white/red sleeve stripes, BILLS chest wordmark",
+    "render": "buffalo-bills-86-royal-blue-148034170-01"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332203069744",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935163351344",
+      "M": "gid://shopify/ProductVariant/67935163384112",
+      "L": "gid://shopify/ProductVariant/67935163416880",
+      "XL": "gid://shopify/ProductVariant/67935163449648"
+    },
+    "created_at": "2026-10-04T10:50:44Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:03:10Z",
+      "ar": "2026-10-04T11:03:10Z"
+    }
+  }
+}

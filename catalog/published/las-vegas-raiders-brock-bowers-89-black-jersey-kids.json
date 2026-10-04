@@ -1,0 +1,171 @@
+{
+  "handle": "las-vegas-raiders-brock-bowers-89-black-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "las-vegas-raiders",
+    "code": "LV",
+    "he": "לאס וגאס ריידרס",
+    "en": "Las Vegas Raiders",
+    "ar": "لاس فيغاس رايدرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "brock-bowers",
+    "name_on_back": "BOWERS",
+    "he": "ברוק באוורס",
+    "en": "Brock Bowers",
+    "ar": "بروك باورز"
+  },
+  "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם השם BOWERS והמספר 89 על הגב (ברוק באוורס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור – ילדים",
+    "description_he": "חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם BOWERS 89 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LV-89-BLK-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LV-89-BLK-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LV-89-BLK-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LV-89-BLK-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-89-black-214161975-11-kids.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-89-black-214161975-11-kids__back.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "las-vegas-raiders-brock-bowers-89-black-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Las Vegas Raiders #89 NFL Jersey – Black – Kids",
+      "description_html": "<p>Las Vegas Raiders NFL jersey in black, with the name BOWERS and the number 89 on the back (Brock Bowers).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Las Vegas Raiders #89 NFL Jersey – Black – Kids",
+      "seo_description": "Las Vegas Raiders NFL jersey in black, BOWERS 89 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لاس فيغاس رايدرز رقم 89 أسود – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، مع الاسم BOWERS والرقم 89 على الظهر (بروك باورز).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص NFL لاس فيغاس رايدرز رقم 89 أسود – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، BOWERS 89 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214161975?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装突击者",
+    "photos": {
+      "front": "214161975/11",
+      "back": "214161975/11"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:las-vegas-raiders",
+    "league:nfl",
+    "audience:kids",
+    "player:brock-bowers",
+    "ברוק באוורס",
+    "new",
+    "source:nfl-cyq888",
+    "album:214161975",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "las vegas raiders",
+    "raiders",
+    "لاس فيغاس رايدرز",
+    "رايدرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "brock bowers",
+    "bowers",
+    "بروك باورز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "",
+    "render": "las-vegas-raiders-89-black-214161975-11-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332207690032",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935194317104",
+      "M": "gid://shopify/ProductVariant/67935194349872",
+      "L": "gid://shopify/ProductVariant/67935194382640",
+      "XL": "gid://shopify/ProductVariant/67935194415408"
+    },
+    "created_at": "2026-10-04T11:00:17Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:27:16Z",
+      "ar": "2026-10-04T11:27:16Z"
+    }
+  }
+}

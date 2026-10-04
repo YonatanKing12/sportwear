@@ -1,0 +1,165 @@
+{
+  "handle": "atlanta-falcons-michael-penix-jr-9-black-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "atlanta-falcons",
+    "code": "ATL",
+    "he": "אטלנטה פאלקונס",
+    "en": "Atlanta Falcons",
+    "ar": "أتلانتا فالكونز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "michael-penix-jr",
+    "name_on_back": "PENIX JR",
+    "he": "מייקל פניקס ג׳וניור",
+    "en": "Michael Penix Jr.",
+    "ar": "مايكل بينيكس جونيور"
+  },
+  "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 שחור",
+  "description_html_he": "<p>חולצת פוטבול של אטלנטה פאלקונס בצבע שחור, עם השם PENIX JR והמספר 9 על הגב (מייקל פניקס ג׳וניור).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 שחור",
+    "description_he": "חולצת פוטבול של אטלנטה פאלקונס בצבע שחור, עם PENIX JR 9 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-ATL-9-BLK-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-ATL-9-BLK-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-ATL-9-BLK-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-ATL-9-BLK-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/atlanta-falcons-9-black-150115330-25.png",
+      "alt_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 שחור",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/atlanta-falcons-9-black-150115330-25__back.png",
+      "alt_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 שחור (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Atlanta Falcons #9 NFL Jersey – Black",
+      "description_html": "<p>Atlanta Falcons NFL jersey in black, with the name PENIX JR and the number 9 on the back (Michael Penix Jr.).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Atlanta Falcons #9 NFL Jersey – Black",
+      "seo_description": "Atlanta Falcons NFL jersey in black, PENIX JR 9 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية أتلانتا فالكونز رقم 9 أسود",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق أتلانتا فالكونز باللون الأسود، مع الاسم PENIX JR والرقم 9 على الظهر (مايكل بينيكس جونيور).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية أتلانتا فالكونز رقم 9 أسود",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق أتلانتا فالكونز باللون الأسود، PENIX JR 9 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/150115330?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "猎鹰",
+    "photos": {
+      "front": "150115330/25",
+      "back": "150115330/25"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:atlanta-falcons",
+    "league:nfl",
+    "audience:adult",
+    "player:michael-penix-jr",
+    "מייקל פניקס ג׳וניור",
+    "new",
+    "source:nfl-cyq888",
+    "album:150115330",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "atlanta falcons",
+    "falcons",
+    "أتلانتا فالكونز",
+    "فالكونز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "michael penix jr",
+    "penix",
+    "مايكل بينيكس جونيور"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "2020 design: red ATL wordmark, 'FALCONS' collar, red side panel",
+    "render": "atlanta-falcons-9-black-150115330-25"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332202610992",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935160402224",
+      "M": "gid://shopify/ProductVariant/67935160434992",
+      "L": "gid://shopify/ProductVariant/67935160467760",
+      "XL": "gid://shopify/ProductVariant/67935160500528"
+    },
+    "created_at": "2026-10-04T10:50:03Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:09:39Z",
+      "ar": "2026-10-04T11:09:39Z"
+    }
+  }
+}

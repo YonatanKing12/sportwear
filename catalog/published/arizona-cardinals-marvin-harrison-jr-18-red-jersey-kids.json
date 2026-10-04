@@ -1,0 +1,171 @@
+{
+  "handle": "arizona-cardinals-marvin-harrison-jr-18-red-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "arizona-cardinals",
+    "code": "ARI",
+    "he": "אריזונה קרדינלס",
+    "en": "Arizona Cardinals",
+    "ar": "أريزونا كاردينالز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "marvin-harrison-jr",
+    "name_on_back": "HARRISON JR",
+    "he": "מרווין הריסון ג׳וניור",
+    "en": "Marvin Harrison Jr.",
+    "ar": "مارفن هاريسون جونيور"
+  },
+  "title_he": "חולצת פוטבול אריזונה קרדינלס מספר 18 אדום – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של אריזונה קרדינלס בצבע אדום, עם השם HARRISON JR והמספר 18 על הגב (מרווין הריסון ג׳וניור).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול אריזונה קרדינלס מספר 18 אדום – ילדים",
+    "description_he": "חולצת פוטבול של אריזונה קרדינלס בצבע אדום, עם HARRISON JR 18 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-ARI-18-RED-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-ARI-18-RED-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-ARI-18-RED-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-ARI-18-RED-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/arizona-cardinals-18-red-213772502-03-kids.png",
+      "alt_he": "חולצת פוטבול אריזונה קרדינלס מספר 18 אדום – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/arizona-cardinals-18-red-213772502-03-kids__back.png",
+      "alt_he": "חולצת פוטבול אריזונה קרדינלס מספר 18 אדום – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Arizona Cardinals #18 NFL Jersey – Red – Kids",
+      "description_html": "<p>Arizona Cardinals NFL jersey in red, with the name HARRISON JR and the number 18 on the back (Marvin Harrison Jr.).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Arizona Cardinals #18 NFL Jersey – Red – Kids",
+      "seo_description": "Arizona Cardinals NFL jersey in red, HARRISON JR 18 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية أريزونا كاردينالز رقم 18 أحمر – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق أريزونا كاردينالز باللون الأحمر، مع الاسم HARRISON JR والرقم 18 على الظهر (مارفن هاريسون جونيور).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص NFL أريزونا كاردينالز رقم 18 أحمر – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق أريزونا كاردينالز باللون الأحمر، HARRISON JR 18 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213772502?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装红雀",
+    "photos": {
+      "front": "213772502/03",
+      "back": "213772502/03"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:arizona-cardinals",
+    "league:nfl",
+    "audience:kids",
+    "player:marvin-harrison-jr",
+    "מרווין הריסון ג׳וניור",
+    "new",
+    "source:nfl-cyq888",
+    "album:213772502",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "arizona cardinals",
+    "cardinals",
+    "أريزونا كاردينالز",
+    "كاردينالز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "marvin harrison jr",
+    "harrison",
+    "مارفن هاريسون جونيور"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "2023 red home: ARIZONA chest wordmark, plain sleeves, 'PROTECT THE NEST' neck tape",
+    "render": "arizona-cardinals-18-red-213772502-03-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332211130672",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935207555376",
+      "M": "gid://shopify/ProductVariant/67935207588144",
+      "L": "gid://shopify/ProductVariant/67935207620912",
+      "XL": "gid://shopify/ProductVariant/67935207653680"
+    },
+    "created_at": "2026-10-04T11:08:34Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:32:41Z",
+      "ar": "2026-10-04T11:32:41Z"
+    }
+  }
+}

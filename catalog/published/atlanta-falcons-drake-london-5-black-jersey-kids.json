@@ -1,0 +1,170 @@
+{
+  "handle": "atlanta-falcons-drake-london-5-black-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "atlanta-falcons",
+    "code": "ATL",
+    "he": "אטלנטה פאלקונס",
+    "en": "Atlanta Falcons",
+    "ar": "أتلانتا فالكونز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "drake-london",
+    "name_on_back": "LONDON",
+    "he": "דרייק לונדון",
+    "en": "Drake London",
+    "ar": "دريك لندن"
+  },
+  "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של אטלנטה פאלקונס בצבע שחור, עם השם LONDON והמספר 5 על הגב (דרייק לונדון).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור – ילדים",
+    "description_he": "חולצת פוטבול של אטלנטה פאלקונס בצבע שחור, עם LONDON 5 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-ATL-5-BLK-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-ATL-5-BLK-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-ATL-5-BLK-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-ATL-5-BLK-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/atlanta-falcons-5-black-214161958-07-kids.png",
+      "alt_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/atlanta-falcons-5-black-214161958-07-kids__back.png",
+      "alt_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "atlanta-falcons-drake-london-5-black-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Atlanta Falcons #5 NFL Jersey – Black – Kids",
+      "description_html": "<p>Atlanta Falcons NFL jersey in black, with the name LONDON and the number 5 on the back (Drake London).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Atlanta Falcons #5 NFL Jersey – Black – Kids",
+      "seo_description": "Atlanta Falcons NFL jersey in black, LONDON 5 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية أتلانتا فالكونز رقم 5 أسود – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق أتلانتا فالكونز باللون الأسود، مع الاسم LONDON والرقم 5 على الظهر (دريك لندن).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية أتلانتا فالكونز رقم 5 أسود – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق أتلانتا فالكونز باللون الأسود، LONDON 5 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214161958?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装猎鹰",
+    "photos": {
+      "front": "214161958/07",
+      "back": "214161958/07"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:atlanta-falcons",
+    "league:nfl",
+    "audience:kids",
+    "player:drake-london",
+    "דרייק לונדון",
+    "new",
+    "source:nfl-cyq888",
+    "album:214161958",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "atlanta falcons",
+    "falcons",
+    "أتلانتا فالكونز",
+    "فالكونز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "drake london",
+    "دريك لندن"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "2020 design: red ATL wordmark, 'FALCONS' collar, red side panel",
+    "render": "atlanta-falcons-5-black-214161958-07-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210737456",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935205982512",
+      "M": "gid://shopify/ProductVariant/67935206015280",
+      "L": "gid://shopify/ProductVariant/67935206048048",
+      "XL": "gid://shopify/ProductVariant/67935206080816"
+    },
+    "created_at": "2026-10-04T11:07:34Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:23:31Z",
+      "ar": "2026-10-04T11:23:31Z"
+    }
+  }
+}

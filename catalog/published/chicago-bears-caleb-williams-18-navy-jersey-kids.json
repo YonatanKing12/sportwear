@@ -1,0 +1,170 @@
+{
+  "handle": "chicago-bears-caleb-williams-18-navy-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "chicago-bears",
+    "code": "CHI",
+    "he": "שיקגו ברס",
+    "en": "Chicago Bears",
+    "ar": "شيكاغو بيرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "caleb-williams",
+    "name_on_back": "WILLIAMS",
+    "he": "קיילב ויליאמס",
+    "en": "Caleb Williams",
+    "ar": "كاليب ويليامز"
+  },
+  "title_he": "חולצת פוטבול שיקגו ברס מספר 18 כחול כהה – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של שיקגו ברס בצבע כחול כהה, עם השם WILLIAMS והמספר 18 על הגב (קיילב ויליאמס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול שיקגו ברס מספר 18 כחול כהה – ילדים",
+    "description_he": "חולצת פוטבול של שיקגו ברס בצבע כחול כהה, עם WILLIAMS 18 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-CHI-18-NVY-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-CHI-18-NVY-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-CHI-18-NVY-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-CHI-18-NVY-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/chicago-bears-18-navy-213771952-07-kids.png",
+      "alt_he": "חולצת פוטבול שיקגו ברס מספר 18 כחול כהה – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/chicago-bears-18-navy-213771952-07-kids__back.png",
+      "alt_he": "חולצת פוטבול שיקגו ברס מספר 18 כחול כהה – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Chicago Bears #18 NFL Jersey – Navy – Kids",
+      "description_html": "<p>Chicago Bears NFL jersey in navy, with the name WILLIAMS and the number 18 on the back (Caleb Williams).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Chicago Bears #18 NFL Jersey – Navy – Kids",
+      "seo_description": "Chicago Bears NFL jersey in navy, WILLIAMS 18 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية شيكاغو بيرز رقم 18 كحلي – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق شيكاغو بيرز باللون الكحلي، مع الاسم WILLIAMS والرقم 18 على الظهر (كاليب ويليامز).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية شيكاغو بيرز رقم 18 كحلي – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق شيكاغو بيرز باللون الكحلي، WILLIAMS 18 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213771952?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装熊队",
+    "photos": {
+      "front": "213771952/07",
+      "back": "213771952/07"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:chicago-bears",
+    "league:nfl",
+    "audience:kids",
+    "player:caleb-williams",
+    "קיילב ויליאמס",
+    "new",
+    "source:nfl-cyq888",
+    "album:213771952",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "chicago bears",
+    "bears",
+    "شيكاغو بيرز",
+    "بيرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "caleb williams",
+    "كاليب ويليامز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "standard home: white numbers outlined orange, shoulder numbers, orange/white sleeve stripes, GSH sleeve patch",
+    "render": "chicago-bears-18-navy-213771952-07-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210901296",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935206637872",
+      "M": "gid://shopify/ProductVariant/67935206670640",
+      "L": "gid://shopify/ProductVariant/67935206703408",
+      "XL": "gid://shopify/ProductVariant/67935206736176"
+    },
+    "created_at": "2026-10-04T11:08:01Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:24:27Z",
+      "ar": "2026-10-04T11:24:27Z"
+    }
+  }
+}

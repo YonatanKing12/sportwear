@@ -1,0 +1,171 @@
+{
+  "handle": "seattle-seahawks-sam-darnold-14-navy-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "seattle-seahawks",
+    "code": "SEA",
+    "he": "סיאטל סיהוקס",
+    "en": "Seattle Seahawks",
+    "ar": "سياتل سيهوكس"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "sam-darnold",
+    "name_on_back": "DARNOLD",
+    "he": "סם דארנולד",
+    "en": "Sam Darnold",
+    "ar": "سام دارنولد"
+  },
+  "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של סיאטל סיהוקס בצבע כחול כהה, עם השם DARNOLD והמספר 14 על הגב (סם דארנולד).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה – ילדים",
+    "description_he": "חולצת פוטבול של סיאטל סיהוקס בצבע כחול כהה, עם DARNOLD 14 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-SEA-14-NVY-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-SEA-14-NVY-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-SEA-14-NVY-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-SEA-14-NVY-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/seattle-seahawks-14-navy-219142282-01-kids.png",
+      "alt_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/seattle-seahawks-14-navy-219142282-01-kids__back.png",
+      "alt_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "seattle-seahawks-sam-darnold-14-navy-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Seattle Seahawks #14 NFL Jersey – Navy – Kids",
+      "description_html": "<p>Seattle Seahawks NFL jersey in navy, with the name DARNOLD and the number 14 on the back (Sam Darnold).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Seattle Seahawks #14 NFL Jersey – Navy – Kids",
+      "seo_description": "Seattle Seahawks NFL jersey in navy, DARNOLD 14 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية سياتل سيهوكس رقم 14 كحلي – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق سياتل سيهوكس باللون الكحلي، مع الاسم DARNOLD والرقم 14 على الظهر (سام دارنولد).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية سياتل سيهوكس رقم 14 كحلي – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق سياتل سيهوكس باللون الكحلي، DARNOLD 14 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/219142282?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装海鹰",
+    "photos": {
+      "front": "219142282/01",
+      "back": "219142282/01"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:seattle-seahawks",
+    "league:nfl",
+    "audience:kids",
+    "player:sam-darnold",
+    "סם דארנולד",
+    "new",
+    "source:nfl-cyq888",
+    "album:219142282",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "seattle seahawks",
+    "seahawks",
+    "سياتل سيهوكس",
+    "سيهوكس",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "sam darnold",
+    "darnold",
+    "سام دارنولد"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "classic home: action-green shoulder caps with grey stripes, green feather-pattern collar",
+    "render": "seattle-seahawks-14-navy-219142282-01-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332209033520",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935199297840",
+      "M": "gid://shopify/ProductVariant/67935199330608",
+      "L": "gid://shopify/ProductVariant/67935199363376",
+      "XL": "gid://shopify/ProductVariant/67935199396144"
+    },
+    "created_at": "2026-10-04T11:03:17Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:27:18Z",
+      "ar": "2026-10-04T11:27:18Z"
+    }
+  }
+}

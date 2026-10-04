@@ -1,0 +1,150 @@
+{
+  "handle": "las-vegas-raiders-bo-jackson-34-black-jersey",
+  "status": "ready",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "las-vegas-raiders",
+    "code": "LV",
+    "he": "לאס וגאס ריידרס",
+    "en": "Las Vegas Raiders",
+    "ar": "لاس فيغاس رايدرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "bo-jackson",
+    "name_on_back": "JACKSON",
+    "he": "בו ג׳קסון",
+    "en": "Bo Jackson",
+    "ar": "بو جاكسون"
+  },
+  "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 34 שחור",
+  "description_html_he": "<p>חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם השם JACKSON והמספר 34 על הגב (בו ג׳קסון).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 34 שחור",
+    "description_he": "חולצת פוטבול של לאס וגאס ריידרס בצבע שחור, עם JACKSON 34 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LV-34-BLK-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LV-34-BLK-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LV-34-BLK-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LV-34-BLK-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-34-black-149440630-19.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 34 שחור",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/las-vegas-raiders-34-black-149440630-19__back.png",
+      "alt_he": "חולצת פוטבול לאס וגאס ריידרס מספר 34 שחור (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Las Vegas Raiders #34 NFL Jersey – Black",
+      "description_html": "<p>Las Vegas Raiders NFL jersey in black, with the name JACKSON and the number 34 on the back (Bo Jackson).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Las Vegas Raiders #34 NFL Jersey – Black",
+      "seo_description": "Las Vegas Raiders NFL jersey in black, JACKSON 34 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لاس فيغاس رايدرز رقم 34 أسود",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، مع الاسم JACKSON والرقم 34 على الظهر (بو جاكسون).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية لاس فيغاس رايدرز رقم 34 أسود",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لاس فيغاس رايدرز باللون الأسود، JACKSON 34 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149440630?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "突击者",
+    "photos": {
+      "front": "149440630/19",
+      "back": "149440630/19"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:las-vegas-raiders",
+    "league:nfl",
+    "audience:adult",
+    "player:bo-jackson",
+    "בו ג׳קסון",
+    "new",
+    "source:nfl-cyq888",
+    "album:149440630",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "las vegas raiders",
+    "raiders",
+    "لاس فيغاس رايدرز",
+    "رايدرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "bo jackson",
+    "بو جاكسون"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "",
+    "render": "las-vegas-raiders-34-black-149440630-19"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "handle": "cleveland-browns-myles-garrett-95-brown-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "cleveland-browns",
+    "code": "CLE",
+    "he": "קליבלנד בראונס",
+    "en": "Cleveland Browns",
+    "ar": "كليفلاند براونز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "myles-garrett",
+    "name_on_back": "GARRETT",
+    "he": "מיילס גארט",
+    "en": "Myles Garrett",
+    "ar": "مايلز غاريت"
+  },
+  "title_he": "חולצת פוטבול קליבלנד בראונס מספר 95 חום – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של קליבלנד בראונס בצבע חום, עם השם GARRETT והמספר 95 על הגב (מיילס גארט).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול קליבלנד בראונס מספר 95 חום – ילדים",
+    "description_he": "חולצת פוטבול של קליבלנד בראונס בצבע חום, עם GARRETT 95 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-CLE-95-BRN-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-CLE-95-BRN-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-CLE-95-BRN-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-CLE-95-BRN-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cleveland-browns-95-brown-214162167-03-kids.png",
+      "alt_he": "חולצת פוטבול קליבלנד בראונס מספר 95 חום – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cleveland-browns-95-brown-214162167-03-kids__back.png",
+      "alt_he": "חולצת פוטבול קליבלנד בראונס מספר 95 חום – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Cleveland Browns #95 NFL Jersey – Brown – Kids",
+      "description_html": "<p>Cleveland Browns NFL jersey in brown, with the name GARRETT and the number 95 on the back (Myles Garrett).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Cleveland Browns #95 NFL Jersey – Brown – Kids",
+      "seo_description": "Cleveland Browns NFL jersey in brown, GARRETT 95 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية كليفلاند براونز رقم 95 بني – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق كليفلاند براونز باللون البني، مع الاسم GARRETT والرقم 95 على الظهر (مايلز غاريت).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية كليفلاند براونز رقم 95 بني – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق كليفلاند براونز باللون البني، GARRETT 95 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214162167?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装布朗",
+    "photos": {
+      "front": "214162167/03",
+      "back": "214162167/03"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:cleveland-browns",
+    "league:nfl",
+    "audience:kids",
+    "player:myles-garrett",
+    "מיילס גארט",
+    "new",
+    "source:nfl-cyq888",
+    "album:214162167",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "cleveland browns",
+    "browns",
+    "كليفلاند براونز",
+    "براونز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "myles garrett",
+    "مايلز غاريت"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "home (brown): orange and white sleeve stripes, \"1946\" printed inside the collar, white numbers, TV numbers on shoulders",
+    "render": "cleveland-browns-95-brown-214162167-03-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332211589424",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935208931632",
+      "M": "gid://shopify/ProductVariant/67935208964400",
+      "L": "gid://shopify/ProductVariant/67935208997168",
+      "XL": "gid://shopify/ProductVariant/67935209029936"
+    },
+    "created_at": "2026-10-04T11:09:41Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:23:32Z",
+      "ar": "2026-10-04T11:23:32Z"
+    }
+  }
+}

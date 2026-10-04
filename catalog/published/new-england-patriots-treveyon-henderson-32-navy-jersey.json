@@ -1,0 +1,165 @@
+{
+  "handle": "new-england-patriots-treveyon-henderson-32-navy-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "new-england-patriots",
+    "code": "NE",
+    "he": "ניו אינגלנד פטריוטס",
+    "en": "New England Patriots",
+    "ar": "نيو إنجلاند باتريوتس"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "treveyon-henderson",
+    "name_on_back": "HENDERSON",
+    "he": "טרוויון הנדרסון",
+    "en": "TreVeyon Henderson",
+    "ar": "تريفيون هندرسون"
+  },
+  "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 32 כחול כהה",
+  "description_html_he": "<p>חולצת פוטבול של ניו אינגלנד פטריוטס בצבע כחול כהה, עם השם HENDERSON והמספר 32 על הגב (טרוויון הנדרסון).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 32 כחול כהה",
+    "description_he": "חולצת פוטבול של ניו אינגלנד פטריוטס בצבע כחול כהה, עם HENDERSON 32 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-NE-32-NVY-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-NE-32-NVY-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-NE-32-NVY-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-NE-32-NVY-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-england-patriots-32-navy-149954872-14.png",
+      "alt_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 32 כחול כהה",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/new-england-patriots-32-navy-149954872-14__back.png",
+      "alt_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 32 כחול כהה (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "New England Patriots #32 NFL Jersey – Navy",
+      "description_html": "<p>New England Patriots NFL jersey in navy, with the name HENDERSON and the number 32 on the back (TreVeyon Henderson).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "New England Patriots #32 NFL Jersey – Navy",
+      "seo_description": "New England Patriots NFL jersey in navy, HENDERSON 32 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية نيو إنجلاند باتريوتس رقم 32 كحلي",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق نيو إنجلاند باتريوتس باللون الكحلي، مع الاسم HENDERSON والرقم 32 على الظهر (تريفيون هندرسون).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية نيو إنجلاند باتريوتس رقم 32 كحلي",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق نيو إنجلاند باتريوتس باللون الكحلي، HENDERSON 32 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149954872?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "爱国者",
+    "photos": {
+      "front": "149954872/14",
+      "back": "149954872/14"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:new-england-patriots",
+    "league:nfl",
+    "audience:adult",
+    "player:treveyon-henderson",
+    "טרוויון הנדרסון",
+    "new",
+    "source:nfl-cyq888",
+    "album:149954872",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "new england patriots",
+    "patriots",
+    "نيو إنجلاند باتريوتس",
+    "باتريوتس",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "treveyon henderson",
+    "henderson",
+    "تريفيون هندرسون"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "2024+ home: red/white shoulder stripes, Flying Elvis logo on sleeves, PATRIOTS wordmark on chest",
+    "render": "new-england-patriots-32-navy-149954872-14"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332202414384",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935159550256",
+      "M": "gid://shopify/ProductVariant/67935159583024",
+      "L": "gid://shopify/ProductVariant/67935159615792",
+      "XL": "gid://shopify/ProductVariant/67935159648560"
+    },
+    "created_at": "2026-10-04T10:49:38Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:10:56Z",
+      "ar": "2026-10-04T11:10:57Z"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "handle": "green-bay-packers-micah-parsons-1-green-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "green-bay-packers",
+    "code": "GB",
+    "he": "גרין ביי פאקרס",
+    "en": "Green Bay Packers",
+    "ar": "غرين باي باكرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "micah-parsons",
+    "name_on_back": "PARSONS",
+    "he": "מייקה פרסונס",
+    "en": "Micah Parsons",
+    "ar": "ميكاه بارسونز"
+  },
+  "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של גרין ביי פאקרס בצבע ירוק, עם השם PARSONS והמספר 1 על הגב (מייקה פרסונס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק – ילדים",
+    "description_he": "חולצת פוטבול של גרין ביי פאקרס בצבע ירוק, עם PARSONS 1 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-GB-1-GRN-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-GB-1-GRN-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-GB-1-GRN-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-GB-1-GRN-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/green-bay-packers-1-green-214161934-06-kids.png",
+      "alt_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/green-bay-packers-1-green-214161934-06-kids__back.png",
+      "alt_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "green-bay-packers-micah-parsons-1-green-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Green Bay Packers #1 NFL Jersey – Green – Kids",
+      "description_html": "<p>Green Bay Packers NFL jersey in green, with the name PARSONS and the number 1 on the back (Micah Parsons).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Green Bay Packers #1 NFL Jersey – Green – Kids",
+      "seo_description": "Green Bay Packers NFL jersey in green, PARSONS 1 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية غرين باي باكرز رقم 1 أخضر – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق غرين باي باكرز باللون الأخضر، مع الاسم PARSONS والرقم 1 على الظهر (ميكاه بارسونز).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية غرين باي باكرز رقم 1 أخضر – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق غرين باي باكرز باللون الأخضر، PARSONS 1 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214161934?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装包装工",
+    "photos": {
+      "front": "214161934/06",
+      "back": "214161934/06"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:green-bay-packers",
+    "league:nfl",
+    "audience:kids",
+    "player:micah-parsons",
+    "מייקה פרסונס",
+    "new",
+    "source:nfl-cyq888",
+    "album:214161934",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "green bay packers",
+    "packers",
+    "غرين باي باكرز",
+    "باكرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "micah parsons",
+    "parsons",
+    "ميكاه بارسونز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "home: gold/white/gold sleeve stripes, gold-white striped collar, TV numbers on shoulders",
+    "render": "green-bay-packers-1-green-214161934-06-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210934064",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935206768944",
+      "M": "gid://shopify/ProductVariant/67935206801712",
+      "L": "gid://shopify/ProductVariant/67935206834480",
+      "XL": "gid://shopify/ProductVariant/67935206867248"
+    },
+    "created_at": "2026-10-04T11:08:03Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:32:40Z",
+      "ar": "2026-10-04T11:32:40Z"
+    }
+  }
+}

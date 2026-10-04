@@ -41,6 +41,19 @@
     "Football Kit": {
       "sport": "football",
       "keywords": ["סט כדורגל", "סט ילדים", "kit", "football kit", "kids kit", "طقم", "طقم كرة قدم"]
+    },
+    "NFL Jersey": {
+      "sport": "american-football",
+      "keywords": [
+        "חולצה",
+        "חולצת פוטבול",
+        "פוטבול",
+        "jersey",
+        "nfl jersey",
+        "american football",
+        "قميص",
+        "كرة القدم الأمريكية"
+      ]
     }
   },
   "audiences": {
@@ -2397,6 +2410,881 @@
       "ar": "كيتلين كلارك",
       "keywords": ["caitlin clark", "كيتلين كلارك"],
       "match": ["קייטלין קלארק"]
+    },
+    "kyler-murray": {
+      "he": "קיילר מארי",
+      "en": "Kyler Murray",
+      "ar": "كايلر موراي",
+      "keywords": ["kyler murray", "كايلر موراي"],
+      "match": ["קיילר מארי"]
+    },
+    "marvin-harrison-jr": {
+      "he": "מרווין הריסון ג׳וניור",
+      "en": "Marvin Harrison Jr.",
+      "ar": "مارفن هاريسون جونيور",
+      "keywords": ["marvin harrison jr", "harrison", "مارفن هاريسون جونيور"],
+      "match": ["מרווין הריסון ג׳וניור"]
+    },
+    "drake-london": {
+      "he": "דרייק לונדון",
+      "en": "Drake London",
+      "ar": "دريك لندن",
+      "keywords": ["drake london", "دريك لندن"],
+      "match": ["דרייק לונדון"]
+    },
+    "bijan-robinson": {
+      "he": "ביז׳אן רובינסון",
+      "en": "Bijan Robinson",
+      "ar": "بيجان روبنسون",
+      "keywords": ["bijan robinson", "robinson", "بيجان روبنسون"],
+      "match": ["ביז׳אן רובינסון"]
+    },
+    "michael-penix-jr": {
+      "he": "מייקל פניקס ג׳וניור",
+      "en": "Michael Penix Jr.",
+      "ar": "مايكل بينيكس جونيور",
+      "keywords": ["michael penix jr", "penix", "مايكل بينيكس جونيور"],
+      "match": ["מייקל פניקס ג׳וניור"]
+    },
+    "kyle-hamilton": {
+      "he": "קייל המילטון",
+      "en": "Kyle Hamilton",
+      "ar": "كايل هاميلتون",
+      "keywords": ["kyle hamilton", "hamilton", "كايل هاميلتون"],
+      "match": ["קייל המילטון"]
+    },
+    "derrick-henry": {
+      "he": "דריק הנרי",
+      "en": "Derrick Henry",
+      "ar": "ديريك هنري",
+      "keywords": ["derrick henry", "ديريك هنري"],
+      "match": ["דריק הנרי"]
+    },
+    "zay-flowers": {
+      "he": "זיי פלאוורס",
+      "en": "Zay Flowers",
+      "ar": "زاي فلاورز",
+      "keywords": ["zay flowers", "زاي فلاورز"],
+      "match": ["זיי פלאוורס"]
+    },
+    "ray-lewis": {
+      "he": "ריי לואיס",
+      "en": "Ray Lewis",
+      "ar": "راي لويس",
+      "keywords": ["ray lewis", "راي لويس"],
+      "match": ["ריי לואיס"]
+    },
+    "lamar-jackson": {
+      "he": "למאר ג׳קסון",
+      "en": "Lamar Jackson",
+      "ar": "لامار جاكسون",
+      "keywords": ["lamar jackson", "لامار جاكسون"],
+      "match": ["למאר ג׳קסון"]
+    },
+    "keon-coleman": {
+      "he": "קיון קולמן",
+      "en": "Keon Coleman",
+      "ar": "كيون كولمان",
+      "keywords": ["keon coleman", "coleman", "كيون كولمان"],
+      "match": ["קיון קולמן"]
+    },
+    "josh-allen": {
+      "he": "ג׳וש אלן",
+      "en": "Josh Allen",
+      "ar": "جوش ألين",
+      "keywords": ["josh allen", "جوش ألين"],
+      "match": ["ג׳וש אלן"]
+    },
+    "james-cook-iii": {
+      "he": "ג׳יימס קוק השלישי",
+      "en": "James Cook III",
+      "ar": "جيمس كوك الثالث",
+      "keywords": ["james cook iii", "جيمس كوك الثالث"],
+      "match": ["ג׳יימס קוק השלישי"]
+    },
+    "dalton-kincaid": {
+      "he": "דלטון קינקייד",
+      "en": "Dalton Kincaid",
+      "ar": "دالتون كينكيد",
+      "keywords": ["dalton kincaid", "kincaid", "دالتون كينكيد"],
+      "match": ["דלטון קינקייד"]
+    },
+    "tetairoa-mcmillan": {
+      "he": "טטאירואה מקמילן",
+      "en": "Tetairoa McMillan",
+      "ar": "تيتايروا ماكميلان",
+      "keywords": ["tetairoa mcmillan", "mcmillan", "تيتايروا ماكميلان"],
+      "match": ["טטאירואה מקמילן"]
+    },
+    "bryce-young": {
+      "he": "בראיס יאנג",
+      "en": "Bryce Young",
+      "ar": "برايس يونغ",
+      "keywords": ["bryce young", "برايس يونغ"],
+      "match": ["בראיס יאנג"]
+    },
+    "luther-burden-iii": {
+      "he": "לותר ברדן השלישי",
+      "en": "Luther Burden III",
+      "ar": "لوثر بوردن الثالث",
+      "keywords": ["luther burden iii", "burden", "لوثر بوردن الثالث"],
+      "match": ["לותר ברדן השלישי"]
+    },
+    "rome-odunze": {
+      "he": "רום אודונזה",
+      "en": "Rome Odunze",
+      "ar": "روم أودونزي",
+      "keywords": ["rome odunze", "odunze", "روم أودونزي"],
+      "match": ["רום אודונזה"]
+    },
+    "caleb-williams": {
+      "he": "קיילב ויליאמס",
+      "en": "Caleb Williams",
+      "ar": "كاليب ويليامز",
+      "keywords": ["caleb williams", "كاليب ويليامز"],
+      "match": ["קיילב ויליאמס"]
+    },
+    "walter-payton": {
+      "he": "וולטר פייטון",
+      "en": "Walter Payton",
+      "ar": "والتر بايتون",
+      "keywords": ["walter payton", "payton", "والتر بايتون"],
+      "match": ["וולטר פייטון"]
+    },
+    "colston-loveland": {
+      "he": "קולסטון לאבלנד",
+      "en": "Colston Loveland",
+      "ar": "كولستون لوفلاند",
+      "keywords": ["colston loveland", "loveland", "كولستون لوفلاند"],
+      "match": ["קולסטון לאבלנד"]
+    },
+    "jamarr-chase": {
+      "he": "ג׳מאר צ׳ייס",
+      "en": "Ja'Marr Chase",
+      "ar": "جامار تشيس",
+      "keywords": ["ja'marr chase", "جامار تشيس"],
+      "match": ["ג׳מאר צ׳ייס"]
+    },
+    "tee-higgins": {
+      "he": "טי היגינס",
+      "en": "Tee Higgins",
+      "ar": "تي هيغينز",
+      "keywords": ["tee higgins", "تي هيغينز"],
+      "match": ["טי היגינס"]
+    },
+    "joe-burrow": {
+      "he": "ג׳ו בארו",
+      "en": "Joe Burrow",
+      "ar": "جو بورو",
+      "keywords": ["joe burrow", "burrow", "جو بورو"],
+      "match": ["ג׳ו בארו"]
+    },
+    "quinshon-judkins": {
+      "he": "קווינשון ג׳אדקינס",
+      "en": "Quinshon Judkins",
+      "ar": "كوينشون جودكينز",
+      "keywords": ["quinshon judkins", "judkins", "كوينشون جودكينز"],
+      "match": ["קווינשון ג׳אדקינס"]
+    },
+    "shedeur-sanders": {
+      "he": "שדור סנדרס",
+      "en": "Shedeur Sanders",
+      "ar": "شيدور ساندرز",
+      "keywords": ["shedeur sanders", "شيدور ساندرز"],
+      "match": ["שדור סנדרס"]
+    },
+    "myles-garrett": {
+      "he": "מיילס גארט",
+      "en": "Myles Garrett",
+      "ar": "مايلز غاريت",
+      "keywords": ["myles garrett", "مايلز غاريت"],
+      "match": ["מיילס גארט"]
+    },
+    "caleb-downs": {
+      "he": "קיילב דאונס",
+      "en": "Caleb Downs",
+      "ar": "كاليب داونز",
+      "keywords": ["caleb downs", "كاليب داونز"],
+      "match": ["קיילב דאונס"]
+    },
+    "george-pickens": {
+      "he": "ג׳ורג׳ פיקנס",
+      "en": "George Pickens",
+      "ar": "جورج بيكنز",
+      "keywords": ["george pickens", "pickens", "جورج بيكنز"],
+      "match": ["ג׳ורג׳ פיקנס"]
+    },
+    "dak-prescott": {
+      "he": "דאק פרסקוט",
+      "en": "Dak Prescott",
+      "ar": "داك بريسكوت",
+      "keywords": ["dak prescott", "prescott", "داك بريسكوت"],
+      "match": ["דאק פרסקוט"]
+    },
+    "ceedee-lamb": {
+      "he": "סי די לאמב",
+      "en": "CeeDee Lamb",
+      "ar": "سي دي لامب",
+      "keywords": ["ceedee lamb", "lamb", "سي دي لامب"],
+      "match": ["סי די לאמב"]
+    },
+    "bo-nix": {
+      "he": "בו ניקס",
+      "en": "Bo Nix",
+      "ar": "بو نيكس",
+      "keywords": ["bo nix", "بو نيكس"],
+      "match": ["בו ניקס"]
+    },
+    "courtland-sutton": {
+      "he": "קורטלנד סאטון",
+      "en": "Courtland Sutton",
+      "ar": "كورتلاند ساتون",
+      "keywords": ["courtland sutton", "sutton", "كورتلاند ساتون"],
+      "match": ["קורטלנד סאטון"]
+    },
+    "jaylen-waddle": {
+      "he": "ג׳יילן וואדל",
+      "en": "Jaylen Waddle",
+      "ar": "جايلين وادل",
+      "keywords": ["jaylen waddle", "waddle", "جايلين وادل"],
+      "match": ["ג׳יילן וואדל"]
+    },
+    "patrick-surtain-ii": {
+      "he": "פטריק סרטיין השני",
+      "en": "Patrick Surtain II",
+      "ar": "باتريك سورتين الثاني",
+      "keywords": ["patrick surtain ii", "surtain", "باتريك سورتين الثاني"],
+      "match": ["פטריק סרטיין השני"]
+    },
+    "john-elway": {
+      "he": "ג׳ון אלוויי",
+      "en": "John Elway",
+      "ar": "جون إلواي",
+      "keywords": ["john elway", "elway", "جون إلواي"],
+      "match": ["ג׳ון אלוויי"]
+    },
+    "jahmyr-gibbs": {
+      "he": "ג׳מיר גיבס",
+      "en": "Jahmyr Gibbs",
+      "ar": "جامير غيبس",
+      "keywords": ["jahmyr gibbs", "gibbs", "جامير غيبس"],
+      "match": ["ג׳מיר גיבס"]
+    },
+    "amon-ra-st-brown": {
+      "he": "אמון-רה סנט בראון",
+      "en": "Amon-Ra St. Brown",
+      "ar": "أمون-رع سانت براون",
+      "keywords": ["amon-ra st brown", "أمون-رع سانت براون"],
+      "match": ["אמון-רה סנט בראון"]
+    },
+    "jared-goff": {
+      "he": "ג׳ארד גוף",
+      "en": "Jared Goff",
+      "ar": "جاريد غوف",
+      "keywords": ["jared goff", "goff", "جاريد غوف"],
+      "match": ["ג׳ארד גוף"]
+    },
+    "barry-sanders": {
+      "he": "בארי סנדרס",
+      "en": "Barry Sanders",
+      "ar": "باري ساندرز",
+      "keywords": ["barry sanders", "باري ساندرز"],
+      "match": ["בארי סנדרס"]
+    },
+    "sam-laporta": {
+      "he": "סם לפורטה",
+      "en": "Sam LaPorta",
+      "ar": "سام لابورتا",
+      "keywords": ["sam laporta", "laporta", "سام لابورتا"],
+      "match": ["סם לפורטה"]
+    },
+    "aidan-hutchinson": {
+      "he": "איידן האצ׳ינסון",
+      "en": "Aidan Hutchinson",
+      "ar": "أيدان هاتشينسون",
+      "keywords": ["aidan hutchinson", "hutchinson", "أيدان هاتشينسون"],
+      "match": ["איידן האצ׳ינסון"]
+    },
+    "matthew-golden": {
+      "he": "מת׳יו גולדן",
+      "en": "Matthew Golden",
+      "ar": "ماثيو غولدن",
+      "keywords": ["matthew golden", "ماثيو غولدن"],
+      "match": ["מת׳יו גולדן"]
+    },
+    "micah-parsons": {
+      "he": "מייקה פרסונס",
+      "en": "Micah Parsons",
+      "ar": "ميكاه بارسونز",
+      "keywords": ["micah parsons", "parsons", "ميكاه بارسونز"],
+      "match": ["מייקה פרסונס"]
+    },
+    "jordan-love": {
+      "he": "ג׳ורדן לאב",
+      "en": "Jordan Love",
+      "ar": "جوردان لوف",
+      "keywords": ["jordan love", "جوردان لوف"],
+      "match": ["ג׳ורדן לאב"]
+    },
+    "brett-favre": {
+      "he": "ברט פארב",
+      "en": "Brett Favre",
+      "ar": "بريت فارف",
+      "keywords": ["brett favre", "favre", "بريت فارف"],
+      "match": ["ברט פארב"]
+    },
+    "josh-jacobs": {
+      "he": "ג׳וש ג׳ייקובס",
+      "en": "Josh Jacobs",
+      "ar": "جوش جايكوبس",
+      "keywords": ["josh jacobs", "جوش جايكوبس"],
+      "match": ["ג׳וש ג׳ייקובס"]
+    },
+    "tucker-kraft": {
+      "he": "טאקר קראפט",
+      "en": "Tucker Kraft",
+      "ar": "تاكر كرافت",
+      "keywords": ["tucker kraft", "تاكر كرافت"],
+      "match": ["טאקר קראפט"]
+    },
+    "nico-collins": {
+      "he": "ניקו קולינס",
+      "en": "Nico Collins",
+      "ar": "نيكو كولينز",
+      "keywords": ["nico collins", "نيكو كولينز"],
+      "match": ["ניקו קולינס"]
+    },
+    "will-anderson-jr": {
+      "he": "וויל אנדרסון ג׳וניור",
+      "en": "Will Anderson Jr.",
+      "ar": "ويل أندرسون جونيور",
+      "keywords": ["will anderson jr", "ويل أندرسون جونيور"],
+      "match": ["וויל אנדרסון ג׳וניור"]
+    },
+    "cj-stroud": {
+      "he": "סי ג׳יי סטראוד",
+      "en": "C.J. Stroud",
+      "ar": "سي جي سترود",
+      "keywords": ["cj stroud", "stroud", "سي جي سترود"],
+      "match": ["סי ג׳יי סטראוד"]
+    },
+    "daniel-jones": {
+      "he": "דניאל ג׳ונס",
+      "en": "Daniel Jones",
+      "ar": "دانيال جونز",
+      "keywords": ["daniel jones", "دانيال جونز"],
+      "match": ["דניאל ג׳ונס"]
+    },
+    "jonathan-taylor": {
+      "he": "ג׳ונתן טיילור",
+      "en": "Jonathan Taylor",
+      "ar": "جوناثان تايلور",
+      "keywords": ["jonathan taylor", "جوناثان تايلور"],
+      "match": ["ג׳ונתן טיילור"]
+    },
+    "tyler-warren": {
+      "he": "טיילר וורן",
+      "en": "Tyler Warren",
+      "ar": "تايلر وارن",
+      "keywords": ["tyler warren", "تايلر وارن"],
+      "match": ["טיילר וורן"]
+    },
+    "travis-hunter": {
+      "he": "טרוויס האנטר",
+      "en": "Travis Hunter",
+      "ar": "ترافيس هانتر",
+      "keywords": ["travis hunter", "ترافيس هانتر"],
+      "match": ["טרוויס האנטר"]
+    },
+    "trevor-lawrence": {
+      "he": "טרבור לורנס",
+      "en": "Trevor Lawrence",
+      "ar": "تريفور لورانس",
+      "keywords": ["trevor lawrence", "lawrence", "تريفور لورانس"],
+      "match": ["טרבור לורנס"]
+    },
+    "xavier-worthy": {
+      "he": "אקסבייר וורת׳י",
+      "en": "Xavier Worthy",
+      "ar": "إكزافيير وورثي",
+      "keywords": ["xavier worthy", "إكزافيير وورثي"],
+      "match": ["אקסבייר וורת׳י"]
+    },
+    "patrick-mahomes": {
+      "he": "פטריק מהומס",
+      "en": "Patrick Mahomes",
+      "ar": "باتريك ماهومز",
+      "keywords": ["patrick mahomes", "mahomes", "باتريك ماهومز"],
+      "match": ["פטריק מהומס"]
+    },
+    "rashee-rice": {
+      "he": "רשי רייס",
+      "en": "Rashee Rice",
+      "ar": "راشي رايس",
+      "keywords": ["rashee rice", "راشي رايس"],
+      "match": ["רשי רייס"]
+    },
+    "travis-kelce": {
+      "he": "טרוויס קלסי",
+      "en": "Travis Kelce",
+      "ar": "ترافيس كيلسي",
+      "keywords": ["travis kelce", "kelce", "ترافيس كيلسي"],
+      "match": ["טרוויס קלסי"]
+    },
+    "fernando-mendoza": {
+      "he": "פרננדו מנדוסה",
+      "en": "Fernando Mendoza",
+      "ar": "فرناندو ميندوزا",
+      "keywords": ["fernando mendoza", "mendoza", "فرناندو ميندوزا"],
+      "match": ["פרננדו מנדוסה"]
+    },
+    "ashton-jeanty": {
+      "he": "אשטון ג׳נטי",
+      "en": "Ashton Jeanty",
+      "ar": "آشتون جينتي",
+      "keywords": ["ashton jeanty", "jeanty", "آشتون جينتي"],
+      "match": ["אשטון ג׳נטי"]
+    },
+    "bo-jackson": {
+      "he": "בו ג׳קסון",
+      "en": "Bo Jackson",
+      "ar": "بو جاكسون",
+      "keywords": ["bo jackson", "بو جاكسون"],
+      "match": ["בו ג׳קסון"]
+    },
+    "brock-bowers": {
+      "he": "ברוק באוורס",
+      "en": "Brock Bowers",
+      "ar": "بروك باورز",
+      "keywords": ["brock bowers", "bowers", "بروك باورز"],
+      "match": ["ברוק באוורס"]
+    },
+    "maxx-crosby": {
+      "he": "מקס קרוסבי",
+      "en": "Maxx Crosby",
+      "ar": "ماكس كروسبي",
+      "keywords": ["maxx crosby", "crosby", "ماكس كروسبي"],
+      "match": ["מקס קרוסבי"]
+    },
+    "justin-herbert": {
+      "he": "ג׳סטין הרברט",
+      "en": "Justin Herbert",
+      "ar": "جاستن هيربرت",
+      "keywords": ["justin herbert", "herbert", "جاستن هيربرت"],
+      "match": ["ג׳סטין הרברט"]
+    },
+    "ladd-mcconkey": {
+      "he": "לאד מקונקי",
+      "en": "Ladd McConkey",
+      "ar": "لاد ماكونكي",
+      "keywords": ["ladd mcconkey", "mcconkey", "لاد ماكونكي"],
+      "match": ["לאד מקונקי"]
+    },
+    "derwin-james-jr": {
+      "he": "דרווין ג׳יימס ג׳וניור",
+      "en": "Derwin James Jr.",
+      "ar": "ديروين جيمس جونيور",
+      "keywords": ["derwin james jr", "ديروين جيمس جونيور"],
+      "match": ["דרווין ג׳יימס ג׳וניור"]
+    },
+    "puka-nacua": {
+      "he": "פוקה נקואה",
+      "en": "Puka Nacua",
+      "ar": "بوكا ناكوا",
+      "keywords": ["puka nacua", "nacua", "بوكا ناكوا"],
+      "match": ["פוקה נקואה"]
+    },
+    "matthew-stafford": {
+      "he": "מת׳יו סטאפורד",
+      "en": "Matthew Stafford",
+      "ar": "ماثيو ستافورد",
+      "keywords": ["matthew stafford", "stafford", "ماثيو ستافورد"],
+      "match": ["מת׳יו סטאפורד"]
+    },
+    "aaron-donald": {
+      "he": "ארון דונלד",
+      "en": "Aaron Donald",
+      "ar": "آرون دونالد",
+      "keywords": ["aaron donald", "آرون دونالد"],
+      "match": ["ארון דונלד"]
+    },
+    "dan-marino": {
+      "he": "דן מרינו",
+      "en": "Dan Marino",
+      "ar": "دان مارينو",
+      "keywords": ["dan marino", "marino", "دان مارينو"],
+      "match": ["דן מרינו"]
+    },
+    "malik-willis": {
+      "he": "מאליק וויליס",
+      "en": "Malik Willis",
+      "ar": "مالك ويليس",
+      "keywords": ["malik willis", "willis", "مالك ويليس"],
+      "match": ["מאליק וויליס"]
+    },
+    "devon-achane": {
+      "he": "דה׳וון אשיין",
+      "en": "De'Von Achane",
+      "ar": "ديفون أشين",
+      "keywords": ["de'von achane", "achane", "ديفون أشين"],
+      "match": ["דה׳וון אשיין"]
+    },
+    "justin-jefferson": {
+      "he": "ג׳סטין ג׳פרסון",
+      "en": "Justin Jefferson",
+      "ar": "جاستن جيفرسون",
+      "keywords": ["justin jefferson", "jefferson", "جاستن جيفرسون"],
+      "match": ["ג׳סטין ג׳פרסון"]
+    },
+    "jordan-addison": {
+      "he": "ג׳ורדן אדיסון",
+      "en": "Jordan Addison",
+      "ar": "جوردان أديسون",
+      "keywords": ["jordan addison", "addison", "جوردان أديسون"],
+      "match": ["ג׳ורדן אדיסון"]
+    },
+    "tj-hockenson": {
+      "he": "טי ג׳יי הוקנסון",
+      "en": "T.J. Hockenson",
+      "ar": "تي جي هوكنسون",
+      "keywords": ["tj hockenson", "hockenson", "تي جي هوكنسون"],
+      "match": ["טי ג׳יי הוקנסון"]
+    },
+    "jj-mccarthy": {
+      "he": "ג׳יי ג׳יי מקארתי",
+      "en": "J.J. McCarthy",
+      "ar": "جي جي مكارثي",
+      "keywords": ["jj mccarthy", "mccarthy", "جي جي مكارثي"],
+      "match": ["ג׳יי ג׳יי מקארתי"]
+    },
+    "christian-gonzalez": {
+      "he": "כריסטיאן גונזלס",
+      "en": "Christian Gonzalez",
+      "ar": "كريستيان غونزاليس",
+      "keywords": ["christian gonzalez", "gonzalez", "كريستيان غونزاليس"],
+      "match": ["כריסטיאן גונזלס"]
+    },
+    "drake-maye": {
+      "he": "דרייק מיי",
+      "en": "Drake Maye",
+      "ar": "دريك ماي",
+      "keywords": ["drake maye", "maye", "دريك ماي"],
+      "match": ["דרייק מיי"]
+    },
+    "tom-brady": {
+      "he": "טום בריידי",
+      "en": "Tom Brady",
+      "ar": "توم برادي",
+      "keywords": ["tom brady", "brady", "توم برادي"],
+      "match": ["טום בריידי"]
+    },
+    "treveyon-henderson": {
+      "he": "טרוויון הנדרסון",
+      "en": "TreVeyon Henderson",
+      "ar": "تريفيون هندرسون",
+      "keywords": ["treveyon henderson", "henderson", "تريفيون هندرسون"],
+      "match": ["טרוויון הנדרסון"]
+    },
+    "stefon-diggs": {
+      "he": "סטפון דיגס",
+      "en": "Stefon Diggs",
+      "ar": "ستيفون ديغز",
+      "keywords": ["stefon diggs", "diggs", "ستيفون ديغز"],
+      "match": ["סטפון דיגס"]
+    },
+    "chris-olave": {
+      "he": "כריס אולב",
+      "en": "Chris Olave",
+      "ar": "كريس أولاف",
+      "keywords": ["chris olave", "olave", "كريس أولاف"],
+      "match": ["כריס אולב"]
+    },
+    "alvin-kamara": {
+      "he": "אלווין קמארה",
+      "en": "Alvin Kamara",
+      "ar": "ألفين كامارا",
+      "keywords": ["alvin kamara", "kamara", "ألفين كامارا"],
+      "match": ["אלווין קמארה"]
+    },
+    "tyler-shough": {
+      "he": "טיילר שאף",
+      "en": "Tyler Shough",
+      "ar": "تايلر شوف",
+      "keywords": ["tyler shough", "shough", "تايلر شوف"],
+      "match": ["טיילר שאף"]
+    },
+    "drew-brees": {
+      "he": "דרו בריס",
+      "en": "Drew Brees",
+      "ar": "درو بريز",
+      "keywords": ["drew brees", "brees", "درو بريز"],
+      "match": ["דרו בריס"]
+    },
+    "malik-nabers": {
+      "he": "מאליק נייברס",
+      "en": "Malik Nabers",
+      "ar": "مالك نايبرز",
+      "keywords": ["malik nabers", "nabers", "مالك نايبرز"],
+      "match": ["מאליק נייברס"]
+    },
+    "cam-skattebo": {
+      "he": "קאם סקאטבו",
+      "en": "Cam Skattebo",
+      "ar": "كام سكاتيبو",
+      "keywords": ["cam skattebo", "skattebo", "كام سكاتيبو"],
+      "match": ["קאם סקאטבו"]
+    },
+    "abdul-carter": {
+      "he": "עבדול קרטר",
+      "en": "Abdul Carter",
+      "ar": "عبدول كارتر",
+      "keywords": ["abdul carter", "عبدول كارتر"],
+      "match": ["עבדול קרטר"]
+    },
+    "lawrence-taylor": {
+      "he": "לורנס טיילור",
+      "en": "Lawrence Taylor",
+      "ar": "لورانس تايلور",
+      "keywords": ["lawrence taylor", "لورانس تايلور"],
+      "match": ["לורנס טיילור"]
+    },
+    "jaxson-dart": {
+      "he": "ג׳קסון דארט",
+      "en": "Jaxson Dart",
+      "ar": "جاكسون دارت",
+      "keywords": ["jaxson dart", "جاكسون دارت"],
+      "match": ["ג׳קסון דארט"]
+    },
+    "breece-hall": {
+      "he": "בריס הול",
+      "en": "Breece Hall",
+      "ar": "بريس هول",
+      "keywords": ["breece hall", "بريس هول"],
+      "match": ["בריס הול"]
+    },
+    "garrett-wilson": {
+      "he": "גארט וילסון",
+      "en": "Garrett Wilson",
+      "ar": "غاريت ويلسون",
+      "keywords": ["garrett wilson", "غاريت ويلسون"],
+      "match": ["גארט וילסון"]
+    },
+    "justin-fields": {
+      "he": "ג׳סטין פילדס",
+      "en": "Justin Fields",
+      "ar": "جاستن فيلدز",
+      "keywords": ["justin fields", "جاستن فيلدز"],
+      "match": ["ג׳סטין פילדס"]
+    },
+    "jalen-hurts": {
+      "he": "ג׳יילן הרטס",
+      "en": "Jalen Hurts",
+      "ar": "جالين هيرتس",
+      "keywords": ["jalen hurts", "hurts", "جالين هيرتس"],
+      "match": ["ג׳יילן הרטס"]
+    },
+    "aj-brown": {
+      "he": "איי ג׳יי בראון",
+      "en": "A.J. Brown",
+      "ar": "إيه جيه براون",
+      "keywords": ["aj brown", "إيه جيه براون"],
+      "match": ["איי ג׳יי בראון"]
+    },
+    "saquon-barkley": {
+      "he": "סקוואן בארקלי",
+      "en": "Saquon Barkley",
+      "ar": "ساكوان باركلي",
+      "keywords": ["saquon barkley", "barkley", "ساكوان باركلي"],
+      "match": ["סקוואן בארקלי"]
+    },
+    "cooper-dejean": {
+      "he": "קופר דה׳ז׳אן",
+      "en": "Cooper DeJean",
+      "ar": "كوبر ديجين",
+      "keywords": ["cooper dejean", "dejean", "كوبر ديجين"],
+      "match": ["קופר דה׳ז׳אן"]
+    },
+    "devonta-smith": {
+      "he": "דוונטה סמית׳",
+      "en": "DeVonta Smith",
+      "ar": "ديفونتا سميث",
+      "keywords": ["devonta smith", "ديفونتا سميث"],
+      "match": ["דוונטה סמית׳"]
+    },
+    "jason-kelce": {
+      "he": "ג׳ייסון קלסי",
+      "en": "Jason Kelce",
+      "ar": "جيسون كيلسي",
+      "keywords": ["jason kelce", "kelce", "جيسون كيلسي"],
+      "match": ["ג׳ייסון קלסי"]
+    },
+    "dk-metcalf": {
+      "he": "די קיי מטקאלף",
+      "en": "DK Metcalf",
+      "ar": "دي كي ميتكالف",
+      "keywords": ["dk metcalf", "metcalf", "دي كي ميتكالف"],
+      "match": ["די קיי מטקאלף"]
+    },
+    "troy-polamalu": {
+      "he": "טרוי פולמלו",
+      "en": "Troy Polamalu",
+      "ar": "تروي بولامالو",
+      "keywords": ["troy polamalu", "polamalu", "تروي بولامالو"],
+      "match": ["טרוי פולמלו"]
+    },
+    "jalen-ramsey": {
+      "he": "ג׳יילן רמזי",
+      "en": "Jalen Ramsey",
+      "ar": "جالين رامزي",
+      "keywords": ["jalen ramsey", "ramsey", "جالين رامزي"],
+      "match": ["ג׳יילן רמזי"]
+    },
+    "aaron-rodgers": {
+      "he": "ארון רוג׳רס",
+      "en": "Aaron Rodgers",
+      "ar": "آرون رودجرز",
+      "keywords": ["aaron rodgers", "rodgers", "آرون رودجرز"],
+      "match": ["ארון רוג׳רס"]
+    },
+    "tj-watt": {
+      "he": "טי ג׳יי וואט",
+      "en": "T.J. Watt",
+      "ar": "تي جي وات",
+      "keywords": ["tj watt", "watt", "تي جي وات"],
+      "match": ["טי ג׳יי וואט"]
+    },
+    "brock-purdy": {
+      "he": "ברוק פרדי",
+      "en": "Brock Purdy",
+      "ar": "بروك بوردي",
+      "keywords": ["brock purdy", "purdy", "بروك بوردي"],
+      "match": ["ברוק פרדי"]
+    },
+    "joe-montana": {
+      "he": "ג׳ו מונטנה",
+      "en": "Joe Montana",
+      "ar": "جو مونتانا",
+      "keywords": ["joe montana", "montana", "جو مونتانا"],
+      "match": ["ג׳ו מונטנה"]
+    },
+    "christian-mccaffrey": {
+      "he": "כריסטיאן מקפרי",
+      "en": "Christian McCaffrey",
+      "ar": "كريستيان مكافري",
+      "keywords": ["christian mccaffrey", "mccaffrey", "كريستيان مكافري"],
+      "match": ["כריסטיאן מקפרי"]
+    },
+    "fred-warner": {
+      "he": "פרד וורנר",
+      "en": "Fred Warner",
+      "ar": "فريد وارنر",
+      "keywords": ["fred warner", "warner", "فريد وارنر"],
+      "match": ["פרד וורנר"]
+    },
+    "jerry-rice": {
+      "he": "ג׳רי רייס",
+      "en": "Jerry Rice",
+      "ar": "جيري رايس",
+      "keywords": ["jerry rice", "جيري رايس"],
+      "match": ["ג׳רי רייס"]
+    },
+    "george-kittle": {
+      "he": "ג׳ורג׳ קיטל",
+      "en": "George Kittle",
+      "ar": "جورج كيتل",
+      "keywords": ["george kittle", "kittle", "جورج كيتل"],
+      "match": ["ג׳ורג׳ קיטל"]
+    },
+    "nick-bosa": {
+      "he": "ניק בוסה",
+      "en": "Nick Bosa",
+      "ar": "نيك بوسا",
+      "keywords": ["nick bosa", "bosa", "نيك بوسا"],
+      "match": ["ניק בוסה"]
+    },
+    "cooper-kupp": {
+      "he": "קופר קאפ",
+      "en": "Cooper Kupp",
+      "ar": "كوبر كوب",
+      "keywords": ["cooper kupp", "kupp", "كوبر كوب"],
+      "match": ["קופר קאפ"]
+    },
+    "jaxon-smith-njigba": {
+      "he": "ג׳קסון סמית׳-ניג׳בה",
+      "en": "Jaxon Smith-Njigba",
+      "ar": "جاكسون سميث-نجيبا",
+      "keywords": ["jaxon smith-njigba", "njigba", "جاكسون سميث-نجيبا"],
+      "match": ["ג׳קסון סמית׳-ניג׳בה"]
+    },
+    "sam-darnold": {
+      "he": "סם דארנולד",
+      "en": "Sam Darnold",
+      "ar": "سام دارنولد",
+      "keywords": ["sam darnold", "darnold", "سام دارنولد"],
+      "match": ["סם דארנולד"]
+    },
+    "devon-witherspoon": {
+      "he": "דבון וית׳רספון",
+      "en": "Devon Witherspoon",
+      "ar": "ديفون ويذرسبون",
+      "keywords": ["devon witherspoon", "witherspoon", "ديفون ويذرسبون"],
+      "match": ["דבון וית׳רספון"]
+    },
+    "kenneth-walker-iii": {
+      "he": "קנת׳ ווקר השלישי",
+      "en": "Kenneth Walker III",
+      "ar": "كينيث ووكر الثالث",
+      "keywords": ["kenneth walker iii", "walker", "كينيث ووكر الثالث"],
+      "match": ["קנת׳ ווקר השלישי"]
+    },
+    "mike-evans": {
+      "he": "מייק אוונס",
+      "en": "Mike Evans",
+      "ar": "مايك إيفانز",
+      "keywords": ["mike evans", "مايك إيفانز"],
+      "match": ["מייק אוונס"]
+    },
+    "emeka-egbuka": {
+      "he": "אמקה אגבוקה",
+      "en": "Emeka Egbuka",
+      "ar": "إيميكا إغبوكا",
+      "keywords": ["emeka egbuka", "egbuka", "إيميكا إغبوكا"],
+      "match": ["אמקה אגבוקה"]
+    },
+    "baker-mayfield": {
+      "he": "בייקר מייפילד",
+      "en": "Baker Mayfield",
+      "ar": "بيكر مايفيلد",
+      "keywords": ["baker mayfield", "mayfield", "بيكر مايفيلد"],
+      "match": ["בייקר מייפילד"]
+    },
+    "cam-ward": {
+      "he": "קאם וורד",
+      "en": "Cam Ward",
+      "ar": "كام وارد",
+      "keywords": ["cam ward", "كام وارد"],
+      "match": ["קאם וורד"]
+    },
+    "jeffery-simmons": {
+      "he": "ג׳פרי סימונס",
+      "en": "Jeffery Simmons",
+      "ar": "جيفري سيمونز",
+      "keywords": ["jeffery simmons", "جيفري سيمونز"],
+      "match": ["ג׳פרי סימונס"]
+    },
+    "terry-mclaurin": {
+      "he": "טרי מקלורין",
+      "en": "Terry McLaurin",
+      "ar": "تيري ماكلورين",
+      "keywords": ["terry mclaurin", "mclaurin", "تيري ماكلورين"],
+      "match": ["טרי מקלורין"]
+    },
+    "jayden-daniels": {
+      "he": "ג׳יידן דניאלס",
+      "en": "Jayden Daniels",
+      "ar": "جايدن دانيلز",
+      "keywords": ["jayden daniels", "daniels", "جايدن دانيلز"],
+      "match": ["ג׳יידן דניאלס"]
     }
   },
   "player_numbers": {
@@ -2532,7 +3420,116 @@
     },
     "new-orleans-pelicans": {
       "1": "zion-williamson"
-    }
+    },
+    "arizona-cardinals": { "1": "kyler-murray", "18": "marvin-harrison-jr" },
+    "atlanta-falcons": { "5": "drake-london", "7": "bijan-robinson", "9": "michael-penix-jr" },
+    "baltimore-ravens": {
+      "4": "zay-flowers",
+      "8": "lamar-jackson",
+      "14": "kyle-hamilton",
+      "22": "derrick-henry",
+      "52": "ray-lewis"
+    },
+    "buffalo-bills": { "0": "keon-coleman", "4": "james-cook-iii", "17": "josh-allen", "86": "dalton-kincaid" },
+    "carolina-panthers": { "4": "tetairoa-mcmillan", "9": "bryce-young" },
+    "chicago-bears": {
+      "10": "luther-burden-iii",
+      "15": "rome-odunze",
+      "18": "caleb-williams",
+      "34": "walter-payton",
+      "84": "colston-loveland"
+    },
+    "cincinnati-bengals": { "1": "jamarr-chase", "5": "tee-higgins", "9": "joe-burrow" },
+    "cleveland-browns": { "10": "quinshon-judkins", "12": "shedeur-sanders", "95": "myles-garrett" },
+    "dallas-cowboys": { "3": "george-pickens", "4": "dak-prescott", "13": "caleb-downs", "88": "ceedee-lamb" },
+    "denver-broncos": {
+      "2": "patrick-surtain-ii",
+      "7": "john-elway",
+      "10": "bo-nix",
+      "14": "courtland-sutton",
+      "17": "jaylen-waddle"
+    },
+    "detroit-lions": {
+      "0": "jahmyr-gibbs",
+      "14": "amon-ra-st-brown",
+      "16": "jared-goff",
+      "20": "barry-sanders",
+      "87": "sam-laporta",
+      "97": "aidan-hutchinson"
+    },
+    "green-bay-packers": {
+      "0": "matthew-golden",
+      "1": "micah-parsons",
+      "4": "brett-favre",
+      "8": "josh-jacobs",
+      "10": "jordan-love",
+      "85": "tucker-kraft"
+    },
+    "houston-texans": { "7": "cj-stroud", "12": "nico-collins", "51": "will-anderson-jr" },
+    "indianapolis-colts": { "17": "daniel-jones", "28": "jonathan-taylor", "84": "tyler-warren" },
+    "jacksonville-jaguars": { "12": "travis-hunter", "16": "trevor-lawrence" },
+    "kansas-city-chiefs": { "1": "xavier-worthy", "4": "rashee-rice", "15": "patrick-mahomes", "87": "travis-kelce" },
+    "las-vegas-raiders": {
+      "2": "ashton-jeanty",
+      "15": "fernando-mendoza",
+      "34": "bo-jackson",
+      "89": "brock-bowers",
+      "98": "maxx-crosby"
+    },
+    "los-angeles-chargers": { "3": "derwin-james-jr", "10": "justin-herbert", "15": "ladd-mcconkey" },
+    "los-angeles-rams": { "9": "matthew-stafford", "12": "puka-nacua", "99": "aaron-donald" },
+    "miami-dolphins": { "2": "malik-willis", "13": "dan-marino", "28": "devon-achane" },
+    "minnesota-vikings": { "3": "jordan-addison", "9": "jj-mccarthy", "18": "justin-jefferson", "87": "tj-hockenson" },
+    "new-england-patriots": {
+      "0": "christian-gonzalez",
+      "8": "stefon-diggs",
+      "10": "drake-maye",
+      "12": "tom-brady",
+      "32": "treveyon-henderson"
+    },
+    "new-orleans-saints": { "6": "tyler-shough", "9": "drew-brees", "12": "chris-olave", "41": "alvin-kamara" },
+    "new-york-giants": {
+      "1": "malik-nabers",
+      "6": "jaxson-dart",
+      "44": "cam-skattebo",
+      "51": "abdul-carter",
+      "56": "lawrence-taylor"
+    },
+    "new-york-jets": { "5": "garrett-wilson", "7": "justin-fields", "20": "breece-hall" },
+    "philadelphia-eagles": {
+      "1": "jalen-hurts",
+      "6": "devonta-smith",
+      "11": "aj-brown",
+      "26": "saquon-barkley",
+      "33": "cooper-dejean",
+      "62": "jason-kelce"
+    },
+    "pittsburgh-steelers": {
+      "4": "dk-metcalf",
+      "5": "jalen-ramsey",
+      "8": "aaron-rodgers",
+      "43": "troy-polamalu",
+      "90": "tj-watt"
+    },
+    "san-francisco-49ers": {
+      "13": "brock-purdy",
+      "16": "joe-montana",
+      "23": "christian-mccaffrey",
+      "54": "fred-warner",
+      "80": "jerry-rice",
+      "85": "george-kittle",
+      "97": "nick-bosa"
+    },
+    "seattle-seahawks": {
+      "9": "kenneth-walker-iii",
+      "10": "cooper-kupp",
+      "11": "jaxon-smith-njigba",
+      "14": "sam-darnold",
+      "21": "devon-witherspoon"
+    },
+    "tampa-bay-buccaneers": { "2": "emeka-egbuka", "6": "baker-mayfield", "12": "tom-brady", "13": "mike-evans" },
+    "tennessee-titans": { "1": "cam-ward", "98": "jeffery-simmons" },
+    "washington-commanders": { "5": "jayden-daniels", "17": "terry-mclaurin" }
   },
   "title_names": {
     "gianna-bryant": {

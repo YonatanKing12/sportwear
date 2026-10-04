@@ -1,0 +1,171 @@
+{
+  "handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "carolina-panthers",
+    "code": "CAR",
+    "he": "קרוליינה פנתרס",
+    "en": "Carolina Panthers",
+    "ar": "كارولينا بانثرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "tetairoa-mcmillan",
+    "name_on_back": "McMILLAN",
+    "he": "טטאירואה מקמילן",
+    "en": "Tetairoa McMillan",
+    "ar": "تيتايروا ماكميلان"
+  },
+  "title_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של קרוליינה פנתרס בצבע שחור, עם השם McMILLAN והמספר 4 על הגב (טטאירואה מקמילן).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור – ילדים",
+    "description_he": "חולצת פוטבול של קרוליינה פנתרס בצבע שחור, עם McMILLAN 4 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-CAR-4-BLK-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-CAR-4-BLK-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-CAR-4-BLK-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-CAR-4-BLK-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/carolina-panthers-4-black-213772787-03-kids.png",
+      "alt_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/carolina-panthers-4-black-213772787-03-kids__back.png",
+      "alt_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Carolina Panthers #4 NFL Jersey – Black – Kids",
+      "description_html": "<p>Carolina Panthers NFL jersey in black, with the name McMILLAN and the number 4 on the back (Tetairoa McMillan).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Carolina Panthers #4 NFL Jersey – Black – Kids",
+      "seo_description": "Carolina Panthers NFL jersey in black, McMILLAN 4 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية كارولينا بانثرز رقم 4 أسود – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق كارولينا بانثرز باللون الأسود، مع الاسم McMILLAN والرقم 4 على الظهر (تيتايروا ماكميلان).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية كارولينا بانثرز رقم 4 أسود – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق كارولينا بانثرز باللون الأسود، McMILLAN 4 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/213772787?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装黑豹",
+    "photos": {
+      "front": "213772787/03",
+      "back": "213772787/03"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:carolina-panthers",
+    "league:nfl",
+    "audience:kids",
+    "player:tetairoa-mcmillan",
+    "טטאירואה מקמילן",
+    "new",
+    "source:nfl-cyq888",
+    "album:213772787",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "carolina panthers",
+    "panthers",
+    "كارولينا بانثرز",
+    "بانثرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "tetairoa mcmillan",
+    "mcmillan",
+    "تيتايروا ماكميلان"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "",
+    "render": "carolina-panthers-4-black-213772787-03-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332209951024",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935203131696",
+      "M": "gid://shopify/ProductVariant/67935203164464",
+      "L": "gid://shopify/ProductVariant/67935203197232",
+      "XL": "gid://shopify/ProductVariant/67935203230000"
+    },
+    "created_at": "2026-10-04T11:05:55Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:20:03Z",
+      "ar": "2026-10-04T11:20:03Z"
+    }
+  }
+}

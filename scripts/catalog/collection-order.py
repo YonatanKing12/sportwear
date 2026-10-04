@@ -16,6 +16,7 @@ the collection's sortOrder must be MANUAL; send each call's moves with
 and wait for the job to be done before the next call on the same collection (moves apply in order).
 Run it after every import: Shopify does not place new products by these rules.
 """
+import glob
 import json
 import os
 import sys
@@ -26,11 +27,13 @@ from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 CONFIG = os.path.join(ROOT, 'catalog/collection-order.json')
+NFL_PICKS = os.path.join(ROOT, 'catalog/sources/nfl-cyq888/picks.json')
 STORE = 'https://sportwear.co.il'
 UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
 KIT = {'home': 0, 'away': 1, 'third': 2, 'fourth': 3, 'special': 4, 'training': 5}
 SEASON = {None: 0, '2026-27': 0, '2025-26': 1, '2024-25': 2}
 END = '99999'  # "newPosition" past the last product puts it at the end
+HOODIE_AUDIENCE = {'adult': 0, 'men': 0, 'women': 1, 'kids': 2}  # the men's hoodies are tagged audience:adult
 
 
 def get_json(url):
@@ -80,15 +83,34 @@ def facts(p, cfg):
         'id': p['id'], 'p': p, 'sport': tag('sport:') or '', 'team': team,
         'kit': KIT.get(tag('kit:') or '', 6),
         'kids': tag('audience:') == 'kids',
+        'audience': tag('audience:'),
         'old': bool((season and season != '2026-27') or retro),
         'season_rank': SEASON.get(season, 3) + (5 if retro else 0),
         'demote': p['handle'] in cfg['demote'] or team == 'bape',
     }
 
 
-def order(handle, products, nba_index, cfg):
+def nfl_ranks():
+    """NFL jersey handle -> its place in the picks (each team's stars first), through the studio render its product
+    file names (catalog/published/<handle>.json, review.render)."""
+    picks = json.load(open(NFL_PICKS, encoding='utf-8'))['picks']
+    order = {}
+    for i, p in enumerate(picks):
+        render = f"{p['team']}-{p['number']}-{p['color']}-{p['album']}-{p['photo']}"
+        order[render + ('-kids' if p['audience'] == 'kids' else '')] = i
+    ranks = {}
+    for f in glob.glob(os.path.join(ROOT, 'catalog/published/*.json')):
+        d = json.load(open(f, encoding='utf-8'))
+        render = (d.get('review') or {}).get('render') if isinstance(d, dict) else None
+        if render in order:
+            ranks[d['handle']] = order[render]
+    return ranks
+
+
+def order(handle, products, nba_index, nfl_rank, cfg):
     """The planned order of one collection, as a list of facts dicts."""
     football, basketball = cfg['football_priority'], cfg['basketball_priority']
+    american_football = cfg['american_football_priority']
     top = set(basketball[:cfg['top_basketball_teams']])
     rows = []
     for i, p in enumerate(products):
@@ -102,33 +124,38 @@ def order(handle, products, nba_index, cfg):
             f['group'] = 1
         else:
             f['group'] = 0
-        if handle == 'kids':  # the football sets first, then basketball, then hoodies
-            f['group'] = {'football': 0, 'basketball': 1}.get(f['sport'], 3)
+        if handle == 'kids':  # the football sets first, then basketball, then NFL jerseys, then hoodies
+            sport_group = {'football': 0, 'basketball': 1, 'american-football': 2}.get(f['sport'], 3)
+            f['group'] = 3 if p['type'] == 'Hoodie' else sport_group
         rows.append(f)
 
-    # Each team's products in turn order: football by season then kit, basketball in the nba page's order.
+    # Each team's products in turn order: football by season then kit, basketball in the nba page's order, NFL in the
+    # picks' order.
     teams = defaultdict(list)
     for f in rows:
         teams[(f['demote'], f['group'], f['sport'], f['team'])].append(f)
     for (_, _, sport, _), lst in teams.items():
         if sport == 'football':
             lst.sort(key=lambda f: (f['season_rank'], f['kit'], f['orig']))
+        elif sport == 'american-football':
+            lst.sort(key=lambda f: (nfl_rank.get(f['p']['handle'], 10 ** 6), f['orig']))
         else:
             lst.sort(key=lambda f: (nba_index.get(f['id'], 10 ** 6), f['orig']))
         for r, f in enumerate(lst):
             f['round'] = r
 
     def key(f):
-        if f['p']['type'] == 'Hoodie':
-            return (f['demote'], f['group'], 0, 0, 0, f['orig'])
-        ranks = football if f['sport'] == 'football' else basketball
+        if f['p']['type'] == 'Hoodie':  # the NFL teams in turn, each team's men's, women's, then kids' hoodie
+            rank = american_football.index(f['team']) if f['team'] in american_football else len(american_football)
+            return (f['demote'], f['group'], 0, 0, rank, HOODIE_AUDIENCE.get(f['audience'], 3), f['orig'])
+        ranks = {'football': football, 'american-football': american_football}.get(f['sport'], basketball)
         rank = ranks.index(f['team']) if f['team'] in ranks else len(ranks) + 1
         if f['sport'] == 'football' and f['old']:
             rank += cfg['older_season_delay']  # a big club with no 26/27 shirt yet still shows, a little later
         phase = 0
         if f['sport'] == 'basketball':
             phase = 0 if (f['team'] in top and f['round'] < cfg['top_basketball_rounds']) else 1
-        return (f['demote'], f['group'], phase, f['round'], rank, f['orig'])
+        return (f['demote'], f['group'], phase, f['round'], rank, 0, f['orig'])
 
     return sorted(rows, key=key)
 
@@ -186,10 +213,11 @@ def main():
 
     cols = fetch(handles + ['nba']) if command == 'check' else json.load(open(path, encoding='utf-8'))
     nba_index = {p['id']: i for i, p in enumerate(cols['nba'])}
+    nfl_rank = nfl_ranks()
     plans = {}
     for handle in handles:
         spec = specs[handle]
-        planned = order(handle, cols[handle], nba_index, cfg)
+        planned = order(handle, cols[handle], nba_index, nfl_rank, cfg)
         head, tail = head_and_tail(planned, spec)
         current = [p['id'] for p in cols[handle]]
         ok = in_order(current, head, tail)

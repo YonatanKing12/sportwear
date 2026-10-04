@@ -1,0 +1,165 @@
+{
+  "handle": "los-angeles-chargers-justin-herbert-10-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "los-angeles-chargers",
+    "code": "LAC",
+    "he": "לוס אנג׳לס צ׳ארג׳רס",
+    "en": "Los Angeles Chargers",
+    "ar": "لوس أنجلوس تشارجرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "justin-herbert",
+    "name_on_back": "HERBERT",
+    "he": "ג׳סטין הרברט",
+    "en": "Justin Herbert",
+    "ar": "جاستن هيربرت"
+  },
+  "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 לבן",
+  "description_html_he": "<p>חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע לבן, עם השם HERBERT והמספר 10 על הגב (ג׳סטין הרברט).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 לבן",
+    "description_he": "חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע לבן, עם HERBERT 10 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LAC-10-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LAC-10-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LAC-10-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LAC-10-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-10-white-150396367-02.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-10-white-150396367-02__back.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Los Angeles Chargers #10 NFL Jersey – White",
+      "description_html": "<p>Los Angeles Chargers NFL jersey in white, with the name HERBERT and the number 10 on the back (Justin Herbert).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Los Angeles Chargers #10 NFL Jersey – White",
+      "seo_description": "Los Angeles Chargers NFL jersey in white, HERBERT 10 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 10 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأبيض، مع الاسم HERBERT والرقم 10 على الظهر (جاستن هيربرت).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 10 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأبيض، HERBERT 10 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/150396367?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "闪电",
+    "photos": {
+      "front": "150396367/02",
+      "back": "150396367/02"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:los-angeles-chargers",
+    "league:nfl",
+    "audience:adult",
+    "player:justin-herbert",
+    "ג׳סטין הרברט",
+    "new",
+    "source:nfl-cyq888",
+    "album:150396367",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "los angeles chargers",
+    "chargers",
+    "لوس أنجلوس تشارجرز",
+    "تشارجرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "justin herbert",
+    "herbert",
+    "جاستن هيربرت"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "2020 design: gold/powder-blue shoulder bolts, powder-blue name ('BOLT UP' collar)",
+    "render": "los-angeles-chargers-10-white-150396367-02"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332202479920",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935159779632",
+      "M": "gid://shopify/ProductVariant/67935159812400",
+      "L": "gid://shopify/ProductVariant/67935159845168",
+      "XL": "gid://shopify/ProductVariant/67935159877936"
+    },
+    "created_at": "2026-10-04T10:49:44Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:05:33Z",
+      "ar": "2026-10-04T11:05:34Z"
+    }
+  }
+}

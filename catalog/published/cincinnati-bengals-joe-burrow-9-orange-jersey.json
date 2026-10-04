@@ -1,0 +1,165 @@
+{
+  "handle": "cincinnati-bengals-joe-burrow-9-orange-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "cincinnati-bengals",
+    "code": "CIN",
+    "he": "סינסינטי בנגלס",
+    "en": "Cincinnati Bengals",
+    "ar": "سينسيناتي بنغالز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "joe-burrow",
+    "name_on_back": "BURROW",
+    "he": "ג׳ו בארו",
+    "en": "Joe Burrow",
+    "ar": "جو بورو"
+  },
+  "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 כתום",
+  "description_html_he": "<p>חולצת פוטבול של סינסינטי בנגלס בצבע כתום, עם השם BURROW והמספר 9 על הגב (ג׳ו בארו).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 כתום",
+    "description_he": "חולצת פוטבול של סינסינטי בנגלס בצבע כתום, עם BURROW 9 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-CIN-9-ORG-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-CIN-9-ORG-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-CIN-9-ORG-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-CIN-9-ORG-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cincinnati-bengals-9-orange-149773411-07.png",
+      "alt_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 כתום",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cincinnati-bengals-9-orange-149773411-07__back.png",
+      "alt_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 כתום (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "cincinnati-bengals-joe-burrow-9-orange-jersey-kids",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Cincinnati Bengals #9 NFL Jersey – Orange",
+      "description_html": "<p>Cincinnati Bengals NFL jersey in orange, with the name BURROW and the number 9 on the back (Joe Burrow).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Cincinnati Bengals #9 NFL Jersey – Orange",
+      "seo_description": "Cincinnati Bengals NFL jersey in orange, BURROW 9 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية سينسيناتي بنغالز رقم 9 برتقالي",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق سينسيناتي بنغالز باللون البرتقالي، مع الاسم BURROW والرقم 9 على الظهر (جو بورو).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية سينسيناتي بنغالز رقم 9 برتقالي",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق سينسيناتي بنغالز باللون البرتقالي، BURROW 9 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149773411?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "猛虎",
+    "photos": {
+      "front": "149773411/07",
+      "back": "149773411/07"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:cincinnati-bengals",
+    "league:nfl",
+    "audience:adult",
+    "player:joe-burrow",
+    "ג׳ו בארו",
+    "new",
+    "source:nfl-cyq888",
+    "album:149773411",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "cincinnati bengals",
+    "bengals",
+    "سينسيناتي بنغالز",
+    "بنغالز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "joe burrow",
+    "burrow",
+    "جو بورو"
+  ],
+  "review": {
+    "style_guess": "alternate",
+    "variant": "black tiger stripes on shoulders and sleeves",
+    "render": "cincinnati-bengals-9-orange-149773411-07"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332206870832",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935186518320",
+      "M": "gid://shopify/ProductVariant/67935186551088",
+      "L": "gid://shopify/ProductVariant/67935186583856",
+      "XL": "gid://shopify/ProductVariant/67935186616624"
+    },
+    "created_at": "2026-10-04T10:59:33Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:16:40Z",
+      "ar": "2026-10-04T11:16:40Z"
+    }
+  }
+}

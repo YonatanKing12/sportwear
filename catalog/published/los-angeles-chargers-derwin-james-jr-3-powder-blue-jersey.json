@@ -1,0 +1,164 @@
+{
+  "handle": "los-angeles-chargers-derwin-james-jr-3-powder-blue-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "los-angeles-chargers",
+    "code": "LAC",
+    "he": "לוס אנג׳לס צ׳ארג׳רס",
+    "en": "Los Angeles Chargers",
+    "ar": "لوس أنجلوس تشارجرز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "derwin-james-jr",
+    "name_on_back": "JAMES JR",
+    "he": "דרווין ג׳יימס ג׳וניור",
+    "en": "Derwin James Jr.",
+    "ar": "ديروين جيمس جونيور"
+  },
+  "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 3 תכלת",
+  "description_html_he": "<p>חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע תכלת, עם השם JAMES JR והמספר 3 על הגב (דרווין ג׳יימס ג׳וניור).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 3 תכלת",
+    "description_he": "חולצת פוטבול של לוס אנג׳לס צ׳ארג׳רס בצבע תכלת, עם JAMES JR 3 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-LAC-3-PBL-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-LAC-3-PBL-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-LAC-3-PBL-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-LAC-3-PBL-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-3-powder-blue-150396367-09.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 3 תכלת",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/los-angeles-chargers-3-powder-blue-150396367-09__back.png",
+      "alt_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 3 תכלת (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Los Angeles Chargers #3 NFL Jersey – Powder Blue",
+      "description_html": "<p>Los Angeles Chargers NFL jersey in powder blue, with the name JAMES JR and the number 3 on the back (Derwin James Jr.).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Los Angeles Chargers #3 NFL Jersey – Powder Blue",
+      "seo_description": "Los Angeles Chargers NFL jersey in powder blue, JAMES JR 3 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 3 أزرق فاتح",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأزرق الفاتح، مع الاسم JAMES JR والرقم 3 على الظهر (ديروين جيمس جونيور).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية لوس أنجلوس تشارجرز رقم 3 أزرق فاتح",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق لوس أنجلوس تشارجرز باللون الأزرق الفاتح، JAMES JR 3 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/150396367?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "闪电",
+    "photos": {
+      "front": "150396367/09",
+      "back": "150396367/09"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:los-angeles-chargers",
+    "league:nfl",
+    "audience:adult",
+    "player:derwin-james-jr",
+    "דרווין ג׳יימס ג׳וניור",
+    "new",
+    "source:nfl-cyq888",
+    "album:150396367",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "los angeles chargers",
+    "chargers",
+    "لوس أنجلوس تشارجرز",
+    "تشارجرز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "derwin james jr",
+    "ديروين جيمس جونيور"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "2020 design: gold shoulder bolts, white name ('BOLT UP' collar)",
+    "render": "los-angeles-chargers-3-powder-blue-150396367-09"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332203594032",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935165612336",
+      "M": "gid://shopify/ProductVariant/67935165645104",
+      "L": "gid://shopify/ProductVariant/67935165677872",
+      "XL": "gid://shopify/ProductVariant/67935165710640"
+    },
+    "created_at": "2026-10-04T10:51:42Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:05:35Z",
+      "ar": "2026-10-04T11:05:35Z"
+    }
+  }
+}

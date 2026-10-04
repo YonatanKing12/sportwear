@@ -1,0 +1,171 @@
+{
+  "handle": "houston-texans-cj-stroud-7-red-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "houston-texans",
+    "code": "HOU",
+    "he": "יוסטון טקסאנס",
+    "en": "Houston Texans",
+    "ar": "هيوستن تكسانز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "cj-stroud",
+    "name_on_back": "STROUD",
+    "he": "סי ג׳יי סטראוד",
+    "en": "C.J. Stroud",
+    "ar": "سي جي سترود"
+  },
+  "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של יוסטון טקסאנס בצבע אדום, עם השם STROUD והמספר 7 על הגב (סי ג׳יי סטראוד).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום – ילדים",
+    "description_he": "חולצת פוטבול של יוסטון טקסאנס בצבע אדום, עם STROUD 7 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-HOU-7-RED-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-HOU-7-RED-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-HOU-7-RED-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-HOU-7-RED-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/houston-texans-7-red-214161889-03-kids.png",
+      "alt_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/houston-texans-7-red-214161889-03-kids__back.png",
+      "alt_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "houston-texans-cj-stroud-7-red-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Houston Texans #7 NFL Jersey – Red – Kids",
+      "description_html": "<p>Houston Texans NFL jersey in red, with the name STROUD and the number 7 on the back (C.J. Stroud).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Houston Texans #7 NFL Jersey – Red – Kids",
+      "seo_description": "Houston Texans NFL jersey in red, STROUD 7 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية هيوستن تكسانز رقم 7 أحمر – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق هيوستن تكسانز باللون الأحمر، مع الاسم STROUD والرقم 7 على الظهر (سي جي سترود).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية هيوستن تكسانز رقم 7 أحمر – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق هيوستن تكسانز باللون الأحمر، STROUD 7 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214161889?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装德州人",
+    "photos": {
+      "front": "214161889/03",
+      "back": "214161889/03"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:houston-texans",
+    "league:nfl",
+    "audience:kids",
+    "player:cj-stroud",
+    "סי ג׳יי סטראוד",
+    "new",
+    "source:nfl-cyq888",
+    "album:214161889",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "houston texans",
+    "texans",
+    "هيوستن تكسانز",
+    "تكسانز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "cj stroud",
+    "stroud",
+    "سي جي سترود"
+  ],
+  "review": {
+    "style_guess": "alternate",
+    "variant": "pre-2024 design: navy collar and shoulder panels, small 'TEXANS' chest wordmark, sleeve numbers",
+    "render": "houston-texans-7-red-214161889-03-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210671920",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935205720368",
+      "M": "gid://shopify/ProductVariant/67935205753136",
+      "L": "gid://shopify/ProductVariant/67935205785904",
+      "XL": "gid://shopify/ProductVariant/67935205818672"
+    },
+    "created_at": "2026-10-04T11:07:31Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:24:27Z",
+      "ar": "2026-10-04T11:24:27Z"
+    }
+  }
+}

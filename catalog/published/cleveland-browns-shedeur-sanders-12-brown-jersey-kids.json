@@ -1,0 +1,170 @@
+{
+  "handle": "cleveland-browns-shedeur-sanders-12-brown-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "cleveland-browns",
+    "code": "CLE",
+    "he": "קליבלנד בראונס",
+    "en": "Cleveland Browns",
+    "ar": "كليفلاند براونز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "shedeur-sanders",
+    "name_on_back": "SANDERS",
+    "he": "שדור סנדרס",
+    "en": "Shedeur Sanders",
+    "ar": "شيدور ساندرز"
+  },
+  "title_he": "חולצת פוטבול קליבלנד בראונס מספר 12 חום – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של קליבלנד בראונס בצבע חום, עם השם SANDERS והמספר 12 על הגב (שדור סנדרס).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול קליבלנד בראונס מספר 12 חום – ילדים",
+    "description_he": "חולצת פוטבול של קליבלנד בראונס בצבע חום, עם SANDERS 12 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-CLE-12-BRN-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-CLE-12-BRN-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-CLE-12-BRN-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-CLE-12-BRN-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cleveland-browns-12-brown-214162167-04-kids.png",
+      "alt_he": "חולצת פוטבול קליבלנד בראונס מספר 12 חום – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/cleveland-browns-12-brown-214162167-04-kids__back.png",
+      "alt_he": "חולצת פוטבול קליבלנד בראונס מספר 12 חום – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Cleveland Browns #12 NFL Jersey – Brown – Kids",
+      "description_html": "<p>Cleveland Browns NFL jersey in brown, with the name SANDERS and the number 12 on the back (Shedeur Sanders).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Cleveland Browns #12 NFL Jersey – Brown – Kids",
+      "seo_description": "Cleveland Browns NFL jersey in brown, SANDERS 12 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية كليفلاند براونز رقم 12 بني – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق كليفلاند براونز باللون البني، مع الاسم SANDERS والرقم 12 على الظهر (شيدور ساندرز).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية كليفلاند براونز رقم 12 بني – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق كليفلاند براونز باللون البني، SANDERS 12 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214162167?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装布朗",
+    "photos": {
+      "front": "214162167/04",
+      "back": "214162167/04"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:cleveland-browns",
+    "league:nfl",
+    "audience:kids",
+    "player:shedeur-sanders",
+    "שדור סנדרס",
+    "new",
+    "source:nfl-cyq888",
+    "album:214162167",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "cleveland browns",
+    "browns",
+    "كليفلاند براونز",
+    "براونز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "shedeur sanders",
+    "شيدور ساندرز"
+  ],
+  "review": {
+    "style_guess": "home",
+    "variant": "home (brown): orange and white sleeve stripes, \"1946\" printed inside the collar, white numbers, TV numbers on shoulders",
+    "render": "cleveland-browns-12-brown-214162167-04-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332211360048",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935208407344",
+      "M": "gid://shopify/ProductVariant/67935208440112",
+      "L": "gid://shopify/ProductVariant/67935208472880",
+      "XL": "gid://shopify/ProductVariant/67935208505648"
+    },
+    "created_at": "2026-10-04T11:09:07Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:23:32Z",
+      "ar": "2026-10-04T11:23:32Z"
+    }
+  }
+}

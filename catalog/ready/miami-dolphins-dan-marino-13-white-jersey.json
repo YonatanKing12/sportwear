@@ -1,0 +1,151 @@
+{
+  "handle": "miami-dolphins-dan-marino-13-white-jersey",
+  "status": "ready",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "miami-dolphins",
+    "code": "MIA",
+    "he": "מיאמי דולפינס",
+    "en": "Miami Dolphins",
+    "ar": "ميامي دولفينز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "dan-marino",
+    "name_on_back": "MARINO",
+    "he": "דן מרינו",
+    "en": "Dan Marino",
+    "ar": "دان مارينو"
+  },
+  "title_he": "חולצת פוטבול מיאמי דולפינס מספר 13 לבן",
+  "description_html_he": "<p>חולצת פוטבול של מיאמי דולפינס בצבע לבן, עם השם MARINO והמספר 13 על הגב (דן מרינו).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול מיאמי דולפינס מספר 13 לבן",
+    "description_he": "חולצת פוטבול של מיאמי דולפינס בצבע לבן, עם MARINO 13 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-MIA-13-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-MIA-13-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-MIA-13-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-MIA-13-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/miami-dolphins-13-white-149341557-10.png",
+      "alt_he": "חולצת פוטבול מיאמי דולפינס מספר 13 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/miami-dolphins-13-white-149341557-10__back.png",
+      "alt_he": "חולצת פוטבול מיאמי דולפינס מספר 13 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Miami Dolphins #13 NFL Jersey – White",
+      "description_html": "<p>Miami Dolphins NFL jersey in white, with the name MARINO and the number 13 on the back (Dan Marino).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Miami Dolphins #13 NFL Jersey – White",
+      "seo_description": "Miami Dolphins NFL jersey in white, MARINO 13 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية ميامي دولفينز رقم 13 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق ميامي دولفينز باللون الأبيض، مع الاسم MARINO والرقم 13 على الظهر (دان مارينو).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية ميامي دولفينز رقم 13 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق ميامي دولفينز باللون الأبيض، MARINO 13 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/149341557?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "海豚",
+    "photos": {
+      "front": "149341557/10",
+      "back": "149341557/10"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:miami-dolphins",
+    "league:nfl",
+    "audience:adult",
+    "player:dan-marino",
+    "דן מרינו",
+    "new",
+    "source:nfl-cyq888",
+    "album:149341557",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "miami dolphins",
+    "dolphins",
+    "ميامي دولفينز",
+    "دولفينز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "dan marino",
+    "marino",
+    "دان مارينو"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "white away: 'Dolphins' wordmark on the chest, aqua numbers outlined orange, dolphin logo on the sleeves, 'MIAMI' inside the collar",
+    "render": "miami-dolphins-13-white-149341557-10"
+  }
+}

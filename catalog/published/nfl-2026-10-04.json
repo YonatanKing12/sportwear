@@ -1,0 +1,1779 @@
+{
+  "_note": "NFL jerseys from nfl-cyq888 (catalog/sources/nfl-cyq888), 2026-10-04. The owner sent the catalog and chose the prices (adults ₪139, kids ₪89), a selection of each team's stars, and \"live on the site after our check\". Each studio render was compared with its supplier photo; 12 were mended locally and 17 held for a new render. Products were created as DRAFT with productSet, read back (price, 4 sizes × 5 units, media), then set ACTIVE and published to the Online Store. English and Arabic registered for every product and its size option; adult and kids versions linked with sportwear.counterpart; filter names set. 101 picks wait for renders (OpenAI credit) and 17 for a new render: catalog/sources/nfl-cyq888/status.json.",
+  "counts": {
+    "created": 191,
+    "adult": 139,
+    "kids": 52,
+    "counterpart_pairs": 37,
+    "held": 17,
+    "not_rendered_yet": 101
+  },
+  "prices": {
+    "adult 139": 139,
+    "kids 89": 52
+  },
+  "collections": {
+    "_note": "Smart collections, on the Online Store, sorted MANUAL by scripts/catalog/collection-order.py. Titles and descriptions in he/en/ar (catalog/translations/store-content.json).",
+    "nfl": "gid://shopify/Collection/513263272240",
+    "nfl-jerseys": "gid://shopify/Collection/513263305008",
+    "nfl-jerseys-kids": "gid://shopify/Collection/513263337776",
+    "arizona-cardinals": "gid://shopify/Collection/513263370544",
+    "atlanta-falcons": "gid://shopify/Collection/513263403312",
+    "baltimore-ravens": "gid://shopify/Collection/513263436080",
+    "buffalo-bills": "gid://shopify/Collection/513263468848",
+    "carolina-panthers": "gid://shopify/Collection/513263501616",
+    "chicago-bears": "gid://shopify/Collection/513263534384",
+    "cincinnati-bengals": "gid://shopify/Collection/513263567152",
+    "cleveland-browns": "gid://shopify/Collection/513263599920",
+    "dallas-cowboys": "gid://shopify/Collection/513263632688",
+    "denver-broncos": "gid://shopify/Collection/513263665456",
+    "detroit-lions": "gid://shopify/Collection/513263698224",
+    "green-bay-packers": "gid://shopify/Collection/513263730992",
+    "houston-texans": "gid://shopify/Collection/513263763760",
+    "indianapolis-colts": "gid://shopify/Collection/513263796528",
+    "jacksonville-jaguars": "gid://shopify/Collection/513263829296",
+    "kansas-city-chiefs": "gid://shopify/Collection/513263862064",
+    "las-vegas-raiders": "gid://shopify/Collection/513263894832",
+    "los-angeles-chargers": "gid://shopify/Collection/513263927600",
+    "los-angeles-rams": "gid://shopify/Collection/513263960368",
+    "miami-dolphins": "gid://shopify/Collection/513263993136",
+    "minnesota-vikings": "gid://shopify/Collection/513264025904",
+    "new-england-patriots": "gid://shopify/Collection/513264124208",
+    "new-orleans-saints": "gid://shopify/Collection/513264156976",
+    "new-york-giants": "gid://shopify/Collection/513264189744",
+    "new-york-jets": "gid://shopify/Collection/513264222512",
+    "philadelphia-eagles": "gid://shopify/Collection/513264255280",
+    "pittsburgh-steelers": "gid://shopify/Collection/513264288048",
+    "san-francisco-49ers": "gid://shopify/Collection/513264320816",
+    "seattle-seahawks": "gid://shopify/Collection/513264353584",
+    "tampa-bay-buccaneers": "gid://shopify/Collection/513264386352",
+    "tennessee-titans": "gid://shopify/Collection/513264419120",
+    "washington-commanders": "gid://shopify/Collection/513264451888"
+  },
+  "menus": {
+    "main-menu": "Top-level \"NFL\" (collection nfl) in the place of \"קפוצ׳ונים\": \"חולצות NFL\" with the 32 team pages (most popular first), \"חולצות NFL לילדים\", and \"קפוצ׳ונים\" (same item, its men/women/kids kept) under it; \"חולצות NFL לילדים\" under \"ילדים\" after \"גופיות כדורסל לילדים\". 36 new items, 236 in all.",
+    "footer-shop": "\"חולצות NFL\" after \"מכנסי כדורסל\".",
+    "translations": "en/ar registered for the 37 new links, the 3 new hidden child lists (NFL, חולצות NFL, קפוצ׳ונים), the 4 hoodie links that lost theirs when they moved, and the 4 clubs moved to ליגות נוספות on 2026-09-28 (West Ham, Wolves, Burnley, Girona), which had lost theirs then. All 253 links read back: only Shopify's customer-account menu (Orders, Profile) is untranslated."
+  },
+  "products": [
+    {
+      "handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey",
+      "product_id": "gid://shopify/Product/15332193665328",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey-kids"
+    },
+    {
+      "handle": "philadelphia-eagles-jalen-hurts-1-white-jersey",
+      "product_id": "gid://shopify/Product/15332194124080",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 לבן",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-jalen-hurts-1-green-throwback-jersey",
+      "product_id": "gid://shopify/Product/15332194418992",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק רטרו",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-saquon-barkley-26-midnight-green-jersey",
+      "product_id": "gid://shopify/Product/15332194877744",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 26 ירוק כהה",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-saquon-barkley-26-white-jersey",
+      "product_id": "gid://shopify/Product/15332195139888",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 26 לבן",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-saquon-barkley-26-green-throwback-jersey",
+      "product_id": "gid://shopify/Product/15332195664176",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 26 ירוק רטרו",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-aj-brown-11-midnight-green-jersey",
+      "product_id": "gid://shopify/Product/15332196909360",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 11 ירוק כהה",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-devonta-smith-6-midnight-green-jersey",
+      "product_id": "gid://shopify/Product/15332198056240",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 6 ירוק כהה",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-jason-kelce-62-green-throwback-jersey",
+      "product_id": "gid://shopify/Product/15332199727408",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 62 ירוק רטרו",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-cooper-dejean-33-midnight-green-jersey",
+      "product_id": "gid://shopify/Product/15332200808752",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 33 ירוק כהה",
+      "audience": "adult",
+      "team": "philadelphia-eagles",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-ceedee-lamb-88-white-jersey",
+      "product_id": "gid://shopify/Product/15332193599792",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 88 לבן",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-ceedee-lamb-88-navy-jersey",
+      "product_id": "gid://shopify/Product/15332193829168",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 88 כחול כהה",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": "dallas-cowboys-ceedee-lamb-88-navy-jersey-kids"
+    },
+    {
+      "handle": "dallas-cowboys-ceedee-lamb-88-white-navy-sleeves-jersey",
+      "product_id": "gid://shopify/Product/15332193993008",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 88 לבן | שרוולים כחולים",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-dak-prescott-4-white-jersey",
+      "product_id": "gid://shopify/Product/15332194189616",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 4 לבן",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-dak-prescott-4-navy-jersey",
+      "product_id": "gid://shopify/Product/15332194550064",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 4 כחול כהה",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-george-pickens-3-white-jersey",
+      "product_id": "gid://shopify/Product/15332194910512",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 3 לבן",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-george-pickens-3-navy-jersey",
+      "product_id": "gid://shopify/Product/15332195172656",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 3 כחול כהה",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-caleb-downs-13-white-jersey",
+      "product_id": "gid://shopify/Product/15332195729712",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 13 לבן",
+      "audience": "adult",
+      "team": "dallas-cowboys",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-red-jersey",
+      "product_id": "gid://shopify/Product/15332193927472",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 אדום",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-white-jersey",
+      "product_id": "gid://shopify/Product/15332194386224",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 לבן",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-travis-kelce-87-red-jersey",
+      "product_id": "gid://shopify/Product/15332194713904",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 87 אדום",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-travis-kelce-87-white-jersey",
+      "product_id": "gid://shopify/Product/15332194976048",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 87 לבן",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-xavier-worthy-1-red-jersey",
+      "product_id": "gid://shopify/Product/15332195467568",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 1 אדום",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-xavier-worthy-1-white-jersey",
+      "product_id": "gid://shopify/Product/15332196548912",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 1 לבן",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-rashee-rice-4-red-jersey",
+      "product_id": "gid://shopify/Product/15332197597488",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 4 אדום",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "kansas-city-chiefs-patrick-mahomes-15-black-jersey",
+      "product_id": "gid://shopify/Product/15332199072048",
+      "title_he": "חולצת פוטבול קנזס סיטי צ׳יפס מספר 15 שחור",
+      "audience": "adult",
+      "team": "kansas-city-chiefs",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-josh-allen-17-blue-jersey",
+      "product_id": "gid://shopify/Product/15332200153392",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 17 כחול",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": "buffalo-bills-josh-allen-17-blue-jersey-kids"
+    },
+    {
+      "handle": "buffalo-bills-josh-allen-17-white-jersey",
+      "product_id": "gid://shopify/Product/15332201234736",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 17 לבן",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": "buffalo-bills-josh-allen-17-white-jersey-kids"
+    },
+    {
+      "handle": "buffalo-bills-josh-allen-17-red-jersey",
+      "product_id": "gid://shopify/Product/15332202217776",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 17 אדום",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-james-cook-iii-4-blue-jersey",
+      "product_id": "gid://shopify/Product/15332202512688",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 4 כחול",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": "buffalo-bills-james-cook-iii-4-blue-jersey-kids"
+    },
+    {
+      "handle": "buffalo-bills-james-cook-iii-4-white-jersey",
+      "product_id": "gid://shopify/Product/15332202774832",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 4 לבן",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-dalton-kincaid-86-blue-jersey",
+      "product_id": "gid://shopify/Product/15332203069744",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 86 כחול",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-dalton-kincaid-86-white-jersey",
+      "product_id": "gid://shopify/Product/15332203331888",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 86 לבן",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-keon-coleman-0-blue-jersey",
+      "product_id": "gid://shopify/Product/15332203528496",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 0 כחול",
+      "audience": "adult",
+      "team": "buffalo-bills",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-brock-purdy-13-red-jersey",
+      "product_id": "gid://shopify/Product/15332193763632",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 13 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-brock-purdy-13-white-jersey",
+      "product_id": "gid://shopify/Product/15332194222384",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 13 לבן",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-christian-mccaffrey-23-red-jersey",
+      "product_id": "gid://shopify/Product/15332194451760",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 23 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-christian-mccaffrey-23-white-jersey",
+      "product_id": "gid://shopify/Product/15332194844976",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 23 לבן",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-george-kittle-85-red-jersey",
+      "product_id": "gid://shopify/Product/15332195107120",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 85 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-nick-bosa-97-red-jersey",
+      "product_id": "gid://shopify/Product/15332195598640",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 97 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-fred-warner-54-red-jersey",
+      "product_id": "gid://shopify/Product/15332196778288",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 54 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-joe-montana-16-red-jersey",
+      "product_id": "gid://shopify/Product/15332197794096",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 16 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "san-francisco-49ers-jerry-rice-80-red-jersey",
+      "product_id": "gid://shopify/Product/15332199366960",
+      "title_he": "חולצת פוטבול סן פרנסיסקו 49׳ מספר 80 אדום",
+      "audience": "adult",
+      "team": "san-francisco-49ers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "miami-dolphins-dan-marino-13-aqua-jersey",
+      "product_id": "gid://shopify/Product/15332203692336",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 13 טורקיז",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "price": 139,
+      "counterpart": "miami-dolphins-dan-marino-13-aqua-jersey-kids"
+    },
+    {
+      "handle": "miami-dolphins-devon-achane-28-aqua-jersey",
+      "product_id": "gid://shopify/Product/15332203987248",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 28 טורקיז",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "miami-dolphins-devon-achane-28-white-jersey",
+      "product_id": "gid://shopify/Product/15332204216624",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 28 לבן",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "price": 139,
+      "counterpart": "miami-dolphins-devon-achane-28-white-jersey-kids"
+    },
+    {
+      "handle": "miami-dolphins-malik-willis-2-aqua-jersey",
+      "product_id": "gid://shopify/Product/15332204511536",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 2 טורקיז",
+      "audience": "adult",
+      "team": "miami-dolphins",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "las-vegas-raiders-ashton-jeanty-2-white-jersey",
+      "product_id": "gid://shopify/Product/15332203823408",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 2 לבן",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "las-vegas-raiders-brock-bowers-89-black-jersey",
+      "product_id": "gid://shopify/Product/15332204085552",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "price": 139,
+      "counterpart": "las-vegas-raiders-brock-bowers-89-black-jersey-kids"
+    },
+    {
+      "handle": "las-vegas-raiders-brock-bowers-89-white-jersey",
+      "product_id": "gid://shopify/Product/15332204314928",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 לבן",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "las-vegas-raiders-maxx-crosby-98-black-jersey",
+      "product_id": "gid://shopify/Product/15332205822256",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "price": 139,
+      "counterpart": "las-vegas-raiders-maxx-crosby-98-black-jersey-kids"
+    },
+    {
+      "handle": "las-vegas-raiders-fernando-mendoza-15-black-jersey",
+      "product_id": "gid://shopify/Product/15332206706992",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 15 שחור",
+      "audience": "adult",
+      "team": "las-vegas-raiders",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-joe-burrow-9-black-jersey",
+      "product_id": "gid://shopify/Product/15332205855024",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 שחור",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": "cincinnati-bengals-joe-burrow-9-black-jersey-kids"
+    },
+    {
+      "handle": "cincinnati-bengals-joe-burrow-9-white-jersey",
+      "product_id": "gid://shopify/Product/15332206674224",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 לבן",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-joe-burrow-9-orange-jersey",
+      "product_id": "gid://shopify/Product/15332206870832",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 כתום",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-jamarr-chase-1-black-jersey",
+      "product_id": "gid://shopify/Product/15332207591728",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 1 שחור",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-jamarr-chase-1-white-jersey",
+      "product_id": "gid://shopify/Product/15332207722800",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 1 לבן",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-jamarr-chase-1-orange-jersey",
+      "product_id": "gid://shopify/Product/15332208378160",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 1 כתום",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "cincinnati-bengals-tee-higgins-5-black-jersey",
+      "product_id": "gid://shopify/Product/15332208509232",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 5 שחור",
+      "audience": "adult",
+      "team": "cincinnati-bengals",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "baltimore-ravens-lamar-jackson-8-purple-jersey",
+      "product_id": "gid://shopify/Product/15332205756720",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 8 סגול",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": "baltimore-ravens-lamar-jackson-8-purple-jersey-kids"
+    },
+    {
+      "handle": "baltimore-ravens-lamar-jackson-8-white-jersey",
+      "product_id": "gid://shopify/Product/15332206641456",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 8 לבן",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": "baltimore-ravens-lamar-jackson-8-white-jersey-kids"
+    },
+    {
+      "handle": "baltimore-ravens-derrick-henry-22-purple-jersey",
+      "product_id": "gid://shopify/Product/15332206805296",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 22 סגול",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "baltimore-ravens-derrick-henry-22-white-jersey",
+      "product_id": "gid://shopify/Product/15332207624496",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 22 לבן",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "baltimore-ravens-kyle-hamilton-14-purple-jersey",
+      "product_id": "gid://shopify/Product/15332207755568",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 14 סגול",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": "baltimore-ravens-kyle-hamilton-14-purple-jersey-kids"
+    },
+    {
+      "handle": "baltimore-ravens-zay-flowers-4-purple-jersey",
+      "product_id": "gid://shopify/Product/15332208083248",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 4 סגול",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "baltimore-ravens-ray-lewis-52-purple-jersey",
+      "product_id": "gid://shopify/Product/15332208410928",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 52 סגול",
+      "audience": "adult",
+      "team": "baltimore-ravens",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "detroit-lions-amon-ra-st-brown-14-blue-jersey",
+      "product_id": "gid://shopify/Product/15332205658416",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 14 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": "detroit-lions-amon-ra-st-brown-14-blue-jersey-kids"
+    },
+    {
+      "handle": "detroit-lions-amon-ra-st-brown-14-white-jersey",
+      "product_id": "gid://shopify/Product/15332205920560",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 14 לבן",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "detroit-lions-jahmyr-gibbs-0-blue-jersey",
+      "product_id": "gid://shopify/Product/15332206608688",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 0 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": "detroit-lions-jahmyr-gibbs-0-blue-jersey-kids"
+    },
+    {
+      "handle": "detroit-lions-jahmyr-gibbs-0-white-jersey",
+      "product_id": "gid://shopify/Product/15332206739760",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 0 לבן",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "detroit-lions-jared-goff-16-blue-jersey",
+      "product_id": "gid://shopify/Product/15332207231280",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 16 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": "detroit-lions-jared-goff-16-blue-jersey-kids"
+    },
+    {
+      "handle": "detroit-lions-jared-goff-16-white-jersey",
+      "product_id": "gid://shopify/Product/15332207657264",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 16 לבן",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "detroit-lions-aidan-hutchinson-97-blue-jersey",
+      "product_id": "gid://shopify/Product/15332207952176",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 97 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": "detroit-lions-aidan-hutchinson-97-blue-jersey-kids"
+    },
+    {
+      "handle": "detroit-lions-barry-sanders-20-blue-jersey",
+      "product_id": "gid://shopify/Product/15332208345392",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 20 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "detroit-lions-sam-laporta-87-blue-jersey",
+      "product_id": "gid://shopify/Product/15332208476464",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 87 כחול",
+      "audience": "adult",
+      "team": "detroit-lions",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-tj-watt-90-black-jersey",
+      "product_id": "gid://shopify/Product/15332209000752",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 90 שחור",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-tj-watt-90-white-jersey",
+      "product_id": "gid://shopify/Product/15332209131824",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 90 לבן",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-dk-metcalf-4-black-jersey",
+      "product_id": "gid://shopify/Product/15332203004208",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 4 שחור",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": "pittsburgh-steelers-dk-metcalf-4-black-jersey-kids"
+    },
+    {
+      "handle": "pittsburgh-steelers-dk-metcalf-4-white-jersey",
+      "product_id": "gid://shopify/Product/15332203233584",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 4 לבן",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-aaron-rodgers-8-black-jersey",
+      "product_id": "gid://shopify/Product/15332203495728",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 8 שחור",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-troy-polamalu-43-black-jersey",
+      "product_id": "gid://shopify/Product/15332203856176",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 43 שחור",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "pittsburgh-steelers-jalen-ramsey-5-black-jersey",
+      "product_id": "gid://shopify/Product/15332204118320",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 5 שחור",
+      "audience": "adult",
+      "team": "pittsburgh-steelers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-england-patriots-drake-maye-10-navy-jersey",
+      "product_id": "gid://shopify/Product/15332208804144",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 10 כחול כהה",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": "new-england-patriots-drake-maye-10-navy-jersey-kids"
+    },
+    {
+      "handle": "new-england-patriots-drake-maye-10-white-jersey",
+      "product_id": "gid://shopify/Product/15332196679984",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 10 לבן",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": "new-england-patriots-drake-maye-10-white-jersey-kids"
+    },
+    {
+      "handle": "new-england-patriots-drake-maye-10-red-throwback-jersey",
+      "product_id": "gid://shopify/Product/15332197368112",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 10 אדום רטרו",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-england-patriots-tom-brady-12-navy-jersey",
+      "product_id": "gid://shopify/Product/15332199235888",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 12 כחול כהה",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": "new-england-patriots-tom-brady-12-navy-jersey-kids"
+    },
+    {
+      "handle": "new-england-patriots-tom-brady-12-red-throwback-jersey",
+      "product_id": "gid://shopify/Product/15332200448304",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 12 אדום רטרו",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-england-patriots-christian-gonzalez-0-navy-jersey",
+      "product_id": "gid://shopify/Product/15332201693488",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 0 כחול כהה",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-england-patriots-treveyon-henderson-32-navy-jersey",
+      "product_id": "gid://shopify/Product/15332202414384",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 32 כחול כהה",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-england-patriots-stefon-diggs-8-navy-jersey",
+      "product_id": "gid://shopify/Product/15332202676528",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 8 כחול כהה",
+      "audience": "adult",
+      "team": "new-england-patriots",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-jersey",
+      "product_id": "gid://shopify/Product/15332196942128",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 סגול",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": "minnesota-vikings-justin-jefferson-18-purple-jersey-kids"
+    },
+    {
+      "handle": "minnesota-vikings-justin-jefferson-18-white-jersey",
+      "product_id": "gid://shopify/Product/15332198089008",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": "minnesota-vikings-justin-jefferson-18-white-jersey-kids"
+    },
+    {
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-gold-numbers-jersey",
+      "product_id": "gid://shopify/Product/15332200186160",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 סגול | מספרים בזהב",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "minnesota-vikings-jj-mccarthy-9-purple-jersey",
+      "product_id": "gid://shopify/Product/15332201365808",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 9 סגול",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": "minnesota-vikings-jj-mccarthy-9-purple-jersey-kids"
+    },
+    {
+      "handle": "minnesota-vikings-jj-mccarthy-9-white-jersey",
+      "product_id": "gid://shopify/Product/15332202316080",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 9 לבן",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "minnesota-vikings-jordan-addison-3-purple-jersey",
+      "product_id": "gid://shopify/Product/15332202578224",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 3 סגול",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "minnesota-vikings-tj-hockenson-87-purple-jersey",
+      "product_id": "gid://shopify/Product/15332202873136",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 87 סגול",
+      "audience": "adult",
+      "team": "minnesota-vikings",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-jordan-love-10-green-jersey",
+      "product_id": "gid://shopify/Product/15332193501488",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 10 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": "green-bay-packers-jordan-love-10-green-jersey-kids"
+    },
+    {
+      "handle": "green-bay-packers-jordan-love-10-white-jersey",
+      "product_id": "gid://shopify/Product/15332193730864",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 10 לבן",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-micah-parsons-1-green-jersey",
+      "product_id": "gid://shopify/Product/15332193861936",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": "green-bay-packers-micah-parsons-1-green-jersey-kids"
+    },
+    {
+      "handle": "green-bay-packers-micah-parsons-1-white-jersey",
+      "product_id": "gid://shopify/Product/15332194025776",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 לבן",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-josh-jacobs-8-green-jersey",
+      "product_id": "gid://shopify/Product/15332194287920",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 8 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-brett-favre-4-green-jersey",
+      "product_id": "gid://shopify/Product/15332194681136",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 4 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-matthew-golden-0-green-jersey",
+      "product_id": "gid://shopify/Product/15332195008816",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 0 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "green-bay-packers-tucker-kraft-85-green-jersey",
+      "product_id": "gid://shopify/Product/15332195500336",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 85 ירוק",
+      "audience": "adult",
+      "team": "green-bay-packers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "atlanta-falcons-bijan-robinson-7-black-jersey",
+      "product_id": "gid://shopify/Product/15332200513840",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 7 שחור",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": "atlanta-falcons-bijan-robinson-7-black-jersey-kids"
+    },
+    {
+      "handle": "atlanta-falcons-bijan-robinson-7-white-jersey",
+      "product_id": "gid://shopify/Product/15332201595184",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 7 לבן",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "atlanta-falcons-bijan-robinson-7-red-jersey",
+      "product_id": "gid://shopify/Product/15332202348848",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 7 אדום",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": "atlanta-falcons-bijan-robinson-7-red-jersey-kids"
+    },
+    {
+      "handle": "atlanta-falcons-michael-penix-jr-9-black-jersey",
+      "product_id": "gid://shopify/Product/15332202610992",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 שחור",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "atlanta-falcons-michael-penix-jr-9-white-jersey",
+      "product_id": "gid://shopify/Product/15332202938672",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 9 לבן",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "atlanta-falcons-drake-london-5-black-jersey",
+      "product_id": "gid://shopify/Product/15332203168048",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": "atlanta-falcons-drake-london-5-black-jersey-kids"
+    },
+    {
+      "handle": "atlanta-falcons-drake-london-5-white-jersey",
+      "product_id": "gid://shopify/Product/15332203397424",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 לבן",
+      "audience": "adult",
+      "team": "atlanta-falcons",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "indianapolis-colts-jonathan-taylor-28-blue-jersey",
+      "product_id": "gid://shopify/Product/15332203921712",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 כחול",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "indianapolis-colts-jonathan-taylor-28-white-jersey",
+      "product_id": "gid://shopify/Product/15332204183856",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 לבן",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "price": 139,
+      "counterpart": "indianapolis-colts-jonathan-taylor-28-white-jersey-kids"
+    },
+    {
+      "handle": "indianapolis-colts-jonathan-taylor-28-black-jersey",
+      "product_id": "gid://shopify/Product/15332204413232",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 שחור",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "indianapolis-colts-daniel-jones-17-blue-jersey",
+      "product_id": "gid://shopify/Product/15332204675376",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 17 כחול",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "indianapolis-colts-tyler-warren-84-blue-jersey",
+      "product_id": "gid://shopify/Product/15332204839216",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 84 כחול",
+      "audience": "adult",
+      "team": "indianapolis-colts",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey",
+      "product_id": "gid://shopify/Product/15332201955632",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 תכלת",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey-kids"
+    },
+    {
+      "handle": "los-angeles-chargers-justin-herbert-10-white-jersey",
+      "product_id": "gid://shopify/Product/15332202479920",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 לבן",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-chargers-justin-herbert-10-navy-jersey",
+      "product_id": "gid://shopify/Product/15332202742064",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 כחול כהה",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": "los-angeles-chargers-justin-herbert-10-navy-jersey-kids"
+    },
+    {
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey",
+      "product_id": "gid://shopify/Product/15332203036976",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 תכלת",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey-kids"
+    },
+    {
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-white-jersey",
+      "product_id": "gid://shopify/Product/15332203299120",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 לבן",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-chargers-derwin-james-jr-3-powder-blue-jersey",
+      "product_id": "gid://shopify/Product/15332203594032",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 3 תכלת",
+      "audience": "adult",
+      "team": "los-angeles-chargers",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "houston-texans-cj-stroud-7-navy-jersey",
+      "product_id": "gid://shopify/Product/15332203135280",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 כחול כהה",
+      "audience": "adult",
+      "team": "houston-texans",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "houston-texans-cj-stroud-7-white-jersey",
+      "product_id": "gid://shopify/Product/15332203430192",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 לבן",
+      "audience": "adult",
+      "team": "houston-texans",
+      "price": 139,
+      "counterpart": "houston-texans-cj-stroud-7-white-jersey-kids"
+    },
+    {
+      "handle": "houston-texans-cj-stroud-7-red-jersey",
+      "product_id": "gid://shopify/Product/15332203725104",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום",
+      "audience": "adult",
+      "team": "houston-texans",
+      "price": 139,
+      "counterpart": "houston-texans-cj-stroud-7-red-jersey-kids"
+    },
+    {
+      "handle": "houston-texans-nico-collins-12-white-jersey",
+      "product_id": "gid://shopify/Product/15332204052784",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 12 לבן",
+      "audience": "adult",
+      "team": "houston-texans",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "houston-texans-will-anderson-jr-51-white-jersey",
+      "product_id": "gid://shopify/Product/15332204282160",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 51 לבן",
+      "audience": "adult",
+      "team": "houston-texans",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "chicago-bears-caleb-williams-18-white-jersey",
+      "product_id": "gid://shopify/Product/15332204577072",
+      "title_he": "חולצת פוטבול שיקגו ברס מספר 18 לבן",
+      "audience": "adult",
+      "team": "chicago-bears",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-jets-breece-hall-20-green-jersey",
+      "product_id": "gid://shopify/Product/15332204740912",
+      "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 20 ירוק",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-jets-justin-fields-7-green-jersey",
+      "product_id": "gid://shopify/Product/15332209197360",
+      "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 7 ירוק",
+      "audience": "adult",
+      "team": "new-york-jets",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey",
+      "product_id": "gid://shopify/Product/15332209525040",
+      "title_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור",
+      "audience": "adult",
+      "team": "carolina-panthers",
+      "price": 139,
+      "counterpart": "carolina-panthers-tetairoa-mcmillan-4-black-jersey-kids"
+    },
+    {
+      "handle": "denver-broncos-bo-nix-10-orange-jersey",
+      "product_id": "gid://shopify/Product/15332210540848",
+      "title_he": "חולצת פוטבול דנבר ברונקוס מספר 10 כתום",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "denver-broncos-patrick-surtain-ii-2-white-jersey",
+      "product_id": "gid://shopify/Product/15332210802992",
+      "title_he": "חולצת פוטבול דנבר ברונקוס מספר 2 לבן",
+      "audience": "adult",
+      "team": "denver-broncos",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "jacksonville-jaguars-travis-hunter-12-aqua-jersey",
+      "product_id": "gid://shopify/Product/15332210966832",
+      "title_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 12 טורקיז",
+      "audience": "adult",
+      "team": "jacksonville-jaguars",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-giants-malik-nabers-1-white-jersey",
+      "product_id": "gid://shopify/Product/15332209230128",
+      "title_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 1 לבן",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-giants-lawrence-taylor-56-red-jersey",
+      "product_id": "gid://shopify/Product/15332209361200",
+      "title_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 56 אדום",
+      "audience": "adult",
+      "team": "new-york-giants",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "seattle-seahawks-sam-darnold-14-navy-jersey",
+      "product_id": "gid://shopify/Product/15332208312624",
+      "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "price": 139,
+      "counterpart": "seattle-seahawks-sam-darnold-14-navy-jersey-kids"
+    },
+    {
+      "handle": "seattle-seahawks-sam-darnold-14-white-jersey",
+      "product_id": "gid://shopify/Product/15332208443696",
+      "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 לבן",
+      "audience": "adult",
+      "team": "seattle-seahawks",
+      "price": 139,
+      "counterpart": null
+    },
+    {
+      "handle": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211491120",
+      "title_he": "חולצת פוטבול פילדלפיה איגלס מספר 1 ירוק כהה – ילדים",
+      "audience": "kids",
+      "team": "philadelphia-eagles",
+      "price": 89,
+      "counterpart": "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey"
+    },
+    {
+      "handle": "chicago-bears-caleb-williams-18-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210901296",
+      "title_he": "חולצת פוטבול שיקגו ברס מספר 18 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "chicago-bears",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "miami-dolphins-devon-achane-28-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211032368",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 28 לבן – ילדים",
+      "audience": "kids",
+      "team": "miami-dolphins",
+      "price": 89,
+      "counterpart": "miami-dolphins-devon-achane-28-white-jersey"
+    },
+    {
+      "handle": "miami-dolphins-dan-marino-13-aqua-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211261744",
+      "title_he": "חולצת פוטבול מיאמי דולפינס מספר 13 טורקיז – ילדים",
+      "audience": "kids",
+      "team": "miami-dolphins",
+      "price": 89,
+      "counterpart": "miami-dolphins-dan-marino-13-aqua-jersey"
+    },
+    {
+      "handle": "arizona-cardinals-marvin-harrison-jr-18-red-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211130672",
+      "title_he": "חולצת פוטבול אריזונה קרדינלס מספר 18 אדום – ילדים",
+      "audience": "kids",
+      "team": "arizona-cardinals",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-giants-jaxson-dart-6-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209590576",
+      "title_he": "חולצת פוטבול ניו יורק ג׳איינטס מספר 6 כחול – ילדים",
+      "audience": "kids",
+      "team": "new-york-giants",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "dallas-cowboys-ceedee-lamb-88-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211687728",
+      "title_he": "חולצת פוטבול דאלאס קאובויס מספר 88 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "dallas-cowboys",
+      "price": 89,
+      "counterpart": "dallas-cowboys-ceedee-lamb-88-navy-jersey"
+    },
+    {
+      "handle": "pittsburgh-steelers-dk-metcalf-4-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209262896",
+      "title_he": "חולצת פוטבול פיטסבורג סטילרס מספר 4 שחור – ילדים",
+      "audience": "kids",
+      "team": "pittsburgh-steelers",
+      "price": 89,
+      "counterpart": "pittsburgh-steelers-dk-metcalf-4-black-jersey"
+    },
+    {
+      "handle": "carolina-panthers-bryce-young-9-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209721648",
+      "title_he": "חולצת פוטבול קרוליינה פנתרס מספר 9 שחור – ילדים",
+      "audience": "kids",
+      "team": "carolina-panthers",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "carolina-panthers-tetairoa-mcmillan-4-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209951024",
+      "title_he": "חולצת פוטבול קרוליינה פנתרס מספר 4 שחור – ילדים",
+      "audience": "kids",
+      "team": "carolina-panthers",
+      "price": 89,
+      "counterpart": "carolina-panthers-tetairoa-mcmillan-4-black-jersey"
+    },
+    {
+      "handle": "jacksonville-jaguars-trevor-lawrence-16-aqua-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211196208",
+      "title_he": "חולצת פוטבול ג׳קסונוויל ג׳גוארס מספר 16 טורקיז – ילדים",
+      "audience": "kids",
+      "team": "jacksonville-jaguars",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209393968",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 תכלת – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "price": 89,
+      "counterpart": "los-angeles-chargers-justin-herbert-10-powder-blue-jersey"
+    },
+    {
+      "handle": "los-angeles-chargers-justin-herbert-10-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209656112",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 10 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "price": 89,
+      "counterpart": "los-angeles-chargers-justin-herbert-10-navy-jersey"
+    },
+    {
+      "handle": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209885488",
+      "title_he": "חולצת פוטבול לוס אנג׳לס צ׳ארג׳רס מספר 15 תכלת – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-chargers",
+      "price": 89,
+      "counterpart": "los-angeles-chargers-ladd-mcconkey-15-powder-blue-jersey"
+    },
+    {
+      "handle": "new-york-jets-garrett-wilson-5-green-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209328432",
+      "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 5 ירוק – ילדים",
+      "audience": "kids",
+      "team": "new-york-jets",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "new-york-jets-garrett-wilson-5-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209557808",
+      "title_he": "חולצת פוטבול ניו יורק ג׳טס מספר 5 לבן – ילדים",
+      "audience": "kids",
+      "team": "new-york-jets",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "indianapolis-colts-jonathan-taylor-28-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211097904",
+      "title_he": "חולצת פוטבול אינדיאנפוליס קולטס מספר 28 לבן – ילדים",
+      "audience": "kids",
+      "team": "indianapolis-colts",
+      "price": 89,
+      "counterpart": "indianapolis-colts-jonathan-taylor-28-white-jersey"
+    },
+    {
+      "handle": "los-angeles-rams-puka-nacua-12-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209819952",
+      "title_he": "חולצת פוטבול לוס אנג׳לס ראמס מספר 12 כחול – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-rams-puka-nacua-12-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210049328",
+      "title_he": "חולצת פוטבול לוס אנג׳לס ראמס מספר 12 לבן – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "los-angeles-rams-matthew-stafford-9-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210311472",
+      "title_he": "חולצת פוטבול לוס אנג׳לס ראמס מספר 9 כחול – ילדים",
+      "audience": "kids",
+      "team": "los-angeles-rams",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "houston-texans-cj-stroud-7-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210409776",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 לבן – ילדים",
+      "audience": "kids",
+      "team": "houston-texans",
+      "price": 89,
+      "counterpart": "houston-texans-cj-stroud-7-white-jersey"
+    },
+    {
+      "handle": "houston-texans-cj-stroud-7-red-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210671920",
+      "title_he": "חולצת פוטבול יוסטון טקסאנס מספר 7 אדום – ילדים",
+      "audience": "kids",
+      "team": "houston-texans",
+      "price": 89,
+      "counterpart": "houston-texans-cj-stroud-7-red-jersey"
+    },
+    {
+      "handle": "cincinnati-bengals-joe-burrow-9-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208607536",
+      "title_he": "חולצת פוטבול סינסינטי בנגלס מספר 9 שחור – ילדים",
+      "audience": "kids",
+      "team": "cincinnati-bengals",
+      "price": 89,
+      "counterpart": "cincinnati-bengals-joe-burrow-9-black-jersey"
+    },
+    {
+      "handle": "green-bay-packers-jordan-love-10-green-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210704688",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 10 ירוק – ילדים",
+      "audience": "kids",
+      "team": "green-bay-packers",
+      "price": 89,
+      "counterpart": "green-bay-packers-jordan-love-10-green-jersey"
+    },
+    {
+      "handle": "green-bay-packers-micah-parsons-1-green-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210934064",
+      "title_he": "חולצת פוטבול גרין ביי פאקרס מספר 1 ירוק – ילדים",
+      "audience": "kids",
+      "team": "green-bay-packers",
+      "price": 89,
+      "counterpart": "green-bay-packers-micah-parsons-1-green-jersey"
+    },
+    {
+      "handle": "atlanta-falcons-bijan-robinson-7-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210213168",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 7 שחור – ילדים",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "price": 89,
+      "counterpart": "atlanta-falcons-bijan-robinson-7-black-jersey"
+    },
+    {
+      "handle": "atlanta-falcons-bijan-robinson-7-red-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210475312",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 7 אדום – ילדים",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "price": 89,
+      "counterpart": "atlanta-falcons-bijan-robinson-7-red-jersey"
+    },
+    {
+      "handle": "atlanta-falcons-drake-london-5-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210737456",
+      "title_he": "חולצת פוטבול אטלנטה פאלקונס מספר 5 שחור – ילדים",
+      "audience": "kids",
+      "team": "atlanta-falcons",
+      "price": 89,
+      "counterpart": "atlanta-falcons-drake-london-5-black-jersey"
+    },
+    {
+      "handle": "las-vegas-raiders-ashton-jeanty-2-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332206838064",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 2 שחור – ילדים",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "las-vegas-raiders-brock-bowers-89-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332207690032",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 89 שחור – ילדים",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "price": 89,
+      "counterpart": "las-vegas-raiders-brock-bowers-89-black-jersey"
+    },
+    {
+      "handle": "las-vegas-raiders-maxx-crosby-98-black-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208050480",
+      "title_he": "חולצת פוטבול לאס וגאס ריידרס מספר 98 שחור – ילדים",
+      "audience": "kids",
+      "team": "las-vegas-raiders",
+      "price": 89,
+      "counterpart": "las-vegas-raiders-maxx-crosby-98-black-jersey"
+    },
+    {
+      "handle": "minnesota-vikings-justin-jefferson-18-purple-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209787184",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 סגול – ילדים",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "price": 89,
+      "counterpart": "minnesota-vikings-justin-jefferson-18-purple-jersey"
+    },
+    {
+      "handle": "minnesota-vikings-justin-jefferson-18-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210016560",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 18 לבן – ילדים",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "price": 89,
+      "counterpart": "minnesota-vikings-justin-jefferson-18-white-jersey"
+    },
+    {
+      "handle": "minnesota-vikings-jj-mccarthy-9-purple-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210245936",
+      "title_he": "חולצת פוטבול מינסוטה ויקינגס מספר 9 סגול – ילדים",
+      "audience": "kids",
+      "team": "minnesota-vikings",
+      "price": 89,
+      "counterpart": "minnesota-vikings-jj-mccarthy-9-purple-jersey"
+    },
+    {
+      "handle": "detroit-lions-amon-ra-st-brown-14-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208574768",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 14 כחול – ילדים",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "price": 89,
+      "counterpart": "detroit-lions-amon-ra-st-brown-14-blue-jersey"
+    },
+    {
+      "handle": "detroit-lions-jahmyr-gibbs-0-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208771376",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 0 כחול – ילדים",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "price": 89,
+      "counterpart": "detroit-lions-jahmyr-gibbs-0-blue-jersey"
+    },
+    {
+      "handle": "detroit-lions-aidan-hutchinson-97-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208935216",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 97 כחול – ילדים",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "price": 89,
+      "counterpart": "detroit-lions-aidan-hutchinson-97-blue-jersey"
+    },
+    {
+      "handle": "detroit-lions-jared-goff-16-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209066288",
+      "title_he": "חולצת פוטבול דטרויט ליונס מספר 16 כחול – ילדים",
+      "audience": "kids",
+      "team": "detroit-lions",
+      "price": 89,
+      "counterpart": "detroit-lions-jared-goff-16-blue-jersey"
+    },
+    {
+      "handle": "baltimore-ravens-lamar-jackson-8-purple-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208542000",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 8 סגול – ילדים",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "price": 89,
+      "counterpart": "baltimore-ravens-lamar-jackson-8-purple-jersey"
+    },
+    {
+      "handle": "baltimore-ravens-lamar-jackson-8-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208673072",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 8 לבן – ילדים",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "price": 89,
+      "counterpart": "baltimore-ravens-lamar-jackson-8-white-jersey"
+    },
+    {
+      "handle": "baltimore-ravens-kyle-hamilton-14-purple-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208836912",
+      "title_he": "חולצת פוטבול בולטימור רייבנס מספר 14 סגול – ילדים",
+      "audience": "kids",
+      "team": "baltimore-ravens",
+      "price": 89,
+      "counterpart": "baltimore-ravens-kyle-hamilton-14-purple-jersey"
+    },
+    {
+      "handle": "cleveland-browns-shedeur-sanders-12-brown-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211360048",
+      "title_he": "חולצת פוטבול קליבלנד בראונס מספר 12 חום – ילדים",
+      "audience": "kids",
+      "team": "cleveland-browns",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "cleveland-browns-myles-garrett-95-brown-jersey-kids",
+      "product_id": "gid://shopify/Product/15332211589424",
+      "title_he": "חולצת פוטבול קליבלנד בראונס מספר 95 חום – ילדים",
+      "audience": "kids",
+      "team": "cleveland-browns",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "buffalo-bills-josh-allen-17-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210082096",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 17 כחול – ילדים",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "price": 89,
+      "counterpart": "buffalo-bills-josh-allen-17-blue-jersey"
+    },
+    {
+      "handle": "buffalo-bills-josh-allen-17-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210278704",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 17 לבן – ילדים",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "price": 89,
+      "counterpart": "buffalo-bills-josh-allen-17-white-jersey"
+    },
+    {
+      "handle": "buffalo-bills-james-cook-iii-4-blue-jersey-kids",
+      "product_id": "gid://shopify/Product/15332210508080",
+      "title_he": "חולצת פוטבול באפלו בילס מספר 4 כחול – ילדים",
+      "audience": "kids",
+      "team": "buffalo-bills",
+      "price": 89,
+      "counterpart": "buffalo-bills-james-cook-iii-4-blue-jersey"
+    },
+    {
+      "handle": "new-england-patriots-drake-maye-10-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208967984",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 10 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "price": 89,
+      "counterpart": "new-england-patriots-drake-maye-10-navy-jersey"
+    },
+    {
+      "handle": "new-england-patriots-drake-maye-10-white-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209164592",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 10 לבן – ילדים",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "price": 89,
+      "counterpart": "new-england-patriots-drake-maye-10-white-jersey"
+    },
+    {
+      "handle": "new-england-patriots-tom-brady-12-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209295664",
+      "title_he": "חולצת פוטבול ניו אינגלנד פטריוטס מספר 12 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "new-england-patriots",
+      "price": 89,
+      "counterpart": "new-england-patriots-tom-brady-12-navy-jersey"
+    },
+    {
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208640304",
+      "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 11 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "seattle-seahawks-jaxon-smith-njigba-11-neon-green-jersey-kids",
+      "product_id": "gid://shopify/Product/15332208869680",
+      "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 11 ירוק זוהר – ילדים",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "price": 89,
+      "counterpart": null
+    },
+    {
+      "handle": "seattle-seahawks-sam-darnold-14-navy-jersey-kids",
+      "product_id": "gid://shopify/Product/15332209033520",
+      "title_he": "חולצת פוטבול סיאטל סיהוקס מספר 14 כחול כהה – ילדים",
+      "audience": "kids",
+      "team": "seattle-seahawks",
+      "price": 89,
+      "counterpart": "seattle-seahawks-sam-darnold-14-navy-jersey"
+    }
+  ]
+}

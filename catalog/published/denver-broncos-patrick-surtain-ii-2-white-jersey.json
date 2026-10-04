@@ -1,0 +1,165 @@
+{
+  "handle": "denver-broncos-patrick-surtain-ii-2-white-jersey",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "adult",
+  "size_chart": null,
+  "team": {
+    "slug": "denver-broncos",
+    "code": "DEN",
+    "he": "דנבר ברונקוס",
+    "en": "Denver Broncos",
+    "ar": "دنفر برونكوز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "patrick-surtain-ii",
+    "name_on_back": "SURTAIN II",
+    "he": "פטריק סרטיין השני",
+    "en": "Patrick Surtain II",
+    "ar": "باتريك سورتين الثاني"
+  },
+  "title_he": "חולצת פוטבול דנבר ברונקוס מספר 2 לבן",
+  "description_html_he": "<p>חולצת פוטבול של דנבר ברונקוס בצבע לבן, עם השם SURTAIN II והמספר 2 על הגב (פטריק סרטיין השני).</p><ul><li>שרוול קצר</li><li>מידות S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול דנבר ברונקוס מספר 2 לבן",
+    "description_he": "חולצת פוטבול של דנבר ברונקוס בצבע לבן, עם SURTAIN II 2 על הגב, במידות S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-DEN-2-WHT-A-S",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-DEN-2-WHT-A-M",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-DEN-2-WHT-A-L",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-DEN-2-WHT-A-XL",
+      "barcode": null,
+      "price": 139,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/denver-broncos-2-white-152030829-19.png",
+      "alt_he": "חולצת פוטבול דנבר ברונקוס מספר 2 לבן",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/denver-broncos-2-white-152030829-19__back.png",
+      "alt_he": "חולצת פוטבול דנבר ברונקוס מספר 2 לבן (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": null,
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Denver Broncos #2 NFL Jersey – White",
+      "description_html": "<p>Denver Broncos NFL jersey in white, with the name SURTAIN II and the number 2 on the back (Patrick Surtain II).</p><ul><li>Short sleeves</li><li>Sizes S to XL</li></ul>",
+      "seo_title": "Denver Broncos #2 NFL Jersey – White",
+      "seo_description": "Denver Broncos NFL jersey in white, SURTAIN II 2 on the back, sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية دنفر برونكوز رقم 2 أبيض",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق دنفر برونكوز باللون الأبيض، مع الاسم SURTAIN II والرقم 2 على الظهر (باتريك سورتين الثاني).</p><ul><li>أكمام قصيرة</li><li>المقاسات من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية دنفر برونكوز رقم 2 أبيض",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق دنفر برونكوز باللون الأبيض، SURTAIN II 2 على الظهر، المقاسات من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/152030829?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "野马",
+    "photos": {
+      "front": "152030829/19",
+      "back": "152030829/19"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:denver-broncos",
+    "league:nfl",
+    "audience:adult",
+    "player:patrick-surtain-ii",
+    "פטריק סרטיין השני",
+    "new",
+    "source:nfl-cyq888",
+    "album:152030829",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "denver broncos",
+    "broncos",
+    "دنفر برونكوز",
+    "برونكوز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "patrick surtain ii",
+    "surtain",
+    "باتريك سورتين الثاني"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "2024 design: orange collar, 'BRONCOS COUNTRY' neck tape, orange/navy shoulder panels",
+    "render": "denver-broncos-2-white-152030829-19"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210802992",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935206277424",
+      "M": "gid://shopify/ProductVariant/67935206310192",
+      "L": "gid://shopify/ProductVariant/67935206342960",
+      "XL": "gid://shopify/ProductVariant/67935206375728"
+    },
+    "created_at": "2026-10-04T11:07:41Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:31:16Z",
+      "ar": "2026-10-04T11:31:16Z"
+    }
+  }
+}

@@ -10,7 +10,9 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   affordable prices.
   - Current season (26/27), a mix of leagues and teams.
   - Adults and kids.
-  - No name, number or patch printing for now.
+  - Paid name printing on the back (₪35 per item) on football and basketball jerseys, since the owner's change of
+    2026-09-29 (bca8d7c): an UNLISTED product "הדפסת שם אישי בגב" and the theme setting
+    `personalization_variant_id`. No number or patch printing. NFL jerseys (already named) don't offer it.
 - **Audience:** sports fans. Kids 6–12 (bought by parents), 12–18, 18–26 and 26+ (owner's
   estimate), plus amateur teams ordering in bulk.
 - **Stock and delivery:** stock is held in Israel. Home delivery within up to 10 business days (owner
@@ -19,7 +21,8 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   Israel, with one method, "משלוח חינם עד הבית" at ₪0, described "עד 10 ימי עסקים".
 - **Prices:** adult football shirts ₪139, kids sets (shirt + shorts) ₪99, basketball jerseys ₪149,
   basketball shorts ₪119, kids basketball jerseys ₪89 (owner, 2026-09-28: "רק לילדים תעשה מחיר 89 לגופיה"; they were
-  ₪149), NFL hoodies ₪249. New products keep the same prices (owner, 2026-09-27: "אותו מחיר עד היום").
+  ₪149), NFL hoodies ₪249, NFL jerseys ₪139 for adults and ₪89 for kids (owner, 2026-10-04). New products keep the
+  same prices (owner, 2026-09-27: "אותו מחיר עד היום").
   A basketball jersey with the shorts of the same kit costs ₪229 instead of ₪268 (owner decision
   2026-09-27: an automatic discount takes ₪39 off the shorts; `catalog/pricing.json`, `sets`).
   Lots of promotions are planned.
@@ -38,13 +41,13 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | --- | --- |
 | Shop | `sfgzdp-1m.myshopify.com` ("SportWear") |
 | Plan | Basic, ILS, Israel |
-| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. Since the owner published "SportWear (next)" (2026-09-28 13:06 UTC) the live site has no originality claim and the current shipping texts (checked in he/en/ar at 14:20 UTC) |
-| Catalog | 1,562 products: 1,546 ACTIVE, all on the Online Store; 16 DRAFT since 2026-09-28 (the 15 hidden with the owner's approval and the demo product); 0 orders. Details in "The catalog" below |
-| Live theme | Our theme: "SportWear (next)", `gid://shopify/OnlineStoreTheme/188528591152`, published by the owner on 2026-09-28 13:06 UTC (at commit fbe8d55; no editor changes when checked at 14:05 UTC). Never write to it. The theme live before, "SportWear (dev)" (`188519711024`, at 71be9d5), and Horizon are unpublished |
-| Dev theme | "SportWear (next 2)", unpublished, `gid://shopify/OnlineStoreTheme/188590424368` (`SW_PREVIEW_THEME_ID=188590424368`), a copy of the live theme made on 2026-09-28 14:09 UTC (named "next 2" because the live theme is "SportWear (next)"). On it since then (owner's requests of 2026-09-28): new hero photos made for the hero, candid Israeli scenes with a desktop, an English and a phone version per slide, and six category tiles with basketball shorts and NFL hoodies added (`design/imagery/README.md`, "Home page photography"). Editor changes made in the live theme from now on are not in the copy. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
+| Storefront | **open to the public**: the password was off when checked on 2026-09-26 22:34 UTC (it was on before). No payment gateway yet. Since the owner published "SportWear (next)" (2026-09-28 13:06 UTC) the live site has no originality claim and the current shipping texts (checked in he/en/ar at 14:20 UTC); the owner published "SportWear (next 2)" on 2026-09-29 |
+| Catalog | 1,754 products (2026-10-04): 1,737 ACTIVE, all on the Online Store (191 NFL jerseys added on 2026-10-04); 16 DRAFT since 2026-09-28 (the 15 hidden with the owner's approval and the demo product); 1 UNLISTED, the name-printing product; 0 orders. Details in "The catalog" below |
+| Live theme | Our theme: "SportWear (next 2)", `gid://shopify/OnlineStoreTheme/188590424368`, published by the owner on 2026-09-29 at about 09:14 UTC (its theme files are the repo at bca8d7c: the new hero photos, the six category tiles and the owner's name printing). Never write to it. The themes live before, "SportWear (next)" (`188528591152`, at fbe8d55) and "SportWear (dev)" (`188519711024`), and Horizon are unpublished |
+| Dev theme | "SportWear (next 3)", unpublished, `gid://shopify/OnlineStoreTheme/188617490736` (`SW_PREVIEW_THEME_ID=188617490736`), a copy of the live theme made on 2026-09-29 09:18 UTC (named "next 3" because the live theme is "SportWear (next 2)"). On it since then (2026-10-04): an NFL jerseys row on the home page (after the team cards) and the hoodies category tile leading to the `nfl` collection. Editor changes made in the live theme from now on are not in the copy. `deployed_commit` in `catalog/store-setup.json`. Deploy here; the owner publishes. Deploy steps: `.claude/skills/sportwear-theme/references/deploy.md` |
 | Locales | `he` is primary (since 2026-09-26); `en` and `ar` are published. All three are on the main domain's web presence: `/`, `/en`, `/ar` |
 | Store translations | English and Arabic registered for every product (the 1,098 imported ones since 2026-09-27, `catalog/translations/older-products.json`), the collections, menus, pages and league names. Only the demo product has none. See `catalog/translations/README.md` |
-| Store setup | Metaobjects, metafield definitions, 205 smart collections (leagues, clubs, national teams, NBA teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27), 2 manual collections (`our-picks`, the home page's first row, editable by the owner; `collabs`, "שיתופי פעולה", 250 products for the owner's influencer barter platform, on no channel, 2026-09-30, `catalog/published/collabs-2026-09-30.json`), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27), and the collector-card metafields (`sportwear.card_image`, `card_color`, `card_mark`) on 34 player and team collections (`design/imagery/collector-cards.json`). The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). The 19 collections behind the home rows are sorted by hand (MANUAL) since 2026-09-28: big teams first, adults before kids, jerseys before shorts, the items flagged for the owner last (it was best selling, i.e. newest first with no orders). The 126 team pages are MANUAL too, each in the team's own order (adults, then shorts, then kids; `team_collections` in `catalog/collection-order.json`). After an import, re-run `scripts/catalog/collection-order.py` (record: `catalog/published/collection-order-2026-09-28.json`). IDs in `catalog/store-setup.json` |
+| Store setup | Metaobjects, metafield definitions, 240 smart collections (leagues, clubs, national teams, NBA teams, NFL teams, players, styles, kids; 59 clubs added with wave 2 on 2026-09-27, 35 NFL collections on 2026-10-04: `nfl`, `nfl-jerseys`, `nfl-jerseys-kids` and the 32 team pages), 2 manual collections (`our-picks`, the home page's first row, editable by the owner; `collabs`, "שיתופי פעולה", 250 products for the owner's influencer barter platform, on no channel, 2026-09-30, `catalog/published/collabs-2026-09-30.json`), 6 pages, 3 menus. The collection metafield `sportwear.banner` ("באנר", a wide picture) is set on 32 collections (2026-09-27), and the collector-card metafields (`sportwear.card_image`, `card_color`, `card_mark`) on 34 player and team collections (`design/imagery/collector-cards.json`). The set price: 1 automatic discount ("מחיר סט: גופייה + מכנסיים") and 2 internal smart collections for it (`set-offer-jerseys`, `set-offer-shorts`, on no channel). The 19 collections behind the home rows are sorted by hand (MANUAL) since 2026-09-28: big teams first, adults before kids, jerseys before shorts, the items flagged for the owner last (it was best selling, i.e. newest first with no orders). The 158 team pages (126 + the 32 NFL teams) are MANUAL too, each in the team's own order (adults, then shorts, then kids, then hoodies: men's, women's, kids'; `team_collections` in `catalog/collection-order.json`); so are `nfl`, `nfl-jerseys` and `nfl-jerseys-kids`. After an import, re-run `scripts/catalog/collection-order.py` (record: `catalog/published/collection-order-2026-09-28.json`). IDs in `catalog/store-setup.json` |
 | Shipping | Israel only: free on every order, up to 10 business days (since 2026-09-26). The international zone (27 countries, ₪58) was deleted on 2026-09-26 |
 | Sitemap and SEO | `https://sportwear.co.il/sitemap.xml`, built by Shopify: one index for Hebrew (root), `/en` and `/ar`. All 5,328 URLs checked on 2026-09-28 (the owner: "חייב לדאוג ל sitemap כמו שצריך לכל השפות"): status, lang, canonical, hreflang, title and description in each language. 6 empty resources are kept out with `seo.hidden` (collections `frontpage`, `basketball-sets`, `sale`, `euroleague`, `israeli-basketball-league`, blog `news`): remove the metafield when one gets products. The 12 league and category collections without a description have an SEO description in he/en/ar. Record: `catalog/published/seo-2026-09-28.json` |
 | Legal texts | `legal/` (see its README). Live in he/en/ar since 2026-09-27: `/pages/shipping-returns` (a friendly returns and shipping text, 45 days; the URL to give as the return policy) and `/pages/accessibility`. The store policies (`/policies/*`) wait for the owner to paste them from https://claude.ai/code/artifact/9e4da37c-1a78-4630-9b76-3cb5c20d8455 |
@@ -52,7 +55,7 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
 | Logo | The owner's SW monogram, vectorized (`snippets/logo-mark.liquid`, files in `design/logo/`). Header shows the mark only, centered; favicon `sw-favicon.png` |
 | Shopify MCP connector | available in sessions. It follows the owner's account, not this store: on 2026-09-30 it pointed at another store (MAGBAG) until the owner reconnected it, so check `shop { myshopifyDomain }` (`sfgzdp-1m.myshopify.com`) before any write, never touch another store, and don't use `switch-shop` without the owner. Writes to the live (MAIN) theme, theme publishing and theme deletion are blocked by the connector itself. It also refuses `bulkOperationRunMutation`: create products with one `productSet` per call (parallel agents, one group each), then `bulk-update-product-status` and `publicationUpdate`, 50 per call. Stage at most 40 images per `stagedUploadsCreate` call (a bigger result is too large to come back inline). It has no `write_legal_policies` scope, so `shopPolicyUpdate` is refused: the owner pastes policies, and we register their translations (`translationsRegister` works on `ShopPolicy`) |
 
-## The catalog (as of 2026-09-28)
+## The catalog (as of 2026-10-04)
 
 - **Imported by the owner:** 1,098 products (tag `source:yupoo`).
   - A full scan on 2026-09-27 checked every product's title and description against its photos: 47 titles
@@ -113,6 +116,12 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   influencer barter platform the owner works with (up to 250 products; each influencer picks one or two): 97 football
   shirts, 103 basketball jerseys and 50 shorts, the most popular teams and players first, in a mixed order, each pair of
   shorts right after its jersey. On no sales channel, `seo.hidden` = 1 (`catalog/published/collabs-2026-09-30.json`).
+- **NFL jerseys from nfl-cyq888** (the owner, 2026-10-04: "יש מוצרים נוספים שצריך להוסיף לאתר"; prices ₪139 / kids ₪89, a
+  selection of each team's stars, live after our check): 309 picked (217 adult, 92 kids). 191 are live (139 adult, 52
+  kids; tag `source:nfl-cyq888`, product type `NFL Jersey`), with studio photos checked against the supplier's, en/ar,
+  37 adult ↔ kids pairs and filter names. 17 wait for a new render and 101 for their first render: the OpenAI credit
+  ran out. Menu: a top-level "NFL" (jerseys by team, kids, hoodies). `catalog/sources/nfl-cyq888/` (README, `status.json`),
+  `catalog/published/nfl-2026-10-04.json`.
 
 ## Locked decisions
 
@@ -287,13 +296,18 @@ and several records are keyed by the old handles: keep a map old → new.
   - We told the owner that Google treats unlicensed products bearing brand or club logos as counterfeit (the account
     is suspended at once and for good), and that no wording change helps
 - VAT: the prices show "כולל מע״מ" (taxes included). If the business is an עוסק פטור, that line comes off
-- Stock: every variant shows 5 units. That is 6,704 variants: the 5,088 checked on 2026-09-27, plus the 1,616
-  added that day with wave 2 and the shorts, all created with 5. If that is not the real stock, a size sells
-  out on the site after 5 orders and a size filter has nothing to narrow; only the owner knows the real
-  quantities
-- Publishing "SportWear (next 2)": the new hero photos and the six category tiles (2026-09-28). The owner published
-  "SportWear (next)" on 2026-09-28 13:06 UTC, which took the originality claim and the old shipping texts off the live
-  site. Also open: whether the site stays open until launch
+- Stock: every variant shows 5 units. That is 7,468 variants: the 5,088 checked on 2026-09-27, the 1,616 added
+  that day with wave 2 and the shorts, and the 764 of the NFL jerseys (2026-10-04), all created with 5. If that is not
+  the real stock, a size sells out on the site after 5 orders and a size filter has nothing to narrow; only the owner
+  knows the real quantities
+- Publishing "SportWear (next 3)": the NFL row on the home page and the category tile that leads to all the NFL
+  products (2026-10-04). The menu, collections and products are store-wide and already live. Also open: whether the
+  site stays open until launch
+- **NFL: 118 jerseys wait for the OpenAI credit** (platform.openai.com → Billing): 101 picks with no studio photo yet
+  (among them every jersey of the Saints, Buccaneers, Titans and Commanders, whose pages show only their hoodies until
+  then) and 17 held for a new render. How to finish: `catalog/sources/nfl-cyq888/README.md`
+- NFL kids jerseys are sold in S–XL ("מידות ילדים S עד XL") with no size chart: the supplier's kids albums show none.
+  Ask the supplier which ages each size fits, as for the 968-NBA kids jerseys
 - Connecting GitHub to Shopify, a one-time step for the development theme
 - Google Search Console: submit `sitemap.xml` (one index for the three languages) with the Google account used for
   Merchant Center. The domain's DNS is at the registrar (sitesdepot) and already has a google-site-verification TXT

@@ -1,0 +1,170 @@
+{
+  "handle": "buffalo-bills-josh-allen-17-white-jersey-kids",
+  "status": "active",
+  "sport": "american-football",
+  "product_type": "NFL Jersey",
+  "audience": "kids",
+  "size_chart": null,
+  "team": {
+    "slug": "buffalo-bills",
+    "code": "BUF",
+    "he": "באפלו בילס",
+    "en": "Buffalo Bills",
+    "ar": "بافالو بيلز"
+  },
+  "leagues": ["nfl"],
+  "kit": null,
+  "season": null,
+  "vendor": "SportWear",
+  "player": {
+    "slug": "josh-allen",
+    "name_on_back": "ALLEN",
+    "he": "ג׳וש אלן",
+    "en": "Josh Allen",
+    "ar": "جوش ألين"
+  },
+  "title_he": "חולצת פוטבול באפלו בילס מספר 17 לבן – ילדים",
+  "description_html_he": "<p>חולצת פוטבול של באפלו בילס בצבע לבן, עם השם ALLEN והמספר 17 על הגב (ג׳וש אלן).</p><ul><li>שרוול קצר</li><li>מידות ילדים S עד XL</li></ul>",
+  "seo": {
+    "title_he": "חולצת פוטבול באפלו בילס מספר 17 לבן – ילדים",
+    "description_he": "חולצת פוטבול של באפלו בילס בצבע לבן, עם ALLEN 17 על הגב, במידות ילדים S עד XL."
+  },
+  "variants": [
+    {
+      "size": "S",
+      "source_size_label": "S",
+      "sku": "SW-NJ-BUF-17-WHT-K-S",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "M",
+      "source_size_label": "M",
+      "sku": "SW-NJ-BUF-17-WHT-K-M",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "L",
+      "source_size_label": "L",
+      "sku": "SW-NJ-BUF-17-WHT-K-L",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    },
+    {
+      "size": "XL",
+      "source_size_label": "XL",
+      "sku": "SW-NJ-BUF-17-WHT-K-XL",
+      "barcode": null,
+      "price": 89,
+      "compare_at_price": null,
+      "quantity": 5,
+      "available_at_source": true
+    }
+  ],
+  "images": [
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/buffalo-bills-17-white-214852317-09-kids.png",
+      "alt_he": "חולצת פוטבול באפלו בילס מספר 17 לבן – ילדים",
+      "view": "front"
+    },
+    {
+      "url": "file:///tmp/claude-0/-home-user-sportwear/23ae9cd7-211f-589c-9de3-c2331465149e/scratchpad/nfl/studio/norm/buffalo-bills-17-white-214852317-09-kids__back.png",
+      "alt_he": "חולצת פוטבול באפלו בילס מספר 17 לבן – ילדים (גב)",
+      "view": "back"
+    }
+  ],
+  "relations": {
+    "counterpart_handle": "buffalo-bills-josh-allen-17-white-jersey",
+    "complements_handles": []
+  },
+  "translations": {
+    "en": {
+      "title": "Buffalo Bills #17 NFL Jersey – White – Kids",
+      "description_html": "<p>Buffalo Bills NFL jersey in white, with the name ALLEN and the number 17 on the back (Josh Allen).</p><ul><li>Short sleeves</li><li>Kids sizes S to XL</li></ul>",
+      "seo_title": "Buffalo Bills #17 NFL Jersey – White – Kids",
+      "seo_description": "Buffalo Bills NFL jersey in white, ALLEN 17 on the back, kids sizes S to XL."
+    },
+    "ar": {
+      "title": "قميص كرة القدم الأمريكية بافالو بيلز رقم 17 أبيض – أطفال",
+      "description_html": "<p>قميص كرة القدم الأمريكية لفريق بافالو بيلز باللون الأبيض، مع الاسم ALLEN والرقم 17 على الظهر (جوش ألين).</p><ul><li>أكمام قصيرة</li><li>مقاسات الأطفال من S إلى XL</li></ul>",
+      "seo_title": "قميص كرة القدم الأمريكية بافالو بيلز رقم 17 أبيض – أطفال",
+      "seo_description": "قميص كرة القدم الأمريكية لفريق بافالو بيلز باللون الأبيض، ALLEN 17 على الظهر، مقاسات الأطفال من S إلى XL."
+    }
+  },
+  "source": {
+    "url": "https://nfl-cyq888.x.yupoo.com/albums/214852317?uid=1",
+    "fetched_at": "2026-10-04T00:00:00Z",
+    "original_title": "童装比尔",
+    "photos": {
+      "front": "214852317/09",
+      "back": "214852317/09"
+    },
+    "reference_price": null,
+    "image_rights_confirmed": true,
+    "image_rights_note": "Studio photos made from the supplier's own album photos (front and back of the same jersey); the owner asked to import from this catalog (2026-10-04)."
+  },
+  "questions": [],
+  "tags": [
+    "sport:american-football",
+    "team:buffalo-bills",
+    "league:nfl",
+    "audience:kids",
+    "player:josh-allen",
+    "ג׳וש אלן",
+    "new",
+    "source:nfl-cyq888",
+    "album:214852317",
+    "import:2026-10-04",
+    "חולצה",
+    "חולצת פוטבול",
+    "פוטבול",
+    "jersey",
+    "nfl jersey",
+    "american football",
+    "قميص",
+    "كرة القدم الأمريكية",
+    "ילד",
+    "ילדים",
+    "נוער",
+    "kids",
+    "youth",
+    "أطفال",
+    "buffalo bills",
+    "bills",
+    "بافالو بيلز",
+    "بيلز",
+    "nfl",
+    "دوري كرة القدم الأمريكية",
+    "josh allen",
+    "جوش ألين"
+  ],
+  "review": {
+    "style_guess": "away",
+    "variant": "classic away: navy collar, navy/red sleeve stripes, BILLS chest wordmark",
+    "render": "buffalo-bills-17-white-214852317-09-kids"
+  },
+  "shopify": {
+    "product_id": "gid://shopify/Product/15332210278704",
+    "variant_ids": {
+      "S": "gid://shopify/ProductVariant/67935204278576",
+      "M": "gid://shopify/ProductVariant/67935204311344",
+      "L": "gid://shopify/ProductVariant/67935204344112",
+      "XL": "gid://shopify/ProductVariant/67935204376880"
+    },
+    "created_at": "2026-10-04T11:06:35Z",
+    "translations_registered": {
+      "en": "2026-10-04T11:32:39Z",
+      "ar": "2026-10-04T11:32:39Z"
+    }
+  }
+}
