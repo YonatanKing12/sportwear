@@ -4,9 +4,9 @@
   other side (on phones the topic sits above the two values).
 
   Each row is a block with a topic. Our side comes from the store where the store knows it: shipping from
-  free-shipping-cents, this product's price, its kids set (the product or its counterpart), its basketball set
-  price (snippets/set-price.liquid's rule: the shop's set offer and a matching complement) and the site's
-  languages; the rest is translated copy. A row is left out when it doesn't apply to the page's product
+  free-shipping-cents, this product's price, its kids set (the product or its counterpart) and its basketball
+  set price (snippets/set-price.liquid's rule: the shop's set offer and a matching complement); the rest is
+  translated copy. A row is left out when it doesn't apply to the page's product
   ("Show for", or no set or kids set to show) or when the store can't back it (no free shipping for this
   visitor). Every text can be overridden in the editor.
 
@@ -183,15 +183,6 @@
             assign ours = set_total | money_without_trailing_zeros
             assign regular_money = regular | money_without_trailing_zeros | prepend: '⁨' | append: '⁩'
             assign ours_note = 'products.compare.basketball_set.ours_note' | t: price: regular_money
-          else
-            assign show = false
-          endif
-        when 'languages'
-          assign icon_name = 'globe'
-          assign language_count = shop.published_locales.size
-          if language_count > 1
-            assign ours = 'products.compare.languages.ours' | t: count: language_count
-            assign ours_note = shop.published_locales | map: 'endonym_name' | join: ' · '
           else
             assign show = false
           endif
@@ -665,10 +656,6 @@
               "value": "basketball_set",
               "label": "t:sections.store_comparison.blocks.row.settings.topic.options.basketball_set"
             },
-            {
-              "value": "languages",
-              "label": "t:sections.store_comparison.blocks.row.settings.topic.options.languages"
-            },
             { "value": "custom", "label": "t:sections.store_comparison.blocks.row.settings.topic.options.custom" }
           ]
         },
@@ -755,9 +742,8 @@
       "name": "t:sections.store_comparison.presets.name",
       "blocks": [
         { "type": "row", "settings": { "topic": "shipping" } },
-        { "type": "row", "settings": { "topic": "returns" } },
         { "type": "row", "settings": { "topic": "delivery" } },
-        { "type": "row", "settings": { "topic": "languages" } }
+        { "type": "row", "settings": { "topic": "returns" } }
       ]
     }
   ]

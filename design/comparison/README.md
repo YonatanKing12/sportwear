@@ -5,8 +5,8 @@ under the main product section in `templates/product.json`). The owner asked for
 competitor's version (HOOPERS: "מה מקבלים ב-HOOPERS שלא מקבלים במקום אחר"), "ברמה הרבה יותר גבוהה".
 
 Our column comes from the store itself: free shipping from the theme setting (through
-`snippets/free-shipping-cents.liquid`), the product's kids set price (its own, or its kids counterpart's), its
-basketball set price (the shop's set offer and a matching complement), and the published languages. The other
+`snippets/free-shipping-cents.liquid`), the product's kids set price (its own, or its kids counterpart's) and its
+basketball set price (the shop's set offer and a matching complement). The other
 stores' column is copy in `i18n/product.*.json` (`products.compare.<topic>.theirs`, `theirs_note`, `note`), and every
 word of it has to be backed by `competitors-2026-10-04.json`. That file lists, per store, what its own pages said on
 2026-10-04, with the URL and a quote for each fact (null where a store says nothing).
@@ -27,7 +27,11 @@ else does.
 | Returns | "לרוב 14 יום" · "ובחלק מהן אין החזרות בכלל" | 14 days at HOOPERS, Jerseys, R:Sport (cash refund only within 48 hours), FootArmy and Jerseyniho's terms; FanShop 14 business days; no returns at Liberokits, Ohadimos and Jerseyniho's FAQ |
 | Kids set (football pages with a kids set) | "119-230 ₪" · "לסט ילדים של העונה" | This season's kids sets: Liberokits ₪119–139, Ohadimos ₪120, FootArmy from ₪140 (mostly ₪150), FanShop ₪145–185, Jerseys ₪159–179, Jerseyniho ₪159, HOOPERS ₪179, R:Sport ₪160–230 (older seasons from ₪104) |
 | Jersey + shorts (basketball pages with a set) | "מ־298 ₪" · "גופייה ומכנס בנפרד, בלי מחיר סט" | No set price at 7 of 8 (HOOPERS has one bundle with a ball, ₪449). The cheapest jersey plus shorts: Liberokits ₪298; others ₪304 and up |
-| Languages | "עברית בלבד" · "בכל 8 החנויות שבדקנו" | 8 of 8 |
+
+The languages row (3 languages against Hebrew only at all 8) was taken out on 2026-10-04: the owner said it
+interests no one ("זה שיש 3 שפות באתר זה לא מעניין אף אחד") and that the board should talk about what really matters
+to a buyer, such as the quality of the fabric. A fabric row needs facts first (ours from the owner, theirs from the
+stores' pages).
 
 Left out on purpose, because they would not be true or would not favour us: the shirt price (Liberokits ₪119 and
 Ohadimos ₪89 are cheaper than our ₪139; FootArmy is ₪140), name printing (free at 3 stores, ₪10–15 at the rest,

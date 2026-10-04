@@ -139,23 +139,9 @@
             "topic": "basketball_set",
             "show_for": "basketball"
           }
-        },
-        "row_languages": {
-          "type": "row",
-          "settings": {
-            "topic": "languages",
-            "show_for": "all"
-          }
         }
       },
-      "block_order": [
-        "row_shipping",
-        "row_delivery",
-        "row_returns",
-        "row_kids_set",
-        "row_basketball_set",
-        "row_languages"
-      ],
+      "block_order": ["row_shipping", "row_delivery", "row_returns", "row_kids_set", "row_basketball_set"],
       "settings": {
         "color_scheme": "scheme-night",
         "padding_top": 48,

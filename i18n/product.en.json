@@ -195,15 +195,6 @@
         "ours_note": "Instead of {{ price }}, taken off in the cart",
         "theirs": "From 298 ₪",
         "theirs_note": "Jersey and shorts apart, no set price"
-      },
-      "languages": {
-        "label": "Site languages",
-        "ours": {
-          "one": "1 language",
-          "other": "{{ count }} languages"
-        },
-        "theirs": "Hebrew only",
-        "theirs_note": "At all 8 stores we checked"
       }
     }
   }
