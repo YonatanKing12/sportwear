@@ -17,6 +17,10 @@
 {%- liquid
   assign scheme = section.settings.color_scheme
   assign heading_id = 'CompareHeading-' | append: section.id
+  assign on_dark = false
+  if scheme.settings.background.lightness < 50
+    assign on_dark = true
+  endif
 
   capture threshold_cents
     render 'free-shipping-cents'
@@ -260,7 +264,7 @@
 
 {%- if rows != blank -%}
   <div
-    class="section compare color-{{ scheme.id }}"
+    class="section compare color-{{ scheme.id }}{% if on_dark %} compare--on-dark{% endif %}"
     style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
   >
     <div class="page-width">
@@ -370,6 +374,22 @@
   .compare__icon {
     flex: none;
     color: var(--color-muted);
+  }
+
+  /* The topics are what tells the stores apart, so they stand out: bigger and bold, and in the highlight colour
+     on a dark scheme (never as text on a light one). */
+  .compare {
+    --compare-topic: currentColor;
+  }
+
+  .compare--on-dark {
+    --compare-topic: var(--color-highlight);
+  }
+
+  .compare__label {
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: var(--compare-topic);
   }
 
   .compare__cell {
