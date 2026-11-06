@@ -70,6 +70,7 @@
 {%- else -%}
   {%- liquid
     assign featured = section.settings.collection
+    assign selected_products = section.settings.products
     assign product_limit = section.settings.products_to_show
     assign columns_desktop = section.settings.columns_desktop
     assign columns_tablet = columns_desktop | at_most: 3
@@ -198,6 +199,12 @@
     # collection's (translated) name, else the translated default ("This season's jerseys"). "More from
     # the same league" rows say so in their eyebrow (not when their league has no collection of its own and
     # the row shows "other leagues" instead).
+    if selected_products != blank
+      assign has_products = true
+      assign has_more = true
+      assign show_count = false
+    endif
+
     assign copy = section.settings.copy | default: 'none'
     assign eyebrow = section.settings.eyebrow | escape
     assign heading = section.settings.heading | escape
@@ -214,6 +221,9 @@
     if eyebrow == blank and source != 'collection' and league_fallback != true
       assign eyebrow = 'home.featured_collection.same_league' | t
     endif
+    if heading == blank and selected_products != blank
+      assign heading = 'home.featured_collection.picks_heading' | t
+    endif
     if heading == blank and featured != blank
       assign heading = featured.title | escape
     endif
@@ -229,7 +239,10 @@
     endif
 
     assign view_all_url = routes.all_products_collection_url
-    if featured != blank
+    if selected_products != blank
+      assign view_all_url = view_all_url | append: '?view=catalog'
+    endif
+    if featured != blank and selected_products == blank
       assign view_all_url = featured.url
     endif
 
@@ -343,6 +356,20 @@
   {%- capture cards -%}
   {%- if has_products -%}
     {%- capture product_cards -%}
+      {%- if selected_products != blank -%}
+        {%- assign picked_count = 0 -%}
+        {%- for picked_product in selected_products -%}
+          {%- if picked_count >= product_limit -%}{%- break -%}{%- endif -%}
+          {%- if picked_product.available -%}
+            {%- assign picked_count = picked_count | plus: 1 -%}
+            {%- assign picked_loading = 'lazy' -%}
+            {%- if picked_count <= eager_cards -%}{%- assign picked_loading = 'eager' -%}{%- endif -%}
+            <li class="featured-collection__item" data-row-card>
+              {%- render 'product-card', product: picked_product, sizes: card_sizes, loading: picked_loading -%}
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
       {%- render 'home-row-cards',
         row_collection: featured,
         limit: product_limit,
@@ -356,6 +383,7 @@
         exclude_id: exclude_id,
         eager: eager_cards
       -%}
+      {%- endif -%}
     {%- endcapture -%}
     {%- assign shown = product_cards | split: 'data-row-card' | size | minus: 1 -%}
     {%- if intro_card -%}
@@ -390,9 +418,11 @@
             {%- render 'icon', name: 'arrow-forward', size: 24 -%}
           </span>
           <span class="featured-collection__more-label">{{ 'home.featured_collection.view_all' | t }}</span>
+          {%- if selected_products == blank -%}
           <span class="featured-collection__more-count">
             {{- 'home.featured_collection.count' | t: count: featured.products_count -}}
           </span>
+          {%- endif -%}
           <span class="visually-hidden">({{ heading }})</span>
         </a>
       </li>
@@ -418,7 +448,7 @@
   -%}
   {%- if show_section -%}
     <div
-      class="section featured-collection color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
+      class="section featured-collection{% if selected_products != blank %} featured-collection--selected{% endif %} color-{{ section.settings.color_scheme.id }}{% if is_carousel %} featured-collection--carousel{% endif %}"
       style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
     >
       {%- if is_carousel -%}
@@ -460,6 +490,9 @@
 {%- endif -%}
 
 {% stylesheet %}
+  .featured-collection--selected .product-card {
+    block-size: 100%;
+  }
   .featured-collection__title {
     display: flex;
     flex-direction: column;
@@ -680,6 +713,13 @@
       "type": "collection",
       "id": "collection",
       "label": "t:settings.collection"
+    },
+    {
+      "type": "product_list",
+      "id": "products",
+      "limit": 12,
+      "label": "t:sections.featured_collection.settings.products.label",
+      "info": "t:sections.featured_collection.settings.products.info"
     },
     {
       "type": "select",

@@ -168,17 +168,29 @@
       "type": "featured-collection",
       "settings": {
         "color_scheme": "scheme-soft",
-        "collection": "selected-football",
-        "audience": "adult",
-        "one_per_team": true,
+        "collection": "",
+        "audience": "all",
+        "one_per_team": false,
         "layout": "carousel",
-        "products_to_show": 6,
+        "products_to_show": 10,
         "columns_desktop": 4,
-        "columns_mobile": "1",
+        "columns_mobile": "2",
         "show_view_all": true,
         "show_count": false,
         "padding_top": 44,
-        "padding_bottom": 44
+        "padding_bottom": 44,
+        "products": [
+          "real-madrid-home-jersey-2026-27",
+          "kansas-city-chiefs-patrick-mahomes-15-red-jersey",
+          "sw-jerseys-218038482",
+          "sw-shorts-162704069",
+          "barcelona-home-kit-2026-27-kids",
+          "baltimore-ravens-lamar-jackson-8-purple-jersey-kids",
+          "sw-jerseys-244982450",
+          "sw-football-250582309",
+          "sw-shorts-127671587",
+          "philadelphia-eagles-jalen-hurts-1-midnight-green-jersey"
+        ]
       }
     },
     "nba": {

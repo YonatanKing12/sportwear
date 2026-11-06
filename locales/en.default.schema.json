@@ -902,6 +902,10 @@
             "2_3": "2nd of 3 pages",
             "3_3": "3rd of 3 pages"
           }
+        },
+        "products": {
+          "label": "Selected products",
+          "info": "Choose products in order instead of the collection. Sold-out products are hidden; View all opens the complete catalog."
         }
       }
     },
