@@ -1698,6 +1698,10 @@
       "variant_id": {
         "label": "Printing variant ID",
         "info": "Numeric variant ID of the ₪35 add-on. Enable only after a purchase test."
+      },
+      "number_enabled": {
+        "label": "Enable number printing",
+        "info": "Adds a number to the same paid printing service. Enable only after confirming the existing fee covers a name and/or number."
       }
     }
   },

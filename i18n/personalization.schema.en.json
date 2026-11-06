@@ -1,0 +1,10 @@
+{
+  "settings_schema": {
+    "personalization": {
+      "number_enabled": {
+        "label": "Enable number printing",
+        "info": "Adds a number to the same paid printing service. Enable only after confirming the existing fee covers a name and/or number."
+      }
+    }
+  }
+}

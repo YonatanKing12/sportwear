@@ -12,7 +12,11 @@ Answer in Hebrew and address them in the plural (אתם) unless they say otherwi
   - Adults and kids.
   - Paid name printing on the back (₪35 per item) on football and basketball jerseys, since the owner's change of
     2026-09-29 (bca8d7c): an UNLISTED product "הדפסת שם אישי בגב" and the theme setting
-    `personalization_variant_id`. No number or patch printing. NFL jerseys (already named) don't offer it.
+    `personalization_variant_id`. This was originally name-only. On 2026-11-06 the owner approved
+    name and number together for the same ₪35 per shirt, restricted to exact `sport:football` products
+    of type `Football Jersey` or `Football Kit` (shirt only). NBA/NFL/shorts do not qualify. This update
+    is implemented in unpublished preview 189466116400, not the live theme. See
+    `design/personalization-2026-11-06.md`; no patch printing.
 - **Audience:** sports fans. Kids 6–12 (bought by parents), 12–18, 18–26 and 26+ (owner's
   estimate), plus amateur teams ordering in bulk.
 - **Stock and delivery:** stock is held in Israel. Home delivery within up to 10 business days (owner

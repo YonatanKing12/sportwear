@@ -370,6 +370,13 @@
         "id": "personalization_variant_id",
         "label": "t:settings_schema.personalization.variant_id.label",
         "info": "t:settings_schema.personalization.variant_id.info"
+      },
+      {
+        "type": "checkbox",
+        "id": "personalization_number_enabled",
+        "label": "t:settings_schema.personalization.number_enabled.label",
+        "info": "t:settings_schema.personalization.number_enabled.info",
+        "default": false
       }
     ]
   },

@@ -821,6 +821,15 @@
     "setup": "Set an active discount code before displaying this offer."
   },
   "products": {
+    "personalization_combined": {
+      "heading": "Custom name and number",
+      "choice": "Add a name and/or number for ₪{{ amount }} per item",
+      "number_label": "Number to print (one or two digits)",
+      "property_number": "Number to print",
+      "invalid_number": "Enter a one- or two-digit number (0–99).",
+      "required": "Enter a name or number to print.",
+      "replaces": "Choose a name, number or both. Printing applies to the shirt only; your details replace the corresponding lettering on the back."
+    },
     "breadcrumbs": {
       "label": "Breadcrumb",
       "home": "Home"

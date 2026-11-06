@@ -84,6 +84,7 @@
       {%- else -%}
         {%- render 'price', variant: variant -%}
       {%- endif -%}
+      <span class="price" data-print-linked-total hidden></span>
     </div>
     {%- if size_choice -%}
       <div class="product-sticky__sizes">
@@ -177,6 +178,7 @@
             {%- else -%}
               {%- render 'price', variant: variant -%}
             {%- endif -%}
+            <span class="price" data-print-linked-total hidden></span>
           </div>
         </div>
         <button type="button" class="button button--icon size-sheet__close" data-drawer-close>

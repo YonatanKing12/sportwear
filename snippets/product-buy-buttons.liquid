@@ -31,10 +31,16 @@
   assign error_id = form_id | append: '-error'
   assign quantity_id = form_id | append: '-quantity'
   assign print_eligible = false
-  if product.type == 'Football Jersey' or product.type == 'Basketball Jersey'
-    if settings.personalization_variant_id != blank
-      assign print_eligible = true
+  if product.tags contains 'sport:football'
+    if product.type == 'Football Jersey' or product.type == 'Football Kit'
+      if settings.personalization_variant_id != blank
+        assign print_eligible = true
+      endif
     endif
+  endif
+  assign print_copy = 'products.personalization'
+  if settings.personalization_number_enabled
+    assign print_copy = 'products.personalization_combined'
   endif
 -%}
 <sw-product-form class="product-buy" data-source="product-form">
@@ -54,12 +60,15 @@
         data-personalization
         data-addon-id="{{ settings.personalization_variant_id | escape }}"
         data-addon-price="3500"
+        data-product-type="{{ product.type | escape }}"
+        data-football="true"
+        data-empty-message="{{ print_copy | append: '.required' | t | escape }}"
         data-total-template="{{ 'products.personalization.total' | t: price: '[price]' | escape }}"
       >
-        <legend class="product-print__heading">{{ 'products.personalization.heading' | t }}</legend>
+        <legend class="product-print__heading">{{ print_copy | append: '.heading' | t }}</legend>
         <label class="product-print__choice">
           <input type="checkbox" data-print-toggle>
-          <span>{{ 'products.personalization.choice' | t: amount: '35' }}</span>
+          <span>{{ print_copy | append: '.choice' | t: amount: '35' }}</span>
         </label>
         <div class="product-print__details" data-print-details hidden>
           <label class="field__label" for="{{ form_id }}-print-name">
@@ -73,10 +82,30 @@
             maxlength="10"
             autocomplete="off"
             data-print-name
+            aria-describedby="{{ error_id }}"
             data-required-message="{{ 'products.personalization.required' | t | escape }}"
             disabled
           >
-          <p class="product-print__note">{{ 'products.personalization.replaces' | t }}</p>
+          {%- if settings.personalization_number_enabled -%}
+            <label class="field__label" for="{{ form_id }}-print-number">
+              {{- 'products.personalization_combined.number_label' | t -}}
+            </label>
+            <input
+              class="field__input"
+              id="{{ form_id }}-print-number"
+              type="text"
+              inputmode="numeric"
+              dir="ltr"
+              name="properties[{{ 'products.personalization_combined.property_number' | t | escape }}]"
+              maxlength="2"
+              autocomplete="off"
+              data-print-number
+              aria-describedby="{{ error_id }}"
+              data-required-message="{{ 'products.personalization_combined.invalid_number' | t | escape }}"
+              disabled
+            >
+          {%- endif -%}
+          <p class="product-print__note">{{ print_copy | append: '.replaces' | t }}</p>
           <p class="product-print__total" data-print-total aria-live="polite"></p>
         </div>
       </fieldset>
@@ -192,6 +221,10 @@
     display: block;
     inline-size: 100%;
     margin-block-start: var(--space-2);
+  }
+  .product-print__details .field__input + .field__label {
+    display: block;
+    margin-block-start: var(--space-3);
   }
   .product-print__note {
     margin-block-start: var(--space-2);

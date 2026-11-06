@@ -430,17 +430,24 @@ class SwProductForm extends HTMLElement {
     const toggle = panel?.querySelector('[data-print-toggle]');
     const details = panel?.querySelector('[data-print-details]');
     const name = panel?.querySelector('[data-print-name]');
+    const number = panel?.querySelector('[data-print-number]');
     if (
       !(toggle instanceof HTMLInputElement) ||
       !(details instanceof HTMLElement) ||
       !(name instanceof HTMLInputElement)
     )
       return;
-    details.hidden = !toggle.checked;
-    name.disabled = !toggle.checked;
-    name.required = toggle.checked;
-    if (!toggle.checked) name.value = '';
     const button = this.querySelector('[data-base-price]');
+    const available = button instanceof HTMLButtonElement && !button.disabled;
+    toggle.disabled = !available;
+    details.hidden = !toggle.checked;
+    name.disabled = !toggle.checked || !available;
+    name.required = toggle.checked && !(number instanceof HTMLInputElement);
+    if (number instanceof HTMLInputElement) {
+      number.disabled = !toggle.checked || !available;
+      if (!toggle.checked) number.value = '';
+    }
+    if (!toggle.checked) name.value = '';
     const price = button?.querySelector('[data-product-button-price]');
     const total = panel.querySelector('[data-print-total]');
     const base = Number(button?.dataset.basePrice);
@@ -453,6 +460,15 @@ class SwProductForm extends HTMLElement {
         maximumFractionDigits: 0,
       }).format((base + extra) / 100);
       price.textContent = toggle.checked ? formatted : price.dataset.baseMoney;
+      this.closest('sw-product-info')
+        ?.querySelectorAll('[data-print-linked-total]')
+        .forEach((linked) => {
+          linked.hidden = !toggle.checked;
+          linked.textContent = formatted;
+          linked.setAttribute('aria-label', panel.dataset.totalTemplate.replace('[price]', formatted));
+          const original = linked.parentElement.querySelector('.price:not([data-print-linked-total])');
+          if (original) original.hidden = toggle.checked;
+        });
       if (total instanceof HTMLElement) {
         total.textContent = toggle.checked ? panel.dataset.totalTemplate.replace('[price]', formatted) : '';
       }
@@ -475,11 +491,11 @@ class SwProductForm extends HTMLElement {
         !field.checkValidity(),
     );
     if (invalid instanceof HTMLElement) {
-      invalid.setAttribute('aria-invalid', 'true');
       const message =
-        this.#error?.dataset.invalidMessage || /** @type {HTMLInputElement} */ (invalid).validationMessage;
-      this.#showError(message);
-      invalid.focus();
+        invalid.dataset.requiredMessage ||
+        this.#error?.dataset.invalidMessage ||
+        /** @type {HTMLInputElement} */ (invalid).validationMessage;
+      this.#reportInvalid(invalid, message);
       return;
     }
 
@@ -494,14 +510,27 @@ class SwProductForm extends HTMLElement {
     const panel = form.querySelector('[data-personalization]');
     const toggle = panel?.querySelector('[data-print-toggle]');
     if (toggle instanceof HTMLInputElement && toggle.checked) {
+      if (panel.dataset.football !== 'true' || !['Football Jersey', 'Football Kit'].includes(panel.dataset.productType))
+        return;
       const nameInput = panel.querySelector('[data-print-name]');
+      const numberInput = panel.querySelector('[data-print-number]');
       const name = nameInput instanceof HTMLInputElement ? nameInput.value.trim().replace(/\s+/g, ' ') : '';
-      if (!name || Array.from(name).length > 10 || !/^[\p{L} ]+$/u.test(name)) {
-        if (nameInput instanceof HTMLInputElement) {
-          nameInput.setAttribute('aria-invalid', 'true');
-          nameInput.focus();
-        }
-        this.#showError(nameInput?.dataset.requiredMessage ?? '');
+      const number =
+        numberInput instanceof HTMLInputElement
+          ? numberInput.value
+              .trim()
+              .replace(/[٠-٩۰-۹]/g, (digit) => String(digit.charCodeAt(0) - (digit <= '٩' ? 0x660 : 0x6f0)))
+          : '';
+      if (!name && !number) {
+        this.#reportInvalid(nameInput, panel.dataset.emptyMessage ?? '');
+        return;
+      }
+      if (name && (Array.from(name).length > 10 || !/^[\p{L}\p{M} ]+$/u.test(name))) {
+        this.#reportInvalid(nameInput, nameInput?.dataset.requiredMessage ?? '');
+        return;
+      }
+      if (number && !/^[0-9]{1,2}$/.test(number)) {
+        this.#reportInvalid(numberInput, numberInput?.dataset.requiredMessage ?? '');
         return;
       }
       const parentId = String(formData.get('id'));
@@ -517,15 +546,16 @@ class SwProductForm extends HTMLElement {
       formData.set('items[0][id]', parentId);
       formData.set('items[0][quantity]', quantity);
       for (const [key, value] of properties) {
-        if (key === nameInput.name) continue;
+        if (key === nameInput.name || key === numberInput?.name) continue;
         formData.append(`items[0][properties][${key.slice(11, -1)}]`, value);
       }
-      // Keep the name only on the paid line: if it is removed, fulfillment has no print instruction.
+      // Keep all print instructions only on the paid child: removing it removes fulfillment instructions.
       formData.set('items[0][properties][_sw_print_reference]', printReference);
       formData.set('items[1][id]', addonId);
       formData.set('items[1][quantity]', quantity);
       formData.set('items[1][parent_id]', parentId);
-      formData.set(`items[1][properties][${propertyName}]`, name);
+      if (name) formData.set(`items[1][properties][${propertyName}]`, name);
+      if (number) formData.set(`items[1][properties][${numberInput.name.slice(11, -1)}]`, number);
       formData.set('items[1][properties][_sw_print_addon]', 'true');
       formData.set('items[1][properties][_sw_print_reference]', printReference);
     }
@@ -551,6 +581,19 @@ class SwProductForm extends HTMLElement {
       this.#setBusy(button, false);
     }
   };
+
+  /** Bring invalid main-form fields out from behind the modal size sheet. */
+  #reportInvalid(field, message) {
+    this.#showError(message);
+    if (!(field instanceof HTMLElement)) return;
+    field.setAttribute('aria-invalid', 'true');
+    const dialog = this.closest('sw-product-info')?.querySelector('[data-size-sheet] dialog');
+    if (dialog instanceof HTMLDialogElement && dialog.open) dialog.close();
+    requestAnimationFrame(() => {
+      field.focus({ preventScroll: true });
+      field.scrollIntoView({ block: 'center', behavior: 'auto' });
+    });
+  }
 
   /**
    * @param {HTMLButtonElement} button
