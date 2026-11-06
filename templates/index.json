@@ -22,8 +22,7 @@
         "autoplay": false,
         "speed": 6,
         "overlay_opacity": 55
-      },
-      "disabled": true
+      }
     },
     "our_picks": {
       "type": "featured-collection",
@@ -891,19 +890,9 @@
         "padding_bottom": 32,
         "use_included_film": true
       }
-    },
-    "editorial": {
-      "type": "editorial-hero",
-      "settings": {
-        "color_scheme": "scheme-night",
-        "image": "shopify://shop_images/sw-hero-airy-wide-20261024.png",
-        "padding_top": 0,
-        "padding_bottom": 0
-      }
     }
   },
   "order": [
-    "editorial",
     "hero_slideshow",
     "trust_strip",
     "featured_collection",
