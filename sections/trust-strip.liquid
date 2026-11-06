@@ -5,12 +5,7 @@
     assign on_dark = true
   endif
 
-  # Mobile shows compact columns: one per item, except four items, which sit in a 2 × 2 grid.
   assign item_count = section.blocks.size
-  assign mobile_columns = item_count
-  if item_count == 4
-    assign mobile_columns = 2
-  endif
 
   # When every order ships free (see free-shipping-cents), the default delivery text says so.
   capture threshold_cents
@@ -20,119 +15,154 @@
 -%}
 
 {%- if item_count > 0 -%}
-  <div class="trust-strip color-{{ scheme.id }}{% if on_dark %} trust-strip--on-dark{% endif %}">
+  <sw-trust-marquee
+    data-label-pause="{{ 'home.hero_slideshow.pause' | t }}"
+    data-label-play="{{ 'home.hero_slideshow.play' | t }}"
+    class="trust-strip color-{{ scheme.id }}{% if on_dark %} trust-strip--on-dark{% endif %}"
+  >
     <div
       class="section trust-strip__band"
       style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
     >
-      <div class="page-width">
-        <ul
-          class="trust-strip__list"
-          role="list"
-          style="--trust-columns: {{ mobile_columns }}; --trust-items: {{ item_count }};"
-        >
-          {%- for block in section.blocks -%}
-            {%- liquid
-              # "Automatic" icon and empty text follow the position: delivery, returns, stock in Israel, secure payment.
-              assign icon_name = block.settings.icon
-              if icon_name == 'auto'
-                case forloop.index
-                  when 2
-                    assign icon_name = 'return'
-                  when 3
-                    assign icon_name = 'map-pin'
-                  when 4
-                    assign icon_name = 'lock'
-                  else
-                    assign icon_name = 'truck'
-                endcase
-              endif
-
-              assign item_text = block.settings.text | escape
-              if item_text == blank
-                case forloop.index
-                  when 2
-                    assign item_text = 'general.trust.returns' | t
-                  when 3
-                    assign item_text = 'general.trust.stock' | t
-                  when 4
-                    assign item_text = 'general.trust.secure_payment' | t
-                  else
-                    if threshold_cents < 0
-                      assign item_text = 'general.trust.shipping_free' | t
+      <div class="trust-strip__viewport">
+        <div class="trust-strip__track">
+          <ul class="trust-strip__list" role="list" dir="{{ request.locale.direction }}">
+            {%- for block in section.blocks -%}
+              {%- liquid
+                # "Automatic" icon and empty text follow the position: delivery, returns, stock in Israel, secure payment.
+                assign icon_name = block.settings.icon
+                if icon_name == 'auto'
+                  case forloop.index
+                    when 2
+                      assign icon_name = 'return'
+                    when 3
+                      assign icon_name = 'map-pin'
+                    when 4
+                      assign icon_name = 'lock'
                     else
-                      assign item_text = 'general.trust.shipping' | t
-                    endif
-                endcase
-              endif
-            -%}
-            <li class="trust-strip__item" {{ block.shopify_attributes }}>
-              {%- render 'icon', name: icon_name, size: 24, class: 'trust-strip__icon' -%}
-              <span class="trust-strip__text">{{ item_text }}</span>
-            </li>
-          {%- endfor -%}
-        </ul>
+                      assign icon_name = 'truck'
+                  endcase
+                endif
+
+                assign item_text = block.settings.text | escape
+                if item_text == blank
+                  case forloop.index
+                    when 2
+                      assign item_text = 'general.trust.returns' | t
+                    when 3
+                      assign item_text = 'general.trust.stock' | t
+                    when 4
+                      assign item_text = 'general.trust.secure_payment' | t
+                    else
+                      if threshold_cents < 0
+                        assign item_text = 'general.trust.shipping_free' | t
+                      else
+                        assign item_text = 'general.trust.shipping' | t
+                      endif
+                  endcase
+                endif
+              -%}
+              <li class="trust-strip__item" {{ block.shopify_attributes }}>
+                {%- render 'icon', name: icon_name, size: 24, class: 'trust-strip__icon' -%}
+                <span class="trust-strip__text">{{ item_text }}</span>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </sw-trust-marquee>
+  <script type="module" src="{{ 'trust-marquee.js' | asset_url }}"></script>
 {%- endif -%}
 
 {% stylesheet %}
   .trust-strip {
-    --trust-accent: currentColor;
+    display: block;
+    --trust-accent: var(--color-text);
   }
-
   .trust-strip--on-dark {
     --trust-accent: var(--color-highlight);
   }
-
-  /* The band uses the scheme's surface tone, framed by hairlines (dark: #16181D on the #0D0E11 shell). */
   .trust-strip__band {
+    position: relative;
     border-block: 1px solid var(--color-border);
     background: var(--color-surface);
   }
-
-  .trust-strip__list {
-    display: grid;
-    grid-template-columns: repeat(var(--trust-columns, 3), minmax(0, 1fr));
-    gap: var(--space-4) var(--space-2);
+  .trust-strip--on-dark .trust-strip__band {
+    background: var(--color-background);
   }
-
+  .trust-strip__viewport {
+    direction: ltr;
+    overflow: hidden;
+  }
+  .trust-strip__track {
+    inline-size: 100%;
+  }
+  .trust-strip__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 16px 40px;
+    margin: 0;
+    padding-inline: 24px;
+    list-style: none;
+  }
   .trust-strip__item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 6px;
-    min-inline-size: 0;
-    text-align: center;
+    gap: 10px;
+    flex-shrink: 0;
   }
-
   .trust-strip__icon {
     color: var(--trust-accent);
+    inline-size: 20px;
+    block-size: 20px;
   }
-
   .trust-strip__text {
-    font-size: var(--text-sm);
+    font-size: 14px;
     font-weight: 700;
-    line-height: 1.3;
-    overflow-wrap: break-word;
+    line-height: 1.4;
   }
-
-  @media screen and (min-width: 750px) {
-    .trust-strip__list {
-      grid-template-columns: repeat(var(--trust-items, 3), auto);
-      justify-content: space-evenly;
-      column-gap: var(--space-8);
+  .trust-strip[data-animated] .trust-strip__track {
+    display: flex;
+    direction: ltr;
+    inline-size: max-content;
+    animation: trust-drift 36s linear infinite;
+  }
+  .trust-strip[data-animated] .trust-strip__list {
+    flex-wrap: nowrap;
+    flex: 0 0 auto;
+    min-inline-size: 100vw;
+    padding-inline: 24px;
+    gap: 48px;
+  }
+  .trust-strip[data-animated] .trust-strip__item::after {
+    content: '';
+    inline-size: 5px;
+    block-size: 5px;
+    margin-inline-start: 30px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    box-shadow: 0 0 0 1px var(--color-text);
+  }
+  .trust-strip[data-paused] .trust-strip__track,
+  .trust-strip:focus-within .trust-strip__track {
+    animation-play-state: paused;
+  }
+  @media (hover: hover) {
+    .trust-strip:hover .trust-strip__track {
+      animation-play-state: paused;
     }
-
-    .trust-strip__item {
-      flex-direction: row;
-      gap: 10px;
-      text-align: start;
+  }
+  @keyframes trust-drift {
+    to {
+      transform: translateX(-50%);
     }
-
-    .trust-strip__text {
-      font-size: var(--text-md);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trust-strip .trust-strip__track {
+      animation: none;
     }
   }
 {% endstylesheet %}

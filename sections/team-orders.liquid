@@ -56,7 +56,8 @@
   assign whatsapp_message = 'team_orders.whatsapp_message' | t: shop: shop.name | url_encode | replace: '+', '%20'
   assign today = 'now' | date: '%Y-%m-%d'
 -%}
-<div
+<sw-team-order
+  data-form-id="{{ form_id }}"
   class="section team-orders color-{{ section.settings.color_scheme.id }}{% if is_dark %} team-orders--dark{% endif %}"
   style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
 >
@@ -81,6 +82,7 @@
             <a
               class="button button--primary button--large team-orders__whatsapp"
               href="https://wa.me/{{ whatsapp_digits }}?text={{ whatsapp_message }}"
+              data-team-whatsapp
               target="_blank"
               rel="noopener"
             >
@@ -248,7 +250,27 @@
                   class: 'team-orders__field--full'
                 -%}
               </div>
-              <button class="button button--primary button--large button--full team-orders__submit" type="submit">
+              {%- if whatsapp_digits != blank -%}
+                <a
+                  class="button button--primary button--large button--full"
+                  href="https://wa.me/{{ whatsapp_digits }}?text={{ whatsapp_message }}"
+                  data-team-whatsapp
+                  target="_blank"
+                  rel="noopener"
+                  aria-describedby="{{ form_id }}-whatsapp-note"
+                >
+                  {%- render 'icon', name: 'whatsapp', size: 22 -%}
+                  {{ 'team_orders.form.whatsapp_submit' | t }}
+                  <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+                </a>
+                <p class="team-orders__note" id="{{ form_id }}-whatsapp-note">
+                  {{ 'team_orders.form.whatsapp_note' | t }}
+                </p>
+              {%- endif -%}
+              <button
+                class="button {% if whatsapp_digits != blank %}button--secondary{% else %}button--primary{% endif %} button--large button--full team-orders__submit"
+                type="submit"
+              >
                 {{- 'team_orders.form.submit' | t -}}
               </button>
             {%- endform -%}
@@ -257,10 +279,15 @@
       {%- endif -%}
     </div>
   </div>
-</div>
+</sw-team-order>
 <script type="module" src="{{ 'content-form.js' | asset_url }}"></script>
+<script type="module" src="{{ 'content-team-orders.js' | asset_url }}"></script>
 
 {% stylesheet %}
+  sw-team-order {
+    display: block;
+  }
+
   .team-orders__layout {
     display: grid;
     gap: var(--space-10);

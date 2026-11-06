@@ -671,6 +671,46 @@
     margin-block-start: 0;
   }
 
+  /* Keep the real title and live variant price above the image on phones, without
+     duplicate headings or a second product form. The custom element still owns all state. */
+  @media screen and (max-width: 989px) {
+    .main-product__layout {
+      row-gap: 0;
+    }
+
+    .main-product__info {
+      display: contents;
+    }
+
+    .product-info > .product-info__block--eyebrow {
+      order: -3;
+      margin-block-start: 0;
+    }
+
+    .product-info > .product-info__block--title {
+      order: -2;
+      margin-block-start: var(--space-2);
+    }
+
+    .product-info > .product-info__block--price {
+      order: -1;
+      margin-block-start: var(--space-2);
+    }
+
+    .main-product__media {
+      margin-block-start: var(--space-4);
+    }
+
+    .main-product__media .product-media {
+      aspect-ratio: auto;
+      block-size: clamp(220px, 30svh, 300px);
+    }
+
+    .main-product__layout > .product-info > sw-drawer {
+      display: contents;
+    }
+  }
+
   .product-eyebrow {
     display: flex;
     align-items: center;

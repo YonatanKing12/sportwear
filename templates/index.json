@@ -3,74 +3,25 @@
     "hero_slideshow": {
       "type": "hero-slideshow",
       "blocks": {
-        "football": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/sw-v4-hero-football.jpg",
-            "image_ltr": "shopify://shop_images/sw-v4-hero-football-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v4-hero-football-mobile.jpg",
-            "copy": "football",
-            "button_link": "shopify://collections/football",
-            "secondary_button_link": "shopify://collections/basketball"
-          }
-        },
         "street": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/sw-v4-hero-street.jpg",
-            "image_ltr": "shopify://shop_images/sw-v4-hero-street-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v4-hero-street-mobile.jpg",
+            "image": "shopify://shop_images/sw-hero-airy-wide-20261024.png",
+            "image_ltr": "",
+            "image_mobile": "shopify://shop_images/sw-hero-rectangle-mobile-20261024.png",
             "copy": "street",
-            "button_link": "shopify://collections/all",
-            "secondary_button_link": "shopify://collections/new"
-          }
-        },
-        "nba": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/sw-v4-hero-nba.jpg",
-            "image_ltr": "shopify://shop_images/sw-v4-hero-nba-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v4-hero-nba-mobile.jpg",
-            "copy": "basketball",
-            "button_link": "shopify://collections/nba",
-            "secondary_button_link": "shopify://collections/basketball-shorts"
-          }
-        },
-        "national": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/sw-v4-hero-national.jpg",
-            "image_ltr": "shopify://shop_images/sw-v4-hero-national-ltr.jpg",
-            "image_mobile": "shopify://shop_images/sw-v4-hero-national-mobile.jpg",
-            "copy": "national",
-            "button_link": "shopify://collections/national-teams",
-            "secondary_button_link": "shopify://collections/football"
+            "button_link": "shopify://collections/football",
+            "secondary_button_link": "shopify://collections/basketball",
+            "text_side": "right"
           }
         }
       },
-      "block_order": ["football", "street", "nba", "national"],
+      "block_order": ["street"],
       "settings": {
-        "color_scheme": "scheme-night",
-        "autoplay": true,
+        "color_scheme": "scheme-day",
+        "autoplay": false,
         "speed": 6,
         "overlay_opacity": 55
-      }
-    },
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "color_scheme": "scheme-night",
-        "layout": "image",
-        "season": "26/27",
-        "padding_top": 16,
-        "padding_bottom": 16,
-        "heading_tag": "h1",
-        "image": "shopify://shop_images/sw-v2-hero.jpg",
-        "image_mobile": "shopify://shop_images/sw-v2-hero-mobile.jpg",
-        "mirror_ltr": false,
-        "overlay_opacity": 55,
-        "height": "large",
-        "image_ltr": "shopify://shop_images/sw-v2-hero-ltr.jpg"
       },
       "disabled": true
     },
@@ -82,14 +33,15 @@
         "audience": "all",
         "one_per_team": false,
         "layout": "carousel",
-        "products_to_show": 12,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
         "show_count": false,
         "padding_top": 28,
         "padding_bottom": 28
-      }
+      },
+      "disabled": true
     },
     "trust_strip": {
       "type": "trust-strip",
@@ -115,9 +67,9 @@
       },
       "block_order": ["delivery", "returns", "stock"],
       "settings": {
-        "color_scheme": "scheme-day",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "color_scheme": "scheme-night",
+        "padding_top": 8,
+        "padding_bottom": 8
       }
     },
     "category_tiles": {
@@ -126,50 +78,40 @@
         "football": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-football.jpg",
-            "collection": "football"
+            "image": "shopify://shop_images/sw-worlds-football-20261023.png",
+            "collection": "football",
+            "stroke_color": "#72ad8b"
           }
         },
         "basketball": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-basketball.jpg",
-            "collection": "basketball-jerseys"
+            "image": "shopify://shop_images/sw-worlds-basketball-20261023.png",
+            "collection": "basketball-jerseys",
+            "stroke_color": "#e8a05c"
           }
         },
         "shorts": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-shorts.jpg",
-            "collection": "basketball-shorts"
-          }
-        },
-        "hoodies": {
-          "type": "tile",
-          "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-hoodies.jpg",
-            "collection": "nfl"
+            "image": "shopify://shop_images/sw-worlds-shorts-20261023.png",
+            "collection": "basketball-shorts",
+            "stroke_color": "#6da7ed"
           }
         },
         "kids": {
           "type": "tile",
           "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-kids.jpg",
-            "collection": "kids"
-          }
-        },
-        "teams": {
-          "type": "tile",
-          "settings": {
-            "image": "shopify://shop_images/sw-v4-cat-teams.jpg",
-            "page": "team-orders"
+            "image": "shopify://shop_images/sw-worlds-kids-20261023.png",
+            "collection": "kids",
+            "stroke_color": "#ac8bd5"
           }
         }
       },
-      "block_order": ["football", "basketball", "shorts", "hoodies", "kids", "teams"],
+      "block_order": ["football", "basketball", "kids", "shorts"],
       "settings": {
         "color_scheme": "scheme-day",
-        "show_count": true,
+        "show_count": false,
         "padding_top": 28,
         "padding_bottom": 28
       }
@@ -227,15 +169,15 @@
       "type": "featured-collection",
       "settings": {
         "color_scheme": "scheme-soft",
-        "collection": "football",
+        "collection": "selected-football",
         "audience": "adult",
         "one_per_team": true,
         "layout": "carousel",
-        "products_to_show": 12,
+        "products_to_show": 6,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -244,15 +186,15 @@
       "type": "featured-collection",
       "settings": {
         "color_scheme": "scheme-night",
-        "collection": "basketball-jerseys",
+        "collection": "selected-basketball",
         "audience": "adult",
         "one_per_team": true,
         "layout": "carousel",
-        "products_to_show": 12,
+        "products_to_show": 6,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
       }
@@ -265,11 +207,11 @@
         "audience": "kids",
         "one_per_team": true,
         "layout": "carousel",
-        "products_to_show": 12,
+        "products_to_show": 6,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 28,
         "padding_bottom": 28
       }
@@ -358,7 +300,8 @@
         "show_button": true,
         "padding_top": 48,
         "padding_bottom": 48
-      }
+      },
+      "disabled": true
     },
     "national_teams": {
       "type": "featured-collection",
@@ -368,14 +311,15 @@
         "audience": "adult",
         "one_per_team": true,
         "layout": "carousel",
-        "products_to_show": 12,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "cta_band": {
       "type": "cta-band",
@@ -399,14 +343,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": false,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "stars": {
       "type": "collection-circles",
@@ -533,7 +478,8 @@
         "show_count": true,
         "padding_top": 40,
         "padding_bottom": 40
-      }
+      },
+      "disabled": true
     },
     "city_edition": {
       "type": "featured-collection",
@@ -547,14 +493,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": true,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "leagues": {
       "type": "collection-tabs",
@@ -627,7 +574,8 @@
         "columns_desktop": 4,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "retro": {
       "type": "featured-collection",
@@ -641,14 +589,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": true,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "shorts": {
       "type": "featured-collection",
@@ -662,14 +611,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": false,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "special_editions": {
       "type": "featured-collection",
@@ -683,14 +633,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": false,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "teams": {
       "type": "collection-circles",
@@ -830,7 +781,8 @@
         "show_count": true,
         "padding_top": 40,
         "padding_bottom": 40
-      }
+      },
+      "disabled": true
     },
     "nfl": {
       "type": "featured-collection",
@@ -844,14 +796,15 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": false,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
-      }
+      },
+      "disabled": true
     },
     "hoodies": {
       "type": "featured-collection",
@@ -865,31 +818,108 @@
         "one_per_team": true,
         "layout": "carousel",
         "intro_card": false,
-        "products_to_show": 10,
+        "products_to_show": 8,
         "columns_desktop": 4,
         "columns_mobile": "1",
         "show_view_all": true,
-        "show_count": true,
+        "show_count": false,
         "padding_top": 44,
         "padding_bottom": 44
+      },
+      "disabled": true
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "delivery": {
+          "type": "question",
+          "settings": {
+            "preset": "delivery"
+          }
+        },
+        "returns": {
+          "type": "question",
+          "settings": {
+            "preset": "returns"
+          }
+        },
+        "sizing": {
+          "type": "question",
+          "settings": {
+            "preset": "sizing"
+          }
+        },
+        "payment": {
+          "type": "question",
+          "settings": {
+            "preset": "payment"
+          }
+        },
+        "team_orders": {
+          "type": "question",
+          "settings": {
+            "preset": "team_orders"
+          }
+        }
+      },
+      "block_order": ["delivery", "returns", "sizing", "payment", "team_orders"],
+      "settings": {
+        "color_scheme": "scheme-day",
+        "show_heading": true,
+        "content_width": "narrow",
+        "open_first": false,
+        "enable_schema": false,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "show_contact": true
+      }
+    },
+    "welcome_offer": {
+      "type": "welcome-offer",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "discount_code": "WELCOME15",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "real_video": {
+      "type": "product-story-video",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "padding_top": 32,
+        "padding_bottom": 32,
+        "use_included_film": true
+      }
+    },
+    "editorial": {
+      "type": "editorial-hero",
+      "settings": {
+        "color_scheme": "scheme-night",
+        "image": "shopify://shop_images/sw-hero-airy-wide-20261024.png",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     }
   },
   "order": [
+    "editorial",
     "hero_slideshow",
-    "hero",
-    "our_picks",
     "trust_strip",
+    "featured_collection",
+    "real_video",
+    "nba",
+    "kids",
     "category_tiles",
+    "faq",
+    "welcome_offer",
+    "cta_band",
     "collection_links",
     "new_arrivals",
     "stars",
-    "nba",
     "city_edition",
-    "featured_collection",
     "leagues",
     "retro",
-    "kids",
     "lifestyle",
     "shorts",
     "national_teams",
@@ -897,6 +927,6 @@
     "teams",
     "nfl",
     "hoodies",
-    "cta_band"
+    "our_picks"
   ]
 }

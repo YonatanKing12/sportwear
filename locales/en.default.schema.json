@@ -133,6 +133,9 @@
             "load_more": "\"Load more\" button",
             "pages": "Page numbers"
           }
+        },
+        "guided_browse": {
+          "label": "Guide shoppers before showing broad catalogs"
         }
       }
     },
@@ -414,6 +417,9 @@
         "enable_schema": {
           "label": "Add FAQ structured data for search engines",
           "info": "Use it on one page only, where the questions are the main content."
+        },
+        "show_contact": {
+          "label": "Show contact action"
         }
       },
       "blocks": {
@@ -1245,6 +1251,18 @@
           "name": "Tab"
         }
       }
+    },
+    "product_story": {
+      "name": "Real product video",
+      "video": "Product video",
+      "video_info": "Use real product footage. Include captions for speech or meaningful audio and describe visual details below.",
+      "transcript": "Accessible video description / transcript",
+      "use_included_film": "Use the included product close-up film (when no video is selected)"
+    },
+    "welcome_offer": {
+      "name": "First-order offer",
+      "code": "Discount code",
+      "info": "Use an active 15% first-order code with a ₪199 minimum and no combined discounts. Clear the code to hide the offer."
     },
     "main_product": {
       "name": "Product information",

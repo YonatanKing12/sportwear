@@ -1,0 +1,301 @@
+{%- comment -%}
+  Real product footage, selected by the owner. The storefront stays empty until a video is supplied.
+{%- endcomment -%}
+{%- if section.settings.video != blank or section.settings.use_included_film -%}
+  <section
+    class="section product-story-video color-{{ section.settings.color_scheme.id }}"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+    aria-labelledby="ProductStoryHeading-{{ section.id }}"
+  >
+    <div class="page-width product-story-video__layout">
+      <div class="product-story-video__copy">
+        <h2 class="display-m" id="ProductStoryHeading-{{ section.id }}">
+          {%- if section.settings.heading != blank -%}
+            {{ section.settings.heading | escape }}
+          {%- else -%}
+            {{ 'product_story.heading' | t }}
+          {%- endif -%}
+        </h2>
+        {%- if section.settings.text != blank -%}
+          <div class="rte">{{ section.settings.text }}</div>
+        {%- else -%}
+          <p>{{ 'product_story.text' | t }}</p>
+        {%- endif -%}
+        <details>
+          <summary>{{ 'product_story.transcript' | t }}</summary>
+          {%- if section.settings.transcript != blank -%}
+            <div class="rte">{{ section.settings.transcript }}</div>
+          {%- else -%}
+            <p>{{ 'product_story.description' | t }}</p>
+          {%- endif -%}
+        </details>
+      </div>
+      <div class="product-story-video__media">
+        <div class="product-story-video__notes product-story-video__notes--start">
+          <div class="product-story-video__note">
+            <span>{{ 'product_story.fabric' | t }}</span>
+            <svg viewBox="0 0 48 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 3C3 23 22 27 42 18M33 13L43 18L38 28" />
+            </svg>
+          </div>
+          <div class="product-story-video__note">
+            <span>{{ 'product_story.seams' | t }}</span>
+            <svg viewBox="0 0 48 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 3C3 23 22 27 42 18M33 13L43 18L38 28" />
+            </svg>
+          </div>
+        </div>
+        <div class="product-story-video__notes product-story-video__notes--end">
+          <div class="product-story-video__note">
+            <span>{{ 'product_story.crest' | t }}</span>
+            <svg viewBox="0 0 48 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M3 3C3 23 22 27 42 18M33 13L43 18L38 28" />
+            </svg>
+          </div>
+        </div>
+        {%- if section.settings.video != blank -%}
+          {{
+            section.settings.video
+            | video_tag:
+              controls: true,
+              autoplay: false,
+              loop: false,
+              preload: 'none',
+              image_size: '1000x',
+              class: 'product-story-video__player'
+          }}
+        {%- else -%}
+          <video
+            class="product-story-video__player"
+            controls
+            playsinline
+            preload="none"
+            width="540"
+            height="960"
+            poster="{{ 'sw-real-product-details-poster.jpg' | asset_url }}"
+            aria-label="{{ 'product_story.heading' | t | escape }}"
+          >
+            <source src="{{ 'sw-real-product-details.mp4' | asset_url }}" type="video/mp4">
+          </video>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+{%- elsif request.design_mode -%}
+  <div class="section page-width">
+    <p>{{ 'product_story.editor_empty' | t }}</p>
+  </div>
+{%- endif -%}
+
+{% stylesheet %}
+  .product-story-video__layout {
+    display: grid;
+    align-items: center;
+    gap: var(--space-8);
+    @media screen and (min-width: 750px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .product-story-video__copy {
+    display: grid;
+    gap: var(--space-4);
+  }
+  .product-story-video__copy h2,
+  .product-story-video__copy p {
+    margin: 0;
+  }
+  .product-story-video__copy summary {
+    min-block-size: 44px;
+    padding-block: 12px;
+    cursor: pointer;
+  }
+  .product-story-video__media {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    column-gap: 6px;
+    max-inline-size: 640px;
+    inline-size: 100%;
+    justify-self: center;
+  }
+  .product-story-video__notes {
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    pointer-events: none;
+  }
+  .product-story-video__notes--start {
+    grid-column: 1;
+  }
+  .product-story-video__notes--end {
+    grid-column: 3;
+  }
+  .product-story-video__note {
+    --note-ink: #174b87;
+    --note-paper: #e4f1ff;
+    --note-tilt: -4deg;
+    position: relative;
+    display: grid;
+    gap: 8px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: var(--note-ink);
+  }
+  .product-story-video__notes--start .product-story-video__note:nth-child(2) {
+    --note-ink: #854012;
+    --note-paper: #fff0d5;
+    --note-tilt: 4deg;
+  }
+  .product-story-video__notes--end .product-story-video__note {
+    --note-ink: #653592;
+    --note-paper: #f0e5ff;
+    --note-tilt: 3deg;
+  }
+  .product-story-video__note > span {
+    display: block;
+    padding: 7px 3px;
+    border: 1px solid currentColor;
+    border-radius: 12px 5px 12px 5px;
+    background: var(--note-paper);
+    box-shadow: 2px 3px 0 var(--note-ink);
+    transform: rotate(var(--note-tilt));
+  }
+  .product-story-video__note::before {
+    content: '';
+    position: absolute;
+    inset-block-start: -17px;
+    inset-inline-start: 9px;
+    inline-size: 10px;
+    block-size: 10px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0.65;
+  }
+  .product-story-video__notes--end .product-story-video__note::before {
+    border-radius: 2px;
+    transform: rotate(35deg);
+  }
+  .product-story-video__note svg {
+    inline-size: 100%;
+    block-size: 32px;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .product-story-video__notes--end svg,
+  [dir='rtl'] .product-story-video__notes--start svg {
+    transform: scaleX(-1);
+  }
+  [dir='rtl'] .product-story-video__notes--end svg {
+    transform: none;
+  }
+  @media screen and (min-width: 750px) {
+    .product-story-video__media {
+      grid-template-columns: 72px minmax(0, 1fr) 72px;
+      column-gap: 12px;
+    }
+    .product-story-video__note {
+      font-size: 14px;
+    }
+  }
+  .product-story-video__player {
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
+    inline-size: auto;
+    max-inline-size: 100%;
+    margin-inline: auto;
+    block-size: auto;
+    max-block-size: min(440px, 55svh, calc(100svh - var(--header-height, 0px) - 32px));
+    border-radius: var(--radius-card);
+    outline: 3px solid var(--color-accent, #c5ff35);
+    outline-offset: 2px;
+    background: var(--color-surface);
+
+    @media screen and (min-width: 750px) {
+      max-block-size: 640px;
+    }
+  }
+  .product-story-video.color-scheme-night {
+    & .product-story-video__copy {
+      max-inline-size: 40ch;
+    }
+    & .product-story-video__copy h2 {
+      font-size: clamp(44px, 5vw, 76px);
+    }
+    & .product-story-video__copy p {
+      color: var(--color-muted);
+      line-height: 1.8;
+    }
+    & .product-story-video__note {
+      color: var(--color-accent);
+    }
+    & .product-story-video__note > span {
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      transform: none;
+    }
+    & .product-story-video__note::before {
+      content: none;
+    }
+    & .product-story-video__player {
+      outline-width: 1px;
+      outline-offset: 8px;
+    }
+    @media screen and (min-width: 750px) {
+      & .product-story-video__player {
+        max-block-size: 480px;
+      }
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "t:sections.product_story.name",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:settings.color_scheme", "default": "scheme-day" },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "t:sections.product_story.video",
+      "info": "t:sections.product_story.video_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_included_film",
+      "label": "t:sections.product_story.use_included_film",
+      "default": false
+    },
+    { "type": "text", "id": "heading", "label": "t:settings.heading" },
+    { "type": "richtext", "id": "text", "label": "t:settings.text" },
+    { "type": "richtext", "id": "transcript", "label": "t:sections.product_story.transcript" },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "t:settings.padding_top",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "t:settings.padding_bottom",
+      "min": 0,
+      "max": 96,
+      "step": 4,
+      "unit": "px",
+      "default": 40
+    }
+  ],
+  "presets": [{ "name": "t:sections.product_story.name" }]
+}
+{% endschema %}

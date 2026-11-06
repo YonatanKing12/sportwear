@@ -1,0 +1,169 @@
+{%- doc -%}
+  Compact football navigation shared by desktop and mobile. Clubs are revealed only after choosing
+  a league; Portugal joins the other leagues instead of taking a separate image column.
+
+  @param {link} link - Football menu link
+  @param {number} link_index - Position of football in the main menu
+  @param {string} hidden_links - Hidden menu positions computed by the header
+{%- enddoc -%}
+<div class="football-navigation">
+  <p class="football-navigation__label">{{ 'header.football.choose_league' | t }}</p>
+  <div class="football-navigation__leagues">
+    {%- for child in link.links -%}
+      {%- liquid
+        assign child_index = forloop.index
+        assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+        assign handle = child.object.handle
+      -%}
+      {%- unless hidden_links contains child_key or handle == 'primeira-liga' or handle == 'other-leagues' -%}
+        {%- if child.links.size > 0 -%}
+          <details class="football-navigation__league">
+            <summary>
+              {{ child.title | escape -}}
+              {%- render 'icon', name: 'chevron-down', size: 16 %}
+            </summary>
+            <ul role="list">
+              <li>
+                <a class="football-navigation__all" href="{{ child.url }}">
+                  {{- 'header.menu.shop_all_title' | t: title: child.title -}}
+                </a>
+              </li>
+              {%- for club in child.links -%}
+                {%- assign club_key = ','
+                  | append: link_index
+                  | append: '-'
+                  | append: child_index
+                  | append: '-'
+                  | append: forloop.index
+                  | append: ','
+                -%}
+                {%- unless hidden_links contains club_key -%}
+                  <li>
+                    <a
+                      href="{{ club.url }}"
+                      {% if club.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{- club.title | escape -}}
+                    </a>
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
+          </details>
+        {%- else -%}
+          <a class="football-navigation__direct" href="{{ child.url }}">
+            {{- child.title | escape -}}
+            {%- render 'icon', name: 'arrow-forward', size: 16 -%}
+          </a>
+        {%- endif -%}
+      {%- endunless -%}
+    {%- endfor -%}
+    <details class="football-navigation__league football-navigation__other">
+      <summary>
+        {{ 'header.football.other_leagues' | t -}}
+        {%- render 'icon', name: 'chevron-down', size: 16 %}
+      </summary>
+      <ul role="list">
+        {%- for child in link.links -%}
+          {%- liquid
+            assign child_index = forloop.index
+            assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+            assign handle = child.object.handle
+          -%}
+          {%- unless hidden_links contains child_key -%}
+            {%- if handle == 'primeira-liga' or handle == 'other-leagues' -%}
+              <li>
+                <a class="football-navigation__all" href="{{ child.url }}">{{ child.title | escape }}</a>
+              </li>
+              {%- for club in child.links -%}
+                {%- assign club_key = ','
+                  | append: link_index
+                  | append: '-'
+                  | append: child_index
+                  | append: '-'
+                  | append: forloop.index
+                  | append: ','
+                -%}
+                {%- unless hidden_links contains club_key -%}
+                  <li>
+                    <a href="{{ club.url }}">{{ club.title | escape }}</a>
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            {%- endif -%}
+          {%- endunless -%}
+        {%- endfor -%}
+      </ul>
+    </details>
+  </div>
+</div>
+{% stylesheet %}
+  .football-navigation {
+    inline-size: 100%;
+    min-inline-size: 0;
+  }
+  .football-navigation__label {
+    margin-block-end: var(--space-3);
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+  }
+  .football-navigation__leagues {
+    display: grid;
+    gap: var(--space-2);
+    align-items: start;
+  }
+  .football-navigation__league {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+  .football-navigation__league summary,
+  .football-navigation__direct {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    min-block-size: 48px;
+    padding: var(--space-3) var(--space-4);
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+  }
+  .football-navigation__league summary::-webkit-details-marker {
+    display: none;
+  }
+  .football-navigation__league[open] > summary .icon {
+    rotate: 180deg;
+  }
+  .football-navigation__league ul {
+    list-style: none;
+    padding: 0 var(--space-4) var(--space-3);
+    margin: 0;
+  }
+  .football-navigation a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .football-navigation__league a {
+    display: flex;
+    align-items: center;
+    min-block-size: 44px;
+  }
+  .football-navigation a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .football-navigation__all {
+    font-weight: 700;
+  }
+  .football-navigation__direct {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+  }
+  @media screen and (min-width: 1200px) {
+    .football-navigation__leagues {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+{% endstylesheet %}

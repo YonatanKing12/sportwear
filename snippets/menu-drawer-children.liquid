@@ -1,0 +1,95 @@
+{%- doc -%}
+  Nested mobile category and club links, keeping each drill-down panel independently accessible.
+
+  @param {link} link - Parent menu link
+  @param {number} link_index - Parent position
+  @param {string} hidden - Hidden positions computed by the header
+{%- enddoc -%}
+{%- for child in link.links -%}
+  {%- liquid
+    assign child_index = forloop.index
+    assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+    assign grandchild_prefix = ',' | append: link_index | append: '-' | append: child_index | append: '-'
+
+    assign visible_grandchildren = 0
+    for grandchild in child.links
+      assign grandchild_key = grandchild_prefix | append: forloop.index | append: ','
+      unless hidden contains grandchild_key
+        assign visible_grandchildren = visible_grandchildren | plus: 1
+      endunless
+    endfor
+  -%}
+  {%- unless hidden contains child_key -%}
+    <li class="menu-drawer__item">
+      {%- if visible_grandchildren > 0 -%}
+        <details class="menu-drawer__details" data-drill>
+          <summary class="menu-drawer__row">
+            <span class="menu-drawer__label">{{ child.title | escape }}</span>
+            {%- render 'icon', name: 'chevron-forward', size: 20, class: 'menu-drawer__chevron' -%}
+          </summary>
+
+          <div class="menu-drawer__panel">
+            <div class="menu-drawer__bar">
+              <button type="button" class="menu-drawer__back" data-drill-back>
+                {%- render 'icon', name: 'chevron-back', size: 22 -%}
+                <span class="visually-hidden">
+                  {{- 'header.menu.back_to' | t: title: link.title -}}
+                </span>
+              </button>
+              <p class="menu-drawer__panel-title">{{ child.title | escape }}</p>
+            </div>
+
+            <div class="menu-drawer__panel-body">
+              <ul class="menu-drawer__list" role="list">
+                {%- if child.url != blank and child.url != '#' -%}
+                  <li class="menu-drawer__item">
+                    <a
+                      class="menu-drawer__row menu-drawer__row--all"
+                      href="{{ child.url }}"
+                      {% if child.current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      <span class="menu-drawer__label">
+                        {{- 'header.menu.shop_all_title' | t: title: child.title -}}
+                      </span>
+                      {%- render 'icon', name: 'arrow-forward', size: 18, class: 'menu-drawer__arrow' -%}
+                    </a>
+                  </li>
+                {%- endif -%}
+                {%- for grandchild in child.links -%}
+                  {%- assign grandchild_key = grandchild_prefix | append: forloop.index | append: ',' -%}
+                  {%- unless hidden contains grandchild_key -%}
+                    <li class="menu-drawer__item">
+                      <a
+                        class="menu-drawer__row"
+                        href="{{ grandchild.url }}"
+                        {% if grandchild.current %}
+                          aria-current="page"
+                        {% endif %}
+                      >
+                        <span class="menu-drawer__label">
+                          {{- grandchild.title | escape -}}
+                        </span>
+                      </a>
+                    </li>
+                  {%- endunless -%}
+                {%- endfor -%}
+              </ul>
+            </div>
+          </div>
+        </details>
+      {%- else -%}
+        <a
+          class="menu-drawer__row"
+          href="{{ child.url }}"
+          {% if child.current %}
+            aria-current="page"
+          {% endif %}
+        >
+          <span class="menu-drawer__label">{{ child.title | escape }}</span>
+        </a>
+      {%- endif -%}
+    </li>
+  {%- endunless -%}
+{%- endfor -%}

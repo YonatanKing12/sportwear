@@ -272,7 +272,9 @@
       "message": "Anything else we should know?",
       "submit": "Send request",
       "success": "Thanks! We got your request and will get back to you with a quote soon.",
-      "request_type": "Team order"
+      "request_type": "Team order",
+      "whatsapp_submit": "Send details on WhatsApp",
+      "whatsapp_note": "Fill in your team, quantity and sizes, then open WhatsApp to review and send. Email is only required when sending the email form."
     },
     "editor": {
       "no_whatsapp": "To show the WhatsApp button, add a WhatsApp number in Theme settings > Business details. This note is only shown in the theme editor.",
@@ -313,6 +315,11 @@
     },
     "editor": {
       "empty_question": "Choose a ready-made text or write a question for this block. This note is only shown in the theme editor."
+    },
+    "contact": {
+      "heading": "Still have a question?",
+      "whatsapp": "Ask us on WhatsApp",
+      "link": "Contact us"
     }
   },
   "size_guide": {
@@ -347,6 +354,12 @@
     "editor": {
       "no_chart": "Tip: choose an adult size chart in this section's settings to show its measurements here. This note is only shown in the theme editor.",
       "no_kids_chart": "Tip: choose a kids size chart in this section's settings to show its measurements here. This note is only shown in the theme editor."
+    },
+    "table": {
+      "size": "Size",
+      "height": "Height",
+      "chest": "Chest",
+      "length": "Length"
     }
   },
   "not_found": {
@@ -495,6 +508,16 @@
     "youtube": "YouTube",
     "whatsapp": "WhatsApp"
   },
+  "editorial": {
+    "eyebrow": "FROM THE COURT TO THE STREET",
+    "heading": "Love the game.",
+    "highlight": "Wear your style.",
+    "intro": "Football, basketball and everything in between. Find the jersey that speaks your language.",
+    "football": "Shop football",
+    "basketball": "Shop NBA",
+    "football_world": "Football collection",
+    "basketball_world": "Basketball collection"
+  },
   "header": {
     "announcement": {
       "label": "Announcements",
@@ -542,6 +565,10 @@
       "field": "Search jerseys, teams and players",
       "clear": "Clear search",
       "results": "Search results"
+    },
+    "football": {
+      "choose_league": "Choose a league, then your team",
+      "other_leagues": "More leagues"
     }
   },
   "predictive_search": {
@@ -711,10 +738,10 @@
           "secondary_button_label": "Football jerseys"
         },
         "street": {
-          "heading": "From the court to the street",
-          "text": "Football shirts and basketball jerseys to wear every day, not just on match day",
-          "button_label": "Shop all jerseys",
-          "secondary_button_label": "New in"
+          "heading": "Your team. Your style.",
+          "text": "Football or NBA. Wear what you love.",
+          "button_label": "Shop football",
+          "secondary_button_label": "Shop NBA"
         }
       }
     },
@@ -751,6 +778,46 @@
         }
       }
     }
+  },
+  "product_story": {
+    "heading": "See the product up close",
+    "text": "Real footage of our shirts: a closer look at the fabric, crests and finishing details.",
+    "transcript": "Video description",
+    "editor_empty": "Choose real product footage in this section. It stays hidden on the storefront until a video is selected.",
+    "description": "Silent video: close-ups of Arsenal, Bayern Munich, France and Ajax shirts. A gloved hand moves the fabric and shows the crests, collar and side seam.",
+    "fabric": "Fabric up close",
+    "seams": "Stitching details",
+    "crest": "Club crest"
+  },
+  "navigation": {
+    "guide": {
+      "by_team": "Which team are you looking for?",
+      "by_type": "What would you like to wear?",
+      "directory": "All teams, leagues and players",
+      "more_choices": "More teams and options",
+      "not_sure": "Still deciding?",
+      "picks": "Start with our picks",
+      "intro": "Choose a direction, then explore a focused selection.",
+      "all_title": "What are you looking for today?",
+      "back": "Back to categories",
+      "catalog_summary": "Prefer to browse every item in this category?",
+      "catalog_link": "Open the full catalog",
+      "menu_intro": "Choose a product type, then a team or style.",
+      "hub_cta": "Help me choose",
+      "by_player": "Which player are you looking for?"
+    }
+  },
+  "welcome_offer": {
+    "eyebrow": "A good place to start",
+    "heading": "15% off your first order",
+    "text": "Join our email updates and get a code for your first purchase.",
+    "terms": "First orders of ₪199 or more. One use per customer. Cannot be combined with other discounts. Standard shipping and return terms apply.",
+    "email": "Email address",
+    "submit": "Get my offer",
+    "consent": "I agree to receive updates and offers by email from SportWear. I can unsubscribe at any time.",
+    "success": "You’re subscribed. Your first-order code is:",
+    "shop": "Find your favourites",
+    "setup": "Set an active discount code before displaying this offer."
   },
   "products": {
     "breadcrumbs": {

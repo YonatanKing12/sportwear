@@ -88,7 +88,14 @@
     </div>
 
     {%- if photo_count > 0 -%}
-      <ul id="{{ list_id }}" class="lifestyle__track" role="list" data-carousel-track>
+      <ul
+        id="{{ list_id }}"
+        class="lifestyle__track"
+        role="list"
+        tabindex="0"
+        aria-label="{{ heading | escape }}"
+        data-carousel-track
+      >
         {%- for block in section.blocks -%}
           {%- if block.settings.image != blank or request.design_mode -%}
             {%- liquid

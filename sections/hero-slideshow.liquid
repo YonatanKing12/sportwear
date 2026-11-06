@@ -161,15 +161,17 @@
 
             <div class="hero-slideshow__content page-width">
               <div class="hero-slideshow__text">
-                <{{ heading_tag }} class="hero-slideshow__heading">
-                  {{- heading -}}
-                  {%- if highlight != blank %}
-                    <span class="hero-slideshow__highlight">{{ highlight }}</span>
+                <div class="hero-slideshow__copy">
+                  <{{ heading_tag }} class="hero-slideshow__heading">
+                    {{- heading -}}
+                    {%- if highlight != blank %}
+                      <span class="hero-slideshow__highlight">{{ highlight }}</span>
+                    {%- endif -%}
+                  </{{ heading_tag }}>
+                  {%- if text != blank -%}
+                    <p class="hero-slideshow__lead">{{ text }}</p>
                   {%- endif -%}
-                </{{ heading_tag }}>
-                {%- if text != blank -%}
-                  <p class="hero-slideshow__lead">{{ text }}</p>
-                {%- endif -%}
+                </div>
                 {%- if button_label != blank or secondary_label != blank -%}
                   <div class="hero-slideshow__buttons">
                     {%- if button_label != blank -%}
@@ -284,9 +286,8 @@
     }
   }
 
-  /* Phones: a tall edge-to-edge photo (made at 1088 x 1408, a little wider than the slide, so only its
-     sides are trimmed) with the people in its upper half and the text over the lower half, below the
-     jerseys. From 750px: a wide, short band. */
+  /* Keep the first category row within reach on phones. The minimum allows translated copy to
+     grow naturally; the photo keeps its upper focal point as the bottom is cropped. */
   .hero-slideshow__slide {
     position: relative;
     isolation: isolate;
@@ -294,13 +295,13 @@
     flex: 0 0 100%;
     align-items: flex-end;
     min-inline-size: 0;
-    min-block-size: clamp(440px, 140vw, 640px);
+    min-block-size: clamp(360px, 108vw, 460px);
     scroll-snap-align: start;
     scroll-snap-stop: always;
 
     @media screen and (min-width: 750px) {
       align-items: center;
-      min-block-size: clamp(300px, 26vw, 500px);
+      min-block-size: clamp(280px, 22vw, 420px);
     }
   }
 
@@ -571,6 +572,243 @@
 
   .hero-slideshow__toggle[data-state='paused'] .hero-slideshow__play-icon {
     display: block;
+  }
+
+  /* Full-bleed studio artwork has its own negative space for the live copy. */
+  .hero-slideshow.color-scheme-day {
+    color: var(--color-text);
+    background: #eee9e1;
+
+    & .hero-slideshow__slide {
+      display: grid;
+      align-items: end;
+      min-block-size: 320px;
+      block-size: clamp(320px, 85vw, 520px);
+    }
+
+    & .hero-slideshow__media {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: #eee9e1;
+    }
+
+    & .hero-slideshow__image {
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    & .hero-slideshow__content {
+      padding-block: 10px 18px;
+      inset-block-end: clamp(12px, calc(12vw - 30px), 50px);
+      text-align: center;
+    }
+
+    & .hero-slideshow__content::before,
+    & .hero-slideshow__media::after {
+      content: none;
+    }
+
+    & .hero-slideshow__heading {
+      font-size: 34px;
+      letter-spacing: -0.015em;
+    }
+
+    & .hero-slideshow__lead {
+      color: #3d4147;
+      margin-inline: auto;
+      margin-block-start: 5px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    & .hero-slideshow__buttons {
+      margin-block-start: 12px;
+      gap: 18px;
+      justify-content: center;
+    }
+
+    & .hero-slideshow__button {
+      flex: 0 1 auto;
+      min-block-size: 44px;
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    & .hero-slideshow__button.button--secondary {
+      border-color: transparent;
+      background: transparent;
+      color: var(--color-text);
+      padding-inline: 0;
+      border-radius: 0;
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+    & .hero-slideshow__highlight {
+      color: var(--color-text);
+    }
+
+    & .hero-slideshow__dot::before {
+      background: #5b616e;
+    }
+
+    & .hero-slideshow__dot[aria-current='true']::before {
+      background: #0d0e11;
+    }
+
+    @media screen and (max-width: 374px) {
+      & .hero-slideshow__lead {
+        font-size: 13px;
+        line-height: 1.3;
+      }
+
+      & .hero-slideshow__button {
+        min-block-size: 44px;
+        padding-block: 10px;
+      }
+      & .hero-slideshow__heading {
+        font-size: 26px;
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      & .hero-slideshow__slide {
+        align-items: center;
+        block-size: auto;
+        min-block-size: 0;
+        aspect-ratio: 3 / 1;
+      }
+
+      & .hero-slideshow__content {
+        padding-block: var(--space-5);
+        inset-block-end: 24px;
+        text-align: start;
+      }
+
+      & .hero-slideshow__text {
+        max-inline-size: 34%;
+      }
+
+      & .hero-slideshow__buttons {
+        justify-content: flex-start;
+      }
+
+      & .hero-slideshow__heading {
+        font-size: clamp(30px, 3.6vw, 56px);
+      }
+
+      & .hero-slideshow__lead {
+        font-size: clamp(13px, 1.1vw, 16px);
+      }
+
+      & .hero-slideshow__button {
+        min-inline-size: 0;
+      }
+    }
+  }
+  /* Place copy and navigation in the two separate clear areas of the studio artwork. */
+  .hero-slideshow.color-scheme-day {
+    & .hero-slideshow__content,
+    & .hero-slideshow__text {
+      position: static;
+      display: contents;
+    }
+
+    & .hero-slideshow__copy {
+      position: absolute;
+      inset-block-start: 3%;
+      inset-inline-end: 4%;
+      inline-size: 47%;
+      text-align: start;
+    }
+
+    &:dir(rtl) .hero-slideshow__copy {
+      inset-inline-end: auto;
+      inset-inline-start: 4%;
+    }
+
+    & .hero-slideshow__heading {
+      font-size: clamp(18px, 5vw, 30px);
+      line-height: 1.05;
+    }
+
+    & .hero-slideshow__lead {
+      margin-block-start: 4px;
+      font-size: clamp(10px, 2.8vw, 15px);
+      line-height: 1.3;
+    }
+
+    & .hero-slideshow__buttons {
+      position: absolute;
+      inset-block-start: 57%;
+      inset-inline: 0;
+      margin: 0;
+      justify-content: center;
+    }
+
+    @media screen and (max-width: 749px) {
+      &:lang(en) .hero-slideshow__heading {
+        font-size: clamp(14px, 4vw, 26px);
+      }
+    }
+
+    @media screen and (min-width: 750px) {
+      & .hero-slideshow__copy {
+        inset-block-start: 12%;
+        inline-size: 34%;
+      }
+
+      & .hero-slideshow__heading {
+        font-size: clamp(30px, 3.6vw, 56px);
+      }
+
+      & .hero-slideshow__lead {
+        font-size: clamp(13px, 1.1vw, 16px);
+      }
+
+      & .hero-slideshow__buttons {
+        inset-block-start: auto;
+        inset-block-end: 2%;
+        inset-inline-end: auto;
+        inset-inline-start: 0;
+        inline-size: 62%;
+      }
+
+      &:dir(rtl) .hero-slideshow__buttons {
+        inset-inline-start: auto;
+        inset-inline-end: 0;
+      }
+    }
+  }
+  /* Crop only the unused floor: retain the artwork scale and let the CTA row size the hero. */
+  @media screen and (max-width: 749px) {
+    .hero-slideshow.color-scheme-day {
+      --hero-art-height: clamp(320px, 85vw, 520px);
+
+      & .hero-slideshow__slide {
+        grid-template-rows: calc(var(--hero-art-height) * 0.57) auto;
+        min-block-size: 0;
+        block-size: auto;
+        padding-block-end: 16px;
+        overflow: hidden;
+      }
+
+      & .hero-slideshow__media {
+        block-size: var(--hero-art-height);
+      }
+
+      & .hero-slideshow__copy {
+        inset-block-start: calc(var(--hero-art-height) * 0.03);
+      }
+
+      & .hero-slideshow__buttons {
+        position: relative;
+        grid-row: 2;
+        inset: auto;
+      }
+    }
   }
 {% endstylesheet %}
 

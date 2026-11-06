@@ -3,6 +3,15 @@
   # page in two or three (by the product's id), so that product pages end with different rows. Elsewhere the
   # row always shows.
   assign row_visible = true
+  if template.name == 'collection' and template.suffix != 'catalog'
+    capture guide_kind
+      render 'guided-collection-key', handle: collection.handle
+    endcapture
+    assign guide_kind = guide_kind | strip
+    if guide_kind != blank
+      assign row_visible = false
+    endif
+  endif
   if product != blank
     case section.settings.show_for
       when 'football'

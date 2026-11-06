@@ -1,0 +1,161 @@
+{%- liquid
+  assign offer_id = 'WelcomeOffer-' | append: section.id
+  assign offer_code = section.settings.discount_code | strip
+-%}
+{%- if offer_code != blank -%}
+  <section
+    class="section welcome-offer color-{{ section.settings.color_scheme.id }}"
+    aria-labelledby="{{ offer_id }}-heading"
+    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+  >
+    <div class="page-width welcome-offer__layout">
+      <div>
+        <p class="eyebrow">{{ 'welcome_offer.eyebrow' | t }}</p>
+        <h2 class="display-m" id="{{ offer_id }}-heading">{{ 'welcome_offer.heading' | t }}</h2>
+        <p class="welcome-offer__intro">{{ 'welcome_offer.text' | t }}</p>
+        <p class="welcome-offer__terms" id="{{ offer_id }}-terms">{{ 'welcome_offer.terms' | t }}</p>
+      </div>
+      <div>
+        {%- form 'customer', id: offer_id, class: 'welcome-offer__form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter,welcome-offer">
+          {%- if form.posted_successfully? -%}
+            <div class="form-status form-status--success" role="status" tabindex="-1">
+              <p>{{ 'welcome_offer.success' | t }}</p>
+              <p class="welcome-offer__code">
+                <bdi>{{ offer_code | escape }}</bdi>
+              </p>
+              <a
+                class="button button--primary"
+                href="{{ shop.url }}/discount/{{ offer_code | url_encode }}?redirect={{ routes.all_products_collection_url | url_encode }}"
+              >
+                {{- 'welcome_offer.shop' | t -}}
+              </a>
+            </div>
+          {%- else -%}
+            <label class="field__label" for="{{ offer_id }}-email">{{ 'welcome_offer.email' | t }}</label>
+            <div class="welcome-offer__row">
+              <input
+                class="field__input"
+                id="{{ offer_id }}-email"
+                type="email"
+                name="contact[email]"
+                value="{{ form.email | escape }}"
+                autocomplete="email"
+                autocapitalize="off"
+                spellcheck="false"
+                dir="ltr"
+                required
+                aria-describedby="{{ offer_id }}-terms{% if form.errors %} {{ offer_id }}-errors{% endif %}"
+                {% if form.errors %}
+                  aria-invalid="true"
+                {% endif %}
+              >
+              <button class="button button--primary" type="submit">{{ 'welcome_offer.submit' | t }}</button>
+            </div>
+            <label class="welcome-offer__consent">
+              <input type="checkbox" name="contact[accepts_marketing]" value="true" required>
+              <span>{{ 'welcome_offer.consent' | t }}</span>
+            </label>
+            {%- if form.errors -%}
+              <div id="{{ offer_id }}-errors" class="form-status form-status--error" role="alert">
+                {{ form.errors | default_errors }}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    </div>
+  </section>
+{%- elsif request.design_mode -%}
+  <div class="page-width section">
+    <p>{{ 'welcome_offer.setup' | t }}</p>
+  </div>
+{%- endif -%}
+{% stylesheet %}
+  .welcome-offer__layout {
+    display: grid;
+    gap: var(--space-6);
+  }
+  .welcome-offer__intro {
+    margin-block-start: var(--space-3);
+    max-inline-size: 48ch;
+  }
+  .welcome-offer__terms {
+    margin-block-start: var(--space-3);
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
+  .welcome-offer__form {
+    display: grid;
+    gap: var(--space-3);
+  }
+  .welcome-offer__row {
+    display: grid;
+    gap: var(--space-3);
+  }
+  .welcome-offer__consent {
+    display: flex;
+    align-items: start;
+    gap: var(--space-3);
+    min-block-size: 44px;
+    font-size: var(--text-sm);
+    cursor: pointer;
+  }
+  .welcome-offer__consent input {
+    flex-shrink: 0;
+    inline-size: 20px;
+    block-size: 20px;
+    margin-block-start: 2px;
+    accent-color: var(--color-text);
+  }
+  .welcome-offer__code {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    margin-block: var(--space-3);
+  }
+  @media screen and (min-width: 750px) {
+    .welcome-offer__layout {
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: var(--space-10);
+    }
+    .welcome-offer__row {
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+  }
+{% endstylesheet %}
+{% schema %}
+{
+  "name": "t:sections.welcome_offer.name",
+  "settings": [
+    { "type": "color_scheme", "id": "color_scheme", "label": "t:settings.color_scheme", "default": "scheme-night" },
+    {
+      "type": "text",
+      "id": "discount_code",
+      "label": "t:sections.welcome_offer.code",
+      "info": "t:sections.welcome_offer.info"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "t:settings.padding_bottom",
+      "default": 40
+    }
+  ],
+  "presets": [{ "name": "t:sections.welcome_offer.name" }]
+}
+{% endschema %}

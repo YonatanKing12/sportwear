@@ -97,7 +97,11 @@
           -%}
           {%- if show_tile -%}
             <li class="category-tiles__item" {{ block.shopify_attributes }}>
-              <a class="category-tiles__tile" href="{{ tile_url | default: '#' }}">
+              <a
+                class="category-tiles__tile"
+                href="{{ tile_url | default: '#' }}"
+                style="--category-stroke: {{ block.settings.stroke_color | default: '#6fae91' }};"
+              >
                 <div class="category-tiles__media">
                   {%- if tile_image != blank -%}
                     {%- render 'image',
@@ -155,10 +159,15 @@
     align-items: flex-end;
     overflow: hidden;
     aspect-ratio: 4 / 5;
+    border: 2px solid var(--category-stroke);
     border-radius: var(--radius-card);
     background: #16181d;
     color: #ffffff;
     text-decoration: none;
+
+    &:hover {
+      box-shadow: 0 0 0 2px var(--category-stroke);
+    }
 
     &:focus-visible {
       outline: 3px solid var(--color-accent);
@@ -304,6 +313,12 @@
       "type": "tile",
       "name": "t:sections.category_tiles.blocks.tile.name",
       "settings": [
+        {
+          "type": "color",
+          "id": "stroke_color",
+          "label": "Stroke",
+          "default": "#6fae91"
+        },
         {
           "type": "image_picker",
           "id": "image",

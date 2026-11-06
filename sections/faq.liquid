@@ -10,6 +10,9 @@
     assign heading = 'faq.heading' | t
   endif
   assign faq_json = ''
+  capture whatsapp_digits
+    render 'whatsapp-digits'
+  endcapture
 
   # The ready-made delivery answer says shipping is free when every order ships free (see free-shipping-cents).
   capture threshold_cents
@@ -116,6 +119,20 @@
           {%- endif -%}
         {%- endfor -%}
       </div>
+      {%- if section.settings.show_contact -%}
+        <div class="faq__contact">
+          <p>{{ 'faq.contact.heading' | t }}</p>
+          {%- if whatsapp_digits != blank -%}
+            <a class="button button--primary" href="https://wa.me/{{ whatsapp_digits }}" target="_blank" rel="noopener">
+              {%- render 'icon', name: 'whatsapp', size: 20 -%}
+              {{ 'faq.contact.whatsapp' | t }}
+              <span class="visually-hidden">({{ 'accessibility.new_window' | t }})</span>
+            </a>
+          {%- elsif pages.contact != blank -%}
+            <a class="button button--primary" href="{{ pages['contact'].url }}">{{ 'faq.contact.link' | t }}</a>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </div>
@@ -131,6 +148,17 @@
 {%- endif -%}
 
 {% stylesheet %}
+  .faq__contact {
+    display: grid;
+    justify-items: start;
+    gap: var(--space-3);
+    padding-block-start: var(--space-4);
+  }
+
+  .faq__contact p {
+    margin: 0;
+  }
+
   .faq {
     /* Lets the accordion animate to its natural height where supported. */
     interpolate-size: allow-keywords;
@@ -293,6 +321,12 @@
       "id": "open_first",
       "label": "t:sections.faq.settings.open_first.label",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact",
+      "label": "t:sections.faq.settings.show_contact.label",
+      "default": true
     },
     {
       "type": "checkbox",

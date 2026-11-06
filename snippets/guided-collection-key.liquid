@@ -1,0 +1,19 @@
+{%- doc -%}
+  Classify broad collection entry points that need a choice before a product grid.
+
+  @param {string} handle - Collection handle
+{%- enddoc -%}
+{%- case handle -%}
+  {%- when 'football' -%}
+    football
+  {%- when 'basketball', 'basketball-jerseys', 'nba' -%}
+    basketball
+  {%- when 'players' -%}
+    players
+  {%- when 'nfl', 'nfl-jerseys' -%}
+    nfl
+  {%- when 'kids' -%}
+    kids
+  {%- when 'all', 'new', 'best-sellers' -%}
+    all
+{%- endcase -%}

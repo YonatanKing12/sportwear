@@ -6,446 +6,509 @@
   Chips: the "Related collections menu" setting, or, when it is blank, chips built from the
   main-menu around this collection ("All" first, then its sub-categories or its sister categories).
 {%- endcomment -%}
-{%- paginate collection.products by section.settings.products_per_page -%}
-  {%- liquid
-    assign layout = section.settings.filter_layout
+{%- capture guide_kind -%}{%- render 'guided-collection-key', handle: collection.handle -%}{%- endcapture -%}
+{%- assign guide_kind = guide_kind | strip -%}
+{%- assign guide_filtered = false -%}
+{%- for filter in collection.filters -%}
+  {%- if filter.active_values.size > 0 or filter.min_value.value != null or filter.max_value.value != null -%}
+    {%- assign guide_filtered = true -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if section.settings.guided_browse != false
+  and guide_kind != blank
+  and guide_kind != 'football'
+  and guide_filtered == false
+  and current_tags == blank
+-%}
+  <section class="guided-hub color-{{ section.settings.color_scheme.id }}">
+    <div class="page-width">
+      <header class="guided-hub__header">
+        {%- if guide_kind != 'all' -%}
+          <a class="guided-hub__back" href="{{ routes.all_products_collection_url }}">
+            {{- 'navigation.guide.back' | t -}}
+          </a>
+        {%- endif -%}
+        <h1 class="display-m">
+          {% if guide_kind == 'all' -%}
+            {{- 'navigation.guide.all_title' | t -}}
+          {%- else -%}
+            {{- collection.title | escape -}}
+          {%- endif %}
+        </h1>
+        <p>{{ 'navigation.guide.intro' | t }}</p>
+      </header>
+      {%- render 'guided-navigation', kind: guide_kind, mode: 'page' -%}
+      <details class="guided-hub__catalog">
+        <summary>{{ 'navigation.guide.catalog_summary' | t }}</summary>
+        <a href="{{ collection.url }}?view=catalog">{{ 'navigation.guide.catalog_link' | t }}</a>
+      </details>
+    </div>
+  </section>
+{%- else -%}
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    {%- liquid
+      assign layout = section.settings.filter_layout
 
-    assign show_filters = false
-    if section.settings.enable_filtering and collection.filters.size > 0
-      assign show_filters = true
-    endif
-
-    assign show_sort = false
-    if section.settings.enable_sorting and collection.sort_options.size > 0
-      assign show_sort = true
-    endif
-
-    assign active_count = 0
-    for filter in collection.filters
-      if filter.type == 'price_range'
-        if filter.min_value.value != null or filter.max_value.value != null
-          assign active_count = active_count | plus: 1
-        endif
-      else
-        assign active_count = active_count | plus: filter.active_values.size
+      assign show_filters = false
+      if section.settings.enable_filtering and collection.filters.size > 0
+        assign show_filters = true
       endif
-    endfor
 
-    assign sort_by = collection.sort_by | default: collection.default_sort_by
-    assign clear_url = collection.url
-    if collection.sort_by != blank
-      assign sort_param = collection.sort_by | url_encode
-      assign clear_url = clear_url | append: '?sort_by=' | append: sort_param
-    endif
-
-    assign layout_class = 'facets-layout'
-    assign sidebar_space = 0
-    if show_filters
-      assign layout_class = layout_class | append: ' facets-layout--filters'
-      if layout == 'sidebar'
-        assign layout_class = layout_class | append: ' facets-layout--sidebar'
-        assign sidebar_space = 304
+      assign show_sort = false
+      if section.settings.enable_sorting and collection.sort_options.size > 0
+        assign show_sort = true
       endif
-    endif
 
-    assign cols_desktop = section.settings.columns_desktop
-    assign cols_mobile = section.settings.columns_mobile | plus: 0
-    assign desktop_space = cols_desktop | minus: 1 | times: 20 | plus: sidebar_space
-    assign mobile_size = 'calc((100vw - 52px) / 2)'
-    if cols_mobile == 1
-      assign mobile_size = 'calc(100vw - 40px)'
-    endif
-    assign card_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - ' | append: desktop_space | append: 'px) / ' | append: cols_desktop | append: '), (min-width: 750px) calc((100vw - 104px) / 3), ' | append: mobile_size
-    assign banner_sizes = '(min-width: 750px) min(100vw - 64px, ' | append: settings.page_width | append: 'px), calc(100vw - 40px)'
-
-    # The banner: the collection's metafield sportwear.banner (a wide picture, kept apart from the
-    # collection image, which the menus show as a product tile), else its own image; for a team's or a
-    # player's page, the banner of their league (the league of the first product, as in
-    # featured-collection's "collection_league"; football leagues without a collection of their own
-    # are in other-leagues).
-    assign banner = blank
-    if section.settings.show_image
-      assign banner = collection.metafields.sportwear.banner.value | default: collection.image
-      if banner == blank and collection.products_count > 0
-        assign first_product = collection.products.first
-        assign own_team_tag = 'team:' | append: collection.handle
-        assign own_player_tag = 'player:' | append: collection.handle
-        if first_product.tags contains own_team_tag or first_product.tags contains own_player_tag
-          assign banner_league = first_product.metafields.sportwear.league_handle.value
-          if banner_league != blank
-            assign banner = collections[banner_league].metafields.sportwear.banner.value
+      assign active_count = 0
+      for filter in collection.filters
+        if filter.type == 'price_range'
+          if filter.min_value.value != null or filter.max_value.value != null
+            assign active_count = active_count | plus: 1
           endif
-          if banner == blank and first_product.tags contains 'sport:football'
-            assign banner = collections['other-leagues'].metafields.sportwear.banner.value
-          endif
+        else
+          assign active_count = active_count | plus: filter.active_values.size
+        endif
+      endfor
+
+      assign sort_by = collection.sort_by | default: collection.default_sort_by
+      assign clear_url = collection.url
+      if collection.sort_by != blank
+        assign sort_param = collection.sort_by | url_encode
+        assign clear_url = clear_url | append: '?sort_by=' | append: sort_param
+      endif
+
+      assign layout_class = 'facets-layout'
+      assign sidebar_space = 0
+      if show_filters
+        assign layout_class = layout_class | append: ' facets-layout--filters'
+        if layout == 'sidebar'
+          assign layout_class = layout_class | append: ' facets-layout--sidebar'
+          assign sidebar_space = 304
         endif
       endif
-    endif
 
-    assign banner_loading = 'lazy'
-    assign banner_priority = 'auto'
-    assign banner_preload = false
-    unless section.index > 1
-      assign banner_loading = 'eager'
-      assign banner_priority = 'high'
-      assign banner_preload = true
-    endunless
-
-    # A team's or a player's page that has a collector card on the home page (the collection's metafields
-    # sportwear.card_image, card_color and card_mark; sections/collection-circles.liquid): the banner adds the
-    # card's colour, its big number and the cut-out jersey at the end side.
-    assign team_cutout = blank
-    assign team_color = blank
-    assign team_mark = blank
-    if banner != blank
-      assign team_cutout = collection.metafields.sportwear.card_image.value
-      if team_cutout != blank
-        assign team_color = collection.metafields.sportwear.card_color.value
-        assign team_mark = collection.metafields.sportwear.card_mark.value | strip
+      assign cols_desktop = section.settings.columns_desktop
+      assign cols_mobile = section.settings.columns_mobile | plus: 0
+      assign desktop_space = cols_desktop | minus: 1 | times: 20 | plus: sidebar_space
+      assign mobile_size = 'calc((100vw - 52px) / 2)'
+      if cols_mobile == 1
+        assign mobile_size = 'calc(100vw - 40px)'
       endif
-    endif
+      assign card_sizes = '(min-width: 990px) calc((min(100vw - 64px, ' | append: settings.page_width | append: 'px) - ' | append: desktop_space | append: 'px) / ' | append: cols_desktop | append: '), (min-width: 750px) calc((100vw - 104px) / 3), ' | append: mobile_size
+      assign banner_sizes = '(min-width: 750px) min(100vw - 64px, ' | append: settings.page_width | append: 'px), calc(100vw - 40px)'
 
-    assign load_more = false
-    if section.settings.pagination_style == 'load_more'
-      assign load_more = true
-    endif
-    assign load_more_label = 'pagination.load_more' | t
-
-    assign has_products = true
-    if collection.all_products_count == 0
-      assign has_products = false
-    endif
-    assign show_placeholders = false
-    if has_products == false and request.design_mode
-      assign show_placeholders = true
-    endif
-
-    assign results_label = 'collections.product_count' | t: count: collection.products_count
-    assign subnav = section.settings.subnav_menu
-
-    # Automatic chips when "Related collections menu" is blank: the main-menu link whose collection is
-    # this one (any level; one with sub-links wins). Its sub-links follow an "All" chip for this page;
-    # a link without sub-links shows its parent's "All" chip and its sister links instead. Links are
-    # matched by their collection's handle, which is the same under every language prefix.
-    assign chip_link = null
-    assign chip_parent = null
-    assign chip_links = null
-    assign chip_all_current = false
-    assign chip_count = 0
-    if subnav == blank
-      assign chip_found = false
-      assign chip_found_with_children = false
-      for level_one in linklists['main-menu'].links
-        if level_one.type == 'collection_link' and level_one.object.handle == collection.handle
-          if chip_found == false or level_one.links.size > 0 and chip_found_with_children == false
-            assign chip_link = level_one
-            assign chip_parent = null
-            assign chip_found = true
-            if level_one.links.size > 0
-              assign chip_found_with_children = true
+      # The banner: the collection's metafield sportwear.banner (a wide picture, kept apart from the
+      # collection image, which the menus show as a product tile), else its own image; for a team's or a
+      # player's page, the banner of their league (the league of the first product, as in
+      # featured-collection's "collection_league"; football leagues without a collection of their own
+      # are in other-leagues).
+      assign banner = blank
+      if section.settings.show_image and guide_kind != 'football'
+        assign banner = collection.metafields.sportwear.banner.value | default: collection.image
+        if banner == blank and collection.products_count > 0
+          assign first_product = collection.products.first
+          assign own_team_tag = 'team:' | append: collection.handle
+          assign own_player_tag = 'player:' | append: collection.handle
+          if first_product.tags contains own_team_tag or first_product.tags contains own_player_tag
+            assign banner_league = first_product.metafields.sportwear.league_handle.value
+            if banner_league != blank
+              assign banner = collections[banner_league].metafields.sportwear.banner.value
+            endif
+            if banner == blank and first_product.tags contains 'sport:football'
+              assign banner = collections['other-leagues'].metafields.sportwear.banner.value
             endif
           endif
         endif
-        for level_two in level_one.links
-          if level_two.type == 'collection_link' and level_two.object.handle == collection.handle
-            if chip_found == false or level_two.links.size > 0 and chip_found_with_children == false
-              assign chip_link = level_two
-              assign chip_parent = level_one
+      endif
+
+      assign banner_loading = 'lazy'
+      assign banner_priority = 'auto'
+      assign banner_preload = false
+      unless section.index > 1
+        assign banner_loading = 'eager'
+        assign banner_priority = 'high'
+        assign banner_preload = true
+      endunless
+
+      # A team's or a player's page that has a collector card on the home page (the collection's metafields
+      # sportwear.card_image, card_color and card_mark; sections/collection-circles.liquid): the banner adds the
+      # card's colour, its big number and the cut-out jersey at the end side.
+      assign team_cutout = blank
+      assign team_color = blank
+      assign team_mark = blank
+      if banner != blank
+        assign team_cutout = collection.metafields.sportwear.card_image.value
+        if team_cutout != blank
+          assign team_color = collection.metafields.sportwear.card_color.value
+          assign team_mark = collection.metafields.sportwear.card_mark.value | strip
+        endif
+      endif
+
+      assign load_more = false
+      if section.settings.pagination_style == 'load_more'
+        assign load_more = true
+      endif
+      assign load_more_label = 'pagination.load_more' | t
+
+      assign has_products = true
+      if collection.all_products_count == 0
+        assign has_products = false
+      endif
+      assign show_placeholders = false
+      if has_products == false and request.design_mode
+        assign show_placeholders = true
+      endif
+
+      assign results_label = 'collections.product_count' | t: count: collection.products_count
+      assign subnav = section.settings.subnav_menu
+
+      # Automatic chips when "Related collections menu" is blank: the main-menu link whose collection is
+      # this one (any level; one with sub-links wins). Its sub-links follow an "All" chip for this page;
+      # a link without sub-links shows its parent's "All" chip and its sister links instead. Links are
+      # matched by their collection's handle, which is the same under every language prefix.
+      assign chip_link = null
+      assign chip_parent = null
+      assign chip_links = null
+      assign chip_all_current = false
+      assign chip_count = 0
+      if subnav == blank
+        assign chip_found = false
+        assign chip_found_with_children = false
+        for level_one in linklists['main-menu'].links
+          if level_one.type == 'collection_link' and level_one.object.handle == collection.handle
+            if chip_found == false or level_one.links.size > 0 and chip_found_with_children == false
+              assign chip_link = level_one
+              assign chip_parent = null
               assign chip_found = true
-              if level_two.links.size > 0
+              if level_one.links.size > 0
                 assign chip_found_with_children = true
               endif
             endif
           endif
-          if chip_found == false
-            for level_three in level_two.links
-              if level_three.type == 'collection_link' and level_three.object.handle == collection.handle
-                assign chip_link = level_three
-                assign chip_parent = level_two
+          for level_two in level_one.links
+            if level_two.type == 'collection_link' and level_two.object.handle == collection.handle
+              if chip_found == false or level_two.links.size > 0 and chip_found_with_children == false
+                assign chip_link = level_two
+                assign chip_parent = level_one
                 assign chip_found = true
-                break
+                if level_two.links.size > 0
+                  assign chip_found_with_children = true
+                endif
               endif
-            endfor
-          endif
+            endif
+            if chip_found == false
+              for level_three in level_two.links
+                if level_three.type == 'collection_link' and level_three.object.handle == collection.handle
+                  assign chip_link = level_three
+                  assign chip_parent = level_two
+                  assign chip_found = true
+                  break
+                endif
+              endfor
+            endif
+          endfor
         endfor
-      endfor
 
-      if chip_link
-        if chip_link.links.size > 0
-          assign chip_links = chip_link.links
-          assign chip_all_url = collection.url
-          assign chip_all_title = collection.title
-          assign chip_all_current = true
-        elsif chip_parent
-          assign chip_links = chip_parent.links
-          assign chip_all_url = chip_parent.url
-          assign chip_all_title = chip_parent.title
-        endif
-      endif
-
-      # Chips to show: links to empty collections are left out (never this collection's own link).
-      for chip in chip_links
-        assign chip_empty = false
-        if chip.type == 'collection_link'
-          if chip.object.handle != collection.handle and chip.object.all_products_count == 0
-            assign chip_empty = true
+        if chip_link
+          if chip_link.links.size > 0
+            assign chip_links = chip_link.links
+            assign chip_all_url = collection.url
+            assign chip_all_title = collection.title
+            assign chip_all_current = true
+          elsif chip_parent
+            assign chip_links = chip_parent.links
+            assign chip_all_url = chip_parent.url
+            assign chip_all_title = chip_parent.title
           endif
         endif
-        unless chip_empty
-          assign chip_count = chip_count | plus: 1
-        endunless
-      endfor
-    endif
-  -%}
-  <div
-    class="section main-collection color-{{ section.settings.color_scheme.id }}"
-    style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
-  >
-    <div class="page-width">
-      <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
-        <header class="collection-header{% if banner != blank %} collection-header--banner{% endif %}">
-          {%- if banner != blank -%}
-            <div
-              class="collection-banner color-scheme-night{% if team_cutout != blank %} collection-banner--team{% endif %}"
-              {% if team_color != blank %}
-                style="--team-color: {{ team_color }};"
-              {% endif %}
-            >
-              <div class="collection-banner__media">
-                {%- render 'image',
-                  image: banner,
-                  sizes: banner_sizes,
-                  widths: '540, 720, 960, 1280, 1600, 1920, 2400',
-                  loading: banner_loading,
-                  fetchpriority: banner_priority,
-                  preload: banner_preload,
-                  alt: '',
-                  class: 'collection-banner__image'
-                -%}
-              </div>
-              {%- if team_cutout != blank -%}
-                <div class="collection-banner__team" aria-hidden="true">
-                  {%- if team_mark != blank -%}
-                    <span class="collection-banner__mark">{{ team_mark | escape }}</span>
-                  {%- endif -%}
-                  <span class="collection-banner__figure">
-                    {%- render 'image',
-                      image: team_cutout,
-                      sizes: '(min-width: 750px) 200px, 30vw',
-                      widths: '120, 180, 240, 320, 400',
-                      loading: banner_loading,
-                      alt: '',
-                      class: 'collection-banner__jersey'
-                    -%}
-                  </span>
-                </div>
-              {%- endif -%}
-              <div class="collection-banner__content">
-                <h1 class="collection-banner__title display-l">{{ collection.title | escape }}</h1>
-                {%- if section.settings.show_count and has_products -%}
-                  <p class="collection-banner__count">
-                    {{- 'collections.product_count' | t: count: collection.all_products_count -}}
-                  </p>
-                {%- endif -%}
-              </div>
-            </div>
-          {%- else -%}
-            <h1 class="collection-header__title display-l">{{ collection.title | escape }}</h1>
 
-            {%- if section.settings.show_count and has_products -%}
-              <p class="collection-header__count">
-                {{- 'collections.product_count' | t: count: collection.all_products_count -}}
-              </p>
-            {%- endif -%}
-          {%- endif -%}
-
-          {%- if section.settings.show_description and collection.description != blank -%}
-            {%- assign description_length = collection.description | strip_html | size -%}
-            <sw-read-more class="read-more{% if description_length > 240 %} read-more--collapsed{% endif %}">
+        # Chips to show: links to empty collections are left out (never this collection's own link).
+        for chip in chip_links
+          assign chip_empty = false
+          if chip.type == 'collection_link'
+            if chip.object.handle != collection.handle and chip.object.all_products_count == 0
+              assign chip_empty = true
+            endif
+          endif
+          unless chip_empty
+            assign chip_count = chip_count | plus: 1
+          endunless
+        endfor
+      endif
+    -%}
+    <div
+      class="section main-collection color-{{ section.settings.color_scheme.id }}"
+      style="--section-pt: {{ section.settings.padding_top }}px; --section-pb: {{ section.settings.padding_bottom }}px;"
+    >
+      <div class="page-width">
+        <sw-facets data-section-id="{{ section.id }}" data-layout="{{ layout }}">
+          <header class="collection-header{% if banner != blank %} collection-header--banner{% endif %}">
+            {%- if banner != blank -%}
               <div
-                id="CollectionDescription-{{ section.id }}"
-                class="collection-header__description rte read-more__content"
+                class="collection-banner color-scheme-night{% if team_cutout != blank %} collection-banner--team{% endif %}"
+                {% if team_color != blank %}
+                  style="--team-color: {{ team_color }};"
+                {% endif %}
               >
-                {{ collection.description }}
+                <div class="collection-banner__media">
+                  {%- render 'image',
+                    image: banner,
+                    sizes: banner_sizes,
+                    widths: '540, 720, 960, 1280, 1600, 1920, 2400',
+                    loading: banner_loading,
+                    fetchpriority: banner_priority,
+                    preload: banner_preload,
+                    alt: '',
+                    class: 'collection-banner__image'
+                  -%}
+                </div>
+                {%- if team_cutout != blank -%}
+                  <div class="collection-banner__team" aria-hidden="true">
+                    {%- if team_mark != blank -%}
+                      <span class="collection-banner__mark">{{ team_mark | escape }}</span>
+                    {%- endif -%}
+                    <span class="collection-banner__figure">
+                      {%- render 'image',
+                        image: team_cutout,
+                        sizes: '(min-width: 750px) 200px, 30vw',
+                        widths: '120, 180, 240, 320, 400',
+                        loading: banner_loading,
+                        alt: '',
+                        class: 'collection-banner__jersey'
+                      -%}
+                    </span>
+                  </div>
+                {%- endif -%}
+                <div class="collection-banner__content">
+                  <h1 class="collection-banner__title display-l">{{ collection.title | escape }}</h1>
+                  {%- if section.settings.show_count and has_products -%}
+                    <p class="collection-banner__count">
+                      {{- 'collections.product_count' | t: count: collection.all_products_count -}}
+                    </p>
+                  {%- endif -%}
+                </div>
               </div>
-              {%- if description_length > 240 -%}
-                <button
-                  type="button"
-                  class="read-more__toggle js-only"
-                  aria-expanded="false"
-                  aria-controls="CollectionDescription-{{ section.id }}"
-                  data-label-more="{{ 'collections.read_more' | t }}"
-                  data-label-less="{{ 'collections.read_less' | t }}"
-                >
-                  {{- 'collections.read_more' | t -}}
-                </button>
-              {%- endif -%}
-            </sw-read-more>
-          {%- endif -%}
-        </header>
+            {%- else -%}
+              <h1 class="collection-header__title display-l">{{ collection.title | escape }}</h1>
 
-        {%- if subnav != blank and subnav.links.size > 0 -%}
-          <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
-            <sw-chip-scroller>
-              <ul class="collection-subnav__list scroller" role="list">
-                {%- for link in subnav.links -%}
-                  <li>
-                    <a
-                      class="chip{% if link.current %} chip--active{% endif %}"
-                      href="{{ link.url }}"
-                      {% if link.current %}
-                        aria-current="page"
-                      {% endif %}
-                    >
-                      {{- link.title | escape -}}
-                    </a>
-                  </li>
+              {%- if section.settings.show_count and has_products -%}
+                <p class="collection-header__count">
+                  {{- 'collections.product_count' | t: count: collection.all_products_count -}}
+                </p>
+              {%- endif -%}
+            {%- endif -%}
+
+            {%- if section.settings.show_description and collection.description != blank -%}
+              {%- assign description_length = collection.description | strip_html | size -%}
+              <sw-read-more class="read-more{% if description_length > 240 %} read-more--collapsed{% endif %}">
+                <div
+                  id="CollectionDescription-{{ section.id }}"
+                  class="collection-header__description rte read-more__content"
+                >
+                  {{ collection.description }}
+                </div>
+                {%- if description_length > 240 -%}
+                  <button
+                    type="button"
+                    class="read-more__toggle js-only"
+                    aria-expanded="false"
+                    aria-controls="CollectionDescription-{{ section.id }}"
+                    data-label-more="{{ 'collections.read_more' | t }}"
+                    data-label-less="{{ 'collections.read_less' | t }}"
+                  >
+                    {{- 'collections.read_more' | t -}}
+                  </button>
+                {%- endif -%}
+              </sw-read-more>
+            {%- endif -%}
+          </header>
+
+          {%- if guide_kind == 'football' and section.settings.guided_browse != false -%}
+            <nav class="collection-team-nav" aria-label="{{ 'navigation.guide.by_team' | t }}">
+              <p class="collection-team-nav__label">{{ 'navigation.guide.by_team' | t }}</p>
+              <ul class="collection-team-nav__list" role="list">
+                {%- assign football_teams = 'real-madrid,barcelona,arsenal,manchester-city,manchester-united,paris-saint-germain'
+                  | split: ','
+                -%}
+                {%- for team_handle in football_teams -%}
+                  {%- assign team_collection = collections[team_handle] -%}
+                  {%- if team_collection != blank and team_collection.all_products_count > 0 -%}
+                    <li>
+                      {%- render 'guided-team-strip', handle: team_handle, target: team_collection, kind: 'football' -%}
+                    </li>
+                  {%- endif -%}
                 {%- endfor -%}
               </ul>
-            </sw-chip-scroller>
-          </nav>
-        {%- elsif chip_count > 0 -%}
-          <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
-            <sw-chip-scroller>
-              <ul class="collection-subnav__list scroller" role="list">
-                <li>
-                  <a
-                    class="chip{% if chip_all_current %} chip--active{% endif %}"
-                    href="{{ chip_all_url }}"
-                    {% if chip_all_current %}
-                      aria-current="page"
-                    {% endif %}
-                  >
-                    {{- 'collections.subnav_all' | t -}}
-                    <span class="visually-hidden">: {{ chip_all_title | escape }}</span>
-                  </a>
-                </li>
-                {%- for chip in chip_links -%}
-                  {%- liquid
-                    assign chip_current = false
-                    assign chip_empty = false
-                    if chip.type == 'collection_link'
-                      if chip.object.handle == collection.handle
-                        assign chip_current = true
-                      elsif chip.object.all_products_count == 0
-                        assign chip_empty = true
-                      endif
-                    endif
-                  -%}
-                  {%- unless chip_empty -%}
+            </nav>
+          {%- endif -%}
+
+          {%- if subnav != blank and subnav.links.size > 0 -%}
+            <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
+              <sw-chip-scroller>
+                <ul class="collection-subnav__list scroller" role="list">
+                  {%- for link in subnav.links -%}
                     <li>
                       <a
-                        class="chip{% if chip_current %} chip--active{% endif %}"
-                        href="{{ chip.url }}"
-                        {% if chip_current %}
+                        class="chip{% if link.current %} chip--active{% endif %}"
+                        href="{{ link.url }}"
+                        {% if link.current %}
                           aria-current="page"
                         {% endif %}
                       >
-                        {{- chip.title | escape -}}
+                        {{- link.title | escape -}}
                       </a>
                     </li>
-                  {%- endunless -%}
-                {%- endfor -%}
-              </ul>
-            </sw-chip-scroller>
-          </nav>
-        {%- endif -%}
-
-        {%- if has_products or show_placeholders -%}
-          <div class="{{ layout_class }}">
-            {%- render 'facets',
-              section_id: section.id,
-              filters: collection.filters,
-              action: collection.url,
-              show_filters: show_filters,
-              show_sort: show_sort,
-              sort_options: collection.sort_options,
-              sort_by: sort_by,
-              active_count: active_count,
-              clear_url: clear_url,
-              results_label: results_label,
-              results_count: collection.products_count,
-              option_style: section.settings.option_style
-            -%}
-
-            <div
-              id="FacetsResults-{{ section.id }}"
-              class="facets-results"
-              data-facets-region="results"
-              data-facets-results
-            >
-              <h2 class="visually-hidden" tabindex="-1" data-facets-focus>
-                {{- 'collections.products_heading' | t -}}
-              </h2>
-              <span hidden data-facets-status>{{ results_label }}</span>
-
-              {%- if collection.products.size > 0 -%}
-                <ul
-                  class="grid product-grid"
-                  role="list"
-                  style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
-                  data-results-list="products"
-                >
-                  {%- for product in collection.products -%}
+                  {%- endfor -%}
+                </ul>
+              </sw-chip-scroller>
+            </nav>
+          {%- elsif chip_count > 0 -%}
+            <nav class="collection-subnav" aria-label="{{ 'collections.subnav_label' | t }}">
+              <sw-chip-scroller>
+                <ul class="collection-subnav__list scroller" role="list">
+                  <li>
+                    <a
+                      class="chip{% if chip_all_current %} chip--active{% endif %}"
+                      href="{{ chip_all_url }}"
+                      {% if chip_all_current %}
+                        aria-current="page"
+                      {% endif %}
+                    >
+                      {{- 'collections.subnav_all' | t -}}
+                      <span class="visually-hidden">: {{ chip_all_title | escape }}</span>
+                    </a>
+                  </li>
+                  {%- for chip in chip_links -%}
                     {%- liquid
-                      assign card_loading = 'lazy'
-                      if paginate.current_page == 1 and forloop.index <= 4
-                        assign card_loading = 'eager'
+                      assign chip_current = false
+                      assign chip_empty = false
+                      if chip.type == 'collection_link'
+                        if chip.object.handle == collection.handle
+                          assign chip_current = true
+                        elsif chip.object.all_products_count == 0
+                          assign chip_empty = true
+                        endif
                       endif
                     -%}
-                    <li class="product-grid__item">
-                      {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
-                    </li>
+                    {%- unless chip_empty -%}
+                      <li>
+                        <a
+                          class="chip{% if chip_current %} chip--active{% endif %}"
+                          href="{{ chip.url }}"
+                          {% if chip_current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{- chip.title | escape -}}
+                        </a>
+                      </li>
+                    {%- endunless -%}
                   {%- endfor -%}
                 </ul>
-                {%- render 'pagination', paginate: paginate, load_more: load_more, load_more_label: load_more_label -%}
-              {%- elsif show_placeholders -%}
-                <ul
-                  class="grid product-grid"
-                  role="list"
-                  style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
-                >
-                  {%- for i in (1..8) -%}
-                    <li class="product-grid__item">
-                      {%- render 'product-card', product: blank, sizes: card_sizes -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
-              {%- elsif active_count > 0 -%}
-                {%- liquid
-                  assign empty_title = 'facets.no_results_heading' | t
-                  assign empty_text = 'facets.no_results_text' | t
-                -%}
-                {%- render 'facets-empty', title: empty_title, text: empty_text, clear_url: clear_url -%}
-              {%- else -%}
-                {%- liquid
-                  assign empty_title = 'collections.empty_heading' | t
-                  assign empty_text = 'collections.empty_text' | t
-                -%}
-                {%- render 'facets-empty', title: empty_title, text: empty_text -%}
-                {%- render 'pagination', paginate: paginate -%}
-              {%- endif -%}
-            </div>
-          </div>
-          {%- if show_filters -%}
-            {%- render 'facets-drawer',
-              section_id: section.id,
-              active_count: active_count,
-              clear_url: clear_url,
-              results_count: collection.products_count
-            -%}
+              </sw-chip-scroller>
+            </nav>
           {%- endif -%}
-        {%- else -%}
-          {%- liquid
-            assign empty_title = 'collections.empty_heading' | t
-            assign empty_text = 'collections.empty_text' | t
-          -%}
-          {%- render 'facets-empty', title: empty_title, text: empty_text, heading_tag: 'h2' -%}
-        {%- endif -%}
-      </sw-facets>
+
+          {%- if has_products or show_placeholders -%}
+            <div class="{{ layout_class }}">
+              {%- render 'facets',
+                section_id: section.id,
+                filters: collection.filters,
+                action: collection.url,
+                show_filters: show_filters,
+                show_sort: show_sort,
+                sort_options: collection.sort_options,
+                sort_by: sort_by,
+                active_count: active_count,
+                clear_url: clear_url,
+                results_label: results_label,
+                results_count: collection.products_count,
+                option_style: section.settings.option_style
+              -%}
+
+              <div
+                id="FacetsResults-{{ section.id }}"
+                class="facets-results"
+                data-facets-region="results"
+                data-facets-results
+              >
+                <h2 class="visually-hidden" tabindex="-1" data-facets-focus>
+                  {{- 'collections.products_heading' | t -}}
+                </h2>
+                <span hidden data-facets-status>{{ results_label }}</span>
+
+                {%- if collection.products.size > 0 -%}
+                  <ul
+                    class="grid product-grid"
+                    role="list"
+                    style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
+                    data-results-list="products"
+                  >
+                    {%- for product in collection.products -%}
+                      {%- liquid
+                        assign card_loading = 'lazy'
+                        if paginate.current_page == 1 and forloop.index <= 4
+                          assign card_loading = 'eager'
+                        endif
+                      -%}
+                      <li class="product-grid__item">
+                        {%- render 'product-card', product: product, sizes: card_sizes, loading: card_loading -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                  {%- render 'pagination',
+                    paginate: paginate,
+                    load_more: load_more,
+                    load_more_label: load_more_label
+                  -%}
+                {%- elsif show_placeholders -%}
+                  <ul
+                    class="grid product-grid"
+                    role="list"
+                    style="--grid-cols: {{ cols_mobile }}; --grid-cols-tablet: 3; --grid-cols-desktop: {{ cols_desktop }};"
+                  >
+                    {%- for i in (1..8) -%}
+                      <li class="product-grid__item">
+                        {%- render 'product-card', product: blank, sizes: card_sizes -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- elsif active_count > 0 -%}
+                  {%- liquid
+                    assign empty_title = 'facets.no_results_heading' | t
+                    assign empty_text = 'facets.no_results_text' | t
+                  -%}
+                  {%- render 'facets-empty', title: empty_title, text: empty_text, clear_url: clear_url -%}
+                {%- else -%}
+                  {%- liquid
+                    assign empty_title = 'collections.empty_heading' | t
+                    assign empty_text = 'collections.empty_text' | t
+                  -%}
+                  {%- render 'facets-empty', title: empty_title, text: empty_text -%}
+                  {%- render 'pagination', paginate: paginate -%}
+                {%- endif -%}
+              </div>
+            </div>
+            {%- if show_filters -%}
+              {%- render 'facets-drawer',
+                section_id: section.id,
+                active_count: active_count,
+                clear_url: clear_url,
+                results_count: collection.products_count
+              -%}
+            {%- endif -%}
+          {%- else -%}
+            {%- liquid
+              assign empty_title = 'collections.empty_heading' | t
+              assign empty_text = 'collections.empty_text' | t
+            -%}
+            {%- render 'facets-empty', title: empty_title, text: empty_text, heading_tag: 'h2' -%}
+          {%- endif -%}
+        </sw-facets>
+      </div>
     </div>
-  </div>
-{%- endpaginate -%}
+  {%- endpaginate -%}
+{%- endif -%}
 
 <script type="module" src="{{ 'facets.js' | asset_url }}"></script>
 
@@ -475,6 +538,7 @@
 {% stylesheet %}
   .collection-header {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-3);
     margin-block-end: var(--space-6);
   }
@@ -485,6 +549,10 @@
     isolation: isolate;
     display: flex;
     align-items: flex-end;
+    /* The aspect ratio must not create a 1200px automatic grid minimum at tablet widths. */
+    min-inline-size: 0;
+    inline-size: 100%;
+    max-inline-size: 100%;
     min-block-size: 150px;
     aspect-ratio: 12 / 5;
     overflow: hidden;
@@ -526,6 +594,8 @@
 
   .collection-banner__content {
     display: grid;
+    min-inline-size: 0;
+    max-inline-size: 100%;
     gap: var(--space-1);
     padding: var(--space-4) var(--space-5);
 
@@ -716,12 +786,63 @@
     scroll-padding-inline: var(--gutter);
     list-style: none;
   }
+  .collection-team-nav {
+    min-inline-size: 0;
+    margin-block-end: var(--space-4);
+  }
+
+  .collection-team-nav__label {
+    margin-block-end: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 700;
+  }
+
+  .collection-team-nav__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 186px;
+    gap: var(--space-2);
+    margin: 0;
+    padding: var(--space-1);
+    list-style: none;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline proximity;
+    scrollbar-width: thin;
+  }
+
+  .collection-team-nav__list > li {
+    min-inline-size: 0;
+    scroll-snap-align: start;
+  }
+
+  .collection-team-nav .guided-nav__team-card {
+    gap: var(--space-2);
+    min-block-size: 64px;
+    padding: var(--space-2);
+  }
+
+  .collection-team-nav .guided-nav__team-image {
+    inline-size: 36px;
+    block-size: 36px;
+    flex-basis: 36px;
+  }
+
+  .collection-team-nav .guided-nav__team-name {
+    font-size: var(--text-sm);
+  }
 {% endstylesheet %}
 
 {% schema %}
 {
   "name": "t:sections.main_collection.name",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "guided_browse",
+      "label": "t:sections.main_collection.settings.guided_browse.label",
+      "default": true
+    },
     {
       "type": "header",
       "content": "t:sections.main_collection.headers.header"

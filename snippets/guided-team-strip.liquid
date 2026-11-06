@@ -1,0 +1,81 @@
+{%- liquid
+  assign team_color = '#182632'
+  assign team_accent = '#b7ff26'
+  case handle
+    when 'real-madrid'
+      assign team_color = '#142954'
+      assign team_accent = '#c3a251'
+    when 'barcelona'
+      assign team_color = '#49152e'
+      assign team_accent = '#edb93b'
+    when 'arsenal'
+      assign team_color = '#7b1020'
+      assign team_accent = '#efc68b'
+    when 'manchester-city'
+      assign team_color = '#163b54'
+      assign team_accent = '#8bcef0'
+    when 'manchester-united'
+      assign team_color = '#68141a'
+      assign team_accent = '#e8ba56'
+    when 'paris-saint-germain'
+      assign team_color = '#112846'
+      assign team_accent = '#e94357'
+    when 'los-angeles-lakers'
+      assign team_color = '#351957'
+      assign team_accent = '#f9bd32'
+    when 'chicago-bulls'
+      assign team_color = '#721223'
+      assign team_accent = '#ef435e'
+    when 'golden-state-warriors'
+      assign team_color = '#153571'
+      assign team_accent = '#fac839'
+    when 'boston-celtics'
+      assign team_color = '#06482f'
+      assign team_accent = '#afcda8'
+    when 'dallas-mavericks'
+      assign team_color = '#073858'
+      assign team_accent = '#83b9ea'
+    when 'miami-heat'
+      assign team_color = '#571624'
+      assign team_accent = '#f5a53a'
+    when 'kansas-city-chiefs'
+      assign team_color = '#741629'
+      assign team_accent = '#f9b43a'
+    when 'dallas-cowboys'
+      assign team_color = '#11263c'
+      assign team_accent = '#adbfcc'
+    when 'san-francisco-49ers'
+      assign team_color = '#681520'
+      assign team_accent = '#d8ba85'
+    when 'philadelphia-eagles'
+      assign team_color = '#0b4145'
+      assign team_accent = '#b4cfcb'
+    when 'las-vegas-raiders'
+      assign team_color = '#202429'
+      assign team_accent = '#b9c0c8'
+    when 'baltimore-ravens'
+      assign team_color = '#271648'
+      assign team_accent = '#c5a258'
+  endcase
+-%}
+<a
+  class="guided-nav__team-card"
+  href="{{ target.url }}"
+  style="--team-color: {{ team_color }}; --team-accent: {{ team_accent }};"
+>
+  {% if kind == 'players' %}
+    <span class="guided-nav__player-mark" aria-hidden="true">NBA</span>
+  {% else %}
+    {% assign crest_asset = 'team-crest-' | append: handle | append: '.png' %}
+    <img
+      class="guided-nav__team-image"
+      src="{{ crest_asset | asset_url }}"
+      width="72"
+      height="72"
+      alt=""
+      loading="lazy"
+    >
+  {% endif %}
+  <span class="guided-nav__team-name">{{ target.title | escape }}</span>
+  {% render 'icon', name: 'arrow-forward', size: 18 %}
+</a>

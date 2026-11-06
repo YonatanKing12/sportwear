@@ -39,8 +39,19 @@
       assign is_new = true
     endif
 
-    # The hover photo is the second studio view (the back). The supplier's fabric close-ups (files
-    # sw-detail-*) stay on the product page, so a grid keeps one look.
+    # When a model photo leads the gallery, use the existing clean product view in grids.
+    # Keep the model as the hover image; never use a fabric close-up as a full product view.
+    assign primary_image = product.featured_media.preview_image
+    if primary_image.src contains '-model-'
+      for media in product.media
+        if media.media_type == 'image'
+          unless media.preview_image.src contains '-model-' or media.preview_image.src contains 'sw-detail-'
+            assign primary_image = media.preview_image
+            break
+          endunless
+        endif
+      endfor
+    endif
     assign secondary_image = null
     if settings.card_secondary_image and product.media.size > 1
       assign second_media = product.media[1]
@@ -48,13 +59,16 @@
         assign secondary_image = second_media.preview_image
       endunless
     endif
+    if settings.card_secondary_image and primary_image.src != product.featured_media.preview_image.src
+      assign secondary_image = product.featured_media.preview_image
+    endif
   endif
 -%}
 <article class="product-card{% if class != blank %} {{ class }}{% endif %}">
   <div class="product-card__media media-tile">
     {%- if product != blank -%}
       {%- render 'image',
-        image: product.featured_media.preview_image,
+        image: primary_image,
         sizes: card_sizes,
         widths: '240, 360, 480, 720, 960',
         loading: card_loading,

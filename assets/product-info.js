@@ -19,9 +19,9 @@
  * The sticky bar's and the sheet's add buttons submit the main form from outside it (form="…").
  * Without JavaScript the forms post to the cart normally.
  *
- * <sw-sticky-buy> is the bar that slides up once the main buy buttons (phones) or the whole product
- * section (desktop, where the info column is sticky) have scrolled out of view above the screen, and
- * slides away when the main buy buttons are back in view. While hidden it is inert.
+ * <sw-sticky-buy> keeps purchase controls available on phones whenever the main buy buttons are
+ * outside the viewport, including the gallery at the top. Desktop waits until the sticky product
+ * section has scrolled away. While hidden the bar is inert.
  */
 import { CartAPI, EVENTS, announce, config, parseHTML, prefersReducedMotion, publish, subscribe } from '@theme/core';
 
@@ -611,9 +611,9 @@ class SwStickyBuy extends HTMLElement {
   }
 
   /**
-   * The bar shows once the main buy buttons have scrolled above the screen. On desktop the info column
-   * is sticky and keeps those buttons in view while the product section is on screen, so there the bar
-   * waits for the whole section to scroll away (or for the end of a page too short for that).
+   * On phones the bar shows whenever the main controls are outside the viewport. On desktop the
+   * sticky info column keeps those controls visible, so the bar waits for the whole section to
+   * scroll away (or for the end of a page too short for that).
    */
   #observe = () => {
     this.#stop();
@@ -629,13 +629,11 @@ class SwStickyBuy extends HTMLElement {
     }
     const target = this.#buyButtons;
     if (!target) return;
-    // The observed area runs from the top of the screen to far below it, so the only change that
-    // counts is the target passing above the screen's top edge; a fast fling or a jump from below the
-    // screen to above it (never intersecting the screen itself) still flips the state.
-    this.#observer = new IntersectionObserver(
-      ([entry]) => this.#toggle(!entry.isIntersecting && entry.boundingClientRect.bottom < 0),
-      { rootMargin: '0px 0px 100000px 0px' },
-    );
+    // On phones the bar also serves customers still viewing the gallery. Hide it while the
+    // main buy buttons are visible; reserve its own height to avoid flicker at the viewport edge.
+    this.#observer = new IntersectionObserver(([entry]) => this.#toggle(!entry.isIntersecting), {
+      rootMargin: '0px 0px -88px 0px',
+    });
     this.#observer.observe(target);
   };
 

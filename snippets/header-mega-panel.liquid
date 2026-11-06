@@ -60,204 +60,224 @@
   assign tiles_label_id = 'HeaderMegaTiles-' | append: link_index
   assign products_label_id = 'HeaderMegaProducts-' | append: link_index
 -%}
-<div class="header-mega color-{{ panel_scheme }}">
-  <div class="header-mega__inner page-width{% if aside == 'none' %} header-mega__inner--no-aside{% endif %}">
-    <div class="header-mega__intro">
-      {%- comment -%} The title repeats the toggle's name right before it, so screen readers skip it. {%- endcomment -%}
-      <p class="header-mega__title display-s" aria-hidden="true">{{ link.title | escape }}</p>
-      {%- if parent_count > 0 -%}
-        <p class="header-mega__count">{{ 'header.mega.product_count' | t: count: parent_count }}</p>
-      {%- endif -%}
-      {%- if has_url -%}
-        <a class="header-mega__cta button button--primary" href="{{ link.url }}">
-          <span>
-            {{- 'header.mega.shop_all' | t -}}
-            <span class="visually-hidden">: {{ link.title | escape }}</span>
-          </span>
-          {%- render 'icon', name: 'arrow-forward', size: 18 -%}
-        </a>
-      {%- endif -%}
-      {%- if parent_count > 1 and has_url -%}
-        <ul class="header-mega__shortcuts" role="list">
-          <li>
-            <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=created-descending' }}">
-              <span>{{ 'header.mega.newest' | t }}</span>
-              {%- render 'icon', name: 'chevron-forward', size: 16 -%}
-            </a>
-          </li>
-          <li>
-            <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=price-ascending' }}">
-              <span>{{ 'header.mega.price_ascending' | t }}</span>
-              {%- render 'icon', name: 'chevron-forward', size: 16 -%}
-            </a>
-          </li>
-        </ul>
-      {%- endif -%}
-    </div>
-
-    <div class="header-mega__main">
-      <div class="header-mega__group">
-        <p class="header-mega__label" id="{{ tiles_label_id }}">{{ 'header.mega.categories' | t }}</p>
-        <ul
-          class="header-mega__tiles"
-          role="list"
-          aria-labelledby="{{ tiles_label_id }}"
-          style="--header-tile-cols: {{ tile_cols }};"
-        >
-          {%- for child in link.links -%}
-            {%- liquid
-              assign child_index = forloop.index
-              assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
-            -%}
-            {%- unless hidden contains child_key -%}
-              {%- liquid
-                # Third-level links (teams, players): the first 8 that are shown, then "View all".
-                assign grandchild_prefix = ',' | append: link_index | append: '-' | append: child_index | append: '-'
-                assign grandchild_total = 0
-                for grandchild in child.links
-                  assign grandchild_key = grandchild_prefix | append: forloop.index | append: ','
-                  unless hidden contains grandchild_key
-                    assign grandchild_total = grandchild_total | plus: 1
-                  endunless
-                endfor
-                assign grandchild_shown = 0
-              -%}
-              <li class="header-mega__tile">
-                {%- render 'header-tile', link: child, sizes: '(min-width: 1200px) 208px, 168px' -%}
-                {%- if grandchild_total > 0 -%}
-                  <ul class="header-mega__sublinks" role="list">
-                    {%- for grandchild in child.links -%}
-                      {%- assign grandchild_key = grandchild_prefix | append: forloop.index | append: ',' -%}
-                      {%- unless hidden contains grandchild_key or grandchild_shown >= 8 -%}
-                        {%- assign grandchild_shown = grandchild_shown | plus: 1 -%}
-                        <li>
-                          <a
-                            class="header-mega__sublink"
-                            href="{{ grandchild.url }}"
-                            {% if grandchild.current %}
-                              aria-current="page"
-                            {% endif %}
-                          >
-                            {{- grandchild.title | escape -}}
-                          </a>
-                        </li>
-                      {%- endunless -%}
-                    {%- endfor -%}
-                    {%- if grandchild_total > 8 and child.url != blank and child.url != '#' -%}
-                      <li>
-                        <a class="header-mega__sublink header-mega__view-all" href="{{ child.url }}">
-                          <span>
-                            {{- 'header.mega.view_all' | t -}}
-                            <span class="visually-hidden">: {{ child.title | escape }}</span>
-                          </span>
-                          {%- render 'icon', name: 'chevron-forward', size: 16 -%}
-                        </a>
-                      </li>
-                    {%- endif -%}
-                  </ul>
-                {%- endif -%}
-              </li>
-            {%- endunless -%}
-          {%- endfor -%}
-        </ul>
+{%- capture guide_kind -%}{%- render 'guided-collection-key', handle: parent.handle -%}{%- endcapture -%}
+{%- assign guide_kind = guide_kind | strip -%}
+{%- if guide_kind != blank -%}
+  <div class="header-mega color-{{ panel_scheme }}">
+    <div class="header-mega__inner header-mega__inner--no-aside page-width">
+      <div class="header-mega__intro">
+        <p class="header-mega__title display-s">{{ link.title | escape }}</p>
+        <p>{{ 'navigation.guide.menu_intro' | t }}</p>
       </div>
+      <div class="header-mega__main">{% render 'guided-navigation', kind: guide_kind, mode: 'menu' %}</div>
     </div>
+  </div>
+{%- else -%}
+  <div class="header-mega color-{{ panel_scheme }}">
+    <div class="header-mega__inner page-width{% if aside == 'none' %} header-mega__inner--no-aside{% endif %}">
+      <div class="header-mega__intro">
+        {%- comment -%} The title repeats the toggle's name right before it, so screen readers skip it. {%- endcomment -%}
+        <p class="header-mega__title display-s" aria-hidden="true">{{ link.title | escape }}</p>
+        {%- if parent_count > 0 -%}
+          <p class="header-mega__count">{{ 'header.mega.product_count' | t: count: parent_count }}</p>
+        {%- endif -%}
+        {%- if has_url -%}
+          <a class="header-mega__cta button button--primary" href="{{ link.url }}">
+            <span>
+              {{- 'header.mega.shop_all' | t -}}
+              <span class="visually-hidden">: {{ link.title | escape }}</span>
+            </span>
+            {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+          </a>
+        {%- endif -%}
+        {%- if parent_count > 1 and has_url -%}
+          <ul class="header-mega__shortcuts" role="list">
+            <li>
+              <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=created-descending' }}">
+                <span>{{ 'header.mega.newest' | t }}</span>
+                {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+              </a>
+            </li>
+            <li>
+              <a class="header-mega__shortcut" href="{{ link.url | append: '?sort_by=price-ascending' }}">
+                <span>{{ 'header.mega.price_ascending' | t }}</span>
+                {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+              </a>
+            </li>
+          </ul>
+        {%- endif -%}
+      </div>
 
-    {%- case aside -%}
-      {%- when 'promo' -%}
-        {%- liquid
-          assign promo_image = promo.settings.image
-          assign promo_label = promo.settings.button_label | escape
-          if promo_label == blank
-            assign promo_label = 'header.mega.promo_button' | t
-          endif
-          assign promo_scheme = 'scheme-accent'
-          if promo_image != blank
-            assign promo_scheme = 'scheme-night'
-          endif
-        -%}
-        <div class="header-mega__aside" {{ promo.shopify_attributes }}>
-          <div class="header-mega-promo color-{{ promo_scheme }}{% if promo_image != blank %} header-mega-promo--image{% endif %}">
-            {%- if promo_image != blank -%}
-              {%- render 'image',
-                image: promo_image,
-                sizes: '(min-width: 1200px) 300px, 220px',
-                widths: '220, 300, 440, 600, 900',
-                class: 'header-mega-promo__image'
-              -%}
-            {%- endif -%}
-            <div class="header-mega-promo__content">
-              {%- if promo.settings.eyebrow != blank -%}
-                <p class="header-mega-promo__eyebrow">{{ promo.settings.eyebrow | escape }}</p>
-              {%- endif -%}
-              {%- if promo.settings.heading != blank -%}
-                <p class="header-mega-promo__heading display-s">{{ promo.settings.heading | escape }}</p>
-              {%- endif -%}
-              {%- if promo.settings.text != blank -%}
-                <p class="header-mega-promo__text">{{ promo.settings.text | escape }}</p>
-              {%- endif -%}
-              {%- if promo.settings.link != blank -%}
-                <a class="header-mega-promo__link" href="{{ promo.settings.link }}">
-                  <span>{{ promo_label }}</span>
-                  {%- render 'icon', name: 'arrow-forward', size: 18 -%}
-                </a>
-              {%- endif -%}
-            </div>
+      {%- if parent.handle == 'football' -%}
+        <div class="header-mega__main">
+          {%- render 'football-navigation', link: link, link_index: link_index, hidden_links: hidden -%}
+        </div>
+      {%- else -%}
+        <div class="header-mega__main">
+          <div class="header-mega__group">
+            <p class="header-mega__label" id="{{ tiles_label_id }}">{{ 'header.mega.categories' | t }}</p>
+            <ul
+              class="header-mega__tiles"
+              role="list"
+              aria-labelledby="{{ tiles_label_id }}"
+              style="--header-tile-cols: {{ tile_cols }};"
+            >
+              {%- for child in link.links -%}
+                {%- liquid
+                  assign child_index = forloop.index
+                  assign child_key = ',' | append: link_index | append: '-' | append: child_index | append: ','
+                -%}
+                {%- unless hidden contains child_key -%}
+                  {%- liquid
+                    # Third-level links (teams, players): the first 8 that are shown, then "View all".
+                    assign grandchild_prefix = ',' | append: link_index | append: '-' | append: child_index | append: '-'
+                    assign grandchild_total = 0
+                    for grandchild in child.links
+                      assign grandchild_key = grandchild_prefix | append: forloop.index | append: ','
+                      unless hidden contains grandchild_key
+                        assign grandchild_total = grandchild_total | plus: 1
+                      endunless
+                    endfor
+                    assign grandchild_shown = 0
+                  -%}
+                  <li class="header-mega__tile">
+                    {%- render 'header-tile', link: child, sizes: '(min-width: 1200px) 208px, 168px' -%}
+                    {%- if grandchild_total > 0 -%}
+                      <ul class="header-mega__sublinks" role="list">
+                        {%- for grandchild in child.links -%}
+                          {%- assign grandchild_key = grandchild_prefix | append: forloop.index | append: ',' -%}
+                          {%- unless hidden contains grandchild_key or grandchild_shown >= 4 -%}
+                            {%- assign grandchild_shown = grandchild_shown | plus: 1 -%}
+                            <li>
+                              <a
+                                class="header-mega__sublink"
+                                href="{{ grandchild.url }}"
+                                {% if grandchild.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{- grandchild.title | escape -}}
+                              </a>
+                            </li>
+                          {%- endunless -%}
+                        {%- endfor -%}
+                        {%- if grandchild_total > 4 and child.url != blank and child.url != '#' -%}
+                          <li>
+                            <a class="header-mega__sublink header-mega__view-all" href="{{ child.url }}">
+                              <span>
+                                {{- 'header.mega.view_all' | t -}}
+                                <span class="visually-hidden">: {{ child.title | escape }}</span>
+                              </span>
+                              {%- render 'icon', name: 'chevron-forward', size: 16 -%}
+                            </a>
+                          </li>
+                        {%- endif -%}
+                      </ul>
+                    {%- endif -%}
+                  </li>
+                {%- endunless -%}
+              {%- endfor -%}
+            </ul>
           </div>
         </div>
-      {%- when 'products' -%}
-        <div class="header-mega__aside">
-          <p class="header-mega__label" id="{{ products_label_id }}">{{ 'header.mega.featured' | t }}</p>
-          <ul class="header-mega__products" role="list" aria-labelledby="{{ products_label_id }}">
-            {%- liquid
-              # Up to 3 products, one per team (tag team:…), so the panel never shows three shirts of the
-              # same club. The loop limit keeps the fetch to the collection's first 12 (no paginate here).
-              assign shown_teams = ','
-              assign shown_count = 0
-            -%}
-            {%- for product in parent.products limit: 12 -%}
-              {%- liquid
-                assign product_team = ''
-                for tag in product.tags
-                  assign tag_prefix = tag | slice: 0, 5
-                  if tag_prefix == 'team:'
-                    assign product_team = tag
-                    break
-                  endif
-                endfor
-                assign team_key = ',' | append: product_team | append: ','
-                if product_team != blank and shown_teams contains team_key
-                  continue
-                endif
-                assign shown_teams = shown_teams | append: product_team | append: ','
-                assign shown_count = shown_count | plus: 1
-              -%}
-              <li class="header-mega-product">
-                <div class="header-mega-product__media media-tile">
-                  {%- render 'image',
-                    image: product.featured_media.preview_image,
-                    sizes: '(min-width: 1200px) 64px, 56px',
-                    widths: '56, 64, 112, 128, 192',
-                    alt: '',
-                    class: 'header-mega-product__image'
-                  -%}
-                </div>
-                <div class="header-mega-product__info">
-                  <a class="header-mega-product__link" href="{{ product.url }}">
-                    {%- render 'product-title', title: product.title -%}
-                  </a>
-                  {%- render 'price', product: product, class: 'header-mega-product__price' -%}
-                </div>
-              </li>
-              {%- if shown_count >= 3 -%}
-                {%- break -%}
+      {%- endif -%}
+
+      {%- case aside -%}
+        {%- when 'promo' -%}
+          {%- liquid
+            assign promo_image = promo.settings.image
+            assign promo_label = promo.settings.button_label | escape
+            if promo_label == blank
+              assign promo_label = 'header.mega.promo_button' | t
+            endif
+            assign promo_scheme = 'scheme-accent'
+            if promo_image != blank
+              assign promo_scheme = 'scheme-night'
+            endif
+          -%}
+          <div class="header-mega__aside" {{ promo.shopify_attributes }}>
+            <div class="header-mega-promo color-{{ promo_scheme }}{% if promo_image != blank %} header-mega-promo--image{% endif %}">
+              {%- if promo_image != blank -%}
+                {%- render 'image',
+                  image: promo_image,
+                  sizes: '(min-width: 1200px) 300px, 220px',
+                  widths: '220, 300, 440, 600, 900',
+                  class: 'header-mega-promo__image'
+                -%}
               {%- endif -%}
-            {%- endfor -%}
-          </ul>
-        </div>
-    {%- endcase -%}
+              <div class="header-mega-promo__content">
+                {%- if promo.settings.eyebrow != blank -%}
+                  <p class="header-mega-promo__eyebrow">{{ promo.settings.eyebrow | escape }}</p>
+                {%- endif -%}
+                {%- if promo.settings.heading != blank -%}
+                  <p class="header-mega-promo__heading display-s">{{ promo.settings.heading | escape }}</p>
+                {%- endif -%}
+                {%- if promo.settings.text != blank -%}
+                  <p class="header-mega-promo__text">{{ promo.settings.text | escape }}</p>
+                {%- endif -%}
+                {%- if promo.settings.link != blank -%}
+                  <a class="header-mega-promo__link" href="{{ promo.settings.link }}">
+                    <span>{{ promo_label }}</span>
+                    {%- render 'icon', name: 'arrow-forward', size: 18 -%}
+                  </a>
+                {%- endif -%}
+              </div>
+            </div>
+          </div>
+        {%- when 'products' -%}
+          <div class="header-mega__aside">
+            <p class="header-mega__label" id="{{ products_label_id }}">{{ 'header.mega.featured' | t }}</p>
+            <ul class="header-mega__products" role="list" aria-labelledby="{{ products_label_id }}">
+              {%- liquid
+                # Up to 3 products, one per team (tag team:…), so the panel never shows three shirts of the
+                # same club. The loop limit keeps the fetch to the collection's first 12 (no paginate here).
+                assign shown_teams = ','
+                assign shown_count = 0
+              -%}
+              {%- for product in parent.products limit: 12 -%}
+                {%- liquid
+                  assign product_team = ''
+                  for tag in product.tags
+                    assign tag_prefix = tag | slice: 0, 5
+                    if tag_prefix == 'team:'
+                      assign product_team = tag
+                      break
+                    endif
+                  endfor
+                  assign team_key = ',' | append: product_team | append: ','
+                  if product_team != blank and shown_teams contains team_key
+                    continue
+                  endif
+                  assign shown_teams = shown_teams | append: product_team | append: ','
+                  assign shown_count = shown_count | plus: 1
+                -%}
+                <li class="header-mega-product">
+                  <div class="header-mega-product__media media-tile">
+                    {%- render 'image',
+                      image: product.featured_media.preview_image,
+                      sizes: '(min-width: 1200px) 64px, 56px',
+                      widths: '56, 64, 112, 128, 192',
+                      alt: '',
+                      class: 'header-mega-product__image'
+                    -%}
+                  </div>
+                  <div class="header-mega-product__info">
+                    <a class="header-mega-product__link" href="{{ product.url }}">
+                      {%- render 'product-title', title: product.title -%}
+                    </a>
+                    {%- render 'price', product: product, class: 'header-mega-product__price' -%}
+                  </div>
+                </li>
+                {%- if shown_count >= 3 -%}
+                  {%- break -%}
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+          </div>
+      {%- endcase -%}
+    </div>
   </div>
-</div>
+{%- endif -%}
 
 {% stylesheet %}
   .header-mega {

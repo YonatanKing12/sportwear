@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main_collection": {
+      "settings": {
+        "guided_browse": {
+          "label": "Guide shoppers before showing broad catalogs"
+        }
+      }
+    },
+    "faq": {
+      "settings": {
+        "show_contact": {
+          "label": "Show contact action"
+        }
+      }
+    },
+    "product_story": {
+      "name": "Real product video",
+      "video": "Product video",
+      "video_info": "Use real product footage. Include captions for speech or meaningful audio and describe visual details below.",
+      "transcript": "Accessible video description / transcript",
+      "use_included_film": "Use the included product close-up film (when no video is selected)"
+    },
+    "welcome_offer": {
+      "name": "First-order offer",
+      "code": "Discount code",
+      "info": "Use an active 15% first-order code with a ₪199 minimum and no combined discounts. Clear the code to hide the offer."
+    }
+  }
+}
